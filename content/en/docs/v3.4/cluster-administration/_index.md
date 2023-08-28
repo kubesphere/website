@@ -7,7 +7,7 @@ linkTitle: "Cluster Administration"
 
 weight: 8000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---
 

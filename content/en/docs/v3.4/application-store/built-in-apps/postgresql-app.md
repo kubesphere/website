@@ -49,7 +49,7 @@ To access PostgreSQL outside the cluster, you need to expose the app through a N
 
 5. Expand the Pod menu under **Pods** and click the **Terminal** icon. In the pop-up window, enter commands directly to access the database.
 
-   ![postgresql-output](/images/docs/v3.3/appstore/built-in-apps/postgresql-app/postgresql-output.png)
+   ![postgresql-output](/images/docs/v3.x/appstore/built-in-apps/postgresql-app/postgresql-output.png)
 
    {{< notice note >}}
 

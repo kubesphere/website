@@ -71,7 +71,7 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
 1. Go to **Secrets** under **Configuration**, enter `gitlab-initial-root-password` in the search box, and then press **Enter** on your keyboard to search the Secret.
 
-2. Click the Secret to go to its detail page, and then click <img src="/images/docs/v3.3/appstore/external-apps/deploy-gitlab/eye-icon.png" width="20px" alt="icon" /> in the upper-right corner to view the password. Make sure you copy it.
+2. Click the Secret to go to its detail page, and then click <img src="/images/docs/v3.x/appstore/external-apps/deploy-gitlab/eye-icon.png" width="20px" alt="icon" /> in the upper-right corner to view the password. Make sure you copy it.
 
 ### Step 4: Edit the hosts file
 
@@ -108,9 +108,9 @@ This tutorial demonstrates how to deploy GitLab on KubeSphere.
 
 2. Access GitLab through `http://gitlab.demo-project.svc.cluster.local:31246` using the root account and its initial password (`root/ojPWrWECLWN0XFJkGs7aAqtitGMJlVfS0fLEDE03P9S0ji34XDoWmxs2MzgZRRWF`).
 
-   ![access-gitlab](/images/docs/v3.3/appstore/external-apps/deploy-gitlab/access_gitlab.png)
+   ![access-gitlab](/images/docs/v3.x/appstore/external-apps/deploy-gitlab/access_gitlab.png)
 
-   ![gitlab-console](/images/docs/v3.3/appstore/external-apps/deploy-gitlab/gitlab_console.png)
+   ![gitlab-console](/images/docs/v3.x/appstore/external-apps/deploy-gitlab/gitlab_console.png)
 
    {{< notice note >}}
 

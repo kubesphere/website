@@ -7,7 +7,7 @@ weight: 11231
 
 ---
 
-KubeSphere 3.3 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git 的代码仓库，如 Gitee。下面以 Github 仓库为例，展示如何导入代码仓库。
+KubeSphere 3.4 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git 的代码仓库，如 Gitee。下面以 Github 仓库为例，展示如何导入代码仓库。
 
 ## 准备工作
 
@@ -91,7 +91,7 @@ KubeSphere 3.3 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git �
 
 7. 在弹出的 GitHub 仓库中，选择代码仓库，点击**确定**。
 
-8. 点击代码仓库右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，您可以执行以下操作：
+8. 点击代码仓库右侧的 <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" />，您可以执行以下操作：
 
    - 编辑：修改代码仓库别名和描述信息以及重新选择代码仓库。
    - 编辑 YAML：编辑代码仓库 YAML 文件。

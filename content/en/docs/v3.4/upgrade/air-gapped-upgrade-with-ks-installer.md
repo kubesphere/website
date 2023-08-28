@@ -1,6 +1,6 @@
 ---
 title: "Air-Gapped Upgrade with ks-installer"
-keywords: "Air-Gapped, upgrade, kubesphere, 3.3"
+keywords: "Air-Gapped, upgrade, kubesphere, 3.4"
 description: "Use ks-installer and offline package to upgrade KubeSphere."
 linkTitle: "Air-Gapped Upgrade with ks-installer"
 weight: 7500
@@ -12,14 +12,14 @@ ks-installer is recommended for users whose Kubernetes clusters were not set up 
 ## Prerequisites
 
 - You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.
-- Read [Release Notes for 3.3.2](../../../v3.3/release/release-v332/) carefully.
+- Read [Release Notes for 3.4.0](../../../v3.4/release/release-v340/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries. For more information, see [Prepare a Private Image Registry](../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry).
-- Supported Kubernetes versions of KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
+- Supported Kubernetes versions of KubeSphere 3.4: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 
 ## Major Updates
 
-In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.3.1, please note the following:
+In KubeSphere 3.4.0, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.4.0, please note the following:
 
    - Change of built-in roles: Platform-level built-in roles `users-manager` and `workspace-manager` are removed. If an existing user has been bound to `users-manager` or `workspace-manager`, its role will be changed to `platform-regular` after the upgrade is completed. Role `platform-self-provisioner` is added. For more information about built-in roles, refer to [Create a user](../../quick-start/create-workspace-and-project).
 
@@ -27,7 +27,7 @@ In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of
        - Removed permissions of platform-level custom roles: user management, role management, and workspace management.
        - Removed permissions of workspace-level custom roles: user management, role management, and user group management.
        - Removed permissions of namespace-level custom roles: user management and role management.
-       - After you upgrade KubeSphere to 3.3.1, custom roles will be retained, but removed permissions of the custom roles will be revoked.
+       - After you upgrade KubeSphere to 3.4.0, custom roles will be retained, but removed permissions of the custom roles will be revoked.
 ## Step 1: Prepare Installation Images
 
 As you install KubeSphere in an air-gapped environment, you need to prepare an image package containing all the necessary images in advance.
@@ -35,7 +35,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -47,7 +47,7 @@ As you install KubeSphere in an air-gapped environment, you need to prepare an i
 2. Download `offline-installation-tool.sh`. 
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -107,7 +107,7 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 1. Execute the following command to download ks-installer and transfer it to your machine that serves as the taskbox for installation.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
    ```
    
 2. Verify that you have specified your private image registry in `spec.local_registry` in `cluster-configuration.yaml`. Note that if your existing cluster was installed in an air-gapped environment, you may already have this field specified. Otherwise, run the following command to edit `cluster-configuration.yaml` of your existing KubeSphere v3.1.x cluster and add the private image registry:
@@ -130,7 +130,7 @@ Similar to installing KubeSphere on an existing Kubernetes cluster in an online 
 3. Save `cluster-configuration.yaml` after you finish editing it. Replace `ks-installer` with your **own registry address** with the following command:
 
    ```bash
-   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.1.0#" kubesphere-installer.yaml
+   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.4.0#" kubesphere-installer.yaml
    ```
 
    {{< notice warning >}}

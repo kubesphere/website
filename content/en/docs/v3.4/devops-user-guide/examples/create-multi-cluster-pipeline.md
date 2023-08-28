@@ -22,7 +22,7 @@ This tutorial demonstrates how to create a multi-cluster pipeline on KubeSphere.
 
 This tutorial uses three clusters to serve as three isolated environments in the workflow. See the diagram as below.
 
-![use-case-for-multi-cluster](/images/docs/v3.3/devops-user-guide/examples/create-multi-cluster-pipeline/use-case-for-multi-cluster.png)
+![use-case-for-multi-cluster](/images/docs/v3.x/devops-user-guide/examples/create-multi-cluster-pipeline/use-case-for-multi-cluster.png)
 
 The three clusters are used for development, testing, and production respectively. Once codes get submitted to a Git repository, a pipeline will be triggered to run through the following stages—`Unit Test`, `SonarQube Analysis`, `Build & Push`, and `Deploy to Development Cluster`. Developers use the development cluster for self-testing and validation. When developers give approval, the pipeline will proceed to the stage of `Deploy to Testing Cluster` for stricter validation. Finally, the pipeline, with necessary approval ready, will reach the stage of `Deploy to Production Cluster` to provide services externally. 
 
@@ -40,7 +40,7 @@ See the table below for the role of each cluster.
 
 {{< notice note >}}
 
-These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
+These Kubernetes clusters can be hosted across different cloud providers and their Kubernetes versions can also vary. Recommended Kubernetes versions for KubeSphere 3.4: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 
 {{</ notice >}}
 

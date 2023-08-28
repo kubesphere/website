@@ -44,9 +44,9 @@ To access MinIO outside the cluster, you need to expose the app through a NodePo
 
 6. Access the MinIO browser through `<NodeIP>:<NodePort>` using `accessKey` and `secretKey`.
 
-   ![minio-browser](/images/docs/v3.3/appstore/built-in-apps/minio-app/minio-browser.png)
+   ![minio-browser](/images/docs/v3.x/appstore/built-in-apps/minio-app/minio-browser.png)
 
-   ![minio-browser-interface](/images/docs/v3.3/appstore/built-in-apps/minio-app/minio-browser-interface.png)
+   ![minio-browser-interface](/images/docs/v3.x/appstore/built-in-apps/minio-app/minio-browser-interface.png)
 
    {{< notice note >}}
 

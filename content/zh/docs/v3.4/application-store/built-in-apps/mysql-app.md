@@ -53,9 +53,9 @@ weight: 14260
 
 5. 您需要使用 MySQL Client 或第三方应用（例如 SQLPro Studio）才能访问 MySQL 数据库。以下演示如何使用 SQLPro Studio 访问 MySQL 数据库。
 
-   ![login](/images/docs/v3.3/zh-cn/appstore/built-in-apps/mysql-app/login.png)
+   ![login](/images/docs/v3.x/zh-cn/appstore/built-in-apps/mysql-app/login.png)
 
-   ![access-mysql-success](/images/docs/v3.3/zh-cn/appstore/built-in-apps/mysql-app/access-mysql-success.png)
+   ![access-mysql-success](/images/docs/v3.x/zh-cn/appstore/built-in-apps/mysql-app/access-mysql-success.png)
 
    {{< notice note >}}
 

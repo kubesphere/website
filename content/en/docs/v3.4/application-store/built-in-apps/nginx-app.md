@@ -49,7 +49,7 @@ To access NGINX outside the cluster, you need to expose the app through a NodePo
 
 5. Access NGINX through `<NodeIP>:<NodePort>`.
 
-   ![access-nginx](/images/docs/v3.3/appstore/built-in-apps/nginx-app/access-nginx.png)
+   ![access-nginx](/images/docs/v3.x/appstore/built-in-apps/nginx-app/access-nginx.png)
 
    {{< notice note >}}
 

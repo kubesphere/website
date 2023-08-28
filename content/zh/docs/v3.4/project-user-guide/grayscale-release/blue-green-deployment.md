@@ -10,7 +10,7 @@ weight: 10520
 
 蓝绿发布提供零宕机部署，即在保留旧版本的同时部署新版本。在任何时候，只有其中一个版本处于活跃状态，接收所有流量，另一个版本保持空闲状态。如果运行出现问题，您可以快速回滚到旧版本。
 
-![blue-green-0](/images/docs/v3.3/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-0.PNG)
+![blue-green-0](/images/docs/v3.x/zh-cn/project-user-guide/grayscale-release/blue-green-deployment/blue-green-0.PNG)
 
 
 ## 准备工作

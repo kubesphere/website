@@ -10,7 +10,7 @@ weight: 2500
 
 WordPress is a free and open-source content management system written in PHP, allowing users to build their own websites. A complete WordPress application includes the following Kubernetes objects with MySQL serving as the backend database.
 
-![WordPress](/images/docs/v3.3/quickstart/wordpress-deployment/WordPress.png)
+![WordPress](/images/docs/v3.x/quickstart/wordpress-deployment/WordPress.png)
 
 ## Objective
 

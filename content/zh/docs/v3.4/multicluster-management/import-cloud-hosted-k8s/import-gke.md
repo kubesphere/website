@@ -37,7 +37,7 @@ weight: 5330
 
 3. 访问**定制资源定义**，在搜索栏中输入 `ClusterConfiguration`，然后按下键盘上的**回车键**。点击 **ClusterConfiguration** 访问其详情页。
 
-4. 点击右侧的 <img src="/images/docs/v3.3/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/three-dots.png" height="20px">，选择**编辑 YAML** 来编辑 `ks-installer`。
+4. 点击右侧的 <img src="/images/docs/v3.x/zh-cn/multicluster-management/import-cloud-hosted-k8s/import-gke/three-dots.png" height="20px">，选择**编辑 YAML** 来编辑 `ks-installer`。
 
 5. 在 `ks-installer` 的 YAML 文件中，将 `jwtSecret` 的值改为如上所示的相应值，将 `clusterRole` 的值改为 `member`。
 

@@ -13,12 +13,12 @@ KubeSphere provides a built-in OAuth server. Users can obtain OAuth access token
 
 ## Prerequisites
 
-You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. For details, see [Installing on Linux](/docs/v3.3/installing-on-linux/) and [Installing on Kubernetes](/docs/v3.3/installing-on-kubernetes/).
+You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. For details, see [Installing on Linux](/docs/v3.4/installing-on-linux/) and [Installing on Kubernetes](/docs/v3.4/installing-on-kubernetes/).
 
 
 ## Procedure
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.3/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
    kubectl -n kubesphere-system edit cc ks-installer

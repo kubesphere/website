@@ -115,11 +115,11 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}} 
 
-   ![图形面板](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/graphical_panel.png)
+   ![图形面板](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/graphical_panel.png)
 
 2. 请点击左侧的加号图标来添加阶段。点击**添加步骤**上方的文本框，然后在右侧的**名称**字段中为该阶段设置名称（例如 `Checkout SCM`）。
 
-   ![编辑面板](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/edit_panel.png)
+   ![编辑面板](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/edit_panel.png)
 
 3. 点击**添加步骤**。在列表中选择 **git**，以从 GitHub 拉取示例代码。在弹出的对话框中，填写必需的字段。点击**确定**完成操作。
 
@@ -127,21 +127,21 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    - **凭证 ID**：本教程中无需输入凭证 ID。
    - **分支**：如果您将其留空，则默认为 master 分支。请输入 `sonarqube`，或者如果您不需要代码分析阶段，请将其留空。
 
-   ![输入仓库 URL](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/enter_repo_url.png)
+   ![输入仓库 URL](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/enter_repo_url.png)
 
 4. 第一阶段设置完成。
 
-   ![第一阶段设置完成](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/first_stage_set.png)
+   ![第一阶段设置完成](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/first_stage_set.png)
 
 #### 阶段 2：单元测试
 
 1. 点击阶段 1 右侧的加号图标添加新的阶段，以在容器中执行单元测试。将它命名为 `Unit Test`。
 
-   ![单元测试](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/unit_test.png)
+   ![单元测试](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/unit_test.png)
 
 2. 点击**添加步骤**，在列表中选择**指定容器**。将其命名为 `maven` 然后点击**确定**。
 
-   ![指定容器](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/container_maven.png)
+   ![指定容器](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/container_maven.png)
 
 3. 点击**添加嵌套步骤**，在 `maven` 容器下添加一个嵌套步骤。在列表中选择 **shell** 并在命令行中输入以下命令。点击**确定**保存操作。
 
@@ -162,27 +162,27 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 1. 点击 `Unit Test` 阶段右侧的加号图标添加一个阶段，以在容器中进行 SonarQube 代码分析。将它命名为 `Code Analysis`。
 
-   ![代码分析阶段](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/code_analysis_stage.png)
+   ![代码分析阶段](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/code_analysis_stage.png)
 
 2. 在 **Code Analysis** 中，点击**任务**下的**添加步骤**，选择**指定容器**。将其命名为 `maven` 然后点击**确定**。
 
-   ![Maven 容器](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/maven_container.png)
+   ![Maven 容器](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/maven_container.png)
 
 3. 点击 `maven` 容器下的**添加嵌套步骤**，以添加一个嵌套步骤。点击**添加凭证**并从**凭证 ID** 列表中选择 SonarQube 令牌 (`sonar-token`)。在**文本变量**中输入 `SONAR_TOKEN`，然后点击**确定**。
 
-   ![SonarQube 凭证](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_credentials.png)
+   ![SonarQube 凭证](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_credentials.png)
 
 4. 在**添加凭证**步骤下，点击**添加嵌套步骤**为其添加一个嵌套步骤。
 
-   ![嵌套步骤](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png)
+   ![嵌套步骤](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png)
 
 5. 点击 **Sonarqube 配置**，在弹出的对话框中保持默认名称 `sonar` 不变，点击**确定**保存操作。
 
-   ![sonar](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png)
+   ![sonar](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png)
 
 6. 在 **Sonarqube 配置**步骤下，点击**添加嵌套步骤**为其添加一个嵌套步骤。
 
-   ![添加嵌套步骤](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step.png)
+   ![添加嵌套步骤](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step.png)
 
 7. 点击 **shell** 并在命令行中输入以下命令，用于 sonarqube 分支和认证，点击**确定**完成操作。
 
@@ -190,29 +190,29 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
    ```
 
-   ![新的 SonarQube shell](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_shell_new.png)
+   ![新的 SonarQube shell](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_shell_new.png)
 
 8. 点击**指定容器**步骤下的**添加嵌套步骤**（第三个），选择**超时**。在时间中输入 `1` 并将单位选择为**小时**，点击**确定**完成操作。
 
-   ![添加嵌套步骤-2](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step_2.png)
+   ![添加嵌套步骤-2](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step_2.png)
 
-   ![超时](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/timeout_set.png)
+   ![超时](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/timeout_set.png)
 
 9. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出的对话框中选择**检查通过后开始后续任务**。点击**确定**保存操作。
 
-   ![waitforqualitygate](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/waitforqualitygate_set.png)
+   ![waitforqualitygate](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/waitforqualitygate_set.png)
 
-   ![sonar 就绪](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_ready.png)
+   ![sonar 就绪](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_ready.png)
 
 #### 阶段 4：构建并推送镜像
 
 1. 点击前一个阶段右侧的加号图标添加一个新的阶段，以构建并推送镜像至 Docker Hub。将其命名为 `Build and Push`。
 
-   ![构建并推送镜像](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/build_and_push_image.png)
+   ![构建并推送镜像](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/build_and_push_image.png)
 
 2. 点击**任务**下的**添加步骤**，选择**指定容器**，将其命名为 `maven`，然后点击**确定**。
 
-   ![maven 设置完成](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/maven_set_2.png)
+   ![maven 设置完成](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/maven_set_2.png)
 
 3. 点击 `maven` 容器下的**添加嵌套步骤**添加一个嵌套步骤。在列表中选择 **shell** 并在弹出窗口中输入以下命令，点击**确定**完成操作。
 
@@ -220,7 +220,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    mvn -Dmaven.test.skip=true clean package
    ```
 
-   ![maven 嵌套步骤](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step_maven.png)
+   ![maven 嵌套步骤](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step_maven.png)
 
 4. 再次点击**添加嵌套步骤**，选择 **shell**。在命令行中输入以下命令，以根据 [Dockerfile](https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online) 构建 Docker 镜像。点击**确定**确认操作。
 
@@ -234,7 +234,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER .
    ```
 
-   ![shell 命令](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png)
+   ![shell 命令](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png)
 
 5. 再次点击**添加嵌套步骤**，选择**添加凭证**。在弹出的对话框中填写以下字段，点击**确定**确认操作。
 
@@ -248,7 +248,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{</ notice >}} 
 
-   ![docker 凭证](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png)
+   ![docker 凭证](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png)
 
 6. 在**添加凭证**步骤中点击**添加嵌套步骤**（第一个）。选择 **shell** 并在弹出窗口中输入以下命令，用于登录 Docker Hub。点击**确定**确认操作。
 
@@ -256,7 +256,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
    ```
 
-   ![Docker 登录命令](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png)
+   ![Docker 登录命令](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png)
 
 7. 在**添加凭证**步骤中点击**添加嵌套步骤**。选择 **shell** 并输入以下命令，将 SNAPSHOT 镜像推送至 Docker Hub。点击**确定**完成操作。
 
@@ -264,31 +264,31 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    docker push $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
    ```
 
-   ![推送 snapshot 至 Docker](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png)
+   ![推送 snapshot 至 Docker](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png)
 
 #### 阶段 5：生成制品
 
 1. 点击 **Build and Push** 阶段右侧的加号图标添加一个新的阶段，以保存制品，将其命名为 `Artifacts`。本示例使用 JAR 文件包。
 
-   ![添加制品阶段](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_artifact_stage.png)
+   ![添加制品阶段](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_artifact_stage.png)
 
 2. 选中 **Artifacts** 阶段，点击**任务**下的**添加步骤**，选择**保存制品**。在弹出的对话框中输入 `target/*.jar`，用于设置 Jenkins 中制品的保存路径。点击**确定**完成操作。
 
-   ![制品信息](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/artifact_info.png)
+   ![制品信息](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/artifact_info.png)
 
 #### 阶段 6：部署至开发环境
 
 1. 点击 **Artifacts** 阶段右侧的加号图标添加最后一个阶段，将其命名为 `Deploy to Dev`。该阶段用于将资源部署至您的开发环境（即 `kubesphere-sample-dev` 项目）。
 
-   ![部署至开发环境](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/deploy_to_dev.png)
+   ![部署至开发环境](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/deploy_to_dev.png)
 
 2. 点击 **Deploy to Dev** 阶段下的**添加步骤**，在列表中选择**审核**，然后在**消息**字段中填入 `@project-admin`，即 `project-admin` 帐户在流水线运行到该阶段时会进行审核。点击**确定**保存操作。
 
-   ![输入信息](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/input_message.png)
+   ![输入信息](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/input_message.png)
 
    {{< notice note >}}
 
-   在 KubeSphere 3.3 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者或者您指定的帐户也有权限继续或终止流水线。
+   在 KubeSphere 3.4 中，能够运行流水线的帐户也能够继续或终止该流水线。此外，流水线创建者或者您指定的帐户也有权限继续或终止流水线。
 
    {{</ notice >}}
 
@@ -320,7 +320,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    {{< notice note >}}
    
-   在**流水线**页面，您可以点击该流水线右侧的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" />，然后选择**复制**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
+   在**流水线**页面，您可以点击该流水线右侧的 <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" />，然后选择**复制**来创建该流水线的副本。如果您需要同时运行多个不包含多分支的流水线，您可以全部选中这些流水线，然后点击**运行**来批量运行它们。
    
    {{</ notice >}}
 
@@ -328,13 +328,13 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 1. 您需要手动运行使用图形编辑面板创建的流水线。点击**运行**，您可以在弹出的对话框中看到步骤 3 中已定义的三个字符串参数。点击**确定**来运行流水线。
 
-   ![运行流水线](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/run_pipeline.png)
+   ![运行流水线](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/run_pipeline.png)
    
 2. 要查看流水线的状态，请转到**运行记录**选项卡，点击您想查看的记录。
 
 3. 稍等片刻，流水线如果成功运行，则会在 **Deploy to Dev** 阶段停止。`project-admin` 作为流水线的审核员，需要进行审批，然后资源才会部署至开发环境。
 
-   ![流水线成功运行](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline_successful.png)
+   ![流水线成功运行](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/pipeline_successful.png)
 
 4. 登出 KubeSphere 控制台，以 `project-admin` 身份重新登录。转到您的 DevOps 项目，点击 `graphical-pipeline` 流水线。在**运行记录**选项卡下，点击要审核的记录。要批准流水线，请点击**继续**。
 
@@ -350,13 +350,13 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 点击**制品**选项卡，然后点击右侧的图标下载该制品。
 
-![下载制品](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/download_artifact.png)
+![下载制品](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/download_artifact.png)
 
 ### 步骤 8：查看代码分析结果
 
 在**代码检查**页面，可以查看由 SonarQube 提供的本示例流水线的代码分析结果。如果您没有事先配置 SonarQube，则该部分不可用。有关更多信息，请参见[将 SonarQube 集成到流水线](../../../how-to-integrate/sonarqube/)。
 
-![SonarQube 详细结果](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_result_detail.png)
+![SonarQube 详细结果](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_result_detail.png)
 
 ### 步骤 9：验证 Kubernetes 资源
 
@@ -374,7 +374,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
 4. 现在流水线已成功运行，将会推送一个镜像至 Docker Hub。登录 Docker Hub 查看结果。
 
-   ![DockerHub 镜像](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/dockerhub_image.png)
+   ![DockerHub 镜像](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/dockerhub_image.png)
 
 5. 该应用的名称为 `devops-sample`，即 `APP_NAME` 的值，标签即 `SNAPSHOT-$BUILD_NUMBER` 的值。`$BUILD_NUMBER` 即**运行记录**选项卡列示的记录的序列号。
 

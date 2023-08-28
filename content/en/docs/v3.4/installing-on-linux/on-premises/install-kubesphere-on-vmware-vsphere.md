@@ -21,7 +21,7 @@ This tutorial walks you through an example of how to create Keepalived and HAPro
 
 ## Architecture
 
-![Architecture](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-architecture.png)
+![Architecture](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-architecture.png)
 
 ## Prepare Linux Hosts
 
@@ -45,41 +45,41 @@ You do not need to create a virtual machine for `vip` (i.e. Virtual IP) above, s
 
 You can follow the New Virtual Machine wizard to create a virtual machine to place in the VMware Host Client inventory.
 
-![create](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-create.png)
+![create](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-create.png)
 
 1. In the first step **Select a creation type**, you can deploy a virtual machine from an OVF or OVA file, or register an existing virtual machine directly.
 
-    ![kubesphereOnVsphere-en-0-1-1-create-type](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-1-create-type.png)
+    ![kubesphereOnVsphere-en-0-1-1-create-type](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-1-create-type.png)
 
 2. When you create a new virtual machine, provide a unique name for the  virtual machine to distinguish it from existing virtual machines on the  host you are managing.
 
-    ![kubesphereOnVsphere-en-0-1-2-name](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-2-name.png)
+    ![kubesphereOnVsphere-en-0-1-2-name](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-2-name.png)
 
 3. Select a compute resource and storage (datastore) for the configuration and disk files. You can select the  datastore that has the most suitable properties, such as size, speed,  and availability, for your virtual machine storage.
 
-    ![kubesphereOnVsphere-en-0-1-3-resource](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-3-resource.png)
+    ![kubesphereOnVsphere-en-0-1-3-resource](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-3-resource.png)
 
-    ![kubesphereOnVsphere-en-0-1-4-storage](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-4-storage.png)
+    ![kubesphereOnVsphere-en-0-1-4-storage](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-4-storage.png)
 
-    ![kubesphereOnVsphere-en-0-1-5-compatibility](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-5-compatibility.png)
+    ![kubesphereOnVsphere-en-0-1-5-compatibility](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-5-compatibility.png)
 
 4. Select a guest operating system. The wizard will provide the appropriate defaults for the operating system installation.
 
-    ![kubesphereOnVsphere-en-0-1-6-system](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-6-system.png)
+    ![kubesphereOnVsphere-en-0-1-6-system](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-6-system.png)
 
 5. Before you finish deploying a new virtual machine, you have the option to set **Virtual Hardware** and **VM Options**. You can refer to the images below for part of the fields.
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-1](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-1.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-1](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-1.png)
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-2](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-2.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-2](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-2.png)
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-3](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-3.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-3](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-3.png)
 
-    ![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
+    ![kubesphereOnVsphere-en-0-1-7-hardware-4](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-7-hardware-4.png)
 
 6. In **Ready to complete** page, you review the configuration selections that you have made for the virtual machine. Click **Finish** at the bottom-right corner to continue.
 
-    ![kubesphereOnVsphere-en-0-1-8](/images/docs/v3.3/vsphere/kubesphereOnVsphere-en-0-1-8.png)
+    ![kubesphereOnVsphere-en-0-1-8](/images/docs/v3.x/vsphere/kubesphereOnVsphere-en-0-1-8.png)
 
 ## Install a Load Balancer using Keepalived and HAProxy
 
@@ -289,7 +289,7 @@ systemctl status -l keepalived
 
 ## Download KubeKey
 
-[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere 3.3.
+[Kubekey](https://github.com/kubesphere/kubekey) is the brand-new installer which provides an easy, fast and flexible way to install Kubernetes and KubeSphere 3.4.
 
 Follow the step below to download KubeKey.
 
@@ -345,15 +345,15 @@ chmod +x kk
 
 With KubeKey, you can install Kubernetes and KubeSphere together. You have the option to create a multi-node cluster by customizing parameters in the configuration file.
 
-Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.3.2`):
+Create a Kubernetes cluster with KubeSphere installed (for example, `--with-kubesphere v3.4.0`):
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.4: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -429,7 +429,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.3.2
+    version: v3.4.0
 spec:
   local_registry: ""
   persistence:

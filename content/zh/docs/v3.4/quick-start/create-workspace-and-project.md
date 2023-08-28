@@ -103,7 +103,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    {{< notice note >}}
 
-   您可以点击用户名称后的 <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" /> 图标选择启用或禁用某个用户。您也可以勾选多个用户进行批量操作。
+   您可以点击用户名称后的 <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" /> 图标选择启用或禁用某个用户。您也可以勾选多个用户进行批量操作。
 
    {{</ notice >}} 
 ### 步骤 2：创建企业空间
@@ -215,7 +215,7 @@ KubeSphere 的多租户系统分**三个**层级，即集群、企业空间和�
 
    {{</ notice >}}
 
-5. 在**平台角色**页面，可以点击所创建角色的名称查看角色详情，点击 <img src="/images/docs/v3.3/zh-cn/quickstart/create-workspaces-projects-accounts/操作按钮.png" width="20px" align="center" /> 以编辑角色、编辑角色权限或删除该角色。
+5. 在**平台角色**页面，可以点击所创建角色的名称查看角色详情，点击 <img src="/images/docs/v3.x/zh-cn/quickstart/create-workspaces-projects-accounts/操作按钮.png" width="20px" align="center" /> 以编辑角色、编辑角色权限或删除该角色。
 
 6. 在**用户**页面，可以在创建帐户或编辑现有帐户时为帐户分配该角色。
 

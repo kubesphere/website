@@ -40,7 +40,7 @@ weight: 10220
 
 ### 步骤 3：设置容器组
 
-1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/statefulsets/plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/statefulsets/minus-icon.png" width="20px" alt="icon" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
+1. 设置镜像前，请点击**容器组副本数量**中的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/statefulsets/plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/statefulsets/minus-icon.png" width="20px" alt="icon" /> 来定义容器组的副本数量，该参数显示在清单文件中的 `.spec.replicas` 字段。
 
     {{< notice tip >}}
 
@@ -93,7 +93,7 @@ weight: 10220
 
 ### 详情页面
 
-1. 有状态副本集创建后会显示列表中。您可以点击右边的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/statefulsets/three-dots.png" width="20px" alt="icon" />，在弹出菜单中选择操作，修改您的有状态副本集。
+1. 有状态副本集创建后会显示列表中。您可以点击右边的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/statefulsets/three-dots.png" width="20px" alt="icon" />，在弹出菜单中选择操作，修改您的有状态副本集。
 
     - **编辑信息**：查看并编辑基本信息。
     - **编辑 YAML**：查看、上传、下载或者更新 YAML 文件。
@@ -113,7 +113,7 @@ weight: 10220
 
 4. 点击**资源状态**选项卡，查看该有状态副本集的端口和容器组信息。
 
-    - **副本运行状态**：点击 <img src="/images/docs/v3.3/common-icons/replica-plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.3/common-icons/replica-minus-icon.png" width="20px" alt="icon" /> 来增加或减少容器组副本数量。
+    - **副本运行状态**：点击 <img src="/images/docs/v3.x/common-icons/replica-plus-icon.png" width="20px" alt="icon" /> 或 <img src="/images/docs/v3.x/common-icons/replica-minus-icon.png" width="20px" alt="icon" /> 来增加或减少容器组副本数量。
     - **容器组**
 
         - 容器组列表中显示了容器组详情（运行状态、节点、容器组IP 以及资源使用情况）。
@@ -135,9 +135,9 @@ weight: 10220
 
 2. 点击右上角的下拉菜单以自定义时间范围和采样间隔。
 
-3. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_start.png" alt="statefulsets_autorefresh_start" width="20px" alt="icon" />/<img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_stop.png" width="20px" alt="icon" /> 以开始或停止自动刷新数据。
+3. 点击右上角的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_start.png" alt="statefulsets_autorefresh_start" width="20px" alt="icon" />/<img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_autorefresh_stop.png" width="20px" alt="icon" /> 以开始或停止自动刷新数据。
 
-4. 点击右上角的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_refresh.png" width="20px" alt="icon" /> 以手动刷新数据。
+4. 点击右上角的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/statefulsets/statefulsets_refresh.png" width="20px" alt="icon" /> 以手动刷新数据。
 
 ### 环境变量
 

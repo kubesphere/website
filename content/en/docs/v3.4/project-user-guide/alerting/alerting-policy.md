@@ -47,7 +47,7 @@ KubeSphere provides alerting policies for nodes and workloads. This tutorial dem
 
 ## Edit an Alerting Policy
 
-To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/v3.3/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px" alt="icon"> on the right.
+To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/v3.x/project-user-guide/alerting/alerting-policies/edit-alerting-policy.png" height="20px" alt="icon"> on the right.
 
 1. Click **Edit** from the drop-down menu and edit the alerting policy following the same steps as you create it. Click **OK** on the **Message Settings** page to save it.
 

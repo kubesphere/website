@@ -10,7 +10,7 @@ weight: 17200
 
 The KubeSphere API server validates and configures data for API objects. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.
 
-![ks-apiserver](/images/docs/v3.3/reference/kubesphere-api/ks-apiserver.png)
+![ks-apiserver](/images/docs/v3.x/reference/kubesphere-api/ks-apiserver.png)
 
 ## Use the KubeSphere API
 
@@ -114,7 +114,7 @@ Replace `[node ip]` with your actual IP address.
 
 ## API Reference
 
-The KubeSphere API swagger JSON file can be found in the repository https://github.com/kubesphere/kubesphere/tree/release-3.3/api.
+The KubeSphere API swagger JSON file can be found in the repository https://github.com/kubesphere/kubesphere/tree/release-3.4/api.
 
 - KubeSphere specified the API [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/ks-openapi-spec/swagger.json) file. It contains all the APIs that are only applied to KubeSphere.
 - KubeSphere specified the CRD [swagger json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/openapi-spec/swagger.json) file. It contains all the generated CRDs API documentation. It is same as Kubernetes API objects.

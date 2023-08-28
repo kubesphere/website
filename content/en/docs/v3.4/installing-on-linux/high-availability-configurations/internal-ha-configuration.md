@@ -14,7 +14,7 @@ This document describes how to use the built-in high availability mode when inst
 
 The following figure shows the example architecture of the built-in high availability mode. For more information about system and network requirements, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
 
-![HA architecture](/images/docs/v3.3/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
+![HA architecture](/images/docs/v3.x/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
 
 {{< notice note >}}
 
@@ -77,12 +77,12 @@ chmod +x kk
 Create an example configuration file with default configurations. Here Kubernetes v1.22.12 is used as an example.
 
 ```bash
-./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12
+./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12
 ```
 
 {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.4: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
 

@@ -29,11 +29,11 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 
 1. 在 AWS 上创建一个标准的 Kubernetes 集群是安装 KubeSphere 的前提条件，转到导航菜单，然后参考下图创建集群。
 
-    ![create-cluster-eks](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/eks-launch-icon.png)
+    ![create-cluster-eks](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/eks-launch-icon.png)
 
 2. 在**配置集群**页面，配置以下集群信息：
 
-    ![config-cluster-page](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/config-cluster-page.png)
+    ![config-cluster-page](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/config-cluster-page.png)
 
     配置选项说明：
 
@@ -46,7 +46,7 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 
 3. 选择下一步，在**指定联网**页面上，为以下字段选择值：
   
-    ![network](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/networking.png)
+    ![network](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/networking.png)
   
     - VPC：您之前在[创建 Amazon EKS 集群 VPC](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html#vpc-create) 中创建的 VPC，您可以在下拉列表中找到 VPC 的名称。
     - 子网：默认情况下，上一字段中指定的 VPC 中的可用子网是预选的。选择您不想承载集群资源的任何子网，例如工作节点或负载均衡器。
@@ -54,7 +54,7 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 
     - 对于集群`endpoints`访问–选择以下选项之一：
 
-        ![endpoints](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/endpoints.png)
+        ![endpoints](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/endpoints.png)
 
         - 公有：仅启用对集群的 Kubernetes API server 端点的公共访问，来自集群 VPC 外部的 Kubernetes API 请求使用这个公共端点。默认情况下，允许从任何源 IP 地址进行访问，您也可以只允许一个或多个 CIDR 地址段访问，例如选择**高级设置**，然后选择**添加源**指定地址段 192.168.0.0/16 才能访问。
         - 私有：仅启用对集群的 Kubernetes API server 端点的专用访问。来自集群 VPC 内部的 Kubernetes API 请求使用这个私有 VPC 端点。
@@ -66,25 +66,25 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
         - 公有和私有：启用公有和私有访问。
 
 4. 选择下一步，在**配置日志记录**页面上，可以选择要启用的日志类型。默认情况下，每种日志类型均为**禁用**。有关更多信息，请参阅[Amazon EKS 控制平面日志记录](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html)。
-    ![logging](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/logging.png)
+    ![logging](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/logging.png)
 
 5. 选择下一步，在**查看和创建**页面上，查看在之前页面上输入或选择的信息。如果需要更改任何选择，请选择**编辑**。对设置满意后，选择**创建**，状态字段将显示**正在创建**，直到集群创建完毕。
-    ![revies](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/review.png)
+    ![revies](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/review.png)
 
     - 有关先前选项的更多信息，请参阅[修改集群端点访问](https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html#modify-endpoint-access)。集群配置完成后（通常在10到15分钟之间），请记下 API server 端点和证书颁发机构值，这些将在您的 kubectl 配置中使用。
-      ![creating](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/creating.png)
+      ![creating](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/creating.png)
 
 6. 点击**添加节点组**，在此集群中定义 3 个节点。
 
-    ![node-group](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/node-group.png)
+    ![node-group](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/node-group.png)
 
 7. 配置节点组，注意创建[节点角色](https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html)。
 
-    ![config-node-group](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/config-node-grop.png)
+    ![config-node-group](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/config-node-grop.png)
 
     {{< notice note >}}
 
-- 如需在 Kubernetes 上安装 KubeSphere 3.3，您的 Kubernetes 版本必须为：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 版本。
+- 如需在 Kubernetes 上安装 KubeSphere 3.4，您的 Kubernetes 版本必须为：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x 版本。
 - 此示例中包括 3 个节点。您可以根据自己的需求添加更多节点，尤其是在生产环境中。
 - t3.medium（2 个 vCPU，4 GB 内存）机器类型仅用于最小化安装，如果要启用可插拔组件或集群用于生产，请选择具有更大规格的机器类型。
 - 对于其他设置，您也可以根据自己的需要进行更改，也可以使用默认值。
@@ -130,9 +130,9 @@ aws-cli/2.1.2 Python/3.7.3 Linux/4.18.0-193.6.3.el8_2.x86_64 exe/x86_64.centos.8
 - 使用 kubectl 安装 KubeSphere，以下命令仅用于默认的最小安装。
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
 
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml
   ```
 
 - 检查安装日志：

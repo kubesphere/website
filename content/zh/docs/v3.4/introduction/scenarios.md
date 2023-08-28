@@ -16,7 +16,7 @@ KubeSphere 适用于多种场景，为企业提供容器化的环境，借助完
 
 用户可以将应用负载部署在多个集群上，使用一个全局 VIP 或 DNS 域名将请求发送到对应的后端集群。当一个集群发生故障或无法处理请求时，将 VIP 或 DNS 记录切换至健康的集群。
 
-![高可用](/images/docs/v3.3/zh-cn/introduction/use-cases/高可用.png)
+![高可用](/images/docs/v3.x/zh-cn/introduction/use-cases/高可用.png)
 
 ### 低延迟
 
@@ -28,7 +28,7 @@ KubeSphere 适用于多种场景，为企业提供容器化的环境，借助完
 
 **业务隔离**：Kubernetes 通过命名空间来隔离应用，但这仅是逻辑上的隔离，不同命名空间之间网络互通，依旧存在资源抢占的问题。要想实现更进一步的隔离，需要额外设置诸如网络隔离策略、资源限额等。多集群可以在物理上实现彻底隔离，安全性和可靠性相比使用命名空间隔离更高。例如企业内部不同部门部署各自独立的集群、使用多个集群来分别部署开发、测试和生成环境等。
 
-![流水线](/images/docs/v3.3/zh-cn/introduction/use-cases/流水线.png)
+![流水线](/images/docs/v3.x/zh-cn/introduction/use-cases/流水线.png)
 
 ### 避免厂商锁定
 

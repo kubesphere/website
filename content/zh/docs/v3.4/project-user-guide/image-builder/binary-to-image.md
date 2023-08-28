@@ -39,7 +39,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
 下图中的步骤展示了如何在 B2I 工作流中通过创建服务来上传制品、构建镜像并将其发布至 Kubernetes。
 
-![服务构建](/images/docs/v3.3/zh-cn/project-user-guide/image-builder/binary-to-image/service-build.png)
+![服务构建](/images/docs/v3.x/zh-cn/project-user-guide/image-builder/binary-to-image/service-build.png)
 
 ### 步骤 1：创建 Docker Hub 保密字典
 
@@ -83,7 +83,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
 1. 稍等片刻，您可以看到镜像构建器状态变为**成功**。
 
-2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/image-builder/binary-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
+2. 点击该镜像前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/image-builder/binary-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
 3. 回到**服务**、**部署**和**任务**页面，您可以看到该镜像相应的服务、部署和任务都已成功创建。
 
@@ -105,7 +105,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
 前述示例通过创建服务来实现整个 B2I 工作流。此外，您也可以直接使用镜像构建器基于制品构建镜像，但这个方式不会将镜像发布至 Kubernetes。
 
-![build-binary](/images/docs/v3.3/zh-cn/project-user-guide/image-builder/binary-to-image/build-binary.png)
+![build-binary](/images/docs/v3.x/zh-cn/project-user-guide/image-builder/binary-to-image/build-binary.png)
 
 {{< notice note >}}
 
@@ -139,7 +139,7 @@ Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执�
 
 1. 稍等片刻，您可以看到镜像构建器状态变为**成功**。
 
-2. 点击该镜像构建器前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/image-builder/binary-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
+2. 点击该镜像构建器前往其详情页面。在**任务记录**下，点击记录右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/image-builder/binary-to-image/down-arrow.png" width="20px" /> 查看构建日志。如果一切运行正常，您可以在日志末尾看到 `Build completed successfully`。
 
 3. 前往**任务**页面，您可以看到该镜像相应的任务已成功创建。
 

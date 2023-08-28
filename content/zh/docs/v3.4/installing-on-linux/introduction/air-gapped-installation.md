@@ -122,16 +122,16 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pod2daemon-flexvol:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/typha:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/flannel:v0.12.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/provisioner-localpv:3.3.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/linux-utils:3.3.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/provisioner-localpv:3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/linux-utils:3.4.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/haproxy:2.3
      - registry.cn-beijing.aliyuncs.com/kubesphereio/nfs-subdir-external-provisioner:v4.0.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/k8s-dns-node-cache:1.15.12
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-upgrade:v3.3.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-upgrade:v3.4.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.22.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.21.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.20.0
@@ -152,11 +152,11 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/iptables-manager:v1.9.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/edgeservice:v0.2.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/gatekeeper:v3.5.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.3.0-2.319.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.4.0-2.319.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/inbound-agent:4.10-2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/builder-base:v3.2.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/builder-nodejs:v3.2.0
@@ -312,7 +312,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 2. 执行以下命令创建离线集群配置文件：
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f config-sample.yaml
    ```
 
 3. 执行以下命令修改配置文件：
@@ -502,7 +502,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
    方法 2：登录 Harbor 仓库创建项目。将项目设置为**公开**以便所有用户都能够拉取镜像。关于如何创建项目，请参阅[创建项目](https://goharbor.io/docs/1.10/working-with-projects/create-projects/)。
 
-   ![harbor-login-7](/images/docs/v3.3/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
+   ![harbor-login-7](/images/docs/v3.x/zh-cn/appstore/built-in-apps/deploy-harbor-on-ks/harbor-login-7.PNG)
 
 6. 再次执行以下命令修改集群配置文件：
 
@@ -577,7 +577,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 
 9. 通过 `http://{IP}:30880` 使用默认帐户和密码 `admin/P@88w0rd` 访问 KubeSphere 的 Web 控制台。
 
-   ![kubesphere-login](/images/docs/v3.3/zh-cn/upgrade/air-gapped-upgrade-with-ks-installer/kubesphere-login.PNG)
+   ![kubesphere-login](/images/docs/v3.x/zh-cn/upgrade/air-gapped-upgrade-with-ks-installer/kubesphere-login.PNG)
 
 
    {{< notice note >}}

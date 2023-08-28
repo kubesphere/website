@@ -1,12 +1,12 @@
 ---
 title: "Logging"
 keywords: 'Kubernetes, KubeSphere, API, Logging'
-description: 'The API changes of the component **logging** in KubeSphere 3.3.'
+description: 'The API changes of the component **logging** in KubeSphere 3.4.'
 linkTitle: "Logging"
 weight: 17310
 ---
 
-The API changes of the component **logging** in KubeSphere 3.3.
+The API changes of the component **logging** in KubeSphere 3.4.
 
 ## Time Format
 
@@ -24,4 +24,4 @@ The following APIs are removed:
 
 ## Fluent Operator
 
-In KubeSphere 3.3, the whole log setting APIs are removed from the KubeSphere core since the project Fluent Operator is refactored in an incompatible way. Please refer to [Fluent Operator docs](https://github.com/kubesphere/fluentbit-operator) for how to configure log collection in KubeSphere 3.3.
+In KubeSphere 3.4, the whole log setting APIs are removed from the KubeSphere core since the project Fluent Operator is refactored in an incompatible way. Please refer to [Fluent Operator docs](https://github.com/kubesphere/fluentbit-operator) for how to configure log collection in KubeSphere 3.4.

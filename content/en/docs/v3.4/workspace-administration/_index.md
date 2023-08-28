@@ -7,7 +7,7 @@ linkTitle: "Workspace Administration and User Guide"
 
 weight: 9000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---
 

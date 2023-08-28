@@ -18,7 +18,7 @@ weight: 3510
 
 ## 部署架构
 
-![部署架构](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-architecture.png)
+![部署架构](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-architecture.png)
 
 ## 创建主机
 
@@ -42,39 +42,39 @@ vip 所在的是虚拟 IP，并不需要创建主机，所以只需要创建 8 �
 
 1. 选择可创建的资源池，点击右键，选择**新建虚拟机**（创建虚拟机入口有好几个，请自己选择）
 
-    ![0-1-新创](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-1-create-type.png)
+    ![0-1-新创](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-1-create-type.png)
 
 2. 选择创建类型，创建新虚拟机。
 
-    ![0-1-1创建类型](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-create.png)
+    ![0-1-1创建类型](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-create.png)
 
 3. 填写虚拟机名称和存放文件夹。
 
-    ![0-1-2-name](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-2-name.png)
+    ![0-1-2-name](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-2-name.png)
 
 4. 选择计算资源。
 
-    ![0-1-3-资源](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-3-resource.png)
+    ![0-1-3-资源](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-3-resource.png)
 
 5. 选择存储。
 
-    ![0-1-4-存储](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-4-storage.png)
+    ![0-1-4-存储](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-4-storage.png)
 
 6. 选择兼容性，这里是 ESXi 7.0 及更高版本。
 
-    ![0-1-5-兼容性](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-5-compatibility.png)
+    ![0-1-5-兼容性](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-5-compatibility.png)
 
 7. 选择客户机操作系统，Linux CentOS 7 （64 位）。
 
-    ![0-1-6-系统](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-6-system.png)
+    ![0-1-6-系统](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-6-system.png)
 
 8. 自定义硬件，这里操作系统是挂载的 ISO 文件（打开电源时连接），网络是 VLAN71（勾选）。
 
-    ![0-1-7-硬件](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-7-hardware.png)
+    ![0-1-7-硬件](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-7-hardware.png)
 
 9. 在**即将完成**页面上可查看为虚拟机选择的配置。
 
-    ![0-1-8](/images/docs/v3.3/vsphere/kubesphereOnVsphere-zh-0-1-8.png)
+    ![0-1-8](/images/docs/v3.x/vsphere/kubesphereOnVsphere-zh-0-1-8.png)
 
 ## 部署 keepalived 和 HAproxy
 
@@ -338,12 +338,12 @@ chmod +x kk
 创建配置文件（一个示例配置文件）。
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0
 ```
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.4 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 

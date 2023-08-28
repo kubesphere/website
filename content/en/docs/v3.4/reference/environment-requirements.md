@@ -34,4 +34,4 @@ This page summarizes the some requirements for installing and using KubeSphere.
 
 ## Supported Web Browsers for Accessing the Console
 
-![console-browser](/images/docs/v3.3/reference/environment-requirements/console-browser.png)
+![console-browser](/images/docs/v3.x/reference/environment-requirements/console-browser.png)

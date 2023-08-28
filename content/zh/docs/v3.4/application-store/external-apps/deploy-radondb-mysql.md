@@ -33,7 +33,7 @@ weight: 14350
 
    将仓库成功导入到 KubeSphere 之后，在列表中即可查看 RadonDB MySQL 仓库。
 
-![certify URL](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-radondb-mysql/certify_url.png)
+![certify URL](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-radondb-mysql/certify_url.png)
 
 ### 步骤 2：部署 RadonDB MySQL Operator
 
@@ -48,7 +48,7 @@ weight: 14350
    在**配置文件**选项卡，可查看和编辑 `.yaml` 配置文件。
    在**版本**列框区域，可查看和选择版本号。
 
-   ![operator 配置文件](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-radondb-mysql/operator_yaml.png)
+   ![operator 配置文件](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-radondb-mysql/operator_yaml.png)
 
 5. 点击**部署**，进入 `mysql-operator` 应用基本信息配置页面。  
 
@@ -141,7 +141,7 @@ weight: 14350
 
 4. 在终端窗口中，输入命令连接集群。
 
-![访问 RadonDB MySQL](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-radondb-mysql/pod_terminal.png)
+![访问 RadonDB MySQL](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-radondb-mysql/pod_terminal.png)
 
 **方式二：**
 
@@ -164,4 +164,4 @@ kubectl exec -it <pod_name> -c mysql -n <project_name> -- mysql --user=<user_nam
 
 {{</ notice >}}
 
-![访问 RadonDB MySQL](/images/docs/v3.3/zh-cn/appstore/external-apps/deploy-radondb-mysql/kubectl_terminal.png)
+![访问 RadonDB MySQL](/images/docs/v3.x/zh-cn/appstore/external-apps/deploy-radondb-mysql/kubectl_terminal.png)

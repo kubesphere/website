@@ -37,7 +37,7 @@ This tutorial walks you through an example of deploying MySQL from the App Store
 
 3. In the terminal, execute `mysql -uroot -ptesting` to log in to MySQL as the root user.
 
-   ![log-in-mysql](/images/docs/v3.3/appstore/built-in-apps/mysql-app/log-in-mysql.png)
+   ![log-in-mysql](/images/docs/v3.x/appstore/built-in-apps/mysql-app/log-in-mysql.png)
 
 ### Step 3: Access the MySQL database outside the cluster
 
@@ -53,9 +53,9 @@ To access MySQL outside the cluster, you need to expose the app through a NodePo
 
 5. To access your MySQL database, you need to use the MySQL client or install a third-party application such as SQLPro Studio for the connection. The following example demonstrates how to access the MySQL database through SQLPro Studio.
 
-   ![login](/images/docs/v3.3/appstore/built-in-apps/mysql-app/login.png)
+   ![login](/images/docs/v3.x/appstore/built-in-apps/mysql-app/login.png)
 
-   ![access-mysql-success](/images/docs/v3.3/appstore/built-in-apps/mysql-app/access-mysql-success.png)
+   ![access-mysql-success](/images/docs/v3.x/appstore/built-in-apps/mysql-app/access-mysql-success.png)
 
    {{< notice note >}}
 

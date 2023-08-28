@@ -1,6 +1,6 @@
 ---
 title: "概述"
-keywords: "Kubernetes, 升级, KubeSphere, 3.3, 升级"
+keywords: "Kubernetes, 升级, KubeSphere, 3.4, 升级"
 description: "了解升级之前需要注意的事项，例如版本和升级工具。"
 linkTitle: "概述"
 weight: 7100
@@ -8,11 +8,11 @@ weight: 7100
 
 ## 确定您的升级方案
 
-KubeSphere 3.3 与 Kubernetes 1.19.x、1.20.x、1.21.x、* 1.22.x、* 1.23.x、* 1.24.x 兼容：
+KubeSphere 3.4 与 Kubernetes 1.19.x、1.20.x、1.21.x、* 1.22.x、* 1.23.x、* 1.24.x 兼容：
 
-- 在您升级集群至 KubeSphere 3.3 之前，您的 KubeSphere 集群版本必须为 v3.2.x。
+- 在您升级集群至 KubeSphere 3.4 之前，您的 KubeSphere 集群版本必须为 v3.2.x。
 
-- 您可选择只将 KubeSphere 升级到 3.3 或者同时升级 Kubernetes（到更高版本）和 KubeSphere（到 3.3）。
+- 您可选择只将 KubeSphere 升级到 3.4 或者同时升级 Kubernetes（到更高版本）和 KubeSphere（到 3.4）。
 
 - 带星号的 Kubernetes 版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 Kubernetes v1.21.x 及之前的版本。
 

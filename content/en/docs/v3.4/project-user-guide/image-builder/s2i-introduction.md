@@ -16,7 +16,7 @@ For more information about how to use S2I in KubeSphere, refer to [Source to Ima
 
 For interpreted languages like Python and Ruby, the build-time and runtime environments for an application are typically the same. For example, a Ruby-based Image Builder usually contains Bundler, Rake, Apache, GCC, and other packages needed to set up a runtime environment. The following diagram describes the build workflow.
 
-![s2i-builder](/images/docs/v3.3/project-user-guide/image-builder/s2i-intro/s2i-builder.png)
+![s2i-builder](/images/docs/v3.x/project-user-guide/image-builder/s2i-intro/s2i-builder.png)
 
 ### How S2I works
 
@@ -28,7 +28,7 @@ S2I performs the following steps:
 
 See the S2I workflow chart as below.
 
-![s2i-flow](/images/docs/v3.3/project-user-guide/image-builder/s2i-intro/s2i-flow.png)
+![s2i-flow](/images/docs/v3.x/project-user-guide/image-builder/s2i-intro/s2i-flow.png)
 
 ### Runtime Image
 
@@ -36,4 +36,4 @@ For compiled languages like Go, C, C++, or Java, the dependencies necessary for 
 
 See the building workflow as below.
 
-![s2i-runtime-build](/images/docs/v3.3/project-user-guide/image-builder/s2i-intro/s2i-runtime-build.png)
+![s2i-runtime-build](/images/docs/v3.x/project-user-guide/image-builder/s2i-intro/s2i-runtime-build.png)

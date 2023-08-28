@@ -46,6 +46,6 @@ weight: 14293
 
 3. 在弹出窗口中，直接向终端输入命令使用该应用。
 
-   ![访问 RadonDB MySQL](/images/docs/v3.3/zh-cn/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service-terminal.png)
+   ![访问 RadonDB MySQL](/images/docs/v3.x/zh-cn/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service-terminal.png)
 
 4. 如果您想从集群外部访问 RadonDB MySQL，详细信息请参见 [RadonDB MySQL 开源项目](https://github.com/radondb/radondb-mysql-kubernetes)。

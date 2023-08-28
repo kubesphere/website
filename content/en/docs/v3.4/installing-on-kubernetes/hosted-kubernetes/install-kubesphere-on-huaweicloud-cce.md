@@ -14,7 +14,7 @@ This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](
 
 First, create a Kubernetes cluster based on the requirements below.
 
-- To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
+- To install KubeSphere 3.4 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 - Ensure the cloud computing network for your Kubernetes cluster works, or use an elastic IP when you use **Auto Create** or **Select Existing**. You can also configure the network after the cluster is created. Refer to [NAT Gateway](https://support.huaweicloud.com/en-us/productdesc-natgateway/en-us_topic_0086739762.html).
 - Select `s3.xlarge.2` `4-core｜8GB` for nodes and add more if necessary (3 and more nodes are required for a production environment).
 
@@ -23,7 +23,7 @@ First, create a Kubernetes cluster based on the requirements below.
 - Go to **Resource Management** > **Cluster Management** > **Basic Information** > **Network**, and bind `Public apiserver`.
 - Select **kubectl** on the right column, go to **Download kubectl configuration file**, and click **Click here to download**, then you will get a public key for kubectl.
 
-  ![Generate Kubectl config file](/images/docs/v3.3/huawei-cce/en/generate-kubeconfig.png)
+  ![Generate Kubectl config file](/images/docs/v3.x/huawei-cce/en/generate-kubeconfig.png)
 
 After you get the configuration file for kubectl, use kubectl command line to verify the connection to the cluster.
 
@@ -76,14 +76,14 @@ For how to set up or cancel a default StorageClass, refer to Kubernetes official
 Use [ks-installer](https://github.com/kubesphere/ks-installer) to deploy KubeSphere on an existing Kubernetes cluster. Execute the following commands directly for a minimal installation:
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
 
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml
 ```
 
 Go to **Workload** > **Pod**, and check the running status of the pod in `kubesphere-system` of its namespace to understand the minimal deployment of KubeSphere. Check `ks-console-xxxx`  of the namespace to understand the availability of KubeSphere console.
 
-  ![Deploy KubeSphere in Minimal](/images/docs/v3.3/huawei-cce/en/deploy-ks-minimal.png)
+  ![Deploy KubeSphere in Minimal](/images/docs/v3.x/huawei-cce/en/deploy-ks-minimal.png)
 
 ### Expose KubeSphere Console
 
@@ -91,11 +91,11 @@ Check the running status of Pods in `kubesphere-system` namespace and make sure
 
 Go to **Resource Management** > **Network** and choose the service in `ks-console`. It is suggested that you choose `LoadBalancer` (Public IP is required). The configuration is shown below.
 
-  ![Expose KubeSphere Console](/images/docs/v3.3/huawei-cce/en/expose-ks-console.png)
+  ![Expose KubeSphere Console](/images/docs/v3.x/huawei-cce/en/expose-ks-console.png)
 
 Default settings are OK for other detailed configurations. You can also set them based on your needs.
 
-  ![Edit KubeSphere Console SVC](/images/docs/v3.3/huawei-cce/en/edit-ks-console-svc.png)
+  ![Edit KubeSphere Console SVC](/images/docs/v3.x/huawei-cce/en/edit-ks-console-svc.png)
 
 After you set LoadBalancer for KubeSphere console, you can visit it via the given address. Go to KubeSphere login page and use the default account (username `admin` and password `P@88w0rd`) to log in.
 

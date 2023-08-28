@@ -36,19 +36,19 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
 
 进入到华为云控制， 在左侧列表选择'虚拟私有云'， 选择'创建虚拟私有云' 创建VPC,配置如下图
 
-![1-1-创建VPC](/images/docs/v3.3/huawei-ecs/huawei-VPC-create.png)
+![1-1-创建VPC](/images/docs/v3.x/huawei-ecs/huawei-VPC-create.png)
 
 ###  创建安全组
 
 在 `访问控制→ 安全组`下，创建一个安全组，设置入方向的规则参考如下：
 
-![2-1-创建安全组](/images/docs/v3.3/huawei-ecs/huawei-rules-create.png)
+![2-1-创建安全组](/images/docs/v3.x/huawei-ecs/huawei-rules-create.png)
 > 提示：后端服务器的安全组规则必须放行 100.125.0.0/16 网段，否则会导致健康检查异常，详见 后端服务器配置安全组 。此外，还应放行 192.168.1.0/24 （主机之间的网络需全放行）。
 
 ### 创建主机
-![3-1-选择主机配置](/images/docs/v3.3/huawei-ecs/huawei-ECS-basic-settings.png)
+![3-1-选择主机配置](/images/docs/v3.x/huawei-ecs/huawei-ECS-basic-settings.png)
 在网络配置中，网络选择第一步创建的 VPC 和子网。在安全组中，选择上一步创建的安全组。
-![3-2-选择网络配置](/images/docs/v3.3/huawei-ecs/huawei-ECS-network-settings.png)
+![3-2-选择网络配置](/images/docs/v3.x/huawei-ecs/huawei-ECS-network-settings.png)
 
 ### 创建负载均衡器
 在左侧栏选择 '弹性负载均衡器',进入后选择 购买弹性负载均衡器
@@ -56,15 +56,15 @@ Kubernetes 服务需要做到高可用，需要保证 kube-apiserver 的 HA ，�
 #### 内网LB 配置
 为所有master 节点 添加后端监听器 ,监听端口为 6443
 
-![4-1-配置内网LB](/images/docs/v3.3/huawei-ecs/huawei-master-lb-basic-config.png)
+![4-1-配置内网LB](/images/docs/v3.x/huawei-ecs/huawei-master-lb-basic-config.png)
 
-![4-2-配置内网LB](/images/docs/v3.3/huawei-ecs/huawei-master-lb-listeners-config.png)
+![4-2-配置内网LB](/images/docs/v3.x/huawei-ecs/huawei-master-lb-listeners-config.png)
 #### 外网LB 配置
 若集群需要配置公网访问，则需要为外网负载均衡器配置一个公网 IP为 所有节点 添加后端监听器，监听端口为 80(测试使用 30880 端口,此处 80 端口也需要在安全组中开放)。
 
-![4-3-配置外网LB](/images/docs/v3.3/huawei-ecs/huawei-public-lb-basic-config.png)
+![4-3-配置外网LB](/images/docs/v3.x/huawei-ecs/huawei-public-lb-basic-config.png)
 
-![4-4-配置外网LB](/images/docs/v3.3/huawei-ecs/huawei-public-lb-listeners-config.png)
+![4-4-配置外网LB](/images/docs/v3.x/huawei-ecs/huawei-public-lb-listeners-config.png)
 
 后面配置文件 config.yaml 需要配置在前面创建的 SLB 分配的地址（VIP）
 
@@ -137,7 +137,7 @@ chmod +x kk
 在当前位置创建配置文件 `master-HA.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12 -f master-HA.yaml
+./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f master-HA.yaml
 ```
 
 ### 集群配置调整
@@ -200,7 +200,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.3.2
+    version: v3.4.0
 spec:
   local_registry: ""
   persistence:
@@ -278,7 +278,7 @@ spec:
 
  ```bash
  # 指定配置文件创建集群
- ./kk create cluster --with-kubesphere v3.3.2 -f master-HA.yaml
+ ./kk create cluster --with-kubesphere v3.4.0 -f master-HA.yaml
 
  # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登录帐户
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f

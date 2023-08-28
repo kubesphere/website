@@ -8,7 +8,7 @@ weight: 3630
 
 KubeSphere leverages [KubeEdge](https://kubeedge.io/en/), to extend native containerized application orchestration capabilities to hosts at edge. With separate cloud and edge core modules, KubeEdge provides complete edge computing solutions while the installation may be complex and difficult.
 
-![kubeedge_arch](/images/docs/v3.3/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
+![kubeedge_arch](/images/docs/v3.x/installing-on-linux/add-and-delete-nodes/add-edge-nodes/kubeedge_arch.png)
 
 {{< notice note >}}
 
@@ -129,7 +129,7 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 
 3. Click **Add**. In the dialog that appears, set a node name and enter an internal IP address of your edge node. Click **Validate** to continue.
 
-   ![add-edge-node](/images/docs/v3.3/installing-on-linux/add-and-delete-nodes/add-edge-nodes/add-edge-node.png)
+   ![add-edge-node](/images/docs/v3.x/installing-on-linux/add-and-delete-nodes/add-edge-nodes/add-edge-node.png)
 
    {{< notice note >}} 
 
@@ -140,7 +140,7 @@ Perform the following steps to configure [EdgeMesh](https://kubeedge.io/en/docs/
 
 4. Copy the command automatically created under **Edge Node Configuration Command** and run it on your edge node.
 
-   ![edge-command](/images/docs/v3.3/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-command.png)
+   ![edge-command](/images/docs/v3.x/installing-on-linux/add-and-delete-nodes/add-edge-nodes/edge-command.png)
 
    {{< notice note >}}
 
@@ -166,7 +166,7 @@ To collect monitoring information on edge node, you need to enable `metrics_serv
 
 3. In the search bar on the right pane, enter `clusterconfiguration`, and click the result to go to its details page.
 
-4. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of ks-installer, and click **Edit YAML**.
+4. Click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of ks-installer, and click **Edit YAML**.
 
 5. Search for **metrics_server**, and change the value of `enabled` from `false` to `true`.
 

@@ -39,9 +39,9 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件中先启用 Metrics Server组件。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) 文件中先启用 Metrics Server组件。
 
-1. 下载文件 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml)，并打开文件进行编辑。
+1. 下载文件 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml)，并打开文件进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -57,7 +57,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 3. 执行以下命令以开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -78,7 +78,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     {{</ notice >}}
 
-3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜索 `metrics_server`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**以保存配置。
 
@@ -95,7 +95,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     {{< notice note >}}
 
-可以通过点击控制台右下角的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/metrics-server/hammer.png" height="20px"> 找到 kubectl 工具。
+可以通过点击控制台右下角的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/metrics-server/hammer.png" height="20px"> 找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

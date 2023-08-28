@@ -30,7 +30,7 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 
   {{< notice note >}}
 
-  - To install KubeSphere 3.3 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
+  - To install KubeSphere 3.4 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
   - It is recommended that you should select **Public** for **Visibility Type**, which will assign a public IP address for every node. The IP address can be used later to access the web console of KubeSphere.
   - In Oracle Cloud, a Shape is a template that determines the number of CPUs, amount of memory, and other resources that are allocated to an instance. `VM.Standard.E2.2 (2 CPUs and 16G Memory)` is used in this example. For more information, see [Standard Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vmshapes__vm-standard).
   - 3 nodes are included in this example. You can add more nodes based on your own needs especially in a production environment.
@@ -68,9 +68,9 @@ This guide walks you through the steps of deploying KubeSphere on [Oracle Kubern
 - Install KubeSphere using kubectl. The following commands are only for the default minimal installation.
 
   ```bash
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
 
-  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
+  kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml
   ```
 
 - Inspect the logs of installation:

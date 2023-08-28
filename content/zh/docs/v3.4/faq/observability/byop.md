@@ -6,7 +6,7 @@ linkTitle: "集成您自己的 Prometheus"
 Weight: 16330
 ---
 
-KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operator、Prometheus、Alertmanager、Grafana（可选）、各种 ServiceMonitor、node-exporter 和 kube-state-metrics。在您安装 KubeSphere 之前，这些组件可能已经存在。在 KubeSphere 3.3 中，您可以使用自己的 Prometheus 堆栈设置。
+KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operator、Prometheus、Alertmanager、Grafana（可选）、各种 ServiceMonitor、node-exporter 和 kube-state-metrics。在您安装 KubeSphere 之前，这些组件可能已经存在。在 KubeSphere 3.4 中，您可以使用自己的 Prometheus 堆栈设置。
 
 ## 集成您自己的 Prometheus
 
@@ -41,7 +41,7 @@ KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operat
 
 {{< notice note >}}
 
-KubeSphere 3.3 已经过认证，可以与以下 Prometheus 堆栈组件搭配使用：
+KubeSphere 3.4 已经过认证，可以与以下 Prometheus 堆栈组件搭配使用：
 
 - Prometheus Operator **v0.55.1+**
 - Prometheus **v2.34.0+**
@@ -57,12 +57,12 @@ KubeSphere 3.3 已经过认证，可以与以下 Prometheus 堆栈组件搭配�
 
 {{</ notice >}}
 
-Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如何使用 [ks-installer 中的 Prometheus stack manifests](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus) (其由 KubeSphere 基于 [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus.git) 的定制版本生成) 将 Prometheus 堆栈安装至命名空间 `monitoring` 中。
+Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如何使用 [ks-installer 中的 Prometheus stack manifests](https://github.com/kubesphere/ks-installer/tree/release-3.4/roles/ks-monitor/files/prometheus) (其由 KubeSphere 基于 [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus.git) 的定制版本生成) 将 Prometheus 堆栈安装至命名空间 `monitoring` 中。
 
-1. 获取 KubeSphere 3.3.0 所使用的 `ks-installer`。
+1. 获取 KubeSphere 3.4 所使用的 `ks-installer`。
 
    ```bash
-   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
+   cd ~ && git clone -b release-3.4 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
    ```
 
 2. 创建 `kustomization.yaml`:  
@@ -94,22 +94,22 @@ Prometheus 堆栈可以通过多种方式进行安装。下面的步骤演示如
 
 {{< notice note >}}
 
-如果您的 Prometheus 堆栈是通过 [ks-installer 中的 Prometheus stack manifests](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus) 进行安装，您可以跳过此步骤。
+如果您的 Prometheus 堆栈是通过 [ks-installer 中的 Prometheus stack manifests](https://github.com/kubesphere/ks-installer/tree/release-3.4/roles/ks-monitor/files/prometheus) 进行安装，您可以跳过此步骤。
 
-KubeSphere 3.3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配置和生命周期、ServiceMonitor（用于管理抓取配置）和 PrometheusRule（用于管理 Prometheus 记录/告警规则）。
+KubeSphere 3.4 使用 Prometheus Operator 来管理 Prometheus/Alertmanager 配置和生命周期、ServiceMonitor（用于管理抓取配置）和 PrometheusRule（用于管理 Prometheus 记录/告警规则）。
 
 如果您的 Prometheus 堆栈不是由 Prometheus Operator 进行管理，您可以跳过此步骤。但请务必确保：
 
-- 您必须将 [PrometheusRule](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/kubernetes/kubernetes-prometheusRule.yaml) 和 [PrometheusRule for etcd](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/etcd/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.3.0 能够正常运行。
+- 您必须将 [PrometheusRule](https://github.com/kubesphere/ks-installer/tree/release-3.4/roles/ks-monitor/files/prometheus/kubernetes/kubernetes-prometheusRule.yaml) 和 [PrometheusRule for etcd](https://github.com/kubesphere/ks-installer/tree/release-3.4/roles/ks-monitor/files/prometheus/etcd/prometheus-rulesEtcd.yaml) 中的记录/告警规则复制至您的 Prometheus 配置中，以便 KubeSphere 3.4 能够正常运行。
 
-- 配置您的 Prometheus，使其抓取指标的目标 (Target) 与 各组件的 [serviceMonitor](https://github.com/kubesphere/ks-installer/tree/release-3.3/roles/ks-monitor/files/prometheus/) 文件中列出的目标相同。
+- 配置您的 Prometheus，使其抓取指标的目标 (Target) 与 各组件的 [serviceMonitor](https://github.com/kubesphere/ks-installer/tree/release-3.4/roles/ks-monitor/files/prometheus/) 文件中列出的目标相同。
 
 {{</ notice >}}
 
-1. 获取 KubeSphere 3.3.0 所使用的 `ks-installer`。
+1. 获取 KubeSphere 3.4 所使用的 `ks-installer`。
 
    ```bash
-   cd ~ && git clone -b release-3.3 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
+   cd ~ && git clone -b release-3.4 https://github.com/kubesphere/ks-installer.git && cd ks-installer/roles/ks-monitor/files/prometheus
    ```
 
 2. 创建 `kustomization.yaml`，填充如下内容。
@@ -154,7 +154,7 @@ KubeSphere 3.3.0 使用 Prometheus Operator 来管理 Prometheus/Alertmanager �
    kubectl -n <your own namespace> get prometheus
    ```
 
-5. 将 Prometheus 规则评估间隔设置为 1m，与 KubeSphere 3.3.0 的自定义 ServiceMonitor 保持一致。规则评估间隔应大于或等于抓取间隔。
+5. 将 Prometheus 规则评估间隔设置为 1m，与 KubeSphere 3.4 的自定义 ServiceMonitor 保持一致。规则评估间隔应大于或等于抓取间隔。
 
    ```bash
    kubectl -n <your own namespace> patch prometheus k8s --patch '{

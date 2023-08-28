@@ -34,4 +34,4 @@ weight: 17500
 
 ## KubeSphere Web 控制台支持的浏览器
 
-![console-browser](/images/docs/v3.3/reference/environment-requirements/console-browser.png)
+![console-browser](/images/docs/v3.x/reference/environment-requirements/console-browser.png)

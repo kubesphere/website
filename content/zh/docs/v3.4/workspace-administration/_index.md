@@ -7,7 +7,7 @@ linkTitle: "企业空间管理和用户指南"
 
 weight: 9000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---
 

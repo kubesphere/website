@@ -10,13 +10,13 @@ Alertmanager handles alerts sent by client applications such as the Prometheus s
 
 KubeSphere has been using Prometheus as its monitoring service's backend from the first release. Starting from v3.0, KubeSphere adds Alertmanager to its monitoring stack to manage alerts sent from Prometheus as well as other components such as [kube-events](https://github.com/kubesphere/kube-events) and kube-auditing.
 
-![alertmanager-kubesphere](/images/docs/v3.3/cluster-administration/cluster-wide-alerting-and-notification/alertmanager-in-kubesphere/alertmanager@kubesphere.png)
+![alertmanager-kubesphere](/images/docs/v3.x/cluster-administration/cluster-wide-alerting-and-notification/alertmanager-in-kubesphere/alertmanager@kubesphere.png)
 
 ## Use Alertmanager to Manage Prometheus Alerts
 
 Alerting with Prometheus is separated into two parts. Alerting rules in Prometheus servers send alerts to an Alertmanager. The Alertmanager then manages those alerts, including silencing, inhibition, aggregation and sending out notifications via methods such as emails, on-call notification systems, and chat platforms.
 
-Starting from v3.0, KubeSphere adds popular alert rules in the open source community to its Prometheus offering as built-in alert rules. And by default Prometheus in KubeSphere v3.0 evaluates these built-in alert rules continuously and then sends alerts to Alertmanager.
+Starting from v3.0, KubeSphere adds popular alert rules in the open source community to its Prometheus offering as built-in alert rules. And by default Prometheus in KubeSphere v3.4 evaluates these built-in alert rules continuously and then sends alerts to Alertmanager.
 
 ## Use Alertmanager to Manage Kubernetes Event Alerts
 

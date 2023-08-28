@@ -10,7 +10,7 @@ weight: 12230
 
 下图显示了 KubeSphere 与外部 OAuth 2.0 身份提供者之间的身份验证过程。
 
-![oauth2](/images/docs/v3.3/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/oauth2.svg)
+![oauth2](/images/docs/v3.x/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/oauth2.svg)
 
 ## 准备工作
 
@@ -81,7 +81,7 @@ KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub 的 [GitHubIdentit
 
 ## 集成身份提供者 
 
-1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/v3.3/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> ，点击 **kubectl**，然后执行以下命令来编辑 CRD `ClusterConfiguration` 中的 `ks-installer`：
+1. 以 `admin` 身份登录 KubeSphere，将光标移动到右下角 <img src="/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> ，点击 **kubectl**，然后执行以下命令来编辑 CRD `ClusterConfiguration` 中的 `ks-installer`：
 
    ```bash
    kubectl -n kubesphere-system edit cc ks-installer
@@ -126,5 +126,5 @@ KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub 的 [GitHubIdentit
 
 6. 在外部身份提供者的登录界面，输入身份提供者配置的用户名和密码，登录 KubeSphere 。
 
-   ![github-login-page](/images/docs/v3.3/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/github-login-page.png)
+   ![github-login-page](/images/docs/v3.x/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/github-login-page.png)
 

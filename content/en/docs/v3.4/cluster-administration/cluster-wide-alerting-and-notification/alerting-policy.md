@@ -48,7 +48,7 @@ KubeSphere also has built-in policies which will trigger alerts if conditions de
 
 ## Edit an Alerting Policy
 
-To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/v3.3/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png" height="25px" alt="icon"> on the right of the alerting policy.
+To edit an alerting policy after it is created, on the **Alerting Policies** page, click <img src="/images/docs/v3.x/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png" height="25px" alt="icon"> on the right of the alerting policy.
 
 1. Click **Edit** from the drop-down list and edit the alerting policy following the same steps as you create it. Click **OK** on the **Message Settings** page to save it.
 
@@ -62,8 +62,8 @@ Under **Monitoring**, the **Alert Monitoring** chart shows the actual usage or a
 
 {{< notice note >}}
 
-You can click <img src="/images/docs/v3.3/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/drop-down-list.png" width='20' alt="icon" /> in the upper-right corner to select or custom a time range for the alert monitoring chart.
+You can click <img src="/images/docs/v3.x/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/drop-down-list.png" width='20' alt="icon" /> in the upper-right corner to select or custom a time range for the alert monitoring chart.
 
-You can also click <img src="/images/docs/v3.3/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' alt="icon" /> in the upper-right corner to manually refresh the alert monitoring chart.
+You can also click <img src="/images/docs/v3.x/zh-cn/cluster-administration/cluster-wide-alerting-and-notification/alerting-policy-node-level/refresh.png" width='25' alt="icon" /> in the upper-right corner to manually refresh the alert monitoring chart.
 
 {{</ notice >}}

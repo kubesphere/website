@@ -159,7 +159,7 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
 
 ### Details page
 
-1. After a Service is created, you can click <img src="/images/docs/v3.3/project-user-guide/application-workloads/services/three-dots.png" width="20px" alt="icon" /> on the right to further edit it, such as its metadata (excluding **Name**), YAML, port, and Internet access.
+1. After a Service is created, you can click <img src="/images/docs/v3.x/project-user-guide/application-workloads/services/three-dots.png" width="20px" alt="icon" /> on the right to further edit it, such as its metadata (excluding **Name**), YAML, port, and Internet access.
 
     - **Edit Information**: View and edit the basic information.
     - **Edit YAML**: View, upload, download, or update the YAML file.
@@ -179,7 +179,7 @@ This value is specified by `.spec.type`. If you select **LoadBalancer**, you nee
 
 1. Click the **Resource Status** tab to view information about the Service ports, workloads, and Pods.
 
-2. In the **Pods** area, click <img src="/images/docs/v3.3/project-user-guide/application-workloads/services/refresh.png" width="20px" alt="icon" /> to refresh the Pod information, and click <img src="/images/docs/v3.3/project-user-guide/application-workloads/services/display.png" width="20px" />/<img src="/images/docs/v3.3/project-user-guide/application-workloads/services/hide.png" width="20px" /> to display/hide the containers in each Pod.
+2. In the **Pods** area, click <img src="/images/docs/v3.x/project-user-guide/application-workloads/services/refresh.png" width="20px" alt="icon" /> to refresh the Pod information, and click <img src="/images/docs/v3.x/project-user-guide/application-workloads/services/display.png" width="20px" />/<img src="/images/docs/v3.x/project-user-guide/application-workloads/services/hide.png" width="20px" /> to display/hide the containers in each Pod.
 
 ### Metadata
 

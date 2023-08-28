@@ -38,7 +38,7 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
       containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `containerruntime` to `containerd`. If you upgraded to KubeSphere 3.3 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `containerruntime` to `containerd`. If you upgraded to KubeSphere 3.4 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
 
     {{</ notice >}}
 
@@ -65,9 +65,9 @@ When you install KubeSphere on Linux, you need to create a configuration file, w
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Logging first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Logging first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -81,7 +81,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
       containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.3 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.4 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
 
     {{</ notice >}}
 
@@ -103,7 +103,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 3. Execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -120,7 +120,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
 {{</ notice >}}
 
-3. In **Custom Resources**, click <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/v3.x/enable-pluggable-components/kubesphere-logging-system/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `logging` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
@@ -130,7 +130,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
       containerruntime: docker
     ```
 
-    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.3 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
+    {{< notice info >}}To use containerd as the container runtime, change the value of the field `.logging.containerruntime` to `containerd`. If you upgraded to KubeSphere 3.4 from earlier versions, you have to manually add the field `containerruntime` under `logging` when enabling KubeSphere Logging system.
 
     {{</ notice >}}
 
@@ -157,7 +157,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-logging-system/hammer.png" height="20px"> in the lower-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/v3.x/enable-pluggable-components/kubesphere-logging-system/hammer.png" height="20px"> in the lower-right corner of the console.
 
 {{</ notice >}}
 

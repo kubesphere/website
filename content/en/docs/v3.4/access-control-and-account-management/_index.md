@@ -6,7 +6,7 @@ layout: "second"
 linkTitle: "Access Control and Account Management"
 weight: 12000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---
 

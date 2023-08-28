@@ -49,7 +49,7 @@ In **DevOps Project Roles**, there are three available built-in roles as shown b
 
    {{</ notice >}} 
 
-4. Newly created roles will be listed in **DevOps Project Roles**. You can click <img src="/images/docs/v3.3/common-icons/three-dots.png" height="15px" alt="icon"> on the right to edit it.
+4. Newly created roles will be listed in **DevOps Project Roles**. You can click <img src="/images/docs/v3.x/common-icons/three-dots.png" height="15px" alt="icon"> on the right to edit it.
 
    {{< notice note >}} 
 
@@ -61,7 +61,7 @@ In **DevOps Project Roles**, there are three available built-in roles as shown b
 
 1. In **DevOps Project Settings**, select **DevOps Project Members** and click **Invite**.
 
-2. Click <img src="/images/docs/v3.3/common-icons/invite-member-button.png" height="15px" alt="icon"> to invite a user to the DevOps project. Grant the role of `pipeline-creator` to the account. 
+2. Click <img src="/images/docs/v3.x/common-icons/invite-member-button.png" height="15px" alt="icon"> to invite a user to the DevOps project. Grant the role of `pipeline-creator` to the account. 
 
    {{< notice note >}} 
 

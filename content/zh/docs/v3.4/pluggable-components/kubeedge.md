@@ -12,7 +12,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 启用 KubeEdge 后，您可以[为集群添加边缘节点](../../installing-on-linux/cluster-operation/add-edge-nodes/)并在这些节点上部署工作负载。
 
-![kubeedge_arch](/images/docs/v3.3/zh-cn/enable-pluggable-components/kubeedge/kubeedge_arch.png)
+![kubeedge_arch](/images/docs/v3.x/zh-cn/enable-pluggable-components/kubeedge/kubeedge_arch.png)
 
 ## 安装前启用 KubeEdge
 
@@ -62,9 +62,9 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件中启用 KubeEdge。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) 文件中启用 KubeEdge。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件并进行编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) 文件并进行编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -96,7 +96,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 4. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -111,7 +111,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 定制资源定义（CRD）允许用户在不新增 API 服务器的情况下创建一种新的资源类型，用户可以像使用其他 Kubernetes 原生对象一样使用这些定制资源。
     {{</ notice >}}
 
-3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubeedge/three-dots.png" height="20px">，然后选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubeedge/three-dots.png" height="20px">，然后选择**编辑 YAML**。
    
 4. 在该配置文件中，搜索 `edgeruntime` 和 `kubeedge`，然后将它们 `enabled` 值从 `false` 更改为 `true` 以便开启所有 KubeEdge 组件。完成后保存文件。
 
@@ -144,7 +144,7 @@ KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上�
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubeedge/hammer.png" height="20px"> 来找到 kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubeedge/hammer.png" height="20px"> 来找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

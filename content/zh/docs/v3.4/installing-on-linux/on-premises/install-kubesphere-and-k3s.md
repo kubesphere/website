@@ -78,7 +78,7 @@ chmod +x kk
 1. 执行以下命令为集群创建一个配置文件：
 
    ```bash
-   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.3.2
+   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.4.0
    ```
 
    {{< notice note >}}

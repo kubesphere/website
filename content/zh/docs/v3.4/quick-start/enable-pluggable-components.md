@@ -62,7 +62,7 @@ weight: 2600
 
 在已有 Kubernetes 集群上安装 KubeSphere 时，需要部署 [ks-installer](https://github.com/kubesphere/ks-installer/) 的两个 YAML 文件。
 
-1. 首先下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件，然后打开编辑。
+1. 首先下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) 文件，然后打开编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -73,7 +73,7 @@ weight: 2600
 3. 编辑完成后保存文件，执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -102,7 +102,7 @@ weight: 2600
 
 4. 在该配置文件中，将对应组件 `enabled` 的 `false` 更改为 `true`，以启用要安装的组件。完成后，点击**确定**以保存配置。
 
-    ![启用组件](/images/docs/v3.3/zh-cn/quickstart/enable-pluggable-components/启用组件.png)
+    ![启用组件](/images/docs/v3.x/zh-cn/quickstart/enable-pluggable-components/启用组件.png)
 
 5. 执行以下命令，使用 Web kubectl 来检查安装过程：
 

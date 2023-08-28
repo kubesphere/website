@@ -24,7 +24,7 @@ This tutorial demonstrates how to use web kubectl to operate on and manage clust
     kubectl get pvc --all-namespaces
     ```
 
-    ![web-kubectl-example](/images/docs/v3.3/web-kubectl/web-kubectl-example.png)
+    ![web-kubectl-example](/images/docs/v3.x/web-kubectl/web-kubectl-example.png)
 
 4. Use the following syntax to run kubectl commands from your terminal window:
 

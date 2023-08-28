@@ -36,7 +36,7 @@ This tutorial walks you through an example of deploying Tomcat from the App Stor
 
 3. You can view deployed projects in `/usr/local/tomcat/webapps`.
 
-   ![view-project](/images/docs/v3.3/appstore/built-in-apps/tomcat-app/view-project.png)
+   ![view-project](/images/docs/v3.x/appstore/built-in-apps/tomcat-app/view-project.png)
 
 ### Step 3: Access a Tomcat project from your browser
 
@@ -52,7 +52,7 @@ To access a Tomcat project outside the cluster, you need to expose the app throu
 
 5. Access the sample Tomcat project through `<NodeIP>:<NodePort>/sample` in your browser. 
 
-   ![access-tomcat-browser](/images/docs/v3.3/appstore/built-in-apps/tomcat-app/access-tomcat-browser.png)
+   ![access-tomcat-browser](/images/docs/v3.x/appstore/built-in-apps/tomcat-app/access-tomcat-browser.png)
 
    {{< notice note >}}
 

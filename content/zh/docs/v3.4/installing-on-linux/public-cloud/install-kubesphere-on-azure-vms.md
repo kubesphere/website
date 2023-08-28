@@ -30,7 +30,7 @@ Weight: 3410
 
 六台 **Ubuntu 18.04** 的机器会被部署至 Azure 资源组中。其中三台机器会分至同一个可用性集，同时充当主节点和 etcd 节点。其他三个虚拟机会被定义为 VMSS，工作节点将在其中运行。
 
-![Architecture](/images/docs/v3.3/aks/Azure-architecture.png)
+![Architecture](/images/docs/v3.x/aks/Azure-architecture.png)
 
 这些虚拟机将连接至负载均衡器，其中两个包含预定义规则：
 
@@ -61,7 +61,7 @@ Weight: 3410
 
 4. 复制您的 SSH 公钥至 **Admin Key** 中。或者，使用 `ssh-keygen` 创建一个新的密钥。
 
-   ![azure-template-parameters](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
+   ![azure-template-parameters](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
 
    {{< notice note >}}
 
@@ -75,7 +75,7 @@ Linux 只接受 SSH 验证，密码身份验证在其配置中受限。
 
 创建成功后，所有资源会显示在 `KubeSphereVMRG` 资源组中。记录负载均衡器的公用 IP 和虚拟机的私有 IP 地址，以备后续使用。
 
-![New Created Resources](/images/docs/v3.3/aks/azure-vm-all-resources.png)
+![New Created Resources](/images/docs/v3.x/aks/azure-vm-all-resources.png)
 
 ## 部署 Kubernetes 和 KubeSphere
 
@@ -148,12 +148,12 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
 1. 使用默认配置创建示例配置文件，这里以 Kubernetes v1.22.12 为例。
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12
+   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12
    ```
 
    {{< notice note >}}
 
-- KubeSphere 3.3 对应 Kubernetes 版本推荐：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果未指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关支持的 Kubernetes 版本请参阅[支持矩阵](../../../installing-on-linux/introduction/kubekey/#support-matrix)。
+- KubeSphere 3.4 对应 Kubernetes 版本推荐：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果未指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关支持的 Kubernetes 版本请参阅[支持矩阵](../../../installing-on-linux/introduction/kubekey/#support-matrix)。
 - 如果在此步骤中的命令中未添加标志 `--with-kubesphere`，则不会部署 KubeSphere，除非您使用配置文件中的 `addons` 字段进行安装，或稍后使用 `./kk create cluster` 时再次添加此标志。
 
 - 如果在未指定 KubeSphere 版本的情况下添加标志 --with kubesphere`，将安装 KubeSphere 的最新版本。
@@ -265,9 +265,9 @@ Azure 虚拟网络不支持 [Calico](https://docs.projectcalico.org/reference/pu
 
 1. 在负载均衡器中创建新的负载均衡规则。
 
-   ![Load Balancer](/images/docs/v3.3/aks/azure-vm-loadbalancer-rule.png)
+   ![Load Balancer](/images/docs/v3.x/aks/azure-vm-loadbalancer-rule.png)
 
 2. 在网络安全组中创建入站安全规则以允许外网访问。
 
-   ![Firewall](/images/docs/v3.3/aks/azure-vm-firewall.png)
+   ![Firewall](/images/docs/v3.x/aks/azure-vm-firewall.png)
 

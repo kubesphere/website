@@ -59,9 +59,9 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件中启用事件系统。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) 文件中启用事件系统。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件，然后打开并开始编辑。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) 文件，然后打开并开始编辑。
 
     ```bash
     vi cluster-configuration.yaml
@@ -93,7 +93,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -110,7 +110,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
 {{</ notice >}}
 
-3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px">，选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubesphere-events/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该配置文件中，搜索 `events`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**，保存配置。
 
@@ -144,7 +144,7 @@ KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如
 
     {{< notice note >}}
 
-您可以通过点击控制台右下角的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> 找到 kubectl 工具。
+您可以通过点击控制台右下角的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/kubesphere-events/hammer.png" height="20px"> 找到 kubectl 工具。
 
 {{</ notice >}}
 

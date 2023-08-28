@@ -57,6 +57,6 @@ This tutorial demonstrates how to deploy RadonDB PostgreSQL from the App Store o
    psql -h <Pod name> -p 5432 -U postgres -d postgres
    ```
 
-   ![Access RadonDB PostgreSQL](/images/docs/v3.3/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-service-terminal.png)
+   ![Access RadonDB PostgreSQL](/images/docs/v3.x/appstore/built-in-apps/radondb-postgresql-app/radondb-postgresql-service-terminal.png)
 
 4. If you want to access RadonDB PostgreSQL outside the cluster, see [the open-source project of RadonDB PostgreSQL](https://github.com/radondb/radondb-postgresql-kubernetes) in detail.

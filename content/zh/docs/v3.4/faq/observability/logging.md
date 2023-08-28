@@ -87,7 +87,7 @@ KubeSphere 暂不支持启用 X-Pack Security 的 Elasticsearch 集成，此功�
 
 ## 如何设置审计、事件、日志及 Istio 日志信息的保留期限
 
-KubeSphere v3.3 还支持您设置日志、审计、事件及 Istio 日志信息的保留期限。
+KubeSphere v3.4 还支持您设置日志、审计、事件及 Istio 日志信息的保留期限。
 
 您需要更新 KubeKey 配置并重新运行 `ks-installer`。
 

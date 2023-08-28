@@ -10,7 +10,7 @@ weight: 2500
 
 WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，用户可以使用 WordPress 搭建自己的网站。完整的 WordPress 应用程序包括以下 Kubernetes 对象，由 MySQL 作为后端数据库。
 
-![WordPress](/images/docs/v3.3/zh-cn/quickstart/wordpress-deployment/WordPress.png)
+![WordPress](/images/docs/v3.x/zh-cn/quickstart/wordpress-deployment/WordPress.png)
 
 ## 目的
 
@@ -130,7 +130,7 @@ WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，
 
 4. 通过 `{Node IP}:{NodePort}` 访问此应用程序，可以看到下图：
 
-   ![wordpress-page](/images/docs/v3.3/zh-cn/quickstart/wordpress-deployment/wordpress-page.png)
+   ![wordpress-page](/images/docs/v3.x/zh-cn/quickstart/wordpress-deployment/wordpress-page.png)
 
    {{< notice note >}}
    在访问服务之前，请确保安全组中的端口已打开。

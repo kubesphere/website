@@ -21,7 +21,7 @@ You can remove a cluster by using either of the following methods:
 
 1. Click **Platform** in the upper-left corner and select **Cluster Management**.
 
-2. In the **Member Clusters** area, click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the the cluster that you want to remove from the control plane, and then click **Remove Cluster**.
+2. In the **Member Clusters** area, click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the the cluster that you want to remove from the control plane, and then click **Remove Cluster**.
 
 3. In the **Remove Cluster** dialog box that is displayed, read the risk alert carefully. If you still want to proceed, enter the name of the member cluster, and click **OK**.
 

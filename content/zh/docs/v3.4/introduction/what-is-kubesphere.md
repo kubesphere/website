@@ -14,7 +14,7 @@ weight: 1100
 
 KubeSphere 还开源了 [KubeKey](https://github.com/kubesphere/kubekey) 帮助企业一键在公有云或数据中心快速搭建 Kubernetes 集群，提供单节点、多节点、集群插件安装，以及集群升级与运维。
 
-![功能概览](/images/docs/v3.3/zh-cn/introduction/what-is-kubesphere/kubesphere-feature-overview.jpeg)
+![功能概览](/images/docs/v3.x/zh-cn/introduction/what-is-kubesphere/kubesphere-feature-overview.jpeg)
 
 ## 开发运维友好
 
@@ -36,4 +36,4 @@ KubeSphere 可以在不修改用户当前的资源或资产、不影响其业务
 
 KubeSphere 是 CNCF 基金会成员并且通过了 [Kubernetes 一致性认证](https://www.cncf.io/certification/software-conformance/#logos)，进一步丰富了 [CNCF 云原生的生态](https://landscape.cncf.io/?landscape=observability-and-analysis&license=apache-license-2-0)。
 
-![cncf-landscape](/images/docs/v3.3/zh-cn/introduction/what-is-kubesphere/cncf-landscape.png)
+![cncf-landscape](/images/docs/v3.x/zh-cn/introduction/what-is-kubesphere/cncf-landscape.png)

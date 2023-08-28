@@ -16,7 +16,7 @@ weight: 11430
 
 As is shown in the graph below, there is the workflow for a Maven project in KubeSphere DevOps, which uses a Jenkins pipeline to build and deploy the Maven project. All steps are defined in the pipeline.
 
-![maven-project-jenkins](/images/docs/v3.3/devops-user-guide/examples/build-and-deploy-a-maven-project/maven-project-jenkins.png)
+![maven-project-jenkins](/images/docs/v3.x/devops-user-guide/examples/build-and-deploy-a-maven-project/maven-project-jenkins.png)
 
 At first, the Jenkins Master creates a Pod to run the pipeline. Kubernetes creates the Pod as the agent of Jenkins Master, and the Pod will be destroyed after the pipeline finished. The main process includes cloning code, building and pushing an image, and deploying the workload.
 

@@ -8,4 +8,4 @@ Weight: 16510
 
 KubeSphere Web 控制台支持多种主流浏览器，包括 Chrome、Firefox、Safari 浏览器、Opera 和 Microsoft Edge。您需要使用以下表格内绿色框中的浏览器版本以访问 KubeSphere Web 控制台。
 
-![console-browser](/images/docs/v3.3/faq/kubesphere-web-console/supported-browsers/console-browser.png)
+![console-browser](/images/docs/v3.x/faq/kubesphere-web-console/supported-browsers/console-browser.png)

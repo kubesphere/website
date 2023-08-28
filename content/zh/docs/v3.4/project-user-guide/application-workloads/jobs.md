@@ -115,7 +115,7 @@ weight: 10250
 
     {{< notice tip >}}如果任务失败，您可以重新运行该任务，失败原因显示在**消息**下。{{</ notice >}}
 
-3. 在**资源状态**中，您可以查看容器组状态。先前将**并行容器组数量**设置为 2，因此每次会创建两个容器组。点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/jobs/down-arrow.png" width="20px" alt="icon" />，然后点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/jobs/container-log-icon.png" width="20px" alt="icon" /> 查看容器日志，该日志显示了预期的计算结果。
+3. 在**资源状态**中，您可以查看容器组状态。先前将**并行容器组数量**设置为 2，因此每次会创建两个容器组。点击右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/jobs/down-arrow.png" width="20px" alt="icon" />，然后点击 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/jobs/container-log-icon.png" width="20px" alt="icon" /> 查看容器日志，该日志显示了预期的计算结果。
 
     {{< notice tip >}}
 
@@ -141,13 +141,13 @@ weight: 10250
 
 1. 点击**任务记录**选项卡查看任务的执行记录。
 
-2. 点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新执行记录。
+2. 点击 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新执行记录。
 
 ### 资源状态
 
 1. 点击**资源状态**选项卡查看任务的容器组。
 
-2. 点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新容器组信息，点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> 显示或隐藏每个容器组中的容器。
+2. 点击 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/jobs/refresh.png" width="20px" /> 刷新容器组信息，点击 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/jobs/display.png" width="20px" />/<img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/jobs/hide.png" width="20px" /> 显示或隐藏每个容器组中的容器。
 
 ### 元数据
 

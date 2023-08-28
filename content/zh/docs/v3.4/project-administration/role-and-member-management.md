@@ -62,18 +62,18 @@ weight: 13200
 
 {{</ notice >}}
 
-4. 新创建的角色将在**项目角色**中列出，点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色。
+4. 新创建的角色将在**项目角色**中列出，点击右侧的 <img src="/images/docs/v3.x/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色。
 
 
 ## 邀请新成员
 
 1. 转到**项目设置**下的**项目成员**，点击**邀请**。
 
-2. 点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-administration/role-and-member-management/add.png" height="20px"> 以邀请一名成员加入项目，并为其分配一个角色。
+2. 点击右侧的 <img src="/images/docs/v3.x/zh-cn/project-administration/role-and-member-management/add.png" height="20px"> 以邀请一名成员加入项目，并为其分配一个角色。
 
 3. 将成员加入项目后，点击**确定**。您可以在**项目成员**列表中查看新邀请的成员。
 
-4. 若要编辑现有成员的角色或将其从项目中移除，点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 并选择对应的操作。
+4. 若要编辑现有成员的角色或将其从项目中移除，点击右侧的 <img src="/images/docs/v3.x/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 并选择对应的操作。
 
     
 

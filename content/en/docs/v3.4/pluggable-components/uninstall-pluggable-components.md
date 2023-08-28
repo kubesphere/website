@@ -122,7 +122,7 @@ Change the value of `openpitrix.store.enabled` from `true` to `false` in `ks-ins
 
    {{< notice note >}}
 
-   Notification is installed in KubeSphere 3.3 by default, so you do not need to uninstall it.
+   Notification is installed in KubeSphere 3.4 by default, so you do not need to uninstall it.
 
    {{</ notice >}} 
 

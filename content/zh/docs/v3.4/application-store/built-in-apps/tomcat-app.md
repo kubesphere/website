@@ -53,7 +53,7 @@ weight: 14292
 
 5. 在浏览器中用 `<NodeIP>:<NodePort>/sample` 地址访问 Tomcat 示例项目。
 
-   ![access-tomcat-browser](/images/docs/v3.3/zh-cn/appstore/built-in-apps/tomcat-app/access-tomcat-browser.png)
+   ![access-tomcat-browser](/images/docs/v3.x/zh-cn/appstore/built-in-apps/tomcat-app/access-tomcat-browser.png)
 
    {{< notice note >}}
 

@@ -29,7 +29,7 @@ Besides these VMs, other resources like Load Balancer, Virtual Network and Netwo
 
 Six machines of **Ubuntu 18.04** will be deployed in an Azure Resource Group. Three of them are grouped into an availability set, serving as both the control plane and etcd nodes. The other three VMs will be defined as a VMSS where Worker nodes will be running.
 
-![Architecture](/images/docs/v3.3/aks/Azure-architecture.png)
+![Architecture](/images/docs/v3.x/aks/Azure-architecture.png)
 
 These VMs will be attached to a load balancer. There are two predefined rules in the load balancer:
 
@@ -60,7 +60,7 @@ You don't have to create these resources one by one. According to the best pract
 
 4. Copy your public SSH key for the field **Admin Key**. Alternatively, create a new one with `ssh-keygen`.
 
-   ![azure-template-parameters](/images/docs/v3.3/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
+   ![azure-template-parameters](/images/docs/v3.x/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-azure-vms/azure-template-parameters.png)
 
    {{< notice note >}}
 
@@ -74,7 +74,7 @@ Password authentication is restricted in Linux configurations. Only SSH is accep
 
 After successfully created, all the resources will display in the resource group `KubeSphereVMRG`. Record the public IP of the load balancer and the private IP addresses of the VMs. You will need them later.
 
-![New Created Resources](/images/docs/v3.3/aks/azure-vm-all-resources.png)
+![New Created Resources](/images/docs/v3.x/aks/azure-vm-all-resources.png)
 
 ## Deploy Kubernetes and KubeSphere
 
@@ -145,12 +145,12 @@ The commands above download the latest release of KubeKey. You can change the ve
 1. Create an example configuration file with default configurations. Here Kubernetes v1.22.12 is used as an example.
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12
+   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12
    ```
 
    {{< notice note >}}
 
-- Recommended Kubernetes versions for KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+- Recommended Kubernetes versions for KubeSphere 3.4: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
 - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
 - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.
@@ -259,6 +259,6 @@ Azure Virtual Network doesn't support the IPIP mode used by [Calico](https://doc
 As the Kubernetes cluster is set up on Azure instances directly, the load balancer is not integrated with [Kubernetes Services](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). However, you can still manually map the NodePort to the load balancer. There are 2 steps required.
 
 1. Create a new Load Balance Rule in the load balancer.
-   ![Load Balancer](/images/docs/v3.3/aks/azure-vm-loadbalancer-rule.png)
+   ![Load Balancer](/images/docs/v3.x/aks/azure-vm-loadbalancer-rule.png)
 2. Create an Inbound Security rule to allow Internet access in the Network Security Group.
-   ![Firewall](/images/docs/v3.3/aks/azure-vm-firewall.png)
+   ![Firewall](/images/docs/v3.x/aks/azure-vm-firewall.png)

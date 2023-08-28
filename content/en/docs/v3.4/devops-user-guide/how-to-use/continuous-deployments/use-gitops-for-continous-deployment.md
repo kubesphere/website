@@ -6,7 +6,7 @@ linkTitle: "Use GitOps to Achieve Continuous Deployment of Applications"
 weight: 11221
 ---
 
-In KubeSphere 3.3, we introduce the GitOps concept, which is a way of implementing continuous deployment for cloud-native applications. The core component of GitOps is a Git repository that always stores applications and declarative description of the infrastructure for version control. With GitOps and Kubernetes, you can enable CI/CD pipelines to apply changes to any cluster, which ensures consistency in cross-cloud deployment scenarios.
+In KubeSphere 3.4, we introduce the GitOps concept, which is a way of implementing continuous deployment for cloud-native applications. The core component of GitOps is a Git repository that always stores applications and declarative description of the infrastructure for version control. With GitOps and Kubernetes, you can enable CI/CD pipelines to apply changes to any cluster, which ensures consistency in cross-cloud deployment scenarios.
 
 This section walks you through the process of deploying an application using a continuous deployment.
 ## Prerequisites
@@ -374,7 +374,7 @@ This section walks you through the process of deploying an application using a c
     </tbody>
     </table>
 
-2. Click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the continuous deployment, and you can perform the following:
+2. Click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the continuous deployment, and you can perform the following:
     - **Edit Information**: edits the alias and description.
     - **Edit YAML**: edits the YAML file.
     - **Sync**: triggers resources synchronization.
@@ -393,7 +393,7 @@ This section walks you through the process of deploying an application using a c
 
 1. Go to the project where the continuous deployment resides, in the left-side navigation pane, click **Services**.
 
-2. On the **Services** page on the left, click  <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the deployed application, and click **Edit External Access**.
+2. On the **Services** page on the left, click  <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right of the deployed application, and click **Edit External Access**.
 
 3. In **Access Mode**, select **NodePort**, and click **OK**.
 

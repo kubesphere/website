@@ -24,7 +24,7 @@ The isolation of physical resources includes nodes and networks, while it also r
 
 To solve the issues above, KubeSphere provides a multi-tenant management solution based on Kubernetes.
 
-![multi-tenancy-architecture](/images/docs/v3.3/access-control-and-account-management/multi-tanancy-in-kubesphere/multi-tenancy-architecture.png)
+![multi-tenancy-architecture](/images/docs/v3.x/access-control-and-account-management/multi-tanancy-in-kubesphere/multi-tenancy-architecture.png)
 
 In KubeSphere, the [workspace](../../workspace-administration/what-is-workspace/) is the smallest tenant unit. A workspace enables users to share resources across clusters and projects. Workspace members can create projects in an authorized cluster and invite other members to cooperate in the same project.
 
@@ -38,9 +38,9 @@ Similar to Kubernetes, KubeSphere uses RBAC to manage permissions granted to use
 
 The access control in KubeSphere is divided into three levels: platform, workspace and project. You use roles to control what permissions users have at different levels for different resources.
 
-1. [Platform roles](/docs/v3.3/quick-start/create-workspace-and-project/): Control what permissions platform users have for platform resources, such as clusters, workspaces and platform members.
-2. [Workspace roles](/docs/v3.3/workspace-administration/role-and-member-management/): Control what permissions workspace members have for workspace resources, such as projects (i.e. namespaces) and DevOps projects.
-3. [Project roles](/docs/v3.3/project-administration/role-and-member-management/): Control what permissions project members have for project resources, such as workloads and pipelines.
+1. [Platform roles](/docs/v3.4/quick-start/create-workspace-and-project/): Control what permissions platform users have for platform resources, such as clusters, workspaces and platform members.
+2. [Workspace roles](/docs/v3.4/workspace-administration/role-and-member-management/): Control what permissions workspace members have for workspace resources, such as projects (i.e. namespaces) and DevOps projects.
+3. [Project roles](/docs/v3.4/project-administration/role-and-member-management/): Control what permissions project members have for project resources, such as workloads and pipelines.
 
 ### Network isolation
 
@@ -54,4 +54,4 @@ KubeSphere also provides [auditing logs](../../pluggable-components/auditing-log
 
 For a complete authentication and authorization chain in KubeSphere, see the following diagram. KubeSphere has expanded RBAC rules using the Open Policy Agent (OPA). The KubeSphere team looks to integrate [Gatekeeper](https://github.com/open-policy-agent/gatekeeper) to provide more security management policies.
 
-![request-chain](/images/docs/v3.3/access-control-and-account-management/multi-tanancy-in-kubesphere/request-chain.jpg)
+![request-chain](/images/docs/v3.x/access-control-and-account-management/multi-tanancy-in-kubesphere/request-chain.jpg)

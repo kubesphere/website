@@ -50,7 +50,7 @@ weight: 14270
 
 5. 通过 `<NodeIP>:<NodePort>` 访问 NGINX。
 
-   ![访问 Nginx](/images/docs/v3.3/zh-cn/appstore/built-in-apps/nginx-app/access-nginx-12.PNG)
+   ![访问 Nginx](/images/docs/v3.x/zh-cn/appstore/built-in-apps/nginx-app/access-nginx-12.PNG)
 
    {{< notice note >}}
 

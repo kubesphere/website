@@ -132,7 +132,7 @@ After the app is approved, `isv` can release the Redis application to the App St
 
 `app-reviewer` can create multiple categories for different types of applications based on their function and usage. It is similar to setting tags and categories can be used in the App Store as filters, such as Big Data, Middleware, and IoT.
 
-1. Log in to KubeSphere as `app-reviewer`. To create a category, go to the **App Store Management** page and click <img src="/images/docs/v3.3/appstore/application-lifecycle-management/plus.png" height="20px"> in **App Categories**.
+1. Log in to KubeSphere as `app-reviewer`. To create a category, go to the **App Store Management** page and click <img src="/images/docs/v3.x/appstore/application-lifecycle-management/plus.png" height="20px"> in **App Categories**.
 
 2. Set a name and icon for the category in the dialog, then click **OK**. For Redis, you can enter `Database` for the field **Name**.
 

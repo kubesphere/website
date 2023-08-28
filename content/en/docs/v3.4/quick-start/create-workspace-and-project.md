@@ -101,7 +101,7 @@ After KubeSphere is installed, you need to add different users with varied roles
 
    {{< notice note >}}
 
-   You can click the <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" /> icon on the right of the username to enable or disable the user. Additionally, you can batch disable and enable users.
+   You can click the <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" /> icon on the right of the username to enable or disable the user. Additionally, you can batch disable and enable users.
 
    {{</ notice >}} 
 ### Step 2: Create a workspace
@@ -215,7 +215,7 @@ After you finish the above steps, you know that users can be granted different r
 
    {{</ notice >}}
 
-5. On the **Platform Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/v3.3/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" alt="icon" align="center"> to edit the role, edit the role permissions, or delete the role.
+5. On the **Platform Roles** page, you can click the name of the created role to view the role details and click <img src="/images/docs/v3.x/quickstart/create-workspaces-projects-accounts/operation-icon.png" width="20px" alt="icon" align="center"> to edit the role, edit the role permissions, or delete the role.
 
 6. On the **Users** page, you can assign the role to a user when you create a user or edit an existing user.
 

@@ -26,7 +26,7 @@ weight: 11450
 
 ### 步骤 1：获得 Nexus 上的仓库 URL
 
-1. 用 `admin` 帐户登录 Nexus 控制台，然后在顶部导航栏点击 <img src="/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" />。
+1. 用 `admin` 帐户登录 Nexus 控制台，然后在顶部导航栏点击 <img src="/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" />。
 
 2. 转到**仓库**页面，您可以看到 Nexus 提供了三种仓库类型。
 
@@ -44,9 +44,9 @@ weight: 11450
 
 2. 在您的 **learn-pipline-java** GitHub 仓库中，点击根目录下的文件 `pom.xml`。
 
-3. 在文件中点击 <img src="/images/docs/v3.3/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" alt="icon"  /> 以修改 `<distributionManagement>` 代码片段。设置 `<id>` 并使用您的 Nexus 仓库的 URL。
+3. 在文件中点击 <img src="/images/docs/v3.x/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" alt="icon"  /> 以修改 `<distributionManagement>` 代码片段。设置 `<id>` 并使用您的 Nexus 仓库的 URL。
 
-   ![modify-pom](/images/docs/v3.3/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
+   ![modify-pom](/images/docs/v3.x/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
 
 4. 当您完成以上步骤，点击页面下方的 **Commit changes**。
 
@@ -70,7 +70,7 @@ weight: 11450
    </servers>
    ```
 
-   ![enter-server-code](/images/docs/v3.3/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/enter-server-code.png)
+   ![enter-server-code](/images/docs/v3.x/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/enter-server-code.png)
 
    {{< notice note >}}
 
@@ -91,7 +91,7 @@ weight: 11450
    </mirrors>
    ```
 
-   ![enter-mirror-code](/images/docs/v3.3/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/enter-mirror-code.png)
+   ![enter-mirror-code](/images/docs/v3.x/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/enter-mirror-code.png)
 
    {{< notice note >}}
 
@@ -164,11 +164,11 @@ weight: 11450
 
 4. 登录 Nexus 点击**浏览**。点击 **maven-public**，可以看到已经下载所有依赖。
 
-   ![maven-public](/images/docs/v3.3/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/maven-public.png)
+   ![maven-public](/images/docs/v3.x/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/maven-public.png)
 
 5. 回到 **Browse** 页面，点击 **maven-sanpshots**。可以看到所有 JAR 包已经上传至仓库。
 
-   ![maven-snapshots](/images/docs/v3.3/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/maven-snapshots.png)
+   ![maven-snapshots](/images/docs/v3.x/zh-cn/devops-user-guide/examples/use-nexus-in-pipeline/maven-snapshots.png)
 
 
 

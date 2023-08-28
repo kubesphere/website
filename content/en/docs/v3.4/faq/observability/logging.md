@@ -86,7 +86,7 @@ Currently, KubeSphere doesn't support the integration of Elasticsearch with X-Pa
 
 ## How to set the data retention period of logs, events, auditing logs, and Istio logs
 
-Before KubeSphere 3.3, you can only set the retention period of logs, which is 7 days by default. In KubeSphere 3.3, apart from logs, you can also set the data retention period of events, auditing logs, and Istio logs.
+Before KubeSphere 3.4, you can only set the retention period of logs, which is 7 days by default. In KubeSphere 3.4, apart from logs, you can also set the data retention period of events, auditing logs, and Istio logs.
 
 You need to update the KubeKey configuration and rerun `ks-installer`.
 

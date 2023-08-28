@@ -18,7 +18,7 @@ Weight: 16520
 
 ## 编辑控制台配置
 
-1. 以 `admin` 用户登录 KubeSphere，点击右下角的 <img src="/images/docs/v3.3/common-icons/hammer.png" height="25" width="25" />，然后选择 **Kubectl**。
+1. 以 `admin` 用户登录 KubeSphere，点击右下角的 <img src="/images/docs/v3.x/common-icons/hammer.png" height="25" width="25" />，然后选择 **Kubectl**。
 
 2. 执行如下命令：
 
@@ -31,9 +31,9 @@ Weight: 16520
    ```yaml
    client:
      version:
-       kubesphere: v3.3.2
+       kubesphere: v3.4.0
        kubernetes: v1.22.12
-       openpitrix: v3.3.2
+       openpitrix: v3.4.0
      enableKubeConfig: true
      systemWorkspace: "$"  # 请手动添加此行。
    ```

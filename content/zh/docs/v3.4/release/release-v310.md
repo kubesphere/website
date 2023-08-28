@@ -58,7 +58,7 @@ weight: 18200
 
 ### 可观测性
 
-- 优化集成已有 Prometheus 服务对接方式 [#3068](https://github.com/kubesphere/kubesphere/issues/3068) [#1164](https://github.com/kubesphere/ks-installer/pull/1164) [Guide](/docs/v3.3/faq/observability/byop/)
+- 优化集成已有 Prometheus 服务对接方式 [#3068](https://github.com/kubesphere/kubesphere/issues/3068) [#1164](https://github.com/kubesphere/ks-installer/pull/1164) [Guide](/docs/v3.4/faq/observability/byop/)
 - 新增 Thanos Ruler (Thanos v0.18.0) 用于新版告警
 - 升级 Prometheus 至 v2.26.0
 - 升级 Prometheus Operator 至 v0.42.1

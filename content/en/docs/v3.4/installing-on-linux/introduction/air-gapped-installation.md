@@ -118,16 +118,16 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/calico/pod2daemon-flexvol:v3.23.2
      - docker.io/calico/typha:v3.23.2
      - docker.io/kubesphere/flannel:v0.12.0
-     - docker.io/openebs/provisioner-localpv:3.3.0
-     - docker.io/openebs/linux-utils:3.3.0
+     - docker.io/openebs/provisioner-localpv:3.4.0
+     - docker.io/openebs/linux-utils:3.4.0
      - docker.io/library/haproxy:2.3
      - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
      - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
-     - docker.io/kubesphere/ks-installer:v3.3.2
-     - docker.io/kubesphere/ks-apiserver:v3.3.2
-     - docker.io/kubesphere/ks-console:v3.3.2
-     - docker.io/kubesphere/ks-controller-manager:v3.3.2
-     - docker.io/kubesphere/ks-upgrade:v3.3.2
+     - docker.io/kubesphere/ks-installer:v3.4.0
+     - docker.io/kubesphere/ks-apiserver:v3.4.0
+     - docker.io/kubesphere/ks-console:v3.4.0
+     - docker.io/kubesphere/ks-controller-manager:v3.4.0
+     - docker.io/kubesphere/ks-upgrade:v3.4.0
      - docker.io/kubesphere/kubectl:v1.22.0
      - docker.io/kubesphere/kubectl:v1.21.0
      - docker.io/kubesphere/kubectl:v1.20.0
@@ -148,11 +148,11 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/kubeedge/iptables-manager:v1.9.2
      - docker.io/kubesphere/edgeservice:v0.2.0
      - docker.io/openpolicyagent/gatekeeper:v3.5.2
-     - docker.io/kubesphere/openpitrix-jobs:v3.3.2
-     - docker.io/kubesphere/devops-apiserver:ks-v3.3.2
-     - docker.io/kubesphere/devops-controller:ks-v3.3.2
-     - docker.io/kubesphere/devops-tools:ks-v3.3.2
-     - docker.io/kubesphere/ks-jenkins:v3.3.0-2.319.1
+     - docker.io/kubesphere/openpitrix-jobs:v3.4.0
+     - docker.io/kubesphere/devops-apiserver:ks-v3.4.0
+     - docker.io/kubesphere/devops-controller:ks-v3.4.0
+     - docker.io/kubesphere/devops-tools:ks-v3.4.0
+     - docker.io/kubesphere/ks-jenkins:v3.4.0-2.319.1
      - docker.io/jenkins/inbound-agent:4.10-2
      - docker.io/kubesphere/builder-base:v3.2.2
      - docker.io/kubesphere/builder-nodejs:v3.2.0
@@ -307,7 +307,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   ./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:
@@ -500,7 +500,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    
    Method 2: Log in to Harbor and create a project. Set the project to **Public**, so that any user can pull images from this project. For more information, please refer to [Create Projects]( https://goharbor.io/docs/1.10/working-with-projects/create-projects/).
    
-   ![harbor-login](/images/docs/v3.3/appstore/built-in-apps/harbor-app/harbor-login.jpg)
+   ![harbor-login](/images/docs/v3.x/appstore/built-in-apps/harbor-app/harbor-login.jpg)
    
 6. Run the following command again to modify the cluster configuration file：
 
@@ -581,7 +581,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 
 9.  Access KubeSphere's web console at `http://{IP}:30880` using the default account and password `admin/P@88w0rd`.
 
-   ![login](/images/docs/v3.3/installing-on-kubernetes/introduction/overview/login.png)
+   ![login](/images/docs/v3.x/installing-on-kubernetes/introduction/overview/login.png)
 
    {{< notice note >}}
 

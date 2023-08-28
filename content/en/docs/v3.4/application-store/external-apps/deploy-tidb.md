@@ -132,7 +132,7 @@ The process of deploying a TiDB cluster is similar to deploying TiDB Operator.
 
 2. TiDB integrates Prometheus and Grafana to monitor performance of the database cluster. For example, you can access Grafana through `<NodeIP>:<NodePort>` to view metrics.
 
-   ![tidb-grafana](/images/docs/v3.3/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-grafana.PNG)
+   ![tidb-grafana](/images/docs/v3.x/appstore/external-apps/deploy-tidb-operator-and-cluster/tidb-grafana.PNG)
 
    {{< notice note >}}
 

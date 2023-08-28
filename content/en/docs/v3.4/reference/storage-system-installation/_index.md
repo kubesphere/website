@@ -7,6 +7,6 @@ linkTitle: "Storage System Installation"
 
 weight: 17400
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 
 ---

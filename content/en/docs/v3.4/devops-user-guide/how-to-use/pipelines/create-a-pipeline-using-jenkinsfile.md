@@ -65,7 +65,7 @@ There are eight stages as shown below in this example pipeline.
 
 3. You also need to create a GitHub personal access token with the permission as shown in the below image, and then use the generated token to create Account Credentials (for example, `github-token`) for GitHub authentication in your DevOps project. 
 
-   ![github-token-scope](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
+   ![github-token-scope](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png)
 
    {{< notice note >}}
 
@@ -83,7 +83,7 @@ There are eight stages as shown below in this example pipeline.
 
 3. Click the edit icon on the right to edit environment variables.
 
-   ![jenkins-edit-2](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-2.jpg)
+   ![jenkins-edit-2](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-a-jenkinsfile/jenkins-edit-2.jpg)
 
    | Items | Value | Description |
    | :--- | :--- | :--- |
@@ -185,7 +185,7 @@ The account `project-admin` needs to be created in advance since it is the revie
 
    {{< notice note >}}
 
-   - You can click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right side of the pipeline and then select **Copy** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch.
+   - You can click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right side of the pipeline and then select **Copy** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch.
    - The pipeline details page shows **Sync Status**. It reflects the synchronization result between KubeSphere and Jenkins, and you can see the **Successful** icon if the synchronization is successful.  
 
    {{</ notice >}} 
@@ -219,7 +219,7 @@ The account `project-admin` needs to be created in advance since it is the revie
    
    {{< notice note >}}
    
-   In KubeSphere 3.3, if you do not specify a reviewer, the user that can run a pipeline will be able to continue or terminate the pipeline. If you specify a reviewer, the user who created the pipeline and the user specified will be able to continue or terminate the pipeline.
+   In KubeSphere 3.4, if you do not specify a reviewer, the user that can run a pipeline will be able to continue or terminate the pipeline. If you specify a reviewer, the user who created the pipeline and the user specified will be able to continue or terminate the pipeline.
    
    {{</ notice >}}
 

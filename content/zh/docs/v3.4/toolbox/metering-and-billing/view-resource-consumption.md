@@ -17,7 +17,7 @@ KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的
 
 **集群资源消费情况**包含集群（也包括节点）的资源使用情况，如 CPU、内存、存储等。
 
-1. 使用 `admin` 用户登录 KubeSphere Web 控制台，点击右下角的 <img src="/images/docs/v3.3/zh-cn/toolbox/metering-and-billing/view-resource-consumption/toolbox.png" width='20px' alt="icon" />，然后选择**资源消费统计**。
+1. 使用 `admin` 用户登录 KubeSphere Web 控制台，点击右下角的 <img src="/images/docs/v3.x/zh-cn/toolbox/metering-and-billing/view-resource-consumption/toolbox.png" width='20px' alt="icon" />，然后选择**资源消费统计**。
 
 2. 在**集群资源消费情况**一栏，点击**查看消费**。
 
@@ -58,7 +58,7 @@ KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的
 
 **企业空间（项目）资源消费情况**包含企业空间（包括项目）的资源使用情况，如 CPU、内存、存储等。
 
-1. 使用 `admin` 用户登录 KubeSphere Web 控制台，点击右下角的 <img src="/images/docs/v3.3/zh-cn/toolbox/metering-and-billing/view-resource-consumption/toolbox.png" width='20' alt="icon" /> 图标，然后选择**资源消费统计**。
+1. 使用 `admin` 用户登录 KubeSphere Web 控制台，点击右下角的 <img src="/images/docs/v3.x/zh-cn/toolbox/metering-and-billing/view-resource-consumption/toolbox.png" width='20' alt="icon" /> 图标，然后选择**资源消费统计**。
 
 2. 在**企业空间资源消费情况**一栏，点击**查看**。
 

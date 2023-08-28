@@ -21,7 +21,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 
 ### Step 1: Get a Repository URL on Nexus
 
-1. Log in to the Nexus console as `admin` and click <img src="/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" alt="icon" /> on the top navigation bar.
+1. Log in to the Nexus console as `admin` and click <img src="/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/gear.png" height="18px" alt="icon" /> on the top navigation bar.
 
 2. Go to the **Repositories** page and you can see that Nexus provides three types of repository.
 
@@ -37,9 +37,9 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 
 2. In your own GitHub repository of **learn-pipeline-java**, click the file `pom.xml` in the root directory.
 
-3. Click <img src="/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" alt="icon"  /> to modify the code segment of `<distributionManagement>` in the file. Set the `<id>` and use the URLs of your own Nexus repositories. 
+3. Click <img src="/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/github-edit-icon.png" height="18px" alt="icon"  /> to modify the code segment of `<distributionManagement>` in the file. Set the `<id>` and use the URLs of your own Nexus repositories. 
 
-   ![modify-pom](/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
+   ![modify-pom](/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/modify-pom.png)
 
 4. When you finish, click **Commit changes** at the bottom of the page.
 
@@ -63,7 +63,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
    </servers>
    ```
 
-   ![enter-server-code](/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/enter-server-code.png)
+   ![enter-server-code](/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/enter-server-code.png)
 
    {{< notice note >}}
 
@@ -84,7 +84,7 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
    </mirrors>
    ```
 
-   ![enter-mirror-code](/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/enter-mirror-code.png)
+   ![enter-mirror-code](/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/enter-mirror-code.png)
 
    {{< notice note >}}
 
@@ -160,11 +160,11 @@ This tutorial demonstrates how to use Nexus in pipelines on KubeSphere.
 
 4. Log in to Nexus and click **Browse**. Click **maven-public** and you can see all the dependencies have been downloaded.
 
-   ![maven-public](/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/maven-public.png)
+   ![maven-public](/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/maven-public.png)
 
 5. Go back to the **Browse** page and click **maven-snapshots**. You can see the JAR package has been uploaded to the repository.
 
-   ![maven-snapshots](/images/docs/v3.3/devops-user-guide/examples/use-nexus-in-pipeline/maven-snapshots.png)
+   ![maven-snapshots](/images/docs/v3.x/devops-user-guide/examples/use-nexus-in-pipeline/maven-snapshots.png)
 
 
 

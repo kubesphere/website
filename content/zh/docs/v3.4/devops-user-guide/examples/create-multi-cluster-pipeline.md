@@ -22,7 +22,7 @@ weight: 11440
 
 本教程使用三个集群作为工作流中三个独立的环境。如下图所示：
 
-![use-case-for-multi-cluster](/images/docs/v3.3/devops-user-guide/examples/create-multi-cluster-pipeline/use-case-for-multi-cluster.png)
+![use-case-for-multi-cluster](/images/docs/v3.x/devops-user-guide/examples/create-multi-cluster-pipeline/use-case-for-multi-cluster.png)
 
 三个集群分别用于开发，测试和生产。当代码被提交至 Git 仓库，就会触发流水线并执行以下几个阶段 — `单元测试`，`SonarQube 分析`，`构建 & 推送` 和 `部署到开发集群`。开发者使用开发集群进行自我测试和验证。当开发者批准后，流水线就会进入到下一个阶段 `部署到测试集群` 进行更严格的验证。最后，流水线在获得必要的批准之后，将会进入下一个阶段 `部署到生产集群`，并向外提供服务。
 
@@ -40,7 +40,7 @@ weight: 11440
 
 {{< notice note >}}
 
-这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere 3.3 推荐的 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
+这些 Kubernetes 集群可以被托管至不同的云厂商，也可以使用不同的 Kubernetes 版本。针对 KubeSphere 3.4 推荐的 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。
 
 {{</ notice >}}
 

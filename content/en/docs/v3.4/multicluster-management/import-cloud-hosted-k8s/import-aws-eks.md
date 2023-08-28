@@ -37,7 +37,7 @@ You need to deploy KubeSphere on your EKS cluster first. For more information ab
 
 3. Go to **CRDs**, enter `ClusterConfiguration` in the search bar, and then press **Enter** on your keyboard. Click **ClusterConfiguration** to go to its detail page.
 
-4. Click <img src="/images/docs/v3.3/multicluster-management/import-cloud-hosted-k8s/import-eks/three-dots.png" height="20px" v> on the right and then select **Edit YAML** to edit `ks-installer`. 
+4. Click <img src="/images/docs/v3.x/multicluster-management/import-cloud-hosted-k8s/import-eks/three-dots.png" height="20px" v> on the right and then select **Edit YAML** to edit `ks-installer`. 
 
 5. In the YAML file of `ks-installer`, change the value of `jwtSecret` to the corresponding value shown above and set the value of `clusterRole` to `member`. Click **Update** to save your changes.
 

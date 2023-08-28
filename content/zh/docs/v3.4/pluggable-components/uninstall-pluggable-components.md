@@ -121,7 +121,7 @@ kubectl -n kubesphere-system edit clusterconfiguration ks-installer
 
    {{< notice note >}}
 
-   KubeSphere 3.3 通知系统为默认安装，您无需卸载。
+   KubeSphere 3.4 通知系统为默认安装，您无需卸载。
 
    {{</ notice >}} 
 

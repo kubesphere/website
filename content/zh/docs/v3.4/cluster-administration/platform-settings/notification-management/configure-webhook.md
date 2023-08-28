@@ -47,7 +47,7 @@ Webhook 是应用程序发送由特定事件触发的通知的一种方式，可
 
    {{</ notice >}} 
 
-6. 点击**添加**来添加通知条件，也可以点击通知条件右侧的 <img src="/images/docs/v3.3/common-icons/trashcan.png" width='25' height='25' alt="icon" /> 来删除条件。
+6. 点击**添加**来添加通知条件，也可以点击通知条件右侧的 <img src="/images/docs/v3.x/common-icons/trashcan.png" width='25' height='25' alt="icon" /> 来删除条件。
 
 7. 配置完成后，可以点击**发送测试信息**进行验证。
 

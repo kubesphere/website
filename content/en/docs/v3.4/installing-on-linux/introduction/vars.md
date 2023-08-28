@@ -111,7 +111,7 @@ The below table describes the above parameters in detail.
    </tr>
    <tr>
      <td><code>privateRegistry</code>*</td>
-     <td>Configure a private image registry for air-gapped installation (for example, a Docker local registry or Harbor). For more information, see {{< contentLink "docs/v3.3/installing-on-linux/introduction/air-gapped-installation/" "Air-gapped Installation on Linux" >}}.</td>
+     <td>Configure a private image registry for air-gapped installation (for example, a Docker local registry or Harbor). For more information, see {{< contentLink "docs/v3.4/installing-on-linux/introduction/air-gapped-installation/" "Air-gapped Installation on Linux" >}}.</td>
    </tr> 
    </tbody>
    </table>

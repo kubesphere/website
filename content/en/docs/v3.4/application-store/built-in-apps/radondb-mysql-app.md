@@ -45,6 +45,6 @@ We recommend you to use the latest version of RadonDB MySQL. For deployment inst
 
 3. In the pop-up window, enter commands in the terminal directly to use the app.
 
-   ![Access RadonDB MySQL](/images/docs/v3.3/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service-terminal.png)
+   ![Access RadonDB MySQL](/images/docs/v3.x/appstore/built-in-apps/radondb-mysql-app/radondb-mysql-service-terminal.png)
 
 4. If you want to access RadonDB MySQL outside the cluster, see [the open-source project of RadonDB MySQL](https://github.com/radondb/radondb-mysql-kubernetes) in detail.

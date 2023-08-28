@@ -6,7 +6,7 @@ layout: "single"
 linkTitle: "关闭和重启集群"
 weight: 89000
 
-icon: "/images/docs/v3.3/docs.svg"
+icon: "/images/docs/v3.x/docs.svg"
 ---
 
 您可能需要临时关闭集群进行维护。本文介绍平稳关闭集群的流程以及如何重新启动集群。

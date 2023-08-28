@@ -112,7 +112,7 @@ weight: 3160
    </tr>
    <tr>
      <td><code>privateRegistry</code>*</td>
-     <td>配置私有镜像仓库，用于离线安装（例如，Docker 本地仓库或 Harbor）。有关详细信息，请参阅{{< contentLink "docs/v3.3/installing-on-linux/introduction/air-gapped-installation/" "离线安装" >}}。</td>
+     <td>配置私有镜像仓库，用于离线安装（例如，Docker 本地仓库或 Harbor）。有关详细信息，请参阅{{< contentLink "docs/v3.4/installing-on-linux/introduction/air-gapped-installation/" "离线安装" >}}。</td>
    </tr> 
    </tbody>
    </table>

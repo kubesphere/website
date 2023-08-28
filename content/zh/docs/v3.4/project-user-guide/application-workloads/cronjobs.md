@@ -80,7 +80,7 @@ weight: 10260
 
 3. 点击任意记录，您将转到该任务的详情页面。
 
-4. 在**资源状态**中，您可以检查容器组状态。点击右侧的 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" alt="icon" />，然后点击 <img src="/images/docs/v3.3/zh-cn/project-user-guide/application-workloads/cronjobs/container-log-icon.png" width="20px" alt="icon" /> 可以检查容器日志，如下所示，该日志显示预期输出。
+4. 在**资源状态**中，您可以检查容器组状态。点击右侧的 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/cronjobs/down-arrow.png" width="20px" alt="icon" />，然后点击 <img src="/images/docs/v3.x/zh-cn/project-user-guide/application-workloads/cronjobs/container-log-icon.png" width="20px" alt="icon" /> 可以检查容器日志，如下所示，该日志显示预期输出。
 
 ## 定时任务操作
 

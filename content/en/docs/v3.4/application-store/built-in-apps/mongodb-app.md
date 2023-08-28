@@ -43,7 +43,7 @@ This tutorial walks you through an example of deploying MongoDB from the App Sto
 
 3. In the pop-up window, enter commands in the terminal directly to use the app.
 
-   ![mongodb-service-terminal](/images/docs/v3.3/appstore/built-in-apps/mongodb-app/mongodb-service-terminal.jpg)
+   ![mongodb-service-terminal](/images/docs/v3.x/appstore/built-in-apps/mongodb-app/mongodb-service-terminal.jpg)
 
    {{< notice note >}}
 

@@ -16,7 +16,7 @@ weight: 8721
 
 1. 以 `admin` 用户登录 KubeSphere 控制台。
 
-2. 点击右下角的 <img src="/images/docs/v3.3/common-icons/hammer.png" width="15" alt="icon" /> 并选择 **Kubectl**。
+2. 点击右下角的 <img src="/images/docs/v3.x/common-icons/hammer.png" width="15" alt="icon" /> 并选择 **Kubectl**。
 
 3. 在弹出的对话框中，执行以下命令：
 

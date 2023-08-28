@@ -18,7 +18,7 @@ weight: 3220
 
 示例集群有三个主节点，三个工作节点，两个用于负载均衡的节点，以及一个虚拟 IP 地址。本示例中的虚拟 IP 地址也可称为“浮动 IP 地址”。这意味着在节点故障的情况下，该 IP 地址可在节点之间漂移，从而实现高可用。
 
-![architecture-ha-k8s-cluster](/images/docs/v3.3/installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-keepalived-haproxy/architecture-ha-k8s-cluster.png)
+![architecture-ha-k8s-cluster](/images/docs/v3.x/installing-on-linux/high-availability-configurations/set-up-ha-cluster-using-keepalived-haproxy/architecture-ha-k8s-cluster.png)
 
 请注意，在本示例中，Keepalived 和 HAproxy 没有安装在任何主节点上。但您也可以这样做，并同时实现高可用。然而，配置两个用于负载均衡的特定节点（您可以按需增加更多此类节点）会更加安全。这两个节点上只安装 Keepalived 和 HAproxy，以避免与任何 Kubernetes 组件和服务的潜在冲突。
 
@@ -311,12 +311,12 @@ chmod +x kk
 使用默认配置创建一个示例配置文件。此处以 Kubernetes v1.22.12 作为示例。
 
 ```bash
-./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12
+./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12
 ```
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.4 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您没有在本步骤的命令中添加标志 `--with-kubesphere`，那么除非您使用配置文件中的 `addons` 字段进行安装，或者稍后使用 `./kk create cluster` 时再添加该标志，否则 KubeSphere 将不会被部署。
 - 如果您添加标志 `--with-kubesphere` 时未指定 KubeSphere 版本，则会安装最新版本的 KubeSphere。

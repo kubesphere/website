@@ -20,7 +20,7 @@ To make sure the platform can create cloud disks for your cluster, you need to p
 
 1. Log in to the web console of [QingCloud](https://console.qingcloud.com/login) and select **Access Key** from the drop-down list in the top-right corner.
 
-   ![access-key](/images/docs/v3.3/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
+   ![access-key](/images/docs/v3.x/installing-on-linux/introduction/persistent-storage-configuration/access-key.jpg)
 
 2. Click **Create** to generate keys. Download the key after it is created, which is stored in a csv file.
 
@@ -47,7 +47,7 @@ The separate configuration file contains all parameters of QingCloud CSI which w
 
 2. The field `zone` specifies where your cloud disks are created. On QingCloud Platform, you must select a zone before you create them.
 
-   ![storage-zone](/images/docs/v3.3/installing-on-linux/introduction/persistent-storage-configuration/storage-zone.jpg)
+   ![storage-zone](/images/docs/v3.x/installing-on-linux/introduction/persistent-storage-configuration/storage-zone.jpg)
 
    Make sure the value you specify for `zone` matches the region ID below:
 
@@ -119,12 +119,12 @@ chmod +x kk
 1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2
+   ./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0
    ```
 
    {{< notice note >}}
 
-   - Recommended Kubernetes versions for KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
+   - Recommended Kubernetes versions for KubeSphere 3.4: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x. If you do not specify a Kubernetes version, KubeKey will install Kubernetes v1.23.10 by default. For more information about supported Kubernetes versions, see [Support Matrix](../../../installing-on-linux/introduction/kubekey/#support-matrix).
 
    - If you do not add the flag `--with-kubesphere` in the command in this step, KubeSphere will not be deployed unless you install it using the `addons` field in the configuration file or add this flag again when you use `./kk create cluster` later.
    - If you add the flag `--with-kubesphere` without specifying a KubeSphere version, the latest version of KubeSphere will be installed.

@@ -20,7 +20,7 @@ Weight: 3240
 
 ## 部署架构
 
-![部署架构](/images/docs/v3.3/ali-ecs/ali.png)
+![部署架构](/images/docs/v3.x/ali-ecs/ali.png)
 
 ## 创建主机
 
@@ -46,13 +46,13 @@ Weight: 3240
 
 进入到阿里云控制， 在左侧列表选择'负载均衡'， 选择'实例管理' 进入下图， 选择'创建负载均衡'
 
-![1-1-创建slb](/images/docs/v3.3/ali-ecs/ali-slb-create.png)
+![1-1-创建slb](/images/docs/v3.x/ali-ecs/ali-slb-create.png)
 
 ###  配置 SLB
 
 配置规格根据自身流量规模创建
 
-![2-1-创建slb](/images/docs/v3.3/ali-ecs/ali-slb-config.png)
+![2-1-创建slb](/images/docs/v3.x/ali-ecs/ali-slb-config.png)
 
 注意在后面的 config.yaml 需要配置 slb 分配的地址
 
@@ -67,13 +67,13 @@ controlPlaneEndpoint:
 
 需要在服务器组添加需要负载的3台 master 主机后按下图顺序配置监听 TCP 6443 端口 (api-server)
 
-![3-1-添加主机](/images/docs/v3.3/ali-ecs/ali-slb-add.png)
+![3-1-添加主机](/images/docs/v3.x/ali-ecs/ali-slb-add.png)
 
-![3-2-配置监听端口](/images/docs/v3.3/ali-ecs/ali-slb-listen-conf1.png)
+![3-2-配置监听端口](/images/docs/v3.x/ali-ecs/ali-slb-listen-conf1.png)
 
-![3-3-配置监听端口](/images/docs/v3.3/ali-ecs/ali-slb-listen-conf2.png)
+![3-3-配置监听端口](/images/docs/v3.x/ali-ecs/ali-slb-listen-conf2.png)
 
-![3-4-配置监听端口](/images/docs/v3.3/ali-ecs/ali-slb-listen-conf3.png)
+![3-4-配置监听端口](/images/docs/v3.x/ali-ecs/ali-slb-listen-conf3.png)
 
 {{< notice note >}}
 - 现在的健康检查暂时是失败的，因为还没部署 master 的服务，所以端口 telnet 不通的。
@@ -141,7 +141,7 @@ chmod +x kk
 在当前位置创建配置文件 `config-sample.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12 -f config-sample.yaml
+./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f config-sample.yaml
 ```
 
 ###  集群配置调整
@@ -256,7 +256,7 @@ https://kubesphere.io             2020-08-24 23:30:06
 
 - 访问公网 IP + Port 为部署后的使用情况，使用默认帐户密码 (`admin/P@88w0rd`)，文章安装为最小化，登录点击`工作台` 可看到下图安装组件列表和机器情况。
 
-![面板图](/images/docs/v3.3/ali-ecs/succes.png)
+![面板图](/images/docs/v3.x/ali-ecs/succes.png)
 
 ## 如何自定义开启可插拔组件
 

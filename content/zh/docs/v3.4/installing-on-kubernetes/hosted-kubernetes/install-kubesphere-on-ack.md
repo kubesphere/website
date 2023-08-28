@@ -7,7 +7,7 @@ description: "了解如何在阿里云容器服务 ACK 上部署 KubeSphere。"
 weight: 4250
 ---
 
-本指南将介绍如何在[阿里云容器服务 ACK](https://www.aliyun.com/product/kubernetes/) 上部署并使用 KubeSphere 3.3 平台。
+本指南将介绍如何在[阿里云容器服务 ACK](https://www.aliyun.com/product/kubernetes/) 上部署并使用 KubeSphere 3.4 平台。
 
 ## 阿里云 ACK 环境准备
 
@@ -15,21 +15,21 @@ weight: 4250
 
 首先按使用环境的资源需求创建 Kubernetes 集群，满足以下一些条件即可（如已有环境并满足条件可跳过本节内容）：
 
-- KubeSphere 3.3 默认支持的 Kubernetes 版本为 v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x；
+- KubeSphere 3.4 默认支持的 Kubernetes 版本为 v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x；
 - 需要确保 Kubernetes 集群所使用的 ECS 实例的网络正常工作，可以通过在创建集群的同时**自动创建**或**使用已有**弹性 IP；或者在集群创建后自行配置网络（如配置 [NAT 网关](https://www.aliyun.com/product/network/nat/)）；
 - 小规模场景下工作节点规格建议选择 `4核｜8GB` 配置，不推荐`2核｜4GB` ，并按需扩展工作节点数量（通常生产环境需要 3 个及以上工作节点），详情可参考[最佳实践- ECS 选型](https://help.aliyun.com/document_detail/98886.html)。
 
 1.创建标准托管集群，转到导航菜单，然后参考下图创建集群，您可以使用集群模板快速创建标准托管集群:
 
-![ack-template](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-template.png)
+![ack-template](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-template.png)
 
 选择标准托管集群
 
-![standard-template](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/standard-template.png)
+![standard-template](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/standard-template.png)
 
 2.在**配置集群**页面，配置以下集群信息：
 
-![create-ack-cluster](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/create-ack-cluster.png)
+![create-ack-cluster](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/create-ack-cluster.png)
 
 说明：配置集群名称、选择 Kubernetes 版本、容器运行时版本等。
 
@@ -37,19 +37,19 @@ weight: 4250
 
 3.指定专有网络，勾选为专有网络配置 SNAT 以及使用 EIP 暴露 API Server：
 
-![network-and-apiserver](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/network-and-apiserver.png)
+![network-and-apiserver](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/network-and-apiserver.png)
 
 4.配置 Worker 实例规格
 
-![ack-worker-config](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-worker-config.png)
+![ack-worker-config](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-worker-config.png)
 
 指定实例操作系统类型，并为实例配置密码或秘钥
 
-![ack-worker-password](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-worker-password.png)
+![ack-worker-password](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-worker-password.png)
 
 5.选择安装相关组件，完成后创建集群
 
-![ack-components](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-components.png)
+![ack-components](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-components.png)
 
 {{< notice warning >}}
 
@@ -61,7 +61,7 @@ weight: 4250
 
 6.等待集群创建完成，点击详情，查看集群信息
 
-![ack-cluster](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-cluster.png)
+![ack-cluster](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-cluster.png)
 
 
 
@@ -69,7 +69,7 @@ weight: 4250
 
 - 创建完集群后，点击**集群信息** > **连接信息**界面，选择**公网访问**，复制下方 kubeconfig 信息到本地计算机，即可在本地连接到 ack 集群。
 
-  ![ack-kubeconfig](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-kubeconfig.png)
+  ![ack-kubeconfig](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-kubeconfig.png)
 
   
 
@@ -142,8 +142,8 @@ alicloud-disk-topology               diskplugin.csi.alibabacloud.com   Delete   
 1.使用 [ks-installer](https://github.com/kubesphere/ks-installer) 在已有的 Kubernetes 集群上来部署 KubeSphere，下载 YAML 文件:
 
 ```
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
-wget https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
+wget https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml
 ```
 
 
@@ -213,11 +213,11 @@ https://kubesphere.io             2020-xx-xx xx:xx:xx
 
 - 将 service 类型 `NodePort`  更改为 `LoadBalancer` ，完成后点击更新。
 
-  ![ack-lb](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-lb.png)
+  ![ack-lb](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-lb.png)
 
 - 获取您的 EXTERNAL-IP。
 
-  ![ack-lb-ip](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-lb-ip.png)
+  ![ack-lb-ip](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-ack/ack-lb-ip.png)
 
 - 使用 ACK 生成的 external-ip 访问 KubeSphere 的 Web 控制台, 默认帐户和密码（`admin/P@88w0rd`）。
 

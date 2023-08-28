@@ -1,6 +1,6 @@
 ---
 title: "Upgrade — Overview"
-keywords: "Kubernetes, upgrade, KubeSphere, 3.3, upgrade"
+keywords: "Kubernetes, upgrade, KubeSphere, 3.4, upgrade"
 description: "Understand what you need to pay attention to before the upgrade, such as versions, and upgrade tools."
 linkTitle: "Overview"
 weight: 7100
@@ -8,10 +8,10 @@ weight: 7100
 
 ## Make Your Upgrade Plan
 
-KubeSphere 3.3 is compatible with Kubernetes v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x:
+KubeSphere 3.4 is compatible with Kubernetes v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x:
 
-- Before you upgrade your cluster to KubeSphere 3.3, you need to have a KubeSphere cluster running v3.2.x.
-- You can choose to only upgrade KubeSphere to 3.3 or upgrade Kubernetes (to a higher version) and KubeSphere (to 3.3) at the same time.
+- Before you upgrade your cluster to KubeSphere 3.4, you need to have a KubeSphere cluster running v3.2.x.
+- You can choose to only upgrade KubeSphere to 3.4 or upgrade Kubernetes (to a higher version) and KubeSphere (to 3.4) at the same time.
 - For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.
 ## Before the Upgrade
 

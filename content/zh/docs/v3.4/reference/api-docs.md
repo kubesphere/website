@@ -12,7 +12,7 @@ KubeSphere API 服务器为 API 对象验证和配置数据。API 服务器为 R
 
 其中 /kapi 和/kapis 是 KubeSphere 拓展聚合的 API，/api和 /apis开头的都属于 Kubernetes 原生的 API，KubeSphere 把用户对原生 Kubernetes 资源的请求通过 API Server 转发到 Kubernetes API Server 对原生资源进行操作和管理。
 
-![ks-apiserver](/images/docs/v3.3/zh-cn/reference/kubesphere-api/ks-apiserver.png)
+![ks-apiserver](/images/docs/v3.x/zh-cn/reference/kubesphere-api/ks-apiserver.png)
 
 ## 使用 KubeSphere API
 
@@ -116,7 +116,7 @@ $ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ
 
 ## API 参考
 
-KubeSphere API Swagger JSON 文件可以在 https://github.com/kubesphere/kubesphere/tree/release-3.3/api 仓库中找到。
+KubeSphere API Swagger JSON 文件可以在 https://github.com/kubesphere/kubesphere/tree/release-3.4/api 仓库中找到。
 
 - KubeSphere 已指定 API [Swagger Json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/ks-openapi-spec/swagger.json) 文件，它包含所有只适用于 KubeSphere 的 API。
 - KubeSphere 已指定 CRD [Swagger Json](https://github.com/kubesphere/kubesphere/blob/release-3.1/api/openapi-spec/swagger.json) 文件，它包含所有已生成的 CRD API 文档，与 Kubernetes API 对象相同。

@@ -57,9 +57,9 @@ By default, KubeKey will install Elasticsearch internally if Auditing is enabled
 
 ### Installing on Kubernetes
 
-As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Auditing first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) file.
+As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introduction/overview/), you can enable KubeSphere Auditing first in the [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) file.
 
-1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) and edit it.
+1. Download the file [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) and edit it.
 
     ```bash
     vi cluster-configuration.yaml
@@ -91,7 +91,7 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 3. Execute the following commands to start installation:
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```
@@ -106,7 +106,7 @@ By default, ks-installer will install Elasticsearch internally if Auditing is en
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Custom Resources**, click <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">  on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/v3.x/enable-pluggable-components/kubesphere-auditing-logs/three-dots.png" height="20px">  on the right of `ks-installer` and select **Edit YAML**.
 
 4. In this YAML file, navigate to `auditing` and change `false` to `true` for `enabled`. After you finish, click **OK** in the lower-right corner to save the configuration.
 
@@ -139,7 +139,7 @@ By default, Elasticsearch will be installed internally if Auditing is enabled. F
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/v3.3/enable-pluggable-components/kubesphere-auditing-logs/hammer.png" height="20px"> in the lower-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/v3.x/enable-pluggable-components/kubesphere-auditing-logs/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

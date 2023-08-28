@@ -1,6 +1,6 @@
 ---
 title: "使用 KubeKey 离线升级"
-keywords: "离线环境, kubernetes, 升级, kubesphere, 3.3"
+keywords: "离线环境, kubernetes, 升级, kubesphere, 3.4"
 description: "使用离线包升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 离线升级"
 weight: 7400
@@ -11,14 +11,14 @@ weight: 7400
 
 - 您需要有一个运行 KubeSphere v3.2.x 的集群。如果您的 KubeSphere 是 v3.1.0 或更早的版本，请先升级至 v3.2.x。
 - 您的 Kubernetes 版本必须为 1.20.x、1.21.x、1.22.x，1.23.x 或 1.24.x。
-- 请仔细阅读 [3.3.2 版本说明](../../../v3.3/release/release-v332/)。
+- 请仔细阅读 [3.4.0 版本说明](../../../v3.4/release/release-v340/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。
 - 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
 
 ## 重要提示
 
-KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.3.1 时，请注意以下几点：
+KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.4 时，请注意以下几点：
 
    - 内置角色调整：移除了平台级内置角色 `users-manager`(用户管理员)和 `workspace-manager`（企业空间管理员），如果已有用户绑定了 `users-manager` 或 `workspace-manager`，他们的角色将会在升级之后变更为 `platform-regular`。增加了平台级内置角色 `platform-self-provisioner`。关于平台角色的具体描述，请参见[创建用户](../../quick-start/create-workspace-and-project/#创建用户)。
 
@@ -26,7 +26,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
        - 移除平台层级自定义角色授权项：用户管理，角色管理，企业空间管理。
        - 移除企业空间层级自定义角色授权项：成员管理，角色管理，用户组管理。
        - 移除命名空间层级自定义角色授权项：成员管理，角色管理。
-       - 升级到 KubeSphere 3.3.1 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。
+       - 升级到 KubeSphere 3.4 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。
 
 ## 升级 KubeSphere 和 Kubernetes
 
@@ -102,7 +102,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/images-list.txt
    ```
 
    {{< notice note >}}
@@ -114,7 +114,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -155,7 +155,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 
    {{< notice note >}}
 
-   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+   - 您可以根据自己的需求变更下载的 Kubernetes 版本。安装 KubeSphere 3.4 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
    - 运行脚本后，会自动创建一个文件夹 `kubekey`。请注意，您稍后创建集群时，该文件和 `kk` 必须放在同一个目录下。
 
@@ -200,7 +200,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | 升级前 | v1.18.6    | v3.2.x     |
-| 升级后 | v1.22.12    | 3.3     |
+| 升级后 | v1.22.12    | v3.3     |
 
 #### 升级集群
 
@@ -217,7 +217,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -258,7 +258,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将单节点集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.12
+#### 将单节点集群升级至 KubeSphere 3.4 和 Kubernetes v1.22.12
 
 ```bash
 ./kk upgrade -f config-sample.yaml
@@ -282,7 +282,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 |        | Kubernetes | KubeSphere |
 | ------ | ---------- | ---------- |
 | 升级前 | v1.18.6   | v3.2.x     |
-| 升级后 | v1.22.12    | 3.3.x     |
+| 升级后 | v1.22.12    | v3.3.x     |
 
 #### 升级集群
 
@@ -299,7 +299,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.3.2 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -342,7 +342,7 @@ KubeSphere 3.3.1 对内置角色和自定义角色的授权项做了一些调整
     privateRegistry: dockerhub.kubekey.local
 ```
 
-#### 将多节点集群升级至 KubeSphere 3.3 和 Kubernetes v1.22.12
+#### 将多节点集群升级至 KubeSphere 3.4 和 Kubernetes v1.22.12
 
 ```bash
 ./kk upgrade -f config-sample.yaml

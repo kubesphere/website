@@ -12,4 +12,4 @@ weight: 5110
 
 开发 KubeSphere 旨在解决多集群和多云管理（包括上述使用场景）的难题，为用户提供统一的控制平面，将应用程序及其副本分发到位于公有云和本地环境的多个集群。KubeSphere 还拥有跨多个集群的丰富可观测性，包括集中监控、日志系统、事件和审计日志等。
 
-![多集群概览](/images/docs/v3.3/zh-cn/multicluster-management/introduction/overview/multi-cluster-overview.png)
+![多集群概览](/images/docs/v3.x/zh-cn/multicluster-management/introduction/overview/multi-cluster-overview.png)

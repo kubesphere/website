@@ -42,7 +42,7 @@ weight: 9800
 
 1. 在**部门**页面，选择左侧部门树中的一个部门，点击右侧的**未分配**。
 
-2. 在用户列表中，点击用户右侧的 <img src="/images/docs/v3.3/zh-cn/workspace-administration-and-user-guide/department-management/assign.png" height="20px">，对出现的提示消息点击**确定**，以将用户分配到该部门。
+2. 在用户列表中，点击用户右侧的 <img src="/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/department-management/assign.png" height="20px">，对出现的提示消息点击**确定**，以将用户分配到该部门。
 
    {{< notice note >}}
 
@@ -54,7 +54,7 @@ weight: 9800
 ## 从部门中移除用户
 
 1. 在**部门**页面，选择左侧部门树中的一个部门，然后点击右侧的**已分配**。
-2. 在已分配用户列表中，点击用户右侧的 <img src="/images/docs/v3.3/zh-cn/workspace-administration-and-user-guide/department-management/remove.png" height="20px">，在出现的对话框中输入相应的用户名，然后点击**确定**来移除用户。
+2. 在已分配用户列表中，点击用户右侧的 <img src="/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/department-management/remove.png" height="20px">，在出现的对话框中输入相应的用户名，然后点击**确定**来移除用户。
 
 ## 删除和编辑部门
 
@@ -62,7 +62,7 @@ weight: 9800
 
 2. 在**设置部门**对话框的左侧，点击需要编辑或删除部门的上级部门。
 
-3. 点击部门右侧的 <img src="/images/docs/v3.3/zh-cn/workspace-administration-and-user-guide/department-management/edit.png" height="20px"> 进行编辑。
+3. 点击部门右侧的 <img src="/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/department-management/edit.png" height="20px"> 进行编辑。
 
    {{< notice note >}}
 
@@ -70,7 +70,7 @@ weight: 9800
 
    {{</ notice >}}
 
-4. 点击部门右侧的 <img src="/images/docs/v3.3/zh-cn/workspace-administration-and-user-guide/department-management/remove.png" height="20px">，在出现的对话框中输入相应的部门名称，然后点击**确定**来删除该部门。
+4. 点击部门右侧的 <img src="/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/department-management/remove.png" height="20px">，在出现的对话框中输入相应的部门名称，然后点击**确定**来删除该部门。
 
    {{< notice note >}}
 

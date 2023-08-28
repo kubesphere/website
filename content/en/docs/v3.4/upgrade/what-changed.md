@@ -2,7 +2,6 @@
 title: "Changes after Upgrade"
 keywords: "Kubernetes, upgrade, KubeSphere, 3.4"
 description: "Understand what will be changed after the upgrade."
-
 linkTitle: "Changes after Upgrade"
 weight: 7600
 ---

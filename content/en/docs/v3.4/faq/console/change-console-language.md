@@ -22,4 +22,4 @@ You have installed KubeSphere.
 
 3. On the **Basic Information** page, select a desired language from the **Language** drop-down list.
 
-4. Click <img src="/images/docs/v3.3/faq/kubesphere-web-console/change-console-language/check-mark.png" width='25' alt="icon" /> to save it.
+4. Click <img src="/images/docs/v3.x/faq/kubesphere-web-console/change-console-language/check-mark.png" width='25' alt="icon" /> to save it.

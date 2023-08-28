@@ -14,7 +14,7 @@ weight: 3150
 
 下图举例展示了内置高可用模式的架构图。有关系统和网络要求的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#步骤1准备-linux-主机)。
 
-![高可用架构](/images/docs/v3.3/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
+![高可用架构](/images/docs/v3.x/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
 
 {{< notice note >}}
 
@@ -77,12 +77,12 @@ chmod +x kk
 创建包含默认配置的示例配置文件。这里使用 Kubernetes v1.22.12 作为示例。
 
 ```bash
-./kk create config --with-kubesphere v3.3.2 --with-kubernetes v1.22.12
+./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12
 ```
 
 {{< notice note >}}
 
-- 安装 KubeSphere 3.3 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
+- 安装 KubeSphere 3.4 的建议 Kubernetes 版本：v1.20.x、v1.21.x、* v1.22.x、* v1.23.x 和 * v1.24.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.21.x。如果不指定 Kubernetes 版本，KubeKey 将默认安装 Kubernetes v1.23.10。有关受支持的 Kubernetes 版本的更多信息，请参见[支持矩阵](../../../installing-on-linux/introduction/kubekey/#支持矩阵)。
 
 - 如果您在这一步的命令中不添加标志 `--with-kubesphere`，则不会部署 KubeSphere，只能使用配置文件中的 `addons` 字段安装，或者在您后续使用 `./kk create cluster` 命令时再次添加这个标志。
 

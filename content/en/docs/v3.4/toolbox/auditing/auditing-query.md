@@ -14,7 +14,7 @@ You need to enable [KubeSphere Auditing Logs](../../../pluggable-components/audi
 
 ## Enter the Query Interface
 
-1. The query function is available for all users. Log in to the console with any user, hover over the <img src="/images/docs/v3.3/toolbox/auditing-query/toolbox.png" width="20" alt="icon" /> in the lower-right corner and select **Audit Log Search**.
+1. The query function is available for all users. Log in to the console with any user, hover over the <img src="/images/docs/v3.x/toolbox/auditing-query/toolbox.png" width="20" alt="icon" /> in the lower-right corner and select **Audit Log Search**.
 
    {{< notice note >}} 
 
