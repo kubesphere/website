@@ -6,13 +6,13 @@
 
 [[redirects]]
   from = "/docs"
-  to = "/docs/v3.4"
+  to = "/docs"
   status = 302
   force = true
 
 [[redirects]]
   from = "/zh/docs"
-  to = "/zh/docs/v3.4"
+  to = "/zh/docs"
   status = 302
   force = true
 
