@@ -34,13 +34,13 @@ footer:
     - title: KubeSphere Docs
       list:
         - content: Introduction
-          link: '../../../docs/v3.4/introduction/what-is-kubesphere/'
+          link: '../../../docs/introduction/what-is-kubesphere/'
         - content: Installation
-          link: '../../../docs/v3.4/quick-start/all-in-one-on-linux/'
+          link: '../../../docs/quick-start/all-in-one-on-linux/'
         - content: Tutorial
-          link: '../../../docs/v3.4/quick-start/create-workspace-and-project/'
+          link: '../../../docs/quick-start/create-workspace-and-project/'
         - content: API Documentation
-          link: '../../../docs/v3.4/reference/api-docs/'
+          link: '../../../docs/reference/api-docs/'
 
     - title: Community
       list:
