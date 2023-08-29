@@ -36,9 +36,9 @@ KubeSphere 3.4.0 has optimized alerting configurations by introducing different 
 -  A single alerting policy has been split into multiple rule groups, allowing for configuring alerts at a more granular level.
 - Editing, disabling, and resetting built-in alerting rules are now supported.
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/rulegroup-1.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.4.0-rule-group.png)
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/rulegroup-2.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.4.0-rules.png)
 
 ### Improve the display weight of cluster aliases
 
@@ -46,7 +46,7 @@ Operations personnel often have to manage clusters with different purposes and g
 
 To address this issue, KubeSphere 3.4.0 has increased the display weight of cluster aliases, which ensures that cluster aliases are managed at the same level as cluster names. Users can now use cluster aliases to perform all the operations previously done with cluster names, and change cluster aliases for flexible cluster management.
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-3.4-cluster-alias.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.4.0-alias.png)
 
 ### Set a default image repository
 
@@ -54,9 +54,9 @@ In private environments, it is often necessary to replace the default Docker Hub
 
 In KubeSphere 3.4.0, we have added support for setting a default image repository, making operations simpler and more convenient for users.
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-3.4-image-repo-1.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.4.0-default-registry-2.png)
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-3.4-image-repo-2.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-v3.4.0-default-registry.png)
 
 ### Others
 In addition to the mentioned major features, KubeSphere 3.4.0 includes several optimizations and enhancements:
