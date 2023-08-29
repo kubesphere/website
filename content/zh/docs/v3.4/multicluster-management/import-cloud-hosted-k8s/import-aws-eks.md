@@ -97,9 +97,28 @@ weight: 5320
    但是，自动生成的 kubeconfig 文件要求使用此 kubeconfig 的每台计算机均安装有 `aws` 命令（aws CLI 工具）。
 
 2. 在本地计算机上运行以下命令，获得由 KubeSphere 创建的 ServiceAccount `kubesphere` 的令牌，该令牌对集群具有集群管理员访问权限，并将用作新的 kubeconfig 令牌。
-
+* Kubernetes 1.23 及以前版本：
    ```bash
    TOKEN=$(kubectl -n kubesphere-system get secret $(kubectl -n kubesphere-system get sa kubesphere -o jsonpath='{.secrets[0].name}') -o jsonpath='{.data.token}' | base64 -d)
+   kubectl config set-credentials kubesphere --token=${TOKEN}
+   kubectl config set-context --current --user=kubesphere
+   ```
+* Kubernetes 1.24 及以后版本，ServiceAccount 不再自动生成 Secert，参见[这里](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#urgent-upgrade-notes)。
+   ```bash
+   cat <<EOF >kubesphere-secret.yaml
+   apiVersion: v1
+   kind: Secret
+   metadata:
+     name: kubesphere
+     namespace: kubesphere-system
+     annotations:
+       kubernetes.io/service-account.name: "kubesphere"
+   type: kubernetes.io/service-account-token
+   EOF
+   ```
+   ```bash
+   kubectl apply -f kubesphere-secret.yaml
+   TOKEN=`kubectl -n kubesphere-system get secret kubesphere  -o jsonpath='{.data.token}' | base64 -d`
    kubectl config set-credentials kubesphere --token=${TOKEN}
    kubectl config set-context --current --user=kubesphere
    ```
