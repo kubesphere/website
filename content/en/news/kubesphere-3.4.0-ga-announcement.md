@@ -107,4 +107,4 @@ Here are the contributors who made outstanding contributions to this release. Th
 * littlejiancc
 * wenchajun
 
-Certificates will be issued to new contributors in the [community biweekly report](https://ask.kubesphere.io/forum/t/ks-beweekly), and updated to [the certificate wall](https://ask.kubesphere.io/forum/d/9280-kubesphere) in the forum promptly. If there are any omissions, please contact us for re-issuance.
+Certificates will be issued to new contributors in the [community biweekly report](https://ask.kubesphere.io/forum/t/ks-beweekly), and updated to [the certificate wall](https://ask.kubesphere.io/forum/d/9280-kubesphere) in the forum promptly. If there are any omissions, please contact us at info@kubesphere.io for re-issuance.
