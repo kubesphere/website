@@ -103,7 +103,7 @@ weight: 5320
    kubectl config set-credentials kubesphere --token=${TOKEN}
    kubectl config set-context --current --user=kubesphere
    ```
-   * Kubernetes 1.24 及以后版本，ServiceAccount不再自动生成Secert，参见[这里](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#urgent-upgrade-notes)
+   * Kubernetes 1.24 及以后版本，ServiceAccount 不再自动生成 Secert，参见[这里](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#urgent-upgrade-notes)
    ```bash
    cat <<EOF >kubesphere-secret.yaml
    apiVersion: v1
