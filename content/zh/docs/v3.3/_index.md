@@ -9,7 +9,7 @@ LinkTitle: "文档"
 section1:
   title: KubeSphere 文档
   content: 了解如何通过 KubeSphere 容器平台构建并管理云原生应用程序。获取文档、示例代码与教程等信息。
-  image: /images/docs/v3.3/banner.png
+  image: /images/docs/v3.x/banner.png
 
 sectionLink:
   docs:
@@ -46,13 +46,13 @@ section3:
   title: 在云服务上运行 KubeSphere 与 Kubernetes 技术栈
   description: 云厂商以托管的形式为用户提供 KubeSphere 服务，深度集成了公有云托管容器服务，用户可在几分钟内通过简单的步骤迅速构建高可用集群。您可在以下公有云上一键部署 KubeSphere。
   list:
-    - image: /images/docs/v3.3/aws.jpg
+    - image: /images/docs/v3.x/aws.jpg
       content: AWS Quickstart
       link: https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/
-    - image: /images/docs/v3.3/microsoft-azure.jpg
+    - image: /images/docs/v3.x/microsoft-azure.jpg
       content: Azure Marketplace
       link: https://market.azure.cn/marketplace/apps/qingcloud.kubesphere
-    - image: /images/docs/v3.3/qingcloud.svg
+    - image: /images/docs/v3.x/qingcloud.svg
       content: QingCloud QKE
       link: https://www.qingcloud.com/products/kubesphereqke/
 

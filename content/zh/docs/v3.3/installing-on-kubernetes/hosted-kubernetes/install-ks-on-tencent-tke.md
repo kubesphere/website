@@ -23,7 +23,7 @@ weight: 4270
 - 创建完集群后，进入 `容器服务` > `集群` 界面，选择刚创建的集群，在 `基本信息`  面板中， `集群APIServer信息` 中开启 `外网访问` 。
 - 然后在下方 `kubeconfig` 列表项中点击 `下载`，即可获取公用可用的 kubectl 证书。
 
-![generate-kubeconfig.png](/images/docs/v3.3/tencent-tke/generate-kubeconfig.png)
+![generate-kubeconfig.png](/images/docs/v3.x/tencent-tke/generate-kubeconfig.png)
 
 - 获取 kubectl 配置文件后，可通过 kubectl 命令行工具来验证集群连接：
 
@@ -91,7 +91,7 @@ kubectl apply -f cluster-configuration.yaml
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f
 ```
 
-![ks-install-log.png](/images/docs/v3.3/tencent-tke/ks-install-log.png)
+![ks-install-log.png](/images/docs/v3.x/tencent-tke/ks-install-log.png)
 
 ### 访问 KubeSphere 控制台
 
@@ -101,7 +101,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app
 
 - 在 `容器服务` > `集群` 界面中，选择创建好的集群，在 `节点管理` > `节点` 面板中，查看任意一个节点的 `公网 IP`（集群安装时默认会免费为每个节点绑定公网 IP）。
 
-![nodeport.png](/images/docs/v3.3/tencent-tke/nodeport.png)
+![nodeport.png](/images/docs/v3.x/tencent-tke/nodeport.png)
 
 - 由于服务安装时默认开启 NodePort 且端口为 30880，浏览器输入 `<公网 IP>:30880` ，并以默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
 
@@ -109,15 +109,15 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app
 
 - 在 `容器服务` > `集群` 界面中，选择创建好的集群，在 `服务与路由` > `service` 面板中，点击 `ks-console` 一行中 `更新访问方式`。
 
-![loadbalancer1.png](/images/docs/v3.3/tencent-tke/loadbalancer1.png)
+![loadbalancer1.png](/images/docs/v3.x/tencent-tke/loadbalancer1.png)
 
 - `服务访问方式` 选择 `提供公网访问`，`端口映射` 中 `服务端口` 填写您希望的端口号，点击 `更新访问方式`。
 
-![loadbalancer2.png](/images/docs/v3.3/tencent-tke/loadbalancer2.png)
+![loadbalancer2.png](/images/docs/v3.x/tencent-tke/loadbalancer2.png)
 
 - 此时界面您将会看到 LoadBalancer 公网 IP：
 
-![loadbalancer3.png](/images/docs/v3.3/tencent-tke/loadbalancer3.png)
+![loadbalancer3.png](/images/docs/v3.x/tencent-tke/loadbalancer3.png)
 
 - 浏览器输入 `<LoadBalancer 公网 IP>:<映射端口>`，并以默认帐户（用户名 `admin`，密码 `P@88w0rd`）即可登录控制台。
 

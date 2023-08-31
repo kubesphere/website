@@ -12,7 +12,7 @@ KubeEdge has components running in two separate places - cloud and edge nodes. T
 
 After you enable KubeEdge, you can [add edge nodes to your cluster](../../installing-on-linux/cluster-operation/add-edge-nodes/) and deploy workloads on them.
 
-![kubeedge_arch](/images/docs/v3.3/enable-pluggable-components/kubeedge/kubeedge_arch.png)
+![kubeedge_arch](/images/docs/v3.x/enable-pluggable-components/kubeedge/kubeedge_arch.png)
 
 ## Enable KubeEdge Before Installation
 
@@ -110,7 +110,7 @@ As you [install KubeSphere on Kubernetes](../../installing-on-kubernetes/introdu
 A Custom Resource Definition (CRD) allows users to create a new type of resources without adding another API server. They can use these resources like any other native Kubernetes objects.
     {{</ notice >}}
 
-3. In **Custom Resources**, click <img src="/images/docs/v3.3/enable-pluggable-components/kubeedge/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
+3. In **Custom Resources**, click <img src="/images/docs/v3.x/enable-pluggable-components/kubeedge/three-dots.png" height="20px"> on the right of `ks-installer` and select **Edit YAML**.
    
 4. In this YAML file, navigate to `edgeruntime` and `kubeedge`, and change the value of `enabled` from `false` to `true` to enable all KubeEdge components. Click **OK**.
 
@@ -143,7 +143,7 @@ A Custom Resource Definition (CRD) allows users to create a new type of resource
 
     {{< notice note >}}
 
-You can find the web kubectl tool by clicking <img src="/images/docs/v3.3/enable-pluggable-components/kubeedge/hammer.png" height="20px"> in the lower-right corner of the console.
+You can find the web kubectl tool by clicking <img src="/images/docs/v3.x/enable-pluggable-components/kubeedge/hammer.png" height="20px"> in the lower-right corner of the console.
     {{</ notice >}}
 
 ## Verify the Installation of the Component

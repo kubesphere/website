@@ -74,7 +74,7 @@ If you have enabled [the multi-cluster feature](../../../multicluster-management
 
 3. Enter `clusterconfiguration` in the search bar and click the result to go to its detail page.
 
-4. Click <img src="/images/docs/v3.3/faq/installation/telemetry-in-kubesphere/three-dots.png" height="20px" alt="icon"> on the right of `ks-installer` and select **Edit YAML**.
+4. Click <img src="/images/docs/v3.x/faq/installation/telemetry-in-kubesphere/three-dots.png" height="20px" alt="icon"> on the right of `ks-installer` and select **Edit YAML**.
 
 5. Scroll down to the bottom of the file, add `telemetry_enabled: false`, and then click **OK**.
 

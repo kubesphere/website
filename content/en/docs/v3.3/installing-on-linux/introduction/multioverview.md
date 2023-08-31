@@ -335,7 +335,7 @@ To access the console, you may need to configure port forwarding rules depending
 
 {{</ notice >}}
 
-![login](/images/docs/v3.3/installing-on-linux/introduction/multi-node-installation/login.png)
+![login](/images/docs/v3.x/installing-on-linux/introduction/multi-node-installation/login.png)
 
 ## Enable kubectl Autocompletion
 

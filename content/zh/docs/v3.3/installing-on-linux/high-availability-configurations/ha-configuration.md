@@ -14,7 +14,7 @@ weight: 3150
 
 在您开始操作前，请确保准备了 6 台 Linux 机器，其中 3 台充当主节点，另外 3 台充当工作节点。下图展示了这些机器的详情，包括它们的私有 IP 地址和角色。有关系统和网络要求的更多信息，请参见[多节点安装](../../../installing-on-linux/introduction/multioverview/#步骤1准备-linux-主机)。
 
-![高可用架构](/images/docs/v3.3/zh-cn/installing-on-linux/introduction/ha-configurations/ha-architecture.png)
+![高可用架构](/images/docs/v3.x/zh-cn/installing-on-linux/introduction/ha-configurations/ha-architecture.png)
 
 ## 配置负载均衡器
 

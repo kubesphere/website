@@ -115,11 +115,11 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
 
    {{</ notice >}} 
 
-   ![graphical-panel](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/graphical-panel.png)
+   ![graphical-panel](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/graphical-panel.png)
 
 2. To add a stage, click the plus icon on the left. Click the box above the **Add Step** area and set a name (for example, `Checkout SCM`) for the stage in the field **Name** on the right.
 
-   ![edit-panel](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/edit-panel.png)
+   ![edit-panel](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/edit-panel.png)
 
 3. Click **Add Step**. Select **git** from the list as the example code is pulled from GitHub. In the displayed dialog box, fill in the required field. Click **OK** to finish.
 
@@ -127,21 +127,21 @@ Pipelines include [declarative pipelines](https://www.jenkins.io/doc/book/pipeli
    - **Name**. You do not need to enter the Credential ID for this tutorial. 
    - **Branch**. It defaults to the master branch if you leave it blank. Enter `sonarqube` or leave it blank if you do not need the code analysis stage.
 
-   ![enter-repo-url](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/enter-repo-url.png)
+   ![enter-repo-url](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/enter-repo-url.png)
 
 4. The first stage is now set.
 
-   ![first-stage-set](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/first-stage-set.png)
+   ![first-stage-set](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/first-stage-set.png)
 
 #### Stage 2: Unit test
 
 1. Click the plus icon on the right of stage 1 to add a new stage to perform a unit test in the container. Name it `Unit Test`.
 
-   ![unit-test](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/unit-test.png)
+   ![unit-test](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/unit-test.png)
 
 2. Click **Add Step** and select **container** from the list. Name it `maven` and then click **OK**.
 
-   ![container](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/container.png)
+   ![container](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/container.png)
 
 3. Click **Add Nesting Steps** to add a nested step under the `maven` container. Select **shell** from the list and enter the following command in the command line. Click **OK** to save it.
 
@@ -162,27 +162,27 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
 1. Click the plus icon on the right of the `Unit Test` stage to add a stage for SonarQube code analysis in the container. Name it `Code Analysis`.
 
-   ![code-analysis-stage](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/code-analysis-stage.png)
+   ![code-analysis-stage](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/code-analysis-stage.png)
 
 2. Click **Add Step** under **Task** in **Code Analysis** and select **container**. Name it `maven` and click **OK**.
 
-   ![maven-container](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/maven-container.png)
+   ![maven-container](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/maven-container.png)
 
 3. Click **Add Nesting Steps** under the `maven` container to add a nested step. Click **withCredentials** and select the SonarQube token (`sonar-token`) from the **Name** list. Enter `SONAR_TOKEN` for **Text Variable**, then click **OK**.
 
-   ![sonarqube-credentials](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-credentials.png)
+   ![sonarqube-credentials](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-credentials.png)
 
 4. Under the **withCredentials** step, click **Add Nesting Steps** to add a nested step for it.
 
-   ![nested-step](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/nested-step.png)
+   ![nested-step](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/nested-step.png)
 
 5. Click **withSonarQubeEnv**. In the displayed dialog box, do not change the default name `sonar` and click **OK** to save it.
 
-   ![sonar](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonar.png)
+   ![sonar](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonar.png)
 
 6. Under the **withSonarQubeEnv** step, click **Add Nesting Steps** to add a nested step for it.
 
-   ![add-nested-step](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-nested-step.png)
+   ![add-nested-step](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-nested-step.png)
 
 7. Click **shell** and enter the following command in the command line for the sonarqube branch and authentication. Click **OK** to finish.
 
@@ -190,29 +190,29 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
    mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
    ```
 
-   ![sonarqube-shell-new](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-shell-new.png)
+   ![sonarqube-shell-new](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-shell-new.png)
 
 8. Click **Add Nesting Steps** (the third one) for the **container** step directly and select **timeout**. Enter `1` for time and select **Hours** for unit. Click **OK** to finish.
 
-   ![add-nested-step-2](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-nested-step-2.png)
+   ![add-nested-step-2](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-nested-step-2.png)
 
-   ![timeout](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/timeout.png)
+   ![timeout](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/timeout.png)
 
 9. Click **Add Nesting Steps** for the **timeout** step and select **waitForQualityGate**. Select **Start the follow-up task after the inspection** in the displayed dialog box. Click **OK** to save it.
 
-   ![waitforqualitygate](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/waitforqualitygate.png)
+   ![waitforqualitygate](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/waitforqualitygate.png)
 
-   ![sonar-ready](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonar-ready.png)
+   ![sonar-ready](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonar-ready.png)
 
 #### Stage 4: Build and push the image
 
 1. Click the plus icon on the right of the previous stage to add a new stage to build and push images to Docker Hub. Name it `Build and Push`.
 
-   ![build-and-push-image](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/build-and-push-image.png)
+   ![build-and-push-image](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/build-and-push-image.png)
 
 2. Click **Add Step** under **Task** and select **container**. Name it `maven`, and then click **OK**.
 
-   ![maven-set](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/maven-set.png)
+   ![maven-set](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/maven-set.png)
 
 3. Click **Add Nesting Steps** under the `maven` container to add a nested step. Select **shell** from the list, and enter the following command in the displayed dialog box. Click **OK** to finish.
 
@@ -220,7 +220,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
    mvn -Dmaven.test.skip=true clean package
    ```
 
-   ![nested-step-maven](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/nested-step-maven.png)
+   ![nested-step-maven](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/nested-step-maven.png)
 
 4. Click **Add Nesting Steps** again and select **shell**. Enter the following command in the command line to build a Docker image based on the [Dockerfile](https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online). Click **OK** to confirm.
 
@@ -234,7 +234,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
    docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER .
    ```
 
-   ![shell-command](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/shell-command.png)
+   ![shell-command](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/shell-command.png)
 
 5. Click **Add Nesting Steps** again and select **withCredentials**. Fill in the following fields in the displayed dialog box. Click **OK** to confirm.
 
@@ -248,7 +248,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{</ notice >}} 
 
-   ![docker-credential](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/docker-credential.png)
+   ![docker-credential](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/docker-credential.png)
 
 6. Click **Add Nesting Steps** (the first one) in the **withCredentials** step created above. Select **shell** and enter the following command in the displayed dialog box, which is used to log in to Docker Hub. Click **OK** to confirm.
 
@@ -256,7 +256,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
    echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
    ```
 
-   ![login-docker-command](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/login-docker-command.png)
+   ![login-docker-command](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/login-docker-command.png)
 
 7. Click **Add nesting steps** in the **withCredentials** step. Select **shell** and enter the following command to push the SNAPSHOT image to Docker Hub. Click **OK** to finish.
 
@@ -264,27 +264,27 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
    docker push $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
    ```
 
-   ![push-snapshot-to-docker](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/push-snapshot-to-docker.png)
+   ![push-snapshot-to-docker](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/push-snapshot-to-docker.png)
 
 #### Stage 5: Generate the artifact
 
 1. Click the plus icon on the right of the **Build and Push** stage to add a new stage to save artifacts and name it `Artifacts`. This example uses a JAR package.
 
-   ![add-artifact-stage](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-artifact-stage.png)
+   ![add-artifact-stage](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/add-artifact-stage.png)
 
 2. With the **Artifacts** stage selected, click **Add Step** under **Task** and select **archiveArtifacts**. Enter `target/*.jar` in the displayed dialog box, which is used to set the archive path of artifacts in Jenkins. Click **OK** to finish.
 
-   ![artifact-info](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/artifact-info.png)
+   ![artifact-info](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/artifact-info.png)
 
 #### Stage 6: Deploy to development
 
 1. Click the plus icon on the right of the stage **Artifacts** to add the last stage. Name it `Deploy to Dev`. This stage is used to deploy resources to your development environment (namely, the project of `kubesphere-sample-dev`).
 
-   ![develop-to-dev](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/develop-to-dev.png)
+   ![develop-to-dev](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/develop-to-dev.png)
 
 2. Click **Add Step** under the **Deploy to Dev** stage. Select **input** from the list and enter `@project-admin` in the **Message** field, which means the account `project-admin` will review this pipeline when it runs to this stage. Click **OK** to save it.
 
-   ![input-message](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/input-message.png)
+   ![input-message](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/input-message.png)
 
    {{< notice note >}}
 
@@ -320,7 +320,7 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
    {{< notice note >}}
    
-   On the **Pipelines** page, you can click <img src="/images/docs/v3.3/common-icons/three-dots.png" width="15" alt="icon" /> on the right side of the pipeline and then select **Copy** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch. 
+   On the **Pipelines** page, you can click <img src="/images/docs/v3.x/common-icons/three-dots.png" width="15" alt="icon" /> on the right side of the pipeline and then select **Copy** to create a copy of it. If you need to concurrently run multiple pipelines that don't contain multiple branches, you can select all of these pipelines and then click **Run** to run them in a batch. 
    
    {{</ notice >}}
 
@@ -328,13 +328,13 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
 1. You need to manually run the pipeline that is created through the graphical editing panel. Click **Run**, and you can see three string parameters defined in Step 3. Click **OK** to run the pipeline.
 
-   ![run-pipeline](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/run-pipeline.png)
+   ![run-pipeline](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/run-pipeline.png)
    
 2. To see the status of a pipeline, go to the **Run Records** tab and click the record you want to view.
 
 3. Wait for a while and the pipeline stops at the stage **Deploy to Dev** if it runs successfully. As the reviewer of the pipeline, `project-admin` needs to approve it before resources are deployed to the development environment.
 
-   ![pipeline-successful](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-successful.jpg)
+   ![pipeline-successful](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/pipeline-successful.jpg)
 
 4. Log out of KubeSphere and log back in to the console as `project-admin`. Go to your DevOps project and click the pipeline `graphical-pipeline`. Under the **Run Records** tab, click the record to be reviewed. To approve the pipeline, click **Proceed**.
 
@@ -350,13 +350,13 @@ This stage uses SonarQube to test your code. You can skip this stage if you do n
 
 Click the **Artifacts** tab and then click the icon on the right to download the artifact.
 
-![download-artifact](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/download-artifact.png)
+![download-artifact](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/download-artifact.png)
 
 ### Step 8: View code analysis results
 
 On the **Code Check** page, view the code analysis result of this example pipeline, which is provided by SonarQube. If you do not configure SonarQube in advance, this section is not available. For more information, see [Integrate SonarQube into Pipelines](../../../how-to-integrate/sonarqube/).
 
-![sonarqube-result-detail](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-result-detail.png)
+![sonarqube-result-detail](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/sonarqube-result-detail.png)
 
 ### Step 9: Verify Kubernetes resources
 
@@ -374,7 +374,7 @@ On the **Code Check** page, view the code analysis result of this example pipeli
 
 4. Now that the pipeline has run successfully, an image will be pushed to Docker Hub. Log in to Docker Hub and check the result.
 
-   ![dockerhub-image](/images/docs/v3.3/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/dockerhub-image.png)
+   ![dockerhub-image](/images/docs/v3.x/devops-user-guide/using-devops/create-a-pipeline-using-graphical-editing-panels/dockerhub-image.png)
 
 5. The app is named `devops-sample` as it is the value of `APP_NAME` and the tag is the value of `SNAPSHOT-$BUILD_NUMBER`. `$BUILD_NUMBER` is the serial number of a record under the **Run Records** tab.
 

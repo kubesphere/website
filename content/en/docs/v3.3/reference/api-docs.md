@@ -10,7 +10,7 @@ weight: 17200
 
 The KubeSphere API server validates and configures data for API objects. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.
 
-![ks-apiserver](/images/docs/v3.3/reference/kubesphere-api/ks-apiserver.png)
+![ks-apiserver](/images/docs/v3.x/reference/kubesphere-api/ks-apiserver.png)
 
 ## Use the KubeSphere API
 

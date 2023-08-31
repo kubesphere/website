@@ -17,15 +17,15 @@ pip3 install awscli --upgrade --user
 ```
 
 Check the installation with `aws --version`.
-![check-aws-cli](/images/docs/v3.3/eks/check-aws-cli.png)
+![check-aws-cli](/images/docs/v3.x/eks/check-aws-cli.png)
 
 ## Prepare an EKS Cluster
 
 1. A standard Kubernetes cluster in AWS is a prerequisite of installing KubeSphere. Go to the navigation menu and refer to the image below to create a cluster.
-   ![create-cluster-eks](/images/docs/v3.3/eks/eks-launch-icon.png)
+   ![create-cluster-eks](/images/docs/v3.x/eks/eks-launch-icon.png)
 
 2. On the **Configure cluster** page, fill in the following fields:
-   ![config-cluster-page](/images/docs/v3.3/eks/config-cluster-page.png)
+   ![config-cluster-page](/images/docs/v3.x/eks/config-cluster-page.png)
 
    - Name: A unique name for your cluster.
 
@@ -40,7 +40,7 @@ Check the installation with `aws --version`.
    - Tags (Optional): Add any tags to your cluster. For more information, see [Tagging your Amazon EKS resources](https://docs.aws.amazon.com/eks/latest/userguide/eks-using-tags.html).
 
 3. Select **Next**. On the **Specify networking** page, select values for the following fields:
-   ![network](/images/docs/v3.3/eks/networking.png)
+   ![network](/images/docs/v3.x/eks/networking.png)
 
    - VPC: The VPC that you created previously in [Create your Amazon EKS cluster VPC](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html#vpc-create). You can find the name of your VPC in the drop-down list.
 
@@ -49,7 +49,7 @@ Check the installation with `aws --version`.
    - Security groups: The SecurityGroups value from the AWS CloudFormation output that you generated with [Create your Amazon EKS cluster VPC](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html#vpc-create). This security group has ControlPlaneSecurityGroup in the drop-down name.
 
    - For **Cluster endpoint access**, choose one of the following options:
-      ![endpoints](/images/docs/v3.3/eks/endpoints.png)
+      ![endpoints](/images/docs/v3.x/eks/endpoints.png)
 
       - Public: Enables only public access to your cluster's Kubernetes API server endpoint. Kubernetes API requests that originate from outside of your cluster's VPC use the public endpoint. By default, access is allowed from any source IP address. You can optionally restrict access to one or more CIDR ranges such as 192.168.0.0/16, for example, by selecting **Advanced settings** and then selecting **Add source**.
 
@@ -62,20 +62,20 @@ Check the installation with `aws --version`.
       - Public and private: Enables public and private access.
 
 4. Select **Next**. On the **Configure logging** page, you can optionally choose which log types that you want to enable. By default, each log type is **Disabled**. For more information, see [Amazon EKS control plane logging](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
-   ![logging](/images/docs/v3.3/eks/logging.png)
+   ![logging](/images/docs/v3.x/eks/logging.png)
 
 5. Select **Next**. On the **Review and create page**, review the information that you entered or selected on the previous pages. Select **Edit** if you need to make changes to any of your selections. Once you're satisfied with your settings, select **Create**. The **Status** field shows **CREATING** until the cluster provisioning process completes.
-   ![revies](/images/docs/v3.3/eks/review.png)
+   ![revies](/images/docs/v3.x/eks/review.png)
 
    - For more information about the previous options, see [Modifying cluster endpoint access](https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html#modify-endpoint-access).
    When your cluster provisioning is complete (usually between 10 and 15 minutes), save the API server endpoint and Certificate authority values. These are used in your kubectl configuration.
-   ![creating](/images/docs/v3.3/eks/creating.png)
+   ![creating](/images/docs/v3.x/eks/creating.png)
 
 6. Create **Node Group** and define 3 nodes in this cluster.
-   ![node-group](/images/docs/v3.3/eks/node-group.png)
+   ![node-group](/images/docs/v3.x/eks/node-group.png)
 
 7. Configure the node group.
-   ![config-node-group](/images/docs/v3.3/eks/config-node-grop.png)
+   ![config-node-group](/images/docs/v3.x/eks/config-node-grop.png)
 
    {{< notice note >}}
 
@@ -166,10 +166,10 @@ Now that KubeSphere is installed, you can access the web console of KubeSphere b
    ```
 
 - Edit the configuration of the service **ks-console** by executing `kubectl edit ks-console` and change `type` from `NodePort` to `LoadBalancer`. Save the file when you finish.
-![loadbalancer](/images/docs/v3.3/eks/loadbalancer.png)
+![loadbalancer](/images/docs/v3.x/eks/loadbalancer.png)
 
 - Run `kubectl get svc -n kubesphere-system` and get your external IP.
-  ![external-ip](/images/docs/v3.3/eks/external-ip.png)
+  ![external-ip](/images/docs/v3.x/eks/external-ip.png)
 
 - Access the web console of KubeSphere using the external IP generated by EKS.
 

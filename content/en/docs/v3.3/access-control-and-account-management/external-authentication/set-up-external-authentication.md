@@ -18,7 +18,7 @@ You need to deploy a Kubernetes cluster and install KubeSphere in the cluster. F
 
 ## Procedure
 
-1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.3/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
+1. Log in to KubeSphere as `admin`, move the cursor to <img src="/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> in the lower-right corner, click **kubectl**, and run the following command to edit `ks-installer` of the CRD `ClusterConfiguration`:
 
    ```bash
    kubectl -n kubesphere-system edit cc ks-installer

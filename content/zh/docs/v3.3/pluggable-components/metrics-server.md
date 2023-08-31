@@ -78,7 +78,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     {{</ notice >}}
 
-3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
+3. 在**自定义资源**中，点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/metrics-server/three-dots.png" height="20px">，选择**编辑 YAML**。
 
 4. 在该 YAML 文件中，搜索 `metrics_server`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的**确定**以保存配置。
 
@@ -95,7 +95,7 @@ KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/d
 
     {{< notice note >}}
 
-可以通过点击控制台右下角的 <img src="/images/docs/v3.3/zh-cn/enable-pluggable-components/metrics-server/hammer.png" height="20px"> 找到 kubectl 工具。
+可以通过点击控制台右下角的 <img src="/images/docs/v3.x/zh-cn/enable-pluggable-components/metrics-server/hammer.png" height="20px"> 找到 kubectl 工具。
     {{</ notice >}}
 
 ## 验证组件的安装

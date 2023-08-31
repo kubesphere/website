@@ -12,7 +12,7 @@ KubeSphere API 服务器为 API 对象验证和配置数据。API 服务器为 R
 
 其中 /kapi 和/kapis 是 KubeSphere 拓展聚合的 API，/api和 /apis开头的都属于 Kubernetes 原生的 API，KubeSphere 把用户对原生 Kubernetes 资源的请求通过 API Server 转发到 Kubernetes API Server 对原生资源进行操作和管理。
 
-![ks-apiserver](/images/docs/v3.3/zh-cn/reference/kubesphere-api/ks-apiserver.png)
+![ks-apiserver](/images/docs/v3.x/zh-cn/reference/kubesphere-api/ks-apiserver.png)
 
 ## 使用 KubeSphere API
 

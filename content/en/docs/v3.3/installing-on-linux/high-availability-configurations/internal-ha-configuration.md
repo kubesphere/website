@@ -14,7 +14,7 @@ This document describes how to use the built-in high availability mode when inst
 
 The following figure shows the example architecture of the built-in high availability mode. For more information about system and network requirements, see [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/#step-1-prepare-linux-hosts).
 
-![HA architecture](/images/docs/v3.3/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
+![HA architecture](/images/docs/v3.x/zh-cn/installing-on-linux/introduction/internal-ha-configuration/internalLoadBalancer.png)
 
 {{< notice note >}}
 

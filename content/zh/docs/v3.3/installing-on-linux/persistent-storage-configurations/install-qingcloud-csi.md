@@ -20,7 +20,7 @@ weight: 3320
 
 1. 登录[青云QingCloud](https://console.qingcloud.com/login) 的 Web 控制台，从右上角的下拉菜单中选择 **API 密钥**。
 
-   ![access-key](/images/docs/v3.3/zh-cn/installing-on-linux/persistent-storage-configurations/qingcloud-csi/access-key.png)
+   ![access-key](/images/docs/v3.x/zh-cn/installing-on-linux/persistent-storage-configurations/qingcloud-csi/access-key.png)
 
 2. 点击**创建**生成密钥。创建完成后，下载密钥，该密钥存储在一个 csv 文件中。
 
@@ -47,7 +47,7 @@ weight: 3320
 
 2. 字段 `zone` 指定云磁盘创建的可用区。在青云QingCloud 平台，您必须在创建云磁盘之前指定一个可用区。
 
-   ![storage-zone](/images/docs/v3.3/zh-cn/installing-on-linux/persistent-storage-configurations/qingcloud-csi/storage-zone.jpg)
+   ![storage-zone](/images/docs/v3.x/zh-cn/installing-on-linux/persistent-storage-configurations/qingcloud-csi/storage-zone.jpg)
 
    请确保为 `zone` 指定的值与以下区域 ID 匹配：
 

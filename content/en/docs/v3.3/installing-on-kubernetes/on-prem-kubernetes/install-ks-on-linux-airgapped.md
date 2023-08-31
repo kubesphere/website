@@ -30,7 +30,7 @@ You can use Harbor or any other private image registries. This tutorial uses Doc
 
 2. Make sure you specify a domain name in the field `Common Name` when you are generating your own certificate. For instance, the field is set to `dockerhub.kubekey.local` in this example. 
 
-   ![self-signed-cert](/images/docs/v3.3/installing-on-linux/introduction/air-gapped-installation/self-signed-cert.jpg)
+   ![self-signed-cert](/images/docs/v3.x/installing-on-linux/introduction/air-gapped-installation/self-signed-cert.jpg)
 
 ### Start the Docker registry
 

@@ -5,30 +5,6 @@
   HUGO_VERSION = "0.117.0"
 
 [[redirects]]
-  from = "/docs"
-  to = "/docs/v3.3"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/zh/docs"
-  to = "/zh/docs/v3.3"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/docs/*"
-  to = "/docs/v3.3/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/zh/docs/*"
-  to = "/zh/docs/v3.3/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/log/*"
   to = "https://log.kubesphere.io/:splat"
   status = 308

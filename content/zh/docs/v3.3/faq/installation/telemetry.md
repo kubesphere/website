@@ -74,7 +74,7 @@ Telemetry 收集已安装 KubeSphere 集群的大小、KubeSphere 和 Kubernetes
 
 3. 在搜索框中输入 `clusterconfiguration`，点击搜索结果打开详情页。
 
-4. 点击 `ks-installer` 右侧的 <img src="/images/docs/v3.3/zh-cn/faq/installation/telemetry-in-kubesphere/three-dots.png" height="20px">，并选择**编辑 YAML**。
+4. 点击 `ks-installer` 右侧的 <img src="/images/docs/v3.x/zh-cn/faq/installation/telemetry-in-kubesphere/three-dots.png" height="20px">，并选择**编辑 YAML**。
 
 5. 在文件末尾添加 `telemetry_enabled: false` 字段，点击**确定**。
 

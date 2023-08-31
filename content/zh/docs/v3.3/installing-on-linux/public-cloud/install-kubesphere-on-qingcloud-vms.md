@@ -22,7 +22,7 @@ Weight: 3420
 
 本教程使用六台 **Ubuntu 16.04.6** 机器。您需要创建两个负载均衡器，并在其中的三台机器上部署三个主节点和 etcd 节点。您可以在 KubeKey 创建的 `config-sample.yaml` 文件中配置上述节点（`config-sample.yaml` 为文件的默认名称，可以手动更改）。
 
-![ha-architecture](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
+![ha-architecture](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/ha-architecture.png)
 
 {{< notice note >}}
 
@@ -40,15 +40,15 @@ Weight: 3420
 
 1. 登录[青云QingCloud 控制台](https://console.qingcloud.com/login)。在左侧导航栏选择**网络与 CDN** 下的**负载均衡器**，然后点击**创建**。
 
-   ![create-lb](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
+   ![create-lb](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/create-lb.png)
 
 2. 在弹出的对话框中，设置负载均衡器的名称，在**网络**下拉列表中选择机器所在的私有网络（在本例中为 `pn`），其他参数可以保持默认，然后点击**提交**。
 
-   ![qingcloud-lb](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
+   ![qingcloud-lb](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/qingcloud-lb.png)
 
 4. 点击上一步创建的负载均衡器。在其详情页面创建监听器，将**监听协议**设置为 `TCP`，将**端口**设置为 `6443`。
 
-   ![listener](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
+   ![listener](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener.png)
 
    - **名称**：监听器的名称
    - **监听协议**：`TCP`
@@ -65,7 +65,7 @@ Weight: 3420
 
 5. 点击**添加后端**，选择之前选择的私有网络（在本例中为 `pn`），点击**高级搜索**，选择三个主节点，并将**端口**设置为 `6443`（api-server 的默认安全端口）。
 
-   ![3-master](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/3-master.png)
+   ![3-master](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/3-master.png)
 
    设置完成后点击**提交**。
 
@@ -77,7 +77,7 @@ Weight: 3420
 
    {{</ notice >}}
 
-   ![apply-change](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/apply-change.png)
+   ![apply-change](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/apply-change.png)
 
    记录**网络**区域显示的内网 VIP 地址。该地址将在后续步骤中添加至配置文件。
 
@@ -93,7 +93,7 @@ Weight: 3420
 
 1. 创建外部负载均衡器时，点击**添加公网 IPv4** 将您申请到的公网 IP 地址与负载均衡器绑定，将**网络**设置为**不加入私有网络**。其他步骤与创建内部负载均衡器相同。
 
-   ![bind-eip](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/bind-eip.png)
+   ![bind-eip](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/bind-eip.png)
 
 2. 在负载均衡器详情页面，创建一个监听器用于监听 `30880` 端口（KubeSphere 控制台 NodePort 端口），将**监听协议**设置为 `HTTP`。
 
@@ -103,11 +103,11 @@ Weight: 3420
 
    {{</ notice >}}
 
-   ![listener2](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener2.png)
+   ![listener2](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/listener2.png)
 
 3. 点击**添加后端**。在弹出的对话框中选择私有网络 `pn`，点击**高级搜索**，选择私有网络 `pn` 中的六台机器用于安装 KubeSphere，并将**端口**设置为 `30880`。
 
-   ![six-instances](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/six-instances.png)
+   ![six-instances](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/six-instances.png)
 
    设置完成后点击**提交**。
 
@@ -318,11 +318,11 @@ https://kubesphere.io             2020-08-13 10:50:24
 
 安装完成后，打开内部和外部负载均衡器的详情页面查看节点状态。
 
-![active](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active.png)
+![active](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active.png)
 
 如果两个监听器中的节点状态都是**活跃**，表明所有节点已启动并运行正常。
 
-![active-listener](/images/docs/v3.3/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
+![active-listener](/images/docs/v3.x/zh-cn/installing-on-linux/installing-on-public-cloud/deploy-kubesphere-on-qingcloud-instances/active-listener.png)
 
 进入 KubeSphere 的 Web 控制台，您也可以看到所有节点运行正常。
 

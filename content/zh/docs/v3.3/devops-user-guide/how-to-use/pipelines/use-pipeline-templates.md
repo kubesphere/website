@@ -77,16 +77,16 @@ KubeSphere 提供图形编辑面板，您可以通过交互式操作定义 Jenki
 
 - CI 流水线模板
 
-   ![ci-template](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/ci-template.png)
+   ![ci-template](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/ci-template.png)
 
-   ![ci-stages](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/ci-stages.png)
+   ![ci-stages](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/ci-stages.png)
 
    CI 流水线模板包含两个阶段。**clone code** 阶段用于检出代码，**build & push** 阶段用于构建镜像并将镜像推送至 Docker Hub。您需要预先为代码仓库和 Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
 
 - CI & CD 流水线模板
 
-   ![cicd-template](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/cicd-template.png)
+   ![cicd-template](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/cicd-template.png)
 
-   ![cicd-stages](/images/docs/v3.3/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/cicd-stages.png)
+   ![cicd-stages](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-pipeline-templates/cicd-stages.png)
 
    CI & CD 流水线模板包含六个阶段。有关每个阶段的更多信息，请参考[使用 Jenkinsfile 创建流水线](../create-a-pipeline-using-jenkinsfile/#流水线概述)，您可以在该文档中找到相似的阶段及描述。您需要预先为代码仓库、Docker Hub 仓库和集群的 kubeconfig 创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。

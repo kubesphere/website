@@ -12,11 +12,11 @@ weight: 4260
 
 1. 在 OKE 上创建一个标准的 Kubernetes 集群是安装 KubeSphere 的前提条件。在导航栏中，请参考下图创建集群。
 
-    ![创建集群](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/创建集群.jpg)
+    ![创建集群](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/创建集群.jpg)
 
 2. 在弹出窗口中，选择**快速创建**并点击**启动工作流**。
 
-    ![快速创建](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/快速创建.jpg)
+    ![快速创建](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/快速创建.jpg)
 
     {{< notice note >}}
 本示例演示**快速创建**，Oracle Cloud 通过此模式会为集群自动创建所必需的资源。如果您选择**定制创建**，您需要自己创建所有资源（例如 VCN 和负载均衡器子网）。
@@ -24,7 +24,7 @@ weight: 4260
 
 3. 接下来，您需要为集群设置基本信息（可参考以下图例）。完成后，请点击**下一步**。
 
-    ![集群基本信息](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/集群基本信息.jpg)
+    ![集群基本信息](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/集群基本信息.jpg)
 
     {{< notice note >}}
 
@@ -37,23 +37,23 @@ weight: 4260
 
 1. 检查集群信息，确认无需修改后点击**创建集群**。
 
-    ![完成创建集群](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/完成创建集群.jpg)
+    ![完成创建集群](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/完成创建集群.jpg)
 
 2. 集群创建后，点击**关闭**。
 
-    ![集群创建完成](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/集群创建完成.jpg)
+    ![集群创建完成](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/集群创建完成.jpg)
 
 3. 确保集群状态为**活动**后，点击**访问集群**。
 
-    ![访问集群](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/访问集群.jpg)
+    ![访问集群](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/访问集群.jpg)
 
 4. 在弹出窗口中，选择 **Cloud Shell 访问权限**。点击**启动 Cloud Shell**，并将 Oracle Cloud 所提供的命令复制到 Cloud Shell。
 
-    ![启动Cloud-shell](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/启动Cloud-shell.jpg)
+    ![启动Cloud-shell](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/启动Cloud-shell.jpg)
 
 5. 在 Cloud Shell 中，粘贴该命令以便之后可以执行 KubeSphere 安装命令。
 
-    ![cloud-shell-oke](/images/docs/v3.3/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/cloud-shell-oke.jpg)
+    ![cloud-shell-oke](/images/docs/v3.x/zh-cn/installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-oke/cloud-shell-oke.jpg)
 
     {{< notice warning >}}如果不在 Cloud Shell 中执行该命令，您无法继续进行以下操作。
     
