@@ -137,4 +137,8 @@ section4:
     - icon: "images/partner/logo-flomesh.png"
       partnerType: "Go-to-market"
       content: 'Flomesh is a leading provider of cloud-native application traffic management solutions centered around the open-source software, Pipy. With an extensive range of products and solutions, Flomesh excels in delivering unified and consistent load balancing capabilities, out-of-the-box service mesh functionality, and globally integrated management features, specifically designed for hybrid cloud and multi-cloud environments.'
+
+    - icon: "images/partner/logo-stonedb.png"
+      partnerType: "App Provider"
+      content: 'StoneDB is an open-source hybrid transaction/analytical processing (HTAP) database designed and developed by StoneAtom based on the MySQL kernel. It is the first database of this type launched in China. StoneDB can be seamlessly switched from MySQL. It provides features such as optimal performance and real-time analytics, offering you a one-stop solution to process online transaction processing (OLTP), online analytical processing (OLAP), and HTAP workloads.'  
 ---

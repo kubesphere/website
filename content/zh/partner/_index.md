@@ -138,4 +138,8 @@ section4:
     - icon: "images/partner/logo-flomesh.png"
       partnerType: "市场合作伙伴"
       content: 'Flomesh 是一站式云原生应用流量管理供应商，以开源软件 Pipy 为核心，提供全方面的应用流量管理产品及解决方案。在混合云、多云环境中提供了统一的、一致的负载均衡能力、开箱即用的服务网格能力和全局一体化的管理能力。'   
+
+    - icon: "images/partner/logo-stonedb.png"
+      partnerType: "应用程序提供商"
+      content: 'StoneDB 是由石原子科技公司自主设计、研发的国内首款基于 MySQL 内核打造的开源 HTAP（Hybrid Transactional and Analytical Processing）融合型数据库，可实现与 MySQL 的无缝切换。StoneDB 具备超高性能、实时分析等特点，为用户提供一站式 HTAP 解决方案。'   
 ---
