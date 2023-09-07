@@ -240,6 +240,8 @@ section3:
           icon: '/images/case/logo-yiheda.png'
         - name: 'bobinfo'
           icon: '/images/case/logo-hsh.png'
+        - name: 'yf5g'
+          icon: '/images/case/yf5g-logo.png'
 
     - name: '能源'
       children:
