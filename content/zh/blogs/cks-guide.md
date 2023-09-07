@@ -1,7 +1,7 @@
 ---
 title: 'CKS 认证备考指南'
 tag: 'KubeSphere, Kubernetes, CKS'
-keywords: 'KubeSphere, Kubernetes, CKSt'
+keywords: 'KubeSphere, Kubernetes, CKS'
 description: '本文主要介绍 CKS 认证是什么，如何备考及一些知识点。'
 createTime: '2022-09-01'
 author: 'scwang'
