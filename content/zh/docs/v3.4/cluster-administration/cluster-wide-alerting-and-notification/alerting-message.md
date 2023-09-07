@@ -7,21 +7,62 @@ linkTitle: "告警消息（节点级别）"
 weight: 8540
 ---
 
-告警消息会记录按照告警规则触发的告警的详细信息。本教程演示如何查看节点级别的告警消息。
+KubeSphere 为节点提供告警规则，提供编组，允许用户将相似的规则编入一个规则组中，一旦满足这些规则定义的条件，将会触发告警。本教程将演示如何为集群中的节点创建规则组及告警规则。
+
+KubeSphere 还具有内置规则组。 在<strong>内置规则组</strong>选项卡，您可以点击任一规则组查看该规则组中所有规则，点击任一规则查看其详情。请注意，这些规则不能直接在控制台上进行删除，但可以通过编辑调整规则。
+
 ## 准备工作
 
-- 您需要启用 [KubeSphere 告警系统](../../../pluggable-components/alerting/)。
-- 您需要创建一个用户 (`cluster-admin`) 并授予其 `clusters-admin` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-4-create-a-role)。
-- 您已经创建节点级别的告警策略并已触发该告警。有关更多信息，请参考[告警策略（节点级别）](../alerting-policy/)。
+- 您需要启用 [KubeSphere 告警系统](https://www.kubesphere.io/zh/docs/v3.3/pluggable-components/alerting)。
+- 如需接收告警通知，您需要预先配置[通知渠道](https://www.kubesphere.io/zh/docs/v3.3/cluster-administration/platform-settings/notification-management/configure-email/)。
+- 您需要创建一个用户 (cluster-admin) 并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](https://www.kubesphere.io/zh/docs/v3.3/quick-start/create-workspace-and-project/#step-4-create-a-role)。
+-您需要确保集群中存在工作负载。如果尚未就绪，请参见[部署并访问 Bookinfo](https://www.kubesphere.io/zh/docs/v3.3/quick-start/deploy-bookinfo-to-k8s/) 创建一个示例应用。
 
-## 查看告警消息
+## 创建规则组及告警策略
 
-1. 使用 `cluster-admin` 帐户登录 KubeSphere 控制台，导航到**监控告警**下的**告警消息**。
+1. 使用 cluster-admin 用户登录控制台。点击左上角的<strong>平台管理</strong>，然后点击<strong>集群管理</strong>。
+2. 前往<strong>监控告警</strong>下的<strong>规则组</strong>，然后点击<strong>创建</strong>。
+![](https://hackmd.io/_uploads/H1nTLPk02.png)
+3. 在出现的对话框中，填写以下基本信息。点击<strong>下一步</strong>继续。
+![](https://hackmd.io/_uploads/HkJmvP1Rh.png)
+- 名称：使用简明名称作为其唯一标识符，例如 `node-rules`。
+- 别名：帮助您更好地识别规则组。
+- 检查间隔（时分秒）：设置指标检查之间的时间间隔。默认值为 1 分钟。
+- 描述：对规则组的简要介绍。
 
-2. 在**告警消息**页面，可以看到列表中的全部告警消息。第一列显示了为告警消息定义的概括和详情。如需查看告警消息的详细信息，点击告警策略的名称，然后点击告警策略详情页面上的**告警历史**选项卡。
+4. 在告警规则选项卡中，点击添加告警规则，为规则组添加告警规则。
+![](https://hackmd.io/_uploads/H1qSwwk0h.png)
+5. 在告警规则的<strong>规则设置</strong>选项卡中，您可以使用规则模板或创建自定义规则。如需使用规则模板，请设置以下参数。
+![](https://hackmd.io/_uploads/B1ffdPy02.png)
+- 规则名称：使用简明名称作为其唯一标识符，例如 `node1-cpu-rule`。
+- 监控目标：选择至少一个集群节点进行监控。
+- 触发条件：设置合适的触发条件。
+   - 监控指标：点击下拉框，选择合适的监控指标。
+   - 操作符：点击下拉框，选择合适的操作符（>、>=、<、<=）。
+   - 阈值：设置的指标达到该阈值后，告警规则将变为验证中状态。
+   - 持续时间：告警规则中设置的情形达到阈值的持续时间后，告警规则将变为触发中状态。
+   - 告警级别：提供的值包括一般告警、重要告警和危险告警，代表告警的严重程度。
 
-3. 在**告警历史**选项卡，您可以看到告警级别、监控目标和告警激活时间。
+6. 在告警规则的<strong>消息设置</strong>选项卡中，您可以设置告警的通知消息。
 
-## 查看通知
+- 概要：该告警规则触发告警时，告警通知的概要信息。
+- 详情：自定义描述该告警通知的详细信息。
 
-如果需要接收告警通知（例如，邮件和 Slack 消息），则须先配置[一个通知渠道](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
+7. 点击✔，完成这一告警规则的设置。您可为改规则组添加多个告警规则。规则设置完毕后，点击<strong>创建</strong>完成这一规则组的创建。
+
+## 编辑规则组
+如需在创建后编辑规则组，在<strong>规则组</strong>页面点击右侧的![](https://hackmd.io/_uploads/BJkssv1Ch.png)。
+![](https://hackmd.io/_uploads/HyPG3vyA3.png)
+1. 点击下拉菜单中的编辑信息，根据与创建时第3步来编辑规则组。点击信息设置页面的确定保存更改。
+2. 点击下拉菜单中的删除以删除规则组。
+3. 点击下拉菜单中的禁用以禁用规则组。
+4. 点击下拉菜单中的编辑告警规则对该规则组中告警规则进行增删改以及单个规则的禁用操作。
+
+## 查看规则组
+在<strong>规则组</strong>页面，点击一个规则组的名称查看其详情，包括告警规则和告警。
+![](https://hackmd.io/_uploads/HyZSnDyC3.png)
+
+在输入框输入关键字，可搜索到关联的告警规则。点击任一告警规则，您还可以看到创建告警规则时基于所使用模板的告警规则表达式。
+![](https://hackmd.io/_uploads/Hylmawk02.png)
+
+<strong>告警消息</strong>显示您在消息设置中设置的自定义消息。
