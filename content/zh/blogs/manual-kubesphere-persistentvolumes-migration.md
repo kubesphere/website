@@ -52,7 +52,7 @@ $ kubectl -n kubesphere-logging-system get pvc data-elasticsearch-logging-data-1
 
 ## 复制数据
 
-不管 PV 的 accessModes 是 [ReadWriteOnce](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) 还是 [ReadWriteMany](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes)，在复制数据之前都要将应用的副本数量缩减为 0，因为 ReadWriteOne 模式同时只允许挂载一个 Pod，新 Pod 无法挂载，而 ReadWriteMany 模式如果不将副本数量缩减为 0，在复制数据时可能会有新的数据写入。所以无论如何，都要将副本数量缩为 0 。
+不管 PV 的 accessModes 是 [ReadWriteOnce](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) 还是 [ReadWriteMany](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes)，在复制数据之前都要将应用的副本数量缩减为 0，在复制数据时可能会有新的数据写入。所以无论如何，都要将副本数量缩为 0 。
 
 ```bash
 $ kubectl -n kubesphere-logging-system get sts
