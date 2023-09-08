@@ -13,10 +13,10 @@ KubeSphere 还具有内置规则组。 在<strong>内置规则组</strong>选项
 
 ## 准备工作
 
-- 您需要启用 [KubeSphere 告警系统](https://www.kubesphere.io/zh/docs/v3.3/pluggable-components/alerting)。
-- 如需接收告警通知，您需要预先配置[通知渠道](https://www.kubesphere.io/zh/docs/v3.3/cluster-administration/platform-settings/notification-management/configure-email/)。
-- 您需要创建一个用户 (cluster-admin) 并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](https://www.kubesphere.io/zh/docs/v3.3/quick-start/create-workspace-and-project/#step-4-create-a-role)。
--您需要确保集群中存在工作负载。如果尚未就绪，请参见[部署并访问 Bookinfo](https://www.kubesphere.io/zh/docs/v3.3/quick-start/deploy-bookinfo-to-k8s/) 创建一个示例应用。
+- 您需要启用 [KubeSphere 告警系统](../../pluggable-components/alerting)。
+- 如需接收告警通知，您需要预先配置[通知渠道](../platform-settings/notification-management/configure-email)。
+- 您需要创建一个用户 (cluster-admin) 并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project#step-4-create-a-role)。
+-您需要确保集群中存在工作负载。如果尚未就绪，请参见[部署并访问 Bookinfo](../../quick-start/deploy-bookinfo-to-k8s) 创建一个示例应用。
 
 ## 创建规则组及告警策略
 
