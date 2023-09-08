@@ -28,7 +28,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
    ```
 
    {{</ tab >}}
@@ -44,7 +44,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
    ```
    {{</ tab >}}
 
@@ -73,7 +73,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.7/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.10/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -81,22 +81,26 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.7/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.10/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
-       version: v1.22.12
+       version: v1.23.15
      components:
        helm:
          version: v3.9.0
        cni:
-         version: v0.9.1
+         version: v1.2.0
        etcd:
          version: v3.4.13
+       calicoctl:
+         version: v3.23.2
       ## For now, if your cluster container runtime is containerd, KubeKey will add a docker 20.10.8 container runtime in the below list.
       ## The reason is KubeKey creates a cluster with containerd by installing a docker first and making kubelet connect the socket file of containerd which docker contained.
        containerRuntimes:
        - type: docker
          version: 20.10.8
+       - type: containerd
+         version: 1.6.4
        crictl:
          version: v1.24.0
        docker-registry:
@@ -106,20 +110,20 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        docker-compose:
          version: v2.2.2
      images:
-     - docker.io/kubesphere/kube-apiserver:v1.22.12
-     - docker.io/kubesphere/kube-controller-manager:v1.22.12
-     - docker.io/kubesphere/kube-proxy:v1.22.12
-     - docker.io/kubesphere/kube-scheduler:v1.22.12
-     - docker.io/kubesphere/pause:3.5
-     - docker.io/coredns/coredns:1.8.0
+     - docker.io/kubesphere/kube-apiserver:v1.23.15
+     - docker.io/kubesphere/kube-controller-manager:v1.23.15
+     - docker.io/kubesphere/kube-proxy:v1.23.15
+     - docker.io/kubesphere/kube-scheduler:v1.23.15
+     - docker.io/kubesphere/pause:3.6
+     - docker.io/coredns/coredns:1.8.6
      - docker.io/calico/cni:v3.23.2
      - docker.io/calico/kube-controllers:v3.23.2
      - docker.io/calico/node:v3.23.2
      - docker.io/calico/pod2daemon-flexvol:v3.23.2
      - docker.io/calico/typha:v3.23.2
      - docker.io/kubesphere/flannel:v0.12.0
-     - docker.io/openebs/provisioner-localpv:3.4.0
-     - docker.io/openebs/linux-utils:3.4.0
+     - docker.io/openebs/provisioner-localpv:3.3.0
+     - docker.io/openebs/linux-utils:3.3.0
      - docker.io/library/haproxy:2.3
      - docker.io/kubesphere/nfs-subdir-external-provisioner:v4.0.2
      - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
@@ -127,12 +131,11 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/kubesphere/ks-apiserver:v3.4.0
      - docker.io/kubesphere/ks-console:v3.4.0
      - docker.io/kubesphere/ks-controller-manager:v3.4.0
-     - docker.io/kubesphere/ks-upgrade:v3.4.0
      - docker.io/kubesphere/kubectl:v1.22.0
      - docker.io/kubesphere/kubectl:v1.21.0
      - docker.io/kubesphere/kubectl:v1.20.0
      - docker.io/kubesphere/kubefed:v0.8.1
-     - docker.io/kubesphere/tower:v0.2.0
+     - docker.io/kubesphere/tower:v0.2.1
      - docker.io/minio/minio:RELEASE.2019-08-07T01-59-21Z
      - docker.io/minio/mc:RELEASE.2019-08-07T23-14-43Z
      - docker.io/csiplugin/snapshot-controller:v4.0.0
@@ -144,15 +147,15 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - docker.io/library/alpine:3.14
      - docker.io/osixia/openldap:1.3.0
      - docker.io/kubesphere/netshoot:v1.0
-     - docker.io/kubeedge/cloudcore:v1.9.2
-     - docker.io/kubeedge/iptables-manager:v1.9.2
-     - docker.io/kubesphere/edgeservice:v0.2.0
+     - docker.io/kubeedge/cloudcore:v1.13.0
+     - docker.io/kubeedge/iptables-manager:v1.13.0
+     - docker.io/kubesphere/edgeservice:v0.3.0
      - docker.io/openpolicyagent/gatekeeper:v3.5.2
-     - docker.io/kubesphere/openpitrix-jobs:v3.4.0
+     - docker.io/kubesphere/openpitrix-jobs:v3.3.2
      - docker.io/kubesphere/devops-apiserver:ks-v3.4.0
      - docker.io/kubesphere/devops-controller:ks-v3.4.0
      - docker.io/kubesphere/devops-tools:ks-v3.4.0
-     - docker.io/kubesphere/ks-jenkins:v3.4.0-2.319.1
+     - docker.io/kubesphere/ks-jenkins:v3.4.0-2.319.3-1
      - docker.io/jenkins/inbound-agent:4.10-2
      - docker.io/kubesphere/builder-base:v3.2.2
      - docker.io/kubesphere/builder-nodejs:v3.2.0
@@ -194,41 +197,44 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
      - quay.io/argoproj/argocd-applicationset:v0.4.1
      - ghcr.io/dexidp/dex:v2.30.2
      - docker.io/library/redis:6.2.6-alpine
-     - docker.io/jimmidyson/configmap-reload:v0.5.0
-     - docker.io/prom/prometheus:v2.34.0
+     - docker.io/jimmidyson/configmap-reload:v0.7.1
+     - docker.io/prom/prometheus:v2.39.1
      - docker.io/kubesphere/prometheus-config-reloader:v0.55.1
      - docker.io/kubesphere/prometheus-operator:v0.55.1
      - docker.io/kubesphere/kube-rbac-proxy:v0.11.0
-     - docker.io/kubesphere/kube-state-metrics:v2.5.0
+     - docker.io/kubesphere/kube-state-metrics:v2.6.0
      - docker.io/prom/node-exporter:v1.3.1
      - docker.io/prom/alertmanager:v0.23.0
-     - docker.io/thanosio/thanos:v0.25.2
+     - docker.io/thanosio/thanos:v0.31.0
      - docker.io/grafana/grafana:8.3.3
-     - docker.io/kubesphere/kube-rbac-proxy:v0.8.0
-     - docker.io/kubesphere/notification-manager-operator:v1.4.0
-     - docker.io/kubesphere/notification-manager:v1.4.0
+     - docker.io/kubesphere/kube-rbac-proxy:v0.11.0
+     - docker.io/kubesphere/notification-manager-operator:v2.3.0
+     - docker.io/kubesphere/notification-manager:v2.3.0
      - docker.io/kubesphere/notification-tenant-sidecar:v3.2.0
      - docker.io/kubesphere/elasticsearch-curator:v5.7.6
      - docker.io/kubesphere/elasticsearch-oss:6.8.22
-     - docker.io/kubesphere/fluentbit-operator:v0.13.0
+     - docker.io/opensearchproject/opensearch:2.6.0
+     - docker.io/opensearchproject/opensearch-dashboards:2.6.0
+     - docker.io/kubesphere/opensearch-curator:v0.0.5
+     - docker.io/kubesphere/fluentbit-operator:v0.14.0
      - docker.io/library/docker:19.03
-     - docker.io/kubesphere/fluent-bit:v1.8.11
-     - docker.io/kubesphere/log-sidecar-injector:1.1
+     - docker.io/kubesphere/fluent-bit:v1.9.4
+     - docker.io/kubesphere/log-sidecar-injector:v1.2.0
      - docker.io/elastic/filebeat:6.7.0
-     - docker.io/kubesphere/kube-events-operator:v0.4.0
-     - docker.io/kubesphere/kube-events-exporter:v0.4.0
-     - docker.io/kubesphere/kube-events-ruler:v0.4.0
+     - docker.io/kubesphere/kube-events-operator:v0.6.0
+     - docker.io/kubesphere/kube-events-exporter:v0.6.0
+     - docker.io/kubesphere/kube-events-ruler:v0.6.0
      - docker.io/kubesphere/kube-auditing-operator:v0.2.0
      - docker.io/kubesphere/kube-auditing-webhook:v0.2.0
-     - docker.io/istio/pilot:1.11.1
-     - docker.io/istio/proxyv2:1.11.1
-     - docker.io/jaegertracing/jaeger-operator:1.27
-     - docker.io/jaegertracing/jaeger-agent:1.27
-     - docker.io/jaegertracing/jaeger-collector:1.27
-     - docker.io/jaegertracing/jaeger-query:1.27
-     - docker.io/jaegertracing/jaeger-es-index-cleaner:1.27
-     - docker.io/kubesphere/kiali-operator:v1.38.1
-     - docker.io/kubesphere/kiali:v1.38
+     - docker.io/istio/pilot:1.14.6
+     - docker.io/istio/proxyv2:1.14.6
+     - docker.io/jaegertracing/jaeger-operator:1.29
+     - docker.io/jaegertracing/jaeger-agent:1.29
+     - docker.io/jaegertracing/jaeger-collector:1.29
+     - docker.io/jaegertracing/jaeger-query:1.29
+     - docker.io/jaegertracing/jaeger-es-index-cleaner:1.29
+     - docker.io/kubesphere/kiali-operator:v1.50.1
+     - docker.io/kubesphere/kiali:v1.50
      - docker.io/library/busybox:1.31.1
      - docker.io/library/nginx:1.14-alpine
      - docker.io/joosthofman/wget:1.0
@@ -307,7 +313,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
 2. Run the following command to create a configuration file for the air-gapped cluster:
 
    ```bash
-   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.23.15 -f config-sample.yaml
    ```
 
 3. Run the following command to modify the configuration file:
@@ -352,7 +358,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
        address: ""
        port: 6443
      kubernetes:
-       version: v1.22.12
+       version: v1.23.15
        clusterName: cluster.local
      network:
        plugin: calico
@@ -448,6 +454,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
       harbor_projects=(library
           kubesphereio
           kubesphere
+          argoproj
           calico
           coredns
           openebs
@@ -469,6 +476,7 @@ In KubeKey v2.1.0, we bring in concepts of manifest and artifact, which provides
           nginxdemos
           fluent
           kubeedge
+          openpolicyagent
       )
       
       for project in "${harbor_projects[@]}"; do

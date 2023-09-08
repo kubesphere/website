@@ -32,7 +32,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
    ```
 
    {{</ tab >}}
@@ -48,7 +48,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
    ```
    {{</ tab >}}
 
@@ -77,7 +77,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.7/centos7-rpms-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.10/centos7-rpms-amd64.iso
      - arch: amd64
        type: linux
        id: ubuntu
@@ -85,22 +85,26 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        repository:
          iso:
            localPath:
-           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.7/ubuntu-20.04-debs-amd64.iso
+           url: https://github.com/kubesphere/kubekey/releases/download/v3.0.10/ubuntu-20.04-debs-amd64.iso
      kubernetesDistributions:
      - type: kubernetes
-       version: v1.22.12
+       version: v1.23.15
      components:
        helm:
          version: v3.9.0
        cni:
-         version: v0.9.1
+         version: v1.2.0
        etcd:
          version: v3.4.13
+       calicoctl:
+         version: v3.23.2
       ## For now, if your cluster container runtime is containerd, KubeKey will add a docker 20.10.8 container runtime in the below list.
       ## The reason is KubeKey creates a cluster with containerd by installing a docker first and making kubelet connect the socket file of containerd which docker contained.
        containerRuntimes:
        - type: docker
          version: 20.10.8
+       - type: containerd
+         version: 1.6.4
        crictl:
          version: v1.24.0
        docker-registry:
@@ -110,20 +114,20 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        docker-compose:
          version: v2.2.2
      images:
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.22.12
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.22.12
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.22.12
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.22.12
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.5
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/coredns:1.8.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.23.15
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.23.15
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.23.15
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.23.15
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.6
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/coredns:1.8.6
      - registry.cn-beijing.aliyuncs.com/kubesphereio/cni:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controllers:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/node:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/pod2daemon-flexvol:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/typha:v3.23.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/flannel:v0.12.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/provisioner-localpv:3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/linux-utils:3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/provisioner-localpv:3.3.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/linux-utils:3.3.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/haproxy:2.3
      - registry.cn-beijing.aliyuncs.com/kubesphereio/nfs-subdir-external-provisioner:v4.0.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/k8s-dns-node-cache:1.15.12
@@ -131,12 +135,11 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.4.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.4.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-upgrade:v3.4.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.22.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.21.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.20.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubefed:v0.8.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/tower:v0.2.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/tower:v0.2.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/minio:RELEASE.2019-08-07T01-59-21Z
      - registry.cn-beijing.aliyuncs.com/kubesphereio/mc:RELEASE.2019-08-07T23-14-43Z
      - registry.cn-beijing.aliyuncs.com/kubesphereio/snapshot-controller:v4.0.0
@@ -148,15 +151,15 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/alpine:3.14
      - registry.cn-beijing.aliyuncs.com/kubesphereio/openldap:1.3.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/netshoot:v1.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/cloudcore:v1.9.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/iptables-manager:v1.9.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/edgeservice:v0.2.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/cloudcore:v1.13.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/iptables-manager:v1.13.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/edgeservice:v0.3.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/gatekeeper:v3.5.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.3.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.4.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.4.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.4.0-2.319.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.4.0-2.319.3-1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/inbound-agent:4.10-2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/builder-base:v3.2.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/builder-nodejs:v3.2.0
@@ -198,41 +201,44 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/argocd-applicationset:v0.4.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/dex:v2.30.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/redis:6.2.6-alpine
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/configmap-reload:v0.5.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/prometheus:v2.34.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/configmap-reload:v0.7.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/prometheus:v2.39.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/prometheus-config-reloader:v0.55.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/prometheus-operator:v0.55.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-rbac-proxy:v0.11.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-state-metrics:v2.5.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-state-metrics:v2.6.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/node-exporter:v1.3.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/alertmanager:v0.23.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/thanos:v0.25.2
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/thanos:v0.31.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/grafana:8.3.3
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-rbac-proxy:v0.8.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/notification-manager-operator:v1.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/notification-manager:v1.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-rbac-proxy:v0.11.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/notification-manager-operator:v2.3.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/notification-manager:v2.3.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/notification-tenant-sidecar:v3.2.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/elasticsearch-curator:v5.7.6
      - registry.cn-beijing.aliyuncs.com/kubesphereio/elasticsearch-oss:6.8.22
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/fluentbit-operator:v0.13.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/opensearch:2.6.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/opensearch-dashboards:2.6.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/opensearch-curator:v0.0.5
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/fluentbit-operator:v0.14.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/docker:19.03
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/fluent-bit:v1.8.11
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/log-sidecar-injector:1.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/fluent-bit:v1.9.4
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/log-sidecar-injector:v1.2.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/filebeat:6.7.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-events-operator:v0.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-events-exporter:v0.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-events-ruler:v0.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-events-operator:v0.6.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-events-exporter:v0.6.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-events-ruler:v0.6.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-auditing-operator:v0.2.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-auditing-webhook:v0.2.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/pilot:1.11.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/proxyv2:1.11.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-operator:1.27
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-agent:1.27
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-collector:1.27
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-query:1.27
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-es-index-cleaner:1.27
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kiali-operator:v1.38.1
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/kiali:v1.38
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/pilot:1.14.6
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/proxyv2:1.14.6
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-operator:1.29
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-agent:1.29
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-collector:1.29
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-query:1.29
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/jaeger-es-index-cleaner:1.29
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kiali-operator:v1.50.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/kiali:v1.50
      - registry.cn-beijing.aliyuncs.com/kubesphereio/busybox:1.31.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/nginx:1.14-alpine
      - registry.cn-beijing.aliyuncs.com/kubesphereio/wget:1.0
@@ -312,7 +318,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 2. 执行以下命令创建离线集群配置文件：
 
    ```bash
-   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.23.15 -f config-sample.yaml
    ```
 
 3. 执行以下命令修改配置文件：
@@ -357,7 +363,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
        address: ""
        port: 6443
      kubernetes:
-       version: v1.22.12
+       version: v1.23.15
        clusterName: cluster.local
      network:
        plugin: calico
@@ -450,6 +456,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
       harbor_projects=(library
           kubesphereio
           kubesphere
+          argoproj
           calico
           coredns
           openebs
@@ -471,6 +478,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
           nginxdemos
           fluent
           kubeedge
+          openpolicyagent
       )
       
       for project in "${harbor_projects[@]}"; do
