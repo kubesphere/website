@@ -178,7 +178,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 KubeSphere 上部署 K3s 目前处于测试阶段，某些功能可能不兼容。
+   您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 K3s 上部署 KubeSphere 目前处于测试阶段，某些功能可能不兼容。
    
    {{</ notice >}} 
 
