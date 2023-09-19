@@ -146,7 +146,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 3. 点击**添加嵌套步骤**，在 `maven` 容器下添加一个嵌套步骤。在列表中选择 **shell** 并在命令行中输入以下命令。点击**确定**保存操作。
 
    ```shell
-   mvn clean -gs `pwd`/configuration/settings.xml test
+   mvn clean test
    ```
 
    {{< notice note >}}
