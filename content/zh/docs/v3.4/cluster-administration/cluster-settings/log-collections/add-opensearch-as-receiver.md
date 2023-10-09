@@ -88,7 +88,7 @@ logging:
 
 如果您使用的是 KubeSphere 内部的 OpenSearch，并且想把它改成您的外部 OpenSearch，请按照以下步骤操作。
 
-1. 执行以下命令更新 KubeKey 配置：
+1. 执行以下命令更新 ClusterConfig 配置：
 
 ```shell
 kubectl edit cc -n kubesphere-system ks-installer
