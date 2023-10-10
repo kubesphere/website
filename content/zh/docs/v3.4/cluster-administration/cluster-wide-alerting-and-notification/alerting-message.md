@@ -16,7 +16,6 @@ KubeSphere 还具有内置规则组。 在<strong>内置规则组</strong>选项
 - 您需要启用 [KubeSphere 告警系统](../../pluggable-components/alerting)。
 - 如需接收告警通知，您需要预先配置[通知渠道](../platform-settings/notification-management/configure-email)。
 - 您需要创建一个用户 (cluster-admin) 并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project#step-4-create-a-role)。
--您需要确保集群中存在工作负载。如果尚未就绪，请参见[部署并访问 Bookinfo](../../quick-start/deploy-bookinfo-to-k8s) 创建一个示例应用。
 
 ## 创建规则组及告警策略
 
@@ -48,7 +47,7 @@ KubeSphere 还具有内置规则组。 在<strong>内置规则组</strong>选项
 - 概要：该告警规则触发告警时，告警通知的概要信息。
 - 详情：自定义描述该告警通知的详细信息。
 
-7. 点击✔，完成这一告警规则的设置。您可为改规则组添加多个告警规则。规则设置完毕后，点击<strong>创建</strong>完成这一规则组的创建。
+7. 点击✔，完成这一告警规则的设置。您可为该规则组添加多个告警规则。规则设置完毕后，点击<strong>创建</strong>完成这一规则组的创建。
 
 ## 编辑规则组
 如需在创建后编辑规则组，在<strong>规则组</strong>页面点击右侧的![](https://hackmd.io/_uploads/BJkssv1Ch.png)。
