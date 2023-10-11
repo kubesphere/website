@@ -116,6 +116,10 @@ section2:
       content: "东方通信是一家集硬件设备、软件、服务为一体的整体解决方案提供商。"
       link: "eastcom/"
 
+    - icon: "images/case/logo-alphaflow.png"
+      content: "杭州微宏科技是专注于业务流程管理和自动化（BPM&BPA）软件研发和解决方案供应商。"
+      link: "alphaflow/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
