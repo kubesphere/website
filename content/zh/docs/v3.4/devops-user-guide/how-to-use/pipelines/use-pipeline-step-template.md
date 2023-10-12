@@ -131,7 +131,7 @@ a.步骤模板是通过 crd 实现的，对应 crd 链接如下：
 ```
 https://github.com/kubesphere-sigs/ks-devops-helm-chart/blob/master/charts/ks-devops/crds/devops.kubesphere.io_clustersteptemplates.yaml
 ```
-b.yaml 文件中的 metadata.name 字段和 spec.template.name 字段需要保持一致，同时 name 字段依赖 jenkins 中的函数来实现对应功能,如上的 yaml 文件中使用了 echo 函数来实现输出功能，详细的参数链接如下：
+b.yaml 文件中的 metadata.name 字段和 spec.template.name 字段需要保持一致，同时 name 字段依赖 jenkins 中的函数来实现对应功能,如上的 yaml 文件中使用了 writeFile 函数来实现输出功能，详细的参数链接如下：
 ```
 https://www.jenkins.io/doc/pipeline/steps/
 ```
@@ -159,7 +159,6 @@ retry                37d
 script               37d
 shell                37d
 sleep                37d
-test                 29d
 timeout              37d
 waitforqualitygate   37d
 withcredentials      37d
