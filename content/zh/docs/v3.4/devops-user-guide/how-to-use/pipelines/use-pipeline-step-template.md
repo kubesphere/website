@@ -10,8 +10,9 @@ weight: 11214
 在最新版的 KubeSphere 3.4.0 版本中，DevOps 项目支持在流水线模板中使用步骤模板来优化使用流水线
 
 ## 准备工作
-1.默认安装的 KubeSphere 没有开启 DevOps 功能，需要先开启
-2.DevOps 功能需要在企业账户中使用，如果没有创建对应的企业用户，需要先建立
+- [启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)
+- 创建企业用户，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
+
 ### 开启 DevOps 方式
 
 1.以 admin 用户登录控制台，点击左上角的平台管理，选择集群管理。
@@ -41,10 +42,6 @@ devops-controller-7bcbbfc546-lszkt   1/1     Running     0          23h
 devops-jenkins-79b59bdd5-tjrj8       1/1     Running     0          23h
 s2ioperator-0                        1/1     Running     0          23h
 ```
-
-
-### 建立 DevOps 项目
-DevOps 项目只有在企业项目中才能使用，可参考 DevOps 项目管理文档对应建立企业项目(https://www.kubesphere.io/zh/docs/v3.3/devops-user-guide/devops-overview/devops-project-management/)
 
 ## 配置使用自定义步骤模板
 ### 创建自定义的步骤模板
@@ -127,14 +124,11 @@ spec:
     }
 ```
 备注:
-a.步骤模板是通过 crd 实现的，对应 crd 链接如下：
-```
-https://github.com/kubesphere-sigs/ks-devops-helm-chart/blob/master/charts/ks-devops/crds/devops.kubesphere.io_clustersteptemplates.yaml
-```
-b.yaml 文件中的 metadata.name 字段和 spec.template.name 字段需要保持一致，同时 name 字段依赖 jenkins 中的函数来实现对应功能,如上的 yaml 文件中使用了 writeFile 函数来实现输出功能，详细的参数链接如下：
-```
-https://www.jenkins.io/doc/pipeline/steps/
-```
+
+a.步骤模板是通过 crd 实现的，详细可参考 [步骤模板的crd](https://github.com/kubesphere-sigs/ks-devops-helm-chart/blob/master/charts/ks-devops/crds/devops.kubesphere.io_clustersteptemplates.yaml)
+
+b.yaml 文件中的 metadata.name 字段和 spec.template.name 字段需要保持一致，同时 name 字段依赖 jenkins 中的函数来实现对应功能,如上的 yaml 文件中使用了 writeFile 函数来实现输出功能，详细可参考[ pipeline steps](https://www.jenkins.io/doc/pipeline/steps/)
+
 3.使用 kubectl 命令创建自定义的步骤
 ```
 kubectl apply -f test-writefile.yaml
@@ -169,14 +163,17 @@ writefile            28s
 
 ### 使用自定义步骤模板
 1.选择进入 DevOps 项目后，建立新的 pipeline 流水线
-![](https://hackmd.io/_uploads/r16xouTah.png)
+ ![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/create-pipeline-1.png)
+ 
 2.进入编辑流水线中，可以按需选择固定模板（比如  Node.js/Maven/Golang 等），也可以选择创建自定义流水线
-![](https://hackmd.io/_uploads/SySmENy0n.png)
+![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/create-pipeline-2.png)
+
 3.这里选择固定模板 Golang 创建流水线，进入流水线后，可以按需增加一个阶段。我们选择在流水线最后创建一个通知的阶段
-![](https://hackmd.io/_uploads/BJb6NNJAh.png)
+![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/create-step-1.png)
+
 4.在通知的阶段这里，继续添加执行步骤，这里有很多的步骤模板，我们选择
 写文件 的这个自定义步骤
-![](https://hackmd.io/_uploads/HkDXb8Cla.png)
+![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/use-step-1.png)
 
 
 至此，我们完成了一个自定义步骤模板的配置
