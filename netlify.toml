@@ -51,27 +51,3 @@
   to = "https://ask.kubesphere.io/forum/"
   status = 301
   force = true
-
-[[redirects]]
-  from = "/learn/"
-  to = "/zh/learn/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/learn/*"
-  to = "/zh/learn/*"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/live/"
-  to = "/zh/live/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/live/*"
-  to = "/zh/live/*"
-  status = 301
-  force = true

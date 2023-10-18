@@ -116,3 +116,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- End Twitter universal website tag code -->
 {{ end }}
 
+<script type="text/javascript">
+  window.onload = function () {
+
+    var handleLangChange = function (lang, href) {
+      try {
+        localStorage.setItem('lang', lang)
+      } catch (err) { }
+      location.href = href
+    }
+
+
+    if (window.location.pathname.startsWith('/learn') || window.location.pathname.startsWith('/live')) {
+      handleLangChange('zh', window.location.pathname)
+    }
+  };
+</script>
