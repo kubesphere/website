@@ -13,11 +13,11 @@ section2:
   url: ./meetup-shanghai-20230805/
 
   notice:
-    title: 万亿级流量下的视频行业云原生建设之路
-    tag: 结束
-    time: 2023 年 07 月 27 日
+    title: 云原生 + AI Meetup 成都站
+    tag: 预告
+    time: 2023 年 11 月 04 日
     base: 线上
-    url: ./cloudnative0727-live/
+    url: ./meetup-chengdu-20231104/
 
   over:
     title: Meetup 杭州站
