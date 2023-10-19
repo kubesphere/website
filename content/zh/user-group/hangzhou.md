@@ -99,6 +99,9 @@ activities:
     - image: /images/user-group/shanghai/rotation/ex.png
       link: https://kubesphere.io/zh/live/meetup-hangzhou1023/
 
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-cover.png
+      link: https://kubesphere.io/zh/live/meetup-hangzhou/
+
     - image: /images/user-group/hangzhou/fudata-kubesphere-cover.png
       link: https://kubesphere.io/zh/live/fudata-kubesphere/
 
@@ -106,6 +109,10 @@ activities:
       link: https://kubesphere.io/zh/live/zhijianglab-kubesphere/
 
   review:
+    - text: 基于 KubeSphere 部署 KubeBlocks 实现数据库自由
+      description: KubeSphere 让 KubeBlocks 更易部署和使用，KubeBlocks 让应用在 KubeSphere 上更灵活弹性。
+      link: https://kubesphere.io/zh/blogs/deploy-kubeblocks-on-kubesphere/
+
     - text: 微宏科技基于 KubeSphere 的微服务架构实践
       description: KubeSphere 为微宏科技提供了 GUI 化的 Kubernetes 集群管理、CI/CD 流水线、服务网格治理等功能，简化了云原生技术的运用。
       link: https://kubesphere.io/zh/case/alphaflow/
