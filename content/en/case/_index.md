@@ -74,6 +74,8 @@ section3:
       children:
         - name: 'msxf'
           icon: 'images/case/logo-msxf.png'  
+        - name: 'hshc'
+          icon: 'images/case/logo-hshc.png'   
 
     - name: 'IT Service'
       children:

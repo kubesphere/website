@@ -120,6 +120,10 @@ section2:
       content: "杭州微宏科技是专注于业务流程管理和自动化（BPM&BPA）软件研发和解决方案供应商。"
       link: "alphaflow/"
 
+    - icon: "images/case/logo-hshc.png"
+      content: "花生好车致力于打造下沉市场汽车出行解决方案第一品牌。"
+      link: "hshc/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -153,7 +157,9 @@ section3:
     - name: '金融'
       children:
         - name: 'msxf'
-          icon: 'images/case/logo-msxf.png'          
+          icon: 'images/case/logo-msxf.png'   
+        - name: 'hshc'
+          icon: 'images/case/logo-hshc.png'          
 
     - name: 'IT 服务'
       children:
