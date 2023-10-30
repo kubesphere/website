@@ -17,7 +17,7 @@ KubeSphere 在 `v3.4.0` 版本集成了 OpenSearch 的 `v1` 和 `v2` 版本，�
 
 - 需要一个被授予集群管理权限的用户。例如，可以直接用 `admin` 用户登录控制台，或创建一个具有集群管理权限的角色然后将此角色授予一个用户。
 
-- 添加日志接收器前，需先启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](https://www.kubesphere.io/zh/docs/v3.3/pluggable-components/)。本教程启用 `logging` 作为示例。
+- 添加日志接收器前，需先启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](/content/zh/docs/v3.4/pluggable-components/)。本教程启用 `logging` 作为示例。
 
 
 ## 使用 OpenSearch 作为日志接收器
@@ -66,11 +66,11 @@ KubeSphere 版本低于 `v3.4.0`的，请先[升级](https://github.com/kubesphe
 
 2. 点击定制资源定义，在搜索栏中输入 `clusterconfiguration`。点击结果查看其详细页面。
 
-![](https://hackmd.io/_uploads/ByIDs6Zan.png)
+![cc-search](/images/docs/v3.x/zh-cn/cluster-administration/cluster-settings/log-collections/cc-search.png)
 
 3. 在自定义资源中，点击 ks-installer 右侧的 ，选择编辑 YAML。
 
-![](https://hackmd.io/_uploads/HJrYs6Wah.png)
+![cc-ks-installer](/images/docs/v3.x/zh-cn/cluster-administration/cluster-settings/log-collections/cc-ks-installer.png)
 
 4. 在该 YAML 文件中，搜索 `logging`，将 `enabled` 的 `false` 改为 `true`。完成后，点击右下角的确定以保存配置。
 
