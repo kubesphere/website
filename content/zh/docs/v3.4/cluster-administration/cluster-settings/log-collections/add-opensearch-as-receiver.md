@@ -15,9 +15,9 @@ KubeSphere 在 `v3.4.0` 版本集成了 OpenSearch 的 `v1` 和 `v2` 版本，�
 
 ## 准备工作
 
-- 您需要一个被授予集群管理权限的用户。例如，您可以直接用 `admin` 用户登录控制台，或创建一个具有集群管理权限的角色然后将此角色授予一个用户。
+- 需要一个被授予集群管理权限的用户。例如，可以直接用 `admin` 用户登录控制台，或创建一个具有集群管理权限的角色然后将此角色授予一个用户。
 
-- 添加日志接收器前，您需要启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](https://www.kubesphere.io/zh/docs/v3.3/pluggable-components/)。本教程启用 `logging` 作为示例。
+- 添加日志接收器前，需先启用组件 `logging`、`events` 或 `auditing`。有关更多信息，请参见[启用可插拔组件](https://www.kubesphere.io/zh/docs/v3.3/pluggable-components/)。本教程启用 `logging` 作为示例。
 
 
 ## 使用 OpenSearch 作为日志接收器
@@ -163,12 +163,12 @@ helm uninstall opensearch-master -n kubesphere-logging-system && helm uninstall 
 
 1. 所有用户都可以使用日志查询功能。使用任意帐户登录控制台，在右下角的 icon 上悬停，然后在弹出菜单中选择日志查询。
 
-![](https://hackmd.io/_uploads/HkHSK6Za3.png)
+![logging-icon](/images/docs/v3.x/zh-cn/cluster-administration/cluster-settings/log-collections/logging-icon.png)
 
 2. 在弹出窗口中，您可以看到日志数量的时间直方图、集群选择下拉列表以及日志查询栏。
 
-![](https://hackmd.io/_uploads/BkqvY6W62.png)
+![logging-dashboard](/images/docs/v3.x/zh-cn/cluster-administration/cluster-settings/log-collections/logging-dashboard.png)
 
 3. 您可以点击搜索栏并输入搜索条件，可以按照消息、企业空间、项目、资源类型、资源名称、原因、类别或时间范围搜索事件（例如，输入时间范围:最近 10 分钟，来搜索最近 10 分钟的事件）。或者，点击时间直方图中的柱状图，KubeSphere 会使用该柱状图的时间范围进行日志查询。
 
-![](https://hackmd.io/_uploads/HkrhKpZT3.png)
+![logging-filter](/images/docs/v3.x/zh-cn/cluster-administration/cluster-settings/log-collections/logging-filter.png)
