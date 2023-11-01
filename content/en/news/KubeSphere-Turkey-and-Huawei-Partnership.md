@@ -24,7 +24,7 @@ At the same time, Huawei plays an industry-leading role in product solutions bot
 
 ## Acknowledgement
 
-For this partnership, we thank every staff and contributor from Huawei, KubeSphere Turkey, RocketByte, and EquoSystem. This partnership would never happen without the efforts of Huawei executives Frank Machao and Bobby Zhang, Yavuz Sarı, Haldun Bozkır, Rıza Can Sevinç, Wu Yongxi, and Lin Zelin from Huawei team, and Eda Konyar, Halil BUGOL, and Stephane Yasar from KubeSphere Turkey team.
+For this partnership, we thank every staff and contributor from Huawei, KubeSphere Turkey and EquoSystem. This partnership would never happen without the efforts of Huawei executives Frank Machao and Bobby Zhang, Yavuz Sarı, Haldun Bozkır, Rıza Can Sevinç, Wu Yongxi, and Lin Zelin from Huawei team, and Eda Konyar, Halil BUGOL, and Stephane Yasar from KubeSphere Turkey team.
 
 ## More information
 
