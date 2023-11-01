@@ -30,7 +30,7 @@ In Kubernetes clusters, LoadBalancer services can be used to expose backend work
 
 OpenELB is designed to expose LoadBalancer services in non-public-cloud Kubernetes clusters. It provides easy-to-use EIPs and makes IP address pool management easier for users in private environments.
 ## OpenELB Adopters and Contributors
-Currently, OpenELB has been used in production environments by many enterprises, such as BENLAI, Suzhou TV, CVTE, Wisdom World, Jollychic, QingCloud, BAIWANG, Rocketbyte, and more. At the end of 2019, BENLAI has used an earlier version of OpenELB in production. Now, OpenELB has attracted 13 contributors and more than 100 community members.
+Currently, OpenELB has been used in production environments by many enterprises, such as BENLAI, Suzhou TV, CVTE, Wisdom World, Jollychic, QingCloud, BAIWANG and more. At the end of 2019, BENLAI has used an earlier version of OpenELB in production. Now, OpenELB has attracted 13 contributors and more than 100 community members.
 ![Enterprises using OpenELB](https://kubesphere-community.pek3b.qingstor.com/images/8411636689286_.pic_hd.jpg)
 
 ## Differences Between OpenELB and MetalLB

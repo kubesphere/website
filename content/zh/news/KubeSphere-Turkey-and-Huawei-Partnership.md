@@ -24,7 +24,7 @@ KubeSphere 土耳其地区产品经理 Halil 表示，“华为在土耳其建�
 
 ## 致谢
 
-本次合作是华为、KubeSphere 土耳其、RocketByte 和 EquoSystem 各方员工和贡献者辛苦付出的成果，在此表示由衷的感谢。 在此致谢华为执行主管 Frank Machao 和 Bobby Zhang、华为团队 Yavuz Sarı、Haldun Bozkır、Rıza Can Sevinç、Wu Yongxi 和 Lin Zelin， 以及 KubeSphere 土耳其团队 Eda Konyar、Halil BUGOL 和 Stephane Yasar 等成员的辛苦付出。
+本次合作是华为、KubeSphere 土耳其和 EquoSystem 各方员工和贡献者辛苦付出的成果，在此表示由衷的感谢。 在此致谢华为执行主管 Frank Machao 和 Bobby Zhang、华为团队 Yavuz Sarı、Haldun Bozkır、Rıza Can Sevinç、Wu Yongxi 和 Lin Zelin， 以及 KubeSphere 土耳其团队 Eda Konyar、Halil BUGOL 和 Stephane Yasar 等成员的辛苦付出。
 
 ## 更多信息
 

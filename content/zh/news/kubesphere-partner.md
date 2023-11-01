@@ -10,7 +10,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-partne
 
 作为一个开源项目，KubeSphere 的稳步发展，得益于产品研发、社区发展等多方面，也离不开与各个合作伙伴的精诚合作。通过合作，KubeSphere 社区与合作伙伴共拓生态，共谋发展，逐步壮大。
 
-目前 KubeSphere 的合作伙伴已遍布全球各地，助力全球用户全面拥抱云原生。最新加入的合作伙伴是[来自土耳其的 RocketByte 和 EquoSystem](https://kubesphere.io/zh/news/kubesphere-turkey-and-huawei-partnership/)，已经在当地获得了丰硕的合作成果。双方将继续发挥各自技术和资源优势，为土耳其用户提供更加本土化和优质的云原生服务，共同赋能企业云原生新时代。
+目前 KubeSphere 的合作伙伴已遍布全球各地，助力全球用户全面拥抱云原生。最新加入的合作伙伴是[来自土耳其的 EquoSystem](https://kubesphere.io/zh/news/kubesphere-turkey-and-huawei-partnership/)，已经在当地获得了丰硕的合作成果。双方将继续发挥各自技术和资源优势，为土耳其用户提供更加本土化和优质的云原生服务，共同赋能企业云原生新时代。
 
 KubeSphere 期待有更多的合作伙伴加入 KubeSphere 合作伙伴计划，以改善生态系统并发展业务。KubeSphere 可以为合作伙伴提供资源和权益，帮助他们提高专业知识、交付和推广产品，并把 KubeSphere 加入其市场策略中来实现具体业务目标。
 
