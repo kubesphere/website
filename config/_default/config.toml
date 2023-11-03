@@ -392,6 +392,11 @@ weight = 6
 name = "用户论坛"
 URL = "https://ask.kubesphere.io/forum"
 
+[[languages.zh.menu.main]]
+weight = 7
+name = "认证"
+URL = "https://kubesphere.cloud/certification/"
+
 
 # [languages.tr]
 # weight = 3
