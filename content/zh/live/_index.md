@@ -16,7 +16,7 @@ section2:
     title: 云原生 + 可观测性 Meetup 广州站
     tag: 预告
     time: 2023 年 11 月 25 日
-    base: 线上
+    base: 广州
     url: ./meetup-guangzhou-20231125/
 
   over:
