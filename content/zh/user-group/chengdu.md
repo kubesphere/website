@@ -75,6 +75,12 @@ members:
 
 activities:
   videos:
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-cover.png
+      link: https://kubesphere.io/zh/live/meetup-chengdu-20231104/
+
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative-chengdu-20220514-cover.png
+      link: https://kubesphere.io/zh/live/meetup-chengdu-20220514/
+
     - image: https://pek3b.qingstor.com/kubesphere-community/images/multicluster-cover.png
       link: https://kubesphere.io/zh/live/multicluster-chengdu/
 
@@ -84,8 +90,8 @@ activities:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/hpa-cover.png
       link: https://kubesphere.io/zh/live/hpa-chengdu/
 
-    - image: https://pek3b.qingstor.com/kubesphere-community/images/cloudnative-chengdu-20220514-cover.png
-      link: https://kubesphere.io/zh/live/meetup-chengdu-20220514/
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-cover.png
+      link: https://kubesphere.io/zh/live/meetup-chengdu/
 
   review:
     - text: 马上消费金融基于 KubeSphere 的 AI 平台的开发实践
