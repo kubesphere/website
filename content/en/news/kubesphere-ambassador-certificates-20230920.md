@@ -41,7 +41,17 @@ The KubeSphere Ambassadorship Program (KSAP) is a program where we bring togethe
 | Zhenfei Pei  | [View and download the certificate](https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-peizhenfei.png)    | 
 | Jianlin Zheng   | [View and download the certificate](https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-zhengjianlin.png)    | 
 
+## Important Update Regarding KubeSphere Ambassador Program Email Usage
 
+As part of our ongoing efforts to maintain the integrity and purpose of the KubeSphere Ambassador Program, we are introducing an important update regarding the usage of **the kubesphere.io mailbox**.
+
+To ensure the efficient use of the kubesphere.io mailbox and maintain its focus on open-source activities, we kindly request that applicants restrict its usage to open-source purposes only. This includes discussions, contributions, and inquiries related to KubeSphere and its associated projects.
+
+While we encourage engagement and appreciate your enthusiasm for KubeSphere, we kindly request that you refrain from using the kubesphere.io mailbox for business-related matters, such as sales, marketing, or commercial inquiries. This restriction will help us maintain the integrity of the Ambassador Program and ensure its effectiveness in supporting the open-source community.
+
+We appreciate your understanding and cooperation in adhering to these guidelines. By doing so, together, we can create a vibrant and collaborative environment for open-source enthusiasts and contributors.
+
+If you have any questions or require further clarification regarding the Ambassador Program or its guidelines, please feel free to reach out to us at info@kubesphere.io.
 
 ## Final
 
