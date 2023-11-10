@@ -32,7 +32,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或者直接运行以下命令。
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
    ```
 
    {{</ tab >}}
@@ -48,7 +48,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
    运行以下命令来下载 KubeKey：
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
    ```
    {{</ tab >}}
 
