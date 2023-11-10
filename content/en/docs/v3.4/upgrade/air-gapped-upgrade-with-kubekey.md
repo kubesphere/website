@@ -65,7 +65,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
    Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
    ```
 
    {{</ tab >}}
@@ -81,7 +81,7 @@ KubeKey upgrades Kubernetes from one MINOR version to the next MINOR version unt
    Run the following command to download KubeKey:
 
    ```bash
-   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.10 sh -
+   curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
    ```
    {{</ tab >}}
 
