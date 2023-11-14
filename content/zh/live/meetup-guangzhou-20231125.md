@@ -14,7 +14,7 @@ section1:
   baseIcon: /images/live/base.svg
 ---
 
-2023 年，KubeSphere 社区已经在深圳、杭州、上海和成都等 4 个城市各组织了一场线下 Meetup。第五站，我们将走进广州。
+2023 年，KubeSphere 社区已经在深圳、杭州、上海和成都这 4 个城市各组织了一场线下 Meetup。第五站，我们将走进广州。
 
 11 月 25 日，云原生 + 可观测性 Meetup 广州站将正式开启！
 
@@ -25,20 +25,28 @@ section1:
 ## 活动时间和地点
 
 - 时间：2023 年 11 月 25 日 14:00-18:00
-- 地点：广州市国际科技成果转化（天河）基地三楼星空厅
+- 地点：广州国际科技成果转化（天河）基地三楼星空厅
 
 ## 活动组织方
+
+### 主办方
 
 - KubeSphere 社区
 - DeepFlow 社区
 
+### 协办方
+
+- 广州市天河区软件和信息产业协会
+- 开源科技OSTech
+- 广州（国际）科技成果转化天河基地
+
 ## 议程海报
 
-敬请期待。
+![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-guangzhou-20231125.png)
 
 ## 报名方式
 
-敬请期待。
+扫描上方海报二维码或点击[链接](https://resources.qingcloud.com/p/736d56)报名。
 
 ## 互动礼品
 
@@ -46,4 +54,4 @@ section1:
 
 凡到场的小伙伴，即可获得 KubeSphere 精美贴纸一套。
 
-此外， KubeSphere 社区将会在现场设置填问卷抽好礼活动，奖品为 KubeSphere 社区周边礼品，如背包、T 恤、马克杯等以及最高奖品（唯一）为 CKA 考试卷。
+此外， KubeSphere 社区将会在现场设置填问卷抽好礼活动，奖品为 KubeSphere 社区周边礼品，如背包、T 恤、马克杯等以及最高奖品为 CKA 考试券（只有一张）。
