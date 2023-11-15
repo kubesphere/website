@@ -9,23 +9,65 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20230805.png
-  url: ./meetup-shanghai-20230805/
+  image: /images/live/cloudnative-live-20231104.png
+  url: ./meetup-chengdu-20231104/
 
   notice:
-    title: 万亿级流量下的视频行业云原生建设之路
-    tag: 结束
-    time: 2023 年 07 月 27 日
-    base: 线上
-    url: ./cloudnative0727-live/
+    title: 云原生 + 可观测性 Meetup 广州站
+    tag: 预告
+    time: 2023 年 11 月 25 日
+    base: 广州
+    url: ./meetup-guangzhou-20231125/
 
   over:
-    title: Meetup 杭州站
+    title: Meetup 上海站
     tag: 结束
-    url: ./meetup-hangzhou-20230603/
+    url: ./meetup-shanghai-20230805/
 
 section3:
   videos:
+    - title: 使用可插拔架构集成多个多集群解决方案
+      link: ./chengdu1104-kubesphere-v4.0/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-6.png
+      type: iframe
+      createTime: 2023.11.04
+      group: Meetup
+
+    - title: KubeBlocks RSM：如何让数据库更好的跑在 K8s 上
+      link: ./chengdu1104-kubeblocks-rsm/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-5.png
+      type: iframe
+      createTime: 2023.11.04
+      group: Meetup
+
+    - title: KubeBlocks 简介及部署 AIGC 基础设施演示
+      link: ./chengdu1104-kubeblocks/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-4.png
+      type: iframe
+      createTime: 2023.11.04
+      group: Meetup
+
+    - title: SOFABoot 4.0-迈向 JDK17 新时代
+      link: ./chengdu1104-sofaboot/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-3.png
+      type: iframe
+      createTime: 2023.11.04
+      group: Meetup
+
+    - title: KubeSphere 平台整合多样化云原生网关的设计
+      link: ./chengdu1104-gateway/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-2.png
+      type: iframe
+      createTime: 2023.11.04
+      group: Meetup
+
+    - title: DLRover：蚂蚁大模型训练弹性容错与自动优化
+      link: ./chengdu1104-dlrover/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-1.png
+      type: iframe
+      createTime: 2023.11.04
+      group: Meetup
+
     - title: EMQX 云服务的 Serverless 实践
       link: ./shanghai0805-emqx/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/20230805-shanghai-meetup-6-cover.png
@@ -1076,6 +1118,10 @@ section4:
   list:
     - year: 2023
       meetup: 
+        - place: 成都站（11.04）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-chengdu-20231104/
+
         - place: 上海站（08.05）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20230805-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-shanghai-20230805/

@@ -32,7 +32,7 @@ weight: 3530
 从 [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) 下载 KubeKey 或直接运行以下命令：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
 ```
 
 {{</ tab >}}
@@ -48,7 +48,7 @@ export KKZONE=cn
 运行以下命令来下载 KubeKey：
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
 ```
 
 {{< notice note >}}
@@ -178,7 +178,7 @@ chmod +x kk
 
    {{< notice note >}}
 
-   您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 KubeSphere 上部署 K3s 目前处于测试阶段，某些功能可能不兼容。
+   您可以在安装后启用 KubeSphere 的可插拔组件，但由于在 K3s 上部署 KubeSphere 目前处于测试阶段，某些功能可能不兼容。
    
    {{</ notice >}} 
 

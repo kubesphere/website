@@ -38,7 +38,7 @@ With the configuration file in place, you execute the `./kk` command with varied
 Download KubeKey from its [GitHub Release Page](https://github.com/kubesphere/kubekey/releases) or use the following command directly.
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
 ```
 
 {{</ tab >}}
@@ -54,7 +54,7 @@ export KKZONE=cn
 Run the following command to download KubeKey:
 
 ```bash
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.7 sh -
+curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
 ```
 
 {{< notice note >}}
@@ -84,6 +84,6 @@ If you want to use KubeKey to install both Kubernetes and KubeSphere 3.4, see th
 {{< notice note >}} 
 
 - You can also run `./kk version --show-supported-k8s` to see all supported Kubernetes versions that can be installed by KubeKey.
-- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere 3.4. If you want to [install KubeSphere 3.4 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x
+- The Kubernetes versions that can be installed using KubeKey are different from the Kubernetes versions supported by KubeSphere 3.4. If you want to [install KubeSphere 3.4 on an existing Kubernetes cluster](../../../installing-on-kubernetes/introduction/overview/), your Kubernetes version must be v1.20.x, v1.21.x, v1.22.x, v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.23.x.
 
 {{</ notice >}}

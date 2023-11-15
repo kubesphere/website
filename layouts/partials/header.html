@@ -198,7 +198,7 @@ var bindScrollChangeHeader = function() {
     var header = $('header')
     window.addEventListener('scroll', function() {
         var scrollY = window.scrollY;
-        if (scrollY > 100) {
+        if (scrollY > 0) {
             header.addClass('navigationScroll')
         } else {
             header.removeClass('navigationScroll')

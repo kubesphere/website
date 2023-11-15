@@ -99,6 +99,9 @@ activities:
     - image: /images/user-group/shanghai/rotation/ex.png
       link: https://kubesphere.io/zh/live/meetup-hangzhou1023/
 
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-cover.png
+      link: https://kubesphere.io/zh/live/meetup-hangzhou/
+
     - image: /images/user-group/hangzhou/fudata-kubesphere-cover.png
       link: https://kubesphere.io/zh/live/fudata-kubesphere/
 
@@ -106,6 +109,18 @@ activities:
       link: https://kubesphere.io/zh/live/zhijianglab-kubesphere/
 
   review:
+    - text: 基于 KubeSphere 部署 KubeBlocks 实现数据库自由
+      description: KubeSphere 让 KubeBlocks 更易部署和使用，KubeBlocks 让应用在 KubeSphere 上更灵活弹性。
+      link: https://kubesphere.io/zh/blogs/deploy-kubeblocks-on-kubesphere/
+
+    - text: 微宏科技基于 KubeSphere 的微服务架构实践
+      description: KubeSphere 为微宏科技提供了 GUI 化的 Kubernetes 集群管理、CI/CD 流水线、服务网格治理等功能，简化了云原生技术的运用。
+      link: https://kubesphere.io/zh/case/alphaflow/
+
+    - text: Curve 分布式存储在 KubeSphere 中的实践
+      description: 文章中详细介绍了如何在 KubeSphere 中部署 Curve 分布式存储。
+      link: https://kubesphere.io/zh/blogs/kubesphere-curve/
+
     - text: 基于 JuiceFS 的 KubeSphere DevOps 项目数据迁移方案
       description: 本教程经过本地研发平台测试通过了使用开源项目 juiceFS-CSI 且后端依托 OSS 作为后端存储实现数据迁移的检验。
       link: https://kubesphere.io/zh/blogs/kubesphere-data-migration-using-juicefs/

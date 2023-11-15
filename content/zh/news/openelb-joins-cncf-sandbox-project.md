@@ -35,7 +35,7 @@ OpenELB 解决了在非公有云环境的 Kubernetes 集群下对外暴露 LoadB
 
 ## 社区情况
 
-目前 OpenELB 已具备生产可用的特性，已被**本来生活、苏州电视台、视源股份、云智天下、Jollychic、QingCloud、百旺、Rocketbyte** 等海内外多家企业采用。早在 2019 年底，本来生活就将 OpenELB 的早期版本用于其生产环境，可参考 [OpenELB 如何帮助本来生活在 K8s 物理环境暴露集群服务](https://mp.weixin.qq.com/s/uFwYaPE7cVolLWxYHcgZdQ) 了解详情。OpenELB 项目目前有 13 位贡献者，100 多位社区成员。
+目前 OpenELB 已具备生产可用的特性，已被**本来生活、苏州电视台、视源股份、云智天下、Jollychic、QingCloud、百旺** 等海内外多家企业采用。早在 2019 年底，本来生活就将 OpenELB 的早期版本用于其生产环境，可参考 [OpenELB 如何帮助本来生活在 K8s 物理环境暴露集群服务](https://mp.weixin.qq.com/s/uFwYaPE7cVolLWxYHcgZdQ) 了解详情。OpenELB 项目目前有 13 位贡献者，100 多位社区成员。
 
 ![采用企业](https://kubesphere-community.pek3b.qingstor.com/images/8411636689286_.pic_hd.jpg)
 

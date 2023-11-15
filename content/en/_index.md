@@ -162,7 +162,8 @@ section6:
   children:
     - icon: /images/home/section6-anchnet.jpg
     - icon: /images/home/section6-aviation-industry-corporation-of-china.jpg
-    - icon: /images/home/section6-aqara.jpg
+    - icon: /images/case/logo-alphaflow.png
+    - icon: /images/home/section6-aqara.jpg   
     - icon: /images/home/section6-bank-of-beijing.jpg
     - icon: /images/home/section6-benlai.jpg
     - icon: /images/home/section6-china-taiping.jpg
@@ -184,7 +185,7 @@ section6:
     - icon: /images/home/section6-webank.jpg
     - icon: /images/home/section6-wisdom-world.jpg
     - icon: /images/home/section6-yiliu.jpg
-    - icon: /images/home/section6-zking-insurance.jpg
+
 
 
   btnContent: Case Studies

@@ -5,6 +5,24 @@ css: "scss/conferences.scss"
 viewDetail: 查看详情
 
 list:
+  - name: KubeCon China 2023
+    content: KubeSphere 社区在 KubeCon + CloudNativeCon 中国上海 2023 上的技术主题分享。
+    icon: images/conferences/kubecon.svg
+    bg: images/conferences/kubecon-bg.svg
+    bgColor: linear-gradient(270deg, rgb(101, 193, 148), rgb(76, 169, 134))
+    children:
+      - name: 使用 OpenFunction 在任何基础设施上运行无服务器工作负载
+        summary: 云原生技术的崛起使得我们可以以相同的方式在公有云、私有云或本地数据中心运行应用程序或工作负载。但是，对于需要访问不同云或开源中间件的各种 BaaS 服务的无服务器工作负载来说，这并不容易。在这次演讲中，OpenFunction 维护者将详细介绍如何使用 OpenFunction 解决这个问题，以及 OpenFunction 的最新更新和路线图。
+        author: 霍秉杰，王翼飞
+        link: openfunction-2023/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-2023-openfunction.png
+
+      - name: 使用 Kubernetes 原生方式实现多集群告警
+        summary: 在这个演示中，我们将揭示一个基于 Kubernetes 的解决方案，以满足多集群和多租户告警和通知的需求。我们的综合方法涵盖了指标、事件、审计和日志的告警，同时确保与 alertmanager 的兼容性。对于指标，我们提供了适用于不同告警范围的分层 RuleGroups CRDs，同时保持与 Prometheus 规则定义的兼容性。我们还为 Kubernetes 事件和审计事件开发了特定的规则定义和评估器（即 rulers），它们共享同一规则评估引擎。我们的通知实现名为 notification-manager，提供了许多通知渠道和基本功能，如路由、过滤、聚合和通过 CRDs 进行静默。不仅如此，还提供了全面的通知历史记录、多集群和多租户支持。这些功能有助于在各种告警源之间实现无缝集成。
+        author: 向军涛，雷万钧
+        link: alerting-2023/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-2023-alerting.png
+
   - name: KubeCon 北美 2022
     content: KubeSphere 社区在 KubeCon + CloudNativeCon 北美 2022 上的技术主题分享。
     icon: images/conferences/kubecon.svg
@@ -30,7 +48,7 @@ list:
         image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-ben-lu.png
 
       - name: 深入浅出 Fluent Operator
-        summary: 在新增 Fluentd 的支持后，Fluent Bit Operator 现已被重新命名为 Fluent Operator。在本次分享中，Fluent Operator 的 Maintainer 将会详细介绍 Fluent Operator 的主要功能及其设计原则和架构.
+        summary: 在新增 Fluentd 的支持后，Fluent Bit Operator 现已被重新命名为 Fluent Operator。在本次分享中，Fluent Operator 的 Maintainer 将会详细介绍 Fluent Operator 的主要功能及其设计原则和架构。
         author: 霍秉杰，朱晗
         link: fluent-operator/
         image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-eu-2022-fluent-operator.png

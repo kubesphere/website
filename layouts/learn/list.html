@@ -302,5 +302,16 @@ var swiperPlay = function(){
 swiperPlay();
 
 window.addEventListener('resize', debounce(swiperPlay, 500));
+
+var handleLangChange = function (lang, href) {
+    try {
+        localStorage.setItem('lang', lang)
+    } catch (err) { }
+    location.href = href
+}
+
+if ('{{ .Language }}' === 'en') {
+    handleLangChange('zh', window.location.pathname)
+}
 </script>
 {{ end }}
