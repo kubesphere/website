@@ -8,8 +8,6 @@ author: '运维有术'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/debian-kubesphere-cover.png'
 ---
 
-> 老 Z，运维架构师，云原生爱好者，目前专注于云原生运维，云原生领域技术栈涉及 Kubernetes、KubeSphere、DevOps、OpenStack、Ansible 等。
-
 ## 前言
 
 ### **知识点**
