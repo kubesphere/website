@@ -46,7 +46,7 @@ weight: 18094
 - 修复更改网关命名空间配置后，集群网关日志和资源状态显示异常的问题。 
 
 
-## 可观察性
+## 可观测性
 
 ### 新特性
 
@@ -152,3 +152,5 @@ weight: 18094
 - 修复由于 DiscoveryAPI 异常导致 ks-apiserver 无法启动的问题。 
 - 修复容器组列表页按状态查询时，显示的状态与筛选的结果不一致的问题。
 - 查询 Secret 支持 fieldSelector 筛选。
+
+有关 KubeSphere 3.4.0 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.0.md)。
