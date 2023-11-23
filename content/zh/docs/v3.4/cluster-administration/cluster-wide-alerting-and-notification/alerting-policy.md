@@ -13,9 +13,9 @@ KubeSphere 还具有内置规则组。 在<strong>内置规则组</strong>选项
 
 ## 准备工作
 
-- 需先启用 [KubeSphere 告警系统](../../pluggable-components/alerting)。
-- 如需接收告警通知，需预先配置[通知渠道](../platform-settings/notification-management/configure-email)。
-- 需要创建一个用户 (cluster-admin) 并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../quick-start/create-workspace-and-project#step-4-create-a-role)。
+- 需先启用 [KubeSphere 告警系统](../../../pluggable-components/alerting)。
+- 如需接收告警通知，需预先配置[通知渠道](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
+- 需要创建一个用户 (cluster-admin) 并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-4-create-a-role)。
 
 ## 创建规则组及告警策略
 
