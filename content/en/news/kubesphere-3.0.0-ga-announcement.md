@@ -4,7 +4,7 @@ createTime: '2020-08-31'
 keywords: "Kubernetes, KubeSphere, GA"
 description: "That's a Killer! KubeSphere 3.0.0 is Now Generally Available!"
 author: 'Feynman, Sherlock'
-image: https://ap3.qingstor.com/kubesphere-website/docs/20200830101950.png
+image: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-3.0.0-release-cover.png
 tag: "Product News"
 ---
 

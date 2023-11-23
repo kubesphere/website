@@ -1,11 +1,11 @@
 ---
 title: 'KubeSphere 3.2.0 GA: Bringing AI-oriented GPU Scheduling and Flexible Gateway'
-tag: 'KubeSphere, release'
+tag: 'Product News'
 keyword: 'Kubernetes, KubeSphere, release, AI, GPU'
 description: 'KubeSphere 3.2.0 supports GPU resource scheduling and management and GPU usage monitoring, which further improves user experience in cloud-native AI scenarios. Moreover, enhanced features such as multi-cluster management, multi-tenant management, observability, DevOps, app store, and service mesh further perfect the interactive design for better user experience.'
 createTime: '2021-11-03'
 author: 'KubeSphere'
-snapshot: '/images/blogs/en/release-announcement3.2.0/v3.2.0-GA-cover.png'
+image: '/images/blogs/en/release-announcement3.2.0/kubesphere-v3.2.0-GA-cover.png'
 ---
 
 ![3.2.0GA](/images/blogs/en/release-announcement3.2.0/3.2.0GA.png)

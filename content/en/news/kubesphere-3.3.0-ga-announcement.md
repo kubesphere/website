@@ -1,6 +1,6 @@
 ---
 title: 'KubeSphere v3.3.0 Released: Embrace GitOps'
-tag: 'Product Updates'
+tag: 'Product News'
 keyword: 'community, open source, contribution, KubeSphere, release, AI, GPU'
 description: 'KubeSphere v3.3.0 now brings more fervently anticipated features. The continuous deployment solution based on GitOps makes DevOps on KubeSphere more powerful. The interaction designs of multiple features, including Multi-cluster Management, Multi-tenancy, Observability, App Store, Application Governance, Edge Computing, and Storage Management, are optimized for better user experience.'
 createTime: '2022-06-27'
