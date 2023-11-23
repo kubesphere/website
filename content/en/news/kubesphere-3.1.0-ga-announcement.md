@@ -1,11 +1,11 @@
 ---
 title: 'Extending Kubernetes to Edge: KubeSphere Container Platform 3.1 General Availability'
-keywords: KubeSphere, GA
+keywords: KubeSphere, Edge, Kubernetes
 description: The KubeSphere community announced the general availability of KubeSphere v3.1.0 which features edge node management, metering and billing, enhanced DevOps and more.
-tag: 'Kubernetes, KubeSphere, GA, Announcement'
+tag: 'Product News'
 createTime: '2021-05-14'
 author: 'Sherlock'
-snapshot: '/images/blogs/en/kubesphere-3.1.0-ga-announcement/banner.png'
+image: '/images/blogs/en/kubesphere-3.1.0-ga-announcement/banner.png'
 ---
 
 On April 29, 2021, the KubeSphere community was excited to announce the general availability of KubeSphere v3.1.0. KubeSphere, as an app-centric distributed operating system running on top of Kubernetes, has further expanded its portfolio to deliver more robust experiences for users across the globe. This has once again echoed our commitment: enabling our users to run Kubernetes workloads where and when they want with ease and security.
