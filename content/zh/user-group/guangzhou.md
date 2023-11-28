@@ -75,6 +75,9 @@ members:
 
 activities:
   videos:
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover.jpg
+      link: https://kubesphere.io/zh/live/meetup-guangzhou-20231125/
+
     - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-cover.jpeg
       link: https://kubesphere.io/zh/live/meetup-guangzhou-20220806/
 

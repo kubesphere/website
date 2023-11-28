@@ -9,23 +9,58 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20231104.png
-  url: ./meetup-chengdu-20231104/
+  image: /images/live/cloudnative-live-20231125.png
+  url: ./meetup-guangzhou-20231125/
 
   notice:
-    title: 云原生 + 可观测性 Meetup 广州站
+    title: 云原生 Meetup 苏州站
     tag: 预告
-    time: 2023 年 11 月 25 日
-    base: 广州
-    url: ./meetup-guangzhou-20231125/
+    time: 2023 年 12 月 23 日
+    base: 苏州
+    url: ./meetup-suzhou-20231223/
 
   over:
-    title: Meetup 上海站
+    title: Meetup 成都站
     tag: 结束
-    url: ./meetup-shanghai-20230805/
+    url: ./meetup-chengdu-20231104/
 
 section3:
   videos:
+    - title: 大模型网络优化方法——闪电演讲 ⚡️
+      link: ./guangzhou1125-ai/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover-5.png
+      type: iframe
+      createTime: 2023.11.25
+      group: Meetup
+
+    - title: 基于 SkyWalking 实现全域可观测
+      link: ./guangzhou1125-skywalking/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover-4.png
+      type: iframe
+      createTime: 2023.11.25
+      group: Meetup
+
+    - title: OpenKruiseGame 助力游戏运维管理提效
+      link: ./guangzhou1125-openkruisegame/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover-3.png
+      type: iframe
+      createTime: 2023.11.25
+      group: Meetup
+
+    - title: DeepFlow 扩展协议解析实践
+      link: ./guangzhou1125-deepflow/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover-2.png
+      type: iframe
+      createTime: 2023.11.25
+      group: Meetup
+
+    - title: 蜘点云原生之 KubeSphere 落地实践过程
+      link: ./guangzhou1125-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover-1.png
+      type: iframe
+      createTime: 2023.11.25
+      group: Meetup
+
     - title: 使用可插拔架构集成多个多集群解决方案
       link: ./chengdu1104-kubesphere-v4.0/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-6.png
@@ -1118,6 +1153,10 @@ section4:
   list:
     - year: 2023
       meetup: 
+        - place: 广州站（11.25）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover.jpg
+          meetupUrl: https://kubesphere.io/zh/live/meetup-guangzhou-20231125/
+
         - place: 成都站（11.04）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20231104-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-chengdu-20231104/
