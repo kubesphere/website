@@ -5,7 +5,9 @@ createTime: '2022-10-24'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon-a-2022-ben.png'
 ---
 
-## 议题简介
+## 议题信息
+
+### 议题简介
 
 随着云原生边缘计算技术的兴起，越来越多的组织开始使用 Kubernetes 结合边缘计算框架来管理边缘的资源和工作负载。其中一些边缘计算框架（如 KubeEdge）将边缘节点作为云端 K8s 集群的一部分进行管理，这对于用户管理边缘节点和边缘应用是个巨大的挑战。
 
@@ -20,19 +22,17 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/kubecon-a-2022
 - 使用 FluentBit 收集边缘节点和应用程序的监控指标并将其通过 remote write 方式写入云端 Prometheus 长期存储。
 - 集中管理边缘和云端的日志和监控指标。
 
-## 分享者简介
+### 分享者简介
 
 霍秉杰是 KubeSphere 可观测性和 Serverless 团队的 Leader，还是 Fluent Operator 和 FaaS 项目 OpenFunction 的创始人，同时也是多个可观测性开源项目的作者和架构师，如 Kube-Events、Notification Manager 等。他热爱云原生和开源技术，是 KEDA、Prometheus Operator、Thanos、Loki、Falco 等项目的贡献者。
 
-## 视频回放
+### 视频回放
 
 <video id="videoPlayer" controls="" preload="true">
   <source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-America-2022-ben.mp4" type="video/mp4">
 </video>
 
-## 对应文章
-
-> 整理人：米开朗基杨、大飞哥
+**以下是本分享对应的文章内容。整理人：米开朗基杨、大飞哥。**
 
 ## Fluent Operator 简介
 
