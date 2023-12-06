@@ -20,9 +20,9 @@ section2:
     url: ./meetup-suzhou-20231223/
 
   over:
-    title: Meetup 成都站
-    tag: 结束
-    url: ./meetup-chengdu-20231104/
+    title: Databend 云数仓与 Databend Playground 扩展组件介绍
+    tag: 预告
+    url: ./databend1207-live/
 
 section3:
   videos:
