@@ -49,6 +49,10 @@ section4:
     - icon: "images/partner/geko-cloud.jpg"
       partnerType: "Go-to-market"
       content: Geko is committed to creating cloud platforms with considerable expertise in internet projects. It boasts a diversified portfolio of projects such as cloud migration, DRS, resilience architecture, full managed service, cloud computing and cost efficiency.
+
+    - icon: "images/partner/Cardtr-Logo.png"
+      partnerType: "Go-to-market"
+      content: 
       
     - icon: "images/partner/inaccel.jpg"
       partnerType: "Technology"
@@ -81,10 +85,6 @@ section4:
     - icon: "images/partner/QingCloud-Logo-Color.png"
       partnerType: "Cloud Provider"
       content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services. QKE is a cloud-hosted Kubernetes service with KubeSphere and powered by QingCloud'
-
-    - icon: "images/partner/radore.jpg"
-      partnerType: "Go-to-market"
-      content: 'With the technical infrastructure it holds, Radore provides private and corporate data center services (Colocation, Dedicated Servers, Cloud Services, Web Hosting, CDN).'
 
     - icon: "images/partner/webank.jpg"
       partnerType: "App Provider"

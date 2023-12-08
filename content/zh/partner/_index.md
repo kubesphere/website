@@ -51,6 +51,10 @@ section4:
       partnerType: "市场合作伙伴"
       content: Geko 提供解决方案，帮助企业采用云计算、混合计算、容器开发，以及整个 DevOps 方法论，以确保 CI/CD、监控和随着业务增长而增长的自动伸缩平台的最佳实践。
 
+    - icon: "images/partner/Cardtr-Logo.png"
+      partnerType: "市场合作伙伴"
+      content: 
+
     - icon: "images/partner/inaccel.jpg"
       partnerType: "技术合作伙伴"
       content: 'InAccel 基于 Docker、Podman、Singularity 或 Kubernetes 提供一键式部署 FPGA 工作负载。通过关注整个 FPGA 加速生命周期，我们可以让您专注于应用程序。'
@@ -82,10 +86,6 @@ section4:
     - icon: "images/partner/QingCloud-Logo-Color.png"
       partnerType: "云提供商"
       content: '北京青云科技股份有限公司（QingCloud）是一家技术领先的企业级云服务商与数字化解决方案提供商。QKE 是在 QingCloud 云平台上构建的企业级分布式多租户的 Kubernetes 容器服务。'
-
-    - icon: "images/partner/radore.jpg"
-      partnerType: "市场合作伙伴"
-      content: '因其独特的基础设施，Radore 提供私人的和企业数据中心服务(托管、专用服务器、云服务、Web 托管、CDN)。'
 
     - icon: "images/partner/webank.jpg"
       partnerType: "应用程序提供商"
