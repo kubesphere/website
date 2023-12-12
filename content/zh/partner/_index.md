@@ -49,11 +49,11 @@ section4:
   featuredPartnerList:
     - icon: "images/partner/geko-cloud.jpg"
       partnerType: "市场合作伙伴"
-      content: Geko 提供解决方案，帮助企业采用云计算、混合计算、容器开发，以及整个 DevOps 方法论，以确保 CI/CD、监控和随着业务增长而增长的自动伸缩平台的最佳实践。
+      content: ‘Geko 提供解决方案，帮助企业采用云计算、混合计算、容器开发，以及整个 DevOps 方法论，以确保 CI/CD、监控和随着业务增长而增长的自动伸缩平台的最佳实践。’
 
     - icon: "images/partner/Cardtr-Logo.png"
       partnerType: "市场合作伙伴"
-      content: 
+      content: ‘Cardtr 总部位于土耳其，是一家致力于为土耳其、中东、欧洲等地区的金融、政府、能源等企业客户提供创新的云计算和云原生 IT 服务的公司，以领先的技术和专业团队帮助客户实现全面的数字化和智能化转型。’
 
     - icon: "images/partner/inaccel.jpg"
       partnerType: "技术合作伙伴"
@@ -142,4 +142,12 @@ section4:
     - icon: "images/partner/logo-stonedb.png"
       partnerType: "应用程序提供商"
       content: 'StoneDB 是由石原子科技公司自主设计、研发的国内首款基于 MySQL 内核打造的开源 HTAP（Hybrid Transactional and Analytical Processing）融合型数据库，可实现与 MySQL 的无缝切换。StoneDB 具备超高性能、实时分析等特点，为用户提供一站式 HTAP 解决方案。'   
+
+    - icon: "images/partner/DigitalOcean-logo.svg"
+      partnerType: "云提供商"
+      content: 'DigitalOcean 为开发人员、初创公司和中小企业提供云基础设施即服务平台。其拥有你所需要的云计算服务，具有可预测的定价、强大的文档和可扩展性，以支持企业在任何阶段的增长。'
+
+    - icon: "images/partner/Hostinger-logo-primary.png"
+      partnerType: "云提供商"
+      content: 'Hostinger 使用基于内核的虚拟机 (KVM) 技术提供非托管 VPS 服务。它是 Linux 的开源虚拟化模块，有助于在物理服务器内创建许多独立、安全的虚拟服务器。'
 ---
