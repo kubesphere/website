@@ -29,8 +29,8 @@ section1:
 
 ## 议程海报
 
-敬请期待
+![](https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere-Meetup-suzhou-20231223.png)
 
 ## 报名方式
 
-敬请期待
+扫描上方海报中的二维码或点击[报名链接](https://resources.qingcloud.com/p/63433)皆可报名。

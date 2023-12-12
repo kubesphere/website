@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=579455995&bvid=BV1a64y157Ap&cid=1358929129&page=1&high_quality=1
   type: iframe
   time: 2023-12-07 20:00
   timeIcon: /images/live/clock.svg
