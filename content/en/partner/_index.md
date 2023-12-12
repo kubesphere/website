@@ -48,11 +48,11 @@ section4:
   featuredPartnerList:
     - icon: "images/partner/geko-cloud.jpg"
       partnerType: "Go-to-market"
-      content: Geko is committed to creating cloud platforms with considerable expertise in internet projects. It boasts a diversified portfolio of projects such as cloud migration, DRS, resilience architecture, full managed service, cloud computing and cost efficiency.
+      content: ‘Geko is committed to creating cloud platforms with considerable expertise in internet projects. It boasts a diversified portfolio of projects such as cloud migration, DRS, resilience architecture, full managed service, cloud computing and cost efficiency.’
 
     - icon: "images/partner/Cardtr-Logo.png"
       partnerType: "Go-to-market"
-      content: 
+      content: ‘Cardtr, headquartered in Turkey, is a company dedicated to providing innovative cloud computing and cloud-native IT services for enterprise clients in Turkey, the Middle East, Europe, and other regions. Focusing on financial, governmental, energy, and other sectors, Cardtr leverages cutting-edge technology and a professional team to assist clients in achieving comprehensive digital and intelligent transformation.’
       
     - icon: "images/partner/inaccel.jpg"
       partnerType: "Technology"
@@ -84,7 +84,7 @@ section4:
 
     - icon: "images/partner/QingCloud-Logo-Color.png"
       partnerType: "Cloud Provider"
-      content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services. QKE is a cloud-hosted Kubernetes service with KubeSphere and powered by QingCloud'
+      content: 'QingCloud is a cloud computing platform that provides IaaS-based flexible cloud services. QKE is a cloud-hosted Kubernetes service with KubeSphere and powered by QingCloud.'
 
     - icon: "images/partner/webank.jpg"
       partnerType: "App Provider"
@@ -141,4 +141,12 @@ section4:
     - icon: "images/partner/logo-stonedb.png"
       partnerType: "App Provider"
       content: 'StoneDB is an open-source hybrid transaction/analytical processing (HTAP) database designed and developed by StoneAtom based on the MySQL kernel. It is the first database of this type launched in China. StoneDB can be seamlessly switched from MySQL. It provides features such as optimal performance and real-time analytics, offering you a one-stop solution to process online transaction processing (OLTP), online analytical processing (OLAP), and HTAP workloads.'  
+
+    - icon: "images/partner/DigitalOcean-logo.svg"
+      partnerType: "Cloud Provider"
+      content: 'With its mission-critical infrastructure and fully managed offerings, DigitalOcean helps developers, startups and small and medium-sized businesses (SMBs) rapidly build, deploy and scale applications to accelerate innovation and increase productivity and agility. '
+
+    - icon: "images/partner/Hostinger-logo-primary.png"
+      partnerType: "Cloud Provider"
+      content: 'Hostinger offers unmanaged VPS services using the Kernel-based Virtual Machine (KVM) technology. It’s an open-source virtualization module for Linux that helps create many separate, secure virtual servers inside a physical server. '
 ---
