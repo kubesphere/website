@@ -245,10 +245,10 @@ chmod +x kk
 
 您可用使用 KubeKey 同时安装 Kubernetes 和 KubeSphere，通过自定义配置文件中的参数创建多节点集群。
 
-创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.4.0`）：
+创建安装有 KubeSphere 的 Kubernetes 集群（例如使用 `--with-kubesphere v3.4.1`）：
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.1
 ```
 
 {{< notice note >}} 

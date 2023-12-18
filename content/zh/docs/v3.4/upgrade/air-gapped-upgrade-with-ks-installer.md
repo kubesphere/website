@@ -12,7 +12,7 @@ weight: 7500
 ## 准备工作
 
 - 您需要有一个运行 KubeSphere v3.3.x 的集群。如果您的 KubeSphere 是 v3.2.0 或更早的版本，请先升级至 v3.3.x。
-- 请仔细阅读 [3.4.0 版本说明](../../../v3.4/release/release-v340/)。
+- 请仔细阅读 [3.4.1 版本说明](../../../v3.4/release/release-v341/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见[准备一个私有镜像仓库](../../installing-on-linux/introduction/air-gapped-installation/#步骤-2准备一个私有镜像仓库)。
 - KubeSphere 3.4 支持的 Kubernetes 版本：v1.20.x、v1.21.x、v1.22.x、v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.23.x。
@@ -35,7 +35,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -47,7 +47,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -107,7 +107,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 1. 执行以下命令下载 ks-installer，并将其传输至您充当任务机的机器，用于安装。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/kubesphere-installer.yaml
    ```
    
 2. 验证您已在 `cluster-configuration.yaml` 中的 `spec.local_registry` 字段指定了私有镜像仓库地址。请注意，如果您的已有集群通过离线安装方式搭建，您应该已配置了此地址。如果您的集群采用在线安装方式搭建而需要进行离线升级，执行以下命令编辑您已有 KubeSphere 3.4 集群的 `cluster-configuration.yaml` 文件，并添加私有镜像仓库地址：
@@ -130,7 +130,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 3. 编辑完成后保存 `cluster-configuration.yaml`。使用以下命令将 `ks-installer` 替换为您**自己仓库的地址**。
 
    ```bash
-   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.4.0#" kubesphere-installer.yaml
+   sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.4.1#" kubesphere-installer.yaml
    ```
 
    {{< notice warning >}}

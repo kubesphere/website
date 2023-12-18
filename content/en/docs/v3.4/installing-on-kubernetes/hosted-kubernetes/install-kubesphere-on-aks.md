@@ -77,9 +77,9 @@ All the other Resources will be placed in `MC_KubeSphereRG_KuberSphereCluster_we
 To start deploying KubeSphere, use the following commands.
 
 ```bash
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/kubesphere-installer.yaml
 
-kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml
+kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/cluster-configuration.yaml
 ```
 
 You can inspect the logs of installation through the following command:
@@ -111,7 +111,7 @@ spec:
   selector:
     app: ks-console
     tier: frontend
-    version: v3.4.0
+    version: v3.4.1
   sessionAffinity: None
   type: LoadBalancer # Change NodePort to LoadBalancer
 status:

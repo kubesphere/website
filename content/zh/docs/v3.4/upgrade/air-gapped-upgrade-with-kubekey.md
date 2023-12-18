@@ -11,7 +11,7 @@ weight: 7400
 
 - 您需要有一个运行 KubeSphere v3.3.x 的集群。如果您的 KubeSphere 是 v3.2.0 或更早的版本，请先升级至 v3.3.x。
 - 您的 Kubernetes 版本必须为 v1.20.x、v1.21.x、v1.22.x，v1.23.x，v1.24.x，v1.25.x 或 v1.26.x。
-- 请仔细阅读 [3.4.0 版本说明](../../../v3.4/release/release-v340/)。
+- 请仔细阅读 [3.4.1 版本说明](../../../v3.4/release/release-v341/)。
 - 提前备份所有重要的组件。
 - Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。
 - 请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。
@@ -102,7 +102,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -114,7 +114,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -217,7 +217,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -299,7 +299,7 @@ KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整�
 例如：
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}

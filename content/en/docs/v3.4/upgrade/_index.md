@@ -11,4 +11,4 @@ icon: "/images/docs/v3.x/docs.svg"
 
 ---
 
-This chapter demonstrates how cluster operators can upgrade KubeSphere to 3.4.0.
+This chapter demonstrates how cluster operators can upgrade KubeSphere to 3.4.1.

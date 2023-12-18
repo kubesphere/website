@@ -10,4 +10,4 @@ On July 26, 2023, KubeSphere 3.4.0 was officially released with these new featur
 
 To know details about new feature of KubeSphere 3.4, you can read the article [KubeSphere 3.4.0 Released: Support K8s v1.26](../../../../news/kubesphere-3.4.0-ga-announcement/).
 
-In addition to the above highlights, this release also features other functionality, upgrades and fixes the known bugs. There were some deprecated or removed features in 3.4. For more and detailed information, see the [Release Notes for 3.4.0](../../../v3.4/release/release-v340/).
+In addition to the above highlights, this release also features other functionality, upgrades and fixes the known bugs. There were some deprecated or removed features in 3.4. For more and detailed information, see the [Release Notes for 3.4.1](../../../v3.4/release/release-v341/).

@@ -311,7 +311,7 @@ chmod +x kk
 使用默认配置创建一个示例配置文件。此处以 Kubernetes v1.22.12 作为示例。
 
 ```bash
-./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12
+./kk create config --with-kubesphere v3.4.1 --with-kubernetes v1.22.12
 ```
 
 {{< notice note >}}

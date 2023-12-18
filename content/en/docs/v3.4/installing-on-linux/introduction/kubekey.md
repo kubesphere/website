@@ -79,7 +79,7 @@ If you want to use KubeKey to install both Kubernetes and KubeSphere 3.4, see th
 
 | KubeSphere version | Supported Kubernetes versions                                |
 | ------------------ | ------------------------------------------------------------ |
-| v3.4.0             | v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x |
+| v3.4.1             | v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x |
 
 {{< notice note >}} 
 

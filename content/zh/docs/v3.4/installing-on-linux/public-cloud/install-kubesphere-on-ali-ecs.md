@@ -141,7 +141,7 @@ chmod +x kk
 在当前位置创建配置文件 `config-sample.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f config-sample.yaml
+./kk create config --with-kubesphere v3.4.1 --with-kubernetes v1.22.12 -f config-sample.yaml
 ```
 
 ###  集群配置调整

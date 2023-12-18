@@ -1,6 +1,6 @@
 ---
 title: "Air-Gapped Upgrade with KubeKey"
-keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, 3.4.0"
+keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, 3.4.1"
 description: "Use the offline package to upgrade Kubernetes and KubeSphere."
 linkTitle: "Air-Gapped Upgrade with KubeKey"
 weight: 7400
@@ -11,14 +11,14 @@ Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Ku
 
 - You need to have a KubeSphere cluster running v3.3.x. If your KubeSphere version is v3.2.x or earlier, upgrade to v3.3.x first.
 - Your Kubernetes version must be v1.20.x, v1.21.x, v1.22.x, v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.23.x.
-- Read [Release Notes for 3.4.0](../../../v3.4/release/release-v340/) carefully.
+- Read [Release Notes for 3.4.1](../../../v3.4/release/release-v341/) carefully.
 - Back up any important component beforehand.
 - A Docker registry. You need to have a Harbor or other Docker registries.
 - Make sure every node can push and pull images from the Docker Registry.
 
 ## Major Updates
 
-In KubeSphere 3.4.0, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.4.0, please note the following:
+In KubeSphere 3.4.1, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.4.1, please note the following:
 
    - Change of built-in roles: Platform-level built-in roles `users-manager` and `workspace-manager` are removed. If an existing user has been bound to `users-manager` or `workspace-manager`, its role will be changed to `platform-regular` after the upgrade is completed. Role `platform-self-provisioner` is added. For more information about built-in roles, refer to [Create a user](../../quick-start/create-workspace-and-project).
 
@@ -26,7 +26,7 @@ In KubeSphere 3.4.0, some changes have made on built-in roles and permissions of
        - Removed permissions of platform-level custom roles: user management, role management, and workspace management.
        - Removed permissions of workspace-level custom roles: user management, role management, and user group management.
        - Removed permissions of namespace-level custom roles: user management and role management.
-       - After you upgrade KubeSphere to 3.4.0, custom roles will be retained, but removed permissions of the custom roles will be revoked.
+       - After you upgrade KubeSphere to 3.4.1, custom roles will be retained, but removed permissions of the custom roles will be revoked.
 
 ## Upgrade KubeSphere and Kubernetes
 
@@ -100,7 +100,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 1. Download the image list file `images-list.txt` from a machine that has access to Internet through the following command:
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -112,7 +112,7 @@ As you install KubeSphere and Kubernetes on Linux, you need to prepare an image 
 2. Download `offline-installation-tool.sh`.
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/offline-installation-tool.sh
    ```
 
 3. Make the `.sh` file executable.
@@ -215,7 +215,7 @@ Execute the following command to generate an example configuration file for inst
 For example:
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}
@@ -297,7 +297,7 @@ In this example, KubeSphere is installed on multiple nodes, so you need to speci
    For example:
 
 ```bash
-./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0 -f config-sample.yaml
+./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.1 -f config-sample.yaml
 ```
 
 {{< notice note >}}

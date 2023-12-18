@@ -90,7 +90,7 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 使用以下命令从能够访问互联网的机器上下载镜像清单文件 `images-list.txt`：
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/images-list.txt
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/images-list.txt
    ```
 
    {{< notice note >}}
@@ -102,7 +102,7 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 2. 下载 `offline-installation-tool.sh`。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/offline-installation-tool.sh
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/offline-installation-tool.sh
    ```
 
 3. 使 `.sh` 文件可执行。
@@ -162,8 +162,8 @@ Docker 使用 `/var/lib/docker` 作为默认路径来存储所有 Docker 相关�
 1. 执行以下命令下载这两个文件，并将它们传输至您充当任务机的机器，用于安装。
 
    ```bash
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml
-   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/cluster-configuration.yaml
+   curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/kubesphere-installer.yaml
    ```
 
 2. 编辑 `cluster-configuration.yaml` 添加您的私有镜像仓库。例如，本教程中的仓库地址是 `dockerhub.kubekey.local`，将它用作 `.spec.local_registry` 的值，如下所示：
@@ -245,10 +245,10 @@ https://kubesphere.io             20xx-xx-xx xx:xx:xx
 
 ```txt
 ##kubesphere-images
-registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.4.0
-registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.4.0
-registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.4.0
-registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.4.0
+registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.4.1
+registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.4.1
+registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.4.1
+registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.4.1
 registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.20.0
 registry.cn-beijing.aliyuncs.com/kubesphereio/kubefed:v0.8.1
 registry.cn-beijing.aliyuncs.com/kubesphereio/tower:v0.2.1
@@ -272,9 +272,9 @@ registry.cn-beijing.aliyuncs.com/kubesphereio/gatekeeper:v3.5.2
 ##openpitrix-images
 registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.3.2
 ##kubesphere-devops-images
-registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.4.0
-registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.4.0
-registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.4.0
+registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.4.1
+registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.4.1
+registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.4.1
 registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.4.0-2.319.3-1
 registry.cn-beijing.aliyuncs.com/kubesphereio/inbound-agent:4.10-2
 registry.cn-beijing.aliyuncs.com/kubesphereio/builder-base:v3.2.2

@@ -148,7 +148,7 @@ curl -sfL https://get-kk.kubesphere.io | VERSION=v3.0.13 sh -
 1. 使用默认配置创建示例配置文件，这里以 Kubernetes v1.22.12 为例。
 
    ```bash
-   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12
+   ./kk create config --with-kubesphere v3.4.1 --with-kubernetes v1.22.12
    ```
 
    {{< notice note >}}
