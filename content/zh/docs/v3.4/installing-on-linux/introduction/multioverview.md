@@ -172,7 +172,7 @@ chmod +x kk
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- 您可以指定要安装的 KubeSphere 版本（例如 `--with-kubesphere v3.4.0`）。
+- 您可以指定要安装的 KubeSphere 版本（例如 `--with-kubesphere v3.4.1`）。
 
   ```bash
   ./kk create config --with-kubesphere [version]

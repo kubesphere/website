@@ -137,7 +137,7 @@ chmod +x kk
 在当前位置创建配置文件 `master-HA.yaml`：
 
 ```bash
-./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.22.12 -f master-HA.yaml
+./kk create config --with-kubesphere v3.4.1 --with-kubernetes v1.22.12 -f master-HA.yaml
 ```
 
 ### 集群配置调整
@@ -200,7 +200,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: v3.4.0
+    version: v3.4.1
 spec:
   local_registry: ""
   persistence:
@@ -278,7 +278,7 @@ spec:
 
  ```bash
  # 指定配置文件创建集群
- ./kk create cluster --with-kubesphere v3.4.0 -f master-HA.yaml
+ ./kk create cluster --with-kubesphere v3.4.1 -f master-HA.yaml
 
  # 查看 KubeSphere 安装日志  -- 直到出现控制台的访问地址和登录帐户
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app in (ks-install, ks-installer)' -o jsonpath='{.items[0].metadata.name}') -f

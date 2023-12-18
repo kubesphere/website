@@ -197,7 +197,7 @@ You only need to run one command for all-in-one installation. The template is as
 To create a Kubernetes cluster with KubeSphere installed, refer to the following command as an example:
 
 ```bash
-./kk create cluster --with-kubernetes v1.22.12 --with-kubesphere v3.4.0
+./kk create cluster --with-kubernetes v1.22.12 --with-kubesphere v3.4.1
 ```
 
 {{< notice note >}}

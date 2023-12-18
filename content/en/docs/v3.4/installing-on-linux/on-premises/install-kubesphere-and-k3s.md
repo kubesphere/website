@@ -78,7 +78,7 @@ chmod +x kk
 1. Create a configuration file of your cluster by running the following command:
 
    ```bash
-   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.4.0
+   ./kk create config --with-kubernetes v1.21.4-k3s --with-kubesphere v3.4.1
    ```
 
    {{< notice note >}}

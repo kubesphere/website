@@ -180,7 +180,7 @@ Here are some examples for your reference:
   ./kk create config [-f ~/myfolder/abc.yaml]
   ```
 
-- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.4.0`).
+- You can specify a KubeSphere version that you want to install (for example, `--with-kubesphere v3.4.1`).
 
   ```bash
   ./kk create config --with-kubesphere [version]

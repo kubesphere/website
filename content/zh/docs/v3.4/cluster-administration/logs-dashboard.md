@@ -6,7 +6,7 @@ linkTitle: "KubeSphere 日志图表"
 weight: 6200
 ---
 
-作为一个开源的、以应用为中心的容器平台，KubeSphere 在 3.4.0 版本默认用 [OpenSearch](https://opensearch.org/) 作为日志，事件，审计存储后端。用以代替 ElasticSearch，默认我们可以使用 KubeSphere 页面右下角自带的查询工具来检索日志，查询事件和审计记录。 
+作为一个开源的、以应用为中心的容器平台，KubeSphere 在 3.4.1 版本默认用 [OpenSearch](https://opensearch.org/) 作为日志，事件，审计存储后端。用以代替 ElasticSearch，默认我们可以使用 KubeSphere 页面右下角自带的查询工具来检索日志，查询事件和审计记录。 
 
 如果您想获得类似 Kibana 页面的体验，如日志图表绘制等，我们可以启用该功能。也就是OpenSearch Dashboard
 
@@ -61,9 +61,9 @@ weight: 6200
 
 ### 在 Kubernetes 上安装
 
-当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml) 文件中启用相关组件。
+当您[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/introduction/overview/) 时，需要先在 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/cluster-configuration.yaml) 文件中启用相关组件。
 
-1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/cluster-configuration.yaml) 文件，执行以下命令打开并编辑该文件。
+1. 下载 [cluster-configuration.yaml](https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/cluster-configuration.yaml) 文件，执行以下命令打开并编辑该文件。
 
     ```bash
     vi cluster-configuration.yaml
@@ -102,7 +102,7 @@ weight: 6200
 3. 执行以下命令开始安装：
 
     ```bash
-    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.0/kubesphere-installer.yaml
+    kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/kubesphere-installer.yaml
     
     kubectl apply -f cluster-configuration.yaml
     ```

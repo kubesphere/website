@@ -197,7 +197,7 @@ chmod +x kk
 若要同时安装 Kubernetes 和 KubeSphere，可参考以下示例命令：
 
 ```bash
-./kk create cluster --with-kubernetes v1.22.12 --with-kubesphere v3.4.0
+./kk create cluster --with-kubernetes v1.22.12 --with-kubesphere v3.4.1
 ```
 
 {{< notice note >}}

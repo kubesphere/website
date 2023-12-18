@@ -131,10 +131,10 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/haproxy:2.3
      - registry.cn-beijing.aliyuncs.com/kubesphereio/nfs-subdir-external-provisioner:v4.0.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/k8s-dns-node-cache:1.15.12
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-installer:v3.4.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-apiserver:v3.4.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-console:v3.4.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-controller-manager:v3.4.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.22.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.21.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/kubectl:v1.20.0
@@ -156,9 +156,9 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
      - registry.cn-beijing.aliyuncs.com/kubesphereio/edgeservice:v0.3.0
      - registry.cn-beijing.aliyuncs.com/kubesphereio/gatekeeper:v3.5.2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/openpitrix-jobs:v3.3.2
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.4.0
-     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.4.0
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-apiserver:ks-v3.4.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-controller:ks-v3.4.1
+     - registry.cn-beijing.aliyuncs.com/kubesphereio/devops-tools:ks-v3.4.1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.4.0-2.319.3-1
      - registry.cn-beijing.aliyuncs.com/kubesphereio/inbound-agent:4.10-2
      - registry.cn-beijing.aliyuncs.com/kubesphereio/builder-base:v3.2.2
@@ -318,7 +318,7 @@ KubeKey v2.1.0 版本新增了清单（manifest）和制品（artifact）的概�
 2. 执行以下命令创建离线集群配置文件：
 
    ```bash
-   ./kk create config --with-kubesphere v3.4.0 --with-kubernetes v1.23.15 -f config-sample.yaml
+   ./kk create config --with-kubesphere v3.4.1 --with-kubernetes v1.23.15 -f config-sample.yaml
    ```
 
 3. 执行以下命令修改配置文件：

@@ -165,7 +165,7 @@ chmod +x kk
 1. Specify a Kubernetes version and a KubeSphere version that you want to install. For example:
 
    ```bash
-   ./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.0
+   ./kk create config --with-kubernetes v1.22.12 --with-kubesphere v3.4.1
    ```
 
    {{< notice note >}}

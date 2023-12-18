@@ -31,7 +31,7 @@ Weight: 16520
    ```yaml
    client:
      version:
-       kubesphere: v3.4.0
+       kubesphere: v3.4.1
        kubernetes: v1.22.12
        openpitrix: v3.4.0
      enableKubeConfig: true
