@@ -1,8 +1,8 @@
 ---
-title: "Release Notes for 3.4.1"
+title: "Release Notes for 3.4.0"
 keywords: "Kubernetes, KubeSphere, Release Notes"
-description: "KubeSphere 3.4.1 Release Notes"
-linkTitle: "Release Notes - 3.4.1"
+description: "KubeSphere 3.4.0 Release Notes"
+linkTitle: "Release Notes - 3.4.0"
 weight: 18094
 ---
 
@@ -151,4 +151,4 @@ istio: 1.11.1 -> 1.14.6; kiali: v1.38.1 -> v1.50.1; jaeger: 1.27 -> 1.29.
 - Fix the issue that the pod status is inconsistent with the filtered status when filtering by status on the pod list page. 
 - Support querying the secret list according to the secret type by supporting fieldSelector filtering.
 
-For more information about issues and contributors of KubeSphere 3.4.1, see [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.1.md).
+For more information about issues and contributors of KubeSphere 3.4.0, see [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.0.md).

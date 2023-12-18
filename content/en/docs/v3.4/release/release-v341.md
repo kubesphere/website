@@ -65,7 +65,7 @@ weight: 18093
 - Fix the issue that the details of a pipeline cannot be viewed.
 -  Fix the run error due to the large DevOps pipeline logs.
 - Fix Jenkins image vulnerability.
-- Fix the issue that failed to upgrade DevOps to 3.4.1.
+- Fix the issue that failed to upgrade DevOps to 3.4.0.
 - Fix the error in the cleanup task.
 - Fix the failure to set a timeout.
 - Fix the bug with downloading multi-branch-pipeline artifacts.
