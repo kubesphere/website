@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20231125.png
-  url: ./meetup-guangzhou-20231125/
+  image: /images/live/cloudnative-live-20231223.png
+  url: ./meetup-suzhou-20231223/
 
   notice:
-    title: 云原生 Meetup 苏州站
-    tag: 预告
-    time: 2023 年 12 月 23 日
-    base: 苏州
-    url: ./meetup-suzhou-20231223/
+    title: 云原生 Meetup 广州站
+    tag: 结束
+    time: 2023 年 11 月 25 日
+    base: 广州
+    url: ./meetup-guangzhou-20231125/
 
   over:
     title: Databend 云数仓与 Databend Playground 扩展组件介绍
@@ -26,6 +26,55 @@ section2:
 
 section3:
   videos:
+    - title: 闪电演讲 ⚡️—— 在校学生如何参与开源项目
+      link: ./suzhou1223-os/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/suzhou1223-os-cover.png
+      type: iframe
+      createTime: 2023.12.23
+      group: Meetup
+
+    - title: AI 时代的战略思维
+      link: ./suzhou1223-ai/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/suzhou1223-ai-cover.png
+      type: iframe
+      createTime: 2023.12.23
+      group: Meetup
+
+    - title: 基于 SkyWalking 实现全域可观测
+      link: ./suzhou1223-skywalking/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/suzhou1223-skywalking-cover.png
+      type: iframe
+      createTime: 2023.12.23
+      group: Meetup
+
+    - title: KubeSphere 在 vsleem 的落地实践
+      link: ./suzhou1223-kubesphere/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/suzhou1223-kubesphere-cover.png
+      type: iframe
+      createTime: 2023.12.23
+      group: Meetup
+
+    - title: KubeSphere 可插拔架构下 DevOps 插件实现方法
+      link: ./suzhou1223-devops/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/suzhou1223-devops-cover.png
+      type: iframe
+      createTime: 2023.12.23
+      group: Meetup
+
+    - title: 头部智能电动车公司敏捷转型实践分享
+      link: ./suzhou1223-minjie/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/suzhou1223-minjie-cover.png
+      type: iframe
+      createTime: 2023.12.23
+      group: Meetup
+
+    - title: Databend 云数仓与 Databend Playground 扩展组件介绍
+      link: ./databend1207-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/databend1207-live-cover.png
+      type: iframe
+      createTime: 2023.12.07
+      group: 直播回放
+
     - title: 大模型网络优化方法——闪电演讲 ⚡️
       link: ./guangzhou1125-ai/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover-5.png
@@ -1153,6 +1202,10 @@ section4:
   list:
     - year: 2023
       meetup: 
+        - place: 苏州站（12.23）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/suzhou-meetup-20231223-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-suzhou-20231223/
+
         - place: 广州站（11.25）
           img: https://pek3b.qingstor.com/kubesphere-community/images/guangzhou-meetup-20231125-cover.jpg
           meetupUrl: https://kubesphere.io/zh/live/meetup-guangzhou-20231125/
