@@ -149,4 +149,20 @@ section4:
     - icon: "images/partner/Hostinger-logo-primary.png"
       partnerType: "Cloud Provider"
       content: 'Hostinger offers unmanaged VPS services using the Kernel-based Virtual Machine (KVM) technology. It’s an open-source virtualization module for Linux that helps create many separate, secure virtual servers inside a physical server. '
+
+    - icon: "images/partner/logo-kubeblocks.svg"
+      partnerType: "Go-to-market"
+      content: 'KubeBlocks is an open-source control plane that runs and manages databases, message queues and other data infrastructure on K8s, including MySQL, PostgreSQL, Redis, MongoDB, Kafka, Pulsar, Clickhouse, Doris, StarRocks, ElasticSearch, OpenSearch, Milvus, and Qdrant etc.'
+
+    - icon: "images/partner/logo-skywalking.png"
+      partnerType: "Go-to-market"
+      content: 'Apache SkyWalking joined the Apache incubator in 2017 as an application performance monitoring tool for distributed systems, designed specifically for microservices, cloud native architectures, and container based architectures. It includes distributed tracking, performance metric analysis, application and service dependency analysis, etc.'
+
+    - icon: "images/partner/logo-zmops.svg"
+      partnerType: "Go-to-market"
+      content: 'Zmops Information is committed to building an observability unified operation and maintenance platform, helping users quickly build a full link application performance monitoring platform based on Skywalking. ArgusAPM enables real-time and comprehensive observation of application service environment, service performance, and user experience.'
+
+    - icon: "images/partner/logo-emq.svg"
+      partnerType: "Go-to-market"
+      content: EMQ is the world's leading software provider of open-source IoT data infrastructure. We are dedicated to empowering future-proof IoT applications through one-stop, cloud-native products that connect, move, process, and integrate real-time IoT data—from edge to cloud to multi-cloud.
 ---
