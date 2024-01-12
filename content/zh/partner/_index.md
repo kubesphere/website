@@ -150,4 +150,20 @@ section4:
     - icon: "images/partner/Hostinger-logo-primary.png"
       partnerType: "云提供商"
       content: 'Hostinger 使用基于内核的虚拟机 (KVM) 技术提供非托管 VPS 服务。它是 Linux 的开源虚拟化模块，有助于在物理服务器内创建许多独立、安全的虚拟服务器。'
+
+    - icon: "images/partner/logo-kubeblocks.svg"
+      partnerType: "市场合作伙伴"
+      content: 'KubeBlocks 是一个开源的数据库控制平面软件，在K8s 上运行并管理数据库、消息队列和其他数据基础设施，包括 MySQL、PostgreSQL、Redis、MongoDB、Kafka、Pulsar、Clickhouse、Doris、StarRocks、ElasticSearch、OpenSearch、Milvus和Qdrant 等。'  
+
+    - icon: "images/partner/logo-skywalking.png"
+      partnerType: "市场合作伙伴"
+      content: 'Apache SkyWalking 于 2017 年加入 Apache 孵化器，是分布式系统的应用程序性能监视工具，专为微服务、云原生架构和基于容器架构而设计。包括了分布式追踪、性能指标分析、应用和服务依赖分析等。'  
+
+    - icon: "images/partner/logo-zmops.svg"
+      partnerType: "市场合作伙伴"
+      content: '纵目信息致力于打造可观测性统一运维平台，帮助用户快速搭建基于 SkyWalking 的全链路应用性能监控平台。纵目 ArgusAPM 实现了对应用服务环境、服务性能、用户体验的实时全方位观测。'  
+
+    - icon: "images/partner/logo-emq.svg"
+      partnerType: "市场合作伙伴"
+      content: 'EMQ（杭州映云科技有限公司）是一家开源物联网数据基础设施软件供应商，交付全球领先的开源云原生 MQTT 消息服务器和流处理数据库，为企业云边端的海量物联网数据提供高可靠、高性能的实时连接、移动、处理与集成，助力构建「面向未来」的物联网平台与应用。'  
 ---
