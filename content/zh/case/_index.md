@@ -124,6 +124,10 @@ section2:
       content: "花生好车致力于打造下沉市场汽车出行解决方案第一品牌。"
       link: "hshc/"
 
+    - icon: "images/case/logo-vsleem.png"
+      content: "苏州威视通智能科技是一家全球领先的全景 AI 平台提供商。"
+      link: "vsleem/"
+
 section3:
   title: 'KubeSphere 助力各行各业'
   tip: 全部
@@ -205,6 +209,8 @@ section3:
           icon: 'images/case/logo-pigeon.png'
         - name: 'excelsecu'
           icon: 'images/case/logo-excelsecu.png'
+        - name: 'vsleem'
+          icon: 'images/case/logo-vsleem.png'
 
     - name: '互联网'
       children:

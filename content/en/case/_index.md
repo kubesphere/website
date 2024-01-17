@@ -121,6 +121,8 @@ section3:
           icon: 'images/case/logo-pigeon.png' 
         - name: 'excelsecu'
           icon: 'images/case/logo-excelsecu.png'
+        - name: 'vsleem'
+          icon: 'images/case/logo-vsleem.png'
 
     - name: 'Internet'
       children:
