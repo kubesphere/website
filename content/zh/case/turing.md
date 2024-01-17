@@ -1,5 +1,5 @@
 ---
-title: qunar
+title: turing
 description:
 
 css: scss/case-detail.scss
