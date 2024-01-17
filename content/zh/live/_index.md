@@ -13,11 +13,11 @@ section2:
   url: ./meetup-suzhou-20231223/
 
   notice:
-    title: 云原生 Meetup 广州站
-    tag: 结束
-    time: 2023 年 11 月 25 日
-    base: 广州
-    url: ./meetup-guangzhou-20231125/
+    title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
+    tag: 预告
+    time: 2024 年 01 月 18 日
+    base: 线上
+    url: ./okg0118-live/
 
   over:
     title: Databend 云数仓与 Databend Playground 扩展组件介绍
