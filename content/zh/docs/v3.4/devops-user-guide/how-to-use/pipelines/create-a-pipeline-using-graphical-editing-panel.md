@@ -304,8 +304,8 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
    ```shell
    mkdir ~/.kube
    echo "$KUBECONFIG_CONTENT" > ~/.kube/config
-   envsubst < deploy/dev-ol/devops-sample-svc.yaml | kubectl apply -f -
-   envsubst < deploy/dev-ol/devops-sample.yaml | kubectl apply -f -
+   envsubst < deploy/no-branch-dev/devops-sample-svc.yaml | kubectl apply -f -
+   envsubst < deploy/no-branch-dev/devops-sample.yaml | kubectl apply -f -
    ```
 
 6. 如果您想在流水线成功运行时接收电子邮件通知，请点击**添加步骤**，选择**邮件**，以添加电子邮件信息。请注意，配置电子邮件服务器是可选操作，如果您跳过该步骤，依然可以运行流水线。
