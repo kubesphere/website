@@ -116,7 +116,7 @@ Notification Manager 通过 CRD 进行管理和配置，Operator 通过监听 No
 Notification Manager 定义的 CRD 的作用如下：
 * NotificationManager：用于配置 Webhook，包括镜像、副本数、volumes、亲和性、污点、资源配额等。同时定义了发送通知所需的配置，全局接收者和默认配置选择器、租户标签、租户级接收者选择器，以及通知渠道的全局配置。
 * Config：用于定义通知渠道的发送方的配置信息，例如邮件发送服务器设置、企业微信用于发送消息的 APP 的信息等。
-* Receiver：用于定义通知渠道的接收方的信息，例如邮件接收者、企业微信中的用户或部门，slack的频道等。
+* Receiver：用于定义通知渠道的接收方的信息，例如邮件接收者、企业微信中的用户或部门，slack 的频道等。
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/notification-manager-crd.png)
 
