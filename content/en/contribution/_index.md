@@ -37,7 +37,7 @@ section2:
       icon2: 'images/contribution/39.png'
       children:
         - content: 'Join KubeSphere Slack'
-          link: 'https://join.slack.com/t/kubesphere/shared_invite/zt-1ilxbsp39-t4ES4xn5OI0eF5hvOoAhEw'
+          link: 'https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ'
         - content: 'Join the Mailing List'
           link: 'https://groups.google.com/forum/#!forum/kubesphere'
         - content: 'Follow us on Twitter'
