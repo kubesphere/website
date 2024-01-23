@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20231223.png
-  url: ./meetup-suzhou-20231223/
+  image: /images/live/cloudnative-live-20240118.png
+  url: ./okg0118-live/
 
   notice:
-    title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
-    tag: 预告
-    time: 2024 年 01 月 18 日
-    base: 线上
-    url: ./okg0118-live/
+    title: KubeSphere Meetup 苏州站
+    tag: 结束
+    time: 2023 年 12 月 23 日
+    base: 苏州
+    url: ./meetup-suzhou-20231223/
 
   over:
     title: Databend 云数仓与 Databend Playground 扩展组件介绍
@@ -26,6 +26,13 @@ section2:
 
 section3:
   videos:
+    - title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
+      link: ./okg0118-live/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/okg0118-live-cover.png
+      type: iframe
+      createTime: 2024.01.18
+      group: 直播回放
+
     - title: 闪电演讲 ⚡️—— 在校学生如何参与开源项目
       link: ./suzhou1223-os/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/suzhou1223-os-cover.png

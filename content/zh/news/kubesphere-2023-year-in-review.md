@@ -17,7 +17,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/2023-kubesphere-y
 | 开源项目 | 正式发版 | 新增重要功能 |
 | -------- | -------- | -------- |
 | KubeSphere     | 3 个     | 扩大对 K8s 的支持范围，最新稳定性支持 v1.26；<br/>重构告警策略架构，解耦为告警规则与规则组；<br/>提升集群别名展示权重，减少原集群名称不可修改导致的管理问题。 |
-| KubeKey     | 11 个    | Kubeadm 配置更新至 v1beta3，支持部署 K8s v1.27+；<br/>支持部署 Hybrident 网络查件；<br/> 支持自定义配置集群 DNS 参数；<br/> 支持自定义配置集群 Etcd 参数。|
+| KubeKey     | 11 个    | Kubeadm 配置更新至 v1beta3，支持部署 K8s v1.27+；<br/>支持部署 Hybrident 网络插件；<br/> 支持自定义配置集群 DNS 参数；<br/> 支持自定义配置集群 Etcd 参数。|
 | OpenFunction     | 4 个     | 集成 WasmEdge，支持 Wasm 函数和更完整的 CI/CD；<br/>新增 v1beta2 API，支持 Dapr 状态管理；<br/>集成 KEDA http-addon 作为同步函数运行时；<br/>支持在启用 SkyWalking 跟踪时添加环境变量。  |
 | Fluent Operator    | 9 个     |    支持 FluentBit 部署为 StatefulSet；<br/> Fluentd CRD 提供自定义插件类型；<br/> 为 FluentBit daemonset 提供 namespace 级别的权限；<br/>添加多个插件（如 Datadog、S3、nginx 插件等）；<br/>完善helm，提供更多自定义设置完成安装；<br/>支持以 DaemonSet 的方式部署 Fluentd；<br/>添加禁用未使用 controller 的参数；<br/>支持以 StatefulSet 的形式部署 FluentBit。|
 
