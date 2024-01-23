@@ -6,7 +6,7 @@ css: scss/live-detail.scss
 
 section1:
   snapshot: 
-  videoUrl: 
+  videoUrl: //player.bilibili.com/player.html?aid=241458512&bvid=BV1re411J7SA&cid=1411811634&page=1&high_quality=1
   type: iframe
   time: 2024-01-18 20:00
   timeIcon: /images/live/clock.svg
@@ -54,3 +54,26 @@ section1:
 
 B 站  https://live.bilibili.com/22580654
 
+## PPT 下载 
+
+可扫描官网底部二维码，关注 「KubeSphere云原生」公众号，后台回复 `20240118` 即可下载 PPT。
+
+## Q & A
+
+### Q1：刘老师在介绍会话类游戏服务器时提到的工作负载自动伸缩功能，在 OKG Dashboard 中的实现步骤是怎样的？在应用交付方面，KubeSphere 平台也支持 Argo 持续部署。想了解一下 OKG 是否考虑在 KubeSphere 中进行应用交付？
+
+OKG 自动伸缩功能可以参考[文档](https://openkruise.io/zh/kruisegame/user-manuals/gameservers-scale/#%E6%B8%B8%E6%88%8F%E6%9C%8D%E7%9A%84%E6%B0%B4%E5%B9%B3%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9)。
+
+实际上与所有 Kubernetes 对象一样，在集群中部署名为 ScaledObject 的对象 Yaml 即可实现游戏服的自动水平伸缩了。我们推荐的交付与运维方式如下所示：
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/okg-kubesphere-xyz.png)
+
+游戏运维通过 GitOps 维护各种部署 Yaml。当然，KubeSphere 也支持 DevOps 流程，所以也可以通过 KubeSphere 进行交付管理。OKG 项目本身提供的是面向游戏的工作负载，在集群内就是一个 CR 对象，无论通过何种方式都可以部署起来。当前的控制台更多是一个查询与定向管理的角色，可以面向游戏服进行精细化的控制。
+
+### Q2：我对 KubeSphere 扩展组件开发很感兴趣，想了解一下是否有特定的技术栈要求或推荐？
+
+扩展组件开发需要用到 React，除此之外扩展组件的编排还需要有一定 Helm、K8s 的使用经验。
+
+### Q3：上架的扩展组件都是免费订阅的吗？后续的扩展组件也免费吗？
+
+目前上架的扩展组件都是免费订阅的。后续上架的扩展组件是否免费由开发者自行决定。
