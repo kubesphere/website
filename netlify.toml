@@ -1,8 +1,8 @@
 [context.production.environment]
-  HUGO_VERSION = "0.121.2"
+  HUGO_VERSION = "0.122.0"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.121.2"
+  HUGO_VERSION = "0.122.0"
 
 [[redirects]]
   from = "/log/*"
