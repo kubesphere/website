@@ -68,7 +68,7 @@ KubeSphere 版本低于 `v3.4.0`的，请先[升级](https://github.com/kubesphe
 
 ![cc-search](/images/docs/v3.x/zh-cn/cluster-administration/cluster-settings/log-collections/cc-search.png)
 
-3. 在自定义资源中，点击 ks-installer 右侧的 ，选择编辑 YAML。
+3. 在自定义资源中，点击 ks-installer 右侧的![](/images/docs/v3.x/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png)，选择编辑 YAML。
 
 ![cc-ks-installer](/images/docs/v3.x/zh-cn/cluster-administration/cluster-settings/log-collections/cc-ks-installer.png)
 
