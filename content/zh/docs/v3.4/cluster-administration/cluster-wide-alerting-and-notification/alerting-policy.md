@@ -9,13 +9,13 @@ weight: 8530
 
 KubeSphere 为节点提供告警规则，提供编组，允许用户将相似的规则编入一个规则组中，一旦满足这些规则定义的条件，将会触发告警。本教程将演示如何为集群中的节点创建规则组及告警规则。
 
-KubeSphere 还具有内置规则组。 在<strong>内置规则组</strong>选项卡，可以点击任一规则组查看该规则组中所有规则，点击任一规则查看其详情。请注意，这些规则不能直接在控制台上进行删除，但可以通过编辑调整规则。
+KubeSphere 还具有内置规则组。在<strong>内置规则组</strong>选项卡，可以点击任一规则组查看该规则组中所有规则，点击任一规则查看其详情。请注意，这些规则不能直接在控制台上进行删除，但可以通过编辑调整规则。
 
 ## 准备工作
 
 - 需先启用 [KubeSphere 告警系统](../../../pluggable-components/alerting)。
 - 如需接收告警通知，需预先配置[通知渠道](../../../cluster-administration/platform-settings/notification-management/configure-email/)。
-- 需要创建一个用户 (cluster-admin) 并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-4-create-a-role)。
+- 需要创建一个用户（cluster-admin）并授予其 clusters-admin 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/#step-4-create-a-role)。
 
 ## 创建规则组及告警策略
 
@@ -52,7 +52,7 @@ KubeSphere 还具有内置规则组。 在<strong>内置规则组</strong>选项
 ## 编辑规则组
 如需在创建后编辑规则组，在<strong>规则组</strong>页面点击右侧的![](/images/docs/v3.x/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/edit-policy.png)。
 ![](/images/docs/v3.x/cluster-administration/cluster-wide-alerting-and-notification/alerting-policies-node-level/policy-group-operator.png)
-1. 点击下拉菜单中的编辑信息，根据与创建时第3步来编辑规则组。点击信息设置页面的确定保存更改。
+1. 点击下拉菜单中的编辑信息，根据与创建时第 3 步来编辑规则组。点击信息设置页面的确定保存更改。
 2. 点击下拉菜单中的删除以删除规则组。
 3. 点击下拉菜单中的禁用以禁用规则组。
 4. 点击下拉菜单中的编辑告警规则对该规则组中告警规则进行增删改以及单个规则的禁用操作。

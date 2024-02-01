@@ -7,13 +7,13 @@ weight: 11214
 ---
 
 
-在最新版的 KubeSphere 3.4.0 版本中，DevOps 项目支持在流水线模板中使用步骤模板来优化使用流水线。
+在 KubeSphere 3.4 版本中，DevOps 项目支持在流水线模板中使用步骤模板来优化使用流水线。
 
 ## 准备工作
 
-- [启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
+- 您需要创建一个企业空间和一个用户 (project-admin)，必须邀请该用户至该企业空间并赋予 workspace-self-provisioner 角色。有关更多信息，请参考[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 
-- 创建企业用户，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
+- 您需要[启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
 
 ### 开启 DevOps 方式
 
@@ -21,7 +21,7 @@ weight: 11214
 
 2. 点击定制资源定义，在搜索栏中输入 clusterconfiguration，点击搜索结果查看其详细页面。
 
-3. 在自定义资源中，点击 ks-installer 右侧的操作符号，选择编辑 YAML，将 devops 下的 enabled 配置更改为true。
+3. 在自定义资源中，点击 ks-installer 右侧的操作符号，选择编辑 YAML，将 DevOps 下的 enabled 配置更改为 true。
 
 ```
 devops:
@@ -82,7 +82,7 @@ withcredentials      6d7h
 withsonarqubeenv     6d7h
 ```
 
-2. 创建自定义步骤模板，先创建一个 yaml 文件，简单实现写文件。
+2. 创建自定义步骤模板，先创建一个 YAML 文件，简单实现写文件。
 
 ```
 apiVersion: devops.kubesphere.io/v1alpha3
@@ -134,19 +134,19 @@ spec:
     }
 ```
 
-备注:
+  {{< notice info >}}
+步骤模板是通过 CRD 实现的，详细可参考[步骤模板的 CRD](https://github.com/kubesphere-sigs/ks-devops-helm-chart/blob/master/charts/ks-devops/crds/devops.kubesphere.io_clustersteptemplates.yaml)。
 
-a. 步骤模板是通过 crd 实现的，详细可参考 [步骤模板的crd](https://github.com/kubesphere-sigs/ks-devops-helm-chart/blob/master/charts/ks-devops/crds/devops.kubesphere.io_clustersteptemplates.yaml)。
+yaml 文件中的 `metadata.name` 字段和 `spec.template.name` 字段需要保持一致，同时 name 字段依赖 Jenkins 中的函数来实现对应功能，如上的 YAML 文件中使用了 writeFile 函数来实现输出功能，详细可参考 [pipeline steps](https://www.jenkins.io/doc/pipeline/steps/)。
+    {{</ notice >}}
 
-b. yaml 文件中的 metadata.name 字段和 spec.template.name 字段需要保持一致，同时 name 字段依赖 jenkins 中的函数来实现对应功能,如上的 yaml 文件中使用了 writeFile 函数来实现输出功能，详细可参考[ pipeline steps](https://www.jenkins.io/doc/pipeline/steps/)。
-
-3.使用 kubectl 命令创建自定义的步骤。
+3. 使用 kubectl 命令创建自定义的步骤。
 
 ```
 kubectl apply -f test-writefile.yaml
 ```
 
-4.再次查看自定义步骤模板 writefile 已创建。
+4. 再次查看自定义步骤模板 writefile 已创建。
 
 ```
 kubectl get clustersteptemplates
@@ -181,16 +181,15 @@ writefile            28s
  ![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/create-pipeline-1.png)
  
 2. 进入编辑流水线中，可以按需选择固定模板（比如  Node.js/Maven/Golang 等），也可以选择创建自定义流水线。
+
 ![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/create-pipeline-2.png)
 
-3. 这里选择固定模板 Golang 创建流水线，进入流水线后，可以按需增加一个阶段。我们选择在流水线最后创建一个通知的阶段。
+3. 本示例选择固定模板 Golang 创建流水线，进入流水线后，可以按需增加一个阶段。选择在流水线最后创建一个通知的阶段。
 
 ![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/create-step-1.png)
 
-4. 在通知的阶段这里，继续添加执行步骤，这里有很多的步骤模板，我们选择
-写文件 的这个自定义步骤。
+4. 继续添加执行步骤，这里有很多的步骤模板，选择“写文件”这个自定义步骤。
 
 ![](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/use-step-templates/use-step-1.png)
 
-
-至此，我们完成了一个自定义步骤模板的配置。
+至此，就完成了一个自定义步骤模板的配置。
