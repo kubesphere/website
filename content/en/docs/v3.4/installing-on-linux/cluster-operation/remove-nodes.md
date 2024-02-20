@@ -31,3 +31,8 @@ Pods that are part of a DaemonSet tolerate being run on an unschedulable node. D
    ```bash
    ./kk delete node <nodeName> -f sample.yaml
    ```
+{{< notice note >}}
+
+Deleting the Master node is not supported.
+
+{{</ notice >}}
