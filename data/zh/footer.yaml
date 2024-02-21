@@ -78,11 +78,13 @@ footer:
           link: 'https://marketplace.digitalocean.com/apps/kubesphere'
         - content: KubeSphere on QingCloud(QKE)
           link: 'https://www.qingcloud.com/products/kubesphereqke'
+        - content: KubeSphere 企业版
+          link: 'https://kubesphere.com.cn/kse/'
         - content: KubeSphere 虚拟化平台
           link: 'https://kubesphere.cloud/ksv/'
+        - content: 云原生扩展组件市场
+          link: 'https://kubesphere.com.cn/marketplace/'
         - content: 云原生应用服务平台
           link: 'https://kubesphere.cloud'
-        - content: 技术支持服务
-          link: 'https://kubesphere.cloud/ticket/'
         - content: 了解商业产品与咨询合作
           link: 'https://m.qingcloud.com/p/aec50'
