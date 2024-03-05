@@ -60,7 +60,7 @@ members:
 
     - name: 刘德涵
       position: 委员
-      des: 韵达科技资深运维，Docker，Linux、Kubernetes 运维，Devops，CI/CD，微服务应用部署，链路监控、helm，基础架构设计，快速定位运维相关问题，多年的运维操作经验，协助社区成员解决相关问题。
+      des: 资深运维，Docker，Linux、Kubernetes 运维，Devops，CI/CD，微服务应用部署，链路监控、helm，基础架构设计，快速定位运维相关问题，多年的运维操作经验，协助社区成员解决相关问题。
       image: /images/user-group/shanghai/liudehan.jpeg
 
     - name: 张浩飞
