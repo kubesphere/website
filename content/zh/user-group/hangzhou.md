@@ -55,7 +55,7 @@ members:
 
     - name: 薛兴林
       position: 副站长
-      des: 交个朋友运维负责人，KubeSphere 社区 Ambassador，开源爱好者，擅长 Linux 系统、网络、服务器、虚拟化、容器、微服务架构、中间件、监控、CI/CD 等运维工作
+      des: 运维负责人，KubeSphere 社区 Ambassador，开源爱好者，擅长 Linux 系统、网络、服务器、虚拟化、容器、微服务架构、中间件、监控、CI/CD 等运维工作
       image: /images/user-group/hangzhou/xuexinglin.jpeg
 
     - name: 马金晶
@@ -109,6 +109,10 @@ activities:
       link: https://kubesphere.io/zh/live/zhijianglab-kubesphere/
 
   review:
+    - text: 揭秘！KubeSphere 背后的“超级大脑”：etcd 的魅力与力量
+      description: 我们将深入探索 etcd 如何巧妙地融入 KubeSphere 生态系统，并通过实际应用场景展示其对提升平台工作效率和可靠性的关键作用。
+      link: https://kubesphere.io/zh/blogs/kubesphere-etcd-guide/
+
     - text: 基于 KubeSphere 部署 KubeBlocks 实现数据库自由
       description: KubeSphere 让 KubeBlocks 更易部署和使用，KubeBlocks 让应用在 KubeSphere 上更灵活弹性。
       link: https://kubesphere.io/zh/blogs/deploy-kubeblocks-on-kubesphere/
