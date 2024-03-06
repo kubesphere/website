@@ -13,11 +13,11 @@ section2:
   url: ./okg0118-live/
 
   notice:
-    title: KubeSphere Meetup 苏州站
-    tag: 结束
-    time: 2023 年 12 月 23 日
-    base: 苏州
-    url: ./meetup-suzhou-20231223/
+    title: KubeSphere Meetup 杭州站
+    tag: 预告
+    time: 2024 年 03 月 23 日
+    base: 
+    url: ./meetup-hangzhou-20240323/
 
   over:
     title: Databend 云数仓与 Databend Playground 扩展组件介绍
