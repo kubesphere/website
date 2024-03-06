@@ -1,7 +1,7 @@
 ---
 title: 云原生技术 Meetup 杭州站
 description: 此次 Meetup 由 KubeSphere 社区联合极狐 GitLab 及 Curve 社区共同组织，为大家带来 4 个分享以及 1 场 WorkShop。
-keywords: KubeSphere, Meetup, ShenZhen, Kubernetes, Jenkins, GitOps, DevOps
+keywords: KubeSphere, Meetup, Kubernetes, Jenkins, GitOps, DevOps
 css: scss/live-detail.scss
 
 section1:
