@@ -166,4 +166,8 @@ section4:
     - icon: "images/partner/logo-emq.svg"
       partnerType: "市场合作伙伴"
       content: 'EMQ（杭州映云科技有限公司）是一家开源物联网数据基础设施软件供应商，交付全球领先的开源云原生 MQTT 消息服务器和流处理数据库，为企业云边端的海量物联网数据提供高可靠、高性能的实时连接、移动、处理与集成，助力构建「面向未来」的物联网平台与应用。'  
+
+    - icon: "images/partner/ByConity-logo.png"
+      partnerType: "市场合作伙伴"
+      content: 'ByConity 是分布式的云原生 SQL 数仓引擎，擅长交互式查询和即席查询，具有支持多表关联复杂查询、集群扩容无感、离线批数据和实时数据流统一汇总等特点。'  
 ---
