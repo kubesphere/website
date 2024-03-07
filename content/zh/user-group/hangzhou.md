@@ -90,6 +90,9 @@ members:
 
 activities:
   videos:
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20240323-cover.png
+      link: https://kubesphere.io/zh/live/meetup-hangzhou-20240323/
+
     - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20230603-cover.png
       link: https://kubesphere.io/zh/live/meetup-hangzhou-20230603/
 

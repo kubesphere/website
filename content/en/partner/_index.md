@@ -165,4 +165,8 @@ section4:
     - icon: "images/partner/logo-emq.svg"
       partnerType: "Go-to-market"
       content: EMQ is the world's leading software provider of open-source IoT data infrastructure. We are dedicated to empowering future-proof IoT applications through one-stop, cloud-native products that connect, move, process, and integrate real-time IoT data—from edge to cloud to multi-cloud.
+
+    - icon: "images/partner/ByConity-logo.png"
+      partnerType: "Go-to-market"
+      content: 'ByConity is a distributed cloud-native SQL data warehouse engine, that excels in interactive queries and Ad-Hoc queries, featuring support for querying multiple tables, cluster expansion without sensation, and unified aggregation of offline batch data and real-time data streams.'
 ---
