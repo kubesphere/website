@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20240118.png
-  url: ./okg0118-live/
+  image: /images/live/cloudnative-live-20240323.png
+  url: ./meetup-hangzhou-20240323/
 
   notice:
-    title: KubeSphere Meetup 杭州站
-    tag: 预告
-    time: 2024 年 03 月 23 日
+    title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
+    tag: 结束
+    time: 2024 年 01 月 18 日
     base: 
-    url: ./meetup-hangzhou-20240323/
+    url: ./okg0118-live/
 
   over:
     title: Databend 云数仓与 Databend Playground 扩展组件介绍
@@ -26,6 +26,41 @@ section2:
 
 section3:
   videos:
+    - title: 混合环境下服务治理新模式
+      link: ./hangzhou0323-flomesh/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0323-flomesh-cover.png
+      type: iframe
+      createTime: 2024.03.23
+      group: Meetup
+
+    - title: 闪电演讲 ⚡️—— 基于 KubeSphere 快速部署 ByConity
+      link: ./hangzhou0323-kubesphere-byconity/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0323-kubesphere-byconity-cover.png
+      type: iframe
+      createTime: 2024.03.23
+      group: Meetup
+
+    - title: ByConity 2024 重点功能概览&社区 Roadmap 同步
+      link: ./hangzhou0323-byconity-2/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0323-byconity-2-cover.png
+      type: iframe
+      createTime: 2024.03.23
+      group: Meetup
+
+    - title: KubeSphere+Kosmos 实现跨集群编排
+      link: ./hangzhou0323-kubesphere-kosmos/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0323-kubesphere-kosmos-cover.png
+      type: iframe
+      createTime: 2024.03.23
+      group: Meetup
+
+    - title: ByConity 技术架构和核心特性
+      link: ./hangzhou0323-byconity-1/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0323-byconity-1-cover.png
+      type: iframe
+      createTime: 2024.03.23
+      group: Meetup
+      
     - title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
       link: ./okg0118-live/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/okg0118-live-cover.png
