@@ -1242,6 +1242,12 @@ section4:
   noticeImg: /images/live/notice.svg
   title: Meetup 回顾
   list:
+    - year: 2024
+      meetup: 
+        - place: 杭州站（03.23）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20240323-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-hangzhou-20240323/
+
     - year: 2023
       meetup: 
         - place: 苏州站（12.23）
