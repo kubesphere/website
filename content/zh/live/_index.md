@@ -13,16 +13,16 @@ section2:
   url: ./meetup-hangzhou-20240323/
 
   notice:
-    title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
-    tag: 结束
-    time: 2024 年 01 月 18 日
+    title: KubeSphere Meetup 深圳站——2024
+    tag: 预告
+    time: 2024 年 04 月 20 日
     base: 
-    url: ./okg0118-live/
+    url: ./meetup-shenzhen-20240420/
 
   over:
-    title: Databend 云数仓与 Databend Playground 扩展组件介绍
+    title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
     tag: 结束
-    url: ./databend1207-live/
+    url: ./okg0118-live/
 
 section3:
   videos:
