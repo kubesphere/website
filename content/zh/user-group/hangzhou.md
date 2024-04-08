@@ -88,6 +88,16 @@ members:
       des: 之江实验室高级研究员，浙江大学工程博士，《深入理解边缘计算》作者。参与过多个行业的云计算生产项目，2018 年初开始从事边缘计算和操作系统相关研究与开发至今。
       image: /images/user-group/hangzhou/cuiguangzhang.png
 
+    - name: 赵吉壮
+      position: 委员
+      des: 字节跳动云计算架构师，《containerd 原理剖析与实战》作者，具备多年云原生领域架构设计与研发经验，专注于  Kubernetes、Serverless、容器等技术的研究。
+      image: /images/user-group/hangzhou/zhaojizhuang.jpg
+
+    - name: 张端亚
+      position: 委员
+      des: 专注于云计算与 Kubernetes 容器化技术领域，喜欢总结沉淀，热衷于社区交流与技术布道，致力于推动云原生生态的建设与发展。
+      image: /images/user-group/hangzhou/zhangduanya.jpg
+
 activities:
   videos:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20240323-cover.png
