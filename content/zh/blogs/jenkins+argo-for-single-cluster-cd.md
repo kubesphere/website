@@ -3,7 +3,7 @@ title: 'KubeSphere DevOps 基于 Jenkins + Argo 实现单集群的持续交付�
 tag: 'KubeSphere, Kubernetes'
 keywords: 'KubeSphere, Kubernetes, Jenkins, Argo, DevOps'
 description: '这篇文章主要介绍了如何通过 KubeSphere 3.4.0 内置的 Argo CD 实现持续交付。'
-createTime: '2024-3-19'
+createTime: '2024-03-19'
 author: '周靖峰'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/jenkins+argo-single-cluster-cd.png'
 ---
