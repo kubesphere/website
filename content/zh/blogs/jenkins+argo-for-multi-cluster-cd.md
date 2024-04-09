@@ -3,7 +3,7 @@ title: '基于Jenkins + Argo 实现多集群的持续交付'
 tag: 'KubeSphere, Kubernetes'
 keywords: 'KubeSphere, Kubernetes, Jenkins, Argo, DevOps'
 description: '这篇文章主要介绍了如何使用 Jenkins 完成通过 Argo CD 来部署多集群的应用发布。'
-createTime: '2024-3-20'
+createTime: '2024-03-20'
 author: '周靖峰'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/jenkins+argo-multi-cluster-cd.png'
 ---
