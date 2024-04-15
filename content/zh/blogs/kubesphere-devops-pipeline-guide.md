@@ -164,7 +164,7 @@ yygh-site
 
 对于 Sentinel，我们直接使用雷丰阳已经制作好的镜像 `leifengyang/sentinel:1.8.2`，然后暴露一个 NodePort 类型的 Service，端口号为 `32636`。 访问 `http://192.168.23.160:32636`，以默认用户 `sentinel` 和默认密码 `sentinel` 登录，可以进入 Sentinel 控制台。 如果一切顺利，应该可以看到类似的页面：
 
-![](htts://pek3b.qingstor.com/kubesphere-community/images/70909f56-0452-4dbc-b716-c47431a53404.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/1776090-20221101110638437-1889863892.png)
 
 对于 MongoDB，我们直接通过应用模版部署它（不勾选登录认证）：
 

@@ -5,7 +5,7 @@ keywords: Serverless, FaaS, OpenFunction
 description: This article describes function computing concepts, reference architectures, and the latest trends in the cloud-native Serverless field, and further explains how OpenFunction builds a modern cloud-native serverless computing platform.   
 createTime: '2021-12-03'  
 author: 'Huo Bingjie, Felix'  
-snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/serverless-faas-openfunction.png'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/serverless-20211203-cover.png'
 ---
 
 **Serverless computing**, commonly known as Serverless, has become a buzzword in the cloud-native field. It will fuel the next wave of development in cloud computing after IaaS and PaaS. Serverless emphasizes an architecture philosophy and service model that allows developers to focus on implementing business logics in applications rather than on managing infrastructures (e.g., servers). In its paper *Cloud Programming Simplified: A Berkeley View on Serverless Computing*, the University of California at Berkeley presents two key viewpoints on Serverless:

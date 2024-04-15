@@ -79,7 +79,7 @@ spec:
 ## Layer2 模式中的黑客技术
 
 
-![](https://files.mdnice.com/user/2166/ff880d68-be25-4def-8cd6-b09a032ae753.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/ff880d68-be25-4def-8cd6-b09a032ae753.webp)
 
 > ARP 欺骗技术: 应用程序主动回复路由器 ARP 请求，让路由器以为该应用是合法终端，从而劫持网络流量包。
 
