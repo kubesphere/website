@@ -98,6 +98,11 @@ members:
       des: 专注于云计算与 Kubernetes 容器化技术领域，喜欢总结沉淀，热衷于社区交流与技术布道，致力于推动云原生生态的建设与发展。
       image: /images/user-group/hangzhou/zhangduanya.jpg
 
+    - name: 李双陆
+      position: 委员
+      des: 有技术洁癖，喜欢接触前沿技术，爱折腾云原生领域相关技术，会总结、能沉淀，野生 SRE 运维。崇尚开源精神与开源的技术。专注领域方向：容器运行时、存储、监控、日志、服务网格、可观测性。
+      image: /images/user-group/hangzhou/lishuanglu.jpg
+
 activities:
   videos:
     - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-hangzhou-20240323-cover.png
@@ -122,6 +127,10 @@ activities:
       link: https://kubesphere.io/zh/live/zhijianglab-kubesphere/
 
   review:
+    - text: Kubernetes 升级不弃 Docker：KubeKey 的丝滑之道
+      description: 手把手教你如何借助 KubeKey 这个神器，让你在给 Kubernetes “装修升级”的过程中既稳又顺，还能把 Docker 那些贴心好用的功能保留下来。
+      link: https://www.kubesphere.io/zh/blogs/upgrading-k8s-with-kubekey/
+
     - text: 揭秘！KubeSphere 背后的“超级大脑”：etcd 的魅力与力量
       description: 我们将深入探索 etcd 如何巧妙地融入 KubeSphere 生态系统，并通过实际应用场景展示其对提升平台工作效率和可靠性的关键作用。
       link: https://kubesphere.io/zh/blogs/kubesphere-etcd-guide/
