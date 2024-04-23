@@ -75,6 +75,9 @@ members:
 
 activities:
   videos:
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-cover.png
+      link: https://kubesphere.io/zh/live/meetup-shenzhen-20240420/
+
     - image: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-shenzhen-20230408-cover.png
       link: https://kubesphere.io/zh/live/meetup-shenzhen-20230408/
 
@@ -89,4 +92,8 @@ activities:
     - text: 技研智联云原生容器化平台实践
       description: 这篇文章介绍了技研智联使用 KubeSphere 的最佳实践过程。
       link: https://kubesphere.io/zh/case/keyenlinx/
+
+    - text: 文鼎创智能物联云原生容器化平台实践
+      description: 这篇文章介绍了文鼎创使用 KubeSphere 的最佳实践过程。
+      link: https://www.kubesphere.io/zh/case/excelsecu/
 ---
