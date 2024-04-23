@@ -643,7 +643,7 @@ Please check the result using the command:
 
 - Etcd 监控
 
-![](https://opsman-1258881081.cos.ap-beijing.myqcloud.com//ksp-monitor-cluster-Etcd-v340-v126-arm.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/ksp-monitor-cluster-etcd-v340-v126-arm.png)
 
 - 应用商店
 

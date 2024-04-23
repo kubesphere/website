@@ -596,8 +596,6 @@ https://kubesphere.io             2022-06-30 14:30:19
 
 通过 `http://{IP}:30880` 使用默认帐户和密码 `admin/P@88w0rd` 访问 KubeSphere 的 Web 控制台，进行后续的操作配置。
 
-![](https://kubesphere.com.cn/images/docs/v3.3/zh-cn/upgrade/air-gapped-upgrade-with-ks-installer/kubesphere-login.PNG)
-
 ## 总结
 
 感谢您完整的阅读完本文，为此，您应该 Get 到了以下技能：

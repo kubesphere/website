@@ -16,13 +16,13 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-community/images/20221128172157
 
 容器日志分为标准输出日志和落盘日志两种。应用将日志打印在容器标准输出 `STDOUT` 中，由容器运行时(Docker 或 Containerd)把标准输出日志写入容器日志文件中，最终由采集器导出。这种日志打印采集是业界推荐方案。但对于不打印标准输出而直接将日志落盘的情况，业界最常用见的方案是，使用 `Sidecar` 采集落盘日志，把落盘日志打印到容器标准输出中，再利用标准输出日志的采集方式输出。
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb596565862f45f7852421c50d9e88b1~tplv-k3u1fbpfcp-watermark.image?)
+![](https://pek3b.qingstor.com/kubesphere-community/images/bb596565862f45f7852421c50d9e88b1~tplv-k3u1fbpfcp-watermark.png)
 
 对于 KubeSphere 用户，只需要两步即可：第一在项目中开启`收集卷上日志`，第二在工作负载中配置落盘文件路径。具体操作见下图所示。
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e0b20d93902f4545826cacbc4541f054~tplv-k3u1fbpfcp-watermark.image?)
+![](https://pek3b.qingstor.com/kubesphere-community/images/e0b20d93902f4545826cacbc4541f054~tplv-k3u1fbpfcp-watermark.png)
 
-![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4d93e799977840628dd45d0a19493d9b~tplv-k3u1fbpfcp-watermark.image?)
+![](https://pek3b.qingstor.com/kubesphere-community/images/4d93e799977840628dd45d0a19493d9b~tplv-k3u1fbpfcp-watermark.png)
 
 上述两个步骤，会自动在容器中注入 `Filebeat Sidecar` 作为 logging-agent，将落盘日志打印输出在容器标准输出中。Filebeat 配置可通过 ConfigMap 修改。
 
@@ -58,7 +58,7 @@ $ kubectl get Output -n kubesphere-logging-system es -o yaml
 
 我们把日志导出到第三方日志服务，那就需要定制 FluentBit 输入输出。使用 `tail` 插件采集 `/var/log/containers/flux-wms-*.log` 文件中的日志，输出到 `Kafka` 中。可参考如下配置：
 
-![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/942da92ef0af483687b08b2994bc5d66~tplv-k3u1fbpfcp-watermark.image?)
+![](https://pek3b.qingstor.com/kubesphere-community/images/942da92ef0af483687b08b2994bc5d66~tplv-k3u1fbpfcp-watermark.png)
 
 ```yaml
 ---
@@ -241,7 +241,7 @@ logging.level: warning
 
 当看到 Kafka 消费者输出完美多行日志块时，脑后传来多巴胺的快感！再看一眼架构图，咱们来做总结！
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/248b663dfc354e6d860ebd671dd5b5e3~tplv-k3u1fbpfcp-watermark.image?)
+![](https://pek3b.qingstor.com/kubesphere-community/images/248b663dfc354e6d860ebd671dd5b5e3~tplv-k3u1fbpfcp-watermark.png)
 
 ## 总结
 
