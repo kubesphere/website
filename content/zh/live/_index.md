@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20240323.png
-  url: ./meetup-hangzhou-20240323/
+  image: /images/live/cloudnative-live-20240420.png
+  url: ./meetup-shenzhen-20240420/
 
   notice:
-    title: KubeSphere Meetup 深圳站——2024
-    tag: 预告
-    time: 2024 年 04 月 20 日
-    base: 
-    url: ./meetup-shenzhen-20240420/
+    title: KubeSphere Meetup 杭州站——2024
+    tag: 结束
+    time: 2024 年 03 月 23 日
+    base: 杭州
+    url: ./meetup-hangzhou-20240323/
 
   over:
     title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
@@ -26,6 +26,48 @@ section2:
 
 section3:
   videos:
+    - title: 基于 K8s 的大数据平台构建
+      link: ./shenzhen0420-kdp/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-jinjin-cover.png
+      type: iframe
+      createTime: 2024.04.20
+      group: Meetup
+
+    - title: 铺设平台工程所主张的自服务路径实践
+      link: ./shenzhen0420-pe/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-liyinlin-cover.png
+      type: iframe
+      createTime: 2024.04.20
+      group: Meetup
+
+    - title: 某保险基于 KubeSphere 的容器平台落地实践
+      link: ./shenzhen0420-kubesphere/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-zhoujun-cover.png
+      type: iframe
+      createTime: 2024.04.20
+      group: Meetup
+
+    - title: Kubevirt 虚拟机备份保护介绍
+      link: ./shenzhen0420-kubevirt/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-gongyongjie-cover.png
+      type: iframe
+      createTime: 2024.04.20
+      group: Meetup
+
+    - title: 深入浅出 K8s 准入控制
+      link: ./shenzhen0420-k8s/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-wanhongming-cover.png
+      type: iframe
+      createTime: 2024.04.20
+      group: Meetup
+
+    - title: 云原生时代业务连续性：路线、工具和最佳实践
+      link: ./shenzhen0420-velero/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-liuyang-cover.png
+      type: iframe
+      createTime: 2024.04.20
+      group: Meetup
+
     - title: 混合环境下服务治理新模式
       link: ./hangzhou0323-flomesh/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/hangzhou0323-flomesh-cover.png
