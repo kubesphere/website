@@ -198,8 +198,8 @@ name = "Community"
 
     [[languages.en.menu.main]]
     parent = "Community"
-    name = "OSPP 2023"
-    URL = "https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/README.md"
+    name = "OSPP 2024"
+    URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2024"
     weight = 6
 
 
@@ -383,8 +383,8 @@ name = "开源社区"
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
-    name = "开源之夏 2023"
-    URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2023"
+    name = "开源之夏 2024"
+    URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2024"
     weight = 9
 
 [[languages.zh.menu.main]]
