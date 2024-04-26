@@ -170,4 +170,8 @@ section4:
     - icon: "images/partner/ByConity-logo.png"
       partnerType: "市场合作伙伴"
       content: 'ByConity 是分布式的云原生 SQL 数仓引擎，擅长交互式查询和即席查询，具有支持多表关联复杂查询、集群扩容无感、离线批数据和实时数据流统一汇总等特点。'  
+
+    - icon: "images/partner/logo-jibukeji.jpg"
+      partnerType: "市场合作伙伴"
+      content: '骥步科技专注于为企业用户提供多云架构下技术领先的云原生数据保护产品和存储解决方案，致力于企业数字化转型和应用现代化转型所需的数据基础设施建设。技术团队均为国内知名高校硕士毕业，来自原 IBM 云原生存储核心研发团队，拥有十余年企业级存储研发的深厚积累与多年云原生存储、备份、容灾领域的深入探索和产品实践。'  
 ---

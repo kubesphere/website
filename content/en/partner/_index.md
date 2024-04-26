@@ -169,4 +169,8 @@ section4:
     - icon: "images/partner/ByConity-logo.png"
       partnerType: "Go-to-market"
       content: 'ByConity is a distributed cloud-native SQL data warehouse engine, that excels in interactive queries and Ad-Hoc queries, featuring support for querying multiple tables, cluster expansion without sensation, and unified aggregation of offline batch data and real-time data streams.'
+
+    - icon: "images/partner/logo-jibukeji.jpg"
+      partnerType: "Go-to-market"
+      content: Jibu specializes in providing cutting-edge cloud-native data protection products and storage solutions under a multi-cloud architecture for corporate users. We are dedicated to building data infrastructure essential for enterprises' digital and application modernization transformations. Our technical team comprises master's degree holders from renowned domestic universities, originating from IBM's core R&D team in cloud-native storage. With over a decade of profound expertise in enterprise-level storage development and years of deep exploration and practical experience in cloud-native storage, backup, and disaster recovery fields, we are poised to lead the way in technological innovation for enterprise storage solutions.
 ---
