@@ -184,7 +184,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 
    ![添加嵌套步骤](/images/docs/v3.x/zh-cn/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step.png)
 
-7. 点击 **shell** 并在命令行中输入以下命令，用于 sonarqube 分支和认证，点击**确定**完成操作。
+7. 点击 **shell** 并在命令行中输入以下命令，用于 sonarqube 认证和分析，点击**确定**完成操作。
 
    ```shell
    mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
