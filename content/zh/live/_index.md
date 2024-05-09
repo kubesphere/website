@@ -13,16 +13,16 @@ section2:
   url: ./meetup-shenzhen-20240420/
 
   notice:
-    title: KubeSphere Meetup 杭州站——2024
-    tag: 结束
-    time: 2024 年 03 月 23 日
-    base: 杭州
-    url: ./meetup-hangzhou-20240323/
+    title: KubeSphere Meetup 北京站——2024
+    tag: 预告
+    time: 2024 年 05 月 25 日
+    base: 北京
+    url: ./meetup-beijing-20240525/
 
   over:
-    title: KubeSphere X OpenKruiseGame 解锁云原生游戏运维之道
+    title: KubeSphere Meetup 杭州站——2024
     tag: 结束
-    url: ./okg0118-live/
+    url: ./meetup-hangzhou-20240323/
 
 section3:
   videos:
