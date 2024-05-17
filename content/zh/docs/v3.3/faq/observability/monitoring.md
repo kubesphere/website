@@ -31,11 +31,11 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
 
 {{</ notice >}} 
 
-## Node Exporter 引起的主机端口 9100 冲突 / 暴漏 http 协议
+## Node Exporter 引起的主机端口 9100 冲突/暴露 http 协议
 
 如果有进程占用主机端口 9100，`kubespher-monitoring-system` 下的 Node Exporter 会崩溃。若要解决冲突，您需要终止进程或将 Node Exporter 换到另一个可用端口。
 
-若要采用另一个主机端口（例如 `29100`），请运行以下命令将标注🟢的 `9100` 替换为 `29100`（需要更改 3 处）。
+若要采用另一个主机端口（例如 `29100`），请运行以下命令将标注的 `9100` 替换为 `29100`（需要更改 5 处）。
 
  ```shell
  kubectl edit ds -n kubesphere-monitoring-system node-exporter
@@ -57,22 +57,20 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
        - name: node-exporter
          image: kubesphere/node-exporter:ks-v0.18.1
          args:
-         - --web.listen-address=127.0.0.1:9100 🔴
+         - --web.listen-address=127.0.0.1:9100
          ...
        - name: kube-rbac-proxy
          image: kubesphere/kube-rbac-proxy:v0.4.1
          args:
          - --logtostderr
-         - --secure-listen-address=[$(IP)]:9100 🟢
+         - --secure-listen-address=[$(IP)]:9100
          - --upstream=http://127.0.0.1:9100/
          ...
          ports:
-         - containerPort: 9100 🟢
-           hostPort: 9100 🟢
+         - containerPort: 9100
+           hostPort: 9100
   ...
  ```
- 这样，serviceMonitor 对象：node-exporter，将暴漏新的 29100 端口给 kubesphere 的 prometheus。
- 在此基础上，如果你自建的 prometheus 通过 consul 获取了所有的云服务（阿里云）ecs 下 http 协议的 9100，则还需要将 🔴 标注部分变更为 0.0.0.0:9100。
 
 ## 与现有的 Prometheus Operator 相冲突
 

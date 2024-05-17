@@ -35,7 +35,7 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
 
 如果有进程占用主机端口 9100，`kubespher-monitoring-system` 下的 Node Exporter 会崩溃。若要解决冲突，您需要终止进程或将 Node Exporter 换到另一个可用端口。
 
-若要采用另一个主机端口（例如 `29100`），请运行以下命令将所有的 `9100` 替换为 `29100`（需要更改 5 处）。
+若要采用另一个主机端口（例如 `29100`），请运行以下命令将标注的 `9100` 替换为 `29100`（需要更改 5 处）。
 
  ```shell
  kubectl edit ds -n kubesphere-monitoring-system node-exporter
@@ -65,7 +65,7 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
          - --logtostderr
          - --secure-listen-address=[$(IP)]:9100
          - --upstream=http://127.0.0.1:9100/
-         ...
+         ... 
          ports:
          - containerPort: 9100
            hostPort: 9100
