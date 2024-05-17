@@ -31,7 +31,7 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
 
 {{</ notice >}} 
 
-## Node Exporter 引起的主机端口 9100 冲突/暴露 http 协议
+## Node Exporter 引起的主机端口 9100 冲突
 
 如果有进程占用主机端口 9100，`kubespher-monitoring-system` 下的 Node Exporter 会崩溃。若要解决冲突，您需要终止进程或将 Node Exporter 换到另一个可用端口。
 
