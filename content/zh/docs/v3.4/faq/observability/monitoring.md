@@ -65,7 +65,7 @@ kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
          - --logtostderr
          - --secure-listen-address=[$(IP)]:9100
          - --upstream=http://127.0.0.1:9100/
-         ...
+         ... 
          ports:
          - containerPort: 9100
            hostPort: 9100
