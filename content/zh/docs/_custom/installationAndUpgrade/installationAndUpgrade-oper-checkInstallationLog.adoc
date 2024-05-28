@@ -1,0 +1,11 @@
+// :ks_include_id: e0c9a69a3f7c4dfabc1d964f485628e4
+. 执行以下命令查看日志：
++
+--
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath='{.items[0].metadata.name}') -f
+
+include::../../../_ks_components/code/codeEnd.adoc[]
+--

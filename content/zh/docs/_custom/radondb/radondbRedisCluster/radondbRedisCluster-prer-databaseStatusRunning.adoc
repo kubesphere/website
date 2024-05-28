@@ -1,0 +1,2 @@
+// :ks_include_id: 87e4912d18cb4894a1834909e7c8f1ee
+* RadonDB Redis Cluster 状态为**运行中**。

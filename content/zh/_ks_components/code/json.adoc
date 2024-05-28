@@ -1,0 +1,3 @@
+
+[source,json,subs="+attributes"]
+----

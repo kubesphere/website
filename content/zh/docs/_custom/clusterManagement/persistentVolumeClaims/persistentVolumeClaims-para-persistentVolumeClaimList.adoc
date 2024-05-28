@@ -1,0 +1,31 @@
+// :ks_include_id: 3406d7c02c52477bb228c5d190bee2a3
+* 持久卷声明列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|持久卷声明的名称、别名和存储类。
+
+|状态
+|
+include::persistentVolumeClaims-para-status.adoc[]
+
+ifndef::kubefed[]
+|持久卷
+|与持久卷声明绑定的持久卷。
+endif::[]
+
+|访问模式
+|
+include::persistentVolumeClaims-para-accessMode.adoc[]
+
+|挂载状态
+|持久卷声明对应的持久卷是否已经挂载到容器。
+
+|创建时间
+|持久卷声明的创建时间。
+|===
+--

@@ -1,0 +1,13 @@
+// :ks_include_id: 524ea797e25b46cc9d437e2effa79c8d
+将以下参数替换为实际需要的值：
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|<Kubernetes version>
+|目标 Kubernetes 版本，例如 **v1.21.5**。{ks_product} v3.5.0 支持 Kubernetes v1.21.x、v1.22.x、v1.23.x, v1.24.x, v1.25.x 和 v1.26.x。
+
+|<product version>
+|目标{ks_product_both}版本。请将此参数设置为 **v3.5.0**。
+|===

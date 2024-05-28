@@ -1,0 +1,2 @@
+// :ks_include_id: 1011fdd0de7a4b36819d4e4985b02817
+Kubernetes 和{ks_product_both}不支持版本回滚，目标版本必须高于原版本。

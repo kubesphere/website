@@ -1,0 +1,6 @@
+// :ks_include_id: 513da96dc1b64eb9af9a791f349a9fce
+. 完成告警规则设置后点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]保存设置，然后点击**创建**。
++
+--
+规则组创建完成后将显示在规则组列表中。
+--

@@ -1,0 +1,45 @@
+// :ks_include_id: 5f6544e2d6a54cc9a3461b0a1ec3366e
+
+ifeval::["{file_output_type}" == "html"]
+. 执行以下命令下载配置文件 **cluster-configuration.yaml** 和 **kubesphere-installer.yaml**：
++
+--
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+curl -L -O https://github.com/kubesphere/ks-installer/releases/download/{ks_product_ver}/kubesphere-installer.yaml
+
+include::../../../_ks_components/code/codeEnd.adoc[]
+
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+curl -L -O https://github.com/kubesphere/ks-installer/releases/download/{ks_product_ver}/cluster-configuration.yaml
+
+include::../../../_ks_components/code/codeEnd.adoc[]
+
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+如果您的集群节点无法连接互联网，您可以从互联网连接正常的设备手动下载配置文件 link:https://github.com/kubesphere/ks-installer/releases/download/{ks_product_ver}/kubesphere-installer.yaml[kubesphere-installer.yaml] 和 link:https://github.com/kubesphere/ks-installer/releases/download/{ks_product_ver}/cluster-configuration.yaml[cluster-configuration.yaml]，然后将其传输到 Kubernetes 集群的任意节点。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+. 如果您的集群节点无法连接互联网，执行以下命令在 **kubesphere-installer.yaml** 文件中设置私有镜像服务的地址 **dockerhub.kubekey.local**：
++
+--
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.3.0#" kubesphere-installer.yaml
+
+include::../../../_ks_components/code/codeEnd.adoc[]
+--
+
+. 如果您的集群节点无法连接互联网，执行以下命令编辑 **cluster-configuration.yaml** 配置文件：
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+. 执行以下命令编辑 **cluster-configuration.yaml** 配置文件：
+endif::[]

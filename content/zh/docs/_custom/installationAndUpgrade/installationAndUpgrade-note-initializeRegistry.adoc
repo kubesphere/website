@@ -1,0 +1,7 @@
+// :ks_include_id: f59af4ec0bd24d5a98d4003578c6e38d
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+KubeKey 将在 **config-sample.yaml** 配置文件中 **spec:roleGroups:registry** 参数指定的服务器上创建私有镜像服务，默认地址为 **dockerhub.kubekey.local/kse**。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]

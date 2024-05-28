@@ -1,0 +1,12 @@
+// :ks_include_id: f7fb88afed0545c4b9cefe39062aa225
+ifeval::["{file_output_type}" == "html"]
+
+* {ks_product_right}平台需要启用 DevOps 扩展组件。
+
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+
+* {ks_product_right}平台需要启用 DevOps 扩展组件。有关更多信息，请参阅《{ks_product_full_right}平台管理指南》的“扩展组件管理”章节。
+
+endif::[]

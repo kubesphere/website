@@ -1,0 +1,2 @@
+// :ks_include_id: a7b11e38d6794c2692390f9d0afbb7df
+您需要加入一个多集群项目并在项目中具有pass:a,q[{ks_permission}]权限。

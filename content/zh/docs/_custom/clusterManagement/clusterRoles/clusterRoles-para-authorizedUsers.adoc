@@ -1,0 +1,16 @@
+// :ks_include_id: 532573492da34fcbb954ea832aa9fcd5
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|用户名
+|获得授权的用户的名称。
+
+|状态
+|获得授权的用户当前的状态。
+
+include::../clusterMembers/clusterMembers-para-userStatus.adoc[]
+
+|最近登录
+|获得授权的用户最近一次登录{ks_product_left} Web 控制台的时间。
+|===

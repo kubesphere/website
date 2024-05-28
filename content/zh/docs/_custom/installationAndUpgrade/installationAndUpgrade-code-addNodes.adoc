@@ -1,0 +1,7 @@
+// :ks_include_id: 6963bdcc859e4b46817de17172bb750a
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+ ./kk add nodes -f config-sample.yaml -a kubekey-artifact.tar.gz
+
+include::../../../_ks_components/code/codeEnd.adoc[]

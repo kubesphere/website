@@ -1,0 +1,4 @@
+// :ks_include_id: 6d818141bdf246f49b4c4825976cc804
+* 点击**添加**可设置多条标签或注解。
+
+* 在已创建的标签或注解右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除标签或注解。

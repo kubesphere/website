@@ -1,0 +1,9 @@
+// :ks_include_id: 28e4e6434a684669a46671184c5d9f5a
+|环境变量
+|镜像运行时的环境变量，用于控制镜像运行时的行为。
+
+* 有关 JAR 构建环境变量的更多信息，请访问 link:https://github.com/kubesphere/s2i-java-container/tree/master/java/images[s2i-java-container] 仓库。
+
+* 有关 WAR 构建环境变量的更多信息，请参阅 link:https://github.com/kubesphere/s2i-java-container/tree/master/tomcat/images/[s2i-java-container] 仓库。
+
+* 有关二进制构建环境变量的更多信息，请参阅 link:https://github.com/kubesphere/s2i-binary-container[s2i-binary-container] 仓库。

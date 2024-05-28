@@ -1,0 +1,18 @@
+// :ks_include_id: 12077b1940064dbc91b46df1bb4d2390
+本节介绍如何删除容器组。
+
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+* 建议通过删除容器组的管理资源（例如工作负载或任务）来删除容器组，而不是直接删除容器组。
+
+* 如果您直接删除容器组，取决于容器组管理资源的策略，系统可能会重新创建容器组。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+删除正在运行的容器组可能会导致业务中断，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

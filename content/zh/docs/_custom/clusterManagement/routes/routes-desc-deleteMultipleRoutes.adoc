@@ -1,0 +1,9 @@
+// :ks_include_id: 4f3a812c48b342fdb0cec7f38b00ce81
+本节介绍如何删除应用路由。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+删除应用路由后将无法通过应用路由访问其后端的服务，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

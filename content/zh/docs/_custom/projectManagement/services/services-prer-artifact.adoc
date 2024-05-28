@@ -1,0 +1,2 @@
+// :ks_include_id: 3d4b6be852084351b5a3379d1242953f
+* 您需要提前准备用于构建镜像的制品文件。{ks_product_right}默认支持 JAR、WAR 和二进制格式的制品文件。

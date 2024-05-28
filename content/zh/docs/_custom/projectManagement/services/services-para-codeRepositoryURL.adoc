@@ -1,0 +1,3 @@
+// :ks_include_id: f8c32dc78a164b579934671dbbc85d6e
+|代码仓库 URL
+|源代码仓库的地址。目前仅支持 Git 仓库。

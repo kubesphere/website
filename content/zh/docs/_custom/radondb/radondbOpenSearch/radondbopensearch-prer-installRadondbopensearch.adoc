@@ -1,0 +1,2 @@
+// :ks_include_id: ee04be00a8c549c9a451e93b67473d41
+* 您需要获取 RadonDB OpenSearch 应用授权，并已安装 RadonDB OpenSearch。有关更多信息，请参阅 xref:19-radondb/04-radondb-opensearch/01-install-radondb-opensearch.adoc[安装 RadonDB OpenSearch]。

@@ -1,0 +1,22 @@
+// :ks_include_id: dfb36f0881804a72bed1b36dbcb98042
+. 在集群配置文件中，将 **spec:monitoring:whizard:enabled** 参数设置为 **false**，并删除 **status:alerting:status** 和 **status:monitoring:status** 参数，然后保存文件。
++
+--
+// YAML
+include::../../../../_ks_components/code/yaml.adoc[]
+
+spec:
+  monitoring:
+    whizard:
+      enabled: false          #将 whizard:enabled 参数设置为 false
+
+status:
+  alerting:
+    enabledTime: XXXX-XX-XXXXX:XX:XXXXX
+    status: enabled           #删除 alerting:status:enabled
+  monitoring:
+    enabledTime: XXXX-XX-XXXXX:XX:XXXXX
+    status: enabled           #删除 monitoring:status:enabled
+
+include::../../../../_ks_components/code/codeEnd.adoc[]
+--

@@ -1,0 +1,18 @@
+// :ks_include_id: f0f32c026c8a44b7ac18acbadf465ea5
+. 在需要操作的服务右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑设置**。
+
+. 在**编辑设置**对话框的**服务设置**页签，修改服务的设置。
+
+* 对于内部访问模式为 ExternalName 的服务，您可以修改外部服务的地址。
+
+* 对于其他服务，您可以修改服务的内部访问模式、工作负载选择器和端口。
++
+--
+include::services-para-serviceSettings.adoc[]
+--
+
+. 在**编辑设置**对话框的**集群差异设置**页签，为不同集群中的服务基于端口进行差异化设置，然后点击**确定**。
++
+--
+// include::../../../multi-clusterProjectManagement/services/services-oper-setClusterDiff.adoc[]
+--

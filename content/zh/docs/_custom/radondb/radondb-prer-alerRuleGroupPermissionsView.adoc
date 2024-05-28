@@ -1,0 +1,2 @@
+// :ks_include_id: 514e3f0143bd4c10842526fa9d3ecbcc
+* 您需要在{ks_product_left} Web 控制台加入一个项目，并在项目中具有**应用负载查看**和**规则组查看**权限。

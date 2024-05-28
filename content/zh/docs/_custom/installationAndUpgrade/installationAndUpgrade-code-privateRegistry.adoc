@@ -1,0 +1,10 @@
+// :ks_include_id: 0aa5c7c7c8bc4a8b8909c558f2500840
+// YAML
+include::../../../_ks_components/code/yaml.adoc[]
+
+  registry:
+    registryMirrors: []
+    insecureRegistries: []
+    privateRegistry: dockerhub.kubekey.local
+
+include::../../../_ks_components/code/codeEnd.adoc[]

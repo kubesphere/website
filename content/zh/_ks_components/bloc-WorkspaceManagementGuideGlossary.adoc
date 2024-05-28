@@ -1,0 +1,15 @@
+// :ks_include_id: c2039f04a78f4459a928dc18dd6833c8
+
+= 术语和缩略语link:[id=3472972bef064e318fd5269270643e79]
+
+[role='glossary',cols='1a,5a,5a']
+|===
+
+|CPU
+|Central Processing Unit
+|中央处理器
+
+|URL
+|Uniform Resource Locator
+|统一资源定位符
+|===

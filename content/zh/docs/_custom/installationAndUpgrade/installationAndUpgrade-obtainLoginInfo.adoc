@@ -1,0 +1,11 @@
+// :ks_include_id: 84535f1ca66c4b19b1e1d7e6e885bff5
+. 从成功信息中的 **Console**、**Account** 和 **Password** 参数分别获取{ks_product_left} Web 控制台的 IP 地址、管理员用户名和管理员密码，并使用网页浏览器登录{ks_product_left} Web 控制台。
++
+--
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+取决于您的网络环境，您可能需要配置流量转发规则并在防火墙中放行 30880 端口。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--

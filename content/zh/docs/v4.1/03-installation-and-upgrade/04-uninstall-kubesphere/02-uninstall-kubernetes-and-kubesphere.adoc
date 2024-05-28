@@ -1,0 +1,75 @@
+---
+title: "卸载 Kubernetes 和{ks_product_left}"
+keywords: "Kubernetes, {ks_product}, 卸载 Kubernetes 和{ks_product_left}"
+description: "介绍如何卸载 Kubernetes 和{ks_product_left}。"
+weight: 02
+---
+
+
+本节介绍如何卸载 Kubernetes 和{ks_product_left}。
+
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+本节介绍的 Kubernetes 卸载方式仅适用于 Kubernetes 通过 KubeKey 安装的场景。如果您的 Kubernetes 不是通过 KubeKey 安装，请参阅 link:https://kubernetes.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-reset/[Kubernetes 官方文档]卸载 Kubernetes。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+此操作将导致{ks_product_both}集群业务中断，并且无法撤销，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+* 您需要获取安装配置文件 **config-sample.yaml** 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅link:../../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere[安装 Kubernetes 和 KubeSphere 企业版]。
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果您无法获取安装配置文件 **config-sample.yaml**，您需要参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere 企业版] 重新创建 **config-sample.yaml** 文件。重新创建该文件时，请务必确保文件中的集群信息与集群的当前实际情况一致。否则，卸载过程可能会出现错误。
+|===
+
+* {empty}
+include::../../../_custom/installationAndUpgrade/installationAndUpgrade-prer-backUpData.adoc[]
+
+
+== 操作步骤
+
+// ifeval::["{file_output_type}" == "html"]
+// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-downloadKubekey.adoc[]
+// endif::[]
+
+// ifeval::["{file_output_type}" == "pdf"]
+include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
+// endif::[]
+
++
+include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-transferConfig.adoc[]
+
++
+
+. 执行以下命令开始卸载{ks_product_left}：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+ ./kk delete cluster -f config-sample.yaml
+
+include::../../../../_ks_components/code/codeEnd.adoc[]
+
+如果显示如下信息，则表明卸载成功：
+
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+Pipeline[DeleteClusterPipeline] execute successful
+
+include::../../../../_ks_components/code/codeEnd.adoc[]
+--

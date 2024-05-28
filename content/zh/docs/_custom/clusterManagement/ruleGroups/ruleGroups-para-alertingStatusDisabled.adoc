@@ -1,0 +1,2 @@
+// :ks_include_id: a88a0cc5a6db44ab923dd629c50bafd4
+* **已禁用**：告警规则已被禁用。

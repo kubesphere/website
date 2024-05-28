@@ -1,0 +1,2 @@
+// :ks_include_id: 6579f3ef4c70439ca10c8e8de94ce9fb
+您需要加入一个项目并在项目中具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:07-project-management/10-project-settings/04-project-members/_index.adoc[项目成员]和xref:07-project-management/10-project-settings/03-project-roles/02-view-a-project-role-list.adoc[项目角色]。

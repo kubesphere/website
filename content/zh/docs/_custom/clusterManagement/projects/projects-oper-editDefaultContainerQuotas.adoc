@@ -1,0 +1,11 @@
+// :ks_include_id: eae1dea548f94792b303903d436d1b25
+. 在**编辑默认容器配额**对话框，设置容器的默认资源预留和资源上限，然后点击**确定**。
++
+--
+[options="header",cols="1a,4a"]
+|===
+|参数 |描述
+
+include::projects-para-containerQuotas.adoc[]
+|===
+--

@@ -1,0 +1,8 @@
+// :ks_include_id: 63380fe4a19e47f9adc7412b139ff6bc
+|名称
+|项目的名称和描述信息。
+
+|状态
+|
+include::../../clusterManagement/projects/projects-para-status.adoc[]
+

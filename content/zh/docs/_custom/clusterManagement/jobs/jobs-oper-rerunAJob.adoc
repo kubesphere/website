@@ -1,0 +1,2 @@
+// :ks_include_id: 24f7afe576124e6396922b7bd7234929
+. 在需要操作的任务右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**重新运行**。任务将重新按照用户设置的策略重新开始运行。

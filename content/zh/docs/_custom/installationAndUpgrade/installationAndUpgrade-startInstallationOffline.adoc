@@ -1,0 +1,7 @@
+// :ks_include_id: d864cdae8aef4d39917a96709ad7d1d4
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+ ./kk create cluster -f config-sample.yaml -a kubekey-artifact.tar.gz
+
+include::../../../_ks_components/code/codeEnd.adoc[]

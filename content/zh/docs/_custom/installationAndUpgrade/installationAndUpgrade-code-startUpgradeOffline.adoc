@@ -1,0 +1,7 @@
+// :ks_include_id: 2721978148e845f6909d22f903ee70c0
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+ ./kk upgrade --with-kubernetes <Kubernetes version> --with-kubesphere <product version> -f config-sample.yaml -a kubekey-artifact.tar.gz
+
+include::../../../_ks_components/code/codeEnd.adoc[]

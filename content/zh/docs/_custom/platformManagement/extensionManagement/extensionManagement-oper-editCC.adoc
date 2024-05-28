@@ -1,0 +1,11 @@
+// :ks_include_id: 3d4578a964454b68a55ed88860355d8e
+. 在 **kubectl** 对话框，执行以下命令编辑集群配置文件：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+kubectl edit cc ks-installer -n kubesphere-system
+
+include::../../../../_ks_components/code/codeEnd.adoc[]
+--

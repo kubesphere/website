@@ -1,0 +1,2 @@
+// :ks_include_id: ec0f4321f3a8496cb29e4a605d5d28bc
+* 在右上角点击 image:/images/ks-qkcp/zh/icons/start-dark.svg[start,18,18]/image:/images/ks-qkcp/zh/icons/pause.svg[pause,18,18] 可开启/停止实时数据刷新。

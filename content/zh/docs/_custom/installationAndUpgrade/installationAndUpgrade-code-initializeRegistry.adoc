@@ -1,0 +1,7 @@
+// :ks_include_id: 1b45c225a03c4b1986ddda5832c75de6
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+ ./kk init registry -f config-sample.yaml -a kubekey-artifact.tar.gz
+
+include::../../../_ks_components/code/codeEnd.adoc[]

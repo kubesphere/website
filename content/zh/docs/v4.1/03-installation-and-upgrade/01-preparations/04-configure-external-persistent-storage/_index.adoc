@@ -1,0 +1,16 @@
+---
+title: "配置外部持久化存储"
+keywords: "Kubernetes, {ks_product}, 安装, 准备, 持久化存储"
+description: "介绍如何在生产环境中为{ks_product_both}集群配置外部持久化存储系统。"
+weight: 04
+---
+
+
+本节介绍如何在生产环境中为{ks_product_both}集群配置外部持久化存储系统。持久化存储系统可用于创建卷供{ks_product_both}平台上的应用存储数据。如未配置外部持久化存储系统，{ks_product_right}默认使用集群节点的本地存储系统。如果{ks_product_both}集群不需要使用外部持久化存储，您可以跳过本节。
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+{ks_product_right}外部持久化存储配置仅支持同时安装 Kubernetes 和{ks_product_both}的场景。如果您在现有的 Kubernetes 集群上安装{ks_product_left}，{ks_product_right}安装完成后将使用 Kubernetes 集群现有的持久化存储配置。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]

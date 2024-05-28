@@ -1,0 +1,8 @@
+// :ks_include_id: 03868826ceca4baea8a9365de6974f02
+持久卷的读写模式。
+
+* **RWO**（ReadWriteOnce）：允许单个节点读取持久卷中的数据并向其中写入数据。
+
+* **ROX**（ReadOnlyMany）：允许多个节点读取持久卷中的数据。
+
+* **RWX**（ReadWriteMany）：允许多个节点读取持久卷中的数据并向其中写入数据。

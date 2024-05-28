@@ -1,0 +1,9 @@
+// :ks_include_id: 3156e518c97e495ebdd0028761edc427
+设置容器组中所有容器进程在 Linux 系统中的权限。如果容器组安全上下文和容器安全上下文中都设置了用户、用户组和 SELinux 上下文，容器安全上下文中的设置将覆盖容器组安全上下文中的设置。
+
+[options="header",cols="1a,4a"]
+|===
+|参数 |描述
+
+include::workloads-para-uidGidSelinux.adoc[]
+|===

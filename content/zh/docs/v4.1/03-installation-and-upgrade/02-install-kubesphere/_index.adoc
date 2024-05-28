@@ -1,0 +1,9 @@
+---
+title: "安装{ks_product_left}"
+keywords: "Kubernetes, {ks_product}, 安装"
+description: "介绍如何安装{ks_product_left}。"
+weight: 02
+---
+
+
+本节介绍如何安装 Kubernetes 和{ks_product_left}。

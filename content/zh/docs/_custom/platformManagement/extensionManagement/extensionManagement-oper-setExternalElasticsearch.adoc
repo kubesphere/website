@@ -1,0 +1,22 @@
+// :ks_include_id: 3c4ccff9b03e44d9bc09a0d109039463
+* 如需使用外部 Elasticsearch 服务，将 **externalElasticsearchHost** 和 **externalElasticsearchPort** 参数分别设置为 Elasticsearch 服务的地址和端口号。
++
+--
+// YAML
+include::../../../../_ks_components/code/yaml.adoc[]
+
+spec:
+  common:
+    es:
+      externalElasticsearchHost: "<Elasticsearch address>"
+      externalElasticsearchPort: "<Elasticsearch port number>"
+
+include::../../../../_ks_components/code/codeEnd.adoc[]
+
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+如果您不设置外部 Elasticsearch 服务的地址和端口号，{ks_product_right}将安装并使用内置 Elasticsearch 服务。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+--

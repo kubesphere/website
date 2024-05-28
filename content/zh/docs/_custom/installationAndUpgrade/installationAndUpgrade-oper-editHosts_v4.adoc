@@ -1,0 +1,20 @@
+// :ks_include_id: bc97a1c3d087413bba734c07a3edb221
+. 登录所有集群节点，执行以下命令编辑 **/etc/hosts** 文件：
++
+--
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+vi /etc/hosts
+
+include::../../../_ks_components/code/codeEnd.adoc[]
+
+在 **/etc/hosts** 文件中添加以下信息，从而为集群节点配置私有镜像服务的域名解析规则（将 <registry IP address> 替换成私有镜像服务的实际 IP 地址，将私有镜像服务的默认地址 **dockerhub.kubekey.local** 替换为您的实际镜像仓库地址），然后保存文件：
+
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+<registry IP address> dockerhub.kubekey.local
+
+include::../../../_ks_components/code/codeEnd.adoc[]
+--

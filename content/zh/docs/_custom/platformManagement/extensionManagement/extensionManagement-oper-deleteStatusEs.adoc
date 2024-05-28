@@ -1,0 +1,12 @@
+// :ks_include_id: 90a37798901c4e17b3927a928d018e29
+删除以下参数：
+
+// YAML
+include::../../../../_ks_components/code/yaml.adoc[]
+
+status:
+  es:
+    enabledTime: 2022-08-11T06:22:01UTC
+    status: enabled 
+
+include::../../../../_ks_components/code/codeEnd.adoc[]
