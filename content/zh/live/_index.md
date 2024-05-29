@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20240420.png
-  url: ./meetup-shenzhen-20240420/
+  image: /images/live/cloudnative-live-20240525.png
+  url: ./meetup-beijing-20240525/
 
   notice:
-    title: KubeSphere Meetup 北京站——2024
-    tag: 预告
-    time: 2024 年 05 月 25 日
-    base: 北京
-    url: ./meetup-beijing-20240525/
+    title: KubeSphere Meetup 深圳站——2024
+    tag: 结束
+    time: 2024 年 04 月 20 日
+    base: 深圳
+    url: ./meetup-shenzhen-20240420/
 
   over:
     title: KubeSphere Meetup 杭州站——2024
@@ -26,6 +26,48 @@ section2:
 
 section3:
   videos:
+    - title: 闪电演讲 ⚡️——构建云原生湖仓数据智能一体化架构
+      link: ./beijing0525-ai/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-ai-cover.png
+      type: iframe
+      createTime: 2024.05.25
+      group: Meetup
+
+    - title: 以应用为中心的可插拔产品设计 KubeSphere 4.x
+      link: ./beijing0525-kubesphere-2/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-kubesphere-2-cover.png
+      type: iframe
+      createTime: 2024.05.25
+      group: Meetup
+
+    - title: SkyWalking 二开企业级实战
+      link: ./beijing0525-skywalking-2/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-skywalking-2-cover.png
+      type: iframe
+      createTime: 2024.05.25
+      group: Meetup
+
+    - title: 使用 KubeSphere 部署 Databend，极速启动新一代云原生数据分析平台
+      link: ./beijing0525-databend/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-databend-cover.png
+      type: iframe
+      createTime: 2024.05.25
+      group: Meetup
+
+    - title: 可观测平台在 KubeSphere 4.x 可插拔架构下的演进
+      link: ./beijing0525-kubesphere-1/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-kubesphere-1-cover.png
+      type: iframe
+      createTime: 2024.05.25
+      group: Meetup
+
+    - title: 洞察云原生服务性能--多层次剖析系统性能，分布式追踪不再是万能灵药
+      link: ./beijing0525-skywalking-1/
+      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-skywalking-1-cover.png
+      type: iframe
+      createTime: 2024.05.25
+      group: Meetup
+
     - title: 基于 K8s 的大数据平台构建
       link: ./shenzhen0420-kdp/
       snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-jinjin-cover.png
