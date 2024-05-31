@@ -1,0 +1,2 @@
+// :ks_include_id: 57acc3d45ab443bdad3eee12eb83b5ca
+是否允许用户在{ks_product_left} Web 控制台扩展持久卷容量。

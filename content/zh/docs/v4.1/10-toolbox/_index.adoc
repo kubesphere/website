@@ -1,0 +1,40 @@
+---
+title: "工具箱"
+keywords: "Kubernetes, {ks_product}, 项目管理, 工具箱"
+description: "介绍如何使用工具箱。"
+weight: 10
+---
+
+{ks_product_right}集成了 kubectl 命令行工具，以及集群的 kubeconfig 文件。通过使用 kubeconfig 文件，您可以配置当前集群的访问信息。
+
+本节介绍如何通过 kubectl 运行命令，以及如何查看下载集群的 kubeconfig 文件。
+
+ifeval::["{file_output_type}" == "pdf"]
+== 产品版本
+
+本文档适用于{ks_product_left} v4.1.0 版本。
+
+== 读者对象
+
+本文档主要适用于以下读者：
+
+* {ks_product_right}用户
+
+* 交付工程师
+
+* 运维工程师
+
+* 售后工程师
+
+
+== 修订记录
+
+[%header,cols="1a,1a,3a"]
+|===
+|文档版本 |发布日期 |修改说明
+
+|01
+|{pdf_releaseDate}
+|第一次正式发布。
+|===
+endif::[]

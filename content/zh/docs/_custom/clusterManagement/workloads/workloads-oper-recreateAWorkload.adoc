@@ -1,0 +1,4 @@
+// :ks_include_id: 0578975ed65b41108f5ec9903fae44ca
+. 在需要操作的工作负载右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**重新创建**。
+
+. 在**重新创建**对话框点击**确定**。

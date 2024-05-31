@@ -1,0 +1,4 @@
+// :ks_include_id: 2a8675daa13541ae83846c5eb87d5ed7
+. 在需要删除的容器组右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除容器组**对话框，输入容器组的名称，然后点击**确定**。

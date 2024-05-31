@@ -1,0 +1,62 @@
+---
+title: "查看企业空间成员详情"
+keywords: "Kubernetes, {ks_product}, 企业空间管理, 企业空间设置, 企业空间成员, 查看企业空间成员详情"
+description: "介绍如何查看企业空间成员详情。"
+weight: 03
+---
+
+:ks_permission: **成员查看**
+:ks_navigation: **企业空间设置 > 企业空间成员**
+
+
+本节介绍如何查看企业空间成员详情。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在企业空间成员列表点击一个企业空间成员的名称打开其详情页面。
+
+. 在企业空间成员详情页面左侧的**属性**区域查看企业空间成员的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|企业空间
+|当前企业空间的名称。
+
+|企业空间角色
+|企业空间成员的角色。
+
+|邮箱
+|企业空间成员的邮箱地址。
+|===
+--
+
+. 在企业空间成员详情页面右侧的**项目**页签查看企业空间成员所属的项目。
++
+--
+在左上角点击**集群**下拉列表然后选择一个集群，可查看特定集群中的项目。
+
+// * 企业空间成员详情页面目前暂不提供联邦项目的相关信息。
+--

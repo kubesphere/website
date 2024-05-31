@@ -1,0 +1,9 @@
+// :ks_include_id: 5e2c112952a04a0a852f249edae6a04d
+本节介绍如何删除服务。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+删除服务后将无法通过服务访问其后端的容器组，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

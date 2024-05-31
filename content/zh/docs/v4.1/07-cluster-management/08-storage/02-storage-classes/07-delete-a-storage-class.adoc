@@ -1,0 +1,64 @@
+---
+title: "删除存储类"
+keywords: "Kubernetes, {ks_product}, 集群管理, 存储类"
+description: "介绍如何删除存储类。"
+weight: 07
+---
+
+:ks_permission: **存储类管理**
+:ks_navigation: **存储 > 存储类**
+
+
+本节介绍如何删除存储类。
+
+// Warning
+include::../../../../../_ks_components/admonitions/warning.adoc[]
+
+存储类删除后，基于存储类创建持久卷声明和持久卷不会被删除，容器仍然可以使用已挂载的持久卷，但将用户将无法使用卷克隆、卷快照和卷扩展功能，并且无法再通过该存储类在后端存储系统中创建存储区域。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 删除单个存储类
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在需要删除的存储类右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除存储类**对话框，输入存储类的名称，然后点击**确定**。
+
+
+== 批量删除存储类
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 选择需要删除的存储类左侧的复选框，然后在存储类列表上方点击**删除**。
+
+. 在**批量删除存储类**对话框，输入存储类的名称，然后点击**确定**。
++
+--
+include::../../../../_custom/note-separateNamesByComma.adoc[]
+--

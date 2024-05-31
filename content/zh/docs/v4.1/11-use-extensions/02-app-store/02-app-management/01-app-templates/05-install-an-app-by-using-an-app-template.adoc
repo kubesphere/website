@@ -1,0 +1,82 @@
+---
+title: "使用应用模板安装应用"
+keywords: "Kubernetes, {ks_product}, 企业空间, 应用模板, 使用应用模板安装应用"
+description: "介绍如何使用应用模板安装应用。"
+weight: 05
+---
+
+:ks_permission: **应用/应用版本/应用实例管理**
+:ks_navigation: **应用管理 > 应用模板**
+
+
+本节介绍如何在企业空间中使用应用模板安装应用。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+. 在应用模板详情页面右侧的**版本**页签，点击所需的应用版本，然后在展开的区域中点击**部署**。
+
+. 在弹出的**位置**对话框，选择应用的安装位置，然后点击**确定**。
+
+. 在**基本信息**页签，设置应用的基本信息，然后点击**下一步**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|用户自定义的应用名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+
+|版本
+|需要安装的应用版本。
+
+|描述
+|应用的描述信息。描述可包含任意字符，最长 256 个字符。
+
+|位置
+|应用所属的集群和项目。应用所属的企业空间默认为应用模板所属的企业空间。
+|===
+--
+
+. 在**应用设置**页签，根据需要修改应用的参数设置，然后点击**安装**。
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+{ks_product_right}的应用模板功能底层基于 Helm Chart 实现。**应用设置**页签的参数设置应符合 Helm Chart 的 Values 文件规范。有关更多信息，请参阅 link:https://helm.sh/zh/docs/chart_template_guide/values_files/[Helm 官方文档]。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+ifeval::["{file_output_type}" == "html"]
+应用安装完成后，即可在目标项目中查看已安装的应用。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+应用安装完成后，即可在目标项目中查看已安装的应用。有关更多信息，请参阅《{ks_product_full_right}项目管理指南》的“应用”章节。
+endif::[]
+--

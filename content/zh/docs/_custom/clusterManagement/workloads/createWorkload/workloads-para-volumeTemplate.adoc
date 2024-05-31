@@ -1,0 +1,24 @@
+// :ks_include_id: ae4fedba880e403d9c8c4888b5134d9c
+通过持久卷声明模板为每个容器组副本单独创建持久卷声明和持久卷，并将持久卷挂载到容器。仅对有状态副本集可用。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|PVC 名称前缀
+|通过持久卷声明模板创建的持久卷声明的名称前缀。系统将按 <名称前缀>**-**<工作负载名称>**-**<序列号> 的格式自动命名持久卷声明。同一个有状态副本集不同容器组副本的持久卷声明通过 <序列号> 区分。
+
+|存储类
+|用于创建持久卷声明的存储类。
+
+|访问模式
+|
+include::../../persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
+
+|卷容量
+|通过持久卷声明模板创建的每个持久卷的容量。
+
+include::workloads-para-volumeMountModePath.adoc[]
+
+// include::workloads-para-containerLogPath.adoc[]
+|===

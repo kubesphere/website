@@ -1,0 +1,30 @@
+---
+title: "WhizardTelemetry 通知管理"
+keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理"
+description: "介绍如何管理平台通知。"
+weight: 10
+---
+
+
+本节介绍如何使用“WhizardTelemetry 通知管理”扩展组件。
+
+// 在集群或项目中创建告警规则组会对资源状态进行监控。当资源状态满足预设的条件并且满足预设的持续时间时，系统将产生告警，并通过在平台级别设置的通知渠道向用户发送。有关告警规则组和告警的更多信息，请参阅 link:../06-alerting[WhizardTelemetry 告警管理]。
+
+该扩展组件用于管理多租户 Kubernetes 环境中的通知。它能够接收来自不同发送者的告警、云事件以及其他类型的事件（例如审计和 Kubernetes 事件），并根据租户标签（如命名空间或用户）将通知发送给相应的租户接收器。支持邮件、飞书、钉钉、企业微信、Slack、Webhook 等多种通知渠道。
+
+
+安装“WhizardTelemetry 通知管理”扩展组件后，
+
+* 平台设置左侧导航栏下将显⽰**通知管理**选项。
+* 集群左侧导航栏的**集群设置**菜单下将显示**日志接收器**选项，**日志接收器**页面将显示**通知历史**页签，支持添加多种类型的日志接收器。有关更多信息，请参阅link:../02-logging/03-log-receivers/[日志接收器]。
+
+//attention
+[.admon.attention,cols="a"]
+|===
+| 注意
+
+|
+- WhizardTelemetry 通知管理由每个集群部署改为只需在 host 集群部署。在 host 集群添加了 `alertmanager proxy`，并且以 NodePort 形式（默认 31093）暴露。配置 WhizardTelemetry 告警管理和 WhizardTelemetry 事件告警时，若使用 WhizardTelemetry 通知管理扩展组件发送告警消息，需要进行相应配置。有关更多信息，请参阅 link:../06-alerting[WhizardTelemetry 告警管理]和 link:../09-events-altering[WhizardTelemetry 事件告警]。
+
+- WhizardTelemetry 通知管理依赖  WhizardTelemetry 平台服务和  WhizardTelemetry 数据流水线，因此在安装  WhizardTelemetry 通知管理之前必须先安装  WhizardTelemetry 平台服务和  WhizardTelemetry 数据流水线这两个扩展组件，否则通知相关功能无法正常使用！
+|===

@@ -1,0 +1,69 @@
+---
+title: "查看联邦项目列表"
+keywords: "Kuberentes, {ks_product}, 企业空间管理, 联邦项目, 介绍如何查看项目列表"
+description: "介绍如何查看项目列表。"
+weight: 02
+---
+
+:ks_permission: **联邦项目查看**
+:ks_navigation: **项目 > 联邦项目**
+
+
+include::../../../../_custom/workspaceManagement/projects/projects-desc-viewProjectList.adoc[]
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+====
+* 项目列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|项目的名称和描述信息。
+
+|状态
+|项目当前所处的状态。
+
+* **活跃**：项目状态正常。
+* **删除中**：项目正在删除中。
+
+|集群
+|可供项目使用的集群。
+
+|创建时间
+|项目的创建时间。
+|===
+--
+
+include::../../../../_custom/workspaceManagement/projects/projects-oper-searchForProjects.adoc[]
+
+include::../../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components/oper-customizeColumns.adoc[]
+
+
+* 在列表中点击一个项目的名称可打开项目管理页面。您可以在项目管理页面查看和管理项目中的资源。
+
+====

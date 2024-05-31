@@ -1,0 +1,61 @@
+---
+title: "用户和角色管理"
+keywords: "Kubernetes, {ks_product}, 访问控制,用户,角色"
+description: "介绍如何控制平台访问权限。"
+weight: 05
+---
+
+
+{ks_product_right}是一个支持多租户的容器管理平台，与 Kubernetes 相同，它通过基于角色的访问控制（RBAC）对用户的权限加以控制，实现逻辑层面的资源隔离。
+
+KubeSphere 中的资源被划分为平台、企业空间、集群、项目四个层级，所有的资源都会归属到这四个资源层级之中，各层级可以通过角色来控制用户的资源访问权限。每个层级默认设有多个内置角色，您也可以创建拥有自定义权限的角色。
+
+企业空间作为最小的租户单元，提供跨集群的资源隔离能力。企业空间中的成员可以在授权集群中创建项目，并通过邀请用户的方式参与项目协同。
+
+本节介绍如何在{ks_product_both}平台控制访问权限，包括用户和平台角色的管理。
+
+ifeval::["{file_output_type}" == "html"]
+有关集群角色的更多信息，请参阅link:../07-cluster-management/09-cluster-settings/04-cluster-roles/[集群角色]。
+
+有关企业空间角色的更多信息，请参阅link:../08-workspace-management/06-workspace-settings/04-workspace-roles/[企业空间角色]。
+
+有关项目角色的更多信息，请参阅link:../09-project-management/06-project-settings/02-project-roles/[项目角色]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+有关集群角色的更多信息，请参阅《{ks_product_right}集群管理指南》的“集群角色”章节。
+
+有关企业空间角色的更多信息，请参阅《{ks_product_right}企业空间管理指南》的“企业空间角色”章节。
+
+有关项目角色的更多信息，请参阅《{ks_product_right}项目管理指南》的“项目角色”章节。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+== 产品版本
+
+本文档适用于{ks_product_left} v4.1.0 版本。
+
+== 读者对象
+
+本文档主要适用于以下读者：
+
+* {ks_product_right}用户
+
+* 交付工程师
+
+* 运维工程师
+
+* 售后工程师
+
+
+== 修订记录
+
+[%header,cols="1a,1a,3a"]
+|===
+|文档版本 |发布日期 |修改说明
+
+|01
+|{pdf_releaseDate}
+|第一次正式发布。
+|===
+endif::[]

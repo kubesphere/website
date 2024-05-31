@@ -1,0 +1,44 @@
+---
+title: "删除应用仓库"
+keywords: "Kubernetes, {ks_product}, 企业空间, 应用仓库, 删除应用仓库"
+description: "介绍如何删除应用仓库。"
+weight: 05
+---
+
+
+:ks_permission: **应用仓库管理**
+:ks_navigation: **应用管理 > 应用仓库**
+
+
+本节介绍如何删除应用仓库。
+
+// Warning
+include::../../../../../_ks_components/admonitions/warning.adoc[]
+
+应用仓库删除后，用户将不能从应用仓库安装应用，请谨慎执行此操作。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在需要删除的应用仓库右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除应用仓库**对话框，输入应用仓库的名称，然后点击**确定**。

@@ -1,0 +1,2 @@
+// :ks_include_id: 15b3fc1df70646a9aa9dfe5ba02f8edb
+. 在 RadonDB 应用列表中，点击 RadonDB ECK 应用的名称打开其详情页面。

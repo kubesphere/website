@@ -1,0 +1,9 @@
+---
+title: "添加和删除集群节点"
+keywords: "Kubernetes, {ks_product}, 添加集群节点, 删除集群节点"
+description: "介绍如何添加和删除{ks_product_both}集群节点。"
+weight: 05
+---
+
+
+本节介绍如何添加和删除{ks_product_both}集群节点。

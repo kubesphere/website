@@ -1,0 +1,101 @@
+---
+title: "查看存储类详情"
+keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 存储类, 查看存储类详情"
+description: "介绍如何查看存储类详情。"
+weight: 03
+---
+
+:ks_permission: **存储类查看**
+:ks_navigation: **存储 > 存储类**
+
+
+本节介绍如何查看存储类详情。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-oper-openDetailsPage.adoc[]
+
++
+
+. 在存储类详情页面左侧的**属性**区域查看存储类的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|供应者
+|
+include::../../../../_custom/clusterManagement/persistentVolumes/persistentVolumes-para-provisioner.adoc[]
+
+|默认存储类
+|
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-para-defaultStorageClass.adoc[]
+
+|允许卷扩展
+|
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-para-allowVolumeExpansion.adoc[]
+
+|回收策略
+|
+include::../../../../_custom/clusterManagement/persistentVolumes/persistentVolumes-para-reclaimPolicy.adoc[]
+
+|允许卷快照
+|
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-para-allowVolumeSnapshot.adoc[]
+|===
+--
+
+. 在存储类详情页面右侧的**持久卷声明**页签查看使用该存储类创建的持久卷声明。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|卷的名称和别名。
+
+|状态
+|
+include::../../../../_custom/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-para-status.adoc[]
+
+|容量
+|卷请求的存储容量大小。
+
+|挂载状态
+|卷是否已经挂载到容器组。
+
+|项目
+|卷所属的项目。
+
+|创建时间
+|卷的创建时间。
+|===
+
+* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的卷。
+
+include::../../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components/oper-customizeColumns.adoc[]
+--

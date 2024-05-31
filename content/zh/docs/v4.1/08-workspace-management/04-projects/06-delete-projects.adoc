@@ -1,0 +1,47 @@
+---
+title: "删除项目"
+keywords: "Kuberentes, {ks_product}, 企业空间管理, 项目, 删除项目"
+description: "介绍如何编辑删除项目。"
+weight: 06
+---
+
+:ks_permission: **项目管理**
+:ks_navigation: **项目**
+
+
+include::../../../_custom/clusterManagement/projects/projects-desc-deleteProjects.adoc[]
+
+
+== 前提条件
+
+:relfileprefix: ../../../
+
+include::../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+== 删除单个项目
+
+include::../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../_custom/clusterManagement/projects/projects-oper-deleteASingleProject.adoc[]
+
+
+== 批量删除项目
+
+include::../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../_custom/clusterManagement/projects/projects-oper-deleteMultipleProjects.adoc[]

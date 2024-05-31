@@ -1,0 +1,3 @@
+// :ks_include_id: a03937e2a0cc45ffac2b60c8f2321638
+* 将光标悬停在已添加的卷或持久卷声明模板上，然后在右侧点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18]可编辑卷或持久卷声明模板的设置。
+* 将光标悬停在已挂载的卷或持久卷声明模板上，然后在右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除卷或持久卷声明模板。

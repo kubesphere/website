@@ -1,0 +1,52 @@
+---
+title: "添加集群标签"
+keywords: "Kubernetes, {ks_product}, 多集群管理, 集群, 添加集群标签"
+description: "介绍如何添加集群标签。"
+weight: 04
+---
+
+:ks_menu: **平台管理 > 集群管理**
+:ks_permission: **集群管理**
+
+
+本节介绍如何添加集群标签。
+
+您可以使用标签对集群进行分类管理。
+
+
+== 前提条件
+
+
+* 您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。
+
+* 您需要提前创建集群标签。有关更多信息，请参阅link:../../02-cluster-tags/01-create-a-cluster-tag/[创建集群标签]。
+
+
+== 对单个集群添加标签
+
+include::../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 点击**集群管理**。
+
++
+
+include::../../../../_custom/platformManagement/multiclusterManagement/clusters/clusters-oper-addClusterTags.adoc[]
+
+
+== 对多个集群添加标签
+
+include::../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 点击**集群管理**。
+
++
+
+. 在集群列表右上角点击**批量管理**。
+
+. 选择需要添加标签的集群左侧的复选框，然后在列表上方点击**添加标签**。
+
+. 在**添加标签**对话框，选择标签的键和值，点击**添加**，然后点击**确定**。
++
+--
+标签添加后，您可以集群列表上方点击搜索框按标签搜索集群。
+--

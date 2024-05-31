@@ -1,0 +1,9 @@
+// :ks_include_id: 0b50b8cf874242deb4bc9fbabcd2bdb7
+本节介绍如何删除工作负载。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+此操作将删除工作负载及其管理的所有容器组，工作负载中运行的业务将中断，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

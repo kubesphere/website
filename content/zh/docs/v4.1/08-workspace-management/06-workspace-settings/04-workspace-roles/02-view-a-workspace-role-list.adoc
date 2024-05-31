@@ -1,0 +1,40 @@
+---
+title: "查看企业空间角色列表"
+keywords: "Kubernetes, {ks_product}, 企业空间, 企业空间设置, 企业空间角色, 查看企业空间角色列表"
+description: "介绍如何查看企业空间角色列表。"
+weight: 02
+---
+
+:ks_permission: **角色查看**
+:ks_navigation: **企业空间设置 > 企业空间角色**
+
+
+本节介绍如何查看企业空间角色列表。
+
+每个企业空间角色都包含特定的企业空间管理或查看权限。您可以将包含特定权限的角色授予企业空间成员，以控制企业空间成员在企业空间中的权限。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
++
+--
+include::../../../../_custom/workspaceManagement/workspaceRoles/workspaceRoles-para-presetRoles_v4.adoc[]
+
+您也可以创建自定义企业空间角色。有关更多信息请参阅link:../01-create-a-workspace-role/[创建企业空间角色]。
+--

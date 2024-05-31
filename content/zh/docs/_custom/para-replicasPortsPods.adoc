@@ -1,0 +1,17 @@
+// :ks_include_id: 9dfd0319fc99473aa7930dfd36ff5321
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|副本
+|工作负载的当前容器组副本数和期望容器组副本数。
+
+|端口
+|工作负载管理的容器的端口名称、协议和端口号。
+
+|容器组
+|
+工作负载中运行的所有容器组。
+
+include::clusterManagement/nodes/nodes-para-podList.adoc[]
+|===

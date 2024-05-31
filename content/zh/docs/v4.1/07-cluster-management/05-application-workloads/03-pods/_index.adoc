@@ -1,0 +1,9 @@
+---
+title: "容器组"
+keywords: "Kubernetes, {ks_product}, 集群管理, 容器组"
+description: "介绍如何管理容器组。"
+weight: 03
+---
+
+
+include::../../../../_custom/clusterManagement/pods/pods-desc-pods.adoc[]

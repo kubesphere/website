@@ -1,0 +1,92 @@
+---
+title: "查看持久卷详情"
+keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 持久卷声明, 持久卷, 查看持久卷详情"
+description: "介绍如何查看集群中持久卷的详情。"
+weight: 11
+---
+
+:ks_permission: **持久卷声明查看**
+:ks_navigation: **存储 > 持久卷声明**
+
+
+本节介绍如何查看集群中持久卷的详情。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**持久卷声明**页面点击**持久卷**打开持久卷列表，然后点击一个持久卷的名称打开其详情页面。
+
+. 在持久卷详情页面左侧的**属性**区域查看持久卷的资源属性。
++
+--
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|状态
+|
+include::../../../../_custom/clusterManagement/persistentVolumes/persistent-volume-status.adoc[]
+
+|容量
+|
+include::../../../../_custom/clusterManagement/persistentVolumes/persistentVolumes-para-volumeSize.adoc[]
+
+|访问模式
+|
+include::../../../../_custom/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
+
+|存储类
+|持久卷声明对应的存储类。有关存储类的更多信息，请参阅link:../../02-storage-classes/[存储类]。
+
+|卷句柄
+|持久卷在后端存储系统中的唯一标识符。
+
+|回收策略
+|
+include::../../../../_custom/clusterManagement/persistentVolumes/persistentVolumes-para-reclaimPolicy.adoc[]
+
+|卷模式
+|持久卷的设备类型。
+
+* **文件系统**：持久卷以文件系统的形式挂载到容器上供容器使用。
+
+* **块设备**：持久卷以块设备的形式提供给容器。
+
+|创建时间
+|持久卷的创建时间。
+|===
+--
+
+. 在持久卷详情页面右侧的**资源状态**页签查看持久卷对应的持久卷声明的信息。
++
+--
+include::../../../../_custom/clusterManagement/persistentVolumes/persistentVolumes-para-pvcInformation.adoc[]
+--
+
+. 在持久卷详情页面右侧的**元数据**页签查看持久卷的标签和注解。
+
+. 在持久卷详情页面右侧点击**事件**页签查看持久卷的事件。
++
+--
+include::../../../../_custom/clusterManagement/clusterManagement-para-eventsTab.adoc[]
+--

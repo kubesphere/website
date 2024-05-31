@@ -1,0 +1,59 @@
+---
+title: "编辑静默时间"
+keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 静默策略, 编辑静默时间"
+description: "本节介绍如何编辑通知静默时间。"
+weight: 04
+---
+
+
+:ks_menu: **平台管理 > 平台设置**
+:ks_navigation: **通知管理 > 通知设置**
+:ks_permission: **平台设置管理**
+
+
+本节介绍如何编辑通知静默时间。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知管理**扩展组件。
+
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在需要操作的静默策略右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑静默时间**。
+
+. 在**编辑静默时间**对话框，选择静默时间类型并设置相关参数，然后点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|持续静默
+|满足静默条件的通知在所有时间静默。
+
+|在特定时间范围内静默
+|满足静默条件的通知在指定的时间范围内静默。您需要选择静默的开始时间和结束时间。
+
+|周期性静默
+|满足静默条件的通知每日、每周或每月在指定的时间范围内静默。您需要选择静默的日期、开始时间和结束时间。
+|===
+--

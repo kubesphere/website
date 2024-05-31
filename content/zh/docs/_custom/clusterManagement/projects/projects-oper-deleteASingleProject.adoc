@@ -1,0 +1,4 @@
+// :ks_include_id: 6f57a346768f432a9a776a26c0ab55b4
+. 在需要删除的项目右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除项目**对话框，输入项目的名称，然后点击**确定**。

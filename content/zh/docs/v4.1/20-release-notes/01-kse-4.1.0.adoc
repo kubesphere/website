@@ -1,0 +1,731 @@
+---
+title: "KubeSphere 企业版 v4.1.0 版本说明"
+keywords: "v4.1.0 版本说明, KubeSphere 企业版"
+description: "介绍 KubeSphere 企业版新特性、功能增强以及问题修复。"
+weight: 01
+---
+
+
+== KubeSphere Core
+
+KubeSphere 企业版（KSE）v4.1.0 是青云科技 KubeSphere 团队匠心打造的全新云原生操作系统，是 KubeSphere 企业版架构革新后的第一个全功能版本。
+
+KubeSphere 企业版 v4.1.0 在 KubeSphere LuBan 全新云原生可扩展开放架构的基础上，将 KubeSphere 企业版 v3.x 的全产品功能解耦，并基于可插拔的架构规范进行重构、升级。自此，各 KubeSphere 扩展组件可独立发版、迭代。用户可根据需要的产品能力安装扩展组件，保持平台的轻量与灵活，轻松定制“千人千面”的专属操作系统。
+
+KubeSphere 企业版 v4.1.0 内置丰富全能的 KubeSphere 扩展市场。其中发布的扩展组件均经过严格审校，优质可控，覆盖云原生核心业务的方方面面。用户可自助式一键安装扩展组件，通过扩展中心一站式管理扩展组件的全生命周期。 此外，企业或个人开发者也可根据 KubeSphere LuBan 的开发规范，将自己的软件和服务上架到 KubeSphere 扩展市场进行分发与商业售卖，丰富多元的云原生应用生态。
+
+=== 新特性
+
+- 基于全新微内核架构 KubeSphere LuBan 重构
+- 内置 KubeSphere 扩展市场
+- 支持通过扩展中心统一管理扩展组件
+- 支持 UI、API 扩展
+- 支持通过 kubeconfig 一键导入 member 集群
+- 支持 KubeSphere 服务帐户
+- 支持基于 TOTP 的二次认证
+- 支持动态扩展 Resource API
+- 支持添加集群、企业空间、项目到快捷访问
+- 支持通过容器终端进行文件上传和下载
+- 支持适配不同厂商的云原生网关（Kubernetes Ingress API）
+
+=== 优化
+
+- 创建企业空间时支持选取所有集群
+- 优化 web kubectl，支持 pod 动态回收、切换集群时支持模糊搜索
+- 优化节点管理列表，将默认排序修改为升序
+- 仅允许受信的 OAuth Client 直接使用用户名和密码对用户身份进行校验
+- 精简 member 集群中部署的 Agent 组件
+- 拆分 KubeSphere Config 中部分配置作为独立的配置项
+- 容器镜像搜索调整为按时间倒序进行排序
+- 支持编辑用户别名
+- 集群列表新增调度状态的展示
+- 配置字典详情页支持 binaryData 数据显示
+- 重构工作台管理页面
+
+
+=== 缺陷修复
+
+- 修复节点终端一直显示 connecting 的问题
+- 修复潜在的企业空间资源越权访问的问题
+- 修复潜在的企业空间集群授权 API 越权访问的问题
+- 修复因错误配置导致会话异常登出的问题
+- 修复添加镜像服务信息从指定仓库拉取镜像时异常的问题
+- 编辑保密字典编辑时 ownerReferences 丢失的问题
+- 修复首次登录白屏和页面错误重定向的问题
+- 修复 Windows 环境下，选择框滚动的问题
+- 修复当 cluster-admin 登录时找不到集群管理入口的问题
+
+=== API 更新
+
+==== **API 移除**
+
+v4.1 版本将停止提供以下 API：
+
+**多集群**
+
+`/API_PREFIX/clusters/{cluster}/API_GROUP/API_VERSION/...` 多集群代理请求 API 被移除。请使用新的多集群代理请求路径规则代替，`/clusters/{cluster}/API_PREFIX/API_GROUP/API_VERSION/...`。
+
+**访问控制**
+
+- `iam.kubesphere.io/v1alpha2` API 版本被移除。请使用 `iam.kubesphere.io/v1beta1` API 版本代替。
+
+- `iam.kubesphere.io/v1beta1` 中的显著变化：
+Role、RoleBinding、ClusterRole、ClusterRoleBinding 资源的 API Group 从 `rbac.authorization.k8s.io` 变更为 `iam.kubesphere.io`。
+
+
+**多租户**
+
+- `tenant.kubesphere.io/v1alpha1` 和 `tenant.kubesphere.io/v1alpha2` API 版本部分 API 被移除。请使用 `tenant.kubesphere.io/v1beta1` API 版本代替。
+
+- `tenant.kubesphere.io/v1beta1` 中的显著变化：
+`Workspace` 中 `spec.networkIsolation` 被移除。
+
+
+**kubectl**
+
+- `/resources.kubesphere.io/v1alpha2/users/{user}/kubectl` 接口已移除，终端相关操作无需再调用该接口
+- 用户 web kubectl 终端 API 路径从 `/kapis/terminal.kubesphere.io/v1alpha2/namespaces/{namespace}/pods/{pod}/exec` 调整为 `/kapis/terminal.kubesphere.io/v1alpha2/users/{user}/kubectl`
+
+**gateway**
+
+`gateway.kubesphere.io/v1alpha1` API 版本被移除。
+
+- 配置 Ingress 查询相关网关的 API 调整为 
++
+[,bash]
+----
+/kapis/gateway.kubesphere.io/v1alpha2/namespaces/{namespace}/availableingressclassscopes
+----
+
+
+==== **API 弃用**
+
+以下 API 标记为弃用，将在未来的版本中移除：
+
+- Cluster validation API
+- Config configz API
+- OAuth token review API
+- Operations job rerun API
+- Resources v1alpha2 API
+- Resources v1alpha3 API
+- Tenant v1alpha3 API
+- Legacy version API
+
+=== 已知问题
+
+- LDAP Identity Provider 将在后续版本中支持
+- 企业空间部门管理将在后续版本中支持
+- KEDA 将在后续版本中支持
+
+=== 其他
+
+- 默认移除除英文和简体中文之外的所有语言选项
+- 移除系统组件相关内容
+
+
+== 可观测性
+
+原 KubeSphere 企业版 v3.x 中的可观测性相关功能如监控、告警、日志、审计、事件、通知与事件告警等在 v4.1.0 进行了比较大的重构和优化，逐渐统一在 `WhizardTelemetry 可观测平台` 中持续演进，并随 KubeSphere 企业版 v4.1.0 发布 v1.0.0 版本。除了架构、API、技术栈等方向的优化与重构之外，减少不必要的工作负载也是 WhizardTelemetry 可观测平台 v1.0.0 这个版本的重要目标：
+
+- 原 v3.x 中的可观测性相关功能拆分成 10 个符合 KubeSphere LuBan 架构的扩展组件，包括 `WhizardTelemetry 平台服务`、`WhizardTelemetry 监控`、`WhizardTelemetry 告警管理`、`WhizardTelemetry 日志管理`、`WhizardTelemetry 事件管理`、`WhizardTelemetry 审计管理`、`WhizardTelemetry 通知管理`、`WhizardTelemetry 事件告警`、`WhizardTelemetry 数据流水线`、`OpenSearch 分布式检索与分析引擎`，这些扩展组件共同形成了 `WhizardTelemetry 可观测平台`。用户可以根据自己的需求安装所需的扩展组件，而不必如 KubeSphere 企业版 v3.5.0 及之前版本一样，将一些不需要的组件也默认安装。
+
+- 监控 API 在保有原来 KubeSphere 监控 API 风格的前提下，有了较大的调整及变更。
+
+- 告警与通知同样进行了较大的架构及 API 优化与调整，包括：
++
+--
+    - 多集群模式下流程的优化，尤其是在启用可观测中心场景下显著缩短了流程。
+	- 多集群模式下 member 集群的轻量化，在启用可观测中心场景下，member 集群无需部署用于告警的工作负载。
+	- 原需部署到每个集群的 Alertmanager 和 Notification Manager 改为只部署到 host 集群；同时 host 集群新增 Alertmanager Proxy 用于接收 member 集群发过来的告警进而转发给 Alertmanager。
+--
+
+- 日志、审计、事件及通知历史等功能也做了架构上较大的重构与优化，实现了真正的多集群架构：
++
+--
+    - 原用于日志、审计、事件、通知历史等信息采集的 Agent 由 `Fluent Bit` 替换为 `Vector Agent`，新增 `Vector Aggregator` 用于部署到 host 集群收集通知历史等信息。
+	- 原每个集群都会部署的 `OpenSearch` 改为可以被属于相同区域或组织的多个集群共用，而不必每个集群都安装，不同的集群会创建以集群名称为前缀的 index。
+    - 用于接收审计数据的 kube-auditing-webhook 已被移除，审计数据落盘后将被 Vector Agent 收集。
+    - 原用于管理 Kubernetes 原生事件的 kube-events controller，ruler，CRDs 已被移除，仅保留 kube-events-exporter 用于导出 Kubernetes 事件。
+    - K8s 及 KubeSphere 审计信息的归档改为统一由 Vector Agent 从写到磁盘的文件收集，去掉了之前的 Webhook。
+    - 原事件及审计的告警功能合并为 `WhizardTelemetry 事件告警`，未来会在此组件里支持日志告警；事件和审计各自的告警规则也被合并为一个 CRD `ClusterRuleGroup.logging.whizard.io`。
+--
+
+=== WhizardTelemetry 平台服务 v1.0.0
+
+`WhizardTelemetry 平台服务` 是从原 KubeSphere APIServer 中将可观测相关功能剥离出来形成的新增服务，是 `WhizardTelemetry 可观测平台` 中各个可观测服务共用的 `APIServer`，为所有可观测功能提供公共的后端平台服务，目前提供监控、日志、审计、事件、通知等服务的 API。
+
+
+==== **新特性**
+
+- 接入 KubeSphere 鉴权认证，支持用户权限校验
+- 监控 API 支持通过模板文件加载 PromQL 查询表达式
+- 监控 API 支持自定义组件查询
+
+==== **优化**
+
+- 优化监控 API 查询性能
+- 优化日志 API 查询性能
+- 优化审计 API 查询性能
+- 优化事件 API 查询性能
+- 优化通知历史 API 查询性能
+
+==== **弃用**
+
+- 监控 API `monitoring.kubesphere.io/v1alpha3` 已在 KubeSphere 企业版 v3.5.0 弃用，并且在 KubeSphere 企业版 v4.1.0 正式移除
+- 日志、审计、事件 API `tenant.kubesphere.io/v1alpha2` 已在 KubeSphere 企业版 v4.1.0 正式移除
+
+==== **API 更新**
+
+- 监控 API 已升级为 `monitoring.kubesphere.io/v1beta1` 版本，更多 API 细节可参考 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/montoring-extension-dev-guide.md#whizardtelemetry-monitoring-api-%E5%8F%82%E8%80%83[WhizardTelemetry Monitoring API 参考]及 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/swagger.json[Swagger] 
+- 日志、审计、事件、通知历史 API 已升级为 `logging.kubesphere.io/v1alpha2` 版本，更多 API 细节可参考 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/logging-dev-guide.md[WhizardTelemetry API 参考]及 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/swagger.json[Swagger]
+
+
+=== WhizardTelemetry 监控 v1.0.0
+
+`WhizardTelemetry 监控` 是 WhizardTelemetry 可观测平台中提供监控功能的扩展组件。其中包含 Whizard 可观测中心，可提供多租户视角的云原生资源监控能力，包括针对多集群，节点， 工作负载、GPU、K8s 控制面等对象的核心监控指标实时和历史数据展示等功能。
+
+可通过该扩展组件部署与管理如下组件：
+
+- Whizard Prometheus 长期存储
++
+Whizard 是一个企业级多云多集群监控告警产品，解决可观测领域基于指标（Metrics）监控、告警的长期存储问题。
+
+- Kube-Prometheus-Stack
++
+Kube-Prometheus-Stack 是使用 Prometheus 监控 Kubernetes 集群及运行在上面的应用的监控栈，包含 Prometheus Operator、kube-state-metrics、node-exporter 等组件，以及 Kubernetes 组件指标收集配置清单和相关 Prometheus Rules。
+
+- Calico Exporter（部署在 Kube-Prometheus-Stack 的 node-exporter 内，可单独启用）
++
+Calico Exporter 是一个用于收集 Calico 网络性能指标的指标导出器。
+
+- Process-exporter （部署在 Kube-Prometheus-Stack 的 node-exporter 内， 可单独启用）
++
+Process-exporter 是一个用于收集进程性能指标的指标导出器。
+
+- DCGM-Exporter
++
+DCGM-Exporter 是一个用于收集 Nvidia GPU 性能和健康度指标的指标导出器。
+
+- Whizard Monitoring Helper
++
+便于部署 `WhizardTelemetry 监控` 的助手工具。
+
+
+==== **新特性**
+
+- Whizard Gateway 支持暴露查询 UI，并支持查询外部数据源
+- Whizard 支持接入外部数据源鉴权认证
+- Whizard 支持 Services 层级组件配置，支持配置差异化
+- Whizard 优化内部 TLS 配置，提升查询性能
+- Whizard 更多特性及优化可参考 Whizard v0.10.0 Release
+- Kube-Prometheus-Stack 与社区项目 link:https://github.com/prometheus-operator/kube-prometheus[kube-prometheus] 完全兼容
+- 集成 Calico Exporter 与 Process-exporter 到 Kube-Prometheus-Stack 的 node-exporter 内
+- DCGM-Exporter 优化默认指标配置，支持更多 GPU 指标采集
+
+==== **优化**
+
+- 优化 Kube-Prometheus-Stack 中 recording rules 配置，同步社区最新更新
+- 优化 Kube-Prometheus-Stack 各组件资源配额，剪裁无用指标，提升性能
+
+==== **缺陷修复**
+
+- 修复启用可观测中心时，集群/项目的规则组页面自定义规则无法自动提示的问题
+
+==== **API 更新**
+
+- 监控 API 已集成到 `WhizardTelemetry 平台服务` 中，API 变更请参考 WhizardTelemetry 平台服务
+
+==== **其他**
+
+- Whizard 升级至 v0.10.0
+- Prometheus Operator 升级至 v0.68.0
+- Prometheus 升级至 v2.50.1
+- kube-state-metrics 升级至 v2.8.2
+- node-exporter 升级至 v1.6.0
+- DCGM-Exporter 升级至 v3.4.0
+
+
+=== WhizardTelemetry 告警管理 v1.0.0
+
+`WhizardTelemetry 告警管理` 是 WhizardTelemetry 可观测平台中基于监控指标进行告警的扩展组件，提供多集群的规则组管理、评估和告警等功能。
+
+可通过该扩展组件部署与管理如下组件：
+
+- apiserver: 提供规则组和告警的相关 APIs
+- controller-manager: 提供规则组的同步管理等功能
+- ruler: 负责规则组的规则评估和告警功能
+
+与 KubeSphere 企业版 v3.5.0 相比，该扩展组件还从架构设计上对多集群告警的流程以及轻量化方面进行了显著优化。
+
+==== **优化**
+
+- 告警流程优化，尤其在启用可观测中心的场景下显著缩短了告警流程
+- 降低 member 集群的告警负载，在启用可观测中心的场景下实现 member 集群的告警负载轻量化
+
+==== **缺陷修复**
+
+- 修复规则检查时间短暂出现零时间戳的问题
+- 修复在告警页面使用多个过滤条件查询告警时数据未显示和分页异常等问题
+
+==== **API 更新**
+
+与 KubeSphere 企业版 v3.5.0 相比，API 更新主要体现在请求路径的变更上：
+
+- 集群级别和项目级别的规则组和告警，API 路径前缀由 `[apis|kapis]/clusters/{cluster}/alerting.kubesphere.io/v2beta1/` 更新为 `/proxy/alerting.kubesphere.io/v2beta1/clusters/{cluster}/`
+- 全局级别的规则组和告警，API 路径前缀由 `[apis/kapis]/alerting.kubesphere.io/v2beta1/` 更新为 `/proxy/alerting.kubesphere.io/v2beta1/`
+- 对于内置的规则组，当可观测中心未启用时，通过集群级别规则组的 API 路径以及一个 `builtin=true` 的请求参数进行访问。例如请求
++
+[,bash]
+----
+/proxy/alerting.kubesphere.io/v2beta1/clusters/{cluster}/[clusterrulegroups|clusteralerts]?builtin=true
+----
++
+可分别访问内置规则组和它们的告警
+
+请求体和响应的数据结构保持不变。
+
+更多细节请参考 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/altering-api_zh.md[API 文档]。
+
+==== **其他**
+
+- process-exporter-rules 规则组作为内置规则组，支持在启用可观测中心的场景下通过全局规则组进行管理
+
+
+=== WhizardTelemetry 日志管理 v1.0.0
+
+`WhizardTelemetry 日志管理` 是 WhizardTelemetry 可观测平台中用于日志采集、处理、存储和查询的扩展组件。
+
+可通过该扩展组件部署与管理如下组件：
+
+- logsidecar-injector 用于采集 Pod 中容器输出的落盘日志（不同于普通容器输出到 stdout 的日志）
+- K8s 日志采集与转换
+- 缺省的 OpenSearch sink
+
+
+==== **新特性**
+
+- 新增 Vector Agent 用于缺省的落盘日志采集 
+- 原每个集群都会部署的 OpenSearch 改为可以多集群共用，不同的集群会创建以集群名称为前缀的 index
+- 支持一部分集群（可用区 a 或部门 a）输出日志到一个 OpenSearch，另一部分集群（可用区 b 或部门 b）输出日志到不同的 OpenSearch，经过配置后可在同一日志控制台进行查询。具体细节请参考 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/logging-README_zh.md[README]
+
+==== **缺陷修复**
+
+- 修复日志查询前端页面访问缓慢的问题
+
+==== **弃用**
+
+- 原用作采集落盘日志的 filebeat 已被废弃并将在后续版本移除
+
+=== WhizardTelemetry 事件管理 v1.0.0
+
+`WhizardTelemetry 事件管理` 是 WhizardTelemetry 可观测平台中用于 Kubernetes 原生事件导出的扩展组件。该扩展组件可以部署与管理 kube-events-exporter。主要负责：
+
+- 收集 Kubernetes 原生事件并导出到 stdout
+- 由 Vector Agent 收集落盘的 Kubernetes 事件日志并进行格式转换后，发送给用户指定的接收者如 OpenSearch
+- UI 上支持查询各集群的 Kubernetes 事件日志
+
+==== **新特性**
+
+- 新增用于导出 Kubernetes 原生事件的 kube-events-exporter
+- Kubernetes 事件由之前的 Webhook 方式接收改为由 Vector Agent 收集由 kube-events-exporter 输出到 stdout 进而落盘的 Kubernetes 事件，并发送到 OpenSearch 等用于归档或查询
+
+==== **弃用**
+
+- 弃用并移除原 kube-events 项目定义的 CRDs，Ruler 及 Controller
+
+
+=== WhizardTelemetry 审计管理 v1.0.0
+
+`WhizardTelemetry 审计管理` 是 WhizardTelemetry 可观测平台中用于对 Kubernetes 和 KubeSphere 的审计信息进行归档和查询的扩展组件。该扩展组件主要负责：
+
+- 由 Vector Agent 收集落盘的 Kubernetes 及 KubeSphere 审计日志并进行格式转换
+- 转换后的审计日志被发送给用户指定的接收者如 OpenSearch
+- UI 上支持查询各集群的审计日志
+
+==== **优化**
+
+- 审计日志收集由之前的 Webhook 方式接收改为由 Vector Agent 收集落盘的审计日志文件
+
+==== **弃用**
+
+- 原接收审计日志的 Webhook 已被弃用并移除
+- 原定义审计告警规则的 CRD Rule.auditing.kubesphere.io 已被弃用并移除
+
+
+=== WhizardTelemetry 通知管理 v2.5.1
+
+`WhizardTelemetry 通知管理` 是 WhizardTelemetry 可观测平台中提供通知功能的扩展组件，可提供电子邮件、Slack、企业微信、钉钉、飞书、Webhook 等多渠道通知功能。
+
+可通过该扩展组件部署与管理如下组件：
+
+- Notification Manager
+- Notification History
+- Alertmanager
+- Alertmanager Proxy
+
+
+==== **新特性**
+
+- 支持通知历史配置接收者
+
+==== **优化**
+
+- 优化通知历史收集方式，移除 notification adaptor 组件
+- 支持在通知中显示 receiver 名称
+- 支持为 notification manager deployment 添加注解和标签
+
+==== **缺陷修复**
+
+- 修复正则匹配会匹配所有告警的问题
+- 修复编辑订阅条件，选择过滤条件为“包含”后，页面白屏的问题
+
+==== **弃用**
+
+- v2beta1 版本的 CRD 已被移除
+- 移除 notification adaptor 组件
+
+==== **其他**
+
+- Notification Manager 升级至 v2.5.1
+- Alertmanager 升级至 v0.26.0
+
+
+=== WhizardTelemetry 事件告警 v1.0.0
+
+`WhizardTelemetry 事件告警` 是 WhizardTelemetry 可观测平台中提供事件告警功能的扩展组件，它可以为 K8s 原生事件和 K8s/KubeSphere 审计事件定义告警规则，对传入的事件数据进行评估，并将告警发送到指定的接收器如 HTTP 端点。
+
+此为本扩展组件的第一个正式版本，适配 KubeSphere 企业版 v4.1.0。
+
+==== **新特性**
+
+- 为发出的告警新增 `cluster` 字段以区分事件告警来自于哪个集群
+- 支持通过配置接收器将消息发送至 Webhook 或其他目的地，如 host 集群上部署的 Alertmanager Proxy: `http://< host node ip >:31093/api/v1/alerts`
+
+==== **优化**
+
+- 合并原 `kube-events` 与 `kube-auditing` 项目中根据告警规则对 K8s 原生事件与 K8s/KubeSphere 审计事件进行评估的功能到 `WhizardTelemetry 事件告警`
+- 合并原 `kube-events` 与 `kube-auditing` 项目中各自的告警规则至同一个 CRD `ClusterRuleGroup.logging.whizard.io`
+
+
+=== OpenSearch 分布式检索与分析引擎 v2.11.1
+
+`OpenSearch 分布式检索与分析引擎` 是 WhizardTelemetry 可观测平台中内置的分布式检索与分析引擎， 是用于存储、检索与分析日志、审计、事件、通知历史等可观测数据的扩展组件。
+
+可通过该扩展组件部署与管理如下组件：
+
+- OpenSearch 的 Master 节点
+- OpenSearch 的 Data 节点
+- OpenSearch Dashboard
+- OpenSearch Curator (用于定期清理过期数据)
+
+==== **优化**
+
+- 调整 OpenSearch Data 节点的 Service 为 NodePort 类型（端口 30920）
+- 降低 OpenSearch Master 节点与 Data 节点请求的 CPU 与 Memory
+- 调整 OpenSearch Curator 索引清理规则
+
+==== **其他**
+
+- OpenSearch 升级至 v2.11.1
+- OpenSearch Dashboard 升级至 v2.11.1
+
+
+=== WhizardTelemetry 数据流水线 v1.0.0
+
+`WhizardTelemetry 数据流水线` 是 WhizardTelemetry 可观测平台中提供可观测性数据收集、转换和路由能力的扩展组件。
+
+==== **新特性**
+
+- 原用于日志、审计、事件、通知历史等信息采集的 Agent 由 Fluent Bit 替换为 Vector Agent
+- 新增 Vector Aggregator 用于部署到 host 集群收集通知历史等信息
+- 为 Vector 新增 vector-config sidecar 容器，用于监听存储 Vector 配置的 Secret，并自动生成 Vector 的配置文件
+- 定制 Vector Helm Chart， 使得可以将 Vector 配置存储在 Secret，取代 Vector 上游将包含敏感信息的 Vector 配置存储在 ConfigMap 的做法
+
+
+==== **弃用**
+
+- 原用于日志、审计、事件、通知历史等信息采集的 Fluent Bit 及 FluentBit Operator 已被弃用并移除
+
+
+== 平台管理
+
+=== 应用商店管理 v2.0.0
+
+`应用商店管理` 是一个基于 OpenPitrix 自研的多云应用管理平台，用于上传、审核并管理多云环境中不同类型的应用。
+
+在 v2.0.0 中，进一步提升仓库应用的同步性能，支持使用 YAML 文件创建应用模板。
+
+==== **新特性**
+
+- 支持应用上传、统一审核与上下架管控
+- 支持使用 YAML 文件创建应用模板
+- 支持外置 S3 对象存储
+- 支持全局应用仓库配置
+- 支持更细粒度的权限配置，包含应用、应用版本、应用实例的查看、创建、删除与整体管理
+
+==== **优化**
+
+- 优化产品交互，划定 KubeSphere 应用商店与应用商店管理的功能边界
+- 移除内置的开源仓库和开源应用模板
+- 提升仓库应用的同步性能
+
+==== **缺陷修复**
+
+- 修复安装 helm 应用 CRD 不能立即使用的问题
+
+==== **弃用**
+
+- 移除 openpitrix.io/v1 系列的 API
+- 移除 manifests.application.kubesphere.io 系列 API
+
+==== **API 更新**
+
+- 增加创建 YAML 应用的 API
+- 使用 KubeSphere 平台统一的分页，筛选条件查询
+
+=== 服务网格 v1.0.0
+
+`服务网格` 是一款强大的微服务治理与微服务可视化管理工具。它提供包括蓝绿部署、金丝雀发布与流量镜像三种灰度发布策略，与流量监控、链路追踪两项可观测能力。
+
+==== **新特性**
+
+- 支持更细粒度的权限配置，包含服务网格管理与查看
+
+==== **优化**
+
+- 优化产品交互，改变“自制应用”与“灰度发布”的入口位置
+
+==== **其他**
+
+- Istio 从 v1.14.6 升级至 v1.16.5
+- Kiali 从 v1.50 升级至 v1.59
+- Jaeger 从 v1.29 升级至 v1.35
+
+
+=== Spring Cloud v1.0.0
+
+`Spring Cloud` 是一个提供微服务、微服务配置和微服务网关功能的扩展组件。
+
+==== **新特性**
+
+- 支持更细粒度的权限配置，包含 Spring Cloud 的管理与查看
+
+==== **优化**
+
+- 减少 spring-cloud-controller 中不必要的日志记录
+- 存量项目下启用 Spring Cloud 功能时增加友好提醒
+
+==== **其他**
+
+- spring-cloud-controller 从 v0.1.0 升级至 v0.1.1
+
+
+=== 多集群代理连接 v1.0.0
+
+`多集群代理连接` 是一种通过代理在集群间建立网络连接的工具。如果主集群无法直接访问成员集群，您可以暴露主集群的代理服务地址，这样可以让成员集群通过代理连接到主集群。
+
+该扩展组件将 KubeSphere 企业版 v3.5.0 中的多集群代理连接模块，基于全新的微内核架构 KubeSphere LuBan 重构，整体功能没有改变。
+
+
+=== 联邦集群应用管理 v1.0.0
+
+`联邦集群应用管理` 是一个旨在简化跨多个联邦 Kubernetes 集群管理应用程序的扩展组件，用户可以轻松地在多个联邦集群中部署、更新和管理应用程序，同时提供灵活的配置选项以满足不同需求。
+
+该扩展组件将 KubeSphere 企业版 v3.5.0 中的多集群项目模块，基于全新的微内核架构 KubeSphere LuBan 重构，整体功能没有改变。
+
+
+=== KubeEdge 边缘计算框架 v1.0.0
+
+`KubeEdge 边缘计算框架` 是 KubeEdge 的扩展组件，可将本机容器化应用编排和管理扩展到边缘端设备。
+
+可通过该扩展组件部署与管理如下组件：
+
+- cloudcore: 提供云端接入功能
+- frontend: 提供前端界面功能
+
+==== **其他**
+
+- 该扩展组件暂时只支持 host 集群
+
+
+=== Metrics Server v0.7.0
+
+`Metrics Server` 是一个可扩展、高效的容器资源度量源，为 Kubernetes 内置的自动扩展管道提供服务。
+
+该扩展组件将 link:https://github.com/kubernetes-sigs/metrics-server[metrics-server] 基于全新的微内核架构 KubeSphere LuBan 重构，其代码、镜像等没有改变。
+
+==== **其他**
+
+- metrics-server 从 v0.4.2 升级至 v0.7.0
+
+
+== 数据库与中间件
+
+=== RadonDB DMP v2.1.0
+
+`RadonDB DMP` 扩展组件提供数据库/中间件的可视化统一管理界面，支持数据库/中间件实例的全生命周期管理与运维。支持手动备份、自动化备份、从备份中恢复等功能；支持监控指标展示和告警功能（需安装可观测组件）。支持以下数据库/中间件：MySQL、PostgreSQL、MongoDB、Redis、OpenSearch、Kafka、RabbitMQ。
+
+
+==== **新特性**
+
+- 支持通过编辑 YAML 的方式修改数据库实例
+- 支持独立配置数据库备份 S3 地址
+
+==== **缺陷修复**
+
+- 修复在命令行直接修改数据库配置会被重置的问题 
+- 修复 Logstash 没有关联 role 导致无法写入 OpenSearch 数据的问题
+- 修复 OpenSearch 监控按条件查询无响应的问题
+- 调整 PostgreSQL 的资源规格避免内存不足导致 pod 重启
+
+==== **弃用**
+
+- 弃用 `manifests.application.kubesphere.io`
+
+==== **已知问题**
+
+- MySQL 集群的备份恢复功能需要手动修复
+- PostgreSQL 集群的备份恢复功能需要手动修复
+
+== DevOps
+
+=== DevOps v1.1.0
+
+`KubeSphere DevOps 系统` 是专为 Kubernetes 中的 CI/CD 工作流设计的。它提供一站式的解决方案，帮助开发和运维团队用非常简单的方式构建、测试和发布应用到 Kubernetes。具有**插件管理、代码依赖缓存、代码质量分析、流水线日志**等功能，**兼容第三方私有镜像仓库（如 Harbor）和代码库（如 GitLab/GitHub/SVN/BitBucket）**。为用户提供全面的、可视化的 CI/CD 流水线，打造极佳的用户体验，而且这种兼容性强的流水线能力在离线环境中非常有用。
+
+与 KubeSphere 企业版 v3.5.0 相比，该扩展组件不仅修复了已知问题，完善了功能，优化了使用体验，而且为适配 KubeSphere 企业版 v4.1.0，大量减少了对 KubeSphere Core 的依赖，使 DevOps 组件更加独立，版本管理更加灵活。
+
+==== **新特性**
+
+- 部署时自动识别运行时环境，以便自动适配 Agent 镜像
+- 支持查看已取消的流水线详情
+- 调整 DevOps RoleTemplates 适配 KubeSphere LuBan IAM，DevOps 权限管理更加灵活便捷
+
+==== **优化**
+
+- 支持流水线详情页日志查看功能
+- 优化 devops-controller 日志输出，信息更明确
+- 调整多分支流水线关于过期分支清理的描述
+
+==== **缺陷修复**
+
+- 修复 devops-controller 由于流水线 cloneOptions.time 为空导致启动失败的问题
+- 修复流水线中定义的参数未传到 Jenkins 服务的问题
+- 修复流水线“打印消息”步骤包含双引号时报错的问题
+- 修复多分支流水线里附件下载失败的问题
+- 修复回放运行流水线失败的问题
+- 修复查询 DevOps 项目别名过滤无效的问题
+
+
+==== **已知问题**
+
+- 镜像构建器（S2I、B2I）功能在此版本暂不可用
+- kubeconfig 类型的凭证在此版本暂不可用
+
+==== **API 更新**
+
+- ks-core 中 DevOps 相关 APIs 移动到此扩展组件中，路径中 `kapis/tenant.kubesphere.io/v1alpha2` 更新为 `kapis/devops.kubesphere.io/v1alpha3`
+- 请求路径中把 DevOps 视为普通 Namespace，即把路径中 `devops` 改成 `namespaces`， 如: `kapis/devops.kubesphere.io/v1alpha3/workspaces/../devops/../` 更新为 `kapis/devops.kubesphere.io/v1alpha3/workspaces/../namespaces/../`
+- DevOps 项目成员管理 API 更新: `kapis/iam.kubesphere.io/v1alpha2/devops/../members` 更新为 `kapis/iam.kubesphere.io/v1beta1/namespaces/../namespacemembers`
+- DevOps 项目角色管理 API 更新：`kapis/iam.kubesphere.io/v1alpha2/devops/../roles?annotation=kubesphere.io/creator` 更新为 `kapis/iam.kubesphere.io/v1beta1/namespaces/../roles?annotation=kubesphere.io/creator`
+- DevOps 项目权限项管理 API 更新：`kapis/iam.kubesphere.io/v1alpha2/devops/../roles?label=iam.kubesphere.io/role-template=true` 更新为 `kapis/iam.kubesphere.io/v1beta1/roletemplates?labelSelector=iam.kubesphere.io/scope=namespace，devops.kubesphere.io/managed=true`
+
+==== **其他**
+
+- 更新 devops-jenkins 认证方式为 ks-core OpenId Connect Authentication，移除对 LDAP 认证方式的依赖
+
+== 网络
+
+=== 网关 v1.0.0
+
+`网关` 是聚合服务、管理 KubeSphere 平台外部访问的扩展组件。基于全新的微内核架构 KubeSphere LuBan 重构，支持一键启用和管理集群网关、企业空间网关、项目网关，帮助企业实现各层级网络配置的全覆盖。
+
+==== **新特性**
+
+- 调整网关的架构，便于解耦不同厂商的网关
+- 整合网关创建、编辑时的配置步骤
+- 通过编辑网关 YAML 管理网关 values 中所有配置项
+- 可配置通过 NodePort 对外暴露时展示网关地址
+- 支持更细粒度的权限配置，包含网关管理与查看
+
+==== **缺陷修复**
+
+- 修复网关日志导出异常的 bug
+
+==== **弃用**
+
+- 移除 Gateway v1alpha1 CRD
+- 移除 Nginx v1alpha1 CRD
+
+==== **API 更新**
+
+- 新增 Gateway v2alpha1 CRD
+
+==== **其他**
+
+- nginx-ingress 从 v1.3.1 升级至 v1.4.0
+
+
+=== 网络 v1.0.0
+
+`网络` 扩展组件基于全新微内核架构 KubeSphere LuBan 重构，功能基本与 KubeSphere 企业版 v3.5.0 中网络模块的功能一致，目前包含有 IPPool 和 NetworkPolicy 的管理配置，同时也有一部分架构的变化和新特性的增加。
+
+- IPPool 弃用原有的 KubeSphere 封装的管理方式（ippools.network.kubesphere.io），直接管理 calico ippool（ippools.crd.projectcalico.org），避免与其他的第三方管理工具冲突；同时支持 calico ippool 更多字段的配置。
+- NetworkPolicy 主要优化用户在项目网络隔离的外部白名单的操作友好性。
+
+
+==== **新特性**
+
+- 支持用户通过 YAML 创建 IP 池以及 YAML 的动态编辑
+- 支持 IP 池 nodeSelector、NatOutgoing 等更多字段的 UI 化配置
+- 支持项目网络隔离外部白名单的端口范围的配置
+- 支持项目网络隔离外部白名单的多网段、多端口的配置
+- 支持项目网络隔离外部白名单的配置、基本信息的动态修改
+
+==== **弃用**
+
+- 弃用 ippool 绑定到企业空间，但支持原生 calico ippool 绑定 namespace 的操作
+- 移除 network.kubesphere.io/v1alpha1 中的 ippools、ipamblocks、ipamhandles
+
+==== **API 更新**
+
+- ippool 更新为 ippools.crd.projectcalico.org/v1，更多 API 细节可参考 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/network-api_doc.md[Network API 参考]及 link:https://yunify-qingcloud-docs.pek3b.qingstor.com/docs/kse/v4.1/network-swagger.yaml[Swagger]
+
+
+== 安全
+
+=== Gatekeeper v1.0.0
+
+link:https://github.com/open-policy-agent/gatekeeper[Gatekeeper] 是一个用于 Kubernetes 可灵活配置策略的准入控制器，使用 link:https://www.openpolicyagent.org/[Open Policy Agent (OPA)] 验证在 Kubernetes 集群上创建和更新资源的请求。
+
+借助 Gatekeeper 可以灵活地定义准入策略，在集群层面强制执行安全准入审查，从而确保 Kubernetes 集群的稳定性和安全合规性。
+
+==== **新特性**
+
+- 支持在集群层面配置安全准入策略
+
+== 存储
+
+=== 存储 v1.0.0
+
+`存储` 扩展组件包含多个存储相关的实用工具。
+
+可通过该扩展组件部署与管理如下组件：
+
+- snapshot-controller: 用于为 PVC 创建快照。
+- snapshotclass-controller: 用于为快照计数。
+- pvc-auto-resizer: 用于为 PVC 在容量不足的情况下实现自动扩容。
+- storageclass-accessor: 提供准入控制器，用来验证是否准许在某个命名空间或企业空间创建 PVC。
+
+==== **优化**
+
+- 提高存储类授权规则的验证速度
+- 提高自动扩展的响应速度
+
+==== **其他**
+
+- snapshot-controller 升级至 v4.2.1
+
+
+
+

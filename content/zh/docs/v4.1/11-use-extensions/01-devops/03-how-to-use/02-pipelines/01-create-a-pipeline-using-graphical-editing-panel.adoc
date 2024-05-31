@@ -1,0 +1,500 @@
+---
+title: "使用图形编辑面板创建流水线"
+keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps, 流水线, 使用图形编辑面板创建流水线"
+description: "介绍如何管理 DevOps 项目，以及如何在 DevOps 项目中管理流水线和 DevOps 项目设置。"
+weight: 01
+---
+
+
+DevOps 中的图形编辑面板包含用于 Jenkins link:https://www.jenkins.io/zh/doc/book/pipeline/#阶段[阶段 (Stage)] 和link:https://www.jenkins.io/zh/doc/book/pipeline/#步骤[步骤 (Step)] 的所有必要操作。DevOps 支持直接在交互式面板上定义这些阶段和步骤，无需创建任何 Jenkinsfile。
+
+本文档演示如何在{ks_product_both}中使用图形编辑面板创建流水线。在整个过程中，DevOps 将根据编辑面板上的设置自动生成 Jenkinsfile，您无需手动创建 Jenkinsfile。待流水线成功运行，它会将镜像推送至 Docker Hub。
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **DevOps** 扩展组件。
+
+* 已有一个 link:http://www.dockerhub.com/[Docker Hub] 账户。
+
+* 已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../../05-devops-settings/02-role-and-member-management[角色和成员管理]。
+
+* 已设置 CI 专用节点用于运行流水线。请参阅link:../../05-devops-settings/04-set-ci-node/[为缓存依赖项设置 CI 节点]。
+
+* 配置电子邮件服务器用于接收流水线通知（可选）。
+请参阅link:../09-jenkins-email/[为流水线设置电子邮件服务器]。
+
+* 配置 SonarQube 将代码分析纳入流水线中（可选）。
+请参阅link:../../../04-how-to-integrate/01-sonarqube/[将 SonarQube 集成到流水线]。
+
+
+== 流水线概述
+
+本示例流水线包括以下阶段。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+* **阶段 1：Checkout SCM**：从 GitHub 仓库拉取源代码。
+
+* **阶段 2：单元测试**：待该测试通过后才会进行下一阶段。
+
+* **阶段 3：代码分析**：配置 SonarQube 用于静态代码分析。
+
+* **阶段 4：构建并推送**：构建镜像并附上标签 **snapshot-$BUILD_NUMBER** 推送至 Docker Hub，其中 **$BUILD_NUMBER** 是流水线运行记录列表中的记录的运行 ID。
+
+* **阶段 5：制品**：生成一个制品（JAR 文件包）并保存。
+
+// * **阶段 6：部署至开发环境**：在开发环境中创建一个部署和一个服务。该阶段需要进行审核，部署成功运行后，会发送电子邮件通知。
+|===
+
+
+== 步骤 1：创建凭证
+
+. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+
+. 点击**企业空间管理**并进入您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参阅link:../../05-devops-settings/01-credential-management/[凭证管理]。
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果您的账户或密码中包含任何特殊字符，例如 **@** 和 **$**，可能会因为无法识别而在流水线运行时导致错误。在这种情况下，请先在一些第三方网站（例如 link:https://www.urlencoder.org/[urlencoder]）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
+
+|===
+
+[%header,cols="1a,2a,2a"]
+|===
+|凭证 ID |类型 |用途
+
+|dockerhub-id
+|用户名和密码
+|Docker Hub
+
+// |demo-kubeconfig
+// |kubeconfig
+// |Kubernetes
+|===
+--
+
+. 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/[为新项目创建 SonarQube 令牌 (Token)]。点击**确定**完成操作。
+
+. 创建完成后，您将在凭证页面看到已创建的凭证。
+
+// == 步骤 2：创建项目
+
+// 本示例中，流水线会将 link:https://github.com/kubesphere/devops-maven-sample/tree/sonarqube[sample] 应用部署至一个项目。因此，需要创建一个项目（例如 **kubesphere-sample-dev**）。待流水线成功运行，将在该项目中自动创建该应用的部署和服务。
+
+// . 使用 **project-admin** 账户创建项目，该用户也将是 CI/CD 流水线的审核员。
+
+// . 邀请 **project-regular** 账户至该项目，并授予 **operator** 角色。
+
+
+== 步骤 2：创建流水线
+
+. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+
+. 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
+
+. 在弹出的对话框中，将其命名为 **graphical-pipeline**，点击**下一步**。
+
+. 在**高级设置**页面，点击**添加**，添加以下字符串参数。这些参数将用于流水线的 Docker 命令。添加完成后，点击**创建**。
++
+--
+[%header,cols="1a,2a,2a,2a"]
+|===
+|参数类型 |名称 |值 |参数说明
+
+|字符串
+|REGISTRY
+|`docker.io`
+|镜像仓库地址。本示例使用 **docker.io**。
+
+|字符串
+|DOCKERHUB_NAMESPACE
+|您的 Docker ID
+|您的 Docker Hub 账户或该账户下的组织名称。
+
+|字符串
+|APP_NAME
+|`devops-sample`
+|应用名称。本示例使用 **devops-sample**。
+|===
+
+// note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+有关其他字段，请直接使用默认值或者参阅link:../05-pipeline-settings/[流水线设置]以自定义配置。
+|===
+--
+
+== 步骤 3：编辑流水线
+
+. 点击流水线名称进入其详情页面。
+
+. 要使用图形编辑面板，点击**流水线配置**页签下的**编辑流水线**。在弹出的对话框中：
+
+* 点击**自定义流水线**，按照以下步骤设置各个阶段。
+
+* 或使用 DevOps 提供的link:../03-use-pipeline-templates/[内置流水线模板]。
+
+. 点击**下一步**，然后点击**创建**。
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+流水线详情页面的**同步状态**，显示了{ks_product_both}和 Jenkins 之间的同步结果。也可点击**编辑 Jenkinsfile** 手动为流水线创建一个 Jenkinsfile。
+
+|===
+
+=== 阶段 1：拉取源代码 (Checkout SCM)
+
+图形编辑面板包括两个区域：左侧的**画布**和右侧的**内容**。它会根据您对不同阶段和步骤的配置自动生成一个 Jenkinsfile，为开发者提供更加用户友好的操作体验。
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+流水线包括link:https://www.jenkins.io/zh/doc/book/pipeline/syntax/#声明式流水线[声明式流水线]和link:https://www.jenkins.io/zh/doc/book/pipeline/syntax/#脚本化流水线[脚本化流水线]。目前，支持使用该面板创建声明式流水线。有关流水线语法的更多信息，请参阅 link:https://www.jenkins.io/zh/doc/book/pipeline/syntax/[Jenkins 文档]。
+
+|===
+
+. 在图形编辑面板上，从**类型**下拉列表中选择 **node**，从 **Label** 下拉列表中选择 **maven**。
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+**Agent** 用于定义执行环境。**Agent** 指令指定 Jenkins 执行流水线的位置和方式。有关更多信息，请参阅link:../10-choose-jenkins-agent/[选择 Jenkins Agent]。
+
+|===
+
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/graphical_panel.png[,100%]
+--
+
+. 点击左侧的加号图标来添加阶段。点击**添加步骤**上方的文本框，然后在右侧的**名称**字段中为该阶段设置名称（例如 **Checkout SCM**）。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/edit_panel.png[,100%]
+
+. 点击**添加步骤**。在列表中选择 **Git Clone**，以从 GitHub 拉取示例代码。在弹出的对话框中，填写必需的字段。点击**确定**完成操作。
++
+--
+* **URL**：输入 GitHub 仓库地址 link:https://github.com/kubesphere/devops-maven-sample.git[]。注意，这里是示例地址，请使用自己的仓库地址。
+
+* **凭证 ID**：本示例中无需输入凭证 ID。
+
+* **分支**：输入 **v4.1.0-sonarqube**。如果不需要代码分析阶段，则使用默认的 v4.1.0 分支。
+
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/enter_repo_url.png[,100%]
+--
+
+=== 阶段 2：单元测试
+
+. 点击阶段 1 右侧的加号图标添加新的阶段，以在容器中执行单元测试。将它命名为 **Unit Test**。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/unit_test.png[,100%]
+
+. 点击**添加步骤**，在列表中选择**指定容器**。将其命名为 **maven** 然后点击**确定**。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/container_maven.png[,100%]
+
+. 点击 **maven** 容器步骤下的**添加嵌套步骤**，在列表中选择 **shell** 并输入以下命令。点击**确定**保存操作。
++
+--
+[,bash]
+----
+mvn clean test
+----
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+在图形编辑面板上，可指定在给定阶段指令中执行的一系列link:https://www.jenkins.io/zh/doc/book/pipeline/syntax/#steps[步骤]。
+|===
+--
+
+=== 阶段 3：代码分析（可选）
+
+本阶段使用 SonarQube 用于测试代码。如果不需要代码分析，可以跳过该阶段。
+
+. 点击 **Unit Test** 阶段右侧的加号图标添加一个阶段，以在容器中进行 SonarQube 代码分析。将它命名为 **Code Analysis**。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/code_analysis_stage.png[,100%]
+
+. 在 **Code Analysis** 中，点击**添加步骤**，选择**指定容器**。将其命名为 **maven** 然后点击**确定**。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/maven_container.png[,100%]
+
+. 点击 **maven** 容器步骤下的**添加嵌套步骤**，以添加一个嵌套步骤。点击**添加凭证**并从**凭证 ID** 列表中选择 SonarQube 令牌 (**sonar-token**)。在**文本变量**中输入 **SONAR_TOKEN**，然后点击**确定**。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_credentials.png[,100%]
+
+. 在**添加凭证**步骤下，点击**添加嵌套步骤**为其添加一个嵌套步骤。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png[,100%]
+
+. 点击 **Sonarqube 配置**，在弹出的对话框中保持默认名称 **sonar** 不变，点击**确定**保存操作。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png[,100%]
+
+. 在 **Sonarqube 配置**步骤下，点击**添加嵌套步骤**为其添加一个嵌套步骤。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step.png[,100%]
+
+. 点击 **shell** 并在命令行中输入以下命令，用于 sonarqube 认证和分析，点击**确定**完成操作。
++
+--
+[,bash]
+----
+mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
+----
+--
+
+. 点击**指定容器**步骤下的**添加嵌套步骤**（第三个），选择**超时**。在时间中输入 **1** 并将单位选择为**小时**，点击**确定**完成操作。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step_2.png[,100%]
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/timeout_set.png[,100%]
+
+. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出的对话框中选择**检查通过后开始后续任务**。点击**确定**保存操作。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/waitforqualitygate_set.png[,100%]
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_ready.png[,100%]
+
+
+=== 阶段 4：构建并推送镜像
+
+. 点击前一个阶段右侧的加号图标添加一个新的阶段，以构建并推送镜像至 Docker Hub。将其命名为 **Build and Push**。
+
+. 在 **Build and Push** 中，点击**添加步骤**，选择**指定容器**，将其命名为 **maven**，然后点击**确定**。
+
+. 点击 **maven** 容器步骤下的**添加嵌套步骤**，在列表中选择 **shell** 并在弹出窗口中输入以下命令，点击**确定**完成操作。
++
+--
+[,bash]
+----
+mvn -Dmaven.test.skip=true clean package
+----
+--
+
+. 再次点击**添加嵌套步骤**，选择 **shell**。在命令行中输入以下命令，以根据 link:https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online[Dockerfile] 构建 Docker 镜像。点击**确定**确认操作。
++
+--
+[,bash]
+----
+docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER .
+----
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png[,100%]
+--
+
+. 再次点击**添加嵌套步骤**，选择**添加凭证**。在弹出的对话框中填写以下字段，点击**确定**确认操作。
++
+--
+* **凭证名称**：选择您创建的 Docker Hub 凭证，例如 **dockerhub-id**。
+* **用户名变量**：输入 **DOCKER_USERNAME**。
+* **密码变量**：输入 **DOCKER_PASSWORD**。
+
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png[,100%]
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+出于安全原因，账户信息在脚本中显示为变量。
+
+|===
+--
+
+. 在**添加凭证**步骤中点击**添加嵌套步骤**（第一个）。选择 **shell** 并在弹出窗口中输入以下命令，用于登录 Docker Hub。点击**确定**确认操作。
++
+--
+[,bash]
+----
+echo "$DOCKER_PASSWORD"|docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
+----
+
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png[,100%]
+--
+
+. 在**添加凭证**步骤中点击**添加嵌套步骤**。选择 **shell** 并输入以下命令，将 SNAPSHOT 镜像推送至 Docker Hub。点击**确定**完成操作。
++
+--
+[,bash]
+----
+docker push $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
+----
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png[,100%]
+--
+
+=== 阶段 5：生成制品
+
+. 点击 **Build and Push** 阶段右侧的加号图标添加一个新的阶段，以保存制品，将其命名为 **Artifacts**。本示例使用 JAR 文件包。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_artifact_stage.png[,100%]
+
+. 选中 **Artifacts** 阶段，点击**添加步骤**，选择**保存制品**。在弹出的对话框中输入 **target/*.jar**，将其设置为 Jenkins 中制品的保存路径。点击**确定**完成操作。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/artifact_info.png[,100%]
+
+// === 阶段 6：部署至开发环境
+
+// . 点击 **Artifacts** 阶段右侧的加号图标添加最后一个阶段，将其命名为 **Deploy to Dev**。该阶段用于将资源部署至您的开发环境（即 **kubesphere-sample-dev** 项目）。
+// +
+// image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/deploy_to_dev.png[,100%]
+
+// . 点击 **Deploy to Dev** 阶段下的**添加步骤**，在列表中选择**审核**，然后在**消息**字段中填入 **@project-admin**，即 **project-admin** 账户在流水线运行到该阶段时会进行审核。点击**确定**保存操作。
+// +
+// --
+// image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/input_message.png[,100%]
+// //note
+// [.admon.note,cols="a"]
+// |===
+// |说明
+
+// |
+// 在{ks_product_both}中，能够运行流水线的账户也能够继续或终止该流水线。
+
+// 此外，流水线创建者、拥有该项目管理员角色的用户或者您指定的账户也有权限继续或终止流水线。
+
+// |===
+// --
+
+// . 再次点击 **Deploy to Dev** 阶段下的**添加步骤**。在列表中选择**指定容器**，将其命名为 **maven**，然后点击**确定**。
+
+// . 点击 **maven** 容器步骤下的**添加嵌套步骤**。在列表中选择**添加凭证**，在弹出的对话框中填写以下字段，然后点击**确定**。
+// +
+// --
+// * 凭证名称：选择您创建的 kubeconfig 凭证，例如 **demo-kubeconfig**。
+
+// * kubeconfig 变量：输入 **KUBECONFIG_CONTENT**。
+// --
+
+// . 点击**添加凭证**步骤下的**添加嵌套步骤**。在列表中选择 **shell**，在弹出的对话框中输入以下命令，然后点击**确定**。
+// +
+// --
+// [,bash]
+// ----
+// mkdir ~/.kube
+// echo "$KUBECONFIG_CONTENT" > ~/.kube/config
+// envsubst < deploy/no-branch-dev/devops-sample-svc.yaml | kubectl apply -f -
+// envsubst < deploy/no-branch-dev/devops-sample.yaml | kubectl apply -f -
+// ----
+// --
+
+// . 如果想在流水线运行成功时接收电子邮件通知，请点击**添加步骤**，选择**邮件**，以添加电子邮件信息。注意，配置电子邮件服务器是可选操作，如果跳过该步骤，依然可以运行流水线。
+// +
+// --
+// //note
+// [.admon.note,cols="a"]
+// |===
+// |说明
+
+// |
+// 有关配置电子邮件服务器的更多信息，请参阅link:../09-jenkins-email/[为{ks_product_both}流水线设置电子邮件服务器]。
+
+// |===
+// --
+
+// . 待完成上述步骤，在右下角点击**确定**，结束编辑流水线。该流水线将展示完整的工作流，并且清晰列示每个阶段。
+// +
+// --
+// 在用图形编辑面板定义流水线时，DevOps 会自动创建相应的 Jenkinsfile。点击**编辑 Jenkinsfile** 查看该 Jenkinsfile。
+
+// //note
+// [.admon.note,cols="a"]
+// |===
+// |说明
+
+// |
+// 在**流水线**列表页面，点击该流水线右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**复制**来创建该流水线的副本。
+// |===
+// --
+
+== 步骤 4：运行流水线
+
+. 使用图形编辑面板创建的流水线需要手动运行。点击**运行**，弹出的对话框会显示link:#_步骤_2创建流水线[步骤 2：创建流水线]中已定义的三个字符串参数。点击**确定**来运行流水线。
+// . 使用图形编辑面板创建的流水线需要手动运行。点击**运行**，弹出的对话框会显示link:#_步骤_3创建流水线[步骤 3：创建流水线]中已定义的三个字符串参数。点击**确定**来运行流水线。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/run_pipeline.png[,100%]
+
+. 点击**运行记录**页签，查看流水线的运行状态，点击记录查看详情。
+
+. 流水线如果运行到 **Push with Tag** 阶段，会在此阶段暂停，需要具有审核权限的用户点击**继续**。
+// . 稍等片刻，流水线如果运行成功，会在 **Deploy to Dev** 阶段停止。**project-admin** 作为流水线的审核员，需要进行审批，然后资源才会部署至开发环境。
+
+. 以 **project-admin** 用户登录{ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果要同时运行多个不包含多分支的流水线，在**流水线**列表页面，全部选中这些流水线，然后点击**运行**来批量运行它们。
+|===
+
+== 步骤 5：查看流水线详情
+
+. 以 **project-regular** 用户登录 {ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。
+
+. 在**运行记录**页签下，点击**状态**下的记录，进入**运行记录**详情页。如果任务状态为**成功**，流水线所有阶段都会显示**成功**。
+
+. 在**运行日志**页签下，点击每个阶段查看其详细日志。点击**查看完整日志**，根据日志排除故障和问题，也可以将日志下载到本地进行进一步分析。
+
+== 步骤 6：下载制品
+
+在**运行记录**详情页，点击**制品**页签，然后点击制品右侧的图标下载该制品。
+
+== 步骤 7：查看代码分析结果
+
+在**代码检查**页面，查看由 SonarQube 提供的本示例流水线的代码分析结果。如果没有事先配置 SonarQube，则该部分不可用。有关更多信息，请参阅link:../../../04-how-to-integrate/01-sonarqube/[将 SonarQube 集成到流水线]。
+
+== 步骤 8：验证 Kubernetes 资源
+
+如果流水线的每个阶段都成功运行，则会自动构建一个 Docker 镜像并推送至您的 Docker Hub 仓库。
+// 如果流水线的每个阶段都成功运行，则会自动构建一个 Docker 镜像并推送至您的 Docker Hub 仓库。最终，流水线会在您事先设置的项目中自动创建一个部署和一个服务。
+
+// . 进入项目（本示例中即 **kubesphere-sample-dev**），点击**应用负载**下的**工作负载**，查看流水线自动创建的部署。
+
+// . 点击**应用负载**下的**服务**，查看示例服务通过 NodePort 暴露的端口号。使用 **<Node IP>:<NodePort>** 访问该服务。
+// +
+// --
+// //note
+// [.admon.note,cols="a"]
+// |===
+// |说明
+
+// |
+// 访问服务前，您可能需要配置端口转发规则并在安全组中放行该端口。
+
+// |===
+// --
+
+. 流水线成功运行后，会推送一个镜像至 Docker Hub。登录 Docker Hub 查看结果。
++
+image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/dockerhub_image.png[,100%]
+
+. 该应用名称为 **APP_NAME** 的值，本示例中即 **devops-sample**。Tag 为 **SNAPSHOT-$BUILD_NUMBER** 的值，**$BUILD_NUMBER** 即**运行记录**页签下记录的**运行 ID**。
+
+// . 如果您在link:#_阶段_6部署至开发环境[阶段 6：部署至开发环境]配置了电子邮件服务器并添加了电子邮件信息，运行完成后还会收到邮件通知。

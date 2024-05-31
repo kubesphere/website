@@ -1,0 +1,64 @@
+---
+title: "编辑应用模板"
+weight: 04
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **应用**
+
+
+本节介绍如何编辑应用商店中的应用模板信息。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
+. 在需要编辑的应用模板右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑**。
+
+. 在**编辑信息**对话框设置应用模板的参数，然后点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|别名
+|应用的别名。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+
+|描述
+|应用的描述信息。描述可包含任意字符，最长 120 个字符。
+
+|图标
+|应用的图标。如果未设置应用模板的图标，系统将默认使用应用名称第一个字符大写作为图标。图标格式必须为 .png 或 .jpg，不能超过 96 x 96 像素和 20 KB。
+
+|应用分类
+|应用的功能分类。应用模板在上传到应用商店后将被自动划分到此处选择的分类下。
+
+|服务商网站
+|服务商的网站地址。从应用商店安装应用的用户可联系服务商获取技术支持。
+
+|应用截图
+|应用的介绍图片。最多支持上传 6 张截图，每张截图大小不能超过 2 MB。
+
+|应用介绍
+|应用的介绍信息。支持输入 markdown 格式的图文介绍。
+|===
+--

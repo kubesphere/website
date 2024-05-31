@@ -1,0 +1,92 @@
+---
+title: "配置云上存储设备"
+keywords: "Kubernetes, {ks_product}, 安装, 准备, 持久化存储, 云上存储设备"
+description: "介绍如何在生产环境中为{ks_product_both}集群配置云上存储设备。"
+weight: 01
+---
+
+
+本节介绍如何在生产环境中为{ks_product_both}配置云上存储设备。
+
+您可以在云环境中创建 API 密钥，并设置{ks_product_both}使用 API 密钥通过容器存储接口（CSI）与云环境对接。用户在{ks_product_both}平台上创建卷并将卷挂载到容器组时，{ks_product_right}将自动在云环境中创建存储设备供容器组使用。以下以青云QingCloud 为例介绍具体操作。有关其他云环境中的操作，请参阅云环境的用户指南或联系您的云服务提供商。
+
+
+== 前提条件
+
+您需要获取一个青云QingCloud 帐户，并确保帐户余额可以创建所需的存储设备。有关更多信息，请访问link:https://www.qingcloud.com/[青云QingCloud 官网]。
+
+
+== 操作步骤
+
+. 登录link:https://www.qingcloud.com/[青云QingCloud] 控制台，点击页面右上角的用户名，然后在下拉列表中选择 **API 密钥**。
+
+. 在 **API 密钥**页面，点击**创建**。
+
+. 在**创建API密钥**对话框，设置密钥的名称，然后点击**提交**。
+
+. 在弹出的对话框将私钥文件下载到本地。
++
+--
+// Warning
+include::../../../../../_ks_components/admonitions/warning.adoc[]
+
+{ks_product_right}将使用该私钥与云上的存储设备对接。请妥善保存该私钥文件以避免用户数据泄露。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+. 在 API 密钥列表中获取 API 密钥的 ID。
+
+. 登录用于执行{ks_product_both}安装操作的集群节点，执行以下命令创建存储插件配置文件：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+vi csi-qingcloud.yaml
+
+----
+--
+
+. 将以下信息添加到配置文件中，并保存文件供后续安装{ks_product_both}时使用：
++
+--
+// YAML
+include::../../../../../_ks_components/code/yaml.adoc[]
+
+config:
+  qy_access_key_id: "<key ID>"
+  qy_secret_access_key: "<access key>"
+  zone: "<zone ID>"
+sc:
+  isDefaultClass: true
+
+----
+
+将以下参数替换为实际值：
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|<key ID>
+|API 密钥的 ID。
+
+|<access key>
+|API 密钥的私钥文本。
+
+|<zone ID>
+|
+云环境的可用区 ID。可用区 ID 将决定{ks_product_both}创建的存储设备所在的区域。ID 取值和可用区的对应关系如下：
+
+* **sh1a/sh1b**：上海 1 区-A/上海 1 区-B
+
+* **pek3a/pek3b/pek3c/pek3d**：北京 3 区-A/北京 3 区-B/北京 3 区-C/北京 3 区-D
+
+* **gd2a/gd2b**：广东 2 区-A/广东 2 区-B
+
+* **ap2a**：亚太 2 区-A
+|===
+
+以上配置文件仅包含必须设置的参数。如需设置其他参数，请参阅 link:https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration[QingCloud CSI 配置]。
+--

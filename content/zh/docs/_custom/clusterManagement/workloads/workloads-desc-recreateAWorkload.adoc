@@ -1,0 +1,9 @@
+// :ks_include_id: 373ea79d7dc9465b90f0d8a7d6ae5062
+本节介绍如何重新创建工作负载。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+此操作将删除并重新创建工作负载中的所有容器组。新容器组创建完成前，工作负载中的业务将中断。请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

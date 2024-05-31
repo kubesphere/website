@@ -1,0 +1,2 @@
+// :ks_include_id: 898aac58171d423c9c51c2aa8c642c5e
+* 您需要获取 RadonDB ClickHouse 应用授权，并已安装 RadonDB ClickHouse。有关更多信息，请参阅 xref:19-radondb/01-radondb-clickhouse/01-install-radondb-clickhouse.adoc[安装 RadonDB ClickHouse]。

@@ -1,0 +1,9 @@
+// :ks_include_id: f294119a3b1a45a49ff83ed852f8fadd
+本节介绍如何删除持久卷声明。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+持久卷声明删除后不能恢复，并且默认情况下持久卷声明对应的持久卷也将被删除，请谨慎执行此操作以避免数据丢失。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

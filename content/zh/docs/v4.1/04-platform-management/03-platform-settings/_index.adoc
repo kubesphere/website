@@ -1,0 +1,7 @@
+---
+title: "平台设置"
+weight: 03
+---
+
+
+本节介绍如何管理{ks_product_left} Web 控制台的基本信息以及许可证。

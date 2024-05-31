@@ -1,0 +1,2 @@
+// :ks_include_id: 6113bcafa9264e92892a1889dbfe7330
+有关镜像构建器的更多信息，请参阅xref:07-project-management/08-image-builder/_index.adoc[镜像构建器]。

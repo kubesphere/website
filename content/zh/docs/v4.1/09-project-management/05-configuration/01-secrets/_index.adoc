@@ -1,0 +1,10 @@
+---
+title: "保密字典"
+keywords: "Kubernetes, {ks_product}, 项目管理, 配置, 保密字典"
+description: "介绍如何管理保密字典。"
+weight: 01
+---
+
+
+
+include::../../../../_custom/clusterManagement/secrets/secrets-desc-secrets.adoc[]

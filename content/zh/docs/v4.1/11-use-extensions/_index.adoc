@@ -1,0 +1,42 @@
+---
+title: "扩展组件使用"
+keywords: "Kubernetes, {ks_product}, 扩展组件, 使用指南, DevOps, DMP, whizard, 可观测组件"
+description: "介绍如何使用各个扩展组件。"
+weight: 11
+---
+
+ifeval::["{file_output_type}" == "html"]
+本节介绍如何使用{ks_product_both}的各个扩展组件。使用前，请先link:../06-extension-user-guide/01-install-components-pdf/[安装扩展组件]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+本节介绍如何使用{ks_product_both}的各个扩展组件。使用前，请参阅《{ks_product_right}扩展组件管理指南》，安装扩展组件。
+
+== 产品版本
+
+本文档适用于{ks_product_left} v4.1.0 版本。
+
+== 读者对象
+
+本文档主要适用于以下读者：
+
+* {ks_product_right}用户
+
+* 交付工程师
+
+* 运维工程师
+
+* 售后工程师
+
+
+== 修订记录
+
+[%header,cols="1a,1a,3a"]
+|===
+|文档版本 |发布日期 |修改说明
+
+|01
+|{pdf_releaseDate}
+|第一次正式发布。
+|===
+endif::[]

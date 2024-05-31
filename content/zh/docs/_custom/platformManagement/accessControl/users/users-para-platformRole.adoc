@@ -1,0 +1,3 @@
+// :ks_include_id: 6d1f98cd75794e74ac21e70c3d969a7b
+|平台角色
+|用户在{ks_product_both}平台的角色。平台角色将决定用户在{ks_product_both}的权限。

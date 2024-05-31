@@ -1,0 +1,52 @@
+---
+title: "查看集群可见性"
+keywords: "Kubernetes, {ks_product}, 集群管理, 集群可见性, 查看集群可见性"
+description: "介绍如何查看集群已授权给哪些企业空间。"
+weight: 01
+---
+
+:ks_permission: **集群设置查看**
+:ks_navigation: **集群设置 > 集群可见性**
+
+
+本节介绍如何查看集群已授权给哪些企业空间。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|集群可见性
+|集群是否对所有企业空间可见。
+
+|企业空间
+|已获得授权的企业空间。
+
+|管理员
+|企业空间的管理员。
+
+|授权时间
+|企业空间获得授权的时间。
+|===
+--

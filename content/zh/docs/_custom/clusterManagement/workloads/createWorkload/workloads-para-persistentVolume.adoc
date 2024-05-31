@@ -1,0 +1,14 @@
+// :ks_include_id: 1cf098581c104c40a442ab4ebc7be6ce
+为容器挂载持久卷。用于创建持久卷的持久卷声明必须属于容器所在的项目。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|选择持久卷声明
+|选择用于创建持久卷的持久卷声明。该持久卷声明必须属于容器所在项目。如果容器所在的项目中没有可用的持久卷声明，您需要提前创建一个持久卷声明。
+
+include::workloads-para-volumeMountModePath.adoc[]
+
+// include::workloads-para-containerLogPath.adoc[]
+|===

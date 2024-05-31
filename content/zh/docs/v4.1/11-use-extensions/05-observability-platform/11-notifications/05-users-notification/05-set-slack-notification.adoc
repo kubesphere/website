@@ -1,0 +1,50 @@
+---
+title: "设置 Slack 通知"
+keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 设置 Slack 通知"
+description: "介绍如何设置 Slack 通知。"
+weight: 05
+---
+
+
+// :ks_menu: **平台管理 > 平台设置**
+// :ks_navigation: **通知管理 > 通知渠道**
+
+
+本节介绍如何设置 Slack 通知。
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知管理**扩展组件。
+
+* 您需要提前从 Slack 平台获取应用访问参数。有关更多信息，请参阅 link:https://api.slack.com/messaging/webhooks#create_a_webhook[Slack 开发者文档]。
+
+
+== 操作步骤
+
+. 登录{ks_product_left} Web 控制台。
+
+. 在页面右上角点击当前用户名，然后在下拉列表中选择**通知设置**。
+
+. 在**通知设置**页面的 **Slack** 页签，设置 Slack 通知参数，然后点击**确定**。
+
++
+====
+// * 服务器设置
+// +
+// --
+// 设置用于访问 Slack 应用的令牌。
+// --
+
+* Slack 频道设置
++
+--
+设置接收通知的 Slack 频道。点击**添加**可设置多个 Slack 频道。
+--
+
+include::../../../../../_custom/platformManagement/platformSettings/notificationChannels/notificationChannels-para-notificationConditions_new.adoc[]
+
+include::../../../../../_custom/platformManagement/platformSettings/notificationChannels/notificationChannels-para-sendTestInformation.adoc[]
+====
+
+. 点击上方的**通知已禁用**开关，启用 Slack 通知。

@@ -1,0 +1,81 @@
+// :ks_include_id: 38b33a724ea748e79d4810f7d9fed6dd
+
+:toc: macro
+:toc-title: 目录
+:toclevels: 5
+:figure-caption!:
+:sectnums:
+:sectnumlevels: 5
+
+= {empty}
+
+[.top_left]
+{ks_product_right}{ks_doc_type}
+
+[.bottom_left]
+文档版本 01
+
+[.bottom_center]
+版权所有 © 北京青云科技股份有限公司
+
+[.cover_product_logo]
+--
+ifeval::["{ks_output_type}" == "md"]
+image::/images/ks-qkcp/pdf/kubesphere-logo.svg[]
+endif::[]
+ifeval::["{ks_output_type}" == "pdf"]
+image::/images/ks-qkcp/pdf/kubesphere-enterprise-logo.svg[]
+endif::[]
+--
+
+[.cover_doc_image]
+image::/images/ks-qkcp/pdf/cover_doc_image.svg[]
+
+[.cover_doc_name]
+{ks_product_full} +
+{ks_doc_type}
+
+[.cover_footer,cols="2a,1a"]
+|===
+
+|
+[.cover_qc_logo]
+image::/images/ks-qkcp/pdf/qingcloud-logo-color.png[]
+
+北京青云科技股份有限公司
+
+|
+文档版本：01
+
+发布日期：{ks_release_date}
+
+|===
+
+[.legal_info]
+--
+版权所有 © 北京青云科技股份有限公司 {ks_year}。保留所有权利。
+
+非经本公司书面许可，任何单位和个人不得摘抄、复制或以任何形式传播本文档的部分或全部内容。
+
+{empty} +
+
+**商标声明**
+
+image:/images/ks-qkcp/pdf/qingcloud-logo-icon.png[qincloud-logo-icon,18,18] 和其他青云商标均由北京青云科技股份有限公司拥有。
+
+本文档提及的其他商标或注册商标，由各自的所有人拥有。
+
+{empty} +
+
+**注意**
+
+本文档描述的部分产品、服务和特性可能不在您的购买或使用范围之内，您购买的产品、服务或特性应受青云公司商业合同和条款的约束。
+
+本文档内容会不定期进行更新。本文档仅作为使用指导，本文档中的所有陈述、信息和建议不构成任何明示或暗示的担保。
+
+{empty} +
+
+北京青云科技股份有限公司
+
+网址：link:https://www.qingcloud.com[]
+--

@@ -1,0 +1,2 @@
+// :ks_include_id: ac11303d404249078087f1c605445e15
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群。

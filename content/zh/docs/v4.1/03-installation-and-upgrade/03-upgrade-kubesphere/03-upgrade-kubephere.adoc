@@ -1,0 +1,491 @@
+---
+title: "升级 KubeSphere 企业版"
+keywords: "Kubernetes, {ks_product}, 安装, 升级{ks_product_left}"
+description: "介绍如何升级{ks_product_left}。"
+weight: 03
+---
+
+本节介绍如何在保持当前的 Kubernetes 版本不变的情况下从{ks_product_both} v3.5.0 升级到{ks_product_both} v4.1.0。
+
+
+== 前提条件
+
+* 您需要联系{ks_product_both}的服务支持团队获取{ks_product_left} v4.1.0 安装包，以及 license。
+
+// 如实施现场条件允许在线拉取公开仓库，具备在线安装条件，可联系 KubeSphere 产品团队获取在线安装文件及相关信息。
+
+* 请确保当前{ks_product_both}版本为 v3.5.0。如果您的{ks_product_both}版本低于 v3.5.0，请先将{ks_product_both}版本升级到 v3.5.0。
+
+* 请确保当前 Kubernetes 版本为 v1.21.x、v1.22.x、v1.23.x, v1.24.x, v1.25.x, v1.26.x, v1.27.x 或 v1.28.x。
+
+// :relfileprefix: ../../../
+
+// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-prer-offlineInstallation.adoc[]
+
+// :relfileprefix: ./
+
+* {empty}
+include::../../../_custom/installationAndUpgrade/installationAndUpgrade-prer-backUpData.adoc[]
+
+== 准备工作
+
+. 将{ks_product_both} v4.1.0 安装包传输到所有集群的节点上。
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+若想了解安装包中各个文件的作用，请参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/#_查看安装包内容[查看安装包内容]。
+|===
+
+. 使用 **backup.sh** 备份系统企业空间（system-workspace）下所有项目中的关键资源，以及备份所有自定义角色及权限相关资源。
++
+--
+执行以下命令开始备份。相关资源将备份至 **backup-$timestamp** 目录下。
+
+[,bash]
+----
+bash backup.sh
+----
+
+备份完成后，如下图所示。
+
+image:/images/ks-qkcp/zh/v4.1/backup.png[ backup, 100%]
+--
+
+. 联系{ks_product_both}的服务支持团队，根据当前集群的 cc.yaml 中的配置和 KubeSphere 组件的 patch 情况（如 cc.yaml 外的配置），确定升级时各组件使用的参数，然后创建 **ks-core-values.yaml** 文件。可参阅安装包中的 ks-core-values.yaml 示例文件。
++
+--
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+* 在 ks-core-values.yaml 文件中，可将集群中没有启用的组件设置为 enabled: false。core 和 iam 组件必须配置为 enabled: true，不可禁用。
+
+* 部分扩展组件在特定情况下（比如依赖外部服务的访问地址等），升级时不能使用**默认配置**，需手动配置一些字段。请参阅**组件升级配置文档**确认您的组件是否存在此问题，并在 ks-core-values.yaml 文件中做出相应修改。
+请在{ks_product_both} v4.1.0 用户文档中的**升级配置文档**文件夹下查阅“默认配置”和“组件升级配置文档”。
+
+|===
+--
+
+. 将安装包中的 **charts** 文件夹、以及创建的 **ks-core-values.yaml** 文件复制到 **upgrade.sh** 所在的 tools 目录。
+
+. 执行安装包中的脚本 **pre-check.sh**，检查是否满足升级条件，需确保所有检查项通过。如果检查未通过，后续升级很有可能失败。 
+
+
+== 单集群升级
+
+. 在 host 集群节点上，切换到安装包的 tools 目录（该目录需包含 **charts** 文件夹、**ks-core-values.yaml** 和 **upgrade.sh**）。
+
+. 执行以下命令开始升级{ks_product_left}。
++
+--
+[,bash]
+----
+bash upgrade.sh host
+----
+--
+
+. 参考以下步骤，检查 host 集群是否升级成功。
+
+.. 执行以下命令，upgrade job 应该是成功完成的状态，如下所示。
++
+[,bash]
+----
+root@xxx:~# kubectl -n kubesphere-system get job | grep upgrade
+ks-core-post-upgrade    1/1           16s        28m
+ks-core-pre-upgrade     1/1           58s        31m
+prepare-upgrade         1/1           26s        32m
+----
+
+.. 执行以下命令，如果显示如下信息，则表明 ks-core Helm Chart 已成功部署。
++
+[,bash]
+----
+root@xxx:~# helm list -n kubesphere-system 
+NAME    	NAMESPACE        	REVISION	UPDATED                                	STATUS  	CHART         	APP VERSION
+ks-core 	kubesphere-system	6       	2024-04-09 14:54:09.349488995 +0800 CST	deployed	ks-core-1.0.0	v4.1.0
+----
+
+.. 执行以下命令，pod（ks-apiserver, ks-console, ks-controller-manager）应该为 running 状态，如下所示。
++
+[,bash]
+----
+root@xxx:~# kubectl -n kubesphere-system get pod
+NAME                                     READY   STATUS      RESTARTS        AGE
+ks-apiserver-594bb884db-phrlv            1/1     Running     0               28m
+ks-console-7cd55dd9f9-f2jl9              1/1     Running     0               28m
+ks-controller-manager-785fc676dc-9d9j2   1/1     Running     0               28m
+----
+
+.. 执行以下命令，如果所有扩展组件的状态为 Installed，表明扩展组件都已成功安装。
++
+[,bash]
+----
+root@xxx:~# kubectl get installplan
+NAME            STATE
+storage-utils   Installed
+devops          Installed
+network         Installed
+...
+----
+
+.. 登录{ks_product_left} Web 控制台后，点击右上角用户名 > 关于，显示的平台版本应为 v4.1.0。
+
+. 使用原有的 Web 控制台的 IP 地址、管理员用户名和管理员密码，并使用网页浏览器登录 v4.1.0 的{ks_product_left} Web 控制台。
+
+. 根据激活提示点击**激活**，导入{ks_product_left}的 license。
+
+. 检查 host 集群各项功能和数据是否正常。
+
+
+== 多集群升级
+
+. 按照以上link:#_单集群升级[单集群升级]步骤完成 host 集群的升级。
+
+. 在 member 集群节点上，切换到安装包的 tools 目录（该目录需包含 **charts** 文件夹、**ks-core-values.yaml** 和 **upgrade.sh**）。
+
+. 执行以下命令开始升级{ks_product_left}。
++
+[,bash]
+----
+bash upgrade.sh member
+----
+
+. 参考以下步骤，检查 member 集群是否升级成功。
+
+.. 执行以下命令，upgrade job 应该是成功完成的状态，如下所示。
++
+[,bash]
+----
+root@xxx:~# kubectl -n kubesphere-system get job | grep upgrade
+ks-core-post-upgrade    1/1           16s        28m
+ks-core-pre-upgrade     1/1           58s        31m
+prepare-upgrade         1/1           26s        32m
+----
+
+.. 执行以下命令，如果显示如下信息，则表明 ks-core Helm Chart 已成功部署。
++
+[,bash]
+----
+root@xxx:~# helm list -n kubesphere-system 
+NAME    	NAMESPACE        	REVISION	UPDATED                                	STATUS  	CHART         	APP VERSION
+ks-core 	kubesphere-system	6       	2024-04-09 14:54:09.349488995 +0800 CST	deployed	ks-core-1.0.0	v4.1.0
+----
+
+.. 执行以下命令，ks-agent pod 应该为 running 状态，如下所示。
++
+[,bash]
+----
+root@xxx:~# kubectl -n kubesphere-system get pod
+NAME                          READY   STATUS      RESTARTS        AGE
+ks-agent-5dc5b57977-4x6mf     2/2     Running     0               59m
+----
+
+. member 集群升级成功后，在 host 集群上执行以下命令，修改 member 集群的状态，以便使扩展组件 agent 调度到 member 集群上。
++
+--
+[,bash]
+----
+kubectl get clusters.cluster.kubesphere.io {member-x} -o json | jq 'del(.status.conditions[] | select(.type=="Schedulable"))' | kubectl apply -f -
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+| 执行 `kubectl get cluster`，替换 `{member-x}`。
+
+|===
+
+如果节点没有 jq 命令，可通过编辑集群资源的方式实现，编辑 member 集群的 status.conditions 中 type 为 Schedulable 的 condition，将其 status 设置为 True。
+
+[,bash]
+----
+kubectl edit clusters.cluster.kubesphere.io {member-x}
+----
+
+[,yaml]
+----
+status:
+  conditions:
+  - lastTransitionTime: "2024-04-11T09:12:22Z"
+    lastUpdateTime: "2024-04-11T09:12:22Z"
+    message: Cluster has been initialized
+    reason: Initialized
+    status: "True"
+    type: Initialized
+  - lastTransitionTime: "2024-04-12T07:59:14Z"
+    lastUpdateTime: "2024-04-12T07:59:14Z"
+    message: Cluster has joined federation control plane successfully
+    status: "True"
+    type: Federated
+  - lastTransitionTime: "2024-04-12T08:02:56Z"
+    lastUpdateTime: "2024-04-12T08:02:56Z"
+    message: KS Core is available now
+    reason: KSCoreReady
+    status: "True"
+    type: KSCoreReady
+  - lastTransitionTime: "2024-04-12T08:02:56Z"
+    lastUpdateTime: "2024-04-12T08:02:56Z"
+    message: Not schedulable now
+    reason: Upgrading
+    status: "False"   # 修改此处即可
+    type: Schedulable
+  - lastTransitionTime: "2024-04-12T08:24:27Z"
+    lastUpdateTime: "2024-04-12T08:24:27Z"
+    message: Agent has connected to proxy successfully.
+    status: "True"
+    type: AgentAvailable
+  - lastTransitionTime: "2024-04-12T08:57:40Z"
+    lastUpdateTime: "2024-04-12T08:57:40Z"
+    message: Cluster is available now
+    reason: Ready
+    status: "True"
+    type: Ready
+----
+--
+
+. 登录 host 集群的{ks_product_left} Web 控制台，进入**集群管理**页面，检查此 member 集群的各项功能和数据是否正常。
+
+. 对下一个 member 集群继续执行以上步骤，直至完成所有集群的升级。
+
+== 升级后配置
+
+部分扩展组件，如 `KubeSphere 网关`、`WhizardTelemetry 监控`、`WhizardTelemetry 告警管理`、`WhizardTelemetry 通知管理`、`RadonDB DMP` 在升级后需进行额外配置，请参阅{ks_product_both} v4.1.0 用户文档中的**升级配置文档**文件夹下的**组件升级配置文档**进行配置。
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+请务必参阅**组件升级配置文档**对升级后的 `KubeSphere 网关` 扩展组件进行配置，否则无法使用网关相关功能。
+|===
+
+== 常见问题
+
+=== 无法操作未升级的 member 集群
+
+问题描述：host 集群升级到 v4.1.0 以后，无法在{ks_product_left} Web 控制台中查看和操作未升级的 member 集群。
+
+原因：v4.1.0 与 v3.5.0 有许多 API 不兼容导致。
+
+解决办法： 
+
+* 尽快升级 member 集群。
+* 可在 member 集群升级前，通过 member 集群的 Web 控制台直接访问 member 集群。
+
+=== member 集群的 Web 控制台无法登录
+
+问题描述：在升级 member 集群前，通过 member 集群的 Web 控制台无法登录任何用户，提示"incorrect username or password"。
+
+原因：{ks_product_right} v3.x 默认禁止直接访问 member 集群的 Web 控制台。
+
+解决办法： 
+
+. 执行以下命令，增加如下配置。
++
+--
+[,bash]
+----
+kubectl -n kubesphere-system edit cm kubesphere-config
+----
+
+[,yaml]
+----
+authentication:
+  oauthOptions:
+    accessTokenMaxAge: 0
+    clients:
+    - name: kubesphere
+      secret: kubesphere
+      redirectURIs:
+      - '*'
+----
+--
+
+. 执行以下命令重启 ks-apiserver，即可登录 member 集群的 Web 控制台。
++
+[,bash]
+----
+kubectl -n kubesphere-system rollout restart deployment ks-apiserver
+----
+
+=== 升级脚本异常退出
+
+问题描述：升级过程中，升级脚本异常退出，升级失败。
+
+解决办法：执行以下命令，查看升级 Job 日志，排查升级失败原因。
+
+[,bash]
+----
+kubectl -n kubesphere-system get job/prepare-upgrade
+
+kubectl -n kubesphere-system get pod |grep prepare-upgrade
+
+# 查看升级Job日志
+kubectl -n kubesphere-system logs prepare-upgrade-gvc6p
+----
+
+[,bash]
+----
+kubectl -n kubesphere-system get job/ks-core-pre-upgrade
+
+kubectl -n kubesphere-system get pod |grep ks-core-pre-upgrade
+
+# 查看升级Job日志
+kubectl -n kubesphere-system logs ks-core-pre-upgrade-4n7tp
+----
+
+[,bash]
+----
+kubectl -n kubesphere-system get job/ks-core-post-upgrade
+
+kubectl -n kubesphere-system get pod |grep ks-core-post-upgrade
+
+# 查看升级Job日志
+kubectl -n kubesphere-system logs ks-core-post-upgrade-4nzhk
+----
+
+=== 自定义角色的权限项为空
+
+问题描述：升级后，自定义角色的权限项为空，被赋予自定义角色的用户无法正常使用。
+
+解决办法：
+
+升级脚本 backup.sh 已帮助备份好自定义角色和自定义角色绑定，但由于权限变化，在升级时无法自动转换其权限，所以在升级后需要用户自行补充角色的权限。
+
+. 使用升级脚本备份后，在 `backup-$timestamp/kse35-backup-iam-xxx.yaml` 路径下查看已经备份的自定义角色。
+
+. 找到 `metadata.annotations[iam.kubesphere.io/aggregation-roles]`，用取到的值对比以下表格的 **3.x** 列中的名称，然后在{ks_product_left} Web 控制台找到对应的**描述**列中的权限名称。
++
+--
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+平台自定义角色请查阅以下**平台**表格，企业空间自定义角色请查阅以下**企业空间**表格，项目自定义角色请查阅以下**项目**表格，确认对应关系。
+|===
+--
+
+**示例：**
+
+已经备份好的平台自定义角色 `test` 的信息如下
+
+```yaml
+apiVersion: iam.kubesphere.io/v1alpha2
+kind: GlobalRole
+metadata:
+  annotations:
+    iam.kubesphere.io/aggregation-roles: '["role-template-view-roles","role-template-view-users","role-template-view-basic","role-template-manage-clusters","role-template-view-clusters"]'
+    kubesphere.io/alias-name: test-name
+    kubesphere.io/creator: admin
+  creationTimestamp: "2024-04-11T11:59:08Z"
+  generation: 3
+  name: test     #自定义角色的名称
+  resourceVersion: "529194"
+  uid: a3ad5e39-2959-4e14-aa8f-e0c0ad8e6889
+rules:
+    ...
+    ...
+``` 
+
+. 取到 `metadata.annotations[iam.kubesphere.io/aggregation-roles]` 的值，如下：
++
+```yaml
+'["role-template-view-roles","role-template-view-users","role-template-view-basic","role-template-manage-clusters","role-template-view-clusters"]'
+```
+
+. 对比以下**平台**表格，`metadata.annotations[iam.kubesphere.io/aggregation-roles]` 的各个值在表格的 **3.x** 列，对应的权限项在表格的**描述**列，故应该勾选**角色查看**、**用户查看**、**基础查看**、**集群管理**、**集群查看**。但因基础查看在 **4.1** 列被标记为 `none`，所以无法勾选**基础查看**。
+
+. 在{ks_product_left} Web 控制台的**平台角色**页面编辑 `test` 角色的权限。
++
+--
+image:/images/ks-qkcp/zh/v4.1/edit-permission.png[ edit-permission, 100%]
+
+勾选**角色查看**、**用户查看**、**集群管理**、**集群查看**。
+
+image:/images/ks-qkcp/zh/v4.1/check-permission.png[ check-permission, 100%]
+--
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+一些权限项在 v4.1.0 中已经移除，标记为 `none`。有些没有移除，但出于安全考虑无法再将此权限授权给自定义角色，标记为 `can not use`。标记为 `none` 或 `can not use` 的权限项，在编辑自定义角色的权限时，不能被勾选。
+|===
+
+
+**平台**
+[%header,cols="1a,2a,2a"]
+|===
+| 描述 | 3.x | 4.1
+
+|企业空间创建|role-template-create-workspaces| global-create-workspaces
+|应用模版管理|role-template-manage-app-templates |  `none`
+|集群管理|role-template-manage-clusters | global-manage-clusters
+|平台设置管理| role-template-manage-platform-settings | `can not use`
+|角色管理| role-template-manage-roles | `can not use`
+|用户管理|role-template-manage-users | `can not use`
+|企业空间管理|role-template-manage-workspaces | global-manage-workspaces
+|应用查看| role-template-view-app-templates | `none`
+|基础查看|role-template-view-basic | `none`
+|集群查看|role-template-view-clusters | global-view-clusters
+|角色查看|role-template-view-roles | global-view-roles
+|用户查看| role-template-view-users | global-view-users
+|企业空间查看|role-template-view-workspaces | global-view-workspaces
+|===
+
+**企业空间**
+[%header,cols="1a,2a,2a"]
+|===
+| 描述 | 3.x | 4.1
+
+|DevOps 项目创建|role-template-create-devops | workspace-create-devops
+|项目创建|role-template-create-projects | workspace-create-projects
+|应用仓库管理|role-template-manage-app-repos | workspace-manage-app-repos
+|应用模板管理|role-template-manage-app-templates | workspace-manage-app-templates
+|DevOps 项目管理|role-template-manage-devops | workspace-manage-devops
+|部门管理 |role-template-manage-groups | `none`
+|成员管理|role-template-manage-members | `can not use`
+|项目管理|role-template-manage-projects | workspace-manage-projects
+|角色管理|role-template-manage-roles | `can not use`
+|企业空间设置管理|role-template-manage-workspace-settings | `can not use`
+|应用仓库查看|role-template-view-app-repos | workspace-view-app-repos
+|应用模版查看|role-template-view-app-templates | workspace-view-app-templates
+|基础查看|role-template-view-basic | `none`
+|DevOps 项目查看|role-template-view-devops | workspace-view-devops
+|部门查看|role-template-view-groups | `none`
+|成员查看|role-template-view-members | workspace-view-members
+|角色查看|role-template-view-roles | workspace-view-roles
+|企业空间设置查看|role-template-view-workspace-settings | `can not use`
+|===
+
+**项目**
+
+[%header,cols="1a,2a,2a"]
+|===
+| 描述 | 3.x | 4.1
+
+|应用负载管理|role-template-manage-app-workloads | namespace-manage-app-workloads
+|配置字典管理|role-template-manage-configmaps | namespace-manage-configmaps
+|成员管理|role-template-manage-members | `can not use`
+|项目设置管理|role-template-manage-project-settings | namespace-manage-project-settings
+|角色管理|role-template-manage-roles | `can not use`
+|保密字典管理|role-template-manage-secrets | namespace-manage-secrets
+|服务账户管理|role-template-manage-serviceaccount | namespace-manage-serviceaccount
+|持久卷声明管理|role-template-manage-volumes | namespace-manage-persistentvolumeclaims
+|应用负载查看|role-template-view-app-workloads | namespace-manage-app-workloads
+|基础查看|role-template-view-basic|`none`
+|配置字典查看|role-template-view-configmaps | namespace-view-configmaps
+|成员查看|role-template-view-members | namespace-view-members
+|角色查看|role-template-view-roles | namespace-view-roles
+|保密字典查看|role-template-view-secrets | namespace-view-secrets
+|服务账户查看|role-template-view-serviceaccount | namespace-view-serviceaccount
+|持久卷声明查看|role-template-view-volumes | namespace-view-persistentvolumeclaims
+|===
+

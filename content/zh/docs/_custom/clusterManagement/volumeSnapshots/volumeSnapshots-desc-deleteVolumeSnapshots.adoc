@@ -1,0 +1,9 @@
+// :ks_include_id: 3603af7c772d428bb6e514c29c8eb747
+本节介绍如何删除卷快照。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+卷快照删除后不能恢复，请谨慎执行此操作以免数据丢失。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

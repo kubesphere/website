@@ -1,0 +1,21 @@
+---
+title: "Gatekeeper"
+weight: 20
+---
+
+link:https://github.com/open-policy-agent/gatekeeper[Gatekeeper] 是一个用于 Kubernetes 可灵活配置策略的准入控制器，利用 link:https://www.openpolicyagent.org/[Open Policy Agent (OPA)] 验证在 Kubernetes 集群上创建和更新资源的请求。
+
+// Gatekeeper 可以根据 Gatekeeper 验证策略对集群中的资源进行验证。参阅：https://open-policy-agent.github.io/gatekeeper-library/website/
+
+link:https://open-policy-agent.github.io/gatekeeper-library/website/[OPA Gatekeeper Library] 提供了一些常用的安全准入策略，其中包含一系列可在 Gatekeeper 使用的约束模板（ConstraintTemplates）和约束（Constraints）。约束模板可直接应用于集群，约束可用于定制策略，以满足您的特定需求。
+
+借助 Gatekeeper 灵活地定义准入策略，在集群层面强制执行安全准入审查，从而确保 Kubernetes 集群的稳定性和安全合规。
+
+Gatekeeper 的主要特性包括：
+
+* **灵活**: Gatekeeper 允许用户声明式的定义准入策略，作用于选定的 namespace 与选定的资源类型。
+* **可编程**: Gatekeeper 使用 Open Policy Agent（OPA）作为决策引擎，可借助 Rego 实现复杂的安全策略定义。
+* **滚动发布**: 支持以循序渐进的方式逐步执行准入策略，从而规避中断工作负载的风险。
+* **预发布机制**: Gatekeeper 提供在强制执行之前测试安全策略影响和范围的机制。
+
+

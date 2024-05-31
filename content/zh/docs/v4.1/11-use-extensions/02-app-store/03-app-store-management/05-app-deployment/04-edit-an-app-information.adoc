@@ -1,0 +1,38 @@
+---
+title: "编辑应用信息"
+weight: 04
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **部署管理**
+
+本节介绍如何编辑已部署应用的信息。
+
+您可以编辑应用的别名和描述。{ks_product_right}不支持编辑已部署应用的名称。
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在需要编辑的应用右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑信息**。
+
+. 在**编辑信息**对话框设置应用的别名和描述，然后点击**确定**。

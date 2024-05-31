@@ -1,0 +1,16 @@
+// :ks_include_id: 4193b7c9a87a4a178301d417f9773e57
+. 以具有相关资源查看权限的用户登录{ks_product_left} Web 控制台。
+
+. 将光标悬停在页面右下角的image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18]图标，然后在菜单中选择**容器日志查询**、**资源事件查询**或**审计日志查询**。
+
+. 在弹出的对话框，设置搜索条件查询日志。
++
+--
+* 如果已启用多集群功能，点击**集群**下拉列表可查询特定集群中的日志。
+
+* 点击搜索框，设置搜索条件，然后按 **Enter** 可查看符合特定条件的日志。您可以同时设置多个搜索条件。
+
+* 在查询结果页面可查看日志的时间分布图，点击image:/images/ks-qkcp/zh/icons/start-dark.svg[start-dark,18,18]/image:/images/ks-qkcp/zh/icons/stop-dark-white.svg[stop-dark-white,18,18]可开启/停止实时数据刷新，点击**日志导出**下拉列表可选择正序或倒序导出容器日志，点击**刷新频率**的时间可选择数据的刷新频率。
+
+* 在查询结果列表右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]可定制列表中显示的信息。
+--

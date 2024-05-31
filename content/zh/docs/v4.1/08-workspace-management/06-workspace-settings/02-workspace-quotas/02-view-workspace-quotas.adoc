@@ -1,0 +1,38 @@
+---
+title: "查看企业空间配额"
+keywords: "Kubernetes, {ks_product}, 企业空间, 企业空间设置, 企业空间配额, 查看企业空间配额"
+description: "介绍如何查看企业空间配额。"
+weight: 02
+---
+
+:ks_permission: **企业空间设置查看**
+:ks_navigation: **企业空间设置 > 企业空间配额**
+
+
+本节介绍如何查看企业空间配额。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
++
+--
+**企业空间配额**页面显示授权给企业空间的各集群的资源配额信息：
+
+include::../../../../_custom/workspaceManagement/workspace-quotas/workspaceQuotas-para-cpuMemoryQuotas.adoc[]
+--

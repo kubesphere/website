@@ -1,0 +1,10 @@
+---
+title: "集群设置"
+keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置"
+description: "介绍如何管理集群设置。"
+weight: 09
+---
+
+
+
+本节介绍如何管理集群设置。

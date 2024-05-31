@@ -1,0 +1,10 @@
+// :ks_include_id: 0c5011c424e145ec95155aed67c9fccb
+|镜像
+|
+创建容器所需的镜像。
+
+* 输入镜像的名称（例如 **nginx:latest**）或路径（例如 **docker.io/nginx:latest**），然后按 **Enter** 键可搜索镜像。
+
+* 如果您只输入镜像的名称，默认情况下将从 Docker Hub 拉取镜像。如需使用私有镜像服务，您需要创建包含私有镜像服务信息的保密字典，然后在**镜像**文本框左侧选择私有镜像服务。
+
+* 点击image:/images/ks-qkcp/zh/icons/templet.svg[template,18,18]可浏览当前镜像服务中的镜像。

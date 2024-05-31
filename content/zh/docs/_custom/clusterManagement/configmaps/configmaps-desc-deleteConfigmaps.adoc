@@ -1,0 +1,9 @@
+// :ks_include_id: 7758d91595c844e4b4614bb148e72c76
+本节介绍如何删除配置字典。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+配置字典删除后不能恢复，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

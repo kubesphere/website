@@ -1,0 +1,9 @@
+---
+title: "多集群管理"
+keywords: "Kubernetes, {ks_product}, 多集群管理, 集群"
+description: "介绍如何使用主集群的 Web 控制台管理多个集群。"
+weight: 01
+---
+
+
+本节介绍如何使用主集群的 Web 控制台管理多个集群。

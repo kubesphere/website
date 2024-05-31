@@ -1,0 +1,49 @@
+---
+title: "删除应用路由"
+keywords: "Kubernetes, {ks_product}, 集群管理, 应用负载, 应用路由, 删除应用路由"
+description: "介绍如何删除应用路由。"
+weight: 08
+---
+
+:ks_permission: **应用负载管理**
+:ks_navigation: **应用负载 > 应用路由**
+
+
+include::../../../../_custom/clusterManagement/routes/routes-desc-deleteMultipleRoutes.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 删除单个应用路由
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/routes/routes-oper-deleteASingleRoute.adoc[]
+
+
+== 批量删除应用路由
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/routes/routes-oper-deleteRoutes.adoc[]

@@ -1,0 +1,2 @@
+// :ks_include_id: 66c1533ca6e84872b4cfbedc6db42824
+. 将安装配置文件 **config-sample.yaml** 传输到当前目录。

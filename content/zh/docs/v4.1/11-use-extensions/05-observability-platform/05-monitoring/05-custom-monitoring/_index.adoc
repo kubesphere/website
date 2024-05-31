@@ -1,0 +1,18 @@
+---
+title: "自定义监控"
+keywords: "Kubernetes, {ks_product}, 集群管理, 自定义监控面板"
+description: "介绍如何使用自定义监控面板。"
+weight: 05
+---
+
+
+
+include::../../../../../_custom/clusterManagement/customMonitoringDashboards/customMonitoringDashboards-desc-customMonitoringDashboards.adoc[]
+
+include::../../../../../_custom/clusterManagement/customMonitoringDashboards/customMonitoringDashboards-desc-howToUse.adoc[]
+
+include::../../../../../_custom/clusterManagement/customMonitoringDashboards/customMonitoringDashboards-desc-exposeMetrics.adoc[]
+
++
+
+include::../../../../../_custom/clusterManagement/customMonitoringDashboards/customMonitoringDashboards-oper-useCustomMonitoringDashboard.adoc[]

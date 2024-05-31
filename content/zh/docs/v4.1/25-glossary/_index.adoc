@@ -1,0 +1,8 @@
+---
+title: "术语表"
+weight: 25
+keywords: 'Kubernetes, KubeSphere, 术语表, 词汇表'
+description: 'KubeSphere 中使用的术语表。'
+---
+
+本术语表包含 KubeSphere 中专有的通用术语和技术术语。

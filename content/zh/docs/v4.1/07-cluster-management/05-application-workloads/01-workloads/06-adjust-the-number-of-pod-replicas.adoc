@@ -1,0 +1,40 @@
+---
+title: "调整容器组副本数量"
+keywords: "Kubernetes, {ks_product}, 集群管理, 应用负载, 工作负载, 调整容器组副本数量"
+description: "介绍如何调整工作负载的容器组副本数量。"
+weight: 06
+---
+
+:ks_permission: **应用负载管理**
+:ks_navigation: **应用负载 > 工作负载**
+
+
+include::../../../../_custom/clusterManagement/workloads/workloads-desc-adjustTheNumberOfPodReplicas.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/workloads/workloads-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/workloads/workloads-oper-adjustTheNumberOfPodReplicas.adoc[]

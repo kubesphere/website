@@ -1,0 +1,63 @@
+---
+title: "查看集群列表"
+keywords: "Kubernetes, {ks_product}, 多集群管理, 集群, 查看集群列表"
+description: "介绍如何查看集群列表。"
+weight: 02
+---
+
+:ks_menu: **集群管理**
+:ks_permission: **集群查看**
+
+
+本节介绍如何查看集群列表。
+
+
+== 前提条件
+
+您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。
+
+
+== 操作步骤
+
+include::../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 点击**集群管理**。
+
+====
+* 集群列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称、标识和描述
+|集群的名称、标识和描述信息。
+
+|节点数量
+|集群中服务器节点的数量。
+
+|Kubernetes 版本
+|集群中运行的 Kubernetes 版本。
+
+|提供商
+|集群环境的提供商。
+
+|标签
+|集群的标签，用于对集群进行分类管理。
+
+|创建时间
+|集群加入{ks_product_left} Web 控制台的时间。
+|===
+--
+
+* 在列表上方点击搜索框并设置搜索条件，可按名称、类型或标签搜索集群。
+
+include::../../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components/oper-customizeColumns.adoc[]
+
+
+* 点击集群的名称可进入集群管理集群中的资源。
+
+====

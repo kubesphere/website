@@ -1,0 +1,58 @@
+---
+title: "查看项目列表"
+keywords: "Kubernetes, {ks_product}, 集群管理, 项目, 查看项目列表"
+description: "介绍如何查看项目列表。"
+weight: 02
+---
+
+:ks_permission: **项目查看**
+:ks_navigation: **项目**
+
+
+include::../../../_custom/workspaceManagement/projects/projects-desc-viewProjectList.adoc[]
+
+
+== 前提条件
+
+:relfileprefix: ../../../
+
+include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../_custom/clusterManagement/projects/projects-oper-openListPage.adoc[]
+
++
+====
+* 项目列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::../../../_custom/workspaceManagement/projects/projects-para-projectList_new.adoc[]
+
+|企业空间
+|项目所属的企业空间。
+|===
+--
+
+include::../../../_custom/workspaceManagement/projects/projects-oper-searchForProjects.adoc[]
+
+include::../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../_ks_components/oper-customizeColumns.adoc[]
+====

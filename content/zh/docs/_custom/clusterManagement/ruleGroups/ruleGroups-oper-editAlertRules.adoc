@@ -1,0 +1,12 @@
+// :ks_include_id: af3bb03cf3e148bfa42409178889df61
+. 在**编辑告警规则**对话框，编辑已有的告警规则或创建新告警规则，然后点击**确定**。
++
+--
+* 将光标悬停在已有的告警规则上，点击切换开关可启用/禁用告警规则。
+
+* 将光标悬停在已有的告警规则上，点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除告警规则。
+
+* 将光标悬停在已有的告警规则上，点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18]可修改告警规则的设置。
+
+* 点击**添加告警规则**可创建新告警规则。
+--

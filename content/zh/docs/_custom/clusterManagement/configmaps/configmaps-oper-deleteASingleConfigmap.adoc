@@ -1,0 +1,4 @@
+// :ks_include_id: 971bac7a7fb84650bc6d4d9712a6b6b3
+. 在需要删除的配置字典右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除配置字典**对话框，输入配置字典的名称，然后点击**确定**。

@@ -1,0 +1,17 @@
+---
+title: "快捷访问"
+weight: 02
+---
+
+本节介绍如何添加或移除对集群、企业空间、项目等资源的快捷访问，以便快速进入对应资源的管理页面。
+
+== 前提条件
+
+已获取{ks_product_left} Web 控制台的用户名和密码。
+
+== 操作步骤
+
+. 登录{ks_product_left} Web 控制台。
+. 在集群列表、企业空间列表、项目列表页面，点击image:/images/ks-qkcp/zh/icons/star_none.svg[star_none,18,18]，即可添加对应资源到**工作台**的**快捷访问**区域。点击image:/images/ks-qkcp/zh/icons/star.svg[star,18,18]，即可从快捷访问中移除该资源。
++
+也可在**快捷访问**区域点击image:/images/ks-qkcp/zh/icons/star.svg[star,18,18]，移除已添加的资源。

@@ -1,0 +1,5 @@
+[.admon.warning,cols="a"]
+|===
+|警告
+
+|

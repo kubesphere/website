@@ -1,0 +1,2 @@
+// :ks_include_id: 6b8a73ad04964146b89763171c730adf
+* 您需要获取 RadonDB Kafka 应用授权，并已安装 RadonDB Kafka。有关更多信息，请参阅 xref:19-radondb/03-radondb-kafka/02-install-radondb-kafka.adoc[安装 RadonDB Kafka]。

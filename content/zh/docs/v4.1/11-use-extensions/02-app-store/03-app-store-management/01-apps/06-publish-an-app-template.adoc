@@ -1,0 +1,47 @@
+---
+title: "上架应用模板"
+weight: 06
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **应用**
+
+
+本节介绍如何上架应用模板。
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+在上架应用模板之前，其所包含的应用版本必须至少有一个是**已发布**状态。
+|===
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
+. 在应用模板详情页面左上角点击**上架**。
++
+应用成功上架后，可在页面左上角的**应用商店**页面查看该应用。{ks_product_right}平台的所有项目都可以安装该应用。

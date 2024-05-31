@@ -1,0 +1,99 @@
+---
+title: "移除成员集群"
+keywords: "Kubernetes, {ks_product}, 多集群管理, 集群, 移除成员集群"
+description: "介绍如何移除成员集群。"
+weight: 06
+---
+
+:ks_menu: **集群管理**
+
+
+本节介绍如何移除成员集群。
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+* 主集群无法移除。
+
+* 成员集群移除后，{ks_product_right}将无法管理该集群。集群中原有的 Kubernetes 资源将不会被删除。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+// Warning
+include::../../../../../_ks_components/admonitions/warning.adoc[]
+
+集群被移除后，集群中原有的多集群配置数据不会被自动清除，卸载{ks_product_both}或删除关联资源时可能会导致用户数据丢失。请务必在被移除的集群上执行link:#_清理多集群配置数据[清理多集群配置数据]步骤。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+您需要在主集群和需要移除的成员集群都具有 **platform-admin** 角色。
+
+
+
+== 通过 Web 控制台移除集群
+
+include::../../../../_custom/platformManagement/multiclusterManagement/clusters/clusters-oper-logInToHost.adoc[]
+
+. 点击**集群管理**。
+
+. 在需要操作的集群右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**移除集群**。
+
+. 在**移除集群**对话框，确认需要移除的集群的信息，将滑块拖动到右侧，输入需要移除的集群的名称，根据需要选择或取消选择**删除集群中的所有通知配置数据**，然后点击**确定**。
++
+--
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+在多集群系统中，主集群上的通知渠道、静默规则、通知语言等配置数据会自动同步到成员集群。如果移除集群时未选择**删除集群中的所有通知配置数据**，集群被移除后仍将按照原有的配置发送通知。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+
+== 通过命令行移除集群
+
+某些情况下可能无法从 Web 控制台移除成员集群。例如，成员集群的凭证存在错误。在此情况下，您可以执行以下步骤通过命令行移除不健康的成员集群：
+
+include::../../../../_custom/platformManagement/multiclusterManagement/clusters/clusters-oper-logInToHost.adoc[]
+
++
+
+include::../../../../_custom/platformManagement/extensionManagement/extensionManagement-oper-openKubectl.adoc[]
+
++
+
+. 在 **kubectl** 对话框，执行以下命令移除成员集群（将 <cluster name> 替换为成员集群的名称）：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+kubectl delete cluster <cluster name>
+
+----
+--
+
+
+== 清理多集群配置数据
+
+. 以具有 **platform-admin** 角色的用户登录被移除集群的 Web 控制台。
+
++
+
+include::../../../../_custom/platformManagement/extensionManagement/extensionManagement-oper-openKubectl.adoc[]
+
++
+
+. 在 **kubectl** 对话框，执行以下命令清理集群中的多集群配置数据：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+for ns in $(kubectl get ns --field-selector status.phase!=Terminating -o jsonpath='{.items[*].metadata.name}'); do kubectl label ns $ns kubesphere.io/workspace- && kubectl patch ns $ns --type merge -p '{"metadata":{"ownerReferences":[]}}'; done
+
+----
+--

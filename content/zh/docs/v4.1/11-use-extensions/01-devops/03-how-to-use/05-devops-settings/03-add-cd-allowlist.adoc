@@ -1,0 +1,31 @@
+---
+title: "添加持续部署白名单"
+keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps"
+description: "介绍如何管理 DevOps 项目，以及如何在 DevOps 项目中管理流水线和 DevOps 项目设置。"
+weight: 03
+---
+
+
+{ks_product_right}支持通过设置白名单，限制资源持续部署的代码仓库和目标位置。
+
+本文档介绍如何添加持续部署白名单。
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **DevOps** 扩展组件。
+
+* 已有一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../02-role-and-member-management[角色和成员管理]。
+
+* 已link:../../04-import-code-repositories/[导入代码仓库]。
+
+== 操作步骤
+
+. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+
+. 点击**企业空间管理**并进入您的 DevOps 项目。
+
+. 在左侧导航栏，选择 **DevOps 项目设置 > 基本信息**。
+
+. 在右侧**基本信息**下的**持续部署白名单**区域，点击**编辑白名单**。
+
+. 在弹出的**编辑白名单**对话框，选择代码仓库、部署集群和项目，点击**确定**。点击**添加**可添加多个代码仓库和部署位置。

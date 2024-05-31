@@ -1,0 +1,27 @@
+---
+title: "同步和设置云账号"
+keywords: "Kubernetes, {ks_product},同步,设置,KubeSphere Cloud,云账号"
+description: "介绍如何同步和设置 KubeSphere 云账号。"
+weight: 01
+---
+
+本节介绍如何在扩展中心同步和设置 KubeSphere 云账号。
+ 
+== 前提条件
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../05-users-and-roles/01-users/[用户]和link:../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+* 您需要在扩展中心授权登录 KubeSphere 云账号。
+
+== 同步云账号
+
+完成组件订阅后，若扩展中心的组件列表未更新，您可能需要手动同步订阅信息。
+
+. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
+. 点击**扩展中心**。
+. 点击组件列表右上角的云账号头像，选择**同步云账户**，即可在组件列表查看您已订阅的所有组件。
+
+== 设置云账号
+. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
+. 点击**扩展中心**。
+. 点击组件列表右上角的云账号头像，选择**云账户设置**。
+. 设置账号信息、安全验证、支付货币等。

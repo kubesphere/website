@@ -1,0 +1,4 @@
+// :ks_include_id: bed3eb4cd7fa441990451420cd9a8ed4
+* **Headless**：系统不为服务分配虚拟 IP 地址，可通过 `<service name>.<project name>.svc.cluster.local` 或 `<service name>.<project name>` 格式的域名从集群内部访问。
+
+* **VirtualIP**：系统为服务分配一个虚拟 IP 地址供集群内部访问，同时也支持通过 `<service name>.<project name>.svc.cluster.local` 或 `<service name>.<project name>` 格式的域名从集群内部访问。

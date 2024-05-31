@@ -1,0 +1,70 @@
+---
+title: "从应用模板部署应用"
+keywords: "Kubernetes, {ks_product}, 项目管理, 应用, 从应用模板安装应用"
+description: "介绍如何从应用模板安装应用。"
+weight: 10
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **部署管理**
+
+
+本节介绍如何在应用商店管理页面从应用模板部署应用。
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-clickCreate.adoc[]
+
++
+
+. 在**创建应用**对话框点击**从应用模板**。
+
+. 在**应用模板**页面，点击**当前企业空间**下拉列表，选择**当前企业空间**或一个应用仓库。
+
+. 点击需要使用的应用模板，然后点击**安装**。
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+应用模板由具有相关权限的企业空间成员创建，应用仓库由应用商店管理员创建。
+有关更多信息，请参阅link:../../../02-app-management/01-app-templates/01-create-an-app-template/[创建应用模板]和link:../../../03-app-store-management/04-app-repositories/01-add-an-app-repository/[添加应用仓库]。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
++
+
+include::../../../../../_custom/projectManagement/apps/apps-oper-installApp.adoc[]
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+有关应用功能参数的更多信息，请联系相关企业空间成员或应用的提供方。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+应用创建完成后将显示在应用列表中。
+--

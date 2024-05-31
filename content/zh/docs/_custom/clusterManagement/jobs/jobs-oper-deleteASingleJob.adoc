@@ -1,0 +1,4 @@
+// :ks_include_id: 3e648f1c3f8d41a0a4ff221ad9efd72d
+. 在需要删除的任务右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除任务**对话框，输入任务的名称，然后点击**确定**。

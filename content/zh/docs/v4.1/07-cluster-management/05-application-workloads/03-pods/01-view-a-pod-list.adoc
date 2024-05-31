@@ -1,0 +1,44 @@
+---
+title: "查看容器组列表"
+keywords: "Kubernetes, {ks_product}, 集群管理, 应用负载, 容器组, 查看容器组列表"
+description: "介绍如何查看容器组列表。"
+weight: 01
+---
+
+:ks_permission: **应用负载查看**
+:ks_navigation: **应用负载 > 容器组**
+
+
+include::../../../../_custom/clusterManagement/pods/pods-desc-viewAPodList.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
++
+====
+include::../../../../_custom/clusterManagement/pods/pods-para-podList.adoc[]
+
+* 在列表左上角的下拉列表中选择一个项目，可以查看特定项目中的容器组。
+
+include::../../../../_custom/clusterManagement/pods/pods-oper-searchForPods.adoc[]
+
+include::../../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components/oper-customizeColumns.adoc[]
+====

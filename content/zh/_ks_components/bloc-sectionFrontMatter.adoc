@@ -1,0 +1,20 @@
+// :ks_include_id: 63fbc621a65f4bf38d109b72a71cf170
+
+
+ifeval::["{ks_output_type}" == "md"]
+[subs=attributes]
+++++
+---
+title: "{ks_title}"
+linkTitle: "{ks_title}"
+keywords: "{ks_keywords}"
+description: "{ks_description}"
+weight: {ks_weight}
+layout: "second"
+icon: "{ks_icon}"
+---
+++++
+endif::[]
+ifeval::["{ks_output_type}" == "pdf"]
+= {ks_title}link:[id={ks_xref_id}]
+endif::[]

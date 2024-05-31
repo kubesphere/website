@@ -1,0 +1,380 @@
+---
+title: "配置高可用性"
+keywords: "Kubernetes, {ks_product}, 安装, 准备, 高可用"
+description: "介绍如何在生产环境中为{ks_product_both}集群配置多个控制平面节点，以防止单个控制平面节点故障时集群服务中断，从而实现高可用性。"
+weight: 03
+---
+
+
+本节介绍如何在生产环境中为{ks_product_both}集群配置多个控制平面节点，以防止单个控制平面节点故障时集群服务中断，从而实现高可用性。如果您的{ks_product_both}集群没有高可用性需求，您可以跳过本节。
+
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+{ks_product_right}高可用性配置仅支持同时安装 Kubernetes 和{ks_product_both}的场景。如果您在现有的 Kubernetes 集群上安装{ks_product_left}，{ks_product_right}安装完成后将使用 Kubernetes 集群现有的高可用性配置。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+本节介绍以下高可用性配置方式：
+
+* 使用本地负载均衡配置。您可以在安装{ks_product_both}的过程中，设置 KubeKey 工具在工作节点上安装 HAProxy 作为各控制平面节点的反向代理，所有工作节点的 Kubernetes 组件将通过 HAProxy 连接各控制平面节点。这种方式需要额外的健康检查机制，所以相较其他方式运行效率有所降低，但可以用于没有专用负载均衡器且服务器数量有限的场景。
+
+* 使用专用负载均衡器。您可以使用云环境提供的负载均衡器作为各控制平面节点的反向代理。这种方式要求{ks_product_both}集群安装在云环境中，并且云环境可以提供专用负载均衡器。
+
+* 使用通用服务器作为负载均衡器。您可以在集群节点以外的 Linux 服务器上安装 Keepalived 和 HAProxy 作为负载均衡器。这种方式需要至少 2 台额外的 Linux 服务器。
+
+== 使用本地负载均衡配置
+
+如需使用 HAProxy 实现高可用性，只需要在安装{ks_product_both}时在安装配置文件 **config-sample.yaml** 中设置以下参数：
+
+// YAML
+include::../../../../_ks_components/code/yaml.adoc[]
+
+spec:
+  controlPlaneEndpoint:
+    internalLoadbalancer: haproxy
+    domain: lb.kubesphere.local
+    address: ""
+    port: 6443
+
+----
+
+KubeKey 将自动在工作节点上安装 HAProxy 并完成高可用配置，您无需进行其他操作。有关更多信息请参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere 企业版]。
+
+== 使用专用负载均衡器
+如需使用云环境提供的专用负载均衡器实现高可用性，您需要在云环境中进行以下操作：
+
+. 在云环境中创建一台至少包含两个副本的负载均衡器。
+
+. 设置负载均衡器监听{ks_product_both}集群各控制平面节点的 6443 端口。
+
+. 获取负载均衡器的 IP 地址，供后续安装{ks_product_both}时使用。
+
+有关具体操作，请参阅云环境的用户指南或联系您的云服务提供商。
+
+== 使用通用服务器作为负载均衡器
+以下介绍如何使用 Keepalived 和 HAProxy 将通用服务器配置成负载均衡器。
+
+
+=== 前提条件
+
+* 您需要准备 2 台与集群节点属于同一私有网络的 Linux 服务器，用作负载均衡器。
+
+* 您需要准备一个虚拟 IP 地址（VIP）用作 2 台负载均衡器服务器的浮动 IP 地址。该地址不应被其他设备或组件占用以免出现地址冲突。
+
+
+=== 配置高可用性
+
+. 登录用作负载均衡器的服务器，执行以下命令安装 HAProxy 和 Keepalived（以下以 Ubuntu 操作系统为例，在其他操作系统中请将 **apt** 替换为操作系统对应的软件包管理工具）：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+apt install keepalived haproxy psmisc -y
+
+----
+--
+
+. 执行以下命令编辑 HAProxy 的配置文件：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+vi /etc/haproxy/haproxy.cfg
+
+----
+--
+
+. 在 HAProxy 的配置文件中添加以下信息并保存文件（将 <IP address> 替换为{ks_product_both}集群各控制平面节点的私网 IP 地址）：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+global
+    log /dev/log  local0 warning
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     4000
+    user        haproxy
+    group       haproxy
+    daemon
+   
+   stats socket /var/lib/haproxy/stats
+   
+defaults
+  log global
+  option  httplog
+  option  dontlognull
+        timeout connect 5000
+        timeout client 50000
+        timeout server 50000
+   
+frontend kube-apiserver
+  bind *:6443
+  mode tcp
+  option tcplog
+  default_backend kube-apiserver
+   
+backend kube-apiserver
+    mode tcp
+    option tcplog
+    option tcp-check
+    balance roundrobin
+    default-server inter 10s downinter 5s rise 2 fall 2 slowstart 60s maxconn 250 maxqueue 256 weight 100
+    server kube-apiserver-1 <IP address>:6443 check
+    server kube-apiserver-2 <IP address>:6443 check
+    server kube-apiserver-3 <IP address>:6443 check
+
+----
+--
+
+. 执行以下命令重启 HAProxy：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+systemctl restart haproxy
+
+----
+--
+
+. 执行以下命令设置 HAProxy 开机后自动运行：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+systemctl enable haproxy
+
+----
+--
+
+. 执行以下命令编辑 Keepalived 的配置文件：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+vi /etc/keepalived/keepalived.conf
+
+----
+--
+
+. 在 Keepalived 的配置文件中添加以下信息并保存文件：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+global_defs {
+  notification_email {
+  }
+  router_id LVS_DEVEL
+  vrrp_skip_check_adv_addr
+  vrrp_garp_interval 0
+  vrrp_gna_interval 0
+}
+   
+vrrp_script chk_haproxy {
+  script "killall -0 haproxy"
+  interval 2
+  weight 2
+}
+  
+vrrp_instance haproxy-vip {
+  state BACKUP
+  priority 100
+  interface <NIC>
+  virtual_router_id 60
+  advert_int 1
+  authentication {
+    auth_type PASS
+    auth_pass 1111
+  }
+  unicast_src_ip <source IP address>
+  unicast_peer {
+    <peer IP address>
+  }
+  
+  virtual_ipaddress {
+    <floating IP address>
+  }
+  
+  track_script {
+    chk_haproxy
+  }
+}
+
+----
+
+将以下参数替换为实际值：
+
+[%header,cols="1a,2a"]
+|===
+|参数 |描述
+
+|<NIC>
+|当前负载均衡器的网卡名称。
+
+|<source IP address>
+|当前负载均衡器的 IP 地址。
+
+|<peer IP address>
+|另一台负载均衡器的 IP 地址。
+
+|<floating IP address>
+|用作浮动 IP 地址的虚拟 IP 地址。
+|===
+--
+
+. 执行以下命令重启 Keepalived：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+systemctl restart keepalived
+
+----
+--
+
+. 执行以下命令设置 Keepalived 开机后自动运行：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+systemctl enable keepalived
+
+----
+--
+
+. 重复以上步骤在另一台负载均衡器服务器上安装、配置 HAProxy 和 Keepalived。
+
+. 记录浮动 IP 地址，供后续安装{ks_product_both}时使用。
+
+
+=== 验证高可用性
+
+. 登录第一台负载均衡器服务器并执行以下命令查看浮动 IP 地址：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+ip a s
+
+----
+
+如果系统高可用性正常，命令回显中将显示已配置的浮动 IP 地址。例如，在以下命令回显中，**inet 172.16.0.10/24 scope global secondary eth0** 表明浮动 IP 地址已与 eth0 网卡绑定：
+
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 52:54:9e:27:38:c8 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.0.2/24 brd 172.16.0.255 scope global noprefixroute dynamic eth0
+       valid_lft 73334sec preferred_lft 73334sec
+    inet 172.16.0.10/24 scope global secondary eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::510e:f96:98b2:af40/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+
+----
+--
+
+. 执行以下命令模拟当前负载均衡器服务器故障：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+systemctl stop haproxy
+
+----
+--
+
+. 执行以下命令再次检查浮动 IP 地址：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+ip a s
+
+----
+
+如果系统高可用性正常，命令回显中将不再显示浮动 IP 地址，如以下命令回显所示：
+
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 52:54:9e:27:38:c8 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.0.2/24 brd 172.16.0.255 scope global noprefixroute dynamic eth0
+       valid_lft 72802sec preferred_lft 72802sec
+    inet6 fe80::510e:f96:98b2:af40/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+
+----
+--
+
+. 登录另一台负载均衡器服务器，执行以下命令查看浮动 IP 地址：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+ip a s
+
+----
+
+如果系统高可用性正常，命令回显中将显示已配置的浮动 IP 地址。例如，在以下命令回显中，**inet 172.16.0.10/24 scope global secondary eth0** 表明浮动 IP 地址已与 eth0 网卡绑定：
+
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 52:54:9e:3f:51:ba brd ff:ff:ff:ff:ff:ff
+    inet 172.16.0.3/24 brd 172.16.0.255 scope global noprefixroute dynamic eth0
+       valid_lft 72690sec preferred_lft 72690sec
+    inet 172.16.0.10/24 scope global secondary eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f67c:bd4f:d6d5:1d9b/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+
+----
+--
+
+. 在第一台负载均衡器服务器上执行以下命令恢复运行 HAProxy：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+systemctl start haproxy
+
+----
+--

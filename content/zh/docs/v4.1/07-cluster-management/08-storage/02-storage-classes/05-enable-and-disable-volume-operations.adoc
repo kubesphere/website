@@ -1,0 +1,71 @@
+---
+title: "启用和禁用卷操作"
+keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 存储类, 启用和禁用卷操作"
+description: "介绍如何启用和禁用卷操作。"
+weight: 05
+---
+
+:ks_permission: **存储类管理**
+:ks_navigation: **存储 > 存储类**
+
+
+本节介绍如何启用和禁用卷操作。
+
+您可以设置是否允许用户在{ks_product_left} Web 控制台对特定存储类创建的持久卷声明进行克隆和扩展操作。
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+本节介绍的步骤仅控制是否允许用户在{ks_product_left} Web 控制台使用相关操作，持久卷是否实际支持这些操作取决于后端存储系统。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+* 您需要加入一个集群并在集群中具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:07-cluster-management/09-cluster-settings/03-cluster-members/_index.adoc[集群成员]和xref:07-cluster-management/09-cluster-settings/04-cluster-roles/_index.adoc[集群角色]。
+
+:relfileprefix: ./
+
+
+* 如需启用某个功能，请确保后端存储系统实际支持该功能。
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-oper-openDetailsPage.adoc[]
+
++
+
+. 在存储类详情页面的左上角，选择**更多操作 > 设置卷操作**。
+
+. 在**设置卷操作**对话框，启用或禁用卷克隆和卷扩展操作，然后点击**确定**。
++
+--
+
+[%header,cols="1,4"]
+|===
+|功能 |描述
+
+|卷克隆
+|
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-para-allowVolumeCloning.adoc[]
+
+// |卷快照
+// |
+// include::../../../../_custom/clusterManagement/storageClasses/systemClasses-para-allowVolumeSnapshot.adoc[]
+
+|卷扩展
+|
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-para-allowVolumeExpansion.adoc[]
+|===
+--

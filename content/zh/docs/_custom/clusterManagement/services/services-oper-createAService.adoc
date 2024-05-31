@@ -1,0 +1,28 @@
+// :ks_include_id: 95f4759b32eb4061ae07cea32fd54ac8
+. 在**服务设置**页签，设置服务的内部访问模式、工作负载选择器和端口，然后点击**下一步**。
++
+--
+include::services-para-serviceSettings.adoc[]
+--
+
+. 在**高级设置**页签，设置服务的外部访问模式、会话保持设置和元数据，然后点击**创建**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::services-para-externalAccess.adoc[]
+
+include::services-para-sessionPersistence.adoc[]
+
+|添加元数据
+|设置服务的标签。
+
+* 点击**添加**可设置多条标签。
+
+* 在已创建的标签右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除标签。
+|===
+
+服务创建完成后将显示在服务列表中。
+--

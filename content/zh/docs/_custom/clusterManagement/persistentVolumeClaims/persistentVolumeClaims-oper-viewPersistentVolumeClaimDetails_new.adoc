@@ -1,0 +1,66 @@
+// :ks_include_id: e06b7d959620413ebfcc3bfe526b03d1
+. 在持久卷声明详情页面左侧的**属性**区域查看持久卷声明的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|项目
+|持久卷声明所属的项目。
+
+|状态
+|
+include::persistentVolumeClaims-para-status.adoc[]
+
+|容量
+|持久卷声明请求的存储容量大小。
+
+|访问模式
+|
+include::persistentVolumeClaims-para-accessMode.adoc[]
+
+|存储类
+|持久卷声明请求的存储类。
+
+|供应者
+|
+include::../persistentVolumes/persistentVolumes-para-provisioner.adoc[]
+
+|持久卷
+|与持久卷声明绑定的持久卷。
+
+|创建时间
+|持久卷声明的创建时间。
+
+|创建者
+|创建持久卷声明的用户。如果该字段的值为空，则表明持久卷声明由系统自动创建。
+|===
+--
+
+. 在持久卷声明详情页面右侧的**资源状态**页签查看持久卷声明对应持久卷已挂载的容器组。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+// |持久卷
+// |显示持久卷的已使用容量百分比、剩余容量大小和总容量大小。
+
+|已挂载容器组
+|
+显示已挂载持久卷声明对应持久卷的容器组。
+
+include::../nodes/nodes-para-podList.adoc[]
+|===
+--
+
+. 在持久卷声明详情页面右侧点击**元数据**页签查看持久卷声明的标签和注解。
+
+. 在持久卷声明详情页面右侧点击**事件**页签查看持久卷声明的事件。
++
+--
+include::../clusterManagement-para-eventsTab.adoc[]
+--
+

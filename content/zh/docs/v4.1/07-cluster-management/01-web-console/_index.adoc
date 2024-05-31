@@ -1,0 +1,8 @@
+---
+title: "Web 控制台"
+keywords: "Kubernetes, {ks_product}, 集群管理, Web 控制台"
+description: "介绍如何登录{ks_product_left} Web 控制台并进入集群，以及修改用户的邮箱、语言和密码。"
+weight: 01
+---
+
+本节介绍如何登录{ks_product_left} Web 控制台并进入集群。

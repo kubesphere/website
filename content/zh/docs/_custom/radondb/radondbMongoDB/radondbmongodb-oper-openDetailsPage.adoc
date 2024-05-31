@@ -1,0 +1,2 @@
+// :ks_include_id: 17f87955f1e74216a03d3e1442183171
+. 在 RadonDB 应用列表中，点击 RadonDB MongoDB 应用的名称打开其详情页面。

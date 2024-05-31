@@ -1,0 +1,193 @@
+---
+title: "创建告警规则"
+weight: 01
+---
+
+本节介绍如何为 Kubernetes 原生事件和 Kubernetes/KubeSphere 审计事件定义告警规则。
+
+== 前提条件
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 事件告警**扩展组件。
+
+== 操作步骤
+
+.  在任意集群节点上，创建一个 yaml 文件，为该集群定义事件和审计的告警规则。
++
+--
+点击link:../02-example-rules[此处]查看完整的告警规则示例。简单示例如下：
+
+[,yaml]
+----
+apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: example-auditing-rule
+  namespace: kubesphere-logging-system
+spec:
+  type: auditing
+  rules:
+    - desc: all action not need to be audit
+      expr:
+        kind: list
+        list:
+          - get
+          - list
+          - watch
+      name: ignore-action
+    - desc: all operator need to be audit
+      expr:
+        kind: list
+        list:
+          - create
+          - delete
+          - update
+          - patch
+      name: action
+    - desc: pod
+      expr:
+        kind: macro
+        macro: ObjectRef.Resource="pods"
+      name: pod
+    - desc: service
+      expr:
+        kind: macro
+        macro: ObjectRef.Resource="services"
+      name: service
+    - desc: the alias of the user related to audit event
+      expr:
+        alias: User.username
+        kind: alias
+      name: user
+----
+
+告警规则目前支持两种类型：审计和事件。在 `spec.type` 下配置不同类型的告警规则，如 `type: auditing` 或 `type: events`。
+
+告警规则的设置项如下：
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|`name`
+| 规则名称。
+
+|`desc`
+| 规则描述。
+
+|`expr.kind`
+|规则类型，取值可以为 `rule`, `macro`, `list`, 或 `alias`。
+
+|`expr.condition`
+|日志的过滤表达式，以检查日志是否与规则匹配。可使用比较运算符（=，!=，<，<=，>，>=，contains，in，like，regexp）、布尔运算符（and，or 和 not）以及括号进行组合。
+
+|`expr.macro` 
+| macro 的条件。
+
+|`expr.list`
+| list 的值。
+
+|`expr.alias`
+| alias 的值。
+
+|`enable`
+| 如果为 false，规则将不生效。
+
+|`alerts.output`
+| 指定在匹配事件发生时输出的消息。
+
+|`alerts.annotations`
+| 规则的注解，包含在匹配事件发生时输出的告警消息。
+
+|`alerts.annotations.summary`
+| 指定在匹配事件发生时输出的摘要消息。
+
+|`alerts.annotations.summaryCn`
+| 指定在匹配事件发生时输出的中文摘要消息。
+
+|`alerts.severity` 
+| 规则的告警级别，取值可以为 INFO、WARNING、ERROR、或 CRITICAL。
+|===
+
+**Macro**
+
+宏（Macro）是规则条件片段，可以在规则内部甚至其他宏中重复使用。宏提供了一种命名常见模式和消除规则冗余的方法。以下是一个宏的示例：
+
+[,yaml]
+----
+apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: macro-rule
+spec:
+  type: auditing
+  rules:
+  - desc: pod
+    expr:
+      kind: macro
+      macro: ObjectRef.Resource="pods"
+    name: pod
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+宏可以在规则或其他宏中使用，例如 `${pod}` 或 `${alerting-rule.pod}` 。这两种方法的区别在于 `${pod}` 只能用于 `alerting-rule`，而 `${alerting-rule.pod}` 可以用于所有实例。宏也可用于 list 和 alias。
+|===
+
+**list**
+
+列表（List）是可以包含在规则、宏或其他列表中的项目集合。与规则和宏不同，列表不能被解析为过滤表达式。以下是一个列表的示例：
+
+[,yaml]
+----
+apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: list-rule
+spec:
+  type: alerting
+  rules:
+  - desc: all action not need to be audit
+    expr:
+      kind: list
+      list:
+        - get
+        - list
+        - watch
+    name: ignore-action
+----
+
+**Alias**
+
+别名（Alias）是过滤字段的缩写名称，它可以包含在规则、宏、列表和输出字符串中。以下是一个别名的示例：
+
+[,yaml]
+----
+apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: alias-rule
+spec:
+  type: alerting
+  rules:
+  - desc: the alias of the user related to audit event
+    expr:
+      alias: User.username
+      kind: alias
+    name: user
+----
+--
+
+. 执行以下命令，创建 CRD（定制资源定义）。
++
+[,bash]
+----
+kubectl apply -f xxx.yaml  # 注意替换 yaml 文件的名称
+----
+
+. 运行成功后，在**集群管理 > 定制资源定义**页面搜索 **ClusterRuleGroup**。
+
+. 点击 **ClusterRuleGroup** 进入详情页，在右侧页面查看、编辑或删除告警规则。

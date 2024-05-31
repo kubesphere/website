@@ -1,0 +1,42 @@
+---
+title: "访问应用路由的后端服务"
+keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 应用路由, 访问应用路由的后端服务"
+description: "介绍如何访问应用路由的后端服务。"
+weight: 04
+---
+
+:ks_permission: **应用负载查看**
+:ks_navigation: **应用负载 > 应用路由**
+
+
+include::../../../../_custom/clusterManagement/routes/routes-desc-accessABackendServiceOfARoute.adoc[]
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 网关**扩展组件，然后启用集群网关或项目网关。有关更多信息，请参阅 link:../../../../11-use-extensions/12-gateway[KubeSphere 网关]。
+
+include::../../../../_custom/clusterManagement/routes/routes-prer-accessABackendServiceOfARoute.adoc[]
+
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/routes/routes-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/routes/routes-oper-accessABackendServiceOfARoute.adoc[]

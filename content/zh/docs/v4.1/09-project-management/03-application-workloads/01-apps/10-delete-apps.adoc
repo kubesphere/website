@@ -1,0 +1,63 @@
+---
+title: "删除应用"
+keywords: "Kubernetes, {ks_product}, 项目管理, 应用, 删除应用"
+description: "介绍如何删除应用。"
+weight: 10
+---
+
+:ks_permission: **应用实例删除**
+:ks_navigation: **应用负载 > 应用**
+
+
+本节介绍如何删除应用。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+== 删除单个应用
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+// include::../../../../_custom/projectManagement/apps/apps-oper-openListPage.adoc[]
+
++
+
+. 在需要删除的应用右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除应用**对话框，输入应用的名称，然后点击**确定**。
+
+
+== 批量删除应用
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+// include::../../../../_custom/projectManagement/apps/apps-oper-openListPage.adoc[]
+
++
+
+. 选择需要删除的应用左侧的复选框，然后在应用列表上方点击**删除**。
+
+. 在**批量删除应用**对话框，输入应用的名称，然后点击**确定**。
++
+--
+include::../../../../_custom/note-separateNamesByComma.adoc[]
+--

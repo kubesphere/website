@@ -1,0 +1,2 @@
+// :ks_include_id: 1ca4dafa438c4ae7850540566a7de0e5
+本节介绍如何查看配置字典详情。

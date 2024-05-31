@@ -1,0 +1,64 @@
+---
+title: "WhizardTelemetry 事件告警"
+keywords: "Kubernetes, {ks_product}, 事件, 审计, 告警"
+description: "介绍如何管理事件和审计的告警。"
+weight: 09
+---
+
+本节介绍如何使用“WhizardTelemetry 事件告警”扩展组件。
+
+WhizardTelemetry 事件告警为 Kubernetes 原生事件和 Kubernetes/KubeSphere 审计事件定义告警规则，对传入的事件数据进行评估，并将告警发送到指定的接收器如 HTTP 端点等。
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+- WhizardTelemetry 事件告警依赖于 WhizardTelemetry 数据流水线扩展组件发送过来的事件与审计数据。在使用前，请确保已安装并配置好该扩展组件。
+- 审计告警和事件告警功能默认启用，请确保已安装并配置好 WhizardTelemetry 事件管理和 WhizardTelemetry 审计管理扩展组件。
+|===
+
+
+**配置说明：**
+
+WhizardTelemetry 事件告警提供了多种自定义选项。以下是一些最常用的配置：
+
+- 审计告警和事件告警功能默认启用。若需禁用审计告警，请在扩展组件配置中将 `whizard-telemetry-ruler.auditingAlerting.enabled` 字段设置为 false。同样，若要停用事件告警，请将 `whizard-telemetry-ruler.eventsAlerting.enabled` 设置为 false。
++
+[,yaml]
+----
+whizard-telemetry-ruler:
+  auditingAlerting:
+    enabled: true
+  eventsAlerting:
+    enabled: true
+----
+
+- WhizardTelemetry 事件告警支持通过配置接收器将消息发送至 Webhook 和其他输出端口。您可根据需求进行配置。
++
+--
+[,yaml]
+----
+whizard-telemetry-ruler:
+  config:
+    sinks:
+    - name: alertmanager    # sink 名称。
+      type: webhook             # sink 类型。
+      config:
+        ### Please modify to your actual ip address.
+        url: http://<host node ip>:31093/api/v1/alerts    # url 提供 Webhook 标准 URL 格式地址，必须明确指定一个 URL 或 service。
+----
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+* 若使用 **WhizardTelemetry 通知管理**扩展组件发送告警消息，需将 WhizardTelemetry 事件告警的 `whizard-telemetry-ruler.config.sinks.config.url` 配置为 WhizardTelemetry 通知管理的 `alertmanager-proxy` 服务，该服务安装在 host 集群，以 NodePort 形式（默认 31093）暴露。
+alertmanager-proxy 默认的访问地址为 `http://<host node ip>:31093/api/v1/alerts`。
+
+* 您也可以将 WhizardTelemetry 事件告警产生的告警发送到自己安装的 alertmanager 如 `http://<alertmanager-url>:<alertmanager-port>/api/v1/alerts`，或者自定义的 webhook。
+
+|===
+--
+
+

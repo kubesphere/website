@@ -1,0 +1,124 @@
+---
+title: "WhizardTelemetry 平台服务"
+weight: 01
+---
+
+WhizardTelemetry 平台服务是 WhizardTelemetry 可观测平台中各扩展组件的公共服务。它是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。
+
+**配置说明：**
+
+* 修改 WhizardTelemetry 平台服务的扩展组件配置，可配合 WhizardTelemetry 监控扩展组件，启用 Whizard 可观测中心。有关更多信息，请参阅 link:../07-whizard/01-enable-whizard/[Whizard 可观测中心]。
+
+* 为 WhizardTelemetry 日志管理、WhizardTelemetry 审计管理、WhizardTelemetry 事件管理、以及通知历史配置 OpenSearch 日志接收器时，如果需要使用多个 OpenSearch 数据库，可以按如下配置。
+// 有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 平台服务”扩展组件的详情页说明。
+
+[,yaml]
+----
+whizard-telemetry:
+  config:
+    monitoring:
+      enabled: true
+      kind: 0
+      endpoint: http://prometheus-k8s.kubesphere-monitoring-system.svc:9090
+    observability:
+      enabled: false
+      endpoint: "http://query-frontend-whizard-operated.kubesphere-monitoring-system.svc:10902"
+    notification:
+      endpoint: http://notification-manager-svc.kubesphere-monitoring-system.svc:19093
+      history:
+        enable: true
+        server:
+          elasticsearch:
+            endpoints:
+              - https://<the opensearch cluster url>:<port>
+            version: opensearchv2
+            indexPrefix: notification-history
+            basicAuth: true
+            username: admin
+            password: admin
+    auditing:
+      enable: true
+      servers:
+        - elasticsearch:
+            cluster:
+            - cluster1
+            - cluster2
+            endpoints:
+              - https://<the opensearch cluster url>:<port>
+            version: opensearchv2
+            indexPrefix: auditing
+            basicAuth: true
+            username: admin
+            password: admin
+        - elasticsearch:
+            cluster:
+            - cluster3
+            - cluster4
+            endpoints:
+              - https://<the opensearch cluster url>:<port>
+            version: opensearchv2
+            indexPrefix: auditing
+            basicAuth: true
+            username: admin
+            password: admin
+    events:
+      enable: true
+      servers:
+        - elasticsearch:
+            cluster:
+            - cluster1
+            - cluster2
+            endpoints:
+              - https://opensearch-cluster-data.kubesphere-logging-system:9200
+            version: opensearchv2
+            indexPrefix: events
+            basicAuth: true
+            username: admin
+            password: admin
+        - elasticsearch:
+            cluster:
+            - cluster3
+            - cluster4
+            endpoints:
+              - https://opensearch-cluster-data.kubesphere-logging-system:9200
+            version: opensearchv2
+            indexPrefix: events
+            basicAuth: true
+            username: admin
+            password: admin
+    logging:
+      enable: true
+      servers:
+        - elasticsearch:
+            cluster:
+            - cluster1
+            - cluster2
+            endpoints:
+              - https://<the opensearch cluster url>:<port>
+            version: opensearchv2
+            indexPrefix: logs
+            basicAuth: true
+            username: admin
+            password: admin
+        - elasticsearch:
+            cluster:
+            - cluster3
+            - cluster4
+            endpoints:
+              - https://<the opensearch cluster url>:<port>
+            version: opensearchv2
+            indexPrefix: logs
+            basicAuth: true
+            username: admin
+            password: admin
+----
+
+
+// //note
+// [.admon.note,cols="a"]
+// |===
+// |说明
+
+// |
+// 修改 WhizardTelemetry 平台服务的扩展组件配置，可配合 WhizardTelemetry 监控扩展组件，启用 Whizard 可观测中心。有关更多信息，请参阅 link:../07-whizard/01-enable-whizard/[Whizard 可观测中心]。
+// |===

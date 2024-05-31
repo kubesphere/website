@@ -1,0 +1,8 @@
+// :ks_include_id: 26629381ce2c4637b491e4fe2386923e
+创建容器组中运行的容器。您可以在容器组中创建多个容器。
+
+* 点击**添加容器**可创建容器。
+
+* 将光标悬停在已创建的容器上，然后在右侧点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18]可编辑容器的设置。
+
+* 将光标悬停在已创建的容器上，然后在右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除容器。

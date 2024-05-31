@@ -1,0 +1,4 @@
+// :ks_include_id: b7e7568c806d46f3b1fe48e53ee77c27
+. 在需要删除的用户右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除用户**对话框输入用户的名称，然后点击**确定**。

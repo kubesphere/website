@@ -1,0 +1,40 @@
+---
+title: "快速入门"
+keywords: "Kubernetes, {ks_product}, 快速入门"
+description: "介绍如何安装{ks_product_both}和扩展组件，以及如何进行访问控制。"
+weight: 02
+---
+
+本节简要介绍如何安装{ks_product_both}和扩展组件，以及如何控制用户权限，帮助您快速了解使用{ks_product_left}。
+
+有关{ks_product_both}安装和使用的更多信息，请参阅文档的其他章节。
+
+ifeval::["{file_output_type}" == "pdf"]
+== 产品版本
+
+本文档适用于{ks_product_left} v4.1.0 版本。
+
+== 读者对象
+
+本文档主要适用于以下读者：
+
+* {ks_product_right}用户
+
+* 交付工程师
+
+* 运维工程师
+
+* 售后工程师
+
+
+== 修订记录
+
+[%header,cols="1a,1a,3a"]
+|===
+|文档版本 |发布日期 |修改说明
+
+|01
+|{pdf_releaseDate}
+|第一次正式发布。
+|===
+endif::[]

@@ -1,0 +1,10 @@
+---
+title: "部署管理"
+keywords: "Kubernetes, {ks_product}, 平台管理, 应用, 应用管理, 应用部署"
+description: "介绍如何管理所有已部署的应用实例，以及如何直接部署应用到项目。"
+weight: 05
+---
+
+
+
+本节介绍如何管理{ks_product_both}平台中所有已部署的应用实例，以及如何直接部署应用到项目。

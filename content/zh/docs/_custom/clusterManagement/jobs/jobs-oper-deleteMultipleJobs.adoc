@@ -1,0 +1,8 @@
+// :ks_include_id: ae8fc7f6ef7a43999d61c74c6fa39fe5
+. 选择需要删除的任务左侧的复选框，然后在任务列表上方点击**删除**。
+
+. 在**批量删除任务**对话框，输入任务的名称，然后点击**确定**。
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

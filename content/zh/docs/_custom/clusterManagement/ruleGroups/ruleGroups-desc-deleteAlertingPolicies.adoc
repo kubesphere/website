@@ -1,0 +1,16 @@
+// :ks_include_id: afa42dbe50664f968d66928b7d9b75d6
+本节介绍如何删除告警规则组。
+
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+{ks_product_right}仅支持删除自定义规则组，不支持删除内置规则组。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+规则组删除后不能恢复，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
