@@ -2,6 +2,7 @@
 title: "应用管理"
 keywords: "Kubernetes, {ks_product}, 企业空间, 应用管理, 应用模板"
 description: "介绍如何上通过企业空间管理应用模板。"
+layout: "second"
 weight: 02
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "KubeSphere 网关"
 weight: 12
+layout: "second"
 ---
 
 本节介绍如何使用“KubeSphere 网关”扩展组件，启用和管理集群、企业空间和项目的网关。

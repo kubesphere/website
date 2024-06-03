@@ -2,6 +2,7 @@
 title: "应用路由"
 keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载, 应用路由"
 description: "介绍如何管理联邦项目中的应用路由。"
+layout: "second"
 weight: 04
 ---
 

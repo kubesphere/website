@@ -1,6 +1,7 @@
 ---
 title: "日志接收器"
 weight: 03
+layout: "second"
 ---
 
 日志接收器用于收集系统的各类日志，配置或添加日志接收器，以便将 WhizardTelemetry 日志管理、WhizardTelemetry 审计管理、WhizardTelemetry 事件管理、以及通知历史的日志数据发送到外部日志接收器中。

@@ -2,6 +2,7 @@
 title: "工具箱"
 keywords: "Kubernetes, {ks_product}, 项目管理, 工具箱"
 description: "介绍如何使用工具箱。"
+layout: "second"
 weight: 10
 ---
 

@@ -2,6 +2,7 @@
 title: "管理日志接收器"
 keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 日志接收器"
 description: "介绍如何添加和管理日志接收器。"
+layout: "second"
 weight: 03
 ---
 

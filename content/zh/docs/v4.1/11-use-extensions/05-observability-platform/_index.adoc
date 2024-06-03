@@ -2,6 +2,7 @@
 title: "WhizardTelemetry 可观测平台"
 keywords: "Kubernetes, KubeSphere, 可观测中心, 监控, 告警管理, 事件告警, 通知管理, 日志管理, 审计管理, 事件管理, 数据流水线, OpenSearch"
 description: "介绍如何使用 WhizardTelemetry 可观测平台。"
+layout: "second"
 weight: 05
 ---
 

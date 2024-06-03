@@ -1,6 +1,7 @@
 ---
 title: "KubeSphere 多集群代理连接"
 weight: 19
+layout: "second"
 ---
 
 本节介绍如何使用“KubeSphere 多集群代理连接”扩展组件进行集群间的代理连接。

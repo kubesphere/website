@@ -1,6 +1,7 @@
 ---
 title: "KubeSphere 应用商店管理"
 weight: 02
+layout: "second"
 ---
 
 

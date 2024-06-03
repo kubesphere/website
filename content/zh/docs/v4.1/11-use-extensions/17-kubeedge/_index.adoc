@@ -2,6 +2,7 @@
 title: "KubeEdge"
 keywords: "Kubernetes, {ks_product}, 集群管理, 边缘节点"
 description: "介绍如何管理边缘节点。"
+layout: "second"
 weight: 17
 ---
 

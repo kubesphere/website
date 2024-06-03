@@ -2,6 +2,7 @@
 title: "微服务配置"
 keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 微服务配置"
 description: "介绍如何管理微服务配置。"
+layout: "second"
 weight: 02
 ---
 

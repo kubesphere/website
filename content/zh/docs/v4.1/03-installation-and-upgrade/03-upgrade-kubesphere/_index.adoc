@@ -2,6 +2,7 @@
 title: "升级 KubeSphere"
 keywords: "Kubernetes, KubeSphere, 升级"
 description: "介绍如何升级 KubeSphere。"
+layout: "second"
 weight: 03
 ---
 

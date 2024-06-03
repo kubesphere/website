@@ -2,6 +2,7 @@
 title: "集群管理"
 keywords: "Kubernetes, {ks_product}, 集群管理"
 description: "介绍如何管理集群中的资源。"
+layout: "second"
 weight: 07
 ---
 

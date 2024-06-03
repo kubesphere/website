@@ -1,6 +1,7 @@
 ---
 title: "WhizardTelemetry 平台服务"
 weight: 01
+layout: "second"
 ---
 
 WhizardTelemetry 平台服务是 WhizardTelemetry 可观测平台中各扩展组件的公共服务。它是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。

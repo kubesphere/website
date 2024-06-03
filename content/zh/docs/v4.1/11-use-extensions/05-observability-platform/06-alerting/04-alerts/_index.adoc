@@ -2,6 +2,7 @@
 title: "告警"
 keywords: "Kubernetes, {ks_product}, 集群管理, 告警"
 description: "介绍如何使用告警功能。"
+layout: "second"
 weight: 04
 ---
 

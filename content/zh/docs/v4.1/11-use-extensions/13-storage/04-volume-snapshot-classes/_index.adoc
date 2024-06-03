@@ -2,6 +2,7 @@
 title: "卷快照类"
 keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照类"
 description: "介绍如何管理卷快照类。"
+layout: "second"
 weight: 04
 ---
 

@@ -2,6 +2,7 @@
 title: "WhizardTelemetry 告警管理"
 keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警"
 description: "介绍如何监控集群状态、应用资源和告警，以及管理告警规则组和自定监控面板。"
+layout: "second"
 weight: 06
 ---
 

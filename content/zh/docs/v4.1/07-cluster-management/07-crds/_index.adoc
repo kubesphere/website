@@ -2,6 +2,7 @@
 title: "定制资源定义"
 keywords: "Kubernetes, {ks_product}, 集群管理, 定制资源定义"
 description: "介绍如何管理集群定制资源定义。"
+layout: "second"
 weight: 07
 ---
 

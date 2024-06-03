@@ -2,6 +2,7 @@
 title: "平台角色"
 keywords: "Kubernetes, {ks_product}, 访问控制, 用户, 平台角色"
 description: "介绍如何管理平台角色。"
+layout: "second"
 weight: 03
 ---
 

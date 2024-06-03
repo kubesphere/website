@@ -1,7 +1,8 @@
 ---
 title: "产品简介"
-keywords: "{ks_product}, KubeSphere, KubeSphere Enterprise, KubeSphere LuBan, 产品简介"
-description: 介绍{ks_product_both}的产品优势，架构以及应用场景。
+keywords: "KubeSphere, KubeSphere Enterprise, KubeSphere LuBan, 产品简介"
+description: 介绍 KubeSphere 的产品优势，架构以及应用场景。
+layout: "second"
 weight: 01
 ---
 

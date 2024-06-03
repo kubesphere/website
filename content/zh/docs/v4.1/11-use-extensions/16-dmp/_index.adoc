@@ -1,6 +1,7 @@
 ---
 title: "RadonDB DMP"
 weight: 16
+layout: "second"
 ---
 
 RadonDB DMP 是青云科技全新发布的企业级云原生数据库管理平台。在 KubeSphere LuBan 云原生可扩展开放架构之上，RadonDB DMP 能轻松实现多类型主流数据库的跨云部署、多云管理、智能观测与统一运维等，并完整构建围绕高性能、高可用、业务追踪、数据流转等场景下的生态闭环，助力客户真正实现数据库即服务。

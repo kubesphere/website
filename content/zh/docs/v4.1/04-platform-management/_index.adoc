@@ -2,6 +2,7 @@
 title: "平台管理"
 keywords: "Kubernetes, {ks_product}, 平台管理"
 description: "介绍{ks_product_both}各模块的功能，以及如何对该平台进行设置。"
+layout: "second"
 weight: 04
 ---
 

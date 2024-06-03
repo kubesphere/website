@@ -2,6 +2,7 @@
 title: "Web 控制台"
 keywords: "Kubernetes, {ks_product}, 项目管理, Web 控制台"
 description: "介绍如何登录{ks_product_left} Web 控制台并进入项目，以及修改用户的邮箱、语言和密码。"
+layout: "second"
 weight: 01
 ---
 

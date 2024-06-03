@@ -2,6 +2,7 @@
 title: "扩展组件使用"
 keywords: "Kubernetes, {ks_product}, 扩展组件, 使用指南, DevOps, DMP, whizard, 可观测组件"
 description: "介绍如何使用各个扩展组件。"
+layout: "second"
 weight: 11
 ---
 

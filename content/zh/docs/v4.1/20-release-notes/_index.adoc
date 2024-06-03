@@ -2,6 +2,7 @@
 title: "版本说明"
 keywords: "Kubernetes, {ks_product}, 版本说明，release notes"
 description: "版本说明"
+layout: "second"
 weight: 20
 ---
 

@@ -2,6 +2,7 @@
 title: "工作负载"
 keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 工作负载"
 description: "介绍如何管理联邦项目中的工作负载。"
+layout: "second"
 weight: 03
 ---
 

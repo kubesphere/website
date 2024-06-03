@@ -2,6 +2,7 @@
 title: "容器组 IP 池"
 keywords: "Kubernetes, {ks_product}, 集群管理, 容器组 IP 池"
 description: "介绍如何管理集群容器组 IP 池。"
+layout: "second"
 weight: 02
 ---
 

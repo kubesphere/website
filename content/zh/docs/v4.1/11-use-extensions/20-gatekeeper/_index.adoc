@@ -1,6 +1,7 @@
 ---
 title: "Gatekeeper"
 weight: 20
+layout: "second"
 ---
 
 link:https://github.com/open-policy-agent/gatekeeper[Gatekeeper] 是一个用于 Kubernetes 可灵活配置策略的准入控制器，利用 link:https://www.openpolicyagent.org/[Open Policy Agent (OPA)] 验证在 Kubernetes 集群上创建和更新资源的请求。

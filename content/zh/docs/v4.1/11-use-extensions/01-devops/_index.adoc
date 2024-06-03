@@ -2,6 +2,7 @@
 title: "DevOps"
 keywords: "Kubernetes, {ks_product}, DevOps"
 description: "如何在 DevOps 项目中进行管理和操作，包括运行流水线、创建凭证和集成工具等。"
+layout: "second"
 weight: 01
 ---
 

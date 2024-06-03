@@ -2,6 +2,7 @@
 title: "通知渠道"
 keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知渠道"
 description: "介绍如何设置通知渠道。"
+layout: "second"
 weight: 01
 ---
 
