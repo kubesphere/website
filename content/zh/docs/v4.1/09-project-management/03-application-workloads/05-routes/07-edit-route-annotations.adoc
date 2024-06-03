@@ -1,6 +1,6 @@
 ---
 title: "编辑应用路由注解"
-keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 应用路由, 编辑应用路由注解"
+keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 应用路由, 编辑应用路由注解"
 description: "介绍如何应用路由注解。"
 weight: 07
 ---

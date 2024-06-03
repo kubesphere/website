@@ -1,6 +1,6 @@
 ---
 title: "删除集群标签"
-keywords: "Kubernetes, {ks_product}, 多集群管理, 集群标签, 删除标签"
+keywords: "Kubernetes, KubeSphere, 多集群管理, 集群标签, 删除标签"
 description: "介绍如何删除集群标签。"
 weight: 05
 ---

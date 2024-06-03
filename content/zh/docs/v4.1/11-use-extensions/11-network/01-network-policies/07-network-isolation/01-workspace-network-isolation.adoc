@@ -1,6 +1,6 @@
 ---
 title: "启用企业空间网络隔离"
-keywords: "Kubernetes, {ks_product}, 企业空间, 企业空间设置, 基本信息, 启用和禁用网络隔离"
+keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 基本信息, 启用和禁用网络隔离"
 description: "介绍如何启用和禁用企业空间网络隔离。"
 weight: 01
 ---

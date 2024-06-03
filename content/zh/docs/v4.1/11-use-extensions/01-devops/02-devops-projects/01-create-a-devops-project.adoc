@@ -1,6 +1,6 @@
 ---
 title: "创建 DevOps 项目"
-keywords: "Kubernetes, {ks_product}, 企业空间, DevOps 项目, 创建 DevOps 项目"
+keywords: "Kubernetes, KubeSphere, 企业空间, DevOps 项目, 创建 DevOps 项目"
 description: "介绍如何创建 DevOps 项目。"
 weight: 01
 ---

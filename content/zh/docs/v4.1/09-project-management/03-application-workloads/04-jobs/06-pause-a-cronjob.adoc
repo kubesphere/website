@@ -1,6 +1,6 @@
 ---
 title: "暂停定时任务"
-keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 任务, 暂停定时任务"
+keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 任务, 暂停定时任务"
 description: "介绍如何暂停定时任务。"
 weight: 06
 ---

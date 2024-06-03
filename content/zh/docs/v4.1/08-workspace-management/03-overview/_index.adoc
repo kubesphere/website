@@ -1,6 +1,6 @@
 ---
 title: "概览"
-keywords: "Kubernetes, {ks_product}, 企业空间管理, 概览"
+keywords: "Kubernetes, KubeSphere, 企业空间管理, 概览"
 description: "介绍如何查看企业空间概览信息。"
 layout: "second"
 weight: 03

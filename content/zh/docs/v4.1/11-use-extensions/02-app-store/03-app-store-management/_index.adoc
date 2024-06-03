@@ -1,6 +1,6 @@
 ---
 title: "应用商店管理"
-keywords: "Kubernetes, {ks_product}, 平台管理, 应用商店管理"
+keywords: "Kubernetes, KubeSphere, 平台管理, 应用商店管理"
 description: "介绍如何对企业空间成员提交的应用发布请求进行审核。"
 layout: "second"
 weight: 03

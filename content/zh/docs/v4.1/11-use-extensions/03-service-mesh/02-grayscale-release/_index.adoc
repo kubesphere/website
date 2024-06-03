@@ -1,6 +1,6 @@
 ---
 title: "灰度发布"
-keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布"
+keywords: "Kubernetes, KubeSphere, 项目管理, 灰度发布"
 description: "介绍如何管理灰度发布任务。"
 layout: "second"
 weight: 02

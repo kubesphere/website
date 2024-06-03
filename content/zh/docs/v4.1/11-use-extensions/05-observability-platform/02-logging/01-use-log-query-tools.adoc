@@ -1,6 +1,6 @@
 ---
 title: "使用容器日志查询工具"
-keywords: "Kubernetes, {ks_product}, 集群管理, 工具箱, 查询容器日志"
+keywords: "Kubernetes, KubeSphere, 集群管理, 工具箱, 查询容器日志"
 description: "介绍如何使用容器日志查询工具。"
 weight: 01
 ---

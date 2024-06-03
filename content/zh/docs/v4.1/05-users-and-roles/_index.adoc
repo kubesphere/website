@@ -1,6 +1,6 @@
 ---
 title: "用户和角色管理"
-keywords: "Kubernetes, {ks_product}, 访问控制,用户,角色"
+keywords: "Kubernetes, KubeSphere, 访问控制,用户,角色"
 description: "介绍如何控制平台访问权限。"
 layout: "second"
 weight: 05

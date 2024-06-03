@@ -1,6 +1,6 @@
 ---
 title: "创建静默策略"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 静默策略, 创建静默策略"
+keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理, 通知设置, 静默策略, 创建静默策略"
 description: "本节介绍如何创建静默策略。"
 weight: 01
 ---

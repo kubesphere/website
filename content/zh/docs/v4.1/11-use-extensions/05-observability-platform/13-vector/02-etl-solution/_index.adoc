@@ -1,6 +1,6 @@
 ---
 title: "Vector 日志 ETL 方案 - 从 Kafka 到 OpenSearch"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理"
+keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理"
 description: "介绍如何管理平台通知。"
 layout: "second"
 weight: 13

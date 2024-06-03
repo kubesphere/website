@@ -1,6 +1,6 @@
 ---
 title: "WhizardTelemetry 事件管理"
-keywords: "Kubernetes, {ks_product}, 事件"
+keywords: "Kubernetes, KubeSphere, 事件"
 description: "介绍如何使用“WhizardTelemetry 事件管理”扩展组件。"
 layout: "second"
 weight: 03

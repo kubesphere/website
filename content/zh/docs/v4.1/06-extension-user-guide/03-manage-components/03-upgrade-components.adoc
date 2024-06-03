@@ -1,6 +1,6 @@
 ---
 title: "升级扩展组件"
-keywords: "Kubernetes, {ks_product},升级,扩展组件"
+keywords: "Kubernetes, KubeSphere,升级,扩展组件"
 description: "介绍如何升级扩展组件。"
 weight: 03
 ---

@@ -1,6 +1,6 @@
 ---
 title: "删除项目角色"
-keywords: "Kubernetes, {ks_product}, 项目管理, 项目设置, 项目角色, 删除项目角色"
+keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 项目角色, 删除项目角色"
 description: "介绍如何删除项目角色。"
 weight: 06
 ---

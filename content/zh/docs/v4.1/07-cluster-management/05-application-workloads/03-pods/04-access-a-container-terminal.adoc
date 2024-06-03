@@ -1,6 +1,6 @@
 ---
 title: "访问容器终端"
-keywords: "Kubernetes, {ks_product}, 集群管理, 应用负载, 容器组, 访问容器终端"
+keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 容器组, 访问容器终端"
 description: "介绍如何访问容器终端。"
 weight: 04
 ---

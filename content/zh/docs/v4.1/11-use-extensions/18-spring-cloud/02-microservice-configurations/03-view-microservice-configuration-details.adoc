@@ -1,6 +1,6 @@
 ---
 title: "查看微服务配置详情"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 查看微服务配置详情"
+keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 查看微服务配置详情"
 description: "介绍如何查看微服务配置详情。"
 weight: 03
 ---

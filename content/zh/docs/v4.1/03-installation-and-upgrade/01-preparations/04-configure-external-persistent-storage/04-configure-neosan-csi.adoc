@@ -1,7 +1,7 @@
 ---
 title: "配置 NeonSAN CSI"
-keywords: "Kubernetes, {ks_product}, 安装, 准备, 持久化存储, 网络文件系统, NeonSAN CSI"
-description: "介绍如何在生产环境中为{ks_product_both}集群配置 NeonSAN CSI。"
+keywords: "Kubernetes, KubeSphere, 安装, 准备, 持久化存储, 网络文件系统, NeonSAN CSI"
+description: "介绍如何在生产环境中为 KubeSphere 集群配置 NeonSAN CSI。"
 weight: 04
 ---
 

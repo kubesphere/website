@@ -1,6 +1,6 @@
 ---
 title: "创建企业空间"
-keywords: "Kubernetes, {ks_product}, 访问控制, 企业空间, 创建企业空间"
+keywords: "Kubernetes, KubeSphere, 访问控制, 企业空间, 创建企业空间"
 description: "介绍如何创建企业空间。"
 weight: 01
 ---

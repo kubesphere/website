@@ -1,6 +1,6 @@
 ---
 title: "创建用户"
-keywords: "Kubernetes, {ks_product}, 访问控制, 用户, 创建用户"
+keywords: "Kubernetes, KubeSphere, 访问控制, 用户, 创建用户"
 description: "介绍如何创建用户。"
 weight: 01
 ---

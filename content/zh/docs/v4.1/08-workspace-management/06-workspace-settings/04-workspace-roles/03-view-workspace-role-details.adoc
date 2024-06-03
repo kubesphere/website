@@ -1,6 +1,6 @@
 ---
 title: "查看企业空间角色详情"
-keywords: "Kubernetes, {ks_product}, 企业空间, 企业空间设置, 企业空间角色, 查看企业空间角色详情"
+keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间角色, 查看企业空间角色详情"
 description: "介绍如何查看企业空间角色列表。"
 weight: 03
 ---

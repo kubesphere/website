@@ -1,6 +1,6 @@
 ---
 title: "禁用企业空间网关"
-keywords: "Kubernetes, {ks_product}, 企业空间管理, 企业空间设置, 网关设置,禁用企业空间网关"
+keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 网关设置,禁用企业空间网关"
 description: "介绍如何禁用企业空间网关。"
 weight: 05
 ---

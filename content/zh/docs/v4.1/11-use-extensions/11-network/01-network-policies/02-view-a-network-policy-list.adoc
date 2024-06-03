@@ -1,6 +1,6 @@
 ---
 title: "查看网络策略列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 网络策略, 查看网络策略列表"
+keywords: "Kubernetes, KubeSphere, 集群管理, 网络, 网络策略, 查看网络策略列表"
 description: "介绍如何查看网络策略列表。"
 weight: 02
 ---

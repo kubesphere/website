@@ -1,6 +1,6 @@
 ---
 title: "查看容器组 IP 池列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 查看容器组 IP 池列表"
+keywords: "Kubernetes, KubeSphere, 集群管理, 网络, 容器组 IP 池, 查看容器组 IP 池列表"
 description: "介绍如何查看容器组 IP 池列表。"
 weight: 02
 ---

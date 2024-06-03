@@ -1,7 +1,7 @@
 ---
 title: "安装指南"
-keywords: "Kubernetes, {ks_product}, 安装, 升级, 卸载"
-description: "介绍如何安装、升级和卸载{ks_product_left}。"
+keywords: "Kubernetes, KubeSphere, 安装, 升级, 卸载"
+description: "介绍如何安装、升级和卸载 KubeSphere。"
 layout: "second"
 weight: 03
 ---

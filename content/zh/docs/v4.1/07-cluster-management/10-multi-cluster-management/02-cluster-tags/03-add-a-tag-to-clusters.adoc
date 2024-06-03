@@ -1,6 +1,6 @@
 ---
 title: "将标签添加到集群"
-keywords: "Kubernetes, {ks_product}, 多集群管理, 集群标签, 将标签添加到集群"
+keywords: "Kubernetes, KubeSphere, 多集群管理, 集群标签, 将标签添加到集群"
 description: "介绍如何将标签添加到集群。"
 weight: 03
 ---

@@ -1,6 +1,6 @@
 ---
 title: "KubeSphere Spring Cloud"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud"
+keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud"
 description: "介绍如何使用 Spring Cloud 功能。"
 layout: "second"
 weight: 18

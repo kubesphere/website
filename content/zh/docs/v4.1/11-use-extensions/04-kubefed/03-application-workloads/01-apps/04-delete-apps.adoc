@@ -1,6 +1,6 @@
 ---
 title: "删除自制应用"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用, 删除应用"
+keywords: "Kubernetes, KubeSphere, 联邦项目, 应用, 删除应用"
 description: "介绍如何从联邦项目中删除应用。"
 weight: 04
 ---

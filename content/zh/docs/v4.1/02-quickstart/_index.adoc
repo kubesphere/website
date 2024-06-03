@@ -1,7 +1,7 @@
 ---
 title: "快速入门"
-keywords: "Kubernetes, {ks_product}, 快速入门"
-description: "介绍如何安装{ks_product_both}和扩展组件，以及如何进行访问控制。"
+keywords: "Kubernetes,  KubeSphere, 快速入门"
+description: "介绍如何安装 KubeSphere和扩展组件，以及如何进行访问控制。"
 layout: "second"
 weight: 02
 ---

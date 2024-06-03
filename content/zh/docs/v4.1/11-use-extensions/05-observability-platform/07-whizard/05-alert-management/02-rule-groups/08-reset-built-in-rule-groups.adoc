@@ -1,6 +1,6 @@
 ---
 title: "重置内置规则组"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 告警管理, 规则组, 删除规则组"
+keywords: "Kubernetes, KubeSphere, 集群管理, 监控告警, 告警管理, 规则组, 删除规则组"
 description: "介绍如何删重置内置规则组。"
 weight: 08
 ---

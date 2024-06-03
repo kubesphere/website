@@ -1,6 +1,6 @@
 ---
 title: "删除服务"
-keywords: "Kubernetes, {ks_product}, 集群管理, 应用负载, 服务, 删除服务"
+keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 服务, 删除服务"
 description: "介绍如何删除服务。"
 weight: 08
 ---

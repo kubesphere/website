@@ -1,6 +1,6 @@
 ---
 title: "扩展持久卷"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 持久卷声明, 持久卷, 扩展持久卷"
+keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 持久卷声明, 持久卷, 扩展持久卷"
 description: "介绍如何扩展持久卷容量。"
 weight: 05
 ---

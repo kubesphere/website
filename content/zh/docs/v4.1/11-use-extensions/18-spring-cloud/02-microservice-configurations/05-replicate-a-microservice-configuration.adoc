@@ -1,6 +1,6 @@
 ---
 title: "复制微服务配置"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 复制微服务配置"
+keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 复制微服务配置"
 description: "介绍如何复制微服务配置。"
 weight: 05
 ---

@@ -1,6 +1,6 @@
 ---
 title: "修改集群成员的角色"
-keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 集群成员, 修改集群成员的角色"
+keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 集群成员, 修改集群成员的角色"
 description: "介绍如何修改集群成员的角色。"
 weight: 03
 ---

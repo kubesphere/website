@@ -1,6 +1,6 @@
 ---
 title: "查看调度器状态"
-keywords: "Kubernetes, {ks_product}, 监控告警, 集群状态，调度器状态"
+keywords: "Kubernetes, KubeSphere, 监控告警, 集群状态，调度器状态"
 description: "介绍如何查看调度器状态。"
 weight: 05
 ---

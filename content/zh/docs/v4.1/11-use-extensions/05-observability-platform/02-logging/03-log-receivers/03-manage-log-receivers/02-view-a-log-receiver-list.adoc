@@ -1,6 +1,6 @@
 ---
 title: "查看日志接收器列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 日志接收器, 查看日志接收器列表"
+keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 日志接收器, 查看日志接收器列表"
 description: "介绍如何查看日志接收器列表。"
 weight: 02
 ---

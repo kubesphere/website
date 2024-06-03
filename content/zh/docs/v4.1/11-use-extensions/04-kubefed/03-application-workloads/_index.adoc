@@ -1,6 +1,6 @@
 ---
 title: "应用负载"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载"
+keywords: "Kubernetes, KubeSphere, 联邦项目, 应用负载"
 description: "介绍如何管理联邦项目中的应用负载。"
 layout: "second"
 weight: 03

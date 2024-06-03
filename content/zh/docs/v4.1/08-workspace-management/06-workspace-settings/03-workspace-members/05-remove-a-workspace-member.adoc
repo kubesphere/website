@@ -1,6 +1,6 @@
 ---
 title: "移除企业空间成员"
-keywords: "Kubernetes, {ks_product}, 企业空间管理, 企业空间设置, 企业空间成员, 移除企业空间成员"
+keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 企业空间成员, 移除企业空间成员"
 description: "介绍如何移除企业空间成员。"
 weight: 05
 ---

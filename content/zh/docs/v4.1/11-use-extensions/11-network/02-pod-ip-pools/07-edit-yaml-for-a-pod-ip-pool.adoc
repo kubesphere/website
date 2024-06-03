@@ -1,6 +1,6 @@
 ---
 title: "编辑节点选择"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 禁止自动分配"
+keywords: "Kubernetes, KubeSphere, 集群管理, 网络, 容器组 IP 池, 禁止自动分配"
 description: "介绍如何设置容器组 IP 池的自动分配。"
 weight: 07
 ---

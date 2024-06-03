@@ -1,6 +1,6 @@
 ---
 title: "查看节点资源用量排行"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 集群状态, 资源用量"
+keywords: "Kubernetes, KubeSphere, 集群管理, 监控告警, 集群状态, 资源用量"
 description: "介绍如何按照特定资源的用量对节点进行排序。"
 weight: 06
 ---

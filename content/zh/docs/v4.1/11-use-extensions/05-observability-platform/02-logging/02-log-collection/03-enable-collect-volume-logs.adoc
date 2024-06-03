@@ -1,6 +1,6 @@
 ---
 title: "启用收集卷上日志"
-keywords: "Kubernetes, {ks_product}, 项目管理, 项目设置, 日志收集, 收集卷上的日志"
+keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 日志收集, 收集卷上的日志"
 description: "介绍如何启用收集卷上日志。"
 weight: 03
 ---

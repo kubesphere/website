@@ -1,6 +1,6 @@
 ---
 title: "创建任务"
-keywords: "Kubernetes, {ks_product}, 集群管理, 应用负载, 任务, 创建任务"
+keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 任务, 创建任务"
 description: "介绍如何创建任务。"
 weight: 01
 ---

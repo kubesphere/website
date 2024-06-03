@@ -1,6 +1,6 @@
 ---
 title: "集群角色"
-keywords: "Kubernetes, {ks_product}, 集群管理, 集群角色"
+keywords: "Kubernetes, KubeSphere, 集群管理, 集群角色"
 description: "介绍如何管理集群角色。"
 layout: "second"
 weight: 04

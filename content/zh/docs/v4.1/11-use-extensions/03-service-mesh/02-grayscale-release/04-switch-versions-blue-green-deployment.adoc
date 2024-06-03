@@ -1,6 +1,6 @@
 ---
 title: "切换上线版本（蓝绿部署）"
-keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 切换上线版本（蓝绿部署）"
+keywords: "Kubernetes, KubeSphere, 项目管理, 灰度发布, 切换上线版本（蓝绿部署）"
 description: "介绍如何为蓝绿部署任务切换上线版本。"
 weight: 04
 ---

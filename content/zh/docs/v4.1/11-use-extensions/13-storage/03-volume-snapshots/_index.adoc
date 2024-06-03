@@ -1,6 +1,6 @@
 ---
 title: "卷快照"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照"
+keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 卷快照"
 description: "介绍如何管理卷快照。"
 layout: "second"
 weight: 03

@@ -1,6 +1,6 @@
 ---
 title: "邀请用户加入企业空间"
-keywords: "Kubernetes, {ks_product}, 企业空间管理, 企业空间设置, 企业空间成员, 邀请用户加入企业空间"
+keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 企业空间成员, 邀请用户加入企业空间"
 description: "介绍如何邀请用户加入企业空间。"
 weight: 01
 ---

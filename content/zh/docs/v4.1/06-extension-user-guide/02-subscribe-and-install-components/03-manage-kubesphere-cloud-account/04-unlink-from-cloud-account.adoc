@@ -1,6 +1,6 @@
 ---
 title: "解绑云账号"
-keywords: "Kubernetes, {ks_product},解绑,组件,KubeSphere Cloud,云账号"
+keywords: "Kubernetes, KubeSphere,解绑,组件,KubeSphere Cloud,云账号"
 description: "介绍如何解绑 KubeSphere 云账号。"
 weight: 04
 ---

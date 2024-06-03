@@ -1,6 +1,6 @@
 ---
 title: "删除日志接收器"
-keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 日志接收器, 启用, 禁用"
+keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 日志接收器, 启用, 禁用"
 description: "介绍如何删除日志接收器。"
 weight: 06
 ---

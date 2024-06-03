@@ -1,6 +1,6 @@
 ---
 title: "修改通知语言"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 静默策略, 修改通知语言"
+keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理, 通知设置, 静默策略, 修改通知语言"
 description: "本节介绍如何修改通知语言。"
 weight: 06
 ---

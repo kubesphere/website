@@ -1,6 +1,6 @@
 ---
 title: "概览"
-keywords: "Kubernetes, {ks_product}, 集群管理, 概览"
+keywords: "Kubernetes, KubeSphere, 集群管理, 概览"
 description: "介绍如何查看集群的概览信息。"
 layout: "second"
 weight: 02

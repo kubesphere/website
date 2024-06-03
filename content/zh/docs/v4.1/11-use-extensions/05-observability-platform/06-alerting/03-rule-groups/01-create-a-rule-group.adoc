@@ -1,6 +1,6 @@
 ---
 title: "创建规则组"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 规则组, 创建规则组"
+keywords: "Kubernetes, KubeSphere, 集群管理, 监控告警, 规则组, 创建规则组"
 description: "介绍如何创建告警规则组。"
 weight: 01
 ---

@@ -1,6 +1,6 @@
 ---
 title: "自制应用"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用, 管理"
+keywords: "Kubernetes, KubeSphere, 联邦项目, 应用, 管理"
 description: "介绍如何管理联邦项目中安装的自制应用。"
 layout: "second"
 weight: 01

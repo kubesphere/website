@@ -1,6 +1,6 @@
 ---
 title: "重新创建工作负载"
-keywords: "Kubernetes, {ks_product}, 集群管理, 应用负载, 工作负载, 重新创建工作负载"
+keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 工作负载, 重新创建工作负载"
 description: "介绍如何重新创建工作负载。"
 weight: 07
 ---

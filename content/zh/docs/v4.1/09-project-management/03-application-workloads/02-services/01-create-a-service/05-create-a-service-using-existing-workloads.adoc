@@ -1,6 +1,6 @@
 ---
 title: "通过现有工作负载创建服务"
-keywords: "Kubernetes, {ks_product}, 项目管理, 工作负载, 服务, 创建服务, 通过现有工作负载创建服务"
+keywords: "Kubernetes, KubeSphere, 项目管理, 工作负载, 服务, 创建服务, 通过现有工作负载创建服务"
 description: "介绍如何创建服务并使用现有工作负载作为后端的工作负载。"
 weight: 05
 ---

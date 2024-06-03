@@ -1,7 +1,7 @@
 ---
 title: "环境要求"
-keywords: "Kubernetes, {ks_product}, 组件,支持矩阵"
-description: "介绍{ks_product_both}的环境要求。"
+keywords: "Kubernetes, KubeSphere, 组件,支持矩阵"
+description: "介绍 KubeSphere 的环境要求。"
 weight: 01
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "查看边缘节点列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 边缘节点, 查看边缘节点列表"
+keywords: "Kubernetes, KubeSphere, 集群管理, 边缘节点, 查看边缘节点列表"
 description: "介绍如何查看边缘节点列表。"
 weight: 02
 ---

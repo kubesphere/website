@@ -1,6 +1,6 @@
 ---
 title: "克隆持久卷"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 持久卷声明, 持久卷, 克隆持久卷"
+keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 持久卷声明, 持久卷, 克隆持久卷"
 description: "介绍如何克隆持久卷。"
 weight: 04
 ---

@@ -1,6 +1,6 @@
 ---
 title: "创建持久卷声明"
-keywords: "Kubernetes, {ks_product}, 项目管理, 存储, 持久卷声明, 创建持久卷声明"
+keywords: "Kubernetes, KubeSphere, 项目管理, 存储, 持久卷声明, 创建持久卷声明"
 description: "介绍如何创建持久卷声明。"
 weight: 01
 ---

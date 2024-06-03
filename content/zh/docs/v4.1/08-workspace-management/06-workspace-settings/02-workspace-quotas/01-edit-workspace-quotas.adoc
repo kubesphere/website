@@ -1,6 +1,6 @@
 ---
 title: "编辑企业空间配额"
-keywords: "Kubernetes, {ks_product}, 企业空间, 企业空间设置, 企业空间配额, 编辑企业空间配额"
+keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间配额, 编辑企业空间配额"
 description: "编辑如何查看企业空间配额。"
 weight: 01
 ---

@@ -1,6 +1,6 @@
 ---
 title: "查看规则组详情"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 规则组, 查看规则组详情"
+keywords: "Kubernetes, KubeSphere, 集群管理, 监控告警, 规则组, 查看规则组详情"
 description: "介绍如何查看规则组详情。"
 weight: 03
 ---

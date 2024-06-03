@@ -1,6 +1,6 @@
 ---
 title: "创建灰度发布任务"
-keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 创建灰度发布任务"
+keywords: "Kubernetes, KubeSphere, 项目管理, 灰度发布, 创建灰度发布任务"
 description: "介绍如何创建灰度发布任务。"
 weight: 01
 ---

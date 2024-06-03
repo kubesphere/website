@@ -1,6 +1,6 @@
 ---
 title: "查看应用模板详情"
-keywords: "Kubernetes, {ks_product}, 应用商店管理, 应用, 查看应用模板详情"
+keywords: "Kubernetes, KubeSphere, 应用商店管理, 应用, 查看应用模板详情"
 description: "介绍如何查看应用模板详情。"
 weight: 02
 ---

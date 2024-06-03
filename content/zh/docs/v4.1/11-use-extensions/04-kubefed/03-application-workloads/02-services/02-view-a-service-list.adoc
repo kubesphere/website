@@ -1,6 +1,6 @@
 ---
 title: "查看服务列表"
-keywords: "Kubernetes, {ks_product}, 项目管理, 工作负载, 服务, 查看服务列表"
+keywords: "Kubernetes, KubeSphere, 项目管理, 工作负载, 服务, 查看服务列表"
 description: "介绍如何查看服务列表。"
 weight: 02
 ---

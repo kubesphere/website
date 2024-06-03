@@ -1,6 +1,6 @@
 ---
 title: "查看自制应用列表"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用, 查看应用列表"
+keywords: "Kubernetes, KubeSphere, 联邦项目, 应用, 查看应用列表"
 description: "介绍如何在联邦项目中查看应用列表。"
 weight: 02
 ---

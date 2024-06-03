@@ -1,6 +1,6 @@
 ---
 title: "删除许可证"
-keywords: "Kubernetes, {ks_product}, 平台设置, 许可证, 管理许可证"
+keywords: "Kubernetes, KubeSphere, 平台设置, 许可证, 管理许可证"
 description: "介绍如何管理许可证。"
 weight: 05
 ---

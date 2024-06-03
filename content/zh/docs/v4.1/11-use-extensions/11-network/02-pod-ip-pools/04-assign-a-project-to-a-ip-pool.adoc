@@ -1,6 +1,6 @@
 ---
 title: "将容器组 IP 池分配到项目"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 禁止自动分配"
+keywords: "Kubernetes, KubeSphere, 集群管理, 网络, 容器组 IP 池, 禁止自动分配"
 description: "介绍如何禁用和启用容器组 IP 池自动分配。"
 weight: 04
 ---

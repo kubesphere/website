@@ -1,6 +1,6 @@
 ---
 title: "删除微服务配置"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 删除微服务配置"
+keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 删除微服务配置"
 description: "介绍如何删除微服务配置。"
 weight: 07
 ---

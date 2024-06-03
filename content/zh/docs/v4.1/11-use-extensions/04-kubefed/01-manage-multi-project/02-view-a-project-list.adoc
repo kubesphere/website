@@ -1,6 +1,6 @@
 ---
 title: "查看联邦项目列表"
-keywords: "Kuberentes, {ks_product}, 企业空间管理, 联邦项目, 介绍如何查看项目列表"
+keywords: "Kuberentes, KubeSphere, 企业空间管理, 联邦项目, 介绍如何查看项目列表"
 description: "介绍如何查看项目列表。"
 weight: 02
 ---

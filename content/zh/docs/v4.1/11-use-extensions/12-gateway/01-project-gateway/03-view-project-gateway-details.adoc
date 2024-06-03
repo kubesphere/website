@@ -1,6 +1,6 @@
 ---
 title: "查看项目网关详情"
-keywords: "Kubernetes, {ks_product}, 项目管理, 项目设置, 网关设置, 查看项目网关详情"
+keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 网关设置, 查看项目网关详情"
 description: "介绍如何查看项目网关详情。"
 weight: 03
 ---

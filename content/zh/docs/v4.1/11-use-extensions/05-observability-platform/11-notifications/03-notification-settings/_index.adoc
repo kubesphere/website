@@ -1,6 +1,6 @@
 ---
 title: "通知设置"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置"
+keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理, 通知设置"
 description: "本节介绍如何管理静默策略和通知语言。"
 layout: "second"
 weight: 03

@@ -1,6 +1,6 @@
 ---
 title: "设置邮件通知"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 设置邮件通知"
+keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理, 通知设置, 设置邮件通知"
 description: "介绍如何设置邮件通知。"
 weight: 01
 ---
