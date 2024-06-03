@@ -1,5 +1,6 @@
 ---
 title: "删除企业空间"
+linkTitle: "删除企业空间"
 keywords: "Kubernetes, KubeSphere, 访问控制, 企业空间, 删除企业空间"
 description: "介绍如何删除企业空间。"
 weight: 04

@@ -1,5 +1,6 @@
 ---
 title: "查看物理资源状态"
+linkTitle: "查看物理资源状态"
 keywords: "Kubernetes, KubeSphere, 监控告警, 集群状态，物理资源状态"
 description: "介绍如何查看物理资源状态。"
 weight: 02

@@ -1,5 +1,6 @@
 ---
 title: "删除通知订阅"
+linkTitle: "删除通知订阅"
 weight: 04
 ---
 

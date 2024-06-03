@@ -1,5 +1,6 @@
 ---
 title: "WhizardTelemetry 审计管理"
+linkTitle: "WhizardTelemetry 审计管理"
 keywords: "Kubernetes, KubeSphere, 审计"
 description: "介绍如何使用“WhizardTelemetry 审计管理”扩展组件。"
 layout: "second"

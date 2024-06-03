@@ -1,5 +1,6 @@
 ---
 title: "查看许可证信息"
+linkTitle: "查看许可证信息"
 keywords: "Kubernetes, KubeSphere, 平台设置, 许可证, 查看许可证信息"
 description: "介绍如何查看许可证信息。"
 weight: 01

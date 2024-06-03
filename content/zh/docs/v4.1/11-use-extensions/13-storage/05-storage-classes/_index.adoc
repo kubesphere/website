@@ -1,5 +1,6 @@
 ---
 title: "存储类"
+linkTitle: "存储类"
 weight: 05
 layout: "second"
 ---

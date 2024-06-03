@@ -1,5 +1,6 @@
 ---
 title: "KubeSphere 服务网格"
+linkTitle: "KubeSphere 服务网格"
 keywords: "Kubernetes, KubeSphere, 服务网格"
 description: "介绍如何使用 KubeSphere 服务网格组件。"
 layout: "second"

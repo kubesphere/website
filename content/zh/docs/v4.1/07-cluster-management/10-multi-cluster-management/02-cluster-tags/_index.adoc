@@ -1,5 +1,6 @@
 ---
 title: "集群标签"
+linkTitle: "集群标签"
 keywords: "Kubernetes, KubeSphere, 多集群管理, 集群标签"
 description: "介绍如何使用主集群的 Web 控制台管理集群标签。"
 layout: "second"

@@ -1,5 +1,6 @@
 ---
 title: "查看集群可见性"
+linkTitle: "查看集群可见性"
 keywords: "Kubernetes, KubeSphere, 集群管理, 集群可见性, 查看集群可见性"
 description: "介绍如何查看集群已授权给哪些企业空间。"
 weight: 01

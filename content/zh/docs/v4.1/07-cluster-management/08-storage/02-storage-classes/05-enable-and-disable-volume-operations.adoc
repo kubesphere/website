@@ -1,5 +1,6 @@
 ---
 title: "启用和禁用卷操作"
+linkTitle: "启用和禁用卷操作"
 keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 存储类, 启用和禁用卷操作"
 description: "介绍如何启用和禁用卷操作。"
 weight: 05

@@ -1,5 +1,6 @@
 ---
 title: "删除应用版本"
+linkTitle: "删除应用版本"
 weight: 08
 ---
 

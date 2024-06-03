@@ -1,5 +1,6 @@
 ---
 title: "KubeSphere 多集群代理连接"
+linkTitle: "KubeSphere 多集群代理连接"
 weight: 19
 layout: "second"
 ---

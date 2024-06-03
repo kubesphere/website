@@ -1,5 +1,6 @@
 ---
 title: "查看集群监控概览"
+linkTitle: "查看集群监控概览"
 weight: 01
 ---
 

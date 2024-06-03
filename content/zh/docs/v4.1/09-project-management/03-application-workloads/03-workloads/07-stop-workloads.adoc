@@ -1,5 +1,6 @@
 ---
 title: "停止工作负载"
+linkTitle: "停止工作负载"
 keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 工作负载, 停止工作负载"
 description: "介绍如何停止工作负载。"
 weight: 07

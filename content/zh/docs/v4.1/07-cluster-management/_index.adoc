@@ -1,5 +1,6 @@
 ---
 title: "集群管理"
+linkTitle: "集群管理"
 keywords: "Kubernetes, KubeSphere, 集群管理"
 description: "介绍如何管理集群中的资源。"
 layout: "second"

@@ -1,5 +1,6 @@
 ---
 title: "基本信息"
+linkTitle: "基本信息"
 keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 基本信息"
 description: "介绍如何查看和编辑企业空间基本信息。"
 layout: "second"

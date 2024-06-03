@@ -1,5 +1,6 @@
 ---
 title: "为联邦项目添加集群"
+linkTitle: "为联邦项目添加集群"
 keywords: "Kuberentes, KubeSphere, 企业空间管理, 联邦项目, 为联邦项目添加集群"
 description: "介绍如何为联邦项目添加集群。"
 weight: 05

@@ -1,5 +1,6 @@
 ---
 title: "创建约束模板"
+linkTitle: "创建约束模板"
 weight: 01
 ---
 

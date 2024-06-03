@@ -1,5 +1,6 @@
 ---
 title: "调整流量分配比例（金丝雀发布）"
+linkTitle: "调整流量分配比例（金丝雀发布）"
 keywords: "Kubernetes, KubeSphere, 项目管理, 灰度发布, 调整流量分配比例（金丝雀发布）"
 description: "介绍如何为金丝雀发布任务调整流量分配比例。"
 weight: 05

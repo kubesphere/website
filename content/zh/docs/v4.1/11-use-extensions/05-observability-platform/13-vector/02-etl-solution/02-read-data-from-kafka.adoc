@@ -1,5 +1,6 @@
 ---
 title: "步骤 2：使用 Vector 从 Kafka 读取数据"
+linkTitle: "步骤 2：使用 Vector 从 Kafka 读取数据"
 weight: 02
 ---
 

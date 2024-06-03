@@ -1,5 +1,6 @@
 ---
 title: "WhizardTelemetry 平台服务"
+linkTitle: "WhizardTelemetry 平台服务"
 weight: 01
 layout: "second"
 ---

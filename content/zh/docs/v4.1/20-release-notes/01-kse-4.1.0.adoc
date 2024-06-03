@@ -1,5 +1,6 @@
 ---
 title: "KubeSphere 企业版 v4.1.0 版本说明"
+linkTitle: "KubeSphere 企业版 v4.1.0 版本说明"
 keywords: "v4.1.0 版本说明, KubeSphere 企业版"
 description: "介绍 KubeSphere 企业版新特性、功能增强以及问题修复。"
 weight: 01

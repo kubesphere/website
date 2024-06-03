@@ -1,5 +1,6 @@
 ---
 title: "约束模板"
+linkTitle: "约束模板"
 weight: 01
 layout: "second"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "添加日志接收器"
+linkTitle: "添加日志接收器"
 keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 日志接收器, 添加日志接收器"
 description: "介绍如何添加日志接收器。"
 weight: 01

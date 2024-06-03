@@ -1,5 +1,6 @@
 ---
 title: "创建自制应用"
+linkTitle: "创建自制应用"
 keywords: "Kubernetes, KubeSphere, 项目管理, 应用, 创建自制应用"
 description: "介绍如何创建自制应用。"
 weight: 03

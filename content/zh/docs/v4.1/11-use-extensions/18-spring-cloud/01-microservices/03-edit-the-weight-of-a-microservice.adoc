@@ -1,5 +1,6 @@
 ---
 title: "编辑微服务实例权重"
+linkTitle: "编辑微服务实例权重"
 keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 编辑微服务实例权重"
 description: "介绍编辑微服务实例权重。"
 weight: 03

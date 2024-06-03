@@ -1,5 +1,6 @@
 ---
 title: "卸载扩展组件"
+linkTitle: "卸载扩展组件"
 keywords: "Kubernetes, KubeSphere,卸载,强制卸载,扩展组件"
 description: "介绍如何卸载扩展组件。"
 weight: 05

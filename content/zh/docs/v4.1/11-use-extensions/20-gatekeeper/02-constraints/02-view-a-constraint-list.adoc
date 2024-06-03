@@ -1,5 +1,6 @@
 ---
 title: "查看约束列表"
+linkTitle: "查看约束列表"
 weight: 02
 ---
 

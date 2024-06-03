@@ -1,5 +1,6 @@
 ---
 title: "约束"
+linkTitle: "约束"
 weight: 02
 layout: "second"
 ---

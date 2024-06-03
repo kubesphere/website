@@ -1,5 +1,6 @@
 ---
 title: "回退工作负载设置"
+linkTitle: "回退工作负载设置"
 keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 工作负载, 回退工作负载设置"
 description: "介绍如何回退工作负载设置。"
 weight: 08

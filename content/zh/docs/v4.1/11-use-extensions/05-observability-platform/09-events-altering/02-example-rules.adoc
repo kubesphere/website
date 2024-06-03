@@ -1,5 +1,6 @@
 ---
 title: "告警规则示例"
+linkTitle: "告警规则示例"
 weight: 02
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "通过 kubectl 运行命令"
+linkTitle: "通过 kubectl 运行命令"
 keywords: "Kubernetes, KubeSphere, kubectl, 命令, 通过 kubectl 运行命令"
 description: "介绍如何过 kubectl 运行命令。"
 weight: 01

@@ -1,5 +1,6 @@
 ---
 title: "添加集群节点"
+linkTitle: "添加集群节点"
 keywords: "Kubernetes, KubeSphere, 添加集群节点"
 description: "介绍如何添加 KubeSphere 集群节点。"
 weight: 01

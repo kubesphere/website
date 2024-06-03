@@ -1,5 +1,6 @@
 ---
 title: "术语表"
+linkTitle: "术语表"
 weight: 25
 keywords: 'Kubernetes, KubeSphere, 术语表, 词汇表'
 description: 'KubeSphere 中使用的术语表。'

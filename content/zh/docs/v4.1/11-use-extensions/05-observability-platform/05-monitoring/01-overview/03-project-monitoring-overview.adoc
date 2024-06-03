@@ -1,5 +1,6 @@
 ---
 title: "查看项目监控概览"
+linkTitle: "查看项目监控概览"
 weight: 03
 ---
 

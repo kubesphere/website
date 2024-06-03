@@ -1,5 +1,6 @@
 ---
 title: "下架应用模板"
+linkTitle: "下架应用模板"
 keywords: "Kubernetes, KubeSphere, 应用商店管理, 应用, 下架应用模板"
 description: "介绍如何下架应用模板。"
 weight: 10

@@ -1,5 +1,6 @@
 ---
 title: "联邦集群应用管理"
+linkTitle: "联邦集群应用管理"
 keywords: "Kubernetes, KubeSphere, 联邦项目"
 description: "介绍如何管理联邦项目，以及如何在联邦项目中管理应用负载、卷、配置资源和项目设置。"
 layout: "second"

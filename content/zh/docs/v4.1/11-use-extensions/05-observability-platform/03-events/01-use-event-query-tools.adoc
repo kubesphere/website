@@ -1,5 +1,6 @@
 ---
 title: "使用资源事件查询工具"
+linkTitle: "使用资源事件查询工具"
 keywords: "Kubernetes, KubeSphere, 集群管理, 工具箱, 查询资源事件"
 description: "介绍如何使用资源事件查询工具。"
 weight: 02

@@ -1,5 +1,6 @@
 ---
 title: "创建通知订阅"
+linkTitle: "创建通知订阅"
 weight: 01
 ---
 

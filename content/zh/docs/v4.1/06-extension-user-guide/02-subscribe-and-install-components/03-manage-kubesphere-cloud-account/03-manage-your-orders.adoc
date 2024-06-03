@@ -1,5 +1,6 @@
 ---
 title: "管理订单"
+linkTitle: "管理订单"
 keywords: "Kubernetes, KubeSphere,组件,订单管理,KubeSphere Cloud,云账号"
 description: "介绍如何管理 KubeSphere 云账号下的订单。"
 weight: 03

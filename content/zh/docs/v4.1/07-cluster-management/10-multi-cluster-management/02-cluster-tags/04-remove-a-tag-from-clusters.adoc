@@ -1,5 +1,6 @@
 ---
 title: "从集群上移除标签"
+linkTitle: "从集群上移除标签"
 keywords: "Kubernetes, KubeSphere, 多集群管理, 集群标签, 从集群上移除标签"
 description: "介绍如何从集群上移除标签。"
 weight: 04

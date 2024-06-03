@@ -1,5 +1,6 @@
 ---
 title: "查看定制资源定义详情"
+linkTitle: "查看定制资源定义详情"
 keywords: "Kubernetes, KubeSphere, 集群管理, 定制资源定义, 查看定制资源定义列表"
 description: "介绍如何查看定制资源定义详情。"
 weight: 02

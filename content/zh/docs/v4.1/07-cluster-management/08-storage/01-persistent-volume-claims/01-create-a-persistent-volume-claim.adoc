@@ -1,5 +1,6 @@
 ---
 title: "创建持久卷声明"
+linkTitle: "创建持久卷声明"
 keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 持久卷声明, 持久卷, 创建持久卷声明"
 description: "介绍如何创建持久卷声明。"
 weight: 01

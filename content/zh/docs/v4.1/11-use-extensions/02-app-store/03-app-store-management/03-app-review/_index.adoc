@@ -1,5 +1,6 @@
 ---
 title: "应用审核"
+linkTitle: "应用审核"
 keywords: "Kubernetes, KubeSphere, 平台管理, 应用商店管理, 应用审核"
 description: "介绍如何审校提交到应用商店的应用版本。"
 layout: "second"

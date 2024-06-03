@@ -1,5 +1,6 @@
 ---
 title: "禁用和启用容器组 IP 池"
+linkTitle: "禁用和启用容器组 IP 池"
 keywords: "Kubernetes, KubeSphere, 集群管理, 网络, 容器组 IP 池, 禁用和启用容器组 IP 池"
 description: "介绍如何禁用和启用容器组 IP 池。"
 weight: 08

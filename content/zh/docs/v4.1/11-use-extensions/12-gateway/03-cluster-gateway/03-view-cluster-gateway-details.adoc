@@ -1,5 +1,6 @@
 ---
 title: "查看集群网关详情"
+linkTitle: "查看集群网关详情"
 keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 网关设置, 查看集群网关详情"
 description: "介绍如何查看网关信息。"
 weight: 03

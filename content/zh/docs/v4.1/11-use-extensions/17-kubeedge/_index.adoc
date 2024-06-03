@@ -1,5 +1,6 @@
 ---
 title: "KubeEdge"
+linkTitle: "KubeEdge"
 keywords: "Kubernetes, KubeSphere, 集群管理, 边缘节点"
 description: "介绍如何管理边缘节点。"
 layout: "second"

@@ -1,5 +1,6 @@
 ---
 title: "阻止和允许容器组调度"
+linkTitle: "阻止和允许容器组调度"
 keywords: "Kubernetes, KubeSphere, 集群管理, 节点, 集群节点, 阻止和允许容器组调度"
 description: "介绍如何阻止和允许容器组调度。"
 weight: 03

@@ -1,5 +1,6 @@
 ---
 title: "删除应用路由"
+linkTitle: "删除应用路由"
 keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 应用路由, 删除应用路由"
 description: "介绍如何删除应用路由。"
 weight: 08

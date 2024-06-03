@@ -1,5 +1,6 @@
 ---
 title: "KubeSphere 网络"
+linkTitle: "KubeSphere 网络"
 keywords: "Kubernetes, KubeSphere, 集群管理, 项目管理, 网络, 网络策略, 容器组 IP 池, 网络隔离"
 description: "介绍如何管理网络策略和容器组 IP 池。"
 layout: "second"

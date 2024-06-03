@@ -1,5 +1,6 @@
 ---
 title: "KubeSphere LuBan"
+linkTitle: "KubeSphere LuBan"
 weight: 01
 ---
 

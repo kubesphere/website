@@ -1,5 +1,6 @@
 ---
 title: "KubeSphere 网关"
+linkTitle: "KubeSphere 网关"
 weight: 12
 layout: "second"
 ---

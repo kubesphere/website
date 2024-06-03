@@ -1,5 +1,6 @@
 ---
 title: "查看应用路由详情"
+linkTitle: "查看应用路由详情"
 keywords: "Kubernetes, KubeSphere, 联邦项目, 应用负载, 应用路由, 查看应用路由详情"
 description: "介绍如何查看应用路由详情。"
 weight: 03

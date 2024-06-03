@@ -1,5 +1,6 @@
 ---
 title: "查看服务详情"
+linkTitle: "查看服务详情"
 keywords: "Kubernetes, KubeSphere, 项目管理, 工作负载, 服务, 查看服务详情"
 description: "介绍如何查看服务详情。"
 weight: 03

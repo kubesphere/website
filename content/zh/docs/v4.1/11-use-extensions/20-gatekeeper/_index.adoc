@@ -1,5 +1,6 @@
 ---
 title: "Gatekeeper"
+linkTitle: "Gatekeeper"
 weight: 20
 layout: "second"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "快捷访问"
+linkTitle: "快捷访问"
 weight: 02
 ---
 

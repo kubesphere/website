@@ -1,5 +1,6 @@
 ---
 title: "查看约束模板详情"
+linkTitle: "查看约束模板详情"
 weight: 03
 ---
 

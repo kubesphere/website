@@ -1,5 +1,6 @@
 ---
 title: "附录 1：ks-core Helm Chart 升级参数"
+linkTitle: "附录 1：ks-core Helm Chart 升级参数"
 weight: 05
 ---
 

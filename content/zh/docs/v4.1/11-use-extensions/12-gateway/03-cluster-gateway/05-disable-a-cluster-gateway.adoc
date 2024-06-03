@@ -1,5 +1,6 @@
 ---
 title: "禁用集群网关"
+linkTitle: "禁用集群网关"
 keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 网关设置, 禁用集群网关"
 description: "介绍如何禁用集群网关。"
 weight: 05

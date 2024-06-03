@@ -1,5 +1,6 @@
 ---
 title: "查看集群信息"
+linkTitle: "查看集群信息"
 keywords: "Kubernetes, KubeSphere, 企业空间管理, 概览, 查看集群信息"
 description: "介绍如何查看集群信息。"
 weight: 03

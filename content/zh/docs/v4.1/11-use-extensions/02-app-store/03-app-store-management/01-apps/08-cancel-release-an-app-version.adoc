@@ -1,5 +1,6 @@
 ---
 title: "取消发布应用版本"
+linkTitle: "取消发布应用版本"
 weight: 08
 ---
 

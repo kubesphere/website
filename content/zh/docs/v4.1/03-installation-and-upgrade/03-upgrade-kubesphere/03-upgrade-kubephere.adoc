@@ -1,5 +1,6 @@
 ---
 title: "升级 KubeSphere 企业版"
+linkTitle: "升级 KubeSphere 企业版"
 keywords: "Kubernetes, KubeSphere, 安装, 升级 KubeSphere"
 description: "介绍如何升级 KubeSphere。"
 weight: 03

@@ -1,5 +1,6 @@
 ---
 title: "自定义监控"
+linkTitle: "自定义监控"
 keywords: "Kubernetes, KubeSphere, 集群管理, 自定义监控面板"
 description: "介绍如何使用自定义监控面板。"
 layout: "second"

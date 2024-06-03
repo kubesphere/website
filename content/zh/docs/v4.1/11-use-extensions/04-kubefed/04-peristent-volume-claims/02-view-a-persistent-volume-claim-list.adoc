@@ -1,5 +1,6 @@
 ---
 title: "查看持久卷声明列表"
+linkTitle: "查看持久卷声明列表"
 keywords: "Kubernetes, KubeSphere, 联邦项目, 存储, 持久卷声明, 查看持久卷声明列表"
 description: "介绍如何查看持久卷声明列表。"
 weight: 02

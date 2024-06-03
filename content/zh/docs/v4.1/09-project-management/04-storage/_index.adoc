@@ -1,5 +1,6 @@
 ---
 title: "存储"
+linkTitle: "存储"
 keywords: "Kubernetes, KubeSphere, 项目管理, 存储"
 description: "介绍如何管理存储资源。"
 layout: "second"

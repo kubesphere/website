@@ -1,5 +1,6 @@
 ---
 title: "设置默认存储类"
+linkTitle: "设置默认存储类"
 keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 存储类, 设置默认存储类"
 description: "介绍如何设置默认存储类。"
 weight: 04

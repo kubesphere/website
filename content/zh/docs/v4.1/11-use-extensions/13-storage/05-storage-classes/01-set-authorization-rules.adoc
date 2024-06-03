@@ -1,5 +1,6 @@
 ---
 title: "设置授权规则"
+linkTitle: "设置授权规则"
 weight: 01
 ---
 

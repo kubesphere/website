@@ -1,5 +1,6 @@
 ---
 title: "启用和禁用用户"
+linkTitle: "启用和禁用用户"
 keywords: "Kubernetes, KubeSphere, 访问控制, 用户, 启用和禁用用户"
 description: "介绍如何启用和禁用用户。"
 weight: 09

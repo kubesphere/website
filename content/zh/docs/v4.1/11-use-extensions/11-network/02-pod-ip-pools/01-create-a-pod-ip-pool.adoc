@@ -1,5 +1,6 @@
 ---
 title: "创建容器组 IP 池"
+linkTitle: "创建容器组 IP 池"
 keywords: "Kubernetes, KubeSphere, 集群管理, 网络, 容器组 IP 池, 创建容器组 IP 池"
 description: "介绍如何创建容器组 IP 池。"
 weight: 01

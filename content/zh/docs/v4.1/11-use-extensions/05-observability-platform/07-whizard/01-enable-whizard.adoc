@@ -1,5 +1,6 @@
 ---
 title: "启用 Whizard 可观测中心"
+linkTitle: "启用 Whizard 可观测中心"
 weight: 01
 ---
 

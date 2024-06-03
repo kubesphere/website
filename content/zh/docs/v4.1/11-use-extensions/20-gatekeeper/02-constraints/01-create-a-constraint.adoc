@@ -1,5 +1,6 @@
 ---
 title: "创建约束"
+linkTitle: "创建约束"
 weight: 01
 ---
 

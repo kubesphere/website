@@ -1,5 +1,6 @@
 ---
 title: "安装示例组件"
+linkTitle: "安装示例组件"
 keywords: "Kubernetes, KubeSphere, 快速入门, 安装组件, 示例, DevOps"
 description: "以 DevOps 安装为例，演示如何在 KubeSphere Web 控制台安装组件。"
 weight: 02

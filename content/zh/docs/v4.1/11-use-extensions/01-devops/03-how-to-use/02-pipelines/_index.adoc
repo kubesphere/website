@@ -1,5 +1,6 @@
 ---
 title: "流水线"
+linkTitle: "流水线"
 keywords: "Kubernetes, KubeSphere, DevOps 项目, 使用 DevOps, 流水线"
 description: "本节介绍如何使用流水线功能。"
 layout: "second"

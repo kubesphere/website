@@ -1,5 +1,6 @@
 ---
 title: "修改企业空间成员的角色"
+linkTitle: "修改企业空间成员的角色"
 keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 企业空间成员, 修改企业空间成员的角色"
 description: "介绍如何修改企业空间成员的角色。"
 weight: 04

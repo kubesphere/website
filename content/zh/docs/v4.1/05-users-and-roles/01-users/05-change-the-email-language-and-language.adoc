@@ -1,5 +1,6 @@
 ---
 title: "编辑当前用户信息"
+linkTitle: "编辑当前用户信息"
 keywords: "Kubernetes, KubeSphere, 集群管理, Web 控制台, 修改邮箱、语言"
 description: "介绍如何修改当前用户的邮箱和语言。"
 weight: 05

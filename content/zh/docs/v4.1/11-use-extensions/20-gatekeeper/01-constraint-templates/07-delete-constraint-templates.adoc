@@ -1,5 +1,6 @@
 ---
 title: "删除约束模板"
+linkTitle: "删除约束模板"
 weight: 07
 ---
 

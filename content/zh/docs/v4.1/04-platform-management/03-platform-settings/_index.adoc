@@ -1,5 +1,6 @@
 ---
 title: "平台设置"
+linkTitle: "平台设置"
 weight: 03
 layout: "second"
 ---

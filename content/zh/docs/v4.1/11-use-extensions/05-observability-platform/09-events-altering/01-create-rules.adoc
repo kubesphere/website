@@ -1,5 +1,6 @@
 ---
 title: "创建告警规则"
+linkTitle: "创建告警规则"
 weight: 01
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "许可证 FAQ"
+linkTitle: "许可证 FAQ"
 weight: 07
 ---
 

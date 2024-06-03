@@ -1,5 +1,6 @@
 ---
 title: "回退微服务配置"
+linkTitle: "回退微服务配置"
 keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 回退微服务配置"
 description: "介绍如何回退微服务配置。"
 weight: 06

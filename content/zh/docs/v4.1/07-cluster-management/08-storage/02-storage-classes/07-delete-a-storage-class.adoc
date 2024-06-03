@@ -1,5 +1,6 @@
 ---
 title: "删除存储类"
+linkTitle: "删除存储类"
 keywords: "Kubernetes, KubeSphere, 集群管理, 存储类"
 description: "介绍如何删除存储类。"
 weight: 07

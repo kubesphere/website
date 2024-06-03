@@ -1,5 +1,6 @@
 ---
 title: "查看通知订阅"
+linkTitle: "查看通知订阅"
 weight: 02
 ---
 

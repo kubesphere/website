@@ -1,5 +1,6 @@
 ---
 title: "WhizardTelemetry 日志管理"
+linkTitle: "WhizardTelemetry 日志管理"
 keywords: "Kubernetes, KubeSphere, 日志"
 description: "介绍如何使用“WhizardTelemetry 日志管理”扩展组件。"
 layout: "second"

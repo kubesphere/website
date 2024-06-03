@@ -1,5 +1,6 @@
 ---
 title: "创建联邦项目"
+linkTitle: "创建联邦项目"
 keywords: "Kuberentes, KubeSphere, 企业空间管理, 联邦项目, 创建联邦项目"
 description: "介绍如何创建联邦项目。"
 weight: 01

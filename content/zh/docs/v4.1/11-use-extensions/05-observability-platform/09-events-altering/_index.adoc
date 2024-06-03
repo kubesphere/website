@@ -1,5 +1,6 @@
 ---
 title: "WhizardTelemetry 事件告警"
+linkTitle: "WhizardTelemetry 事件告警"
 keywords: "Kubernetes, KubeSphere, 事件, 审计, 告警"
 description: "介绍如何管理事件和审计的告警。"
 layout: "second"

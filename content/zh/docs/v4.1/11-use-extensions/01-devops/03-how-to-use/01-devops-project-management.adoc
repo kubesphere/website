@@ -1,5 +1,6 @@
 ---
 title: "创建和管理 DevOps 项目"
+linkTitle: "创建和管理 DevOps 项目"
 keywords: "Kubernetes, KubeSphere, DevOps 项目, DevOps 项目管理"
 description: "演示如何创建和管理 DevOps 项目。"
 weight: 01

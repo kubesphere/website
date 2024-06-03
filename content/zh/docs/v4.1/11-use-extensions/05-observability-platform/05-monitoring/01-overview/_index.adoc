@@ -1,5 +1,6 @@
 ---
 title: "概览"
+linkTitle: "概览"
 weight: 01
 layout: "second"
 ---

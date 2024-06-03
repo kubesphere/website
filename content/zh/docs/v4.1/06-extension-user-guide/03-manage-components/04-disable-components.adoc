@@ -1,5 +1,6 @@
 ---
 title: "禁用扩展组件"
+linkTitle: "禁用扩展组件"
 keywords: "Kubernetes, KubeSphere,启用,禁用,扩展组件"
 description: "介绍如何禁用扩展组件。"
 weight: 04

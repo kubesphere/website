@@ -1,5 +1,6 @@
 ---
 title: "概述"
+linkTitle: "概述"
 keywords: "Kubernetes, KubeSphere, DevOps, 概述"
 description: "介绍 KubeSphere DevOps 的基本原理。"
 weight: 01

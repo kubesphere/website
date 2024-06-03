@@ -1,5 +1,6 @@
 ---
 title: "查看卷快照内容详情"
+linkTitle: "查看卷快照内容详情"
 keywords: "Kubernetes, KubeSphere, 集群管理, 卷快照内容, 查看卷快照内容详情"
 description: "介绍如何查看集群中持久卷的详情。"
 weight: 07

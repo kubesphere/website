@@ -1,5 +1,6 @@
 ---
 title: "访问应用路由的后端服务"
+linkTitle: "访问应用路由的后端服务"
 keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 应用路由, 访问应用路由的后端服务"
 description: "介绍如何访问应用路由的后端服务。"
 weight: 04

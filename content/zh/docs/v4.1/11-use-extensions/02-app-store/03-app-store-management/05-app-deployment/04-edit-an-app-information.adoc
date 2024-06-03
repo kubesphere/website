@@ -1,5 +1,6 @@
 ---
 title: "编辑应用信息"
+linkTitle: "编辑应用信息"
 weight: 04
 ---
 

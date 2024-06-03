@@ -1,5 +1,6 @@
 ---
 title: "编辑集群基本信息"
+linkTitle: "编辑集群基本信息"
 keywords: "Kubernetes, KubeSphere, 集群管理, 基本信息, 编辑集群基本信息"
 description: "介绍如何查看集群基本信息。"
 weight: 02

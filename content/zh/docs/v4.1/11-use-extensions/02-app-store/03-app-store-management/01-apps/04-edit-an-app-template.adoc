@@ -1,5 +1,6 @@
 ---
 title: "编辑应用模板"
+linkTitle: "编辑应用模板"
 weight: 04
 ---
 

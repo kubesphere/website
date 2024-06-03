@@ -1,5 +1,6 @@
 ---
 title: "创建工作负载"
+linkTitle: "创建工作负载"
 keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 工作负载, 创建工作负载"
 description: "介绍如何创建工作负载。"
 weight: 01

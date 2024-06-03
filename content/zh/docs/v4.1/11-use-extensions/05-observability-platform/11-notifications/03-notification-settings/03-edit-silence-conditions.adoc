@@ -1,5 +1,6 @@
 ---
 title: "编辑静默条件"
+linkTitle: "编辑静默条件"
 keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理, 通知设置, 静默策略, 编辑静默条件"
 description: "本节介绍如何编辑通知静默条件。"
 weight: 03

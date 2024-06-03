@@ -1,5 +1,6 @@
 ---
 title: "查看应用详情"
+linkTitle: "查看应用详情"
 weight: 02
 ---
 

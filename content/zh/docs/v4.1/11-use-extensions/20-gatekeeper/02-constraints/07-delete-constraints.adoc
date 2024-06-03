@@ -1,5 +1,6 @@
 ---
 title: "删除约束"
+linkTitle: "删除约束"
 weight: 07
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "编辑服务设置"
+linkTitle: "编辑服务设置"
 keywords: "Kubernetes, KubeSphere, 项目管理, 工作负载, 服务, 编辑服务设置"
 description: "介绍如何编辑服务设置。"
 weight: 06

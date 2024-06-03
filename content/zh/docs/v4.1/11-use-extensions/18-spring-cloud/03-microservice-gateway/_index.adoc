@@ -1,5 +1,6 @@
 ---
 title: "微服务网关"
+linkTitle: "微服务网关"
 keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 微服务网关"
 description: "介绍如何管理微服务网关。"
 layout: "second"

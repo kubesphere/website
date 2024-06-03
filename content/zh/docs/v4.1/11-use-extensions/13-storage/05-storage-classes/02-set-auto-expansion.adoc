@@ -1,5 +1,6 @@
 ---
 title: "设置存储卷自动扩展"
+linkTitle: "设置存储卷自动扩展"
 keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 持久卷声明, 持久卷,自动扩展"
 description: "介绍如何设置存储卷自动扩展。"
 weight: 02

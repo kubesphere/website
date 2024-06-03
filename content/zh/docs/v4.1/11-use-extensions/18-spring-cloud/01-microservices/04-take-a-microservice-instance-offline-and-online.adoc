@@ -1,5 +1,6 @@
 ---
 title: "下线和上线微服务实例"
+linkTitle: "下线和上线微服务实例"
 keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 下线微服务实例"
 description: "介绍如何下线和上线微服务实例。"
 weight: 04

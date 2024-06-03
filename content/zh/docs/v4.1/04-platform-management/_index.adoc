@@ -1,5 +1,6 @@
 ---
 title: "平台管理"
+linkTitle: "平台管理"
 keywords: "Kubernetes, KubeSphere, 平台管理"
 description: "介绍 KubeSphere 各模块的功能，以及如何对该平台进行设置。"
 layout: "second"

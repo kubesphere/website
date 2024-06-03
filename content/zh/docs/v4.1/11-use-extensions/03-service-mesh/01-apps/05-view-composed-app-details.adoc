@@ -1,5 +1,6 @@
 ---
 title: "查看自制应用详情"
+linkTitle: "查看自制应用详情"
 keywords: "Kubernetes, KubeSphere, 项目管理, 应用, 查看自制应用详情"
 description: "介绍如何查看自制应用详情。"
 weight: 05

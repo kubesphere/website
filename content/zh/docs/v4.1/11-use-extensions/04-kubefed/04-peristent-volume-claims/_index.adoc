@@ -1,5 +1,6 @@
 ---
 title: "持久卷声明"
+linkTitle: "持久卷声明"
 keywords: "Kubernetes, KubeSphere, 联邦项目, 存储, 持久卷声明"
 description: "介绍如何管理联邦项目中的持久卷声明。"
 layout: "second"

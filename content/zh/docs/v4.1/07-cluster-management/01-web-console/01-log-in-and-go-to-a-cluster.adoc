@@ -1,5 +1,6 @@
 ---
 title: "登录并进入集群"
+linkTitle: "登录并进入集群"
 keywords: "Kubernetes, KubeSphere, 集群管理, Web 控制台, 登录并进入集群"
 description: "本节介绍如何登录并进入集群。"
 weight: 01

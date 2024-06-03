@@ -1,5 +1,6 @@
 ---
 title: "日志接收器"
+linkTitle: "日志接收器"
 weight: 03
 layout: "second"
 ---

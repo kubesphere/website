@@ -1,5 +1,6 @@
 ---
 title: "版本说明"
+linkTitle: "版本说明"
 keywords: "Kubernetes, KubeSphere, 版本说明，release notes"
 description: "版本说明"
 layout: "second"

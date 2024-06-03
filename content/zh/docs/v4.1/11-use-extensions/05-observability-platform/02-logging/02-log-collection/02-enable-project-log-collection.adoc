@@ -1,5 +1,6 @@
 ---
 title: "在项目中启用日志收集"
+linkTitle: "在项目中启用日志收集"
 keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 日志收集, 启用日志收集"
 description: "介绍如何启用日志收集。"
 weight: 02

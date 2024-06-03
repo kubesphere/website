@@ -1,5 +1,6 @@
 ---
 title: "删除自定义规则组"
+linkTitle: "删除自定义规则组"
 keywords: "Kubernetes, KubeSphere, 集群管理, 监控告警, 告警管理, 规则组, 删除规则组"
 description: "介绍如何删除告警规则组。"
 weight: 07

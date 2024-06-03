@@ -1,5 +1,6 @@
 ---
 title: "用户"
+linkTitle: "用户"
 keywords: "Kubernetes, KubeSphere, 访问控制, 用户"
 description: "介绍如何管理用户。"
 layout: "second"

@@ -1,5 +1,6 @@
 ---
 title: "删除定制资源"
+linkTitle: "删除定制资源"
 keywords: "Kubernetes, KubeSphere, 集群管理, 定制资源定义, 删除定制资源"
 description: "介绍如何删除定制资源。"
 weight: 04

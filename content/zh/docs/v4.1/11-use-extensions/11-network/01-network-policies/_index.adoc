@@ -1,5 +1,6 @@
 ---
 title: "网络策略"
+linkTitle: "网络策略"
 keywords: "Kubernetes, KubeSphere, 集群管理, 网络策略"
 description: "介绍如何管理集群网络策略。"
 layout: "second"

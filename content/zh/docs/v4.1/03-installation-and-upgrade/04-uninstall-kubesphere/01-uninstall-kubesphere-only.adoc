@@ -1,5 +1,6 @@
 ---
 title: "仅卸载 KubeSphere"
+linkTitle: "仅卸载 KubeSphere"
 keywords: "Kubernetes, KubeSphere, 仅卸载 KubeSphere"
 description: "介绍如何卸载 KubeSphere。"
 weight: 01

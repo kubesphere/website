@@ -1,5 +1,6 @@
 ---
 title: "KubeSphere LuBan 架构"
+linkTitle: "KubeSphere LuBan 架构"
 weight: 02
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "查看多集群监控数据"
+linkTitle: "查看多集群监控数据"
 keywords: "Kubernetes, KubeSphere, 平台管理, Whizard 可观测中心, 查看多集群监控数据"
 description: "介绍如何查看多集群监控数据。"
 weight: 03

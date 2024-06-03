@@ -1,5 +1,6 @@
 ---
 title: "配置 OpenSearch 日志接收器"
+linkTitle: "配置 OpenSearch 日志接收器"
 weight: 01
 ---
 

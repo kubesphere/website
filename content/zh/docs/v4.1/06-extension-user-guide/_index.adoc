@@ -1,5 +1,6 @@
 ---
 title: "扩展组件管理"
+linkTitle: "扩展组件管理"
 keywords: "Kubernetes, KubeSphere, 扩展组件管理"
 description: "介绍如何订阅、安装、管理扩展组件。"
 layout: "second"

@@ -1,5 +1,6 @@
 ---
 title: "Whizard 可观测中心"
+linkTitle: "Whizard 可观测中心"
 keywords: "Kubernetes, KubeSphere, 平台管理, Whizard 可观测中心"
 description: "介绍如何使用 Whizard 可观测中心功能。"
 layout: "second"

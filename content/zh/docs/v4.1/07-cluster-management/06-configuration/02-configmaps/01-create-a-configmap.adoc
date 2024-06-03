@@ -1,5 +1,6 @@
 ---
 title: "创建配置字典"
+linkTitle: "创建配置字典"
 keywords: "Kubernetes, KubeSphere, 集群管理, 配置字典, 创建配置字典"
 description: "介绍如何创建配置字典。"
 weight: 01

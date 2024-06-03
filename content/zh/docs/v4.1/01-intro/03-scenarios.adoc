@@ -1,5 +1,6 @@
 ---
 title: "应用场景"
+linkTitle: "应用场景"
 weight: 03
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "管理订阅"
+linkTitle: "管理订阅"
 keywords: "Kubernetes, KubeSphere,组件,订阅管理,KubeSphere Cloud,云账号"
 description: "介绍如何管理 KubeSphere 云账号下已订阅的组件。"
 weight: 02

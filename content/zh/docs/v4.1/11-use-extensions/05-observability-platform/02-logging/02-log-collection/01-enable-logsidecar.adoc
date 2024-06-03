@@ -1,5 +1,6 @@
 ---
 title: "启用日志收集"
+linkTitle: "启用日志收集"
 weight: 01
 ---
 

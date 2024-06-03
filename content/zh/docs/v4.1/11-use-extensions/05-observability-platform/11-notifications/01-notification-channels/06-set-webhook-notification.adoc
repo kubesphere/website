@@ -1,5 +1,6 @@
 ---
 title: "设置 Webhook 通知"
+linkTitle: "设置 Webhook 通知"
 keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理, 通知设置, 设置 Webhook 通知"
 description: "介绍如何设置 Webhook 通知。"
 weight: 06

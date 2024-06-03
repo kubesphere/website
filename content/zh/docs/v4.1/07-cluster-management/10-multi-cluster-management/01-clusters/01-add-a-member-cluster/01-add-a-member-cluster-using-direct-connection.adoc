@@ -1,5 +1,6 @@
 ---
 title: "通过直接连接添加成员集群"
+linkTitle: "通过直接连接添加成员集群"
 keywords: "Kubernetes, KubeSphere, 多集群管理, 集群, 添加成员集群"
 description: "介绍如何通过直接连接添加成员集群。"
 weight: 01

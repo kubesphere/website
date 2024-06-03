@@ -1,5 +1,6 @@
 ---
 title: "应用资源"
+linkTitle: "应用资源"
 keywords: "Kubernetes, KubeSphere, 集群管理, 监控告警, 应用资源"
 description: "介绍如何查看应用资源数据。"
 layout: "second"

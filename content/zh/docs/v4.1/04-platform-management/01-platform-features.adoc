@@ -1,5 +1,6 @@
 ---
 title: "平台介绍"
+linkTitle: "平台介绍"
 weight: 01
 ---
 

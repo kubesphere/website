@@ -1,5 +1,6 @@
 ---
 title: "删除平台角色"
+linkTitle: "删除平台角色"
 keywords: "Kubernetes, KubeSphere, 平台管理, 访问控制, 平台角色, 删除平台角色"
 description: "介绍如何删除平台角色。"
 weight: 06

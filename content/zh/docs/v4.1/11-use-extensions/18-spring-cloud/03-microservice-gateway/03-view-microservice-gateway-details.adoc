@@ -1,5 +1,6 @@
 ---
 title: "查看微服务网关详情"
+linkTitle: "查看微服务网关详情"
 keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 查看微服务网关详情"
 description: "介绍如何查看微服务网关详情。"
 weight: 03

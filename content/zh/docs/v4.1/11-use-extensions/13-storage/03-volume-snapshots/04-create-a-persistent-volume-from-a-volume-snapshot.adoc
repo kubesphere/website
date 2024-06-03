@@ -1,5 +1,6 @@
 ---
 title: "使用卷快照创建持久卷"
+linkTitle: "使用卷快照创建持久卷"
 keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 卷快照, 创建持久卷声明"
 description: "介绍如何使用卷快照创建持久卷。"
 weight: 04

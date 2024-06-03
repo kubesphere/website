@@ -1,5 +1,6 @@
 ---
 title: "概览"
+linkTitle: "概览"
 keywords: "Kubernetes, KubeSphere, 项目管理, 概览"
 description: "介绍如何查看项目概览信息。"
 layout: "second"

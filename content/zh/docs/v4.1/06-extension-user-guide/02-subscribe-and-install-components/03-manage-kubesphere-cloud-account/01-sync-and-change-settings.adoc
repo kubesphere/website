@@ -1,5 +1,6 @@
 ---
 title: "同步和设置云账号"
+linkTitle: "同步和设置云账号"
 keywords: "Kubernetes, KubeSphere,同步,设置,KubeSphere Cloud,云账号"
 description: "介绍如何同步和设置 KubeSphere 云账号。"
 weight: 01

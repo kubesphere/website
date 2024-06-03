@@ -1,5 +1,6 @@
 ---
 title: "配置云上存储设备"
+linkTitle: "配置云上存储设备"
 keywords: "Kubernetes, KubeSphere, 安装, 准备, 持久化存储, 云上存储设备"
 description: "介绍如何在生产环境中为 KubeSphere 集群配置云上存储设备。"
 weight: 01

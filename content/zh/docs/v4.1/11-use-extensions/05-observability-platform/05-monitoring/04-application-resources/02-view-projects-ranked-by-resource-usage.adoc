@@ -1,5 +1,6 @@
 ---
 title: "查看项目资源用量排行"
+linkTitle: "查看项目资源用量排行"
 keywords: "Kubernetes, KubeSphere, 集群管理, 应用资源，用量排行"
 description: "介绍如何查看项目资源用量排行。"
 weight: 02
