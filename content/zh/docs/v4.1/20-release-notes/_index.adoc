@@ -5,6 +5,7 @@ keywords: "Kubernetes, KubeSphere, 版本说明，release notes"
 description: "版本说明"
 layout: "second"
 weight: 20
+icon: "/images/docs/common/docs.svg"
 ---
 
 

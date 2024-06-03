@@ -5,6 +5,7 @@ keywords: "Kubernetes, KubeSphere, 集群管理"
 description: "介绍如何管理集群中的资源。"
 layout: "second"
 weight: 07
+icon: "/images/docs/common/docs.svg"
 ---
 
 本文档介绍如何以集群成员身份在{ks_product_both}管理单个或多个集群中的所有资源。

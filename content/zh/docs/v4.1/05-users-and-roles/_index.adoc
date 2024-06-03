@@ -5,6 +5,7 @@ keywords: "Kubernetes, KubeSphere, 访问控制,用户,角色"
 description: "介绍如何控制平台访问权限。"
 layout: "second"
 weight: 05
+icon: "/images/docs/common/docs.svg"
 ---
 
 
