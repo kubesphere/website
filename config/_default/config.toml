@@ -56,7 +56,7 @@ ignorefiles = [ ".*/_custom" ]
   enableInlineShortcodes = false
   [security.exec]
     allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
-    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMDRIVE)$']
+    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMDRIVE)$', '(?i)^(GEM_PATH)$']
   [security.funcs]
     getenv = ['^HUGO_', '^CI$']
   [security.http]
