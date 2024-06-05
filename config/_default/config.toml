@@ -217,12 +217,6 @@ hasChildren = true
     URL = "https://v1-0.docs.kubesphere.io/docs/"
     weight = 8
 
-    [[languages.en.menu.main]]
-    parent = "Documentation"
-    name = "v4.1"
-    URL = "/docs/v4.1"
-    weight = 9
-
 [[languages.en.menu.main]]
 weight = 5
 hasChildren = true
@@ -389,12 +383,6 @@ name = "文档中心"
     name = "v1.0"
     URL = "https://v1-0.docs.kubesphere.io/docs/zh-CN/"
     weight = 8
-
-    [[languages.zh.menu.main]]
-    parent = "文档中心"
-    name = "v4.1"
-    URL = "/docs/v4.1"
-    weight = 9
 
 [[languages.zh.menu.main]]
 weight = 5
