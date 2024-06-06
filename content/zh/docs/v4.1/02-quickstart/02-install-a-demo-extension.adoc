@@ -44,7 +44,7 @@ KubeSphere 扩展组件，是运行在 KubeSphere Core 之上，用来扩展并�
 . 点击 DevOps 右侧的**安装**按钮，进入组件安装页面。
 . 在组件安装对话框的**版本选择**页签，选择 DevOps 的版本号，并安装好所有必装组件（若有），点击**下一步**。
 +
-include::../../_ks_components/admonitions/note.adoc
+include::../../../_ks_components/admonitions/note.adoc[]
 
 安装检测时，会识别扩展组件是否有依赖组件。依赖组件分为必装组件和选装组件。
 
