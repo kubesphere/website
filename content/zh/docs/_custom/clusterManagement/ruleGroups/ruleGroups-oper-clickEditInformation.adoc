@@ -1,0 +1,2 @@
+// :ks_include_id: 1f7f6ffdb0cb446689a451e85ddf8d11
+. 在需要编辑的规则组右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑信息**。

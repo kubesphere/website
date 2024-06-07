@@ -1,0 +1,3 @@
+// :ks_include_id: 2f14bbf086794d0294530c5059da2be3
+|挂载卷
+|为容器挂载持久卷、临时卷或 HostPath 卷。

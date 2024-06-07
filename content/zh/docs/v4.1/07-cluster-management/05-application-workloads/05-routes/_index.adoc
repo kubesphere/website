@@ -1,0 +1,14 @@
+---
+title: "应用路由"
+linkTitle: "应用路由"
+keywords: "Kubernetes, KubeSphere, 集群管理, 应用路由"
+description: "介绍如何管理应用路由。"
+layout: "second"
+weight: 05
+---
+
+
+include::../../../../_custom/clusterManagement/routes/routes-desc-routes.adoc[]
+
+// 使用应用路由需要启用企业空间网关、集群网关或项目网关。
+

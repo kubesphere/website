@@ -1,0 +1,2 @@
+// :ks_include_id: 741fdd4419bf462d8fe4db1db108806f
+* 您需要获取安装配置文件 **config-sample.yaml** 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅xref:03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc[安装 Kubernetes 和{ks_product_left}]。

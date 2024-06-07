@@ -1,0 +1,25 @@
+---
+title: "登录并进入集群"
+linkTitle: "登录并进入集群"
+keywords: "Kubernetes, KubeSphere, 集群管理, Web 控制台, 登录并进入集群"
+description: "本节介绍如何登录并进入集群。"
+weight: 01
+---
+
+
+本节介绍如何登录{ks_product_left} Web 控制台并进入集群。
+
+
+== 前提条件
+
+* 您需要获取集群成员的用户名和密码。
+
+include::../../../_custom/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
+
+
+== 操作步骤
+
+. 打开 Web 浏览器，在地址栏中输⼊{ks_product_left} Web 控制台的 IP 地址和端⼝号。 
+. 在{ks_product_both}登录⻚⾯，输⼊⽤⼾信息然后点击登录。
+. 点击**集群管理**。
+. 如果已有多个集群，在**集群管理**页面点击一个集群的名称进入集群。

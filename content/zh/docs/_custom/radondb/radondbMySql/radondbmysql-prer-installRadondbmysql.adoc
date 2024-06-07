@@ -1,0 +1,3 @@
+// :ks_include_id: f82032088d28459b89ab7b6dc3362625
+// :ks_include_id: 
+* 您需要获取 RadonDB MySQL 应用授权，并已安装 RadonDB MySQL。有关更多信息，请参阅 xref:19-radondb/02-radondb-mysql/01-install-radondb-mysql.adoc[安装 RadonDB MySQL]。

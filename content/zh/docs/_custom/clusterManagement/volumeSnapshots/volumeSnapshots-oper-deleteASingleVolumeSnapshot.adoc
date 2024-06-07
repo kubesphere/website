@@ -1,0 +1,4 @@
+// :ks_include_id: d6ffb1f3d075421a9c9d96456b1349f1
+. 在需要删除的卷快照右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除卷快照**对话框，输入卷快照的名称，然后点击**确定**。

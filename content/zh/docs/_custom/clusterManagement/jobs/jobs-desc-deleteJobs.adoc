@@ -1,0 +1,8 @@
+// :ks_include_id: 53cddf67368844919fec7ab2ca897ef6
+本节介绍如何删除任务。
+
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+此操作将删除任务及其管理的所有容器组，如果任务正在运行，运行中的业务将中断，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

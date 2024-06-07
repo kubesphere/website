@@ -1,0 +1,48 @@
+---
+title: "编辑静默条件"
+linkTitle: "编辑静默条件"
+keywords: "Kubernetes, KubeSphere, 平台设置, 通知管理, 通知设置, 静默策略, 编辑静默条件"
+description: "本节介绍如何编辑通知静默条件。"
+weight: 03
+---
+
+
+:ks_menu: **平台管理 > 平台设置**
+:ks_navigation: **通知管理 > 通知设置**
+:ks_permission: **平台设置管理**
+
+
+本节介绍如何编辑通知静默条件。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知管理**扩展组件。
+
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在需要操作的静默策略右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑静默条件**。
+
+. 在**编辑静默条件**对话框，设置静默条件，然后点击**确定**。
++
+====
+include::../../../../../_custom/platformManagement/platformSettings/platformSettings/platformSettings-para-silenceConditions_new.adoc[]
+====

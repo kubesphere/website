@@ -1,0 +1,2 @@
+// :ks_include_id: 3b7e825804054abdb9a92bff016bc3b6
+* RadonDB Redis Sentinel 状态为**运行中**。

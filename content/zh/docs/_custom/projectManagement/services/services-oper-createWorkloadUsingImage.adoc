@@ -1,0 +1,2 @@
+// :ks_include_id: 7a0a9a69b8634926bdef057bd7c149b6
+. 在{ks_product_both}平台拉取镜像并创建有状态副本集或部署。

@@ -1,0 +1,57 @@
+---
+title: "开启和关闭二次认证"
+linkTitle: "开启和关闭二次认证"
+weight: 07
+---
+
+本节介绍如何为当前用户开启和关闭二次认证。
+
+开启二次认证后，用户登录时，输入账号和密码之后，还必须输入身份认证器生成的动态认证口令。借助二次认证，用户通过密码和手机为账户提供双重保护。
+
+
+== 前提条件
+
+已获取{ks_product_left} Web 控制台的用户名和密码。
+
+
+== 开启二次认证
+
+. 登录{ks_product_left} Web 控制台。
+
+. 在页面右上角点击当前用户名，然后在下拉列表中选择**用户设置**。
+
+. 在**二次认证**页签点击**开启二次认证**。
+
+. 在手机上的各大应用市场搜索关键词 “Authenticator” 或 “身份认证器”，下载身份认证器 App。推荐使用 Google Authenticator。安装完成后，在{ks_product_left} Web 控制台点击**下一步**。
+ 
+. 打开身份认证器 App，点击“扫描二维码”扫描右侧二维码。扫描完成后，在{ks_product_left} Web 控制台点击**下一步**。
+
+. 输入身份认证器 App 生成的动态认证码，点击**认证并开启**开启二次认证。
++
+--
+
+至此，二次认证开启完成。再次登录{ks_product_left} Web 控制台时，输入账号和密码之后，还必须输入身份认证器 App 生成的动态认证码。
+
+image:/images/ks-qkcp/zh/v4.1/enable-two-factor-authentication.png[ enable-two-factor-authentication,50%]
+--
+
+== 关闭二次认证
+
+. 登录{ks_product_left} Web 控制台。
+
+. 在页面右上角点击当前用户名，然后在下拉列表中选择**用户设置**。
+
+. 在**二次认证**页签点击**关闭二次认证**。
+
+. 在**关闭二次认证**对话框，输入身份认证器 App 生成的动态认证码，然后点击**确定**。
++
+image:/images/ks-qkcp/zh/v4.1/disable-two-factor-authentication.png[ disable-two-factor-authentication,100%]
+
+=== 无法获取动态口令
+
+若无法获取二次认证动态口令，导致无法登录，可联系管理员执行以下命令关闭二次认证。
+
+[,bash]
+----
+kubectl annotate user <USERNAME> iam.kubesphere.io/totp-auth-key-ref-
+----

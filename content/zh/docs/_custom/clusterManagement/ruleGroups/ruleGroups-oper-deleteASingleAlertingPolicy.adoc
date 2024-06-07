@@ -1,0 +1,4 @@
+// :ks_include_id: 0b6f7a63668142ce8f5d70a7f013a852
+. 在需要删除的规则组右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除规则组**对话框，输入规则组的名称，然后点击**确定**。

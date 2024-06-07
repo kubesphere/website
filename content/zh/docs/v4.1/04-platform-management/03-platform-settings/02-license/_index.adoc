@@ -1,0 +1,16 @@
+---
+title: "许可证"
+linkTitle: "许可证"
+keywords: "Kubernetes, KubeSphere, 平台设置, 许可证"
+description: "介绍如何管理 KubeSphere 平台和扩展组件的许可证。"
+layout: "second"
+weight: 02
+---
+
+
+本节介绍如何查看及管理{ks_product_both}平台和扩展组件的许可证。
+
+{ks_product_right}许可证，用于激活{ks_product_both}平台。如果您需要购买或更新平台许可证，请联系 KubeSphere 技术支持。
+
+扩展组件许可证，用于激活某些需购买的扩展组件，此处仅展示扩展组件的授权信息。
+有关扩展组件许可的更多信息，请访问扩展中心的组件详情页，联系扩展组件供应商获取支持。

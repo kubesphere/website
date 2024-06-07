@@ -1,0 +1,50 @@
+---
+title: "移除企业空间成员"
+linkTitle: "移除企业空间成员"
+keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 企业空间成员, 移除企业空间成员"
+description: "介绍如何移除企业空间成员。"
+weight: 05
+---
+
+:ks_permission: **成员管理**
+:ks_navigation: **企业空间设置 > 企业空间成员**
+
+
+本节介绍如何移除企业空间成员。
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+用户被从企业空间中移除后，将失去企业空间角色提供的权限。如果用户已加入企业空间中的项目，也会从项目中移除。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在需要移除的企业空间成员右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后选择**移除**。
+
+. 在**移除成员**对话框输出企业空间成员的用户名，然后点击**确定**。
++
+--
+企业空间成员被移除后将不再显示在企业空间成员列表中。
+--

@@ -1,0 +1,119 @@
+---
+title: "角色和成员管理"
+linkTitle: "角色和成员管理"
+keywords: "Kubernetes, KubeSphere, DevOps 项目, 使用 DevOps"
+description: "介绍如何管理 DevOps 项目，以及如何在 DevOps 项目中管理流水线和 DevOps 项目设置。"
+weight: 02
+---
+
+
+本文档演示如何在 DevOps 项目中管理角色和成员。
+
+在 DevOps 项目范围内，您可以向角色授予以下资源的权限：
+
+* DevOps 项目设置
+* 流水线
+* 凭证
+* 持续部署
+* 代码仓库
+* 访问控制
+
+
+== 前提条件
+
+* 已创建一个 DevOps 项目，例如 **demo-devops**。
+
+* 已有一个在 DevOps 项目级别具有 **admin** 角色的用户（例如 **devops-admin**）。
+
+
+== 内置角色
+
+在 **DevOps 项目角色**中，有三个可用的内置角色，如下所示。创建 DevOps 项目时，会自动创建内置角色，并且无法编辑或删除这些角色。
+
+[%header,cols="1a,4a"]
+|===
+|内置角色|描述信息
+
+|viewer
+|DevOps 项目观察者，查看 DevOps 项目中的所有资源。
+
+|operator
+|DevOps 项目普通成员，管理 DevOps 凭证和流水线以及查看 DevOps 项目中的成员和角色。
+
+|admin
+|DevOps 项目管理员，管理 DevOps 项目中的所有资源。
+|===
+
+
+== 创建 DevOps 项目角色
+
+. 以 **devops-admin** 用户登录 {ks_product_both} Web 控制台。
+
+. 前往 **DevOps 项目**页面点击一个 DevOps 项目（例如 **demo-devops**）。
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+本文档使用 **devops-admin** 账户作为示例。只要账户被授予的角色包含 DevOps 项目级别**访问控制**中的**成员查看**、**角色管理**和**角色查看**的权限，此账户便可以创建 DevOps 项目角色。
+
+|===
+--
+
+. 选择 **DevOps 项目设置**中的 **DevOps 项目角色**，点击**创建**。
+
+. 设置**名称**。在本示例中，将创建一个名为 **pipeline-creator** 的角色。点击**编辑权限**继续。
+
+. 在**流水线**页签，选择您希望授予该角色的权限。例如，为此角色选择**流水线管理**和**流水线查看**。点击**确定**完成操作。
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+**依赖于**表示当前授权项依赖所列出的授权项，勾选该权限后系统会自动选上所有依赖权限。
+|===
+--
+
+. 新创建的角色将显示在 **DevOps 项目角色**列表中。点击右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]对其进行编辑。
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+**pipeline-creator** 角色仅被授予**流水线管理**和**流水线查看**权限，可能无法满足您的实际需求。本示例仅用于演示，请根据实际需要创建自定义角色。
+
+|===
+--
+
+
+== 邀请 DevOps 项目成员
+
+. 在 **DevOps 项目设置**中选择 **DevOps 项目成员**，然后点击**邀请**。
+
+. 点击image:/images/ks-qkcp/zh/icons/add-dark.svg[add,18,18]邀请账户加入此 DevOps 项目，并向此账户授予 **pipeline-creator** 角色。
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+必须先邀请用户加入 DevOps 项目所在的企业空间。
+
+|===
+--
+
+. 点击**确定**将用户添加到此 DevOps 项目。在 **DevOps 项目成员**页面，将显示新邀请的成员。
+
+. 点击项目成员右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，修改现有成员的角色或从 DevOps 项目中删除该用户。
+

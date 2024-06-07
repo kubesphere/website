@@ -1,0 +1,23 @@
+---
+title: "管理订阅"
+linkTitle: "管理订阅"
+keywords: "Kubernetes, KubeSphere,组件,订阅管理,KubeSphere Cloud,云账号"
+description: "介绍如何管理 KubeSphere 云账号下已订阅的组件。"
+weight: 02
+
+---
+
+本节介绍如何管理 KubeSphere 云账号下已订阅的组件。
+
+== 前提条件
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../05-users-and-roles/01-users/[用户]和link:../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+* 您需要在扩展中心授权登录 KubeSphere 云账号。
+
+== 操作步骤
+
+. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
+. 点击**扩展中心**。
+. 点击组件列表右上角的头像，选择**订阅管理**。
+. 在订阅管理页面，查看各组件的订阅状态、订阅计划、订阅时长、到期时间等。
+. 在需要操作的组件右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**查看订单**，或**订阅**已过期的组件。

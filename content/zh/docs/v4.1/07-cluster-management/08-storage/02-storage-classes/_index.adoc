@@ -1,0 +1,14 @@
+---
+title: "存储类"
+linkTitle: "存储类"
+keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 存储类"
+description: "介绍如何管理存储类。"
+layout: "second"
+weight: 02
+---
+
+
+
+本节介绍如何管理存储类。
+
+存储类定义了可供容器使用的一类存储卷。如果您在安装{ks_product_both}时未设置外部持久化存储系统，{ks_product_right}将使用集群节点的本地存储系统作为持久化存储系统，并自动创建对应的 **local** 存储类。如果使用外部持久化存储系统，您需要为{ks_product_both}集群安装存储插件，并创建存储类以定义可供使用的存储卷类型。有关如何安装存储插件，请联系您的存储系统提供商。

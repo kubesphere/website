@@ -1,0 +1,41 @@
+---
+title: "编辑默认容器配额"
+linkTitle: "编辑默认容器配额"
+keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 基本信息, 编辑默认容器配额"
+description: "介绍如何编辑默认容器配额。"
+weight: 04
+---
+
+:ks_permission: **项目设置管理**
+:ks_navigation: **项目设置 > 基本信息**
+
+
+include::../../../../_custom/clusterManagement/projects/projects-desc-editDefaultContainerQuotas.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**基本信息**页面，点击**管理**，然后在下拉列表中选择**编辑默认容器配额**。
+
++
+
+include::../../../../_custom/clusterManagement/projects/projects-oper-editDefaultContainerQuotas.adoc[]

@@ -1,0 +1,2 @@
+// :ks_include_id: 87a8dd123e9645bdb5fd38625088f31c
+* 您需要获取 RadonDB MongoDB 应用授权，并已安装 RadonDB MongoDB。有关更多信息，请参阅 xref:19-radondb/08-radondb-mongodb/02-quickstart/01-install-radondb-mongodb.adoc[安装 RadonDB MongoDB]。

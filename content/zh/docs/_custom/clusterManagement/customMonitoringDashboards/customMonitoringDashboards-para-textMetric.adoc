@@ -1,0 +1,19 @@
+// :ks_include_id: 6d474f2ff06e43c7bc9003aaa10e29c2
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|图表名称
+|监控指标的名称。
+
+|单位
+|指标数据的单位。
+
+|精确位
+|指标数据的有效小数位数。
+
+|监控指标
+|
+include::customMonitoringDashboards-para-monitoringMetric.adoc[]
+
+|===

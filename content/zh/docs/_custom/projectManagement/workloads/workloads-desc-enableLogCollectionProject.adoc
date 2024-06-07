@@ -1,0 +1,2 @@
+// :ks_include_id: 7318136ea443449a9e862e964a41299f
+有关如何在项目中启用**收集卷上的日志**，请参阅xref:07-project-management/10-project-settings/06-log-collection/_index.adoc[日志收集]。

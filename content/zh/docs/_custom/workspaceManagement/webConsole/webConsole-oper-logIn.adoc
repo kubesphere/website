@@ -1,0 +1,4 @@
+// :ks_include_id: b690a1bf28354fa9a64364d91a595cd7
+. 打开 Web 浏览器，在地址栏中输入{ks_product_left} Web 控制台的 IP 地址和端口号。
+
+. 在{ks_product_both}登录页面，输入用户信息然后点击**登录**。

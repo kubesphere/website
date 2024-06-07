@@ -1,0 +1,11 @@
+// :ks_include_id: 963da033862c424c9fc9f2cc246602fb
+本节介绍如何回退工作负载设置。
+
+系统在工作负载创建或修改后将生成修改记录，可用于回退工作负载设置。最多可保留 10 条修改记录。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+此操作将根据用户选择的修改记录重新创建工作负载，工作负载中运行的业务将中断，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

@@ -1,0 +1,59 @@
+---
+title: "重置内置规则组"
+linkTitle: "重置内置规则组"
+keywords: "Kubernetes, KubeSphere, 集群管理, 监控告警, 告警管理, 规则组, 删除规则组"
+description: "介绍如何删重置内置规则组。"
+weight: 08
+---
+
+:ks_permission: **规则组管理**
+:ks_menu: **平台管理 > Whizard 可观测中心**
+:ks_navigation: **监控告警 > 规则组**
+
+
+本节介绍如何重置内置规则组。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+{ks_product_right}仅支持重置内置规则组，不支持重置自定义规则组。
+|===
+
+[.admon.warning,cols="a"]
+|===
+|警告
+
+|
+规则组重置后不能恢复，请谨慎执行此操作。
+|===
+
+
+
+
+== 前提条件
+
+您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../../../05-users-and-roles/01-users/[用户]和link:../../../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+
+
+== 操作步骤
+
+include::../../../../../../_custom/platformManagement/extensionManagement/extensionManagement-oper-logInAsPlatformAdmin.adoc[]
+
++
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择 **Whizard 可观测中心**。
+
++
+
+include::../../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**规则组**页面，点击**内置规则组**打开规则组列表。
+
+. 在需要重置的规则组右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**重置**。
+
+. 在**重置规则组**对话框，点击**确定**。
+

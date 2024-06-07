@@ -1,0 +1,47 @@
+---
+title: "删除许可证"
+linkTitle: "删除许可证"
+keywords: "Kubernetes, KubeSphere, 平台设置, 许可证, 管理许可证"
+description: "介绍如何管理许可证。"
+weight: 05
+---
+
+:ks_navigation: **许可证**
+:ks_permission: **平台设置管理**
+
+
+本节介绍如何删除许可证。
+
+[.admon.warning,cols="a"]
+|===
+|警告
+
+|许可证被删除后，您将丢失该组件的授权，请谨慎执行此操作。
+
+|===
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
+. 点击**许可证管理**页签，查看已添加的许可证信息。
+
+. 在需要删除的许可证右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]。
+
+. 在**删除许可证**对话框，输入组件的名称，然后点击**确定**。

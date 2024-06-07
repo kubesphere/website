@@ -1,0 +1,2 @@
+// :ks_include_id: 6c8ebb4ccf2948f99cfe15add7134ae5
+* 如需对应用程序的指标进行监控，您需要配置运行在容器中的应用程序，将符合 link:https://prometheus.io/docs/instrumenting/clientlibs/[Prometheus 规范]的监控指标暴露在某个服务端路径下，并在用于暴露工作负载的服务上xref:05-cluster-management/06-application-workloads/04-services/07-edit-a-metrics-exporter.adoc[设置监控导出器]以声明提供应用程序监控指标的路径。

@@ -1,0 +1,73 @@
+---
+title: "编辑 Overlay 模式"
+linkTitle: "编辑 Overlay 模式"
+keywords: "Kubernetes, KubeSphere, 集群管理, 网络, 容器组 IP 池, 编辑 Overlay 模式"
+description: "介绍如何编辑 Overlay 模式。"
+weight: 06
+---
+
+:ks_permission: **集群网络资源管理**
+:ks_navigation: **网络 > 容器组 IP 池**
+
+
+本节介绍如何编辑 Overlay 模式。
+
+Overlay 模式可以实现容器的跨主机互相通信，而无需对宿主机的物理网络进行改动。
+
+== 前提条件
+
+:relfileprefix: ../../../../
+
+* {empty}
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
+
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在需要操作的容器组 IP 池右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑 Overlay 模式**。
+
+. 在**编辑 Overlay 模式**对话框，选择 IPIP 模式或 VXLAN 模式，然后点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|模式 |描述
+
+|IPIP 模式
+|在每个节点上创建一个 IP in IP 隧道来实现容器之间的通信。取值如下：
+
+** **Always**: 永远进行 IPIP 封装(默认)。
+
+** **CrossSubnet**: 只在跨网段时才进行 IPIP 封装。
+
+** **Never**: 从不进行 IPIP 封装。
+
+|VXLAN 模式
+|在每个节点上创建一个 VXLAN 隧道来实现容器之间的通信。取值如下：
+
+** **Always**: 永远进行 VXLAN 封装。
+
+** **CrossSubnet**: 只在跨网段时才进行 VXLAN 封装。
+
+** **Never**: 从不进行 VXLAN 封装。
+|===
+--
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+若两者都设置为 Never，则使用 BGP 模式。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]

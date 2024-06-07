@@ -1,0 +1,44 @@
+---
+title: "KubeSphere LuBan 架构"
+linkTitle: "KubeSphere LuBan 架构"
+weight: 02
+---
+
+为了使 KubeSphere 灵活可扩展，我们设计了微内核 + 扩展组件的架构（代号 LuBan）。其中内核部分（KubeSphere Core）仅包含系统运行的必备基础功能，而将独立的业务模块分别封装在各个扩展组件（Extensions）中。用户可在系统运行时动态地安装、卸载、启用、禁用扩展组件。
+
+== KubeSphere LuBan 架构
+
+KubeSphere LuBan 架构设计如下图所示。
+
+image:/images/ks-qkcp/zh/v4.0/4.0-architecture.png[architecture,80%]
+
+== 什么是 KubeSphere 扩展组件？
+
+KubeSphere 扩展组件是一个可以对 KubeSphere 功能进行扩展并借助 Helm 进行编排的，遵循 KubeSphere 扩展组件开发规范的 Helm Chart。
+
+作为云原生领域的开发者，您不必再花大量的时间去学习一个私有的应用编排方式。
+
+请前往 link:https://kubesphere.com.cn/extensions/marketplace/[KubeSphere Marketplace] 查看、安装已发布的扩展组件。
+
+== KubeSphere 扩展组件可以做什么？
+
+从前端 UI 到后端 API，KubeSphere 的几乎每个部分都可以通过扩展 API 进行定制和增强。KubeSphere 的许多核心功能也都是作为扩展构建的，并使用相同的扩展 API。
+
+以下是使用扩展 API 可以实现的一些示例：
+
+. 在项目的侧边导航栏，注入新的菜单与功能页面，支持管理更多类型的资源。
+. 在平台层级菜单中注入功能入口，对平台的管理能力进行增强。
+. 直接嵌入已有的第三方功能组件页面到 KubeSphere，对各分散的系统进行聚合。
+. 覆盖 KubeSphere 已有的页面路由，实现您独有的业务逻辑。
+. 对 KubeSphere 的 API 进行扩展。
+
+如果您想更全面地了解扩展 API，请参阅link:https://dev-guide.kubesphere.io/extension-dev-guide/zh/feature-customization/[功能定制]。
+
+== 如何构建扩展组件？
+
+请参阅link:https://dev-guide.kubesphere.io/extension-dev-guide/zh/development-procedure/[开发流程]章节来熟悉如何构建扩展组件。
+
+如果您在扩展组件的开发过程中有疑问，请尝试在 link:https://github.com/kubesphere/kubesphere/issues/new/choose[GitHub Issue] 获得帮助。
+
+
+

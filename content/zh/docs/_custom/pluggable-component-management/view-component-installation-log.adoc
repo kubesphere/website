@@ -1,0 +1,12 @@
+// :ks_include_id: 869f4ffb7dfb40ab91283be53050a5f3
+
+. 启用组件后，您可以将鼠标悬停至 Web 控制台右下角的image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,20,25]，点击 **kubectl**，在弹出的对话框执行以下命令来查看组件安装过程。
++
+--
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
+
+----
+--

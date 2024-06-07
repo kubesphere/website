@@ -1,0 +1,29 @@
+---
+title: "WhizardTelemetry 日志管理"
+linkTitle: "WhizardTelemetry 日志管理"
+keywords: "Kubernetes, KubeSphere, 日志"
+description: "介绍如何使用“WhizardTelemetry 日志管理”扩展组件。"
+layout: "second"
+weight: 02
+---
+
+
+本节介绍如何使用“WhizardTelemetry 日志管理”扩展组件。
+
+该组件提供多租户视角的云原生应用实时及历史日志收集、查询、导出、存储等功能，可对接如 ElasticSearch、OpenSearch、Kafka 等日志接收器。
+
+安装“WhizardTelemetry 日志管理”扩展组件后，
+
+* 页面右下角的⼯具箱中将显⽰**容器⽇志查询**选项，支持用户查询自身权限范围内的容器日志。
+* 集群左侧导航栏的**集群设置**菜单下将显示**日志接收器**选项，**日志接收器**页面将显示**容器日志**页签，支持添加多种类型的日志接收器。
+
+//attention
+[.admon.attention,cols="a"]
+|===
+| 注意
+
+|
+- WhizardTelemetry 日志管理依赖 WhizardTelemetry 平台服务和 WhizardTelemetry 数据流水线，因此在安装 WhizardTelemetry 事件管理之前必须先安装 WhizardTelemetry 平台服务和 WhizardTelemetry 数据流水线两个扩展组件，否则日志相关功能无法正常使用！
+
+- 若未收集到日志，请确保 Docker 的根目录在 /var/lib 下，否则需要修改 WhizardTelemetry 数据流水线中 agent 的挂载配置。有关更多信息，请参阅扩展中心 “WhizardTelemetry 数据流水线”扩展组件的详情页说明。
+|===

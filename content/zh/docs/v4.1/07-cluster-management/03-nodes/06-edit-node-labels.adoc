@@ -1,0 +1,47 @@
+---
+title: "编辑节点标签"
+linkTitle: "编辑节点标签"
+keywords: "Kubernetes, KubeSphere, 集群管理, 节点, 编辑节点标签"
+description: "介绍如何编辑节点标签。"
+weight: 06
+---
+
+:ks_permission: **节点管理**
+
+
+本节介绍如何编辑节点标签。
+
+节点标签是用户在节点上设置的键值对，可用于选择节点。例如，在创建工作负载时，您可以指定容器组调度到具有特定标签的节点上。
+
+
+== 前提条件
+
+:relfileprefix: ../../../
+
+include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+== 操作步骤
+
+include::../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../_custom/clusterManagement/nodes/nodes-oper-openListPage_new.adoc[]
+
++
+
+. 在节点列表中，点击需要操作的节点的名称打开节点详情页面。
+
+. 在节点详情页面左上角选择**更多操作 > 编辑标签**。
+
+. 在**编辑标签**对话框，设置节点标签的键和值，然后点击**确定**。
++
+--
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+点击**添加**可以为节点设置多个标签。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+--

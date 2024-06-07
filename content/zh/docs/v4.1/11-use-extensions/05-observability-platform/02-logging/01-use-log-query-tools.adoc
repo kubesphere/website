@@ -1,0 +1,37 @@
+---
+title: "使用容器日志查询工具"
+linkTitle: "使用容器日志查询工具"
+keywords: "Kubernetes, KubeSphere, 集群管理, 工具箱, 查询容器日志"
+description: "介绍如何使用容器日志查询工具。"
+weight: 01
+---
+
+本节介绍如何查询容器日志。
+
+容器日志：从容器标准输出获取的日志。容器日志的内容由容器中运行的应用程序决定。
+
+
+== 前提条件
+
+* 您需要获得平台、集群、企业空间或项目的资源查看权限，以查看特定范围的日志。
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志管理**扩展组件。
+
+== 操作步骤
+
+. 以具有相关资源查看权限的用户登录{ks_product_left} Web 控制台。
+
+. 将光标悬停在页面右下角的image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18]图标，然后在菜单中选择**容器日志查询**。
+
+. 在弹出的对话框，设置搜索条件查询日志。
++
+--
+* 如果有多个集群，点击**集群**下拉列表可查询特定集群中的日志。
+
+* 点击搜索框，设置搜索条件，然后按 **Enter** 可查看符合特定条件的日志。您可以同时设置多个搜索条件。
+
+* 在查询结果页面可查看日志的时间分布图，点击柱状图，切换到该时间段的日志列表。点击image:/images/ks-qkcp/zh/icons/start-dark.svg[start-dark,18,18]/image:/images/ks-qkcp/zh/icons/stop-dark-white.svg[stop-dark-white,18,18]可开启/停止实时数据刷新，点击**日志导出**下拉列表可选择正序或倒序导出容器日志，点击**刷新频率**的时间可选择数据的刷新频率。
+
+* 在查询结果列表右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]可定制列表中显示的信息。
+
+* 点击查询结果中的日志条目，查看日志的详细信息。
+--

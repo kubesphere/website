@@ -1,0 +1,207 @@
+---
+title: "配置 NFS"
+linkTitle: "配置 NFS"
+keywords: "Kubernetes, KubeSphere, 安装, 准备, 持久化存储, 网络文件系统, NFS"
+description: "介绍如何在生产环境中为 KubeSphere 集群配置网络文件系统（NFS）。"
+weight: 05
+---
+
+
+本节介绍如何在生产环境中为{ks_product_both}集群配置网络文件系统（NFS）。
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+NFS 与部分应用不兼容（例如 Prometheus），可能会导致容器组创建失败。如果确实需要在生产环境中使用 NFS，请确保您了解相关风险或咨询 KubeSphere 技术支持 support@kubesphere.cloud。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+== 搭建 NFS 服务端
+
+为{ks_product_both}配置 NFS 前，您需要先搭建 NFS 服务端。如果您已经有可用的 NFS 服务端，您可以跳过此步骤。以下以 Ubuntu 操作系统安装操作 NFS Kernel Server 为例介绍如何搭建 NFS 服务端。有关其他 NFS 服务端和其他操作系统的具体操作，请参阅 NFS 服务端和操作系统的用户指南。
+
+
+=== 前提条件
+
+您需要准备一台 Linux 服务器（以下以 Ubuntu 操作系统为例），该服务器必须与{ks_product_both}集群节点网络连通。
+
+
+=== 操作步骤
+
+. 登录用于搭建 NFS 服务端的服务器，执行以下命令指安装 NFS Kernel Server：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo apt update
+
+----
+
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo apt install nfs-kernel-server
+
+----
+--
+
+. 执行以下命令创建供{ks_product_both}使用的目录（将 <directory> 替换为实际的目录路径，例如 **/mnt/demo**）：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo mkdir -p <directory>
+
+----
+--
+
+. 执行以下命令移除目录的访问限制（将 <directory> 替换为实际的目录路径，例如 **/mnt/demo**）：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo chown nobody:nogroup <directory>
+
+----
+
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo chmod 777 <directory>
+
+----
+--
+
+. 执行以下命令编辑 NFS Kernel Server 的配置文件：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo vi /etc/exports
+
+----
+--
+
+. 将{ks_product_both}集群节点的信息添加到文件中从而允许服务器访问 NFS 服务端，并保存文件：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+<directory> <IP address>(rw,sync,no_subtree_check)
+
+----
+
+将以下参数替换为实际值：
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|<directory>
+|供{ks_product_both}使用的目录，例如 **/mnt/demo**。
+
+|<IP address>
+|{ks_product_right}集群节点的 IP 地址，例如 192.168.0.2。
+|===
+
+如果存在多个{ks_product_both}集群节点，请设置多个配置条目。您也可以将 <IP address> 设置为一个网段从而使该网段的所有服务器都能访问 NFS 服务端，例如 **192.168.0.0/24**。
+--
+
+. 执行以下命令启用目录共享：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo exportfs -a
+
+----
+--
+
+. 执行以下命令重启 NFS 服务端使配置生效：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo systemctl restart nfs-kernel-server
+
+----
+--
+
+== 配置{ks_product_both}集群节点
+
+NFS 服务端搭建完成后，您需要在{ks_product_both}集群节点上安装客户端工具，并创建配置文件供后续安装{ks_product_both}时使用。{ks_product_right}安装完成后将使用配置文件指定的 NFS 服务端作为持久化存储。以下以 Ubuntu 操作系统安装 NFS Common 为例介绍如何安装 NFS 客户端以及创建配置文件。有关其他 NFS 客户端和其他操作系统的具体操作，请参阅 NFS 客户端和操作系统的用户指南。
+
+
+=== 前提条件
+
+您需要搭建 NFS 服务端。有关更多信息，请参阅link:#_搭建_nfs_服务端[搭建 NFS 服务端]。
+
+
+=== 操作步骤
+
+. 登录所有{ks_product_both}集群节点，执行以下命令安装 nfs-common：
++
+--
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo apt update
+
+----
+
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+sudo apt install nfs-common
+
+----
+--
+
+. 登录用于执行{ks_product_both}安装操作的集群节点，执行以下命令创建 NFS 存储插件配置文件：
++
+--
+// Note
+// Bash
+include::../../../../../_ks_components/code/bash.adoc[]
+
+vi nfs-client.yaml
+
+----
+--
+
+. 将以下信息添加到配置文件中，并保存文件供后续安装{ks_product_both}时使用：
++
+--
+// YAML
+include::../../../../../_ks_components/code/yaml.adoc[]
+
+nfs:
+  server: "<IP address>"
+  path: "<directory>"
+storageClass:
+  defaultClass: true
+
+----
+
+将以下参数替换为实际值：
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|<IP address>
+|NFS 服务端的 IP 地址。
+
+|<directory>
+|NFS 服务端供{ks_product_both}使用的目录。
+|===
+
+以上配置文件仅包含必须设置的参数。如需设置其他参数，请参阅 link:https://github.com/kubesphere/helm-charts/blob/master/src/main/nfs-client-provisioner/values.yaml[NFS Client 配置]。
+--

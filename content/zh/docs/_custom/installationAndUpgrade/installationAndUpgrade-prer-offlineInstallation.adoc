@@ -1,0 +1,11 @@
+// :ks_include_id: d1f066141f214cd6839e0b1ff16062b0
+ifeval::["{file_output_type}" == "html"]
+* 如果您的集群节点无法连接互联网，您还需要准备一台 Linux 服务器用于创建私有镜像服务，该服务器必须与{ks_product_both}集群节点网络连通并且在 **/mnt/registry** 目录挂载至少 100 GB 磁盘空间。
+
+// 除此之外，您需要提前创建离线安装包 **kubekey-artifact.tar.gz** 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅 xref:03-installation-and-upgrade/01-preparations/02-create-an-offline-installation-package.adoc#f1b9272448bc43299a9e8cbd3b23cd1f[创建离线安装包]。
+
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+* 除集群节点外，您还需要准备一台 Linux 服务器用于创建私有镜像服务，该服务器必须与{ks_product_both}集群节点网络连通，并且在 **/mnt/registry** 目录挂载至少 100 GB 磁盘空间。
+endif::[]

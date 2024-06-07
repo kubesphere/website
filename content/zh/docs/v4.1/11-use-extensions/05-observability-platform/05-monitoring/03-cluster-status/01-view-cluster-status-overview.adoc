@@ -1,0 +1,65 @@
+---
+title: "查看集群状态概览"
+linkTitle: "查看集群状态概览"
+keywords: "Kubernetes, KubeSphere, 监控告警, 集群状态，概览"
+description: "介绍如何查看集群状态概览。"
+weight: 01
+---
+
+:ks_permission: **监控查看**
+:ks_navigation: **监控告警 > 集群状态**
+
+
+本节介绍如何查看集群状态概览。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+
+== 操作步骤
+
+include::../../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**集群状态**页面的**概览**区域查看集群节点、集群资源、etcd 和服务组件的状态。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|集群节点状态
+|集群的节点总数和正常节点数量。
+
+|集群资源用量
+|集群的 CPU、内存、磁盘资源的总数和已使用量，以及集群可创建容器组总数和已创建容器组数量。默认情况下每个正常集群节点最多可创建 110 个容器组。
+
+|etcd 监控
+|etcd 数据库的服务状态、Raft 提议数量、数据库大小和客户端流量。
+
+* **服务状态**：显示 etcd 集群的 Leader 节点、每个节点的 IP 地址和 1 小时内 Leader 变更次数。
+
+* **Raft 提议**：显示 Raft 提议的每秒提交次数、应用次数、失败次数和排队提议数量。
+
+* **数据库大小**：etcd 数据库大小随时间的变化。
+
+* **客户端流量**：发送给 gRPC 客户端和从 gRPC 客户端接收的数据流量。
+
+查看 etcd 监控信息需要提前启用 etcd 监控。有关更多信息，请参阅扩展中心 **WhizardTelemetry 监控**扩展组件的详情页说明。
+
+|服务组件监控
+|Kubernetes API 服务器的请求延迟和每秒请求次数，以及调度器的累计调度次数和每秒调度次数。
+|===
+--

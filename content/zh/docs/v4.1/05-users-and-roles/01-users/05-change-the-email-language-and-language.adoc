@@ -1,0 +1,36 @@
+---
+title: "编辑当前用户信息"
+linkTitle: "编辑当前用户信息"
+keywords: "Kubernetes, KubeSphere, 集群管理, Web 控制台, 修改邮箱、语言"
+description: "介绍如何修改当前用户的邮箱和语言。"
+weight: 05
+---
+
+本节介绍如何修改当前用户的邮箱和界面显示语言。
+
+
+== 前提条件
+
+已获取{ks_product_left} Web 控制台的用户名和密码。
+
+
+== 操作步骤
+
+. 登录{ks_product_left} Web 控制台。
+
+. 在页面右上角点击当前用户名，然后在下拉列表中选择**用户设置**。
+
+. 在**基本信息**页签设置用户的邮箱和语言。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|邮箱
+|用户的邮箱地址。邮箱地址可用于登录{ks_product_left} Web 控制台。
+
+|语言
+|{ks_product_right} Web 控制台对当前用户显示的语言。
+|===
+--

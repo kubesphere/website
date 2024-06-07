@@ -1,0 +1,12 @@
+---
+title: "版本说明"
+linkTitle: "版本说明"
+keywords: "Kubernetes, KubeSphere, 版本说明，release notes"
+description: "版本说明"
+layout: "second"
+weight: 20
+icon: "/images/docs/common/docs.svg"
+---
+
+
+本节介绍从{ks_product} v3.5.0 至 v4.1.0 的版本更新记录。

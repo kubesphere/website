@@ -1,0 +1,149 @@
+---
+title: "启用项目网络隔离"
+linkTitle: "启用项目网络隔离"
+keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 网络隔离, 启用网络隔离"
+description: "介绍如何启用项目网络隔离。"
+weight: 02
+---
+
+:ks_permission: **项目网络隔离管理**
+:ks_navigation: **项目设置 > 网络隔离**
+
+
+本节介绍如何启用项目网络隔离，以及添加和删除隔离白名单。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
+
+== 操作步骤
+
+=== 启用网络隔离
+
+include::../../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**网络隔离**页面，点击**启用**。
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+启用网络隔离后，其他项目的容器组、其他节点主机环境以及集群外部的所有网段将无法访问当前项目中的容器组。默认对出站没有限制，即在未设置白名单条目的情况下，当前项目中的容器组可以与其他项目的容器组、其他节点主机环境以及集群外部的所有网段通信。添加白名单条目后，仅允许当前项目中的容器组与特定项目中的容器组、其他节点主机环境和集群外部网段通信。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+=== 添加白名单
+
+. 启用网络隔离后，点击**内部白名单**或**外部白名单**页签。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|内部白名单
+|允许当前项目中的容器组与当前企业空间其他项目中的容器组通信。
+
+|外部白名单
+|允许当前项目中的容器组与企业空间外部的特定网段和端口通信。
+|===
+--
+
+. 在**内部白名单**或**外部白名单**页签，点击**添加白名单条目**。
+
+. 在**添加白名单条目**对话框，设置白名单条目的参数，然后点击**确定**。
++
+====
+* 对于内部白名单条目，请设置以下参数：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|流量方向
+|白名单条目放行的流量方向。
+
+* **出站**：从当前项目到其他项目的方向。
+
+* **入站**：从其他项目到当前项目的方向。
+
+|类型
+|白名单条目匹配其他项目容器组的方式。
+
+* **项目**：当前项目中的容器组可以与指定项目中的所有容器组通信。
+
+* **服务**：当前项目中的容器组可以与指定服务的后端容器组通信。
+|===
+--
+
+* 对于外部白名单条目，请设置以下参数：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|白名单条目的名称。
+
+|流量方向
+|白名单条目放行的流量方向。
+
+* **出站**：从当前项目到企业空间外的方向。
+
+* **入站**：从企业空间外到当前项目的方向。
+
+|网段
+|企业空间外部的网络地址和子网掩码。支持无类别域间路由（CIDR）。
+
+* 在已添加的网段右侧点击image:/images/ks-qkcp/zh/icons/copy-light.svg[copy-light,18,18]可创建网段副本。
+* 在已添加的网段右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除网段。
+* 点击**添加新网段**可设置多个网段。
+
+|端口
+|白名单条目放行的端口号。
+
+* 对于出站白名单条目，此处的端口为企业空间外部地址的端口。
+
+* 对于入站白名单条目，此处的端口为当前项目容器组的端口。
+
+* 在已添加的端口右侧点击image:/images/ks-qkcp/zh/icons/copy-light.svg[copy-light,18,18]可创建端口副本。
+* 在已添加的端口右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除端口。
+* 点击**添加新端口范围**可设置多个端口范围，点击**添加新端口**可设置多个端口。
+|===
+--
+
+白名单条目创建完成后将显示在内部白名单或外部白名单列表中。
+====
+
+. 在**外部白名单**列表中，点击条目名称可查看条目详情，在条目右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] > **编辑**，编辑白名单条目详情。
+
+=== 删除白名单
+
+// Warning
+include::../../../../../../_ks_components/admonitions/warning.adoc[]
+
+删除白名单条目可能会导致当前项目中的容器组网络连接中断，请谨慎执行此操作。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+. 在**网络隔离**页面，点击**内部白名单**或**外部白名单**页签。
+
+. 在需要删除的内部白名单条目右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]；在需要删除的外部白名单条目右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除白名单条目**对话框，输入白名单条目的名称，然后点击**确定**。

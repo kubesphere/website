@@ -1,0 +1,2 @@
+// :ks_include_id: 7cf91b11a38f4489821f2a2d6263ba79
+. 以具有 **platform-admin** 角色的用户登录主集群的 Web 控制台。

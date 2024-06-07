@@ -1,0 +1,60 @@
+---
+title: "查看用户列表"
+linkTitle: "查看用户列表"
+keywords: "Kubernetes, KubeSphere, 访问控制, 用户, 查看用户列表"
+description: "介绍如何查看用户列表。"
+weight: 02
+---
+
+:ks_menu: **用户和角色管理**
+:ks_navigation: **用户**
+:ks_permission: **用户查看**
+
+本节介绍如何查看用户列表。
+
+== 前提条件
+
+您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅link:../../01-users/[用户]和link:../../02-platform-roles/[平台角色]。
+
+
+== 操作步骤
+
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台。
+. 点击pass:a,q[{ks_menu}]。
+. 在左侧导航栏选择**用户**。
+
++
+* 用户列表提供以下信息：
++
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|用户名
+|用户的名称。
+
+|状态
+|用户当前的状态。
+
+* **活跃**：用户当前状态正常。
+
+* **等待中**：系统正在创建用户。
+
+* **已禁用**：用户被平台管理员禁用，无法登录{ks_product_left} Web 控制台。
+
+* **限制登录**：用户在 10 分钟内连续 10 次登录失败，在 10 分钟内被禁止登录{ks_product_left} Web 控制台。
+
+|平台角色
+|用户在{ks_product_both}平台的角色。
+
+|最近登录
+|用户最后一次登录{ks_product_left}平台的时间。
+
+|===
+
+
+* 在列表上方点击搜索框并输入关键字，可搜索用户名包含特定关键字的用户。
+
+* 在列表右上角点击image:/images/ks-qkcp/zh/icons/refresh-light.svg[refresh,18,18]可刷新列表信息。
+
+* 在列表右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]可定制列表中显示的信息。

@@ -1,0 +1,7 @@
+// :ks_include_id: 6bfe6884350d4647a7cca1af7853a154
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+安装完成后，请勿删除安装配置文件 **config-sample.yaml**，后续进行版本升级、节点添加等操作时仍需要使用该文件。如果该文件丢失，您需要重新创建安装配置文件。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]

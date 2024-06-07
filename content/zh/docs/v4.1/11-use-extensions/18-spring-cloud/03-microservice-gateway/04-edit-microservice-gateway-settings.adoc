@@ -1,0 +1,48 @@
+---
+title: "编辑微服务网关"
+linkTitle: "编辑微服务网关"
+keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 编辑微服务网关"
+description: "介绍如何编辑微服务网关。"
+weight: 04
+---
+
+:ks_permission: ** Spring Cloud 微服务管理**
+:ks_navigation:  **Spring Cloud > 微服务网关**
+
+
+本节介绍如何编辑微服务网关。
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在页面右侧选择**管理 > 编辑**。
+
+. 在**编辑微服务网关**对话框，修改微服务网关的参数，然后点击**确定**。
++
+--
+有关微服务网关参数的更多信息，请参阅link:#_参数描述[参数描述]。
+--
+
+
+== 参数描述
+
+include::../../../../_custom/projectManagement/microserviceGateway/microserviceGateway-para-microserviceGatewaySettings.adoc[]

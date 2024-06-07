@@ -1,0 +1,74 @@
+---
+title: "查看应用列表"
+linkTitle: "查看应用列表"
+keywords: "Kubernetes, KubeSphere, 项目管理, 应用, 查看应用列表"
+description: "介绍如何查看应用列表。"
+weight: 04
+---
+
+
+:ks_permission: **应用实例查看**
+:ks_navigation: **应用负载 > 应用**
+
+
+本节介绍如何查看应用列表。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**应用**页面，点击**基于模板的应用**打开应用列表。
++
+====
+* 应用列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|应用的名称。
+
+include::../../../../_custom/projectManagement/apps/apps-para-status_v4.adoc[]
+
+|应用类型
+|应用模板的类型，如 **helm 应用**或 **yaml 应用**。
+
+|应用模板
+|创建应用所使用的应用模板。仅对基于模板的应用显示。
+
+|版本
+|应用的版本号。
+
+* 对于基于模板的应用，显示 Helm Chart 的版本。
+
+// * 对于自制应用，显示用户自定义的版本号。
+
+|更新时间
+|应用的更新时间。
+|===
+--
+
+* 在列表上方点击搜索框并输入关键字，可按名称搜索应用。
+
+include::../../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components/oper-customizeColumns.adoc[]
+====

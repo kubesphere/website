@@ -1,0 +1,2 @@
+// :ks_include_id: d70b04812502488cacd1e6b813dcc70d
+后端存储区域的容量大小。

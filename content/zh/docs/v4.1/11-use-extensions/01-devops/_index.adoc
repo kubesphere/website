@@ -1,0 +1,17 @@
+---
+title: "DevOps"
+linkTitle: "DevOps"
+keywords: "Kubernetes, KubeSphere, DevOps"
+description: "如何在 DevOps 项目中进行管理和操作，包括运行流水线、创建凭证和集成工具等。"
+layout: "second"
+weight: 01
+---
+
+
+DevOps 支持在 Kubernetes 集群上部署和管理 CI/CD 任务以及相关的工作负载。安装 DevOps 扩展组件时，会自动部署 Jenkins，支持通过 Jenkinsfile 构建流水线。此外，DevOps 还提供图形编辑面板，将整个流程可视化，直观地呈现流水线在每个阶段的运行状态。
+
+安装 DevOps 扩展组件后，企业空间左侧导航栏将显⽰ **DevOps 项⽬**。
+
+本节介绍如何管理 DevOps 项目，以及如何在 DevOps 项目中进行管理和操作，包括运行流水线、创建凭证和集成工具等。
+
+

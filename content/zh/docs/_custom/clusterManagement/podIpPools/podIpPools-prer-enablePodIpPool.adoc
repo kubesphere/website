@@ -1,0 +1,9 @@
+// :ks_include_id: 07a04c60e8c342db9bc6ec8108be9412
+ifeval::["{file_output_type}" == "html"]
+* {ks_product_right}平台需要启用容器组 IP 池扩展组件。
+有关更多信息，请参阅 xref:04-platform-management/01-extension-management/_index.adoc[启用可插拔组件]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+有关更多信息，请参阅《{ks_product_full_right}平台管理指南》的“扩展组件管理”章节。
+endif::[]

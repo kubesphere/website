@@ -1,0 +1,79 @@
+---
+title: "查看微服务网关信息"
+linkTitle: "查看微服务网关信息"
+keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 查看微服务网关信息"
+description: "介绍如何查看微服务网关信息。"
+weight: 02
+---
+
+:ks_permission: ** Spring Cloud 微服务查看**
+:ks_navigation:  **Spring Cloud > 微服务网关**
+
+
+本节介绍如何查看微服务网关信息。
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
++
+--
+**微服务网关**页面提供以下信息：
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|类型
+|网关的类型。对于微服务网关参数值为**微服务网关**。
+
+|状态
+|网关当前的状态。
+
+* **运行中**：微服务网关运行正常。
+
+* **更新中**：微服务网关正在创建中或正在更新设置。
+
+|创建者
+|创建网关的用户。
+
+|创建时间
+|网关的创建时间。
+
+|访问模式
+|网关的访问模式。
+
+include::../../../../_custom/clusterManagement/services/services-para-externalAccess.adoc[tag=bullets]
+
+* **ClusterIP**：网关不能从 KubeSphere 集群外部访问，只能在 KubeSphere 集群内部通过虚拟 IP 地址访问。
+
+|网关地址
+|
+网关的访问地址。
+
+include::../../../../_custom/clusterManagement/gatewaySettings/gatewaySettings-para-address.adoc[tag=bullets]
+
+* 如果网关的访问模式为 ClusterIP，网关不能从集群外部访问，**网关地址**为网关在 KubeSphere 集群内部的虚拟 IP 地址。
+
+|节点端口
+|网关服务的 HTTP 和 HTTPS 节点端口。仅在网关的外部访问模式为 NodePort 时显示。
+
+|副本
+|网关工作负载的容器组副本数量。
+|===
+--

@@ -1,0 +1,119 @@
+---
+title: "查看节点详情"
+linkTitle: "查看节点详情"
+keywords: "Kubernetes, KubeSphere, 集群管理, 节点, 查看节点详情"
+description: "介绍如何查看节点详情。"
+weight: 02
+---
+
+:ks_permission: **节点查看**
+
+
+本节介绍如何查看节点详情。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../
+
+include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../_custom/clusterManagement/nodes/nodes-oper-openListPage_new.adoc[]
+
++
+
+. 在节点列表中点击一个节点的名称打开其详情页面。
+
+. 在节点详情页面左侧的**属性**区域查看节点的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|状态
+|
+include::../../../_custom/clusterManagement/nodes/nodes-para-nodeStatus_new.adoc[]
+
+|IP 地址
+|节点的 IP 地址。
+
+|角色
+|
+include::../../../_custom/clusterManagement/nodes/nodes-para-nodeRole_new.adoc[]
+
+|操作系统版本
+|节点的操作系统发行版和版本。
+
+|操作系统类型
+|节点的操作系统类型。
+
+|内核版本
+|节点的内核版本。
+
+|容器运行时
+|节点使用的容器运行时类型和版本。
+
+|kubelet 版本
+|节点上运行的 kubelet 版本。
+
+|kube-proxy 版本
+|节点上运行的 kube-proxy 版本。
+
+|系统架构
+|节点的 CPU 架构。
+
+|创建时间
+|节点加入当前集群的时间。
+|===
+--
+
+. 在节点详情页面右侧的**运行状态**页签查看节点的健康状态和污点。
++
+--
+[%header,cols="1a,4a"]
+|===
+|功能区 |描述
+
+|健康状态
+|显示节点的网络、内存、磁盘、进程压力和就绪状态。如果显示image:/images/ks-qkcp/zh/icons/check-healthy.svg["healthy",15px,15px] 则表明状态正常，如果显示image:/images/ks-qkcp/zh/icons/substract-unhealthy.svg["unhealthy",15px,15px] 则表明出现告警。
+
+* **网络可用性**：节点的网络配置是否正确。
+
+* **内存压力**：节点剩余内存是否小于阈值，默认阈值为 100 MiB。
+
+* **磁盘压力**：节点剩余磁盘空间或 inode 数量是否小于阈值，默认磁盘空间阈值为磁盘空间总量的 10%，默认 inode 数量阈值为 inode 最大数量的 5%。
+
+* **进程压力**：节点上可创建的进程数量是否小于阈值。新安装的{ks_product_both}集群默认未设置进程数量阈值。
+
+* **就绪状态**：节点是否已经准备好接收容器组。
+
+|污点
+|当前节点上已配置的污点。有关更多信息，请参阅link:../05-edit-node-taints/[编辑节点污点]。
+|===
+--
+
+. 在节点详情页面右侧点击**容器组**页签查看节点上运行的所有容器组。
++
+--
+include::../../../_custom/clusterManagement/nodes/nodes-para-podList.adoc[]
+--
+
+. 在节点详情页面右侧点击**元数据**页签查看节点的标签和注解。
+
+. 在节点详情页面右侧点击**事件**页签查看节点的事件记录。
++
+--
+include::../../../_custom/clusterManagement/clusterManagement-para-eventsTab.adoc[]
+--

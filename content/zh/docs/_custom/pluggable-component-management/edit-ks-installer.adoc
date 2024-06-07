@@ -1,0 +1,11 @@
+// :ks_include_id: bdad0846da234ee885d8445a68831c7d
+
+. 您需要使用具有 **platform-admin** 角色的用户（例如 **admin** 用户）登录{ks_product_left} Web 控制台，在左上角点击**平台管理 > 集群管理**。
+
+. 在左侧导航栏，点击**定制资源定义**。
+
+. 在 **定制资源定义**页面的搜索框中，输入 **clusterconfiguration** 并按 **Enter** 进行搜索。
+
+. 点击搜索结果中的 **ClusterConfiguration** 进入其详情页面。
+
+. 在**资源状态**页签上，点击 **ks-installer** 右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**编辑 YAML**。

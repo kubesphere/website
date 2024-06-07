@@ -1,0 +1,2 @@
+// :ks_include_id: 651c070ef5524b1abe5f616f9bb1cbc1
+本节介绍如何创建工作负载。

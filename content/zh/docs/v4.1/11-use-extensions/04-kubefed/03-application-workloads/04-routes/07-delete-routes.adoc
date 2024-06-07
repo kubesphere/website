@@ -1,0 +1,46 @@
+---
+title: "删除应用路由"
+linkTitle: "删除应用路由"
+keywords: "Kubernetes, KubeSphere, 联邦项目, 应用负载, 应用路由, 删除应用路由"
+description: "介绍如何删除应用路由。"
+weight: 07
+---
+
+:ks_permission: **联邦项目管理**
+:ks_navigation: **应用负载 > 应用路由**
+
+
+include::../../../../../_custom/clusterManagement/routes/routes-desc-deleteMultipleRoutes.adoc[]
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../../_custom/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+== 删除单个应用路由
+
+include::../../../../../_custom/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/clusterManagement/routes/routes-oper-deleteASingleRoute.adoc[]
+
+
+== 批量删除应用路由
+
+include::../../../../../_custom/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/clusterManagement/routes/routes-oper-deleteRoutes.adoc[]

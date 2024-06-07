@@ -1,0 +1,4 @@
+// :ks_include_id: b7a80819469049cbae45753ff7ba3aa4
+. 在需要删除的持久卷声明右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除持久卷声明**对话框，输入持久卷声明的名称，然后点击**确定**。

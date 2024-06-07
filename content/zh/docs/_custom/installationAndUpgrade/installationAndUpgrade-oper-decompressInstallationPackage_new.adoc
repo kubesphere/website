@@ -1,0 +1,32 @@
+// :ks_include_id: 654fbac8f3b34fdfbdfb17fa841b2b0a
+
+. 将{ks_product_both}安装包传输到任意集群节点，并登录该集群节点。
+
+. 执行以下命令解压安装包，并进入安装包解压后生成的目录（将 <package name> 替换为安装包的实际名称，将 <directory> 替换为安装包解压后生成的目录）：
++
+--
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+tar -zxvf <package name>
+
+----
+
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+cd <directory>
+
+----
+--
+
+. 执行以下命令为 KubeKey 二进制文件 **kk** 添加执行权限：
++
+--
+// Bash
+include::../../../_ks_components/code/bash.adoc[]
+
+sudo chmod +x kk
+
+----
+--

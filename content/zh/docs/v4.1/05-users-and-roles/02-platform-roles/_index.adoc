@@ -1,0 +1,17 @@
+---
+title: "平台角色"
+linkTitle: "平台角色"
+keywords: "Kubernetes, KubeSphere, 访问控制, 用户, 平台角色"
+description: "介绍如何管理平台角色。"
+layout: "second"
+weight: 03
+---
+
+
+本节介绍如何管理平台角色。
+
+平台角色包含特定的平台管理或查看权限。您可以将包含特定权限的角色授权给用户，以控制用户的平台权限。
+
+include::../../../../_ks_components/admonitions/note.adoc[]
+{ks_product_right}的默认管理员用户 **admin** 在{ks_product_both}平台具有所有权限。
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

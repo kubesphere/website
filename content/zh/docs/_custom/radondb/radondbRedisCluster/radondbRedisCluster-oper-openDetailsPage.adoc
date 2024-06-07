@@ -1,0 +1,2 @@
+// :ks_include_id: 4cd4d0e0ec884581930fe2e8ae013cbe
+. 在 RadonDB 应用列表中，点击 RadonDB Redis Cluster 应用的名称打开其详情页面。

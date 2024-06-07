@@ -1,0 +1,11 @@
+---
+title: "准备工作"
+linkTitle: "准备工作"
+keywords: "Kubernetes, KubeSphere , 安装, 准备工作"
+description: "介绍安装 KubeSphere 前需要进行的准备工作。"
+layout: "second"
+weight: 01
+---
+
+
+本节介绍安装{ks_product_both}前需要进行的准备工作。

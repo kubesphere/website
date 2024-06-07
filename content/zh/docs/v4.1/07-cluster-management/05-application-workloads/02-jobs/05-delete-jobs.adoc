@@ -1,0 +1,58 @@
+---
+title: "删除任务"
+linkTitle: "删除任务"
+keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 任务, 删除任务"
+description: "介绍如何删除任务。"
+weight: 05
+---
+
+:ks_permission: **应用负载管理**
+:ks_navigation: **应用负载 > 任务**
+
+
+include::../../../../_custom/clusterManagement/jobs/jobs-desc-deleteJobs.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 删除单个任务
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/jobs/jobs-oper-openListPage.adoc[]
+
++
+include::../../../../_custom/clusterManagement/jobs/jobs-oper-deleteASingleJob.adoc[]
+
+
+
+== 批量删除任务
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/jobs/jobs-oper-openListPage.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/jobs/jobs-oper-deleteMultipleJobs.adoc[]

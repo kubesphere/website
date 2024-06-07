@@ -1,0 +1,33 @@
+---
+title: "WhizardTelemetry 可观测平台"
+linkTitle: "WhizardTelemetry 可观测平台"
+keywords: "Kubernetes, KubeSphere, 可观测中心, 监控, 告警管理, 事件告警, 通知管理, 日志管理, 审计管理, 事件管理, 数据流水线, OpenSearch"
+description: "介绍如何使用 WhizardTelemetry 可观测平台。"
+layout: "second"
+weight: 05
+---
+
+WhizardTelemetry 可观测平台是一款企业级多集群监控告警产品，专注于提供一体化的云原生可观测性服务。该平台提供了从基础设施到应用的多层级、多维度、多租户的指标监控和告警功能。同时，通过可插拔的 Whizard 可观测中心实现了监控告警的多集群统一纳管能力，以及成员集群和边缘集群的轻量化支持。
+
+WhizardTelemetry 可观测平台由以下扩展组件构成：
+
+- **WhizardTelemetry 平台服务**：是 WhizardTelemetry 可观测平台各扩展组件的公共服务。它是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。
+
+- **WhizardTelemetry 日志管理**：提供多租户视角的云原生应用实时及历史日志收集、查询、导出、存储等功能，可对接如 ElasticSearch、OpenSearch、Kafka 等日志接收器。
+
+- **WhizardTelemetry 事件管理**：可长期保存 Kubernetes 相关对象产生的事件，并提供多租户视角的事件检索和查看功能。
+
+- **WhizardTelemetry 审计管理**：实时记录在{ks_product_both}平台上的用户相关操作行为，并提供多租户视角的审计历史的检索及查看功能，可快速回溯相关用户的操作行为。
+
+- **WhizardTelemetry 监控**：提供多租户视角的云原生资源监控能力，包括针对集群，节点，工作负载、GPU、K8s 控制面等对象的核心监控指标进行实时和历史数据展示等功能。
+
+- **WhizardTelemetry 告警管理**：基于 KubeSphere 采集的监控数据，可针对不同资源类型和监控指标，提供平台及租户视角的告警及告警规则管理功能。
+
+- **WhizardTelemetry 事件告警**：为 Kubernetes 原生事件和 Kubernetes/KubeSphere 审计事件定义告警规则，对传入的事件数据进行评估，并将告警发送到指定的接收器如 HTTP 端点等。
+
+- **WhizardTelemetry 通知管理**：管理多租户 Kubernetes 环境中的通知。它能够接收来自不同发送者的告警、云事件以及其他类型的事件（例如审计和 Kubernetes 事件），并根据租户标签（如命名空间或用户）将通知发送给相应的租户接收器。支持邮件、飞书、钉钉、企业微信、Slack、Webhook 等多种通知渠道。
+
+- **WhizardTelemetry 数据流水线**：提供可观测性数据的收集、转换和路由能力。
+
+- **OpenSearch 分布式检索与分析引擎**：支持使用外置或内置的 OpenSearch 集群来存储、检索与分析日志、审计、事件、通知历史等可观测数据。
+

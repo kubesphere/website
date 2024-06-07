@@ -1,0 +1,54 @@
+---
+title: "将应用版本发布到应用商店"
+linkTitle: "将应用版本发布到应用商店"
+keywords: "Kubernetes, KubeSphere, 企业空间, 应用模板, 将应用版本发布到应用商店"
+description: "介绍如何将应用模板发布到应用商店。"
+weight: 10
+---
+
+:ks_permission: **应用/应用版本/应用实例管理**
+:ks_navigation: **应用管理 > 应用模板**
+
+
+本节介绍如何将应用版本发布到应用商店。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+. 在应用模板详情页面右侧的**版本**页签，点击需要发布的应用版本，然后在展开的区域中点击**提交审核**。
+
+. 待应用商店管理员审核通过并将其上架后，在页面左上角点击**应用商店**，即可在应用商店中查看已上架的应用版本。
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+* 审核通过后，应用版本的状态将变为**已发布**，表示可以被应用商店管理员上架到应用商店。上架后，所有项目成员才可以从应用商店将应用版本安装到项目中。
+
+* 有关应用审核和上架的更多信息，请参阅link:../../../03-app-store-management/[应用商店管理]。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--

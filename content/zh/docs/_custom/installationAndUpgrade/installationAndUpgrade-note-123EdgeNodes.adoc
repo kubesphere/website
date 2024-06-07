@@ -1,0 +1,2 @@
+// :ks_include_id: 4e16378eba6e45f089fcbf4c3a1b23c4
+Kubernetes v1.24.x 暂不支持通过{ks_product_left} Web 控制台登录边缘节点终端。

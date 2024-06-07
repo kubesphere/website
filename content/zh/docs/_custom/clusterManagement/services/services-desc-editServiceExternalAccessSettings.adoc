@@ -1,0 +1,9 @@
+// :ks_include_id: 6153ebc95ef847adb6e6294e7b521d88
+本节介绍如何编辑服务外部访问设置。
+
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+此操作仅支持内部访问模式为 VirtualIP 的服务，不支持内部访问模式为 Headless 或 ExternalName 的服务。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

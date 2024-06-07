@@ -1,0 +1,21 @@
+---
+title: "企业空间成员"
+linkTitle: "企业空间成员"
+keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间成员"
+description: "介绍如何管理企业空间成员。"
+layout: "second"
+weight: 03
+---
+
+
+
+本节介绍如何管理企业空间成员。
+
+企业空间成员是在企业空间中具有资源查看或管理权限的用户，企业空间成员的权限由成员在企业空间中的角色决定。
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+include::../../../../_custom/workspaceManagement/workspaceMembers/workspaceMembers-desc-initialWorkspaceAdmin.adoc[]
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]

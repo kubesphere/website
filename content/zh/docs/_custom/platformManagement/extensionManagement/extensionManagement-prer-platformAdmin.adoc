@@ -1,0 +1,2 @@
+// :ks_include_id: 533e874085874479aae0d8bb598443f2
+您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅xref:04-platform-management/04-access-control/02-users/_index.adoc[用户]和xref:04-platform-management/04-access-control/03-platform-roles/_index.adoc[平台角色]。

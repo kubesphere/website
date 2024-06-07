@@ -1,0 +1,82 @@
+---
+title: KubeSphere 企业版
+weight: 45
+css: scss/docs.scss
+isDocsRoot: true
+LinkTitle: KubeSphere 企业版
+pdf_coverDocName: KubeSphere 企业版 v4.1.0
+pdf_projectVersion: '4.1.0'
+pdf_releaseDate: 2024-04-12
+section1:
+  title: KubeSphere 企业版
+  content: 了解如何通过 KubeSphere 企业版构建并管理云原生应用程序。获取文档、示例代码与教程等信息。
+  image: /images/docs/common/banner.png
+
+sectionLink:
+  docs:
+    title: 常用文档
+    description: 通过快速入门、教程和示例等学习使用 KubeSphere。
+    list:
+      - /docs/v4.1/02-quickstart/01-install-ks-core
+      - /docs/v4.1/02-quickstart/02-install-a-demo-extension
+      - /docs/v4.1/06-extension-user-guide/02-subscribe-and-install-components
+      
+  videos:
+    title: 视频教程
+    description: 观看视频教程学习 KubeSphere。
+    list:
+      - link: https://www.bilibili.com/video/BV1KA411s7D3
+        text: All-in-One 模式安装 KubeSphere
+      - link: https://www.bilibili.com/video/BV16y4y1v7cn
+        text: 多节点安装 KubeSphere
+      - link: https://www.bilibili.com/video/BV1Pz4y1C7jr
+        text: 离线安装 KubeSphere
+
+study_section:
+  - title: 了解
+    icon: icon-note_tree_duotone
+    children:
+      - title: 产品简介
+        children:
+          - title: 产品优势
+            url: 01-intro/01-introduction/
+          - title: 应用场景
+            url: 01-intro/03-scenarios/
+  - title: 上手
+    icon: icon-gamepad_2_duotone
+    children:
+      - title: 快速入门
+        children:
+          - title: 最小化安装
+            url: 02-quickstart/01-install-ks-core
+          - title: 安装示例组件
+            url: 02-quickstart/02-install-a-demo-extension
+          - title: 控制用户权限
+            url: 02-quickstart/03-control-user-permissions
+  - title: 管理
+    icon: icon-simulation_duotone
+    children:
+      - title: 管理指南
+        children:
+          - title: 扩展组件管理
+            url: 06-extension-user-guide
+          - title: 集群管理
+            url: 07-cluster-management
+          - title: 企业空间管理
+            url: 08-workspace-management
+          - title: 项目管理
+            url: 09-project-management
+  - title: 使用
+    icon: icon-apps_2_duotone
+    children:
+      - title: 扩展组件
+        children:
+          - title: DevOps
+            url: 11-use-extensions/01-devops
+          - title: 应用商店管理
+            url: 11-use-extensions/02-app-store
+          - title: Whizard 可观测平台
+            url: 11-use-extensions/05-observability-platform
+          - title: KubeSphere 网络
+            url: 11-use-extensions/11-network
+---

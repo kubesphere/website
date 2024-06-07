@@ -1,0 +1,12 @@
+---
+title: "服务帐户"
+linkTitle: "服务帐户"
+keywords: "Kubernetes, KubeSphere, 项目管理, 配置, 服务帐户"
+description: "介绍如何管理服务帐户。"
+layout: "second"
+weight: 03
+---
+
+
+
+include::../../../../_custom/clusterManagement/serviceAccounts/serviceAccounts-desc-serviceAccounts.adoc[]

@@ -1,0 +1,62 @@
+---
+title: "通过直接连接添加成员集群"
+linkTitle: "通过直接连接添加成员集群"
+keywords: "Kubernetes, KubeSphere, 多集群管理, 集群, 添加成员集群"
+description: "介绍如何通过直接连接添加成员集群。"
+weight: 01
+---
+
+
+
+本节介绍如何通过直接连接添加成员集群。
+
+
+== 前提条件
+
+* 您需要在主集群中具有 **platform-admin** 角色。
+
+* 主集群所有节点必须能访问成员集群的 Kubernetes API 服务（默认为成员集群主节点的 6443 端口）。取决于您的网络环境，您可能需要配置防火墙和流量转发规则。
+
+== 获取成员集群 kubeconfig
+
+在成员集群的节点上，执行以下命令获取成员集群的 kubeconfig 信息：
+
+[,bash]
+----
+kubectl config view --raw
+----
+
+
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+// * 您可以复制 kubeconfig 信息或点击image:/images/ks-qkcp/zh/icons/download-dark.svg[download-dark,18,18]将 **kubeconfig.yaml** 文件下载到本地。
+
+请将 kubeconfig 信息中的 **clusters:cluster:server** 参数修改为成员集群的 Kubernetes API 服务的访问地址，默认在成员集群主节点的 6443 端口暴露。请确保主集群的所有节点都能访问该地址，取决于您的网络环境，您可能需要配置防火墙规则和流量转发策略。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+
+== 添加成员集群
+
+include::../../../../../_custom/platformManagement/multiclusterManagement/clusters/clusters-oper-logInToHost.adoc[]
+
++
+
+. 点击**集群管理**。
+
++
+
+include::../../../../../_custom/platformManagement/multiclusterManagement/clusters/clusters-oper-addClusterBasicInfo.adoc[]
++
+在**高级设置**下，设置集群的用途标识。
++
+
+. 在**连接设置**页签，将**连接方式**设置为**直接连接**，在 **kubeconfig** 区域输入成员集群的 kubeconfig 信息，然后点击**下一步**。
+
+. 在**集群配置**页签，设置集群配置，然后点击**创建**。
++
+--
+成员集群添加完成后将显示在**集群管理**页面的集群列表中。
+--

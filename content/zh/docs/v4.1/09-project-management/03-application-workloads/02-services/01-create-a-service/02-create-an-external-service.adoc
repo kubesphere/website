@@ -1,0 +1,59 @@
+---
+title: "创建外部服务"
+linkTitle: "创建外部服务"
+keywords: "Kubernetes, KubeSphere, 项目管理, 工作负载, 服务, 创建服务, 创建外部服务"
+description: "介绍如何创建外部服务。"
+weight: 02
+---
+
+:ks_permission: **应用负载管理**
+:ks_navigation: **应用负载 > 服务**
+
+
+本节介绍如何创建外部服务。
+
+外部服务将业务流量转发给集群外部的其他服务，在集群内部可以通过 <service name>.<project name>**.svc.cluster.local** 格式的域名访问。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../../
+
+include::../../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-clickCreate.adoc[]
+
++
+
+. 在**创建服务**对话框，选择**外部服务**。
+
+. 在**基本信息**页签，设置服务的基本信息，然后点击**下一步**。
+
+. 在**外部服务**页签，设置目标服务的地址，然后点击**创建**。
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+* 目标服务的地址必须为域名，如果您输入 IP 地址，该地址将被视为由数字组成的域名而不是真正的 IP 地址。
+
+* 为使业务流量可以被正常转发到目标服务，请确保目标服务的域名可以通过域名服务器解析为实际的 IP 地址。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+

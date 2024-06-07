@@ -1,0 +1,26 @@
+---
+title: "创建服务"
+linkTitle: "创建服务"
+keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 服务, 创建服务"
+description: "介绍如何创建服务。"
+layout: "second"
+weight: 01
+---
+
+
+
+include::../../../../../_custom/clusterManagement/services/services-desc-createAService.adoc[]
+
+{ks_product_right}支持通过以下方式创建服务及服务后端的工作负载：
+
+* 创建有状态服务：创建内部访问模式为 Headless 的服务，同时创建有状态副本集作为服务后端的工作负载。
+
+* 创建无状态服务：创建内部访问模式为 VirtualIP 的服务，同时创建部署作为服务后端的工作负载。
+
+* 创建外部服务：服务将业务流量转发给集群外部的其他服务。
+
+// * 通过源代码创建服务：创建内部访问模式为 Headless 或 VirtualIP 的服务，并使用 Java、Node.js 或 Python 源代码创建服务后端的工作负载。
+
+// * 通过制品创建服务：创建内部访问模式为 Headless 或 VirtualIP 的服务，并使用 JAR、WAR 或二进制制品文件创建服务后端的工作负载。
+
+* 指定工作负载：创建内部访问模式为 Headless 或 VirtualIP 的服务，并使用项目中现有的工作负载作为服务后端的工作负载。

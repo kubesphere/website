@@ -1,0 +1,416 @@
+---
+title: "环境要求"
+linkTitle: "环境要求"
+keywords: "Kubernetes, KubeSphere, 组件,支持矩阵"
+description: "介绍 KubeSphere 的环境要求。"
+weight: 01
+---
+
+
+本节介绍{ks_product_both}的环境要求。
+
+== 系统要求
+
+[%header,cols="3a,4a,4a"]
+|===
+|系统 |最低要求（每个节点）| 生产环境要求（每个节点）
+
+|Ubuntu 16.04，18.04，20.04，22.04
+|CPU：2 核，内存：4 GB，硬盘：40 GB
+|CPU：8 核，内存：16 GB，硬盘：200 GB
+
+|Debian Buster，Stretch
+|CPU：2 核，内存：4 GB，硬盘：40 GB
+|CPU：8 核，内存：16 GB，硬盘：200 GB
+
+|CentOS 7.x，CentOS Stream 
+|CPU：2 核，内存：4 GB，硬盘：40 GB
+|CPU：8 核，内存：16 GB，硬盘：200 GB
+
+|Red Hat Enterprise Linux 7.x，8.x
+|CPU：2 核，内存：4 GB，硬盘：40 GB
+|CPU：8 核，内存：16 GB，硬盘：200 GB
+
+|SUSE Linux Enterprise Server 15/openSUSE Leap 15.2
+|CPU：2 核，内存：4 GB，硬盘：40 GB
+|CPU：8 核，内存：16 GB，硬盘：200 GB
+|===
+
+== 依赖项要求
+
+[%header,cols="1a,4a,4a"]
+|===
+|依赖项 |Kubernetes 版本 ≥ 1.18|Kubernetes 版本 < 1.18
+
+|socat
+|必须
+|可选，但建议安装
+
+|conntrack
+|必须
+|可选，但建议安装
+
+|ebtables
+|可选，但建议安装
+|可选，但建议安装
+
+|ipset
+|可选，但建议安装
+|可选，但建议安装
+|===
+
+== 容器运行时要求
+
+[%header,cols="4a,4a"]
+|===
+|支持的容器运行时 |版本
+
+|Docker
+|20.10.0+。
+
+|containerd
+|最新版。
+
+|CRI-O（试验版，未经充分测试）
+|最新版
+
+|iSula（试验版，未经充分测试）
+|最新版
+|===
+
+== 网络要求
+
+* 请确保 **/etc/resolv.conf** 中的 DNS 地址可用，否则，可能会导致集群中的 DNS 出现问题。
+
+* 如果您的网络配置使用防火墙规则或安全组，请务必确保基础设施组件可以通过特定端口相互通信。建议您关闭防火墙。
+
+* 支持的 CNI 插件：Calico 和 Flannel。其他插件也适用（例如 Cilium 和 Kube-OVN 等），但请注意它们未经充分测试。
+
+== 端口要求
+
+某些端口需要用于服务之间的通信。如果您的网络配置有防火墙规则，则需要确保基础设施组件可以通过特定端口相互通信。这些端口用作某些进程或服务的通信端点。
+
+[%header,cols="2a,2a,2a,2a,2a,3a"]
+|===
+|服务
+|协议
+|行为
+|起始端口
+|结束端口
+|备注
+
+|ssh
+|TCP
+|allow
+|22
+|N/A
+|N/A
+
+|etcd
+|TCP
+|allow
+|2379
+|2380
+|N/A
+
+|apiserver
+|TCP
+|allow
+|6443
+|N/A
+|N/A
+
+|calico
+|TCP
+|allow
+|9099
+|9100
+|N/A
+
+|bgp
+|TCP
+|allow
+|179
+|N/A
+|N/A
+
+|nodeport
+|TCP
+|allow
+|30000
+|32767
+|N/A
+
+|master
+|TCP
+|allow
+|10250
+|10258
+|N/A
+
+|dns
+|TCP
+|allow
+|53
+|N/A
+|N/A
+
+|dns
+|UDP
+|allow
+|53
+|N/A
+|N/A
+
+|local-registry
+|TCP
+|allow
+|5000
+|N/A
+|离线环境需要
+
+|local-apt
+|TCP
+|allow
+|5080
+|N/A
+|离线环境需要
+
+|rpcbind
+|TCP
+|allow
+|111
+|N/A
+|使用 NFS 时需要
+
+|ipip
+|IPENCAP / IPIP
+|allow
+|N/A
+|N/A
+|Calico 需要使用 IPIP 协议
+
+|metrics-server
+|TCP
+|allow
+|8443
+|N/A
+|N/A
+|===
+
+== 组件支持矩阵
+
+{ks_product_right} v4.1.0 默认支持 Kubernetes v1.21~1.28。本节详细介绍{ks_product_both}各组件支持的 Kubernetes 版本。为避免使用过程中出现兼容性问题，请使用支持的 Kubernetes 版本。
+
+[%header,cols="2a,3a,5a"]
+|===
+|组件 |组件版本 |支持的 Kubernetes 版本
+
+|ks-core
+|4.1.x
+|1.21~1.28
+
+|DevOps
+|4.1.0
+|1.21~1.28
+
+|Storage-utils
+|1.0.x
+|1.21~1.28
+
+|Vector
+|1.0.0
+|1.21~1.28
+
+|OpenSearch
+|2.11.1
+|1.21~1.28
+
+|Monitoring
+|1.0.0
+|1.21~1.28
+
+|Logging
+|1.0.0
+|1.21~1.28
+
+|Auditing
+|1.0.0
+|1.21~1.28
+
+|Events
+|1.0.0
+|1.21~1.28
+
+|Alerting
+|1.0.0
+|1.21~1.28
+
+|WhizardTelemetry 平台服务
+|1.0.0
+|1.21~1.28
+
+|WhizardTelemetry 事件告警
+|1.0.0
+|1.21~1.28
+
+|Notification
+|2.5.1
+|1.21~1.28
+
+|MetricServer
+|0.7.0
+|1.21~1.28
+
+|Tower
+|1.0.x
+|1.21~1.28
+
+|OpenPitrix
+|2.0.0
+|1.21~1.28
+
+|KubeFed
+|1.0.x
+|1.21~1.28
+
+|Gateway
+|1.0.x
+|1.22~1.25
+
+|ServiceMesh
+|1.0.x
+|1.22~1.25
+
+|KubeEdge
+|1.31.1
+|1.21-1.23
+
+|RadonDB DMP
+|2.1.0
+|
+* DMP 管理平台: 1.21~1.28
+* MySQL: 1.21~1.28
+* PostgreSQL: 1.21~1.28
+* Redis Cluster: 1.21~1.28
+* Redis Sentinel: 1.21~1.28
+* MongoDB: 1.21~1.28
+* OpenSearch: 1.21~1.28
+* Kafka: 1.21~1.28
+* RabbitMQ: 1.21~1.28
+
+|SpringCloud
+|1.0.x
+|1.21~1.28
+
+|Gatekeeper
+|1.0.x
+|1.21~1.28
+
+|Network
+|1.0.0
+|1.21~1.28
+|===
+
+== 组件架构支持矩阵
+
+[%header,cols="2a,3a,5a"]
+|===
+|组件 |组件版本 |支持的架构
+
+|ks-core
+|4.1.x
+|amd64、arm64
+
+|DevOps
+|4.1.0
+|amd64、arm64
+
+|Storage-utils
+|1.0.x
+|amd64、arm64
+
+|Vector
+|1.0.0
+|amd64、arm64
+
+|OpenSearch
+|2.11.1
+|amd64、arm64
+
+|Monitoring
+|1.0.0
+|amd64、arm64
+
+|Logging
+|1.0.0
+|amd64、arm64
+
+|Auditing
+|1.0.0
+|amd64、arm64
+
+|Events
+|1.0.0
+|amd64、arm64
+
+|Alerting
+|1.0.0
+|amd64、arm64
+
+|WhizardTelemetry 平台服务
+|1.0.0
+|amd64、arm64
+
+|WhizardTelemetry 事件告警
+|1.0.0
+|amd64、arm64
+
+|Notification
+|2.5.1
+|amd64、arm64
+
+|MetricServer
+|0.7.0
+|amd64、arm64
+
+|Tower
+|1.0.x
+|amd64、arm64
+
+|OpenPitrix
+|2.0.0
+|amd64、arm64
+
+|KubeFed
+|1.0.x
+|amd64、arm64
+
+|Gateway
+|1.0.x
+|amd64、arm64
+
+|ServiceMesh
+|1.0.x
+|amd64、arm64
+
+|KubeEdge
+|1.31.1
+|amd64、arm64
+
+|RadonDB DMP
+|2.1.0
+|amd64
+
+|SpringCloud
+|1.0.x
+|amd64、arm64
+
+|Gatekeeper
+|1.0.x
+|amd64、arm64
+
+|Network
+|1.0.0
+|amd64、arm64
+|===

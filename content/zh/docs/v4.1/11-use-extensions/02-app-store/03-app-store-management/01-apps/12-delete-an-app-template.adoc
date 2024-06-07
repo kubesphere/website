@@ -1,0 +1,37 @@
+---
+title: "删除应用模板"
+linkTitle: "删除应用模板"
+weight: 12
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **应用**
+
+
+本节介绍如何删除应用商店中的应用模板。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
+. 在需要编辑的应用模板右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除应用模板**对话框，输入应用模板的名称，然后点击**确定**。

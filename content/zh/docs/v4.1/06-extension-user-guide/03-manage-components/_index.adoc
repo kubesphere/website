@@ -1,0 +1,10 @@
+---
+title: "管理扩展组件"
+linkTitle: "管理扩展组件"
+keywords: "Kubernetes, KubeSphere, 管理, 扩展组件"
+description: "介绍如何管理扩展组件。"
+layout: "second"
+weight: 03
+---
+
+本节介绍如何在扩展中心配置、升级、禁用、卸载扩展组件，以及如何配置集群 Agent。

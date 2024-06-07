@@ -1,0 +1,8 @@
+// :ks_include_id: 17ab622bc96f45e68b3581c076cb1223
+. 在页面右侧选择**管理 > 编辑**。
+
+. 在弹出的对话框，修改网关的参数，然后点击**确定**。
++
+--
+include::gatewaySettings-para-enableGateway.adoc[]
+--

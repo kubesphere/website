@@ -1,0 +1,2 @@
+// :ks_include_id: db20d1bbd2ed4dc9af2b84f07b0b87e3
+. 将光标悬停在页面右下角的image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18]图标，然后在菜单中选择 **kubectl**。

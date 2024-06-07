@@ -1,0 +1,38 @@
+---
+title: "查看企业空间网关详情"
+linkTitle: "查看企业空间网关详情"
+keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 网关设置, 查看企业空间网关详情"
+description: "介绍如何查看企业空间网关详情。"
+weight: 03
+---
+
+
+:ks_permission: **企业空间网关查看**
+:ks_navigation: **企业空间设置 > 网关设置**
+
+
+本节介绍如何查看企业空间网关详情。
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 网关**扩展组件。
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/gatewaySettings/gatewaySettings-oper-viewGatewayDetails_v4.adoc[]

@@ -1,0 +1,38 @@
+---
+title: "查看配置字典详情"
+linkTitle: "查看配置字典详情"
+keywords: "Kubernetes, KubeSphere, 联邦项目, 配置, 配置字典, 查看配置字典详情"
+description: "介绍如何查看配置字典详情。"
+weight: 03
+---
+
+:ks_permission: **联邦项目查看**
+:ks_navigation: **配置 > 配置字典**
+
+
+include::../../../../../_custom/clusterManagement/configmaps/configmaps-desc-viewConfigmapDetails.adoc[]
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../../_custom/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== 操作步骤
+
+include::../../../../../_custom/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/clusterManagement/configmaps/configmaps-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom/multi-clusterProjectManagement/configmaps/configmaps-oper-viewConfigmapDetails.adoc[]

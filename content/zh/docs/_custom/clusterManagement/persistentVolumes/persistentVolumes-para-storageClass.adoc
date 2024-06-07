@@ -1,0 +1,2 @@
+// :ks_include_id: 3fb3e081dbcf4e6ba9164671a38aa755
+创建持久卷声明使用的存储类。

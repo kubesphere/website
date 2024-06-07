@@ -1,0 +1,73 @@
+---
+title: "为自制应用添加服务"
+linkTitle: "为自制应用添加服务"
+keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 应用, 编辑应用设置"
+description: "介绍如何为自制应用添加服务。"
+weight: 07
+---
+
+:ks_permission: ** Service Mesh 管理**
+:ks_navigation: **服务网格 > 自制应用**
+
+
+本节介绍如何为自制应用添加有状态或无状态服务。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**自制应用**页面，点击一个应用的名称打开其详情页面。
+
+. 在应用详情页面左上角选择**更多操作 > 添加服务**。
+
+. 在**创建服务**对话框，根据需要选择**有状态服务**或**无状态服务**。
++
+--
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+include::../../../../_custom/clusterManagement/services/services-para-statelessStatefulExternal.adoc[]
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
++
+
+include::../../../../_custom/projectManagement/services/services-oper-setBasicInformation.adoc[]
+
++
+
+. 在**容器组设置**页签，为服务后端工作负载管理的容器组设置副本数量、容器、更新策略、安全上下文、调度规则和元数据，然后点击**下一步**。
+
++
+
+include::../../../../_custom/projectManagement/services/services-oper-setStorageAdvanced.adoc[]
++
+--
+ifeval::["{file_output_type}" == "html"]
+有关**有状态服务**和**无状态服务**的参数设置，请参阅link:../../../../09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/#_参数描述[创建有状态服务或无状态服务]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+有关**有状态服务**和**无状态服务**的参数设置，请参阅《{ks_product_right}项目管理指南》的“创建有状态服务或无状态服务”章节。
+endif::[]
+--
+

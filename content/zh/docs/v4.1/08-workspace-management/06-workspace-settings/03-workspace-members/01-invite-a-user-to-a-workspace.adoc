@@ -1,0 +1,47 @@
+---
+title: "邀请用户加入企业空间"
+linkTitle: "邀请用户加入企业空间"
+keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 企业空间成员, 邀请用户加入企业空间"
+description: "介绍如何邀请用户加入企业空间。"
+weight: 01
+---
+
+:ks_permission: **成员管理**
+:ks_navigation: **企业空间设置 > 企业空间成员**
+
+
+本节介绍如何邀请用户加入企业空间。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-clickInvite.adoc[]
+
++
+
+. 在**邀请成员**对话框，在需要邀请的用户右侧点击image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18]，在下拉列表中选择用户在企业空间中的角色，然后点击**确定**。
++
+--
+include::../../../../_custom/workspaceManagement/workspaceRoles/workspaceRoles-para-presetRoles_v4.adoc[]
+
+用户被邀请加入企业空间后将显示在企业空间成员列表中。
+--

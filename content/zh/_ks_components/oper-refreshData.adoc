@@ -1,0 +1,2 @@
+// :ks_include_id: 4bba5db43c504475853edcfabbcf5652
+* 在右上角点击 image:/images/ks-qkcp/zh/icons/refresh-dark.svg[refresh,18,18] 可手动刷新数据。

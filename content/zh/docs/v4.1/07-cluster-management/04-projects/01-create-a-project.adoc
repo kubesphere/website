@@ -1,0 +1,72 @@
+---
+title: "创建项目"
+linkTitle: "创建项目"
+keywords: "Kubernetes, KubeSphere, 集群管理, 项目, 创建项目"
+description: "介绍如何创建项目。"
+weight: 01
+---
+
+
+:ks_permission: **项目管理**
+:ks_navigation: **项目**
+
+
+本节介绍如何创建项目。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../
+
+include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_ks_components/oper-clickCreate.adoc[]
+
++
+
+. 在**创建项目**对话框，设置项目的参数，然后点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::../../../_custom/clusterManagement/projects/projects-para-name.adoc[]
+
+include::../../../_custom/clusterManagement/projects/projects-para-aliasDescription.adoc[]
+|===
+--
+
+. 在项目列表中，在新创建的项目右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**分配企业空间**。
+
+. 在**分配企业空间**对话框，设置项目所属的企业空间，并选择一个企业空间成员作为项目管理员，然后点击**确定**。
+
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+* 项目被分配到企业空间后不允许变更项目所属的企业空间。
+
+ifeval::["{file_output_type}" == "html"]
+* 项目创建完成后，您可以邀请用户加入项目并在项目中部署业务。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+* 项目创建完成后，您可以邀请用户加入项目并在项目中部署业务。有关更多信息，请参阅 《{ks_product_right}项目管理指南》。
+endif::[]
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

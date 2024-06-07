@@ -1,0 +1,2 @@
+// :ks_include_id: e7aea6697127455bac788a878791e24e
+* 主集群和成员集群都需要启用多集群管理扩展组件。有关更多信息，请参阅xref:04-platform-management/01-extension-management/13-multi-cluster-management/01-enable-multi-cluster-management.adoc[启用多集群管理]。

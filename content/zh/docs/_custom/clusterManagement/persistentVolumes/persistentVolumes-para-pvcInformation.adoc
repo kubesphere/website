@@ -1,0 +1,27 @@
+// :ks_include_id: 97165dd8a39e4251913b19385f46901d
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|持久卷声明的名称。
+
+|存储类
+|
+include::persistentVolumes-para-storageClass.adoc[]
+
+|创建时间
+|持久卷声明的创建时间。
+
+|供应者
+|
+include::persistentVolumes-para-provisioner.adoc[]
+
+|访问模式
+|
+include::../persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
+
+|容量
+|
+include::persistentVolumes-para-volumeSize.adoc[]
+|===

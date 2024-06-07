@@ -1,0 +1,86 @@
+---
+title: "自定义 Jenkins Agent"
+linkTitle: "自定义 Jenkins Agent"
+keywords: "Kubernetes, KubeSphere, DevOps 项目, 使用 DevOps, 流水线"
+description: "介绍如何管理 DevOps 项目，以及如何在 DevOps 项目中管理流水线和 DevOps 项目设置。"
+weight: 11
+---
+
+
+若要使用运行特定环境（例如 JDK 11）的 Jenkins Agent，可以在{ks_product_both}上自定义 Jenkins Agent。
+
+本文档描述如何在{ks_product_both}上自定义 Jenkins Agent。
+
+
+== 前提条件
+
+{ks_product_right}平台需要安装并启用 **DevOps** 扩展组件。
+
+
+== 自定义 Jenkins Agent
+
+. 以 **admin** 用户登录{ks_product_left} Web 控制台。
+
+. 点击**集群管理**，进入一个集群。
+
+. 在左侧导航栏选择**配置**下的**配置字典**。
+
+. 在**配置字典**页面的搜索框中输入 **jenkins-casc-config** 并按**回车键**。
+
+. 点击 **jenkins-casc-config** 进入其详情页面，点击**更多操作**，选择**编辑 YAML**。
+
+. 在弹出的对话框中，搜寻至 **data:jenkins_user.yaml:jenkins:clouds:kubernetes:templates** 下方并输入以下代码，点击**确定**。
++
+--
+[,yaml]
+----
+
+- name: "maven-jdk11" # 自定义 Jenkins Agent 的名称。
+  label: "maven jdk11" # 自定义 Jenkins Agent 的标签。若要指定多个标签，请用空格来分隔标签。
+  inheritFrom: "maven" # 自定义 Jenkins Agent 所继承的现有容器组模板的名称。
+  containers:
+  - name: "maven" # 自定义 Jenkins Agent 所继承的现有容器组模板中指定的容器名称。
+    image: "kubespheredev/builder-maven:v3.2.0jdk11" # 此镜像只用于测试。请使用您自己的镜像。
+----
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+请确保遵守 YAML 文件中的缩进。
+
+|===
+--
+
+. 等待 1 ~ 2 分钟，会自动重新加载新的配置。
+
+. 要使用自定义的 Jenkins Agent，请参考下方的示例 Jenkinsfile，在创建流水线时指定自定义 Jenkins Agent 对应的标签和容器名。
++
+--
+
+[,json]
+----
+
+pipeline {
+  agent {
+    node {
+      label 'maven && jdk11'
+    }
+  }
+  stages {
+    stage('Print Maven and JDK version') {
+      steps {
+        container('maven') {
+          sh '''
+          mvn -v
+          java -version
+          '''
+        }
+      }
+    }
+  }
+}
+----
+--

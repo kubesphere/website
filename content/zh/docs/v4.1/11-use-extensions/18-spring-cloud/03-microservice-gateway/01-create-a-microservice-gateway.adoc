@@ -1,0 +1,54 @@
+---
+title: "创建微服务网关"
+linkTitle: "创建微服务网关"
+keywords: "Kubernetes, KubeSphere, 项目管理, Spring Cloud, 创建微服务网关"
+description: "介绍如何创建微服务网关。"
+weight: 01
+---
+
+:ks_permission: ** Spring Cloud 微服务管理**
+:ks_navigation:  **Spring Cloud > 微服务网关**
+
+
+本节介绍如何创建微服务网关。
+
+创建微服务网关过程中实际上创建了一个运行 Spring Cloud Gateway 的部署。
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* 您需要提前准备 Spring Cloud Gateway 容器镜像。有关更多信息，请参阅 link:https://spring.io/projects/spring-cloud-gateway#overview[Spring Cloud Gateway] 官方文档。本节使用 registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest 容器镜像作为示例，您也可以根据需要自行构建容器镜像。
+
+
+== 操作步骤
+
+请参阅link:#_参数描述[参数描述]设置微服务网关的参数。
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-clickCreate.adoc[]
+
++
+
+. 在**网关设置**页签，设置微服务网关的参数，然后点击**下一步**。
+
+. 在**高级设置**页签，选择是否启用外部访问和外部访问模式，然后点击**创建**。
+
+
+== 参数描述
+
+include::../../../../_custom/projectManagement/microserviceGateway/microserviceGateway-para-microserviceGatewaySettings.adoc[]

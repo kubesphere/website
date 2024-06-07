@@ -1,0 +1,57 @@
+---
+title: "设置授权规则"
+linkTitle: "设置授权规则"
+weight: 01
+---
+
+:ks_permission: **存储类访问规则管理**
+:ks_navigation: **存储 > 存储类**
+
+
+本节介绍如何为存储类设置授权规则。
+
+设置并启用授权规则后，用户只能在特定项目和企业空间使用存储类。
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/clusterManagement/storageClasses/systemClasses-oper-openDetailsPage.adoc[]
+
++
+
+. 在存储类详情页面的左上角，选择**更多操作 > 设置授权规则**。
+
+. 在**设置授权规则**对话框，点击页面右侧的**已禁用**按钮启用授权规则。
++
+--
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+若要禁用授权规则，在页面右侧点击**已启用**。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+. 在**授权规则**设置区域，设置在特定的项目和企业空间使用该存储类。
++
+image:/images/ks-qkcp/zh/v4.1/storage1.png[ rule,100%]
+
+. 设置完成后，点击**确定**。

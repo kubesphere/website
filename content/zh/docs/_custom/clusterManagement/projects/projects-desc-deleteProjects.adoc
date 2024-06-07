@@ -1,0 +1,9 @@
+// :ks_include_id: 375914907c6948b08ccff616aa99831d
+本节介绍如何删除项目。
+
+// Warning
+include::../../../../_ks_components/admonitions/warning.adoc[]
+
+项目删除后不能恢复，同时项目中的所有的资源也将被删除，请谨慎执行此操作。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]

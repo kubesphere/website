@@ -1,0 +1,52 @@
+---
+title: "启用收集卷上日志"
+linkTitle: "启用收集卷上日志"
+keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 日志收集, 收集卷上的日志"
+description: "介绍如何启用收集卷上日志。"
+weight: 03
+---
+
+
+:ks_permission: **应用负载管理**
+
+ifeval::["{file_output_type}" == "html"]
+本节介绍如何在创建工作负载、服务或任务时启用收集卷上的日志。有关更多信息，请参阅link:../../../../../09-project-management/03-application-workloads/03-workloads/01-create-a-workload/[创建工作负载]或link:../../../../../09-project-management/03-application-workloads/04-jobs/01-create-a-job/[创建任务]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+本节介绍如何在创建工作负载、服务或任务时启用收集卷上的日志。有关更多信息，请参阅《{ks_product_right}项目管理指南》的“应用负载”章节，创建工作负载或创建任务。
+endif::[]
+
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志管理**扩展组件，并已link:../02-enable-project-log-collection/[在项目中启用日志收集]。
+
+== 操作步骤
+
+include::../../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+. 在左侧导航栏选择**应用负载 > 工作负载**或**应用负载 > 任务**。
+
+. 在工作负载页面，点击**部署**、**有状态副本集**或**守护进程集**打开工作负载列表，或在任务页面，点击**任务**或**定时任务**打开任务列表。
+
+. 在页面点击**创建**。
+
+. 在**存储设置**页签，点击**收集卷上日志**开关启用该功能。
++
+
+
+. 点击**挂载卷**，为容器挂载**读写**模式的持久卷或临时卷，并设置**容器日志路径**。
+
+. 设置容器中的应用程序，将日志导出到卷挂载目录下的容器日志路径。
++
+日志收集完成后将打印到容器的标准输出，您可以在{ks_product_both}提供的工具箱对容器日志进行查询。有关更多信息，请参阅link:../../01-use-log-query-tools/[使用容器日志查询工具]。

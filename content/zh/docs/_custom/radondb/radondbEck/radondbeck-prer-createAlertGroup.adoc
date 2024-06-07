@@ -1,0 +1,2 @@
+// :ks_include_id: 19e21c1cd5ea4ba28bc287ebd9116ff1
+* 您已经创建了告警规则组。

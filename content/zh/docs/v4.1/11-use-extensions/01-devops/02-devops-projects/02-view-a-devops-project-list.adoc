@@ -1,0 +1,75 @@
+---
+title: "查看 DevOps 项目列表"
+linkTitle: "查看 DevOps 项目列表"
+keywords: "Kubernetes, KubeSphere, 企业空间, DevOps 项目, 查看 DevOps 项目列表"
+description: "介绍如何查看 DevOps 项目列表。"
+weight: 02
+---
+
+
+:ks_permission:  **DevOps 项目查看**
+:ks_navigation:  **DevOps 项目**
+
+
+本节介绍如何查看 DevOps 项目列表。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+* {empty}
+include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **DevOps** 扩展组件。
+
+
+== 操作步骤
+
+include::../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
++
+====
+* DevOps 项目列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|DevOps 项目的名称。
+
+|状态
+|DevOps 项目当前的状态。
+
+* **成功**：DevOps 项目已创建成功并且可用。
+
+* **等待中**：DevOps 项目正在创建中。
+
+* **删除中**：DevOps 项目正在删除中。
+
+|创建者
+|创建 DevOps 项目的用户。
+
+|创建时间
+|DevOps 项目的创建时间。
+|===
+--
+
+* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的 DevOps 项目。
+
+include::../../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components/oper-customizeColumns.adoc[]
+
+* 在列表中点击一个 DevOps 项目的名称可打开 DevOps 项目管理页面。您可以在 DevOps 项目管理页面查看和管理 DevOps 项目中的资源。
+
+
+====

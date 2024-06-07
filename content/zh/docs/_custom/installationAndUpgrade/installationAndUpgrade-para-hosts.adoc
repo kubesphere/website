@@ -1,0 +1,29 @@
+// :ks_include_id: 011f0f1d835947cbb1b37e80036c0b2e
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|name
+|用户自定义的服务器名称。
+
+|address
+|服务器的 SSH 登录 IP 地址。
+
+|internalAddress
+|服务器在子网内部的 IP 地址。
+
+|port
+|服务器的 SSH 端口号。如果使用默认端口 22 可不设置此参数。
+
+|user
+|服务器的 SSH 登录用户名，该用户必须为 **root** 用户或其他具有 **sudo** 命令执行权限的用户。如果使用 **root** 用户可不设置此参数。
+
+|password
+|服务器的 SSH 登录密码。如果已经设置 **privateKeyPath** 可不设置此参数。
+
+|privateKeyPath
+|服务器的 SSH 登录密钥的路径。如果已经设置 **password** 可不设置此参数。
+
+|arch
+|服务器的硬件架构。如果服务器的硬件架构为 Arm64，请将此参数设置为 **arm64**，否则请勿设置此参数。安装包默认仅支持所有集群节点都为 x86_64 或 arm64 架构的场景。如果各集群节点的硬件架构不完全相同，请联系{ks_product_both}技术支持团队。
+|===

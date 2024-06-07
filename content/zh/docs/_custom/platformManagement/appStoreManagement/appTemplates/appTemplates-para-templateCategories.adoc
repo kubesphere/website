@@ -1,0 +1,3 @@
+// :ks_include_id: 7f602e6e82414c39b2434c3a6ef39aa0
+|分类
+|应用模板所属的分类。您可以将应用模板分配到一个分类中以便于管理。有关更多信息，请参阅xref:04-platform-management/05-app-store-management/02-app-categories/_index.adoc[应用分类]。

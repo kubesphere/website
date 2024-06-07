@@ -1,0 +1,31 @@
+// :ks_include_id: a01602c836d8452bad7f89c2081e09f6
+
+= 术语和缩略语link:[id=9dfab7e9e67a4ae9929c1ad0214772be]
+
+[role="glossary",cols="1a,5a,5a"]
+|===
+
+|CPU
+|Central Processing Unit
+|中央处理器
+
+|GPU
+|Graphics Processing Unit
+|图形处理器
+
+|HTTP
+|Hypertext Transfer Protocol
+|超文本传输协议
+
+|HTTPS
+|Hypertext Transfer Protocol Secure
+|超文本传输安全协议
+
+|ID
+|Identifier
+|标识符
+
+|IP
+|Internet Protocol
+|互联网协议
+|===

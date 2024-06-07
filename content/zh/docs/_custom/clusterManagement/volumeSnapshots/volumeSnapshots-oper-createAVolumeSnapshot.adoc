@@ -1,0 +1,21 @@
+// :ks_include_id: 102bc308bb2647fd9be8af126d58b8e3
+. 在**创建快照**对话框，设置需要创建快照的持久卷声明、卷快照的名称和卷快照类，然后点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|持久卷声明
+|需要创建快照的持久卷声明。
+
+|名称
+|卷快照的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。
+
+|卷快照类
+|
+include::../persistentVolumeClaims/persistentVolumeClaims-para-volumeSnapshotClass.adoc[]
+|===
+
+卷快照创建后将显示在卷快照列表中。
+--

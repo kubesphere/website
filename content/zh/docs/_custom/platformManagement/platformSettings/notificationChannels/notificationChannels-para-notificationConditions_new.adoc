@@ -1,0 +1,8 @@
+// :ks_include_id: cd2ef9bcec6f4a9e8c517cfa2a4c539d
+* 过滤条件
++
+--
+{ks_product_right}发送的通知以键值对的形式呈现。当此处填写的**键**和**值**与规则组告警规则的标签设置中的**键**和**值**一致时，就可以通过标签过滤，发送标签符合特定条件的告警通知。点击**添加**可设置多个条件。
+
+include::notificationChannels-para-filterRule_new.adoc[]
+--
