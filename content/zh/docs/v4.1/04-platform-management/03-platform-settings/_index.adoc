@@ -6,4 +6,4 @@ layout: "second"
 ---
 
 
-本节介绍如何管理{ks_product_left} Web 控制台的基本信息以及许可证。
+本节介绍如何管理{ks_product_left} Web 控制台的基本信息。

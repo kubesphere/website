@@ -10,6 +10,7 @@ icon: "/images/docs/common/docs.svg"
 
 本节介绍{ks_product_both}的产品优势，架构以及应用场景。
 
+
 ifeval::["{file_output_type}" == "pdf"]
 
 == 产品版本

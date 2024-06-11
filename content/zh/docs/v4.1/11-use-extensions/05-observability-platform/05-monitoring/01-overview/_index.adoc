@@ -1,8 +1,0 @@
----
-title: "概览"
-linkTitle: "概览"
-weight: 01
-layout: "second"
----
-
-本节介绍安装“WhizardTelemetry 监控”扩展组件后，如何查看集群、企业空间、项目概览页面的监控信息。

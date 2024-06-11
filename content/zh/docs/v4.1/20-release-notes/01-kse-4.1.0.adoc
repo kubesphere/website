@@ -1,19 +1,19 @@
 ---
-title: "KubeSphere 企业版 v4.1.0 版本说明"
-linkTitle: "KubeSphere 企业版 v4.1.0 版本说明"
-keywords: "v4.1.0 版本说明, KubeSphere 企业版"
-description: "介绍 KubeSphere 企业版新特性、功能增强以及问题修复。"
+title: "KubeSphere v4.1.0 版本说明"
+linkTitle: "KubeSphere v4.1.0 版本说明"
+keywords: "v4.1.0 版本说明, KubeSphere"
+description: "介绍 KubeSphere 新特性、功能增强以及问题修复。"
 weight: 01
 ---
 
 
 == KubeSphere Core
 
-KubeSphere 企业版（KSE）v4.1.0 是青云科技 KubeSphere 团队匠心打造的全新云原生操作系统，是 KubeSphere 企业版架构革新后的第一个全功能版本。
+KubeSphere v4.1.0 是青云科技 KubeSphere 团队匠心打造的全新云原生操作系统，是 KubeSphere 架构革新后的第一个全功能版本。
 
-KubeSphere 企业版 v4.1.0 在 KubeSphere LuBan 全新云原生可扩展开放架构的基础上，将 KubeSphere 企业版 v3.x 的全产品功能解耦，并基于可插拔的架构规范进行重构、升级。自此，各 KubeSphere 扩展组件可独立发版、迭代。用户可根据需要的产品能力安装扩展组件，保持平台的轻量与灵活，轻松定制“千人千面”的专属操作系统。
+KubeSphere v4.1.0 在 KubeSphere LuBan 全新云原生可扩展开放架构的基础上，将 KubeSphere v3.x 的全产品功能解耦，并基于可插拔的架构规范进行重构、升级。自此，各 KubeSphere 扩展组件可独立发版、迭代。用户可根据需要的产品能力安装扩展组件，保持平台的轻量与灵活，轻松定制“千人千面”的专属操作系统。
 
-KubeSphere 企业版 v4.1.0 内置丰富全能的 KubeSphere 扩展市场。其中发布的扩展组件均经过严格审校，优质可控，覆盖云原生核心业务的方方面面。用户可自助式一键安装扩展组件，通过扩展中心一站式管理扩展组件的全生命周期。 此外，企业或个人开发者也可根据 KubeSphere LuBan 的开发规范，将自己的软件和服务上架到 KubeSphere 扩展市场进行分发与商业售卖，丰富多元的云原生应用生态。
+KubeSphere v4.1.0 内置丰富全能的 KubeSphere 扩展市场。其中发布的扩展组件均经过严格审校，优质可控，覆盖云原生核心业务的方方面面。用户可自助式一键安装扩展组件，通过扩展中心一站式管理扩展组件的全生命周期。 此外，企业或个人开发者也可根据 KubeSphere LuBan 的开发规范，将自己的软件和服务上架到 KubeSphere 扩展市场进行分发与商业售卖，丰富多元的云原生应用生态。
 
 === 新特性
 
@@ -126,9 +126,9 @@ Role、RoleBinding、ClusterRole、ClusterRoleBinding 资源的 API Group 从 `r
 
 == 可观测性
 
-原 KubeSphere 企业版 v3.x 中的可观测性相关功能如监控、告警、日志、审计、事件、通知与事件告警等在 v4.1.0 进行了比较大的重构和优化，逐渐统一在 `WhizardTelemetry 可观测平台` 中持续演进，并随 KubeSphere 企业版 v4.1.0 发布 v1.0.0 版本。除了架构、API、技术栈等方向的优化与重构之外，减少不必要的工作负载也是 WhizardTelemetry 可观测平台 v1.0.0 这个版本的重要目标：
+原 KubeSphere v3.x 中的可观测性相关功能如监控、告警、日志、审计、事件、通知与事件告警等在 v4.1.0 进行了比较大的重构和优化，逐渐统一在 `WhizardTelemetry 可观测平台` 中持续演进，并随 KubeSphere v4.1.0 发布 v1.0.0 版本。除了架构、API、技术栈等方向的优化与重构之外，减少不必要的工作负载也是 WhizardTelemetry 可观测平台 v1.0.0 这个版本的重要目标：
 
-- 原 v3.x 中的可观测性相关功能拆分成 10 个符合 KubeSphere LuBan 架构的扩展组件，包括 `WhizardTelemetry 平台服务`、`WhizardTelemetry 监控`、`WhizardTelemetry 告警管理`、`WhizardTelemetry 日志管理`、`WhizardTelemetry 事件管理`、`WhizardTelemetry 审计管理`、`WhizardTelemetry 通知管理`、`WhizardTelemetry 事件告警`、`WhizardTelemetry 数据流水线`、`OpenSearch 分布式检索与分析引擎`，这些扩展组件共同形成了 `WhizardTelemetry 可观测平台`。用户可以根据自己的需求安装所需的扩展组件，而不必如 KubeSphere 企业版 v3.5.0 及之前版本一样，将一些不需要的组件也默认安装。
+- 原 v3.x 中的可观测性相关功能拆分成 10 个符合 KubeSphere LuBan 架构的扩展组件，包括 `WhizardTelemetry 平台服务`、`WhizardTelemetry 监控`、`WhizardTelemetry 告警管理`、`WhizardTelemetry 日志管理`、`WhizardTelemetry 事件管理`、`WhizardTelemetry 审计管理`、`WhizardTelemetry 通知管理`、`WhizardTelemetry 事件告警`、`WhizardTelemetry 数据流水线`、`OpenSearch 分布式检索与分析引擎`，这些扩展组件共同形成了 `WhizardTelemetry 可观测平台`。用户可以根据自己的需求安装所需的扩展组件，而不必如 KubeSphere v3.5.0 及之前版本一样，将一些不需要的组件也默认安装。
 
 - 监控 API 在保有原来 KubeSphere 监控 API 风格的前提下，有了较大的调整及变更。
 
@@ -172,8 +172,8 @@ Role、RoleBinding、ClusterRole、ClusterRoleBinding 资源的 API Group 从 `r
 
 ==== **弃用**
 
-- 监控 API `monitoring.kubesphere.io/v1alpha3` 已在 KubeSphere 企业版 v3.5.0 弃用，并且在 KubeSphere 企业版 v4.1.0 正式移除
-- 日志、审计、事件 API `tenant.kubesphere.io/v1alpha2` 已在 KubeSphere 企业版 v4.1.0 正式移除
+- 监控 API `monitoring.kubesphere.io/v1alpha3` 已在 KubeSphere v3.5.0 弃用，并且在 KubeSphere v4.1.0 正式移除
+- 日志、审计、事件 API `tenant.kubesphere.io/v1alpha2` 已在 KubeSphere v4.1.0 正式移除
 
 ==== **API 更新**
 
@@ -256,7 +256,7 @@ DCGM-Exporter 是一个用于收集 Nvidia GPU 性能和健康度指标的指标
 - controller-manager: 提供规则组的同步管理等功能
 - ruler: 负责规则组的规则评估和告警功能
 
-与 KubeSphere 企业版 v3.5.0 相比，该扩展组件还从架构设计上对多集群告警的流程以及轻量化方面进行了显著优化。
+与 KubeSphere v3.5.0 相比，该扩展组件还从架构设计上对多集群告警的流程以及轻量化方面进行了显著优化。
 
 ==== **优化**
 
@@ -270,7 +270,7 @@ DCGM-Exporter 是一个用于收集 Nvidia GPU 性能和健康度指标的指标
 
 ==== **API 更新**
 
-与 KubeSphere 企业版 v3.5.0 相比，API 更新主要体现在请求路径的变更上：
+与 KubeSphere v3.5.0 相比，API 更新主要体现在请求路径的变更上：
 
 - 集群级别和项目级别的规则组和告警，API 路径前缀由 `[apis|kapis]/clusters/{cluster}/alerting.kubesphere.io/v2beta1/` 更新为 `/proxy/alerting.kubesphere.io/v2beta1/clusters/{cluster}/`
 - 全局级别的规则组和告警，API 路径前缀由 `[apis/kapis]/alerting.kubesphere.io/v2beta1/` 更新为 `/proxy/alerting.kubesphere.io/v2beta1/`
@@ -395,7 +395,7 @@ DCGM-Exporter 是一个用于收集 Nvidia GPU 性能和健康度指标的指标
 
 `WhizardTelemetry 事件告警` 是 WhizardTelemetry 可观测平台中提供事件告警功能的扩展组件，它可以为 K8s 原生事件和 K8s/KubeSphere 审计事件定义告警规则，对传入的事件数据进行评估，并将告警发送到指定的接收器如 HTTP 端点。
 
-此为本扩展组件的第一个正式版本，适配 KubeSphere 企业版 v4.1.0。
+此为本扩展组件的第一个正式版本，适配 KubeSphere v4.1.0。
 
 ==== **新特性**
 
@@ -525,14 +525,14 @@ DCGM-Exporter 是一个用于收集 Nvidia GPU 性能和健康度指标的指标
 
 `多集群代理连接` 是一种通过代理在集群间建立网络连接的工具。如果主集群无法直接访问成员集群，您可以暴露主集群的代理服务地址，这样可以让成员集群通过代理连接到主集群。
 
-该扩展组件将 KubeSphere 企业版 v3.5.0 中的多集群代理连接模块，基于全新的微内核架构 KubeSphere LuBan 重构，整体功能没有改变。
+该扩展组件将 KubeSphere v3.5.0 中的多集群代理连接模块，基于全新的微内核架构 KubeSphere LuBan 重构，整体功能没有改变。
 
 
 === 联邦集群应用管理 v1.0.0
 
 `联邦集群应用管理` 是一个旨在简化跨多个联邦 Kubernetes 集群管理应用程序的扩展组件，用户可以轻松地在多个联邦集群中部署、更新和管理应用程序，同时提供灵活的配置选项以满足不同需求。
 
-该扩展组件将 KubeSphere 企业版 v3.5.0 中的多集群项目模块，基于全新的微内核架构 KubeSphere LuBan 重构，整体功能没有改变。
+该扩展组件将 KubeSphere v3.5.0 中的多集群项目模块，基于全新的微内核架构 KubeSphere LuBan 重构，整体功能没有改变。
 
 
 === KubeEdge 边缘计算框架 v1.0.0
@@ -594,7 +594,7 @@ DCGM-Exporter 是一个用于收集 Nvidia GPU 性能和健康度指标的指标
 
 `KubeSphere DevOps 系统` 是专为 Kubernetes 中的 CI/CD 工作流设计的。它提供一站式的解决方案，帮助开发和运维团队用非常简单的方式构建、测试和发布应用到 Kubernetes。具有**插件管理、代码依赖缓存、代码质量分析、流水线日志**等功能，**兼容第三方私有镜像仓库（如 Harbor）和代码库（如 GitLab/GitHub/SVN/BitBucket）**。为用户提供全面的、可视化的 CI/CD 流水线，打造极佳的用户体验，而且这种兼容性强的流水线能力在离线环境中非常有用。
 
-与 KubeSphere 企业版 v3.5.0 相比，该扩展组件不仅修复了已知问题，完善了功能，优化了使用体验，而且为适配 KubeSphere 企业版 v4.1.0，大量减少了对 KubeSphere Core 的依赖，使 DevOps 组件更加独立，版本管理更加灵活。
+与 KubeSphere v3.5.0 相比，该扩展组件不仅修复了已知问题，完善了功能，优化了使用体验，而且为适配 KubeSphere v4.1.0，大量减少了对 KubeSphere Core 的依赖，使 DevOps 组件更加独立，版本管理更加灵活。
 
 ==== **新特性**
 
@@ -669,7 +669,7 @@ DCGM-Exporter 是一个用于收集 Nvidia GPU 性能和健康度指标的指标
 
 === 网络 v1.0.0
 
-`网络` 扩展组件基于全新微内核架构 KubeSphere LuBan 重构，功能基本与 KubeSphere 企业版 v3.5.0 中网络模块的功能一致，目前包含有 IPPool 和 NetworkPolicy 的管理配置，同时也有一部分架构的变化和新特性的增加。
+`网络` 扩展组件基于全新微内核架构 KubeSphere LuBan 重构，功能基本与 KubeSphere v3.5.0 中网络模块的功能一致，目前包含有 IPPool 和 NetworkPolicy 的管理配置，同时也有一部分架构的变化和新特性的增加。
 
 - IPPool 弃用原有的 KubeSphere 封装的管理方式（ippools.network.kubesphere.io），直接管理 calico ippool（ippools.crd.projectcalico.org），避免与其他的第三方管理工具冲突；同时支持 calico ippool 更多字段的配置。
 - NetworkPolicy 主要优化用户在项目网络隔离的外部白名单的操作友好性。

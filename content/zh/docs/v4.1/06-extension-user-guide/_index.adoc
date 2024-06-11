@@ -14,7 +14,7 @@ ifeval::["{file_output_type}" == "html"]
 
 KubeSphere 扩展组件，是构建在 KubeSphere LuBan 之上、用以扩展并增强 KubeSphere 产品能力、进一步满足企业各类型业务需求的应用形态。{ks_product_right}安装完成后默认仅启用了核心组件。建议您在扩展市场订阅安装扩展组件以充分利用{ks_product_both}的功能特性。
 
-有关如何使用各个扩展组件的更多信息，请参阅link:../11-use-extensions[扩展组件使用]章节。
+// 有关如何使用各个扩展组件的更多信息，请参阅link:../11-use-extensions[扩展组件使用]章节。
 
 endif::[]
 

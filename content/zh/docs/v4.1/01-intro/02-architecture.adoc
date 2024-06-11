@@ -1,6 +1,7 @@
 ---
 title: "KubeSphere LuBan 架构"
 linkTitle: "KubeSphere LuBan 架构"
+description: "介绍 KubeSphere LuBan 架构及扩展组件。"
 weight: 02
 ---
 
@@ -32,11 +33,11 @@ KubeSphere 扩展组件是一个可以对 KubeSphere 功能进行扩展并借助
 . 覆盖 KubeSphere 已有的页面路由，实现您独有的业务逻辑。
 . 对 KubeSphere 的 API 进行扩展。
 
-如果您想更全面地了解扩展 API，请参阅link:https://dev-guide.kubesphere.io/extension-dev-guide/zh/feature-customization/[功能定制]。
+如果您想更全面地了解扩展 API，请参阅link:https://dev-guide.kubesphere.io/extension-dev-guide/zh/feature-customization/[扩展能力]。
 
 == 如何构建扩展组件？
 
-请参阅link:https://dev-guide.kubesphere.io/extension-dev-guide/zh/development-procedure/[开发流程]章节来熟悉如何构建扩展组件。
+请参阅link:https://dev-guide.kubesphere.io/extension-dev-guide/zh/best-practice/develop-example/[开发案例]章节来熟悉如何构建扩展组件。
 
 如果您在扩展组件的开发过程中有疑问，请尝试在 link:https://github.com/kubesphere/kubesphere/issues/new/choose[GitHub Issue] 获得帮助。
 

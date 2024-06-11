@@ -1,12 +1,12 @@
 ---
-title: "安装 KubeSphere 企业版"
-linkTitle: "安装 KubeSphere 企业版"
+title: "安装 KubeSphere"
+linkTitle: "安装 KubeSphere"
 keywords: "Kubernetes, KubeSphere, 快速入门, 安装, KubeSphere Core"
 description: "介绍如何安装 KubeSphere。"
 weight: 01
 ---
 
-// 以下内容与“安装 Kubernetes 和 KubeSphere 企业版”的内容完全一样，不同点：层级提升一层导致 include 链接有变化；修改 link 链接为 pdf 文档名称。
+// 以下内容与“安装 Kubernetes 和 KubeSphere”的内容完全一样，不同点：层级提升一层导致 include 链接有变化；修改 link 链接为 pdf 文档名称。
 
 本节介绍如何安装 Kubernetes 和{ks_product_left}。
 
