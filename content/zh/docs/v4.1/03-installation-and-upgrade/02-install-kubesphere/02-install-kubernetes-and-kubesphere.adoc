@@ -177,23 +177,23 @@ sudo apt install socat conntrack ebtables ipset -y
 ----
 kse-all-v4.1.0-offline-linux-amd64/
 ├── charts
-│   ├── ks-core                   # KubeSphere 企业版核心组件
-│   ├── kse-extensions-publish    # 用于发布 KubeSphere 企业版扩展组件
+│   ├── ks-core                   # KubeSphere 核心组件
+│   ├── kse-extensions-publish    # 用于发布 KubeSphere 扩展组件
 │   ├── csi-qingcloud             # 用于对接青云云平台存储
 │   ├── csi-neonsan               # 用于对接 NeonSan 存储
 │   └── nfs-client-provisioner    # 用于对接 NFS 存储
 ├── tools
-│   ├── pre-check.sh              # 用于 KubeSphere 企业版升级前的集群环境检查
-│   ├── backup.sh                 # 用于 KubeSphere 企业版升级前备份系统企业空间中的关键资源
-│   └── upgrade.sh                # KubeSphere 企业版升级脚本，提供快速升级能力
+│   ├── pre-check.sh              # 用于 KubeSphere 升级前的集群环境检查
+│   ├── backup.sh                 # 用于 KubeSphere 升级前备份系统企业空间中的关键资源
+│   └── upgrade.sh                # KubeSphere 升级脚本，提供快速升级能力
 │   ├── oras                      # OCI 工具，便于镜像同步等操作
 │   └── ks-core-values.yaml       # 升级配置示例文件，用于配置各组件的升级参数
-├── kse-extensions                # 其中包含所有扩展组件的 installplan，可用于快速安装 KubeSphere 企业版扩展组件
+├── kse-extensions                # 其中包含所有扩展组件的 installplan，可用于快速安装 KubeSphere 扩展组件
 ├── config-sample.yaml            # 安装配置文件的模版
 ├── create_project_harbor.sh      # 用于快速创建 harbor 项目
 ├── kk                            # 集群部署工具
-├── kubekey-artifact.tar.gz       # KubeSphere 企业版制品，其中包含集群部署所需的二进制文件及镜像
-└── manifest-v410-amd64.yaml      # KubeSphere 企业版制品清单，其中包含各组件的版本以及镜像列表
+├── kubekey-artifact.tar.gz       # KubeSphere 制品，其中包含集群部署所需的二进制文件及镜像
+└── manifest-v410-amd64.yaml      # KubeSphere 制品清单，其中包含各组件的版本以及镜像列表
 ----
 
 

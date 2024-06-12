@@ -17,7 +17,8 @@ include::../../../../_custom/clusterManagement/routes/routes-desc-accessABackend
 == 前提条件
 
 :relfileprefix: ../../../../
-* 您需要加入一个集群并在集群中具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:07-cluster-management/09-cluster-settings/03-cluster-members/[集群成员]和xref:07-cluster-management/09-cluster-settings/04-cluster-roles/[集群角色]。
+* {empty}
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
 :relfileprefix: ./
 

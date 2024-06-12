@@ -10,15 +10,6 @@ weight: 01
 本节介绍如何查看{ks_product_left} Web 控制台的信息。
 
 
-// == 前提条件
-
-// :relfileprefix: ../../../
-
-// include::../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
-
-// :relfileprefix: ./
-
-
 == 操作步骤
 
 . 登录{ks_product_left} Web 控制台。

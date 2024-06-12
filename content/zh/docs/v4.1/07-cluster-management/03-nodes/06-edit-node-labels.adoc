@@ -21,6 +21,7 @@ weight: 06
 include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
 :relfileprefix: ./
+
 == 操作步骤
 
 include::../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]

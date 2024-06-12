@@ -36,7 +36,7 @@ include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 :relfileprefix: ../../../
 
-* 您需要获取安装配置文件 **config-sample.yaml** 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅xref:03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc[安装 Kubernetes 和 KubeSphere 企业版]。
+* 您需要获取安装配置文件 **config-sample.yaml** 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅xref:03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc[安装 Kubernetes 和 KubeSphere]。
 
 :relfileprefix: ./
 
@@ -46,7 +46,7 @@ include::../../../../_ks_components/admonitions/warning.adoc[]
 
 * 添加节点过程中不支持在 **config-sample.yaml** 配置文件中修改原有的集群配置。
 
-* 如果您无法获取安装配置文件 **config-sample.yaml**，您需要参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere 企业版] 重新创建 **config-sample.yaml** 文件。重新创建该文件时，请务必确保文件中的集群信息与集群的当前实际情况一致。否则，添加节点后集群可能会出现错误。
+* 如果您无法获取安装配置文件 **config-sample.yaml**，您需要参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere] 重新创建 **config-sample.yaml** 文件。重新创建该文件时，请务必确保文件中的集群信息与集群的当前实际情况一致。否则，添加节点后集群可能会出现错误。
 include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 --
 
