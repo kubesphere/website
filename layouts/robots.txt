@@ -4,3 +4,4 @@ User-agent: *
 Disallow: {{ .RelPermalink }}
 {{ end }}
 {{ end }}
+Disallow: /zh/docs/v4.1/
