@@ -13,16 +13,16 @@ section2:
   url: ./meetup-beijing-20240525/
 
   notice:
-    title: KubeSphere Meetup 深圳站——2024
-    tag: 结束
-    time: 2024 年 04 月 20 日
-    base: 深圳
-    url: ./meetup-shenzhen-20240420/
+    title: KubeSphere Meetup 上海站——2024
+    tag: 预告
+    time: 2024 年 07 月 20 日
+    base: 上海
+    url: ./meetup-shanghai-20240720/
 
   over:
-    title: KubeSphere Meetup 杭州站——2024
+    title: KubeSphere Meetup 深圳站——2024
     tag: 结束
-    url: ./meetup-hangzhou-20240323/
+    url: ./meetup-shenzhen-20240420/
 
 section3:
   videos:
