@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, uninstalling, remove-cluster'
 description: 'Remove KubeSphere and Kubernetes from your machines.'
 linkTitle: "Uninstall KubeSphere and Kubernetes"
 weight: 3700
+version: "v3.4"
 ---
 
 

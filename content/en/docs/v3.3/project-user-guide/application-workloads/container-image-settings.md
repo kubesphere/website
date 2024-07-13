@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, image, workload, setting, container'
 description: 'Learn different properties on the dashboard in detail as you set Pods for your workload.'
 linkTitle: "Pod Settings"
 weight: 10280
+version: "v3.3"
 ---
 
 When you create Deployments, StatefulSets or DaemonSets, you need to specify a Pod. At the same time, KubeSphere provides users with various options to customize workload configurations, such as health check probes, environment variables and start commands. This page illustrates detailed explanations of different properties in **Pod Settings**.

@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, OpenSearch, Dashboard"
 description: "了解如何启用日志图表，一个类似于 ElasticSearch Kibana 的图形界面工具。"
 linkTitle: "KubeSphere 日志图表"
 weight: 6200
+version: "v3.4"
 ---
 
 作为一个开源的、以应用为中心的容器平台，KubeSphere 在 3.4 版本后默认使用 [OpenSearch](https://opensearch.org/) 作为日志/事件/审计存储后端，用以代替 ElasticSearch，默认我们可以使用 KubeSphere 页面右下角自带的查询工具来检索日志，查询事件和审计记录。 

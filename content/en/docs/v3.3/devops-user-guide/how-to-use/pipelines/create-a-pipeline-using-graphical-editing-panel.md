@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, jenkins, cicd, graphical pipelines'
 description: 'Learn how to create and run a pipeline by using the graphical editing panel of KubeSphere.'
 linkTitle: 'Create a Pipeline Using Graphical Editing Panels'
 weight: 11211
+version: "v3.3"
 ---
 
 A graphical editing panel in KubeSphere contains all the necessary operations used in Jenkins [stages](https://www.jenkins.io/doc/book/pipeline/#stage) and [steps](https://www.jenkins.io/doc/book/pipeline/#step). You can directly define these stages and steps on the interactive panel without creating any Jenkinsfile.

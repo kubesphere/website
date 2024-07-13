@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, Jenkins, Pipelines'
 description: 'Understand various pipeline properties in a DevOps project.'
 linkTitle: "Pipeline Settings"
 weight: 11214
+version: "v3.4"
 ---
 
 When you create a pipeline, you can customize its configurations through various settings. This document illustrates these settings in detail.

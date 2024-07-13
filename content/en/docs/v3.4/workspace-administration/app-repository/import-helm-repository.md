@@ -4,6 +4,7 @@ keywords: "Kubernetes, Helm, KubeSphere, Application"
 description: "Import a Helm repository to KubeSphere to provide app templates for tenants in a workspace."
 linkTitle: "Import a Helm Repository"
 weight: 9310
+version: "v3.4"
 ---
 
 KubeSphere builds app repositories that allow users to use Kubernetes applications based on Helm charts. App repositories are powered by [OpenPitrix](https://github.com/openpitrix/openpitrix), an open source platform for cross-cloud application management sponsored by QingCloud. In an app repository, every application serves as a base package library. To deploy and manage an app from an app repository, you need to create the repository in advance.

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, app, WordPress'
 description: 'Learn the entire process of deploying an example application in KubeSphere, including credential creation, volume creation, and component settings.'
 linkTitle: "Compose and Deploy WordPress"
 weight: 2500
+version: "v3.4"
 ---
 
 ## WordPress Introduction

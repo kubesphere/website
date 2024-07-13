@@ -4,6 +4,7 @@ keywords: 'Kubernetes, GitOps, KubeSphere, Code Repository'
 description: 'Describe how to import a code repository on KubeSphere.'
 linkTitle: "Import a Code Repository"
 weight: 11231
+version: "v3.3"
 ---
 
 In KubeSphere 3.3, you can import a GitHub, GitLab, Bitbucket, or Git-based repository. The following describes how to import a GitHub repository.

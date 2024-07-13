@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API, Notification'
 description: 'The API changes of the component **notification** in KubeSphere v3.4.0.'
 linkTitle: "Notification"
 weight: 17330
+version: "v3.4"
 ---
 
 ## API Version

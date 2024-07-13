@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, Jenkins, 流水线'
 description: '了解 DevOps 项目中流水线的各个属性。'
 linkTitle: "流水线设置"
 weight: 11214
+version: "v3.3"
 ---
 
 创建流水线时，可以通过各种设置来自定义流水线配置。本文档对这些设置进行详细阐述。

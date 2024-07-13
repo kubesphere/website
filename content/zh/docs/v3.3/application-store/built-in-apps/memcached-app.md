@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Memcached, 应用商店'
 description: '了解如何从 KubeSphere 应用商店中部署 Memcached 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 Memcached"
 weight: 14230
+version: "v3.3"
 ---
 [Memcached](https://memcached.org/) 是一个内存中的 (in-memory) 键值存储库，用于存储由数据库调用、API 调用或页面渲染产生的小块任意数据（字符串、对象）。它的 API 对大多数主流的语言均可用。
 

@@ -5,6 +5,7 @@ description: '了解如何使用基于 Helm 的模板部署应用程序。'
 linkTitle: "从应用模板部署应用"
 
 weight: 10120
+version: "v3.4"
 ---
 
 部署应用时，您可选择使用应用商店。应用商店包含了 KubeSphere 的内置应用和[以 Helm Chart 形式上传的应用](../../../workspace-administration/upload-helm-based-application/)。此外，您还可以使用应用模板。应用模板可由添加至 KubeSphere 的私有应用仓库提供。

@@ -4,6 +4,7 @@ keywords: "Storage, Volume, PV, PVC, storage class, csi, Ceph RBD, GlusterFS, Qi
 description: "Learn basic concepts of PVs, PVCs,and storage classes, and demonstrate how to manage storage classes on KubeSphere."
 linkTitle: "Storage Classes"
 weight: 8800
+version: "v3.4"
 ---
 
 This tutorial demonstrates how a cluster administrator can manage storage classes and persistent volumes in KubeSphere.

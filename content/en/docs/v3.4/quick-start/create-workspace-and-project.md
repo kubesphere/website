@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Multi-tenant, Workspace, User, Role, Project'
 description: 'Take advantage of the multi-tenant system of KubeSphere for fine-grained access control at different levels.'
 linkTitle: "Create Workspaces, Projects, Users and Roles"
 weight: 2300
+version: "v3.4"
 ---
 
 This quickstart demonstrates how to create workspaces, roles and users which are required for other tutorials. Meanwhile, you will learn how to create projects and DevOps projects within your workspace where your workloads are running. After reading this tutorial, you will become familiar with the multi-tenant management system of KubeSphere.

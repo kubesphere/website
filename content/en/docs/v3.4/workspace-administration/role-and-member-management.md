@@ -4,6 +4,7 @@ keywords: "Kubernetes, workspace, KubeSphere, multitenancy"
 description: "Customize a workspace role and grant it to tenants."
 linkTitle: "Workspace Role and Member Management"
 weight: 9400
+version: "v3.4"
 ---
 
 This tutorial demonstrates how to manage roles and members in a workspace.

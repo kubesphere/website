@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Multi-cluster, Observability, DevOps'
 description: 'Applicable in a variety of scenarios, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation.'
 
 weight: 1700
+version: "v3.3"
 ---
 
 KubeSphere is applicable in a variety of scenarios. For enterprises that deploy their business system on bare metal, their business modules are tightly coupled with each other. That means it is extremely difficult for resources to be horizontally scaled. In this connection, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation. It empowers enterprises to rise to the challenges in the middle of their digital transformation, including agile software development, automated operation and maintenance, microservices governance, traffic management, autoscaling, high availability, as well as DevOps and CI/CD.

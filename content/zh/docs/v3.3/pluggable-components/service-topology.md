@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 服务, 拓扑图"
 description: "了解如何启用服务拓扑图，以基于 Weave Scope 查看容器组的上下文详情。"
 linkTitle: "服务拓扑图"
 weight: 6915
+version: "v3.3"
 ---
 
 您可以启用服务拓扑图以集成 [Weave Scope](https://www.weave.works/oss/scope/)（Docker 和 Kubernetes 的可视化和监控工具）。Weave Scope 使用既定的 API 收集信息，为应用和容器构建拓扑图。服务拓扑图显示在您的项目中，将服务之间的连接关系可视化。

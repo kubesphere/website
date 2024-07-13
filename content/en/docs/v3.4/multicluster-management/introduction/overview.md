@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud'
 description: 'Gain a basic understanding of multi-cluster management, such as its common use cases, and the benefits that KubeSphere can bring with its multi-cluster feature.'
 linkTitle: "Overview"
 weight: 5110
+version: "v3.4"
 ---
 
 Today, it's very common for organizations to run and manage multiple Kubernetes clusters across different cloud providers or infrastructures. As each Kubernetes cluster is a relatively self-contained unit, the upstream community is struggling to research and develop a multi-cluster management solution. That said, Kubernetes Cluster Federation ([KubeFed](https://github.com/kubernetes-sigs/kubefed) for short) may be a possible approach among others.

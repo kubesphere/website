@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 多集群, 可观测性, DevOps'
 description: 'KubeSphere 适用于多种应用场景，为企业提供全栈的云原生功能。'
 linkTitle: "应用场景"
 weight: 1700
+version: "v3.3"
 ---
 
 KubeSphere 适用于多种场景，为企业提供容器化的环境，借助完善的管理和运维功能，让企业在数字化转型过程中从容应对各种挑战和各类业务场景，如多云多集群管理、敏捷软件开发、自动化运维、微服务治理、流量管理、高可用以及 DevOps 持续集成与交付等。

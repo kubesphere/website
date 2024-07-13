@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, helm, development'
 description: 'Develop your own Helm-based app.'
 linkTitle: "Helm Developer Guide"
 weight: 14410
+version: "v3.3"
 ---
 
 You can upload the Helm chart of an app to KubeSphere so that tenants with necessary permissions can deploy it. This tutorial demonstrates how to prepare Helm charts using NGINX as an example.

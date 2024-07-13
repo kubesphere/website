@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 容器组, IP 池"
 description: "了解如何启用容器组 IP 池，为您的容器组分配一个特定的容器组 IP 池。"
 linkTitle: "容器组 IP 池"
 weight: 6920
+version: "v3.3"
 ---
 
 容器组 IP 池用于规划容器组网络地址空间，每个容器组 IP 池之间的地址空间不能重叠。创建工作负载时，可选择特定的容器组 IP 池，这样创建出的容器组将从该容器组 IP 池中分配 IP 地址。

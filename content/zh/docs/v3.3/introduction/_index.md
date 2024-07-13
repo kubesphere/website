@@ -8,7 +8,7 @@ linkTitle: "产品介绍"
 weight: 1000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.3"
 ---
 
 本章概述了 KubeSphere 的基本概念、功能、优势以及应用场景等。

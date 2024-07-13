@@ -8,7 +8,7 @@ linkTitle: "Reference"
 weight: 17000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.3"
 ---
 
 This chapter contains the glossary that is often used in KubeSphere and the information about the KubeSphere API.

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Linux, 安装'
 description: '浏览本章的概述，包括安装准备，安装工具和方法以及存储设置。'
 linkTitle: "概述"
 weight: 3110
+version: "v3.4"
 ---
 
 KubeSphere 是 [GitHub](https://github.com/kubesphere) 上的一个开源项目，是成千上万名社区用户的聚集地。很多用户都在使用 KubeSphere 运行工作负载。对于在 Linux 上的安装，KubeSphere 既可以部署在云端，也可以部署在本地环境中，例如 AWS EC2、Azure VM 和裸机等。

@@ -4,6 +4,7 @@ keywords: "Forgot, Password, KubeSphere, Kubernetes"
 description: "Reset the password of any account."
 linkTitle: "Reset the Account Password"
 Weight: 16410
+version: "v3.4"
 ---
 
 ## Reset the Password of a Regular User

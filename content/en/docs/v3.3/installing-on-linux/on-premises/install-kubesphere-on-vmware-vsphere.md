@@ -2,7 +2,7 @@
 title: "Deploy KubeSphere on VMware vSphere"
 keywords: 'Kubernetes, KubeSphere, VMware-vSphere, installation'
 description: 'Learn how to create a high-availability cluster on VMware vSphere.'
-
+version: "v3.3"
 
 weight: 3510
 ---

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, GitLab, 应用商店'
 description: '了解如何在 KubeSphere 中部署 GitLab 并访问服务。'
 linkTitle: "在 KubeSphere 上部署 GitLab"
 weight: 14310
+version: "v3.4"
 ---
 
 [GitLab](https://about.gitlab.com/) 是一个端到端的开源软件开发平台，具有内置的版本控制、问题追踪、代码审查、CI/CD 等功能。

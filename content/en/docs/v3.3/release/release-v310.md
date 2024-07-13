@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, release notes"
 description: "KubeSphere Release Notes for 3.1.0"
 linkTitle: "Release Notes - 3.1.0"
 weight: 18300
+version: "v3.3"
 ---
 
 ## How to Install v3.1.0

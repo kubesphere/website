@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, NetworkPolicy"
 description: "Learn how to enable Network Policies to control traffic flow at the IP address or port level."
 linkTitle: "Network Policies"
 weight: 6900
+version: "v3.3"
 ---
 
 Starting from v3.0.0, users can configure network policies of native Kubernetes in KubeSphere. Network Policies are an application-centric construct, enabling you to specify how a Pod is allowed to communicate with various network entities over the network. With network policies, users can achieve network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods).

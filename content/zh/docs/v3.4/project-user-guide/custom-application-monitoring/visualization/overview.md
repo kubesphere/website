@@ -4,6 +4,7 @@ keywords: '监控, Prometheus, Prometheus Operator'
 description: '了解创建监控仪表板的一般步骤及其布局。'
 linkTitle: "概述"
 weight: 10815
+version: "v3.4"
 ---
 
 本节介绍监控面板功能。您将会学习如何在 KubeSphere 中为您的自定义应用实现指标数据的可视化。如果您不知道如何将应用指标集成至 KubeSphere 的监控系统，请先参阅[介绍](../../introduction/)。

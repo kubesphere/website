@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 应用程序, MeterSphere'
 description: '了解如何在 KubeSphere 中部署 MeterSphere。'
 linkTitle: "在 KubeSphere 上部署 MeterSphere"
 weight: 14330
+version: "v3.3"
 ---
 
 MeterSphere 是一站式的开源企业级连续测试平台，涵盖测试跟踪、界面测试和性能测试等功能。

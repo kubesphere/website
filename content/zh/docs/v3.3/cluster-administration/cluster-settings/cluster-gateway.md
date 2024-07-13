@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 集群, 网关, NodePort, LoadBalancer'
 description: '学习如何在 KubeSphere 中创建集群级别的网关。'
 linkTitle: "集群网关"
 weight: 8630
-
+version: "v3.3"
 ---
 
 KubeSphere 3.3 提供集群级别的网关，使所有项目共用一个全局网关。本文档介绍如何在 KubeSphere 设置集群网关。

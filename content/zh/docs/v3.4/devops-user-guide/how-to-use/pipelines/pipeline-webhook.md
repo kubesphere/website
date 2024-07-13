@@ -4,6 +4,7 @@ keywords: 'Kubernetes, DevOps, Jenkins, 流水线, Webhook'
 description: '学习如何使用 webhook 触发 Jenkins 流水线。'
 linkTitle: "使用 Webhook 触发流水线"
 weight: 11219
+version: "v3.4"
 ---
 
 如果通过远程代码仓库创建基于 Jenkinsfile 的流水线，则可以在远程仓库中配置 webhook，以便对远程仓库进行变更时，自动触发流水线。

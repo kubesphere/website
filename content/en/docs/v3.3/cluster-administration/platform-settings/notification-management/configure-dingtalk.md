@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, DingTalk, Alerting, Notification'
 description: 'Learn how to configure a Dingtalk conversation or chatbot to receive platform notifications sent by KubeSphere.'
 linkTitle: "Configure DingTalk Notifications"
 weight: 8723
+version: "v3.3"
 ---
 
 [DingTalk](https://www.dingtalk.com/en) is an enterprise-grade communication and collaboration platform. It integrates messaging, conference calling, task management, and other features into a single application.

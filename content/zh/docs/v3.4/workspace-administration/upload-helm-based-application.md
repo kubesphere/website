@@ -4,6 +4,7 @@ keywords: "Kubernetes, Helm, KubeSphere, OpenPitrix, 应用程序"
 description: "了解如何向您的企业空间上传基于 Helm 的应用程序用作应用模板。"
 linkTitle: "上传基于 Helm 的应用程序"
 weight: 9200
+version: "v3.4"
 ---
 
 KubeSphere 提供应用程序的全生命周期管理。例如，企业空间管理员可以上传或创建新的应用模板，并进行快速测试。此外，管理员会将经过充分测试的应用发布到[应用商店](../../application-store/)，这样其他用户能一键部署这些应用。为了开发应用模板，企业空间管理员首先需要将打包的 [Helm chart](https://helm.sh/) 上传到 KubeSphere。

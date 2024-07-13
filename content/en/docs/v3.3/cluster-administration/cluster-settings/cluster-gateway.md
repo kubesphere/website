@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Cluster, Gateway, NodePort, LoadBalancer'
 description: 'Learn how to create a cluster-scope gateway on KubeSphere.'
 linkTitle: "Cluster Gateway"
 weight: 8630
+version: "v3.3"
 ---
 
 KubeSphere 3.3 provides cluster-scope gateways to let all projects share a global gateway. This document describes how to set a cluster gateway on KubeSphere.

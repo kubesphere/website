@@ -3,6 +3,7 @@ title: "Routes"
 keywords: "KubeSphere, Kubernetes, Route, Ingress"
 description: "Learn basic concepts of Routes (i.e. Ingress) and how to create Routes in KubeSphere."
 weight: 10270
+version: "v3.3"
 ---
 
 This document describes how to create, use, and edit a Route on KubeSphere.

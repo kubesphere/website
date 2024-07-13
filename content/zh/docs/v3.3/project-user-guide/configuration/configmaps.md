@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, ConfigMap'
 description: '了解如何在 KubeSphere 中创建配置字典。'
 linkTitle: "配置字典"
 weight: 10420
+version: "v3.3"
 ---
 
 Kubernetes [配置字典（ConfigMap）](https://kubernetes.io/docs/concepts/configuration/configmap/) 以键值对的形式存储配置数据。配置字典资源可用于向容器组中注入配置数据。配置字典对象中存储的数据可以被 `ConfigMap` 类型的卷引用，并由容器组中运行的容器化应用使用。配置字典通常用于以下场景：

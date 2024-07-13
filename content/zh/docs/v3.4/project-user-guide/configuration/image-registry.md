@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, 保密字典'
 description: '了解如何在 KubeSphere 中创建镜像仓库。'
 linkTitle: "镜像仓库"
 weight: 10430
+version: "v3.4"
 ---
 
 Docker 镜像是一个只读的模板，可用于部署容器服务。每个镜像都有一个唯一标识符（即`镜像名称:标签`）。例如，一个镜像可以包含只安装有 Apache 和几个应用的完整的 Ubuntu 操作系统软件包。镜像仓库可用于存储和分发 Docker 镜像。

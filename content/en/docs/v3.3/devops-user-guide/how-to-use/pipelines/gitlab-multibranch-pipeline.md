@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, GitLab, Jenkins, Pipelines'
 description: 'Learn how to create a multi-branch pipeline with GitLab on KubeSphere.'
 linkTitle: "Create a Multi-branch Pipeline with GitLab"
 weight: 11215
+version: "v3.3"
 ---
 
 [GitLab](https://about.gitlab.com/) is an open source code repository platform that provides public and private repositories. It is a complete DevOps platform that enables professionals to perform their tasks in a project.

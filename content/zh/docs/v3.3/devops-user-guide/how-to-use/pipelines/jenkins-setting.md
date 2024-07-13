@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Jenkins, CasC'
 description: '了解如何自定义您的 Jenkins 设置。'
 linkTitle: '设置 Jenkins 系统'
 Weight: 11216
+version: "v3.3"
 ---
 
 Jenkins 强大而灵活，已经成为 CI/CD 工作流的事实标准。但是，许多插件要求用户先设置系统级配置，然后才能使用。

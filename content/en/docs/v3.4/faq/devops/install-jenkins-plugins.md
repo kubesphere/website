@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, DevOps, Jenkins, Plugin"
 description: "How to install plugins to Jenkins in KubeSphere"
 linkTitle: "Install Plugins to Jenkins in KubeSphere"
 Weight: 16810
+version: "v3.4"
 ---
 
 The KubeSphere DevOps System offers containerized CI/CD functions based on Jenkins. The primary means of enhancing the functionality of Jenkins is to install plugins. This tutorial demonstrates how to install plugins on the Jenkins dashboard.

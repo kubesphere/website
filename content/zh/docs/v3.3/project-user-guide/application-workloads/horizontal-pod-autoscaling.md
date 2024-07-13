@@ -3,7 +3,7 @@ title: "容器组弹性伸缩"
 keywords: "容器组, 弹性伸缩, 弹性伸缩程序"
 description: "如何在 KubeSphere 上配置容器组弹性伸缩."
 weight: 10290
-
+version: "v3.3"
 ---
 
 本文档描述了如何在 KubeSphere 上配置容器组弹性伸缩 (HPA)。

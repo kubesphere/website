@@ -4,6 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, 日志系统, 日志"
 description: "了解如何启用日志，利用基于租户的系统进行日志收集、查询和管理。"
 linkTitle: "KubeSphere 日志系统"
 weight: 6400
+version: "v3.3"
 ---
 
 KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、容器组和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，该容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。

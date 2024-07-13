@@ -4,6 +4,7 @@ keywords: "Kubernetes, docker, kubesphere, 审计"
 description: "了解审计规则以及如何自定义有关处理审计日志的规则。"
 linkTitle: "审计规则"
 weight: 15320
+version: "v3.3"
 ---
 
 审计规则定义了处理审计日志的策略。KubeSphere 审计日志为用户提供两种 CRD 规则（`archiving-rule` 和 `alerting-rule`）以供自定义。

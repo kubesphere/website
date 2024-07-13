@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Linux, Installation'
 description: 'Explore the general content in this chapter, including installation preparation, installation tool and method, and storage configurations.'
 linkTitle: "Overview"
 weight: 3110
+version: "v3.4"
 ---
 
 As an open-source project on [GitHub](https://github.com/kubesphere), KubeSphere is home to a community with thousands of users. Many of them are running KubeSphere for their production workloads. For the installation on Linux, KubeSphere can be deployed both in clouds and in on-premises environments, such as AWS EC2, Azure VM and bare metal.

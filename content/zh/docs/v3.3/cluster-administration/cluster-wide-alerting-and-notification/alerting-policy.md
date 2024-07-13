@@ -5,6 +5,7 @@ description: '了解如何为节点设置告警策略。'
 
 linkTitle: "告警策略（节点级别）"
 weight: 8530
+version: "v3.3"
 ---
 
 KubeSphere 为节点和工作负载提供告警策略。本教程演示如何为集群中的节点创建告警策略。如需了解如何为工作负载配置告警策略，请参见[告警策略（工作负载级别）](../../../project-user-guide/alerting/alerting-policy/)。

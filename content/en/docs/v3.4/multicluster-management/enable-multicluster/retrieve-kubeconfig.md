@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, kubeconfig'
 description: 'Retrieve the Kubeconfig which is needed for cluster importing through direct connection.'
 titleLink: "Retrieve KubeConfig"
 weight: 5230
+version: "v3.4"
 ---
 
 You need to provide the kubeconfig of a member cluster if you import it using [direct connection](../direct-connection/).

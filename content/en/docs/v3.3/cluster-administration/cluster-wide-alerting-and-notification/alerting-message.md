@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, node, Alerting, messages'
 description: 'Learn how to view alerting messages for nodes.'
 linkTitle: "Alerting Messages (Node Level)"
 weight: 8540
+version: "v3.3"
 ---
 
 Alerting messages record detailed information of alerts triggered based on the alerting policy defined. This tutorial demonstrates how to view alerting messages at the node level.

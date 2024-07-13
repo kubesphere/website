@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, KubeEdge"
 description: "了解如何启用 KubeEdge 为您的集群添加边缘节点。"
 linkTitle: "KubeEdge"
 weight: 6930
+version: "v3.4"
 ---
 
 [KubeEdge](https://kubeedge.io/zh/) 是一个开源系统，用于将容器化应用程序编排功能扩展到边缘的主机。KubeEdge 支持多个边缘协议，旨在对部署于云端和边端的应用程序与资源等进行统一管理。

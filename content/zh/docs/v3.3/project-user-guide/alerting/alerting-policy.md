@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 工作负载, 告警, 策略, 通知'
 description: '了解如何为工作负载设置告警策略。'
 linkTitle: "告警策略（工作负载级别）"
 weight: 10710
+version: "v3.3"
 ---
 
 KubeSphere 支持针对节点和工作负载的告警策略。本教程演示如何为项目中的工作负载创建告警策略。有关如何为节点配置告警策略，请参见[告警策略（节点级别）](../../../cluster-administration/cluster-wide-alerting-and-notification/alerting-policy/)。

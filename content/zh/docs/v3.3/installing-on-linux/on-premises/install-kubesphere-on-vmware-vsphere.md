@@ -4,6 +4,7 @@ keywords: 'kubernetes, kubesphere, VMware vSphere, installation'
 description: '了解如何在 VMware vSphere 上创建高可用 KubeSphere 集群。'
 
 weight: 3510
+version: "v3.3"
 ---
 
 对于生产环境，我们需要考虑集群的高可用性。如果关键组件（例如 kube-apiserver，kube-scheduler 和 kube-controller-manager）都在同一主节点上运行，一旦主节点出现故障，Kubernetes 和 KubeSphere 将不可用。因此，我们需要通过用负载均衡器配置多个主节点来设置高可用性集群。您可以使用任何云负载平衡器或任何硬件负载平衡器（例如F5）。另外，Keepalived 和 HAproxy 或 NGINX 也是创建高可用性集群的替代方法。

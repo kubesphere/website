@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Metrics Server"
 description: "了解如何启用 Metrics Server 以使用 HPA 对部署进行自动伸缩。"
 linkTitle: "Metrics Server"
 weight: 6910
+version: "v3.4"
 ---
 
 KubeSphere 支持用于[部署](../../project-user-guide/application-workloads/deployments/)的容器组（Pod）弹性伸缩程序 (HPA)。在 KubeSphere 中，Metrics Server 控制着 HPA 是否启用。您可以根据不同类型的指标（例如 CPU 和内存使用率，以及最小和最大副本数），使用 HPA 对象对部署 (Deployment) 自动伸缩。通过这种方式，HPA 可以帮助确保您的应用程序在不同情况下都能平稳、一致地运行。

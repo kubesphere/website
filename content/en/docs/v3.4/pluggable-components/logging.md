@@ -4,6 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "Learn how to enable Logging to leverage the tenant-based system for log collection, query and management."
 linkTitle: "KubeSphere Logging System"
 weight: 6400
+version: "v3.4"
 ---
 
 KubeSphere provides a powerful, holistic, and easy-to-use logging system for log collection, query, and management. It covers logs at varied levels, including tenants, infrastructure resources, and applications. Users can search logs from different dimensions, such as project, workload, Pod and keyword. Compared with Kibana, the tenant-based logging system of KubeSphere features better isolation and security among tenants as tenants can only view their own logs. Apart from KubeSphere's own logging system, the container platform also allows users to add third-party log collectors, such as Elasticsearch, Kafka, and Fluentd.

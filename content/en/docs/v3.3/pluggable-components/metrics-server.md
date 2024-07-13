@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Metrics Server"
 description: "Learn how to enable Metrics Server to use HPA to autoscale a Deployment."
 linkTitle: "Metrics Server"
 weight: 6910
+version: "v3.3"
 ---
 
 KubeSphere supports Horizontal Pod Autoscalers (HPA) for [Deployments](../../project-user-guide/application-workloads/deployments/). In KubeSphere, the Metrics Server controls whether the HPA is enabled. You use an HPA object to autoscale a Deployment based on different types of metrics, such as CPU and memory utilization, as well as the minimum and maximum number of replicas. In this way, an HPA helps to make sure your application runs smoothly and consistently in different situations.

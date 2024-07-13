@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, kubectl, cli'
 description: 'KubeSphere 中集成了 Web Kubectl 工具，为 Kubernetes 用户提供一致的用户体验。'
 linkTitle: "Web Kubectl"
 weight: 15500
+version: "v3.4"
 ---
 
 Kubectl 是 Kubernetes 命令行工具，您可以用它在 Kubernetes 集群上运行命令。Kubectl 可用于部署应用、查看和管理集群资源、查看日志等。

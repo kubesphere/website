@@ -4,6 +4,7 @@ keywords: 'Kubernetes, cluster, configuration, KubeKey'
 description: 'Customize your Kubernetes settings in the configuration file for your cluster.'
 linkTitle: "Kubernetes Cluster Configurations"
 weight: 3160
+version: "v3.3"
 ---
 
 When creating a Kubernetes cluster, you can use [KubeKey](../kubekey/) to define a configuration file (`config-sample.yaml`) which contains basic information of your cluster. Refer to the following example for Kubernetes-related parameters in the configuration file.

@@ -4,6 +4,7 @@ keywords: "Cluster Visibility, Cluster Management"
 description: "Learn how to set up cluster visibility and authorization."
 linkTitle: "Cluster Visibility and Authorization"
 weight: 8610
+version: "v3.3"
 ---
 
 In KubeSphere, you can allocate a cluster to multiple workspaces through authorization so that workspace resources can all run on the cluster. At the same time, a workspace can also be associated with multiple clusters. Workspace users with necessary permissions can create multi-cluster projects using clusters allocated to the workspace.

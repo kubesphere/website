@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, StatefulSets, Dashboard, Service'
 description: 'Learn basic concepts of StatefulSets and how to create StatefulSets on KubeSphere.'
 linkTitle: "StatefulSets"
 weight: 10220
+version: "v3.3"
 ---
 
 As a workload API object, a Kubernetes StatefulSet is used to manage stateful applications. It is responsible for the deploying, scaling of a set of Pods, and guarantees the ordering and uniqueness of these Pods.

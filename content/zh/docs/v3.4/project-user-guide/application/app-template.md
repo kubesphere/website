@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Chart, Helm, KubeSphere, 应用程序, 仓库, 模板'
 description: '了解应用模板的概念以及它们如何在企业内部帮助部署应用程序。'
 linkTitle: "应用模板"
 weight: 10110
+version: "v3.4"
 ---
 
 应用模板是用户上传、交付和管理应用的一种方式。一般来说，根据一个应用的功能以及与外部环境通信的方式，它可以由一个或多个 Kubernetes 工作负载（例如[部署](../../../project-user-guide/application-workloads/deployments/)、[有状态副本集](../../../project-user-guide/application-workloads/statefulsets/)和[守护进程集](../../../project-user-guide/application-workloads/daemonsets/)）和[服务](../../../project-user-guide/application-workloads/services/)组成。作为应用模板上传的应用基于 [Helm](https://helm.sh/) 包构建。

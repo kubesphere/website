@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Node, Alerting, Policy, Notification'
 description: 'Learn how to set alerting policies for nodes.'
 linkTitle: "Alerting Policies (Node Level)"
 weight: 8530
+version: "v3.3"
 ---
 
 KubeSphere provides alerting policies for nodes and workloads. This tutorial demonstrates how to create alerting policies for nodes in a cluster. See [Alerting Policy (Workload Level)](../../../project-user-guide/alerting/alerting-policy/) to learn how to configure alerting policies for workloads.

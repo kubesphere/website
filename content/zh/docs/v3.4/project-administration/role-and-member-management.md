@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 角色, 成员, 管理, 项目'
 description: '了解如何进行项目访问管理。'
 linkTitle: "项目角色和成员管理"
 weight: 13200
+version: "v3.4"
 ---
 
 本教程演示如何在项目中管理角色和成员。在项目级别，您可以向角色授予以下模块中的权限：

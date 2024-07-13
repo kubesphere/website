@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, K3s'
 description: '了解如何使用 KubeKey 安装 K3s 和 KubeSphere。'
 linkTitle: "部署 K3s 和 KubeSphere"
 weight: 3530
+version: "v3.3"
 ---
 
 [K3s](https://www.rancher.cn/k3s/) 是专为物联网和边缘计算打造的轻量级 Kubernetes 发行版，最大程度上剔除了外部依赖项。它打包为单个二进制文件，减少了搭建 Kubernetes 集群所需的依赖项和步骤。

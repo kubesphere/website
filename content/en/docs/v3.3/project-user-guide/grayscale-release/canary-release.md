@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Canary Release, Istio, Service Mesh'
 description: 'Learn how to deploy a canary service on KubeSphere.'
 linkTitle: "Canary Release"
 weight: 10530
+version: "v3.3"
 ---
 
 On the back of [Istio](https://istio.io/), KubeSphere provides users with necessary control to deploy canary services. In a canary release, you introduce a new version of a service and test it by sending a small percentage of traffic to it. At the same time, the old version is responsible for handling the rest of the traffic. If everything goes well, you can gradually increase the traffic sent to the new version, while simultaneously phasing out the old version. In the case of any occurring issues, KubeSphere allows you to roll back to the previous version as you change the traffic percentage.

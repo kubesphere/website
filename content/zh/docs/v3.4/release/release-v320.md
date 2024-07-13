@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 版本说明"
 description: "KubeSphere 3.2.0 版本说明"  
 linkTitle: "3.2.0 版本说明"  
 weight: 18100
+version: "v3.4"
 ---
 
 ## 多租户和多集群

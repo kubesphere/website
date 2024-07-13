@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, DevOps, Jenkins, Agent"
 description: "Learn how to customize a Jenkins agent on KubeSphere."
 linkTitle: "Customize Jenkins Agent"
 Weight: 112191
+version: "v3.4"
 ---
 
 If you need to use a Jenkins agent that runs on a specific environment, for example, JDK 11, you can customize a Jenkins agent on KubeSphere.

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, PostgreSQL, 应用商店'
 description: '了解如何从 KubeSphere 应用商店中部署 PostgreSQL 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 PostgreSQL"
 weight: 14280  
+version: "v3.3"
 ---
 
 作为强大的开源对象关系型数据库系统，[PostgreSQL](https://www.postgresql.org/) 以其卓越的可靠性、功能鲁棒性和高性能而著称。

@@ -4,6 +4,7 @@ keywords: "kubernetes, 升级, kubesphere, 3.3"
 description: "使用 ks-installer 升级 KubeSphere。"
 linkTitle: "使用 ks-installer 升级"
 weight: 7300
+version: "v3.3"
 ---
 
 对于 Kubernetes 集群不是通过 [KubeKey](../../installing-on-linux/introduction/kubekey/) 部署而是由云厂商托管或自行搭建的用户，推荐使用 ks-installer 升级。本教程**仅用于升级 KubeSphere**。集群运维员应负责提前升级 Kubernetes。

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 配置, 要求'
 description: '理解使用和安装 KubeSphere 的各项环境要求。'
 linkTitle: "环境要求"
 weight: 17500
+version: "v3.3"
 ---
 
 本页面归纳了安装和使用 KubeSphere 的部分要求。

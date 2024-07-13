@@ -3,6 +3,7 @@ title: "在 KubeSphere 上部署极狐GitLab"
 keywords: 'KubeSphere, Kubernetes, 极狐GitLab, DevOps'
 description: '了解并掌握如何在 KubeSphere 中部署和使用极狐GitLab'
 linkTitle: "部署极狐GitLab"
+version: "v3.3"
 ---
 
 [极狐GitLab](https://gitlab.cn)是GitLab DevOps平台的中国发行版，作为一套完备的一站式DevOps平台，从设计到投产，一个平台覆盖 DevSecOps 全流程。极狐GitLab 帮助团队更快、更安全地交付更好的软件，提升研运效能，实现 DevOps 价值最大化。

@@ -4,6 +4,7 @@ keywords: "Kubernetes, upgrade, KubeSphere, 3.4, upgrade"
 description: "Understand what you need to pay attention to before the upgrade, such as versions, and upgrade tools."
 linkTitle: "Overview"
 weight: 7100
+version: "v3.4"
 ---
 
 ## Make Your Upgrade Plan

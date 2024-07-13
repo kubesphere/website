@@ -4,6 +4,7 @@ keywords: 'Kubernetes, docker, devops, jenkins, go, KubeSphere'
 description: '学习如何使用 KubeSphere 流水线构建并部署 Go 项目。'
 linkTitle: "构建和部署 Go 项目"
 weight: 11410
+version: "v3.3"
 ---
 
 ## 准备工作

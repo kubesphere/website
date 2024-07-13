@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, services, workloads'
 description: 'Learn basic concepts of Services and how to create Services in KubeSphere.'
 linkTitle: "Services"
 weight: 10240
+version: "v3.3"
 ---
 
 A Service is an abstract way to expose an application running on a set of Pods as a network service. Namely, a Service groups endpoints of these Pods into a single resource, which can be accessed through different ways.

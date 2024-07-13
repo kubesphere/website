@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, metering, billing, consumption"
 description: "Track information about resource usage of your cluster's workloads at different levels."
 linkTitle: "View Resource Consumption"
 weight: 15410
+version: "v3.4"
 ---
 
 KubeSphere metering helps you track resource consumption within a given cluster or workspace at a granular level. Different tenants with different roles can only see the data to which they have access. Besides, you can also set prices for varied resources to see billing information.

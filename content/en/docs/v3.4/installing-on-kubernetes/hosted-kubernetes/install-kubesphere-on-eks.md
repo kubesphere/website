@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, EKS, Installation'
 description: 'Learn how to deploy KubeSphere on Amazon Elastic Kubernetes Service.'
 
 weight: 4220
+version: "v3.4"
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html). You also can visit [KubeSphere on AWS Quick Start](https://aws.amazon.com/quickstart/architecture/qingcloud-kubesphere/) which uses Amazon Web Services (AWS) CloudFormation templates to help end users automatically provision an Amazon Elastic Kubernetes Service (Amazon EKS) and KubeSphere environment on the AWS Cloud.

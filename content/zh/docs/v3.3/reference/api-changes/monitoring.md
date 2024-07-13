@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API, 监控系统'
 description: 'KubeSphere 3.3 中监控系统（服务组件）的 API 变更。'
 linkTitle: "监控系统"
 weight: 17320
+version: "v3.3"
 ---
 
 ## API 版本

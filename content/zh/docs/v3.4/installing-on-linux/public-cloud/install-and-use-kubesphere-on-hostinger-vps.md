@@ -4,6 +4,7 @@ keywords: "KubeSphere, 安装, Hostinger, VPS"
 description: "了解如何使用 KubeSphere VPS 模板。"
 linkTitle: "在 Hostinger VPS 上安装使用 KubeSphere"
 Weight: 3450
+version: "v3.4"
 ---
 
 ## VPS 简介

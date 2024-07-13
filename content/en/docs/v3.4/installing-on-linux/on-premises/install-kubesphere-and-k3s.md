@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, K3s'
 description: 'Learn how to use KubeKey to install K3s and KubeSphere.'
 linkTitle: "Deploy K3s and KubeSphere"
 weight: 3530
+version: "v3.4"
 ---
 
 [K3s](https://k3s.io/) is a lightweight Kubernetes distribution built for IoT and edge computing with external dependencies minimized. It is packaged as a single binary that reduces the dependencies and steps that are required to set up a Kubernetes cluster.

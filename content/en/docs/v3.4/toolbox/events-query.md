@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Event, Query'
 description: 'Understand how you can perform quick event queries to keep track of the latest events of your cluster.'
 linkTitle: "Event Query"
 weight: 15200
+version: "v3.4"
 ---
 
 Kubernetes events provide insight into what is happening inside a cluster, based on which KubeSphere adds longer historical query and aggregation capabilities, and also supports event query for tenant isolation.

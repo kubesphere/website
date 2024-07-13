@@ -4,6 +4,7 @@ keywords: '监控, Prometheus, MySQL, MySQL Exporter'
 description: '部署 MySQL 和 MySQL Exporter 并为该应用创建监控面板。'
 linkTitle: "监控 MySQL"
 weight: 10812
+version: "v3.4"
 ---
 通过[介绍](../../../../project-user-guide/custom-application-monitoring/introduction/#间接暴露)一文，您了解到无法直接将 Prometheus 指标接入 MySQL。若要以 Prometheus 格式暴露 MySQL 指标，您需要先部署 MySQL Exporter。
 

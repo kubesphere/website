@@ -4,6 +4,7 @@ tag: 'KubeSphere, Kubernetes, Applications, Chaos Engineering, Chaos experiments
 keywords: 'Chaos Mesh, Kubernetes, Helm, KubeSphere'
 description: 'Learn how to deploy Chaos Mesh on KubeSphere and start running chaos experiments.'
 linkTitle: "Deploy Chaos Mesh on KubeSphere"
+version: "v3.4"
 ---
 
 [Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh) is a cloud-native Chaos Engineering platform that orchestrates chaos in Kubernetes environments. With Chaos Mesh, you can test your system's resilience and robustness on Kubernetes by injecting various types of faults into Pods, network, file system, and even the kernel.

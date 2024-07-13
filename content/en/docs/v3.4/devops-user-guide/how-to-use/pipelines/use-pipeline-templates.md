@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Jenkins, Graphical Pipelines, Pipeline Templa
 description: 'Understand how to use pipeline templates on KubeSphere.'
 linkTitle: "Use Pipeline Templates"
 weight: 11213
+version: "v3.4"
 ---
 
 KubeSphere offers a graphical editing panel where the stages and steps of a Jenkins pipeline can be defined through interactive operations. KubeSphere 3.4 provides built-in pipeline templates, such as Node.js, Maven, and Golang, to help users quickly create pipelines. Additionally, KubeSphere 3.4 also supports customization of pipeline templates to meet diversified needs of enterprises.

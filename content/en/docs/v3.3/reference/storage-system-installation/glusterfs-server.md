@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, GlusterFS'
 description: 'How to set up a GlusterFS Server'
 linkTitle: "Set up a GlusterFS Server"
 weight: 17420
+version: "v3.3"
 ---
 
 As an open-source distributed file system, [GlusterFS](https://kubernetes.io/docs/concepts/storage/volumes/#glusterfs) allows you to mount `glusterfs` volumes to your Pods. If a `glusterfs` volume is pre-populated with data, they can be shared among your Pods in a Kubernetes cluster.

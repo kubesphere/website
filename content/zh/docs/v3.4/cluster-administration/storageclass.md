@@ -4,6 +4,7 @@ keywords: "存储, 持久卷声明, PV, PVC, 存储类, CSI, Ceph RBD, GlusterFS
 description: "了解 PV、PVC 和存储类的基本概念，并演示如何在 KubeSphere 中管理存储类和 PVC。"
 linkTitle: "存储类"
 weight: 8800
+version: "v3.4"
 ---
 
 本教程演示集群管理员如何管理 KubeSphere 中的存储类。

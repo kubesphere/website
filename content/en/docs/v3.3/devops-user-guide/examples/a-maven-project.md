@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Docker, DevOps, Jenkins, Maven'
 description: 'Learn how to build and deploy a Maven project using a KubeSphere pipeline.'
 linkTitle: "Build and Deploy a Maven Project"
 weight: 11430
+version: "v3.3"
 ---
 
 ## Prerequisites

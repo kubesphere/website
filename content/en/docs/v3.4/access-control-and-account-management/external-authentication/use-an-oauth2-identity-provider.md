@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, OAuth2, Identity Provider'
 description: 'How to use an external OAuth2 identity provider.'
 linkTitle: "Use an OAuth 2.0 Identity Provider"
 weight: 12230
+version: "v3.4"
 ---
 
 This document describes how to use an external identity provider based on the OAuth 2.0 protocol.

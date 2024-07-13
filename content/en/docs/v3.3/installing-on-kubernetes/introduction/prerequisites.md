@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, Installation, Prerequisites"
 description: "Make sure your environment where an existing Kubernetes cluster runs meets the prerequisites before installation."
 linkTitle: "Prerequisites"
 weight: 4120
+version: "v3.3"
 ---
 
 You can install KubeSphere on virtual machines and bare metal with Kubernetes also provisioned. In addition, KubeSphere can also be deployed on cloud-hosted and on-premises Kubernetes clusters as long as your Kubernetes cluster meets the prerequisites below.

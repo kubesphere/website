@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
 description: '学习如何自定义 S2I 模板，并理解不同的模板参数。'
 linkTitle: "自定义 S2I 模板"
 weight: 10640
-
+version: "v3.4"
 ---
 
 当您了解了 Source-to-Image (S2I) 的工作流和逻辑，就可以根据您的项目自定义镜像构建器模板（即 S2I / B2I 模板），以扩展 S2I 功能。KubeSphere 提供了几种常见的镜像构建器模板，如 [Python ](https://github.com/kubesphere/s2i-python-container/)和  [Java](https://github.com/kubesphere/s2i-java-container/)。 

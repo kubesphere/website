@@ -4,6 +4,7 @@ keywords: "Kubernetes, docker, kubesphere, auditing"
 description: "Understand the auditing rule and how to customize a rule for processing auditing logs."
 linkTitle: "Auditing Rules"
 weight: 15320
+version: "v3.3"
 ---
 
 An auditing rule defines the policy for processing auditing logs. KubeSphere Auditing Logs provide users with two CRD rules (`archiving-rule` and `alerting-rule`) for customization.

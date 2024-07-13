@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, GlusterFS, 安装, 配置, 存储'
 description: '使用 KubeKey 搭建 KubeSphere 集群并配置 GlusterFS 存储。'
 linkTitle: "安装 GlusterFS"
 weight: 3340
+version: "v3.3"
 ---
 
 [GlusterFS](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs) 是 Kubernetes 中的树内 (in-tree) 存储插件。因此，您只需要安装存储类型。

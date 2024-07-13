@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Jenkins, CICD, 图形化流水线'
 description: '学习如何使用 KubeSphere 图形编辑面板创建并运行流水线。'
 linkTitle: '使用图形编辑面板创建流水线'
 weight: 11211
+version: "v3.3"
 ---
 
 KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https://www.jenkins.io/zh/doc/book/pipeline/#阶段) 和[步骤 (Step)](https://www.jenkins.io/zh/doc/book/pipeline/#步骤) 的所有必要操作。您可以直接在交互式面板上定义这些阶段和步骤，无需创建任何 Jenkinsfile。

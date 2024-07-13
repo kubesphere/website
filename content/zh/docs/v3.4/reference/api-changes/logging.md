@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API, 日志系统'
 description: 'KubeSphere 3.4 中日志系统（服务组件）的 API 变更。'
 linkTitle: "日志系统"
 weight: 17310
+version: "v3.4"
 ---
 
 KubeSphere 3.4 中**日志系统**（服务组件）的 API 变更。

@@ -4,6 +4,7 @@ keywords: "无法登录, 用户不活跃, KubeSphere, Kubernetes"
 description: "如何解决无法登录的问题"
 linkTitle: "用户无法登录"
 Weight: 16440
+version: "v3.4"
 ---
 
 KubeSphere 安装时会自动创建默认用户 (`admin/P@88w0rd`)，密码错误或者用户状态不是**活跃**会导致无法登录。

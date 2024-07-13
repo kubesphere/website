@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 持久卷声明, 快照'
 description: '了解如何在 KubeSphere 中管理卷快照类。'
 linkTitle: "卷快照类"
 weight: 8900
+version: "v3.4"
 ---
 
 卷快照类（Volume Snapshot Class）用于定义卷快照的存储种类。本教程演示如何创建和使用卷快照类。

@@ -5,6 +5,7 @@ description: "了解如何在华为云容器引擎上部署 KubeSphere。"
 
 
 weight: 4250
+version: "v3.4"
 ---
 
 本指南将介绍如果在[华为云 CCE 容器引擎](https://support.huaweicloud.com/cce/)上部署并使用 KubeSphere 3.4 平台。

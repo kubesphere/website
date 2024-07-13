@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 服务, 工作负载'
 description: '了解服务的基本概念以及如何在 KubeSphere 中创建服务。'
 linkTitle: "服务"
 weight: 10240
+version: "v3.3"
 ---
 
 服务是一种抽象方法，它将运行在一组容器组上的应用程序暴露为网络服务。也就是说，服务将这些容器组的 Endpoint 组成一个单一资源，可以通过不同的方式访问该资源。

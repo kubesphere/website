@@ -7,6 +7,7 @@ linkTitle: "DevOps 用户指南"
 weight: 11000
 
 icon: "/images/docs/v3.x/docs.svg"
+version: "v3.4"
 ---
 
 您可以使用 KubeSphere DevOps 系统在 Kubernetes 集群上部署和管理 CI/CD 任务以及相关的工作负载。本章演示如何在 DevOps 项目中进行管理和操作，包括运行流水线、创建凭证和集成工具等等。

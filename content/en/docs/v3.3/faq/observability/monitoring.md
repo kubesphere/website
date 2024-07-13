@@ -4,6 +4,7 @@ keywords: "Kubernetes, Prometheus, KubeSphere, Monitoring"
 description: "Questions asked frequently about the monitoring functionality."
 linkTitle: "Monitoring"
 weight: 16320
+version: "v3.3"
 ---
 
 This page contains some of the frequently asked questions about monitoring.

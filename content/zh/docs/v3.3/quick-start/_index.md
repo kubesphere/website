@@ -8,7 +8,7 @@ linkTitle: "快速入门"
 weight: 2000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.3"
 ---
 
 快速入门中包括六个动手实验操作，能够帮助您快速了解 KubeSphere。强烈建议您仔细阅读这些教程，探索 KubeSphere 的基本功能。

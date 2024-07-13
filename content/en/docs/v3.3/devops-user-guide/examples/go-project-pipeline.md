@@ -4,6 +4,7 @@ keywords: 'Kubernetes, docker, DevOps, Jenkins, Go, KubeSphere'
 description: 'Learn how to build and deploy a Go project using a KubeSphere pipeline.'
 linkTitle: "Build and Deploy a Go Project"
 weight: 11410
+version: "v3.3"
 ---
 
 ## Prerequisites

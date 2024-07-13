@@ -4,6 +4,7 @@ keywords: 'KubeKey, Installation, KubeSphere'
 description: 'Understand what KubeKey is and how it works to help you create, scale and upgrade your Kubernetes cluster.'
 linkTitle: "KubeKey"
 weight: 3120
+version: "v3.3"
 ---
 
 Developed in Go, [KubeKey](https://github.com/kubesphere/kubekey) represents a brand-new installation tool as a replacement for the ansible-based installer used before. KubeKey provides you with flexible installation choices, as you can install Kubernetes only or install both Kubernetes and KubeSphere.

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 最小化安装'
 description: '了解在现有 Kubernetes 集群上如何使用最小安装包安装 KubeSphere。您可以使用托管在云服务器上或者安装在本地的 Kubernetes 集群。'
 linkTitle: "在 Kubernetes 上最小化安装 KubeSphere"
 weight: 2200
+version: "v3.3"
 ---
 
 除了在 Linux 机器上安装 KubeSphere 之外，您还可以将其直接部署在现有的 Kubernetes 集群上。本快速入门指南将引导您完成在 Kubernetes 上最小化安装 KubeSphere 的一般性步骤。有关更多信息，请参见[在 Kubernetes 上安装 KubeSphere](../../installing-on-kubernetes/)。

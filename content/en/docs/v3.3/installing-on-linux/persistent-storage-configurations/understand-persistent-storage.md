@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, storage, installation, configuration'
 description: 'Understand how to use KubeKey to install different storage systems.'
 linkTitle: "Understand Persistent Storage Installation"
 weight: 3310
+version: "v3.3"
 ---
 
 Persistent volumes are a **must** for installing KubeSphere. When you use [KubeKey](../../../installing-on-linux/introduction/kubekey/) to set up a KubeSphere cluster, you can install different storage systems as [add-ons](https://github.com/kubesphere/kubekey/blob/master/docs/addons.md). The general steps of installing KubeSphere by KubeKey on Linux are:

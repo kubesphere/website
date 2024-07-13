@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 多租户"
 description: "理解 KubeSphere 中的多租户架构。"
 linkTitle: "KubeSphere 中的多租户"
 weight: 12100
+version: "v3.3"
 ---
 
 Kubernetes 解决了应用编排、容器调度的难题，极大地提高了资源的利用率。有别于传统的集群运维方式，在使用 Kubernetes 的过程中，企业和个人用户在资源共享和安全性方面均面临着诸多挑战。

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 安装, NGINX'
 description: '了解如何从 KubeSphere 应用商店中部署 NGINX 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 NGINX"
 weight: 14270
+version: "v3.3"
 ---
 
 [NGINX](https://www.nginx.com/) 是一个开源软件应用，用于 Web 服务、反向代理、缓存、负载均衡、流媒体等。

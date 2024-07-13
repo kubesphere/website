@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, project, disk, log, collection'
 description: 'Enable log collection so that you can collect, manage, and analyze logs in a unified way.'
 linkTitle: "Log Collection"
 weight: 13600
+version: "v3.4"
 ---
 
 KubeSphere supports multiple log collection methods so that Ops teams can collect, manage, and analyze logs in a unified and flexible way.

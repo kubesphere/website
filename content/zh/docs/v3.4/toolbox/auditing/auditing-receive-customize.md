@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 审计, 日志, 自定义, 接收"
 description: "了解如何接收和自定义审计日志。"
 linkTitle: "接收和自定义审计日志"
 weight: 15310
+version: "v3.4"
 ---
 
 KubeSphere 审计日志提供了与安全相关的、按时间顺序排列的记录集，记录每个用户、管理员或系统其他组件对系统产生影响的一系列活动。对 KubeSphere 的每个请求都会生成一个事件，随后该事件会写入 Webhook 并根据特定规则进行处理。根据不同规则，该事件会被忽略、存储或生成告警。

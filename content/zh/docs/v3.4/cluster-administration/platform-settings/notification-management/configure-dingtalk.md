@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 钉钉, 通知, 告警'
 description: '配置钉钉通知并添加会话或群机器人来接收告警通知消息。'
 linkTitle: "配置钉钉通知"
 weight: 8723
+version: "v3.4"
 ---
 
 本教程演示如何配置钉钉通知并添加会话或群机器人来接收告警策略的通知。

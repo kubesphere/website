@@ -4,6 +4,7 @@ keywords: "Kubernetes, events, KubeSphere, k8s-events"
 description: "Learn how to enable Events to keep track of everything that is happening on the platform."
 linkTitle: "KubeSphere Events"
 weight: 6500
+version: "v3.4"
 ---
 
 KubeSphere events allow users to keep track of what is happening inside a cluster, such as node scheduling status and image pulling result. They will be accurately recorded with the specific reason, status and message displayed in the web console. To query events, users can quickly launch the web Toolkit and enter related information in the search bar with different filters (e.g keyword and project) available. Events can also be archived to third-party tools, such as Elasticsearch, Kafka, or Fluentd.

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 安装, RadonDB PostgreSQL'
 description: '了解如何从 KubeSphere 应用商店部署 RadonDB PostgreSQL。'
 linkTitle: "在 KubeSphere 中部署 RadonDB PostgreSQL"
 weight: 14294
+version: "v3.3"
 ---
 
 [RadonDB PostgreSQL](https://github.com/radondb/radondb-postgresql-kubernetes) 是基于 [PostgreSQL](https://postgresql.org) 的开源、云原生、高可用集群解决方案。

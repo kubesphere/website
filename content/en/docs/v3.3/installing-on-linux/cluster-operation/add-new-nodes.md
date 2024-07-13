@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, scale-out, add-nodes'
 description: 'Add more nodes to scale out your cluster.'
 linkTitle: "Add New Nodes"
 weight: 3610
+version: "v3.3"
 ---
 
 After you use KubeSphere for a certain period of time, it is likely that you need to scale out your cluster with an increasing number of workloads. From KubeSphere v3.0.0, you can use the brand-new installer [KubeKey](https://github.com/kubesphere/kubekey) to add new nodes to a Kubernetes cluster. Fundamentally, the operation is based on Kubelet's registration mechanism. In other words, the new nodes will automatically join the existing Kubernetes cluster. KubeSphere supports hybrid environments, which means the newly-added host OS can be CentOS or Ubuntu.

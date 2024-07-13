@@ -5,6 +5,7 @@ description: "如何在 KubeSphere 上设置外部身份验证。"
 
 linkTitle: "设置外部身份验证"
 weight: 12210
+version: "v3.4"
 ---
 
 本文档描述了如何在 KubeSphere 上使用外部身份提供者，例如 LDAP 服务或 Active Directory 服务。

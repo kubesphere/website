@@ -4,6 +4,7 @@ keywords: 'Kubernetes, 日志, Fluentd, 容器组, 容器, Fluentbit, 输出'
 description: '了解如何添加 Fluentd 来接收容器日志、资源事件或审计日志。'
 linkTitle: "添加 Fluentd 作为接收器"
 weight: 8624
+version: "v3.4"
 ---
 您可以在 KubeSphere 中使用 Elasticsearch、Kafka 和 Fluentd 日志接收器。本教程演示：
 

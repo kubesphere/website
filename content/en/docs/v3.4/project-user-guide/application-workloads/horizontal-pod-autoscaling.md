@@ -3,7 +3,7 @@ title: "Kubernetes HPA (Horizontal Pod Autoscaling) on KubeSphere"
 keywords: "Horizontal, Pod, Autoscaling, Autoscaler"
 description: "How to configure Kubernetes Horizontal Pod Autoscaling on KubeSphere."
 weight: 10290
-
+version: "v3.4"
 ---
 
 This document describes how to configure Horizontal Pod Autoscaling (HPA) on KubeSphere.

@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, release notes"
 description: "KubeSphere Release Notes for 3.2.0"
 linkTitle: "Release Notes - 3.2.0"
 weight: 18100
+version: "v3.4"
 ---
 
 ## Multi-tenancy & Multi-cluster

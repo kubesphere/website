@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Prometheus, Alertmanager, 告警'
 description: '了解如何在 KubeSphere 中使用 Alertmanager 管理告警。'
 linkTitle: "KubeSphere 中的 Alertmanager"
 weight: 8510
+version: "v3.4"
 ---
 
 Alertmanager 处理由客户端应用程序（例如 Prometheus 服务器）发出的告警。它会将告警去重、分组 (Grouping) 并路由至正确的接收器，例如电子邮件、PagerDuty 或者 OpsGenie。它还负责告警沉默 (Silencing) 和抑制 (Inhibition)。有关更多详细信息，请参考 [Alertmanager 指南](https://prometheus.io/docs/alerting/latest/alertmanager/)。

@@ -4,6 +4,7 @@ keywords: 'Multi-node, Installation, KubeSphere'
 description: 'Learn the general steps of installing KubeSphere and Kubernetes on a multi-node cluster.'
 linkTitle: "Multi-node Installation"
 weight: 3130
+version: "v3.3"
 ---
 
 In a production environment, a single-node cluster cannot satisfy most of the needs as the cluster has limited resources with insufficient compute capabilities. Thus, single-node clusters are not recommended for large-scale data processing. Besides, a cluster of this kind is not available with high availability as it only has one node. On the other hand, a multi-node architecture is the most common and preferred choice in terms of application deployment and distribution.

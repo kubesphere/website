@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Helm, 开发'
 description: '开发基于 Helm 的应用。'
 linkTitle: "Helm 开发者指南"
 weight: 14410
+version: "v3.3"
 ---
 
 您可以上传应用的 Helm Chart 至 KubeSphere，以便具有必要权限的租户能够进行部署。本教程以 NGINX 为示例演示如何准备 Helm Chart。

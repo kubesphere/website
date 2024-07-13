@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Services, Topology"
 description: "Learn how to enable Service Topology to view contextual details of your Pods based on Weave Scope."
 linkTitle: "Service Topology"
 weight: 6915
+version: "v3.3"
 ---
 
 You can enable Service Topology to integrate [Weave Scope](https://www.weave.works/oss/scope/), a visualization and monitoring tool for Docker and Kubernetes. Weave Scope uses established APIs to collect information to build a topology of your apps and containers. The Service topology displays in your project, providing you with visual representations of connections based on traffic.

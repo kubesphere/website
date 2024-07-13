@@ -5,6 +5,7 @@ description: "如何使用外部 CAS 身份提供者。"
 
 linkTitle: "CAS 身份提供者"
 weight: 12223
+version: "v3.3"
 ---
 
 CAS (Central Authentication Service)  是耶鲁 Yale 大学发起的一个java开源项目，旨在为 Web应用系统提供一种可靠的 单点登录 解决方案（ Web SSO ）， CAS 具有以下特点：

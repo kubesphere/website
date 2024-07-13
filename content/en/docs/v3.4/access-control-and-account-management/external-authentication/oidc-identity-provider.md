@@ -5,6 +5,7 @@ description: "How to use an external OIDC identity provider."
 
 linkTitle: "OIDC Identity Provider"
 weight: 12221
+version: "v3.4"
 ---
 
 ## OIDC Identity Provider

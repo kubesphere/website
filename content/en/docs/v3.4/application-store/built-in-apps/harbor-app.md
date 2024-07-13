@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Harbor, app-store'
 description: 'Learn how to deploy Harbor from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy Harbor on KubeSphere"
 weight: 14220
+version: "v3.4"
 ---
 [Harbor](https://goharbor.io/) is an open-source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted.
 

@@ -5,6 +5,7 @@ description: "KubeSphere 平台功能"
 
 linkTitle: "平台功能"
 weight: 1300
+version: "v3.3"
 ---
 
 ## 概览

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 安装, Redis'
 description: '了解如何从 KubeSphere 应用商店中部署 Redis 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 Redis"
 weight: 14291
+version: "v3.3"
 ---
 
 [Redis](https://redis.io/) 是一个开源的（遵循 BSD 协议）、内存中的 (in-memory) 数据结构存储库，用作数据库、缓存和消息代理。

@@ -4,6 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, Logging, logs"
 description: "Questions asked frequently about the logging functionality."
 linkTitle: "Logging"
 weight: 16310
+version: "v3.3"
 ---
 
 This page contains some of the frequently asked questions about logging.

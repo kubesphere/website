@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, release notes"
 description: "KubeSphere Release Notes for 3.2.1"
 linkTitle: "Release Notes - 3.2.1"
 weight: 18099
+version: "v3.3"
 ---
 
 ## Enhancements and Bug Fixes

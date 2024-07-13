@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, 代理连接'
 description: '了解通过代理连接导入集群的一般步骤。'
 linkTitle: "代理连接"
 weight: 5220
+version: "v3.4"
 ---
 
 KubeSphere 的组件 [Tower](https://github.com/kubesphere/tower) 用于代理连接。Tower 是一种通过代理在集群间建立网络连接的工具。如果主集群无法直接访问成员集群，您可以暴露主集群的代理服务地址，这样可以让成员集群通过代理连接到主集群。当成员集群部署在私有环境（例如 IDC）并且主集群可以暴露代理服务时，适用此连接方法。当您的集群分布部署在不同的云厂商上时，同样适用代理连接的方法。

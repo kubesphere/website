@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, GitLab, App Store'
 description: 'Learn how to deploy GitLab on KubeSphere and access its service.'
 linkTitle: "Deploy GitLab on KubeSphere"
 weight: 14310
+version: "v3.4"
 ---
 
 [GitLab](https://about.gitlab.com/) is an open-source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD, and more.

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, PostgreSQL, app-store'
 description: 'Learn how to deploy PostgreSQL from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy PostgreSQL on KubeSphere"
 weight: 14280
+version: "v3.4"
 ---
 
 [PostgreSQL](https://www.postgresql.org/) is a powerful, open-source object-relational database system, which is famous for reliability, feature robustness, and performance.

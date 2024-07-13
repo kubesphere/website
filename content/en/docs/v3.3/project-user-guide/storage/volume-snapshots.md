@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Volume, Snapshots'
 description: 'Learn how to manage a snapshot of a persistent volume on KubeSphere.'
 linkTitle: "Volume Snapshots"
 weight: 10320
+version: "v3.3"
 ---
 
 Many storage systems provide the ability to create a snapshot of a persistent volume. A snapshot represents a point-in-time copy of a volume. It can be used either to provision a new volume (pre-populated with the snapshot data) or to restore the existing volume to a previous state (represented by the snapshot). For more information, see [the Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/volume-snapshots/).

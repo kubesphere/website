@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Jenkins, 图形化流水线, 流水线步骤�
 description: '了解如何在 KubeSphere 上使用流水线步骤模板。'
 linkTitle: "使用流水线步骤模板"
 weight: 11214
+version: "v3.4"
 ---
 
 

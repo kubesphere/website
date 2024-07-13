@@ -5,6 +5,7 @@ description: "如何使用 LDAP 服务。"
 
 linkTitle: "LDAP身份提供者"
 weight: 12220
+version: "v3.3"
 ---
 
 本文档描述了如何使用 LDAP 服务作为外部身份提供者，允许您根据 LDAP 服务对用户进行身份验证。

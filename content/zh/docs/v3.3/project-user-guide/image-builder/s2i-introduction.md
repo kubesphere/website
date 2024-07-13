@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
 description: '了解 S2I 的工作原理及其为何按照预期工作。'
 linkTitle: "S2I 工作流程和逻辑"
 weight: 10630
+version: "v3.3"
 ---
 
 Source-to-Image (S2I) 是一个将源代码构建成镜像的自动化工具。S2I 将源代码注入负责编译的镜像构建器 (Image Builder) 中，然后自动将编译后的代码打包成 Docker 镜像。

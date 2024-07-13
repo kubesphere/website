@@ -5,6 +5,7 @@ description: "如何使用外部 OIDC 身份提供者。"
 
 linkTitle: "OIDC 身份提供者"
 weight: 12221
+version: "v3.3"
 ---
 
 ## OIDC 身份提供者

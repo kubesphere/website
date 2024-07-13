@@ -4,6 +4,7 @@ keywords: "FAQ, 控制台, KubeSphere, Kubernetes, 语言"
 description: "选择控制台的显示语言。"
 linkTitle: "更改控制台语言"
 Weight: 16530
+version: "v3.3"
 ---
 
 KubeSphere Web 控制台目前支持四种语言：简体中文、繁体中文、英文和西班牙文。

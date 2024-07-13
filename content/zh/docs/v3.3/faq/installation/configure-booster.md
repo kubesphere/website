@@ -4,6 +4,7 @@ keywords: 'KubeSphere, 加速器, 安装, FAQ'
 description: '设置仓库镜像地址加速安装时的镜像下载速度。'
 linkTitle: "为安装配置加速器"
 weight: 16200
+version: "v3.3"
 ---
 
 如果您无法从 `dockerhub.io` 下载镜像，强烈建议您预先配置仓库的镜像地址（即加速器）以加快下载速度。您可以参考[ Docker 官方文档](https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon)，或执行以下步骤。

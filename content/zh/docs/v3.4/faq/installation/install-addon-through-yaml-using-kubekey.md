@@ -4,6 +4,7 @@ keywords: "Installer, KubeKey, KubeSphere, Kubernetes, 插件"
 description: "了解使用 KubeKey 安装 YAML 插件时可能失败的原因。"
 linkTitle: "使用 KubeKey 通过 YAML 安装插件"
 Weight: 16400
+version: "v3.4"
 ---
 
 当您使用 KubeKey 安装插件时，需要在配置文件（默认为 `config-sample.yaml`）的 `addons` 字段下添加插件信息（Chart 或 YAML）。如果所提供的插件以 YAML 格式安装，在某些情况下，安装时可能会报如下错误信息：

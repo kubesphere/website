@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, ecosystem tools'
 description: 'KubeSphere ecosystem tools'
 linkTitle: "KubeSphere Ecosystem Tools"
 weight: 1200
+version: "v3.3"
 ---
 
 ## Abundant Ecosystem Tools

@@ -4,6 +4,7 @@ keywords: "Kubernetes, Prometheus, KubeSphere, 监控"
 description: "有关监控功能的常见问题。"
 linkTitle: "监控"
 weight: 16320
+version: "v3.4"
 ---
 
 本页包含关于监控的一些常见问题。

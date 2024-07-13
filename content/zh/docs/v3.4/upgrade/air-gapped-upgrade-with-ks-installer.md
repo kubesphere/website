@@ -4,6 +4,7 @@ keywords: "离线环境, 升级, kubesphere, 3.4"
 description: "使用 ks-installer 和离线包升级 KubeSphere。"
 linkTitle: "使用 ks-installer 离线升级"
 weight: 7500
+version: "v3.4"
 ---
 
 对于 Kubernetes 集群不是通过 [KubeKey](../../installing-on-linux/introduction/kubekey/) 部署而是由云厂商托管或自行部署的用户，推荐使用 ks-installer。本教程**只用于升级 KubeSphere**。集群运维员应负责提前升级 Kubernetes。

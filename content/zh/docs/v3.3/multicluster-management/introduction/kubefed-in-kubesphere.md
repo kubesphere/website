@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 联邦, 多集群, 混合云'
 description: '了解 KubeSphere 中的 Kubernetes 联邦的基本概念，包括成员集群和主集群。'
 linkTitle: "KubeSphere 联邦"
 weight: 5120
+version: "v3.3"
 ---
 
 多集群功能与多个集群之间的网络连接有关。因此，了解集群的拓扑关系很重要。

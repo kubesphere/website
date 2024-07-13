@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Calico, 网络策略'
 description: '在您的企业空间中开启或关闭网络策略。'
 linkTitle: "企业空间网络隔离"
 weight: 9500
+version: "v3.4"
 ---
 
 ## 准备工作

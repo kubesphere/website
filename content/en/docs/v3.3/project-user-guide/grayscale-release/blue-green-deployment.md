@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Service Mesh, Istio, Grayscale Release, Blue-
 description: 'Learn how to release a blue-green deployment on KubeSphere.'
 linkTitle: "Blue-Green Deployment with Kubernetes"
 weight: 10520
+version: "v3.3"
 ---
 
 

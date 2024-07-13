@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Service Accounts'
 description: 'Learn how to create service accounts on KubeSphere.'
 linkTitle: "Service Accounts"
 weight: 10440
+version: "v3.3"
 ---
 
 A [service account](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) provides an identity for processes that run in a Pod. When accessing a cluster, a user is authenticated by the API server as a particular user account. Processes in containers inside Pods are authenticated as a particular service account when these processes contact the API server.

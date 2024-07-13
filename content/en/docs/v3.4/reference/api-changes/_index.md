@@ -8,5 +8,5 @@ linkTitle: "API Changes"
 weight: 17300
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.4"
 ---

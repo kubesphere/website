@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, 优势"
 description: "KubeSphere 优势"
 linkTitle: "为什么选择 KubeSphere"
 weight: 1600
+version: "v3.4"
 ---
 
 ## 设计愿景

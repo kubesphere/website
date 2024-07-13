@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
 description: 'Understand how S2I works and why it works in the expected way.'
 linkTitle: "S2I Workflow and Logic"
 weight: 10630
+version: "v3.3"
 ---
 
 Source-to-Image (S2I) is an automation tool for building images from source code. S2I injects source code into an Image Builder for compiling and then automatically packages the compiled code into a Docker image.

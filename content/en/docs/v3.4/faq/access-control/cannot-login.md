@@ -4,6 +4,7 @@ keywords: "login failure, user is not active, KubeSphere, Kubernetes"
 description: "How to solve the issue of login failure"
 linkTitle: "User Login Failure"
 Weight: 16440
+version: "v3.4"
 ---
 
 KubeSphere automatically creates a default user (`admin/P@88w0rd`) when it is installed. A user cannot be used for login if the status is not **Active** or you use an incorrect password.

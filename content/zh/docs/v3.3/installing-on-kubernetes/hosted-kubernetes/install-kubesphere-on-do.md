@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, DigitalOcean, 安装'
 description: '了解如何在 DigitalOcean 上部署 KubeSphere。'
 
 weight: 4230
+version: "v3.3"
 ---
 
 ![KubeSphere+DOKS](/images/docs/v3.x/do/KubeSphere-DOKS.png)

@@ -4,6 +4,7 @@ keywords: "Session timeout, KubeSphere, Kubernetes"
 description: "Understand session timeout and customize the timeout period."
 linkTitle: "Session Timeout"
 Weight: 16420
+version: "v3.4"
 ---
 
 A session starts as a user logs in to the console of KubeSphere. You may see a message of "**Session timeout or this account is logged in elsewhere, please login again**" when the session expires.

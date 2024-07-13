@@ -4,6 +4,7 @@ keywords: 'Kubernetes, 日志, OpenSearch, Pod, 容器, Fluentbit, 输出'
 description: '了解如何添加 OpenSearch 来接收容器日志、资源事件或审计日志。'
 linkTitle: "添加 OpenSearch 作为接收器"
 weight: 8625
+version: "v3.4"
 ---
 
 [OpenSearch](https://opensearch.org/) 是一种分布式，由社区驱动并取得 Apache 2.0 许可的、 100% 开源的搜索和分析套件，可用于实时应用程序监控、日志分析和网站搜索等场景。

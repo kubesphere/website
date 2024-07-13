@@ -5,6 +5,7 @@ description: "KubeSphere Release Notes for 2.0.1"
 
 linkTitle: "Release Notes - 2.0.1"
 weight: 18700
+version: "v3.3"
 ---
 
 KubeSphere 2.0.1 was released on **June 9th, 2019**.

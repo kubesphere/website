@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, etcd, app-store'
 description: 'Learn how to deploy etcd from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy etcd on KubeSphere"
 weight: 14210
+version: "v3.3"
 ---
 
 Written in Go, [etcd](https://etcd.io/) is a distributed key-value store to store data that needs to be accessed by a distributed system or cluster of machines. In Kubernetes, it is the backend for service discovery and stores cluster states and configurations.

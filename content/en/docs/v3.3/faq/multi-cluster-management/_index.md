@@ -4,4 +4,5 @@ keywords: 'Kubernetes, KubeSphere, Multi-cluster Management, Host Cluster, Membe
 description: 'Faq about multi-cluster management in KubeSphere'
 layout: "second"
 weight: 16700
+version: "v3.3"
 ---

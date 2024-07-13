@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, OKE, Installation, Oracle-cloud'
 description: 'Learn how to deploy KubeSphere on Oracle Cloud Infrastructure Container Engine for Kubernetes.'
 
 weight: 4260
+version: "v3.4"
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [Oracle Kubernetes Engine](https://www.oracle.com/cloud/compute/container-engine-kubernetes.html).

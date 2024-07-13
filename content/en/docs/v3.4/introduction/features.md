@@ -5,6 +5,7 @@ description: "KubeSphere Key Features"
 
 linkTitle: "Features"
 weight: 1300
+version: "v3.4"
 ---
 
 ## Overview

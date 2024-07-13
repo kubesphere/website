@@ -4,6 +4,7 @@ keywords: 'monitoring, Prometheus, Prometheus Operator'
 description: 'Explore dashboard properties and chart metrics.'
 linkTitle: "Charts"
 weight: 10816
+version: "v3.3"
 ---
 
 KubeSphere currently supports two kinds of charts: text charts and graphs.

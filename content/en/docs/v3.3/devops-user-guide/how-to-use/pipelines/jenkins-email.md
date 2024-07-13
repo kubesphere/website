@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, notification, jenkins, devops, ci/cd, pipelin
 description: 'Set the email server to receive notifications of your Jenkins pipelines.'
 linkTitle: "Set Email Server for KubeSphere Pipelines"
 Weight: 11218
+version: "v3.3"
 ---
 
 

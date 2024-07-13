@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, log, query'
 description: 'Query Kubernetes logs from toolbox'
 linkTitle: "Log Query"
 weight: 15100
+version: "v3.3"
 ---
 
 The logs of applications and systems can help you better understand what is happening inside your cluster and workloads. The logs are particularly useful for debugging problems and monitoring cluster activities. KubeSphere provides a powerful and easy-to-use logging system which offers users the capabilities of log collection, query and management from the perspective of tenants. The tenant-based logging system is much more useful than Kibana since different tenants can only view their own logs, leading to better security. Moreover, the KubeSphere logging system filters out some redundant information so that tenants can only focus on logs that are useful to them.

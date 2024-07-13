@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, GlusterFS, installation, configurations, stor
 description: 'Use KubeKey to create a cluster with GlusterFS providing storage services.'
 linkTitle: "Install GlusterFS"
 weight: 3340
+version: "v3.4"
 ---
 
 [GlusterFS](https://kubernetes.io/docs/concepts/storage/storage-classes/#glusterfs) is an in-tree storage plugin in Kubernetes. Hence, you only need to install the storage class.

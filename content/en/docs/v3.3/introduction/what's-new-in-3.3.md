@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, new features'
 description: "What's New in 3.3"
 linkTitle: "What's New in 3.3"
 weight: 1400
+version: "v3.3"
 ---
 
 In June 2022, KubeSphere 3.3 has been released with more exciting features. This release introduces GitOps-based continuous deployment and supports Git-based code repository management to further optimize the DevOps feature. Moreover, it also provides enhanced features of storage, multi-tenancy, multi-cluster, observability, app store, service mesh, and edge computing, to further perfect the interactive design for better user experience.

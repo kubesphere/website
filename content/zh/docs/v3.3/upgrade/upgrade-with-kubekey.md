@@ -4,6 +4,7 @@ keywords: "Kubernetes, 升级, KubeSphere, 3.3, KubeKey"
 description: "使用 KubeKey 升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 升级"
 weight: 7200
+version: "v3.3"
 ---
 
 对于 KubeSphere 和 Kubernetes 都由 [KubeKey](../../installing-on-linux/introduction/kubekey/) 部署的用户，推荐使用 KubeKey 升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 升级](../upgrade-with-ks-installer/)。

@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, Advantages"
 description: "KubeSphere Advantages"
 linkTitle: "Advantages"
 weight: 1600
+version: "v3.4"
 ---
 
 ## Vision

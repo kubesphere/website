@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, PVC, PV, Snapshot, Snapshot Classes'
 description: 'Learn how to manage snapshot classes on KubeSphere.'
 linkTitle: "Volume Snapshot Classes"
 weight: 8900
+version: "v3.3"
 ---
 
 Volume snapshot classes provide a way for administrators to define storage types used for volume snapshots. This tutorial describes how to create and use snapshot classes.

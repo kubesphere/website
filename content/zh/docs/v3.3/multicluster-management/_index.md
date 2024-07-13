@@ -8,6 +8,7 @@ linkTitle: "多集群管理"
 weight: 5000
 
 icon: "/images/docs/v3.x/docs.svg"
+version: "v3.3"
 ---
 
 ## 介绍

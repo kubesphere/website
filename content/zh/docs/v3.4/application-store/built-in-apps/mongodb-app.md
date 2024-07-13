@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 安装, MongoDB'
 description: '了解如何从 KubeSphere 应用商店中部署 MongoDB 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 MongoDB"
 weight: 14250
+version: "v3.4"
 ---
 
 [MongoDB](https://www.mongodb.com/) 是一个通用的、基于文档的分布式数据库，为现代应用开发者和云时代而打造。

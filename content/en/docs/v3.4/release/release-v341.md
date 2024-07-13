@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Release Notes"
 description: "KubeSphere 3.4.1 Release Notes"
 linkTitle: "Release Notes - 3.4.1"
 weight: 18093
+version: "v3.4"
 ---
 
 ## App Store

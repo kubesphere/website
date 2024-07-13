@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
 description: 'Customize S2I templates and understand different template parameters.'
 linkTitle: "Customize S2I Templates"
 weight: 10640
+version: "v3.4"
 ---
 
 Once you have understood the workflow and logic of Source-to-Image (S2I), you can customize Image Builder templates (i.e. S2I/B2I templates) based on your projects to extend S2I capabilities. KubeSphere provides several common Image Builder templates based on different languages, such as [Python](https://github.com/kubesphere/s2i-python-container/) and [Java](https://github.com/kubesphere/s2i-java-container/).

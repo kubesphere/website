@@ -5,6 +5,7 @@ description: "KubeSphere release notes for 2.1.0."
 
 linkTitle: "Release Notes - 2.1.0"
 weight: 18600
+version: "v3.3"
 ---
 
 KubeSphere 2.1.0 was released on Nov 11th, 2019, which fixes known bugs, adds some new features and brings some enhancement. If you have installed versions of 2.0.x, please upgrade it and enjoy the better user experience of v2.1.0.

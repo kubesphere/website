@@ -4,6 +4,7 @@ keywords: "Kubernetes, alertmanager, KubeSphere, 告警"
 description: "了解如何启用告警功能，以便在潜在问题对您的业务造成影响之前提前识别这些问题。"
 linkTitle: "KubeSphere 告警系统"
 weight: 6600
+version: "v3.4"
 ---
 
 告警是可观测性的重要组成部分，与监控和日志密切相关。KubeSphere 中的告警系统与其主动式故障通知 (Proactive Failure Notification) 系统相结合，使用户可以基于告警策略了解感兴趣的活动。当达到某个指标的预定义阈值时，会向预先配置的收件人发出告警。因此，您需要预先配置通知方式，包括邮件、Slack、钉钉、企业微信和 Webhook。有了功能强大的告警和通知系统，您就可以迅速发现并提前解决潜在问题，避免您的业务受影响。

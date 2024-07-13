@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 持久卷声明, 快照'
 description: '了解如何在 KubeSphere 中管理持久卷声明的快照。'
 linkTitle: "卷快照"
 weight: 10330
+version: "v3.3"
 ---
 
 许多存储系统都支持为持久卷创建快照。快照是持久卷声明的一个即时副本，可用于供应新持久卷声明（预先在其中填充快照数据）或将现有持久卷声明恢复到创建快照时的状态。有关更多信息，请参阅 [Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/storage/volume-snapshots/)。

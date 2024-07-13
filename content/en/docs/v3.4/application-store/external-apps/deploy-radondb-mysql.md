@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Deploy, RadonDB MySQL'
 description: 'Learn how to deploy RadonDB MySQL Operator and RadonDB MySQL Cluster on KubeSphere.'
 linkTitle: "Deploy RadonDB MySQL Operator and Cluster"
 weight: 14350
+version: "v3.4"
 ---
 
 [RadonDB MySQL](https://github.com/radondb/radondb-mysql-kubernetes) is an open source, cloud-native, and highly available cluster solution based on [MySQL](https://MySQL.org) database. With the Raft protocol, RadonDB MySQL enables fast failover without losing any transactions.

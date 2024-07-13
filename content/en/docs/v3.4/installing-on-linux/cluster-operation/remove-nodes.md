@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, scale-in, remove-nodes'
 description: 'Cordon a node and even delete a node to scale in your cluster.'
 linkTitle: "Delete Nodes"
 weight: 3620
+version: "v3.4"
 ---
 
 ## Cordon a Kubernetes Node

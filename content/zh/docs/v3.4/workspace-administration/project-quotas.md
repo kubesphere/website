@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 项目, 配额, 资源, 请求, 限制'
 description: '设置请求和限制，控制项目中的资源使用情况。'
 linkTitle: "项目配额"
 weight: 9600
+version: "v3.4"
 ---
 
 KubeSphere 使用预留（Request）和限制（Limit）来控制项目中的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为[资源配额](https://kubernetes.io/zh/docs/concepts/policy/resource-quotas/)。请求确保项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保项目不能使用超过特定值的资源。

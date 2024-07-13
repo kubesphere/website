@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Docker, DevOps, Jenkins, Multi-cluster'
 description: 'Learn how to deploy apps in a multi-cluster project using a Jenkinsfile-based pipeline.'
 linkTitle: "Deploy Apps in a Multi-cluster Project Using a Jenkinsfile"
 weight: 11420
+version: "v3.4"
 ---
 
 ## Prerequisites

@@ -4,6 +4,7 @@ keywords: "Kubernetes, Jenkins, KubeSphere, DevOps, cicd"
 description: "Learn how to enable DevOps to further free your developers and let them focus on code writing."
 linkTitle: "KubeSphere DevOps System"
 weight: 6300
+version: "v3.4"
 ---
 
 The KubeSphere DevOps System is designed for CI/CD workflows in Kubernetes. Based on [Jenkins](https://jenkins.io/), it provides one-stop solutions to help both development and Ops teams build, test and publish apps to Kubernetes in a straight-forward way. It also features plugin management, [Binary-to-Image (B2I)](../../project-user-guide/image-builder/binary-to-image/), [Source-to-Image (S2I)](../../project-user-guide/image-builder/source-to-image/), code dependency caching, code quality analysis, pipeline logging, and more.

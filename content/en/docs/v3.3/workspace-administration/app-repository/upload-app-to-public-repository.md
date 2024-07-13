@@ -4,6 +4,7 @@ keywords: "Kubernetes, helm, KubeSphere, application"
 description: "Upload your own apps to the GitHub repository of KubeSphere."
 linkTitle: "Upload Apps to the KubeSphere GitHub Repository"
 weight: 9320
+version: "v3.3"
 ---
 
 KubeSphere provides an app repository for testing and development. Users can upload their apps to the repository, which will serve as available app templates once approved.

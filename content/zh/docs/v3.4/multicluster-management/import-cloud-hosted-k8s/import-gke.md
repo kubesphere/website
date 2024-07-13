@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, Google GKE'
 description: '了解如何导入 Google Kubernetes Engine 集群。'
 titleLink: "导入 Google GKE 集群"
 weight: 5330
+version: "v3.4"
 ---
 
 本教程演示如何使用[直接连接](../../../multicluster-management/enable-multicluster/direct-connection/)方法导入 GKE 集群。如果您想使用代理连接方法，请参考[代理连接](../../../multicluster-management/enable-multicluster/agent-connection/)。

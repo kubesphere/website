@@ -1,6 +1,7 @@
 ---
 title: "Quickstarts"
 description: "Help you to better understand KubeSphere with detailed graphics and contents"
+version: "v3.4"
 layout: "second"
 
 linkTitle: "Quickstarts"

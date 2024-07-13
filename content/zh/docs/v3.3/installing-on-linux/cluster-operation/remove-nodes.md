@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 水平扩缩, 删除节点'
 description: '停止调度节点，或者删除节点以缩小集群规模。'
 linkTitle: "删除节点"
 weight: 3620
+version: "v3.3"
 ---
 
 ## 停止调度节点

@@ -4,6 +4,7 @@ keywords: "Kubernetes, Istio, KubeSphere, service-mesh, microservices"
 description: "Learn how to enable KubeSphere Service Mesh to use different traffic management strategies for microservices governance."
 linkTitle: "KubeSphere Service Mesh"
 weight: 6800
+version: "v3.4"
 ---
 
 On the basis of [Istio](https://istio.io/), KubeSphere Service Mesh visualizes microservices governance and traffic management. It features a powerful toolkit including **circuit breaking, blue-green deployment, canary release, traffic mirroring, tracing, observability, and traffic control**. Developers can easily get started with KubeSphere Service Mesh without any code hacking, which greatly reduces the learning curve of Istio. All features of KubeSphere Service Mesh are designed to meet users' demand for their business.

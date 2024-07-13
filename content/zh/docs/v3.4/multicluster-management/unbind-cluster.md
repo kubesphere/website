@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, 混合云'
 description: '了解如何从 KubeSphere 的集群池中移除成员集群。'
 linkTitle: "移除成员集群"
 weight: 5500
+version: "v3.4"
 ---
 
 本教程演示如何在 KubeSphere 控制台移除成员集群。

@@ -5,6 +5,7 @@ description: "Understand the concept of workspaces in KubeSphere and learn how t
 
 linkTitle: "Workspace Overview"
 weight: 9100
+version: "v3.3"
 ---
 
 A workspace is a logical unit to organize your [projects](../../project-administration/) and [DevOps projects](../../devops-user-guide/) and manage [app templates](../upload-helm-based-application/) and app repositories. It is the place for you to control resource access and share resources within your team in a secure way.

@@ -8,6 +8,8 @@ linkTitle: "Multi-cluster Management"
 weight: 5000
 
 icon: "/images/docs/v3.x/docs.svg"
+
+version: "v3.3"
 ---
 
 ## Introduction

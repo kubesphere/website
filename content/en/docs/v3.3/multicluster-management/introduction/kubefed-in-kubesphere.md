@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud"
 description: "Understand the fundamental concept of Kubernetes federation in KubeSphere, including member clusters and host clusters."
 linkTitle: "KubeSphere Federation"
 weight: 5120
+version: "v3.3"
 ---
 
 The multi-cluster feature relates to the network connection among multiple clusters. Therefore, it is important to understand the topological relations of clusters.

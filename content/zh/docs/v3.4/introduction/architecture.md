@@ -5,6 +5,7 @@ description: "KubeSphere 架构说明"
 
 linkTitle: "架构说明"
 weight: 1500
+version: "v3.4"
 ---
 
 ## 前后端分离

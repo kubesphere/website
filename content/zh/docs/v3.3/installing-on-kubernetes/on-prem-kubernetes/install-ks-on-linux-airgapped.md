@@ -5,6 +5,7 @@ description: '了解在离线环境中安装 KubeSphere 的最佳实践。'
 
 linkTitle: "离线安装"
 weight: 4310
+version: "v3.3"
 ---
 
 离线安装几乎与在线安装相同，不同之处是您必须创建一个本地仓库来托管 Docker 镜像。本教程演示了如何在离线环境中将 KubeSphere 安装到 Kubernetes 上。

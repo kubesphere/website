@@ -5,6 +5,8 @@ description: "Monitor application resources across the cluster, such as the numb
 
 linkTitle: "Application Resources Monitoring"
 weight: 8300
+
+version: "v3.3"
 ---
 
 In addition to monitoring data at the physical resource level, cluster administrators also need to keep a close track of application resources across the platform, such as the number of projects and DevOps projects, as well as the number of workloads and services of a specific type. Application resource monitoring provides a summary of resource usage and application-level trends of the platform.

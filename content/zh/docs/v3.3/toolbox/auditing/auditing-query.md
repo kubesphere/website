@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 审计, 日志, 查询"
 description: "了解如何快速执行审计日志查询，追踪集群的最新审计信息。"
 linkTitle: "审计日志查询"
 weight: 15330
+version: "v3.3"
 ---
 
 KubeSphere 支持租户隔离的审计日志查询。本教程演示了如何使用查询功能，包括界面、搜索参数和详情页面。

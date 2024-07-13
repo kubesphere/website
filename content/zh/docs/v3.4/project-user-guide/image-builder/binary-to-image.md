@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, Docker, B2I, Binary-to-Image"
 description: "如何使用 Binary-to-Image 发布制品到 Kubernetes。"
 linkTitle: "Binary to Image：发布制品到 Kubernetes"
 weight: 10620
+version: "v3.4"
 ---
 
 Binary-to-Image (B2I) 是一个工具箱和工作流，用于从二进制可执行文件（例如 Jar、War 和二进制包）构建可再现容器镜像。更确切地说，您可以上传一个制品并指定一个目标仓库，例如 Docker Hub 或者 Harbor，用于推送镜像。如果一切运行成功，会推送您的镜像至目标仓库，并且如果您在工作流中创建服务 (Service)，也会自动部署应用程序至 Kubernetes。

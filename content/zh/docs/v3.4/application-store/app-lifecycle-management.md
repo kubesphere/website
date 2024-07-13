@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 应用商店'
 description: '您可以跨整个生命周期管理应用，包括提交、审核、测试、发布、升级和下架。'
 linkTitle: '应用程序生命周期管理'
 weight: 14100
+version: "v3.4"
 ---
 
 KubeSphere 集成了 [OpenPitrix](https://github.com/openpitrix/openpitrix)（一个跨云管理应用程序的开源平台）来构建应用商店，管理应用程序的整个生命周期。应用商店支持两种应用程序部署方式：

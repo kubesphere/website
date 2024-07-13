@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, DaemonSet, workload'
 description: 'Learn basic concepts of DaemonSets and how to create DaemonSets in KubeSphere.'
 linkTitle: "DaemonSets"
 weight: 10230
+version: "v3.4"
 ---
 
 A DaemonSet manages groups of replicated Pods while it ensures that all (or some) nodes run a copy of a Pod. As nodes are added to the cluster, DaemonSets automatically add Pods to the new nodes as needed.

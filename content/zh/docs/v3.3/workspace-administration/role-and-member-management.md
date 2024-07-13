@@ -4,6 +4,7 @@ keywords: "Kubernetes, 企业空间, KubeSphere, 多租户"
 description: "自定义企业空间角色并将角色授予用户。"
 linkTitle: "企业空间角色和成员管理"
 weight: 9400
+version: "v3.3"
 ---
 
 本教程演示如何在企业空间中管理角色和成员。

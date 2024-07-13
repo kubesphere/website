@@ -4,7 +4,7 @@ keywords: "KubeSphere, Installation, HA, high availability, load balancer, Azure
 description: "了解如何在 Azure 虚拟机上创建高可用 KubeSphere 集群。"
 linkTitle: "在 Azure VM 实例上部署 KubeSphere"
 Weight: 3410
-
+version: "v3.4"
 ---
 
 您可以使用 [Azure 云平台](https://azure.microsoft.com/zh-cn/overview/what-is-azure/)自行安装和管理 Kubernetes，或采用托管 Kubernetes 解决方案。如果要使用完全托管平台解决方案，请参阅 [在 AKS 上部署 KubeSphere](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/)。

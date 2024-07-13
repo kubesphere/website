@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 保密字典'
 description: '了解如何在 KubeSphere 中创建保密字典。'
 linkTitle: "保密字典"
 weight: 10410
+version: "v3.3"
 ---
 
 Kubernetes [保密字典 (Secret)](https://kubernetes.io/zh/docs/concepts/configuration/secret/) 可用于存储和管理密码、OAuth 令牌和 SSH 保密字典等敏感信息。容器组可以通过[三种方式](https://kubernetes.io/zh/docs/concepts/configuration/secret/#overview-of-secrets)使用保密字典：

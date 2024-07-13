@@ -4,6 +4,7 @@ keywords: "Kubesphere 安装， 阿里云， ECS， 高可用性， 高可用性
 description: "了解如何在阿里云虚拟机上创建高可用的 KubeSphere 集群。"
 
 Weight: 3240
+version: "v3.3"
 ---
 
 对于生产环境，我们需要考虑集群的高可用性。本文教您部署如何在多台阿里 ECS 实例快速部署一套高可用的生产环境。要满足 Kubernetes 集群服务需要做到高可用，需要保证 kube-apiserver 的 HA ，可使用以下下列两种方式：

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, NFS Server'
 description: 'How to set up an NFS Server'
 linkTitle: "Set up an NFS Server"
 weight: 17410
+version: "v3.3"
 ---
 
 KubeSphere supports [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client) as a storage plugin. In order to use it, you must configure the NFS server in advance. With the NFS server in place, an NFS client mounts a directory on the server machine so that files residing on the NFS server are accessible to the NFS client. Namely, you need to create and export a directory that your client machine can access.

@@ -5,6 +5,7 @@ description: "KubeSphere release notes for 2.0.2."
 
 linkTitle: "Release Notes - 2.0.2"
 weight: 18700
+version: "v3.3"
 ---
 
 KubeSphere 2.0.2 was released on July 9, 2019, which fixes known bugs and enhances existing feature. If you have installed versions of 1.0.x, 2.0.0 or 2.0.1, please download KubeSphere installer v2.0.2 to upgrade.

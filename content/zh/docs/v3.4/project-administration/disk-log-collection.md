@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 项目, 日志, 收集'
 description: '启用日志收集，对日志进行统一收集、管理和分析。'
 linkTitle: "日志收集"
 weight: 13600
+version: "v3.4"
 ---
 
 KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一的方式收集、管理和分析日志。

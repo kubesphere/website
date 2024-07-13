@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API'
 description: 'The REST API is the fundamental fabric of KubeSphere. This guide shows you how to access the KubeSphere API server.'
 linkTitle: "KubeSphere API"
 weight: 17200
+version: "v3.4"
 ---
 
 ## Architecture

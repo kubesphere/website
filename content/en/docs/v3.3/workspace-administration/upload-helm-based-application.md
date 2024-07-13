@@ -4,6 +4,7 @@ keywords: "Kubernetes, Helm, KubeSphere, OpenPitrix, Application"
 description: "Learn how to upload a Helm-based application as an app template to your workspace."
 linkTitle: "Upload Helm-based Applications"
 weight: 9200
+version: "v3.3"
 ---
 
 KubeSphere provides full lifecycle management for applications. Among other things, workspace administrators can upload or create new app templates and test them quickly. Furthermore, they publish well-tested apps to the [App Store](../../application-store/) so that other users can deploy them with one click. To develop app templates, workspace administrators need to upload packaged [Helm charts](https://helm.sh/) to KubeSphere first.

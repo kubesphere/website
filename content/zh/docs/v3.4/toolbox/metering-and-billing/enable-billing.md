@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, ConfigMap, 计费"
 description: "在 KubeSphere 中启用计费功能，查看一段时期内资源的计费数据。"
 linkTitle: "启用计费"
 weight: 15420
+version: "v3.4"
 ---
 
 本教程介绍如何启用 KubeSphere 的计费功能，以查看集群中不同资源的消费情况。计费功能默认不启用，因此您需要在 ConfigMap 中手动添加价格信息。

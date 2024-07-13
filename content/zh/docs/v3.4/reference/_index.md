@@ -8,7 +8,7 @@ linkTitle: "参考"
 weight: 17000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.4"
 ---
 
 本章包含 KubeSphere 中的常用词汇表和有关 KubeSphere API 的信息。

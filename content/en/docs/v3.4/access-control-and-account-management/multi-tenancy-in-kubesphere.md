@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, multi-tenancy"
 description: "Understand the multi-tenant architecture in KubeSphere."
 linkTitle: "Multi-tenancy in KubeSphere"
 weight: 12100
+version: "v3.4"
 ---
 
 Kubernetes helps you orchestrate applications and schedule containers, greatly improving resource utilization. However, there are various challenges facing both enterprises and individuals in resource sharing and security as they use Kubernetes, which is different from how they managed and maintained clusters in the past.

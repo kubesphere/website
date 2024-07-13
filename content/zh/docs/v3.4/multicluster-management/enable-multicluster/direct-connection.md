@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, 直接连接'
 description: '了解通过直接连接导入集群的一般步骤。'
 linkTitle: "直接连接"
 weight: 5210
+version: "v3.4"
 ---
 
 如果主集群的任何节点都能访问的 kube-apiserver 地址，您可以采用**直接连接**。当成员集群的 kube-apiserver 地址可以暴露给外网，或者主集群和成员集群在同一私有网络或子网中时，此方法均适用。

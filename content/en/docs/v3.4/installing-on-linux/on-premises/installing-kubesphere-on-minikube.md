@@ -5,6 +5,7 @@ description: 'Install KubeSphere on an existing Minikube cluster with a minimal 
 linkTitle: "Installing KubeSphere on Minikube"
 weight: 2200,
 showSubscribe: true
+version: "v3.4"
 ---
 
 In addition to installing KubeSphere on a Linux machine, you can also deploy it on minikube cluster. This tutorial demonstrates the general steps of completing a minimal KubeSphere installation on Minikube.

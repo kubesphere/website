@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Memcached, app-store'
 description: 'Learn how to deploy Memcached from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy Memcached on KubeSphere"
 weight: 14230
+version: "v3.4"
 ---
 [Memcached](https://memcached.org/) is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering. Its API is available for the majority of popular languages.
 

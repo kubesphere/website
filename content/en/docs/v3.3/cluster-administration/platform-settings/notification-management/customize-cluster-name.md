@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Platform, Notification'
 description: 'Learn how to customize cluster name in notification messages sent by KubeSphere.'
 linkTitle: "Customize Cluster Name in Notification Messages"
 weight: 8721
+version: "v3.3"
 ---
 
 This document describes how to customize your cluster name in notification messages sent by KubeSphere.

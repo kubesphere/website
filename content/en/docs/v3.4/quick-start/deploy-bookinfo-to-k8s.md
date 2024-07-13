@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Bookinfo, Istio'
 description: 'Explore the basics of KubeSphere service mesh by deploying an example application Bookinfo.'
 linkTitle: "Deploy and Access Bookinfo"
 weight: 2400
+version: "v3.4"
 ---
 
 [Istio](https://istio.io/), as an open-source service mesh solution, provides powerful features of traffic management for microservices. The introduction of traffic management from the official website of [Istio](https://istio.io/latest/docs/concepts/traffic-management/) is as follows:

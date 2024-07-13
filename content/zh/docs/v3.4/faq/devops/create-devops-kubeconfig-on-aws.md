@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, DevOps, Kubeconfig, AWS"
 description: "如何在 AWS 上创建 DevOps Kubeconfig"
 linkTitle: "在 AWS 上创建 DevOps Kubeconfig"
 Weight: 16820
+version: "v3.4"
 ---
 
 在已安装 KubeSphere 的 AWS 集群上运行流水线时，如果无法将应用部署到项目中，可能是因 DevOps kubeconfig 出问题所导致。本教程介绍如何在 AWS 上创建 DevOps kubeconfig。

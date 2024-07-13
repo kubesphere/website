@@ -4,6 +4,7 @@ keywords: 'Kubernetes, GitOps, KubeSphere, CI，CD, 持续集成，持续部署'
 description: '介绍如何在 KubeSphere 中使用 GitOps 实现持续部署。'
 linkTitle: "使用 GitOps 实现应用持续部署"
 weight: 11221
+version: "v3.3"
 ---
 
 KubeSphere 3.3 引入了一种为云原生应用实现持续部署的理念 – GitOps。GitOps 的核心思想是拥有一个 Git 仓库，并将应用系统的申明式基础架构和应用程序存放在 Git 仓库中进行版本控制。GitOps 结合 Kubernetes 能够利用自动交付流水线将更改应用到指定的任意多个集群中，从而解决跨云部署的一致性问题。

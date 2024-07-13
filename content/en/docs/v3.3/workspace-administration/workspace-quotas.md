@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, workspace, quotas'
 description: 'Set workspace quotas to control the total resource usage of projects and DevOps projects in a workspace.'
 linkTitle: "Workspace Quotas"
 weight: 9700
+version: "v3.3"
 ---
 
 Workspace quotas are used to control the total resource usage of all projects and DevOps projects in a workspace. Similar to [project quotas](../project-quotas/), workspace quotas contain requests and limits of CPU and memory. Requests make sure projects in the workspace can get the resources they needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that the resource usage of all projects in the workspace can never go above a certain value.

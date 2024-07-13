@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, resource, quotas, limits, requests, limit ran
 description: 'Learn how to set default container limit ranges in a project.'
 linkTitle: "Container Limit Ranges"
 weight: 13400
+version: "v3.3"
 ---
 
 A container can use as much CPU and memory as set by [the resource quota for a project](../../workspace-administration/project-quotas/). At the same time, KubeSphere uses requests and limits to control resource (for example, CPU and memory) usage for a container, also known as [LimitRanges](https://kubernetes.io/docs/concepts/policy/limit-range/) in Kubernetes. Requests make sure the container can get the resources it needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that container can never use resources above a certain value.

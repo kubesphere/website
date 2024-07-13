@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 平台, 通知'
 description: '了解如何自定义 KubeSphere 发送的通知消息中的集群名称。'
 linkTitle: "自定义通知消息中的集群名称"
 weight: 8721
+version: "v3.4"
 ---
 
 本文档说明如何自定义 KubeSphere 发送的通知消息中的集群名称。

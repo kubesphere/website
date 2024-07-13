@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Docker, DevOps, Jenkins, 多集群'
 description: '学习如何使用基于 Jenkinsfile 的流水线在多集群项目中部署应用。'
 linkTitle: "使用 Jenkinsfile 在多集群项目中部署应用"
 weight: 11420
+version: "v3.3"
 ---
 
 ## 准备工作

@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, Jobs, CronJobs"
 description: "Learn basic concepts of CronJobs and how to create CronJobs on KubeSphere."
 linkTitle: "CronJobs"
 weight: 10260
+version: "v3.4"
 ---
 
 CronJobs are useful for creating periodic and recurring tasks, like running backups or sending emails. CronJobs can also schedule individual tasks at a specific time or interval, such as scheduling a Job for when your cluster is likely to be idle.

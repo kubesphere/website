@@ -4,6 +4,7 @@ keywords: "Kubernetes, upgrade, KubeSphere, 3.3, KubeKey"
 description: "Use KubeKey to upgrade Kubernetes and KubeSphere."
 linkTitle: "Upgrade with KubeKey"
 weight: 7200
+version: "v3.3"
 ---
 KubeKey is recommended for users whose KubeSphere and Kubernetes were both installed by [KubeKey](../../installing-on-linux/introduction/kubekey/). If your Kubernetes cluster was provisioned by yourself or cloud providers, refer to [Upgrade with ks-installer](../upgrade-with-ks-installer/).
 

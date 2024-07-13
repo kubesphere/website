@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, OpenSearch, Dashboard"
 description: "Learn how to enable log dashboard, a graphical interface tool similar to ElasticSearch Kibana."
 linkTitle: "KubeSphere Log Dashboard"
 weight: 6200
+version: "v3.4"
 ---
 
 As an open-source, application-centric container platform, KubeSphere v3.4.1 uses [OpenSearch](https://opensearch.org/) instead of ElasticSearch as the backend storage for logs, events, and auditing. By default, we can use the query tool provided in the lower-right corner on the KubeSphere console to retrieve logs, events, and auditing records.

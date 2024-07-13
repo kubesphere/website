@@ -4,7 +4,7 @@ keywords: 'Kubernetes, GitOps, KubeSphere, 代码仓库'
 description: '介绍如何在 KubeSphere 中导入代码仓库。'
 linkTitle: "导入代码仓库"
 weight: 11231
-
+version: "v3.3"
 ---
 
 KubeSphere 3.3 支持您导入 GitHub、GitLab、Bitbucket 或其它基于 Git 的代码仓库，如 Gitee。下面以 Github 仓库为例，展示如何导入代码仓库。

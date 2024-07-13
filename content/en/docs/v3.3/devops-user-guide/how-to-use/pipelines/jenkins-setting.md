@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Jenkins, CasC'
 description: 'Learn how to customize your Jenkins settings.'
 linkTitle: 'Jenkins System Settings'
 Weight: 11216
+version: "v3.3"
 ---
 
 Jenkins is powerful and flexible and it has become the de facto standard for CI/CD workflows. Nevertheless, many plugins require users to set system-level configurations before they can be put to use.

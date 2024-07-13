@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Kubeedge"
 description: "Learn how to enable KubeEdge to add edge nodes to your cluster."
 linkTitle: "KubeEdge"
 weight: 6930
+version: "v3.3"
 ---
 
 [KubeEdge](https://kubeedge.io/en/) is an open-source system for extending native containerized application orchestration capabilities to hosts at edge. It supports multiple edge protocols and looks to provide unified management of cloud and edge applications and resources.

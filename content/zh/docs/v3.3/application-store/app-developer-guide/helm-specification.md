@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Helm, 规范'
 description: '了解 Chart 结构和规范。'
 linkTitle: "Helm 规范"
 weight: 14420
+version: "v3.3"
 ---
 
 Helm Chart 是一种打包格式。Chart 是一个描述一组 Kubernetes 相关资源的文件集合。有关更多信息，请参见 [Helm 文档](https://helm.sh/zh/docs/topics/charts/)。

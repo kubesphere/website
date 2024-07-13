@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 多集群, 主集群, 成员集群"
 description: "了解如何恢复主集群对成员集群的访问。"
 linkTitle: "恢复主集群对成员集群的访问权限"
 Weight: 16720
+version: "v3.3"
 ---
 
 [多集群管理](../../../multicluster-management/introduction/kubefed-in-kubesphere/)是 KubeSphere 的一大特色，拥有必要权限的租户（通常是集群管理员）能够从主集群访问中央控制平面，以管理全部成员集群。强烈建议您通过主集群管理整个集群的资源。

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, ClickHouse, ClickHouse Operator, ClickHouse C
 description: 'Learn how to deploy ClickHouse Operator and a ClickHouse Cluster on KubeSphere.'
 linkTitle: "Deploy RadonDB ClickHouse Operator and Cluster"
 weight: 14340
+version: "v3.3"
 ---
 
 [ClickHouse](https://clickhouse.tech/) is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP). [RadonDB ClickHouse](https://github.com/radondb/radondb-clickhouse-kubernetes) is a deeply customized ClickHouse cluster application maintaining ClickHouse cluster functions and featuring automated cluster management, data redistribution in clusters, and excellent performance with less cost.

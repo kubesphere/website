@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, HA, 高可用, 安装, 配置, Keepalived, HA
 description: '如何使用 Keepalived 和 HAproxy 配置高可用 Kubernetes 集群。'
 linkTitle: "使用 Keepalived 和 HAproxy 创建高可用集群"
 weight: 3220
+version: "v3.3"
 ---
 
 高可用 Kubernetes 集群能够确保应用程序在运行时不会出现服务中断，这也是生产的需求之一。为此，有很多方法可供选择以实现高可用。

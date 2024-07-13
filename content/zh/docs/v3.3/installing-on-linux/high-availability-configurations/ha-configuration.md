@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, HA, 高可用, 安装, 配置'
 description: '如何配置一个高可用 Kubernetes 集群。'
 linkTitle: "使用负载均衡器创建高可用集群"
 weight: 3150
+version: "v3.3"
 ---
 
 您可以根据教程[多节点安装](../../../installing-on-linux/introduction/multioverview/)来创建单主节点 Kubernetes 集群并安装 KubeSphere。大多数情况下，单主节点集群大致足以供开发和测试环境使用。但是，对于生产环境，您需要考虑集群的高可用性。如果关键组件（例如 kube-apiserver、kube-scheduler 和 kube-controller-manager）都在同一个主节点上运行，一旦主节点宕机，Kubernetes 和 KubeSphere 都将不可用。因此，您需要为多个主节点配置负载均衡器，以创建高可用集群。您可以使用任意云负载均衡器或者任意硬件负载均衡器（例如 F5）。此外，也可以使用 Keepalived 和 [HAproxy](https://www.haproxy.com/)，或者 Nginx 来创建高可用集群。

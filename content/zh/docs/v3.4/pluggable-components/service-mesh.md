@@ -4,6 +4,7 @@ keywords: "Kubernetes, Istio, KubeSphere, 服务网格, 微服务"
 description: "了解如何启用服务网格，从而提供不同的流量管理策略进行微服务治理。"
 linkTitle: "KubeSphere 服务网格"
 weight: 6800
+version: "v3.4"
 ---
 
 KubeSphere 服务网格基于 [Istio](https://istio.io/)，将微服务治理和流量管理可视化。它拥有强大的工具包，包括**熔断机制、蓝绿部署、金丝雀发布、流量镜像、链路追踪、可观测性和流量控制**等。KubeSphere 服务网格支持代码无侵入的微服务治理，帮助开发者快速上手，Istio 的学习曲线也极大降低。KubeSphere 服务网格的所有功能都旨在满足用户的业务需求。

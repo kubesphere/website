@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 介绍'
 description: '什么是 KubeSphere'
 linkTitle: "什么是 KubeSphere"
 weight: 1100
+version: "v3.4"
 ---
 
 ## 概述

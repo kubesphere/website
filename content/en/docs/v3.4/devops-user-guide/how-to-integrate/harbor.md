@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Docker, DevOps, Jenkins, Harbor'
 description: 'Integrate Harbor into your pipeline to push images to your Harbor registry.'
 linkTitle: "Integrate Harbor into Pipelines"
 weight: 11320
+version: "v3.4"
 ---
 
 This tutorial demonstrates how to integrate Harbor into KubeSphere pipelines.

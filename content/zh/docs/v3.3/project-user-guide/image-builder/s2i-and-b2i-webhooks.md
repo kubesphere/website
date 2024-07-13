@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, S2I, Source-to-Image, B2I, Binary-to-Image, W
 description: '学习如何配置 S2I 和 B2I webhooks。'
 linkTitle: "配置 S2I 和 B2I  Webhooks"
 weight: 10650
-
+version: "v3.3"
 ---
 
 KubeSphere 提供 Source-to-Image (S2I) 和 Binary-to-Image (B2I) 功能，以自动化镜像构建、推送和应用程序部署。在 KubeSphere 3.3 中，您可以配置 S2I 和 B2I Webhook，以便当代码仓库中存在任何相关活动时，自动触发镜像构建器。

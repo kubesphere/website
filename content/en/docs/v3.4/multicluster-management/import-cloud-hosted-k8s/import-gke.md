@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, Google GKE'
 description: 'Learn how to import a Google Kubernetes Engine cluster.'
 titleLink: "Import a Google GKE Cluster"
 weight: 5330
+version: "v3.4"
 ---
 
 This tutorial demonstrates how to import a GKE cluster through the [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/) method. If you want to use the agent connection method, refer to [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/).

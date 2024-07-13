@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Installation, MongoDB'
 description: 'Learn how to deploy MongoDB from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy MongoDB on KubeSphere"
 weight: 14250
+version: "v3.3"
 ---
 
 [MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era.

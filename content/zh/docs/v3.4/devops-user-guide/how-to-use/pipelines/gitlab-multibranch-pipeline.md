@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, GitLab, Jenkins, 流水线'
 description: '了解如何使用 GitLab 在 KubeSphere 上创建多分支流水线。'
 linkTitle: "使用 GitLab 创建多分支流水线"
 weight: 11215
+version: "v3.4"
 ---
 
 [GitLab](https://about.gitlab.com/) 是一个提供公开和私有仓库的开源代码仓库平台。它也是一个完整的 DevOps 平台，专业人士能够使用 GitLab 在项目中执行任务。

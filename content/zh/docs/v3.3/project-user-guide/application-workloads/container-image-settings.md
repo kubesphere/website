@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 镜像, 工作负载, 设置, 容器'
 description: '在为工作负载设置容器组时，详细了解仪表板上的不同属性。'
 
 weight: 10280
+version: "v3.3"
 ---
 
 创建部署 (Deployment)、有状态副本集 (StatefulSet) 或者守护进程集 (DaemonSet) 时，您需要指定一个容器组。同时，KubeSphere 向用户提供多种选项，用于自定义工作负载配置，例如健康检查探针、环境变量和启动命令。本页内容详细说明了**容器组设置**中的不同属性。

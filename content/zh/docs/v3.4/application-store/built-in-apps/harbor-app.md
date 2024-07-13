@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Harbor, 应用商店'
 description: '了解如何从 KubeSphere 应用商店中部署 Harbor 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 Harbor"
 weight: 14220
+version: "v3.4"
 ---
 [Harbor](https://goharbor.io/) 是一个开源仓库，通过各种策略和基于角色的访问控制来保护制品，确保镜像经过扫描且没有漏洞，并对镜像签名使其受信。
 

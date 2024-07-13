@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, KubeEdge'
 description: 'Add edge nodes to your cluster.'
 linkTitle: "Add Edge Nodes"
 weight: 3630
+version: "v3.3"
 ---
 
 KubeSphere leverages [KubeEdge](https://kubeedge.io/en/), to extend native containerized application orchestration capabilities to hosts at edge. With separate cloud and edge core modules, KubeEdge provides complete edge computing solutions while the installation may be complex and difficult.

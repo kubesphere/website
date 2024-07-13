@@ -4,6 +4,7 @@ keywords: 'Kubernetes, log, kafka, pod, container, fluentbit, output'
 description: 'Learn how to add Kafka to receive container logs, resource events, or audit logs.'
 linkTitle: "Add Kafka as a Receiver"
 weight: 8623
+version: "v3.4"
 ---
 You can use Elasticsearch, Kafka and Fluentd as log receivers in KubeSphere. This tutorial demonstrates:
 

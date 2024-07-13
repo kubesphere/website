@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 多集群, 流水线, DevOps'
 description: '学习如何在 Kubesphere 上创建多集群流水线。'
 linkTitle: "创建多集群流水线"
 weight: 11440
+version: "v3.4"
 ---
 
 由于云场上提供不同的托管 Kubernetes 服务，DevOps 流水线必须处理涉及多个 Kubernetes 集群的使用场景。

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud'
 description: 'Learn how to remove a member cluster from your cluster pool in KubeSphere.'
 linkTitle: "Remove a Member Cluster"
 weight: 5500
+version: "v3.4"
 ---
 
 This tutorial demonstrates how to remove a member cluster on the KubeSphere web console.

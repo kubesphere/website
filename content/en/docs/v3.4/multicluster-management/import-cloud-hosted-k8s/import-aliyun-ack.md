@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, ACK'
 description: 'Learn how to import an Alibaba Cloud Kubernetes cluster.'
 titleLink: "Import an Alibaba Cloud Kubernetes (ACK) Cluster"
 weight: 5310
+version: "v3.4"
 ---
 
 This tutorial demonstrates how to import an Alibaba Cloud Kubernetes (ACK) cluster through the [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/) method. If you want to use the agent connection method, refer to [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/).

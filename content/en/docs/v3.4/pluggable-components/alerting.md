@@ -4,6 +4,7 @@ keywords: "Kubernetes, alertmanager, KubeSphere, alerting"
 description: "Learn how to enable Alerting to identify any potential issues in advance before they take a toll on your business."
 linkTitle: "KubeSphere Alerting"
 weight: 6600
+version: "v3.4"
 ---
 
 Alerting is an important building block of observability, closely related to monitoring and logging. The alerting system in KubeSphere, coupled with the proactive failure notification system, allows users to know activities of interest based on alerting policies. When a predefined threshold of a certain metric is reached, an alert will be sent to preconfigured recipients. Therefore, you need to configure the notification method beforehand, including Email, Slack, DingTalk, WeCom, and Webhook. With a highly functional alerting and notification system in place, you can quickly identify and resolve potential issues in advance before they affect your business.

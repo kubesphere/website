@@ -4,6 +4,7 @@ keywords: "Kubesphere 安装， 华为云， ECS， 高可用性， 高可用性
 description: "了解如何在华为云虚拟机上创建高可用的 KubeSphere 集群。"
 
 Weight: 3230
+version: "v3.3"
 ---
 
 由于对于生产环境，我们需要考虑集群的高可用性。教您部署如何在华为云 ECS 实例服务快速部署一套高可用的生产环境

@@ -5,6 +5,7 @@ description: '了解如何从 KubeSphere 应用商店中部署 MySQL 并访问�
 
 link title: "在 KubeSphere 中部署 MySQL"
 weight: 14260
+version: "v3.4"
 ---
 [MySQL ](https://www.mysql.com/)是一个开源的关系型数据库管理系统 (RDBMS)，它基于最常用的数据库管理语言 SQL。作为世界上最受欢迎的开源数据库，MySQL 为云原生应用部署提供了完全托管的数据库服务。
 

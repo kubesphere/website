@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, federation, multicluster, hybrid-cloud'
 description: 'Understand how to manage a multi-cluster environment on KubeSphere.'
 linkTitle: "Manage a Multi-cluster Environment on KubeSphere"
 weight: 16710
+version: "v3.4"
 ---
 
 KubeSphere provides an easy-to-use multi-cluster feature to help you [build your multi-cluster environment on KubeSphere](../../../multicluster-management/). This guide illustrates how to manage a multi-cluster environment on KubeSphere.

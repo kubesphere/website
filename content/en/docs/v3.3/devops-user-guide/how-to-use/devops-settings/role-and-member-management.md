@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, DevOps, role, member'
 description: 'Create and manage roles and members in DevOps projects.'
 linkTitle: "Role and Member Management"
 weight: 11242
+version: "v3.3"
 ---
 
 This guide demonstrates how to manage roles and members in your DevOps project.

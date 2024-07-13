@@ -8,7 +8,7 @@ linkTitle: "Introduction"
 weight: 1000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.3"
 ---
 
 This chapter gives you an overview of the basic concept of KubeSphere, features, advantages, uses cases and more.

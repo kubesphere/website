@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Jenkins, pipeline step templates'
 description: 'Learn how to configure and use pipeline step templates in KubeSphere.'
 linkTitle: "Use Pipeline Step Templates"
 weight: 11214
+version: "v3.4"
 ---
 
 

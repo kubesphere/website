@@ -7,6 +7,7 @@ linkTitle: "在 Kubernetes 上安装 KubeSphere"
 weight: 4000
 
 icon: "/images/docs/v3.x/docs.svg"
+version: "v3.3"
 ---
 
 本章演示如何在云上或本地托管的现有 Kubernetes 集群上部署 KubeSphere。KubeSphere 为容器编排提供了高度灵活的解决方案，可以部署在多种 Kubernetes 引擎和服务上。

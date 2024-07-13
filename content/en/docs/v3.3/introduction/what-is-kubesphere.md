@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Introduction'
 description: 'What is KubeSphere'
 linkTitle: "What is KubeSphere"
 weight: 1100
+version: "v3.3"
 ---
 
 ## Overview

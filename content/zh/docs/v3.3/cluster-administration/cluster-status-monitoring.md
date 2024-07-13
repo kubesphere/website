@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 状态, 监控"
 description: "根据不同的指标（包括物理资源、etcd 和 API server）监控集群如何运行。"
 linkTitle: "集群状态监控"
 weight: 8200
+version: "v3.3"
 ---
 
 KubeSphere 支持对集群 CPU、内存、网络和磁盘等资源的相关指标进行监控。在**集群状态**页面，您可以查看历史监控数据并根据不同资源的使用率对节点进行排序。

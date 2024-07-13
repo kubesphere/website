@@ -5,6 +5,8 @@ description: "Monitor node status and learn how to add node labels or taints."
 
 linkTitle: "Node Management"
 weight: 8100
+
+version: "v3.3"
 ---
 
 Kubernetes runs your workloads by placing containers into Pods to run on nodes. A node may be a virtual or physical machine, depending on the cluster. Each node contains the services necessary to run Pods, managed by the control plane. For more information about nodes, see the [official documentation of Kubernetes](https://kubernetes.io/docs/concepts/architecture/nodes/).

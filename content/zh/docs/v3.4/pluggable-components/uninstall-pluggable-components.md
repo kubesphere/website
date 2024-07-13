@@ -4,6 +4,7 @@ keywords: "Installer, uninstall, KubeSphere, Kubernetes"
 description: "学习如何在 KubeSphere上卸载所有可插拔组件。"
 linkTitle: "卸载可插拔组件"
 Weight: 6940
+version: "v3.4"
 ---
 
 [启用 KubeSphere 可插拔组件之后](../../pluggable-components/)，还可以根据以下步骤卸载他们。请在卸载这些组件之前，备份所有重要数据。

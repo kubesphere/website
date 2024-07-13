@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 计量, 计费, 消费"
 description: "在不同层级追踪集群工作负载的资源用量。"
 linkTitle: "查看资源消费"
 weight: 15410
+version: "v3.3"
 ---
 
 KubeSphere 计量功能帮助您在不同层级追踪集群或企业空间中的资源消费。具有不同角色的租户只能看到其有权访问的数据。此外，您还可以为不同的资源设置价格以查看计费信息。

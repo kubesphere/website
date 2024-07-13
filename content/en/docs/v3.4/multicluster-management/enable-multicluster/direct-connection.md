@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, hybrid-cloud, direct-connection
 description: 'Understand the general steps of importing clusters through direct connection.'
 titleLink: "Direct Connection"
 weight: 5210
+version: "v3.4"
 ---
 
 If the kube-apiserver address of the member cluster is accessible on any node of the host cluster, you can adopt **Direction Connection**. This method is applicable when the kube-apiserver address of the member cluster can be exposed or host cluster and member cluster are in the same private network or subnet.

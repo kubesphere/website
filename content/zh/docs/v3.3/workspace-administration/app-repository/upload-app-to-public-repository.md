@@ -4,6 +4,7 @@ keywords: "Kubernetes, Helm, KubeSphere, 应用程序"
 description: "上传您自己的应用至 KubeSphere 的 GitHub 仓库。"
 linkTitle: "上传应用至 KubeSphere 的 GitHub 仓库"
 weight: 9320
+version: "v3.3"
 ---
 
 KubeSphere 提供一个可供测试和开发的应用仓库，用户可以上传应用至该仓库，应用审核通过后即可作为应用模板使用。

@@ -5,6 +5,7 @@ keywords: 'Kubesphere，Kubernetes，服务帐户'
 description: '学习如何在 Kubesphere 上创建服务帐户。'
 linkTitle: "服务帐户"
 weight: 10440
+version: "v3.3"
 ---
 
 [服务帐户](https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-service-account/) 为 Pod 中运行的进程提供了标识。当用户访问集群时，API 服务器将用户认证为特定的用户帐户。当这些进程与 API 服务器联系时，Pod 里容器的进程将被验证为特定的服务帐户。

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Applications, MeterSphere'
 description: 'Learn how to deploy MeterSphere on KubeSphere.'
 linkTitle: "Deploy MeterSphere on KubeSphere"
 weight: 14330
+version: "v3.4"
 ---
 
 MeterSphere is an open-source, one-stop, and enterprise-level continuous testing platform. It features test tracking, interface testing, and performance testing.

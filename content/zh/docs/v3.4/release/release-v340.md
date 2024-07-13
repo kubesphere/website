@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 版本说明"
 description: "KubeSphere 3.4.0 版本说明"
 linkTitle: "3.4.0 版本说明"
 weight: 18094
+version: "v3.4"
 ---
 
 ## DevOps

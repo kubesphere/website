@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, projects, quotas, resources, requests, limits
 description: 'Set requests and limits to control resource usage in a project.'
 linkTitle: "Project Quotas"
 weight: 9600
+version: "v3.3"
 ---
 
 KubeSphere uses [Kubernetes requests and limits](https://kubesphere.io/blogs/understand-requests-and-limits-in-kubernetes/) to control resource (for example, CPU and memory) usage in a project, also known as [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) in Kubernetes. Requests make sure a project can get the resources it needs as they are specifically guaranteed and reserved. On the contrary, limits ensure that a project can never use resources above a certain value.

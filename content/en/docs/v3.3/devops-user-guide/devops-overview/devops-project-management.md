@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, DevOps, Jenkins'
 description: 'Create and manage DevOps projects, and understand basic elements in DevOps projects.'
 linkTitle: "DevOps Project Management"
 weight: 11120
+version: "v3.3"
 ---
 
 This tutorial demonstrates how to create and manage DevOps projects.

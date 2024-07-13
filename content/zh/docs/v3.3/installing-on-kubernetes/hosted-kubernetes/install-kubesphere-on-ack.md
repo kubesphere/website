@@ -5,6 +5,7 @@ description: "了解如何在阿里云容器服务 ACK 上部署 KubeSphere。"
 
 
 weight: 4250
+version: "v3.3"
 ---
 
 本指南将介绍如何在[阿里云容器服务 ACK](https://www.aliyun.com/product/kubernetes/) 上部署并使用 KubeSphere 3.3 平台。

@@ -4,6 +4,7 @@ keywords: "Kubernetes, upgrade, KubeSphere, v3.3.2"
 description: "Use ks-installer to upgrade KubeSphere."
 linkTitle: "Upgrade with ks-installer"
 weight: 7300
+version: "v3.3"
 ---
 
 ks-installer is recommended for users whose Kubernetes clusters were not set up by [KubeKey](../../installing-on-linux/introduction/kubekey/), but hosted by cloud vendors or created by themselves. This tutorial is for **upgrading KubeSphere only**. Cluster operators are responsible for upgrading Kubernetes beforehand.

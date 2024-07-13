@@ -5,6 +5,7 @@ description: "How to use an LDAP service."
 
 linkTitle: "Use an LDAP Service"
 weight: 12220
+version: "v3.4"
 ---
 
 This document describes how to use an LDAP service as an external identity provider, which allows you to authenticate users against the LDAP service.

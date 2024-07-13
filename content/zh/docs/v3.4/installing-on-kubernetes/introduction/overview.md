@@ -5,6 +5,7 @@ description: "了解在已有 Kubernetes 集群上部署 KubeSphere 的一般步
 
 linkTitle: "概述"
 weight: 4110
+version: "v3.4"
 ---
 
 ![KubeSphere+K8s](https://pek3b.qingstor.com/kubesphere-docs/png/20191123144507.png)

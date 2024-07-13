@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, agent-connection'
 description: 'Understand the general steps of importing clusters through agent connection.'
 titleLink: "Agent Connection"
 weight: 5220
+version: "v3.3"
 ---
 
 The component [Tower](https://github.com/kubesphere/tower) of KubeSphere is used for agent connection. Tower is a tool for network connection between clusters through the agent. If the host cluster cannot access the member cluster directly, you can expose the proxy service address of the host cluster. This enables the member cluster to connect to the host cluster through the agent. This method is applicable when the member cluster is in a private environment (for example, IDC) and the host cluster is able to expose the proxy service. The agent connection is also applicable when your clusters are distributed across different cloud providers.

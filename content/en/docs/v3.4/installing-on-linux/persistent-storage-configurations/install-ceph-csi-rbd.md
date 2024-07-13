@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Ceph, installation, configurations, storage'
 description: 'Use KubeKey to create a cluster with Ceph providing storage services.'
 linkTitle: "Install Ceph"
 weight: 3350
+version: "v3.4"
 ---
 
 With a Ceph server, you can choose [Ceph RBD](https://kubernetes.io/docs/concepts/storage/storage-classes/#ceph-rbd) or [Ceph CSI](https://github.com/ceph/ceph-csi) as the underlying storage plugin. Ceph RBD is an in-tree storage plugin on Kubernetes, and Ceph CSI is a Container Storage Interface (CSI) driver for RBD, CephFS. 

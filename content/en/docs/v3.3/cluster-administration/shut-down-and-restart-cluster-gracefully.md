@@ -7,6 +7,8 @@ linkTitle: "Cluster Shutdown and Restart"
 weight: 8800
 
 icon: "/images/docs/v3.x/docs.svg"
+
+version: "v3.3"
 ---
 This document describes the process of gracefully shutting down your Kubernetes cluster and how to restart it. You might need to temporarily shut down your cluster for maintenance reasons.
 

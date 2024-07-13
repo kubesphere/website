@@ -4,6 +4,7 @@ keywords: 'Kubernetes, 集群, 配置, KubeKey'
 description: '在集群的配置文件中设置 Kubernetes 自定义配置。'
 linkTitle: "Kubernetes 集群配置"
 weight: 3160
+version: "v3.4"
 ---
 
 当创建 Kubernetes 集群时，您可以使用 [KubeKey](../kubekey/) 去生成含有集群基本信息的配置文件 (`config-sample.yaml`)。有关配置文件中的 Kubernetes 相关参数，请参阅以下示例。

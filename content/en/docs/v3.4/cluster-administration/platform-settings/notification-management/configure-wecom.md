@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, WeCom, Alerting, Notification'
 description: 'Learn how to configure a WeCom server to receive platform notifications sent by KubeSphere.'
 linkTitle: "Configure WeCom Notifications"
 weight: 8724
+version: "v3.4"
 ---
 
 [WeCom](https://work.weixin.qq.com/) is a communication platform for enterprises that includes convenient communication and office automation tools.

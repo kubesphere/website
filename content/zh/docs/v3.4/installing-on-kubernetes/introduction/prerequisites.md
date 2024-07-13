@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, 安装, 准备工作"
 description: "确保现有 Kubernetes 集群运行所在的环境满足部署 KubeSphere 的前提条件。"
 linkTitle: "准备工作"
 weight: 4120
+version: "v3.4"
 ---
 
 

@@ -5,6 +5,7 @@ description: "Learn basic concepts of Jobs and how to create Jobs on KubeSphere.
 linkTitle: "Jobs"
 
 weight: 10250
+version: "v3.4"
 ---
 
 A Job creates one or more Pods and ensures that a specified number of them successfully terminates. As Pods successfully complete, the Job tracks the successful completions. When a specified number of successful completions is reached, the task (namely, Job) is complete. Deleting a Job will clean up the Pods it created.

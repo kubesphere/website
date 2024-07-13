@@ -5,6 +5,7 @@ description: '介绍 KubeSphere 自定义监控功能和指标暴露，包括暴
 
 linkTitle: "介绍"
 weight: 10810
+version: "v3.4"
 ---
 
 您可以使用 KubeSphere 的自定义监控功能以可视化的形式监控自定义应用指标。应用可以是第三方应用，例如 MySQL、Redis 和 Elasticsearch，也可以是您自己的应用。本文介绍自定义监控功能的使用流程。

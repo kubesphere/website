@@ -7,6 +7,8 @@ linkTitle: "Installing on Kubernetes"
 weight: 4000
 
 icon: "/images/docs/v3.x/docs.svg"
+
+version: "v3.3"
 ---
 
 This chapter demonstrates how to deploy KubeSphere on existing Kubernetes clusters hosted on cloud or on-premises. As a highly flexible solution to container orchestration, KubeSphere can be deployed across various Kubernetes engines.

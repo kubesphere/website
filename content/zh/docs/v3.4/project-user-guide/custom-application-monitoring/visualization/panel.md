@@ -4,6 +4,7 @@ keywords: '监控, Prometheus, Prometheus Operator'
 description: '探索仪表板属性和图表指标。'
 linkTitle: "图表"
 weight: 10816
+version: "v3.4"
 ---
 
 KubeSphere 当前支持两种图表：文本图表和图形图表。

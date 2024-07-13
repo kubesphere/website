@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, Amazon EKS'
 description: '了解如何导入 Amazon Elastic Kubernetes 服务集群。'
 titleLink: "导入 AWS EKS 集群"
 weight: 5320
+version: "v3.4"
 ---
 
 本教程演示如何使用[直接连接](../../enable-multicluster/direct-connection)方法将 AWS EKS 集群导入 KubeSphere。如果您想使用代理连接方法，请参考[代理连接](../../../multicluster-management/enable-multicluster/agent-connection/)。

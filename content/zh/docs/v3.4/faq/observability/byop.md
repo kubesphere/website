@@ -4,6 +4,7 @@ keywords: "监控, Prometheus, node-exporter, kube-state-metrics, KubeSphere, Ku
 description: "在 KubeSphere 中使用您自己的 Prometheus 堆栈设置。"
 linkTitle: "集成您自己的 Prometheus"
 Weight: 16330
+version: "v3.4"
 ---
 
 KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operator、Prometheus、Alertmanager、Grafana（可选）、各种 ServiceMonitor、node-exporter 和 kube-state-metrics。在您安装 KubeSphere 之前，这些组件可能已经存在。在 KubeSphere 3.4 中，您可以使用自己的 Prometheus 堆栈设置。

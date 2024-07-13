@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, Installation"
 description: "Develop a basic understanding of the general steps of deploying KubeSphere on an existing Kubernetes cluster."
 linkTitle: "Overview"
 weight: 4110
+version: "v3.4"
 ---
 
 ![kubesphere+k8s](/images/docs/v3.x/installing-on-kubernetes/introduction/overview/kubesphere+k8s.png)

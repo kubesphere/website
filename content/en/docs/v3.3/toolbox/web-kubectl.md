@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, kubectl, cli'
 description: 'The web kubectl tool is integrated into KubeSphere to provide consistent user experiences for Kubernetes users.'
 linkTitle: "Web Kubectl"
 weight: 15500
+version: "v3.3"
 ---
 
 The Kubernetes command-line tool, kubectl, allows you to run commands on Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, view logs, and more.

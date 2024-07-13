@@ -5,6 +5,7 @@ description: 'Install KubeSphere on an existing Kubernetes cluster with a minima
 linkTitle: "Minimal KubeSphere on Kubernetes"
 weight: 2200,
 showSubscribe: true
+version: "v3.4"
 ---
 
 In addition to installing KubeSphere on a Linux machine, you can also deploy it on existing Kubernetes clusters. This tutorial demonstrates the general steps of completing a minimal KubeSphere installation on Kubernetes. For more information, see [Installing on Kubernetes](../../installing-on-kubernetes/).

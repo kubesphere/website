@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Docker, 凭证, KubeSphere, DevOps'
 description: '创建凭证以便您的流水线可以与第三方应用程序或网站进行交互。'
 linkTitle: "凭证管理"
 weight: 11241
+version: "v3.4"
 ---
 
 凭证是包含敏感信息的对象，例如用户名和密码、SSH 密钥和令牌 (Token)。当 KubeSphere DevOps 流水线运行时，会与外部环境中的对象进行交互，以执行一系列任务，包括拉取代码、推送和拉取镜像以及运行脚本等。此过程中需要提供相应的凭证，而这些凭证不会明文出现在流水线中。

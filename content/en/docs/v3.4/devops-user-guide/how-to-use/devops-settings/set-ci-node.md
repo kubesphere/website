@@ -4,6 +4,7 @@ keywords: 'Kubernetes, docker, KubeSphere, Jenkins, cicd, pipeline, dependency c
 description: 'Configure a node or a group of nodes specifically for continuous integration (CI) to speed up the building process in a pipeline.'
 linkTitle: "Set a CI Node for Dependency Caching"
 weight: 11245
+version: "v3.4"
 ---
 
 Generally, different dependencies need to be pulled as applications are being built. This may cause some issues such as long pulling time and network instability, further resulting in build failures. To provide your pipeline with a more enabling and stable environment, you can configure a node or a group of nodes specifically for continuous integration (CI). These CI nodes can speed up the building process by using caches. 

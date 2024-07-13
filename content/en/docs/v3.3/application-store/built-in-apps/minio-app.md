@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Minio, app-store'
 description: 'Learn how to deploy Minio from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy MinIO on KubeSphere"
 weight: 14240
+version: "v3.3"
 ---
 [MinIO](https://min.io/) object storage is designed for high performance and the S3 API. It is ideal for large, private cloud environments with stringent security requirements and delivers mission-critical availability across a diverse range of workloads.
 

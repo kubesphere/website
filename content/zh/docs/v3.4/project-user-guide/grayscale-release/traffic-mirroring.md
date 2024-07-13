@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 流量镜像, Istio'
 description: '了解如何在 KubeSphere 中执行流量镜像任务。'
 linkTitle: "流量镜像"
 weight: 10540
+version: "v3.4"
 ---
 
 流量镜像 (Traffic Mirroring)，也称为流量影子 (Traffic Shadowing)，是一种强大的、无风险的测试应用版本的方法，它将实时流量的副本发送给被镜像的服务。采用这种方法，您可以搭建一个与原环境类似的环境以进行验收测试，从而提前发现问题。由于镜像流量存在于主服务关键请求路径带外，终端用户在测试全过程不会受到影响。

@@ -7,6 +7,7 @@ linkTitle: "DevOps User Guide"
 weight: 11000
 
 icon: "/images/docs/v3.x/docs.svg"
+version: "v3.4"
 ---
 
 To deploy and manage your CI/CD tasks and related workloads on your Kubernetes clusters, you use the KubeSphere DevOps system. This chapter demonstrates how to manage and work in DevOps projects, including running pipelines, creating credentials, and integrating tools.

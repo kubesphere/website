@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Chart, Helm, KubeSphere, Application Template, Repository
 description: 'Understand the concept of app templates and how they can help to deploy applications within enterprises.'
 linkTitle: "App Templates"
 weight: 10110
+version: "v3.3"
 ---
 
 An app template serves as a way for users to upload, deliver, and manage apps. Generally, an app is composed of one or more Kubernetes workloads (for example, [Deployments](../../../project-user-guide/application-workloads/deployments/), [StatefulSets](../../../project-user-guide/application-workloads/statefulsets/) and [DaemonSets](../../../project-user-guide/application-workloads/daemonsets/)) and [Services](../../../project-user-guide/application-workloads/services/) based on how it functions and communicates with the external environment. Apps that are uploaded as app templates are built based on a [Helm](https://helm.sh/) package.

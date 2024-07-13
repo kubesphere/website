@@ -1,6 +1,7 @@
 ---
 linkTitle: "Installing in On-premises Environments"
 weight: 3500
+version: "v3.4"
 
 _build:
     render: false

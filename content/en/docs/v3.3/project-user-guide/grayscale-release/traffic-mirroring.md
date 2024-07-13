@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Traffic Mirroring, Istio'
 description: 'Learn how to conduct a traffic mirroring job on KubeSphere.'
 linkTitle: "Traffic Mirroring"
 weight: 10540
+version: "v3.3"
 ---
 
 Traffic mirroring, also called shadowing, is a powerful, risk-free method of testing your app versions as it sends a copy of live traffic to a service that is being mirrored. Namely, you implement a similar setup for acceptance test so that problems can be detected in advance. As mirrored traffic happens out of band of the critical request path for the primary service, your end users will not be affected during the whole process.

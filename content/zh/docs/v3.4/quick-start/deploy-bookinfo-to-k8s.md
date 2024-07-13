@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Bookinfo, Istio'
 description: '通过部署示例应用程序 Bookinfo 来探索 KubeSphere 服务网格的基本功能。'
 linkTitle: "部署并访问 Bookinfo"
 weight: 2400
+version: "v3.4"
 ---
 
 作为开源的服务网格解决方案，[Istio](https://istio.io/) 为微服务提供了强大的流量管理功能。以下是 [Istio](https://istio.io/latest/zh/docs/concepts/traffic-management/) 官方网站上关于流量管理的简介：

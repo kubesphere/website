@@ -1,6 +1,7 @@
 ---
 linkTitle: "在本地环境中安装"
 weight: 3500
+version: "v3.3"
 
 _build:
     render: false

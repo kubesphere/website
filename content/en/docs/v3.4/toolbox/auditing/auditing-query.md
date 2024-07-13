@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, auditing, log, query"
 description: "Understand how you can perform quick auditing log queries to keep track of the latest auditing information of your cluster."
 linkTitle: "Auditing Log Query"
 weight: 15330
+version: "v3.4"
 ---
 
 KubeSphere supports the query of auditing logs among isolated tenants. This tutorial demonstrates how to use the query function, including the interface, search parameters and detail pages.

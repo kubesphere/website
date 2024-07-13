@@ -4,4 +4,5 @@ keywords: 'Kubernetes, KubeSphere, installation, FAQ'
 description: 'Faq about installation'
 layout: "second"
 weight: 16100
+version: "v3.3"
 ---

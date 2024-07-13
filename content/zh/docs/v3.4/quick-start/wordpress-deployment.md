@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 应用, WordPress'
 description: '了解在 KubeSphere 中部署示例应用程序的整个流程，包括创建凭证、创建持久卷声明、组件设置等。'
 linkTitle: "创建并部署 WordPress"
 weight: 2500
+version: "v3.4"
 ---
 
 ## WordPress 简介

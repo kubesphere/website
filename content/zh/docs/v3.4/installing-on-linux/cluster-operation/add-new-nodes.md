@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 水平扩缩, 添加节点'
 description: '添加更多节点以扩展集群。'
 linkTitle: "添加新节点"
 weight: 3610
+version: "v3.4"
 ---
 
 KubeSphere 使用一段时间之后，由于工作负载不断增加，您可能需要水平扩展集群。自 KubeSphere v3.0.0 起，您可以使用全新的安装程序 [KubeKey](https://github.com/kubesphere/kubekey) 将新节点添加到集群。从根本上说，该操作是基于 Kubelet 的注册机制。换言之，新节点将自动加入现有的 Kubernetes 集群。KubeSphere 支持混合环境，这意味着新添加的主机操作系统可以是 CentOS 或者 Ubuntu。

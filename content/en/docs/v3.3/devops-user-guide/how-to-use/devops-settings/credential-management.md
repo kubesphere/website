@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Docker, Credential, KubeSphere, DevOps'
 description: 'Create credentials so that your pipelines can communicate with third-party applications or websites.'
 linkTitle: "Credential Management"
 weight: 11241
+version: "v3.3"
 ---
 
 Credentials are objects containing sensitive information, such as usernames and passwords, SSH keys, and tokens. When a KubeSphere DevOps pipeline is running, it interacts with objects in external environments to perform a series of tasks, including pulling code, pushing and pulling images, and running scripts. During this process, credentials need to be provided accordingly while they do not appear explicitly in the pipeline.

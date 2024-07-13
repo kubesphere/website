@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, DevOps, Kubeconfig, AWS"
 description: "How to create a DevOps kubeconfig on AWS"
 linkTitle: "Create a DevOps Kubeconfig on AWS"
 Weight: 16820
+version: "v3.4"
 ---
 
 If you have trouble deploying applications into your project when running a pipeline on your AWS cluster with KubeSphere installed, it may be caused by the issue of DevOps kubeconfig. This tutorial demonstrates how to create a DevOps kubeconfig on AWS.

@@ -5,6 +5,8 @@ description: "How to set up external authentication on KubeSphere."
 
 linkTitle: "Set Up External Authentication"
 weight: 12210
+
+version: "v3.3"
 ---
 
 This document describes how to use an external identity provider such as an LDAP service or Active Directory service on KubeSphere.

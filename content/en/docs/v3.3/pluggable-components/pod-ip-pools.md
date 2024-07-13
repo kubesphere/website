@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Pod, IP pools"
 description: "Learn how to enable Pod IP Pools to assign a specific Pod IP pool to your Pods."
 linkTitle: "Pod IP Pools"
 weight: 6920
+version: "v3.3"
 ---
 
 A Pod IP pool is used to manage the Pod network address space, and the address space between each Pod IP pool cannot overlap. When you create a workload, you can select a specific Pod IP pool, so that created Pods will be assigned IP addresses from this Pod IP pool.

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, DevOps, Jenkins, Pipeline, Webhook'
 description: 'Learn how to trigger a Jenkins pipeline by using a webhook.'
 linkTitle: "Trigger a Pipeline by Using a Webhook"
 weight: 11219
+version: "v3.3"
 ---
 
 If you create a Jenkinsfile-based pipeline from a remote code repository, you can configure a webhook in the remote repository so that the pipeline is automatically triggered when changes are made to the remote repository.

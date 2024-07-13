@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Jenkins, Shared Library, Pipelines'
 description: 'Learn how to use Jenkins shared libraries in a pipeline.'
 linkTitle: "Use Jenkins Shared Libraries in a Pipeline"
 weight: 11217
+version: "v3.3"
 ---
 
 For Jenkins pipelines that contain the same stages or steps, one way to avoid repetition in the pipeline codes is to use Jenkins shared libraries in the Jenkinsfiles.

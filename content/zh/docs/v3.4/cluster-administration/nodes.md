@@ -5,6 +5,7 @@ description: "监控节点状态并了解如何添加节点标签和污点。"
 
 linkTitle: "节点管理"
 weight: 8100
+version: "v3.4"
 ---
 
 Kubernetes 将容器放入容器组（Pod）中并在节点上运行，从而运行工作负载。取决于具体的集群环境，节点可以是虚拟机，也可以是物理机。每个节点都包含运行容器组所需的服务，这些服务由控制平面管理。有关节点的更多信息，请参阅[ Kubernetes 官方文档](https://kubernetes.io/zh/docs/concepts/architecture/nodes/)。

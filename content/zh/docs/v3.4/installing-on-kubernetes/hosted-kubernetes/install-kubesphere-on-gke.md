@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, GKE, 安装'
 description: '了解如何在 Google Kubernetes Engine 上部署 KubeSphere。'
 
 weight: 4240
+version: "v3.4"
 ---
 
 ![KubeSphere+GKE](https://pek3b.qingstor.com/kubesphere-docs/png/20191123145223.png)

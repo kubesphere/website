@@ -4,6 +4,7 @@ keywords: "FAQ, console, KubeSphere, Kubernetes, language"
 description: "Select a desire language of the console."
 linkTitle: "Change the Console Language"
 Weight: 16530
+version: "v3.4"
 ---
 
 The KubeSphere web console is currently available in four languages: Simplified Chinese, Traditional Chinese, English, and Spanish.

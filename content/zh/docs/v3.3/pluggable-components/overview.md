@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 可插拔组件, 概述"
 description: "了解 KubeSphere 中的关键组件以及对应的资源消耗。"
 linkTitle: "概述"
 weight: 6100
+version: "v3.3"
 ---
 
 从 2.1.0 版本开始，KubeSphere 解耦了一些核心功能组件。这些组件设计成了可插拔式，您可以在安装之前或之后启用它们。如果您不启用它们，KubeSphere 会默认以最小化进行安装部署。

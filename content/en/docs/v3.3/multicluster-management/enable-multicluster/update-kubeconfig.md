@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Multi-cluster, kubeconfig'
 description: 'Update the kubeconfig of member clusters.'
 linkTitle: "Update Kubeconfig"
 weight: 5240
+version: "v3.3"
 ---
 
 In multi-cluster environments, if the certificate of a member cluster is about to expire, the system will notify you 7 days before the expiry date. You can update the kubeconfig as follows.

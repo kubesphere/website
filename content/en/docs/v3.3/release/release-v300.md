@@ -5,6 +5,7 @@ description: "KubeSphere release notes for 3.0.0."
 
 linkTitle: "Release Notes - 3.0.0"
 weight: 18400
+version: "v3.3"
 ---
 
 ## How to get v3.0.0

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, QingCloud CSI, 安装, 配置, 存储'
 description: '使用 KubeKey 搭建 KubeSphere 集群并配置 QingCloud CSI 存储。'
 linkTitle: "安装 QingCloud CSI"
 weight: 3320
+version: "v3.3"
 ---
 
 如果您打算在[青云QingCloud](https://www.qingcloud.com/) 上安装 KubeSphere，可以选择 [QingCloud CSI](https://github.com/yunify/qingcloud-csi) 作为底层存储插件。

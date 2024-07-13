@@ -5,6 +5,7 @@ description: 'Learn how to create a high-availability cluster on VMware vSphere.
 
 
 weight: 3510
+version: "v3.4"
 ---
 
 ## Introduction

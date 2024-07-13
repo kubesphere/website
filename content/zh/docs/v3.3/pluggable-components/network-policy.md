@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, NetworkPolicy"
 description: "了解如何启用网络策略来控制 IP 地址或端口级别的流量。"
 linkTitle: "网络策略"
 weight: 6900
+version: "v3.3"
 ---
 
 从 3.0.0 版本开始，用户可以在 KubeSphere 中配置原生 Kubernetes 的网络策略。网络策略是一种以应用为中心的结构，使您能够指定如何允许容器组通过网络与各种网络实体进行通信。通过网络策略，用户可以在同一集群内实现网络隔离，这意味着可以在某些实例（容器组）之间设置防火墙。

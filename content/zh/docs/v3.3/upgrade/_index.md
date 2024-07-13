@@ -8,7 +8,7 @@ linkTitle: "升级"
 weight: 7000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.3"
 ---
 
 本章演示集群管理员如何将 KubeSphere 升级到 3.3.1。

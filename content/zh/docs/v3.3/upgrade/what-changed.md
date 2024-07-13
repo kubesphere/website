@@ -5,6 +5,7 @@ description: "了解升级后的变更。"
 
 linkTitle: "升级后的变更"
 weight: 7600
+version: "v3.3"
 ---
 
 本文说明先前版本现有设置在升级后的变更。如果您想了解 KubeSphere 3.3 的所有新功能和优化，请直接参阅 [3.3.0 版本说明](../../../v3.3/release/release-v330/)和 [3.3.1 版本说明](../../../v3.3/release/release-v331/)和[3.3.2 版本说明](../../../v3.3/release/release-v332/)。

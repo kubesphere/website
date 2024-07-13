@@ -5,6 +5,7 @@ keywords: 'Litmus,LitmusChaos,Kubernetes,Helm,KubeSphere'
 description: 'Learn how to deploy Litmus on KubeSphere and create chaos experiments.'
 linkTitle: "Deploy Litmus on KubeSphere"
 Weight: 14350
+version: "v3.3"
 ---
 
 [Litmus](https://litmuschaos.io/) is an open-source, cloud-native chaos engineering toolkit that focuses on simulating failure tests on Kubernetes clusters. It helps developers and SREs find vulnerabilities in clusters and programs, therefore improving the robustness of the system.

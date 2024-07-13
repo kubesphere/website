@@ -4,6 +4,7 @@ keywords: "namespace, project, KubeSphere, Kubernetes"
 description: "Add your existing Kubernetes namespaces to a KubeSphere workspace."
 linkTitle: "Add existing Kubernetes namespaces to a KubeSphere Workspace"
 Weight: 16430
+version: "v3.3"
 ---
 
 A Kubernetes namespace is a KubeSphere project. If you create a namespace object not from the KubeSphere console, the namespace does not appear directly in a certain workspace. But cluster administrators can still see the namespace on the **Cluster Management** page. At the same time, you can also place the namespace into a workspace.

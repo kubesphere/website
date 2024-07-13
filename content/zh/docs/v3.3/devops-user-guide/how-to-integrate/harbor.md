@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Docker, DevOps, Jenkins, Harbor'
 description: '将 Harbor 集成到流水线中并向您的 Harbor 仓库推送镜像。'
 linkTitle: "将 Harbor 集成到流水线"
 weight: 11320
+version: "v3.3"
 ---
 
 本教程演示如何将 Harbor 集成到 KubeSphere 流水线。

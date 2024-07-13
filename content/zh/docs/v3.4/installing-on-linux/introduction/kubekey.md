@@ -4,6 +4,7 @@ keywords: 'KubeKey，安装，KubeSphere'
 description: '了解 KubeKey 概念以及 KubeKey 如何帮您创建、扩缩和升级 Kubernetes 集群。'
 linkTitle: "KubeKey"
 weight: 3120
+version: "v3.4"
 ---
 
 [KubeKey](https://github.com/kubesphere/kubekey)（由 Go 语言开发）是一种全新的安装工具，替代了以前使用的基于 ansible 的安装程序。KubeKey 为您提供灵活的安装选择，您可以仅安装 Kubernetes，也可以同时安装 Kubernetes 和 KubeSphere。

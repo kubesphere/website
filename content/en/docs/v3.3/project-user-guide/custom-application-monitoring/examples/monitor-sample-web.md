@@ -4,6 +4,7 @@ keywords: 'monitoring, prometheus, prometheus operator'
 description: 'Use a Helm chart to deploy a sample web app and create a dashboard to monitor the app.'
 linkTitle: "Monitor a Sample Web Application"
 weight: 10813
+version: "v3.3"
 ---
 
 This section walks you through monitoring a sample web application. The application is instrumented with Prometheus Go client in its code. Therefore, it can expose metrics directly without the help of exporters.

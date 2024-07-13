@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Jenkins, 共享库, 流水线'
 description: '学习如何在流水线中使用 Jenkins 共享库。'
 linkTitle: "在流水线中使用 Jenkins 共享库"
 weight: 11217
+version: "v3.4"
 ---
 
 对于包含相同阶段或步骤的 Jenkins 流水线，在 Jenkinsfile 中使用 Jenkins 共享库避免流水线代码重复。

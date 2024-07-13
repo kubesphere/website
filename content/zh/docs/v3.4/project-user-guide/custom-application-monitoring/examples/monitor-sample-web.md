@@ -4,6 +4,7 @@ keywords: '监控, prometheus, prometheus operator'
 description: '使用 Helm Chart 来部署示例 Web 应用程序并为该应用程序创建监控面板。'
 linkTitle: "监控示例 Web 应用程序"
 weight: 10813
+version: "v3.4"
 ---
 
 本教程演示如何监控示例 Web 应用程序。该应用程序在代码中已接入 Prometheus Go 客户端，因此可以直接暴露指标，无需使用导出器 (Exporter)。

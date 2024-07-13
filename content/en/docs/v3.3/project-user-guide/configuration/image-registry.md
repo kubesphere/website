@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, docker, Secrets'
 description: 'Learn how to create an image registry on KubeSphere.'
 linkTitle: "Image Registries"
 weight: 10430
+version: "v3.3"
 ---
 
 A Docker image is a read-only template that can be used to deploy container services. Each image has a unique identifier (for example, image name:tag). For example, an image can contain a complete package of an Ubuntu operating system environment with only Apache and a few applications installed. An image registry is used to store and distribute Docker images.

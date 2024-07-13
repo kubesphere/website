@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, kubeconfig'
 description: '更新成员集群的 kubeconfig。'
 linkTitle: "更新 Kubeconfig"
 weight: 5240
+version: "v3.4"
 ---
 
 多集群环境下，如果成员集群证书即将过期，系统会提前7天提示您。参考以下步骤更新 kubeconfig。

@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, App Store, OpenPitrix"
 description: "了解如何启用应用商店，一个可以在内部实现数据和应用共享、并制定应用交付流程的行业标准的组件。"
 linkTitle: "KubeSphere 应用商店"
 weight: 6200
+version: "v3.4"
 ---
 
 作为一个开源的、以应用为中心的容器平台，KubeSphere 在 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、安装和发布应用。

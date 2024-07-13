@@ -4,6 +4,7 @@ keywords: "Kubernetes, Jenkins, KubeSphere, DevOps, cicd"
 description: "了解如何启用 DevOps 系统来进一步解放您的开发人员，让他们专注于代码编写。"
 linkTitle: "KubeSphere DevOps"
 weight: 6300
+version: "v3.4"
 ---
 
 基于 [Jenkins](https://jenkins.io/) 的 KubeSphere DevOps 系统是专为 Kubernetes 中的 CI/CD 工作流设计的，它提供了一站式的解决方案，帮助开发和运维团队用非常简单的方式构建、测试和发布应用到 Kubernetes。它还具有插件管理、[Binary-to-Image (B2I)](../../project-user-guide/image-builder/binary-to-image/)、[Source-to-Image (S2I)](../../project-user-guide/image-builder/source-to-image/)、代码依赖缓存、代码质量分析、流水线日志等功能。

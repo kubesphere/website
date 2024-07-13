@@ -5,6 +5,7 @@ description: 'Learn basic concepts of Deployments and how to create Deployments 
 linkTitle: "Deployments"
 
 weight: 10210
+version: "v3.3"
 ---
 
 A Deployment controller provides declarative updates for Pods and ReplicaSets. You describe a desired state in a Deployment object, and the Deployment controller changes the actual state to the desired state at a controlled rate. As a Deployment runs a number of replicas of your application, it automatically replaces instances that go down or malfunction. This is how Deployments make sure app instances are available to handle user requests.

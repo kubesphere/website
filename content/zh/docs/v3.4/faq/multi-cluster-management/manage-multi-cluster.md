@@ -4,7 +4,7 @@ keywords: 'Kubernetes，KubeSphere，联邦，多集群，混合云'
 description: '理解如何在 KubeSphere 上管理多集群环境。'
 linkTitle: "在 KubeSphere 上管理多集群环境"
 weight: 16710
-
+version: "v3.4"
 ---
 
 KubeSphere 提供了易于使用的多集群功能，帮助您[在 KubeSphere 上构建多集群环境](../../../multicluster-management/)。本指南说明如何在 KubeSphere 上管理多集群环境。

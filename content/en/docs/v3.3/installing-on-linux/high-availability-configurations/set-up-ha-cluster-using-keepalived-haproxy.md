@@ -5,6 +5,7 @@ description: 'Learn how to create a highly available cluster using Keepalived an
 linkTitle: "Set up an HA Cluster Using Keepalived and HAproxy"
 weight: 3230
 showSubscribe: true
+version: "v3.3"
 ---
 
 A highly available Kubernetes cluster ensures your applications run without outages which is required for production. In this connection, there are plenty of ways for you to choose from to achieve high availability.

@@ -8,7 +8,7 @@ linkTitle: "App Store"
 weight: 14000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.4"
 ---
 
 The KubeSphere App Store, powered by [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source platform that manages apps across clouds, provides users with enterprise-ready containerized solutions. You can upload your own apps through app templates or add app repositories that serve as an application tool for tenants to choose the app they want.

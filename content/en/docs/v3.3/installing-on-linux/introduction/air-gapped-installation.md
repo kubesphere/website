@@ -5,6 +5,7 @@ description: 'Understand how to install KubeSphere and Kubernetes in the air-gap
 
 linkTitle: "Air-gapped Installation"
 weight: 3140
+version: "v3.3"
 ---
 
 KubeKey is an open-source, lightweight tool for deploying Kubernetes clusters. It allows you to install Kubernetes/K3s only, both Kubernetes/K3s and KubeSphere, and other cloud-native plugins in a flexible, fast, and convenient way. Additionally, it is an effective tool for scaling and upgrading clusters.

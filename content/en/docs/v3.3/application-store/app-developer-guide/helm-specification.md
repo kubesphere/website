@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Helm, specifications'
 description: 'Understand the chart structure and specifications.'
 linkTitle: "Helm Specifications"
 weight: 14420
+version: "v3.3"
 ---
 
 Helm charts serve as a packaging format. A chart is a collection of files that describe a related set of Kubernetes resources. For more information, see the [Helm documentation](https://helm.sh/docs/topics/charts/).

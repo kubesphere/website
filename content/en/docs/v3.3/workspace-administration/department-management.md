@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Department, Role, Permission, Group'
 description: 'Create departments in a workspace and assign users to different departments to implement permission control.'
 linkTitle: "Department Management"
 weight: 9800
+version: "v3.3"
 ---
 
 This document describes how to manage workspace departments.

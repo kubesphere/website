@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Installation, RadonDB PostgreSQL'
 description: 'Learn how to deploy RadonDB PostgreSQL from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy RadonDB PostgreSQL on KubeSphere"
 weight: 14294
+version: "v3.3"
 ---
 
 [RadonDB PostgreSQL](https://github.com/radondb/radondb-postgresql-kubernetes) is an open source, cloud-native, and highly available cluster solution based on [PostgreSQL](https://postgresql.org) database system.

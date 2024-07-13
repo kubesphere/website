@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, 混合云, kubeconfig'
 description: '获取通过直接连接导入集群所需的 kubeconfig。'
 linkTitle: "获取 Kubeconfig"
 weight: 5230
+version: "v3.4"
 ---
 
 如果您使用[直接连接](../direct-connection/)导入，则需要提供 kubeconfig。

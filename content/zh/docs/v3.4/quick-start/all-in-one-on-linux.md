@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, All-in-One, 安装'
 description: '了解在 Linux 上如何使用最小安装包安装 KubeSphere。本教程为您理解容器平台提供了基础入门知识，为学习以下指南奠定基础。'
 linkTitle: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
 weight: 2100
+version: "v3.4"
 ---
 
 对于刚接触 KubeSphere 并想快速上手该[容器平台](https://kubesphere.io/)的用户，All-in-One 安装模式是最佳的选择，它能够帮助您零配置快速部署 KubeSphere 和 Kubernetes。

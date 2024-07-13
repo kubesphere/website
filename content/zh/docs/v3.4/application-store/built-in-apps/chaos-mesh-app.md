@@ -3,6 +3,7 @@ title: "在 KubeSphere 中部署 Chaos Mesh"
 keywords: 'KubeSphere, Kubernetes, Chaos Mesh, Chaos Engineering'
 description: '了解如何在 KubeSphere 中部署 Chaos Mesh 并进行混沌实验。'
 linkTitle: "部署 Chaos Mesh"
+version: "v3.4"
 ---
 
 [Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh) 是一个开源的云原生混沌工程平台，提供丰富的故障模拟类型，具有强大的故障场景编排能力，方便用户在开发测试中以及生产环境中模拟现实世界中可能出现的各类异常，帮助用户发现系统潜在的问题。

@@ -4,6 +4,7 @@ keywords: "Installation, SSH, KubeSphere, Kubernetes"
 description: "Understand why the SSH connection may fail when you use KubeKey to create a cluster."
 linkTitle: "SSH Connection Failure"
 Weight: 16600
+version: "v3.3"
 ---
 
 When you use KubeKey to set up a cluster, you create a configuration file which contains necessary host information. Here is an example of the field `hosts`:

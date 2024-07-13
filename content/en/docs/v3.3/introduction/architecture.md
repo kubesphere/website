@@ -5,6 +5,7 @@ description: "KubeSphere architecture"
 
 linkTitle: "Architecture"
 weight: 1500
+version: "v3.3"
 ---
 
 ## Separation of frontend and backend

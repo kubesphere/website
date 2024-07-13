@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, ConfigMap, Billing"
 description: "Enable the billing function in KubeSphere to view the billing data of your resources during a period."
 linkTitle: "Enable Billing"
 weight: 15420
+version: "v3.3"
 ---
 
 This tutorial demonstrates how to enable KubeSphere Billing to view the cost of different resources in your cluster. By default, the Billing function is disabled so you need to manually add the price information in a ConfigMap.

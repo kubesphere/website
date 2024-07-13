@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, 多集群, 混合云'
 description: '对多集群管理有个基本的了解，例如多集群管理的常见用例，以及 KubeSphere 可以通过多集群功能带来的好处。'
 linkTitle: "概述"
 weight: 5110
+version: "v3.3"
 ---
 
 如今，各种组织跨不同的云厂商或者在不同的基础设施上运行和管理多个 Kubernetes 集群的做法非常普遍。由于每个 Kubernetes 集群都是一个相对独立的单元，上游社区正在艰难地研究和开发多集群管理解决方案。即便如此，Kubernetes 集群联邦（Kubernetes Cluster Federation，简称 [KubeFed](https://github.com/kubernetes-sigs/kubefed)）可能是其中一种可行的方法。

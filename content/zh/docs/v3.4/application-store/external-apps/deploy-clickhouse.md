@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 安装, ClickHouse'
 description: '了解如何从 KubeSphere 应用商店部署 ClickHouse。'
 linkTitle: "部署 RadonDB ClickHouse 集群"
 weight: 14340
+version: "v3.4"
 ---
 
 [ClickHouse](https://clickhouse.tech/) 是一款用于联机分析 (OLAP) 的列式数据库管理系统 (DBMS)。[RadonDB ClickHouse](https://github.com/radondb/radondb-clickhouse-kubernetes) 是一款深度定制的 ClickHouse 集群应用，完美保持了 ClickHouse 集群功能特性，并具备集群自动管理、集群数据重分布、高性能低成本等优势功能特性。

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, 日志, Elasticsearch, Kafka, Fluentd, Pod, 容器, Fluen
 description: '了解集群日志接收器的基础知识，包括工具和一般步骤。'
 linkTitle: "介绍"
 weight: 8621
+version: "v3.3"
 ---
 
 KubeSphere 提供灵活的日志接收器配置方式。基于 [Fluent Operator](https://github.com/fluent/fluent-operator)，用户可以轻松添加、修改、删除、启用或禁用 Elasticsearch、Kafka 和 Fluentd 接收器。接收器添加后，日志会发送至该接收器。

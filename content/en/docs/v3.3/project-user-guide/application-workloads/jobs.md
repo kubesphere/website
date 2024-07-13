@@ -3,7 +3,7 @@ title: "Jobs"
 keywords: "KubeSphere, Kubernetes, Docker, Jobs"
 description: "Learn basic concepts of Jobs and how to create Jobs on KubeSphere."
 linkTitle: "Jobs"
-
+version: "v3.3"
 weight: 10250
 ---
 

@@ -4,6 +4,7 @@ keywords: "KubeSphere, OpenPitrix, 应用程序, 应用"
 description: "了解如何下架 KubeSphere 中的内置应用。"
 linkTitle: "移除 KubeSphere 中的内置应用"
 Weight: 16910
+version: "v3.4"
 ---
 
 作为一个以应用为中心的开源容器平台，KubeSphere 在基于 [OpenPitrix](https://github.com/openpitrix/openpitrix) 的应用商店中集成了应用。这些应用可供企业空间内的所有租户使用，但您也可以将这些应用从应用商店中移除。本教程为您演示怎样从应用商店中移除内置应用。

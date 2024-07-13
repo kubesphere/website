@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Calico, 网络策略'
 description: '了解网络隔离的概念以及如何配置项目网络策略。'
 linkTitle: "项目网络隔离"
 weight: 13300
+version: "v3.3"
 ---
 
 项目网络隔离使项目管理员能够使用不同的规则来放行不同的网络流量。本教程演示如何开启项目间的网络隔离并设置规则控制网络流量。

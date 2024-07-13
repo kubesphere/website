@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, DevOps, Jenkins'
 description: '创建并管理 DevOps 项目，了解 DevOps 项目中的各项基本元素。'
 linkTitle: "DevOps 项目管理"
 weight: 11120
+version: "v3.3"
 ---
 
 本教程演示如何创建和管理 DevOps 项目。

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 自定义, 平台'
 description: '配置邮件服务器并添加接收人以接收邮件通知。'
 linkTitle: "配置邮件通知"
 weight: 8722
+version: "v3.3"
 ---
 
 本教程演示如何配置邮件通知及添加接收人，以便接收告警策略的邮件通知。

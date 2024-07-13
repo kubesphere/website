@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, etcd, 应用商店'
 description: '了解如何从 KubeSphere 应用商店中部署 etcd 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 etcd"
 weight: 14210
+version: "v3.3"
 ---
 
 [etcd](https://etcd.io/) 是一个采用 Go 语言编写的分布式键值存储库，用来存储供分布式系统或机器集群访问的数据。在 Kubernetes 中，etcd 是服务发现的后端，存储集群状态和配置。

@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, 安装, Azure, AKS"
 description: "了解如何在 Azure Kubernetes 服务上部署 KubeSphere。"
 
 weight: 4210
+version: "v3.3"
 ---
 
 本文演示在 [Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/) 上部署 KubeSphere 的步骤。

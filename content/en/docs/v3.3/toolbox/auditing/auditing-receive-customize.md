@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, auditing, log, customize, receive"
 description: "Learn how to receive and customize auditing logs."
 linkTitle: "Receive and Customize Auditing Logs"
 weight: 15310
+version: "v3.3"
 ---
 
 KubeSphere Auditing Logs provide a security-relevant chronological set of records documenting the sequence of activities that have affected the system by individual users, administrators, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule. The event will be ignored, stored, or generate an alert based on different rules.

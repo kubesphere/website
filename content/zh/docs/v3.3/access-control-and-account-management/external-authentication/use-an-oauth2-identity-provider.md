@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, OAuth2, Identity Provider'
 description: '如何使用外部 OAuth2 身份提供者。'
 linkTitle: "OAuth 2.0身份提供者"
 weight: 12230
+version: "v3.3"
 ---
 
 本文档介绍了如何使用基于 OAuth 2.0 协议的外部身份提供者。

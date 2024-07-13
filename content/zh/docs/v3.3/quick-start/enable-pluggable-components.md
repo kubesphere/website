@@ -4,6 +4,7 @@ keywords: 'KubeSphere，Kubernetes，可插拔，组件'
 description: '了解如何在 KubeSphere 上启用可插拔组件，以便您全方位地探索 KubeSphere。安装前和安装后均可启用可插拔组件。'
 linkTitle: "启用可插拔组件"
 weight: 2600
+version: "v3.3"
 ---
 
 本教程演示如何在安装前或安装后启用 KubeSphere 的可插拔组件。请参照下表了解 KubeSphere 的全部可插拔组件。

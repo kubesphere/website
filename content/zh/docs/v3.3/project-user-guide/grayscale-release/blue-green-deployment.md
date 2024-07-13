@@ -5,6 +5,7 @@ description: '了解如何在 KubeSphere 中发布蓝绿部署。'
 
 linkTitle: "蓝绿部署"
 weight: 10520
+version: "v3.3"
 ---
 
 

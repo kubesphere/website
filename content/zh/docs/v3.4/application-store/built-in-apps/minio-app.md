@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Minio, 应用商店'
 description: '了解如何从 KubeSphere 应用商店中部署 Minio 并访问服务。'
 linkTitle: "在 KubeSphere 中部署 MinIO"
 weight: 14240
+version: "v3.4"
 ---
 [MinIO](https://min.io/) 对象存储为高性能和 S3 API 而设计。对于具有严格安全要求的大型私有云环境来说，MinIO 是理想选择，它可以为多种工作负载提供任务关键型可用性。
 

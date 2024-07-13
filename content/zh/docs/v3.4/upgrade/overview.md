@@ -4,6 +4,7 @@ keywords: "Kubernetes, 升级, KubeSphere, 3.4, 升级"
 description: "了解升级之前需要注意的事项，例如版本和升级工具。"
 linkTitle: "概述"
 weight: 7100
+version: "v3.4"
 ---
 
 ## 确定您的升级方案

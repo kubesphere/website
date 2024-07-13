@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, pluggable-components, overview"
 description: "Develop a basic understanding of key components in KubeSphere, including features and resource consumption."
 linkTitle: "Overview"
 weight: 6100
+version: "v3.4"
 ---
 
 KubeSphere has decoupled some core feature components since v2.1.0. These components are designed to be pluggable which means you can enable them either before or after installation. By default, KubeSphere will be deployed with a minimal installation if you do not enable them.

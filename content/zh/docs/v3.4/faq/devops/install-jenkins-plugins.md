@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, DevOps, Jenkins, 插件"
 description: "了解如何为 KubeSphere 中的 Jenkins 安装插件。"
 linkTitle: "为 KubeSphere 中的 Jenkins 安装插件"
 Weight: 16810
+version: "v3.4"
 ---
 
 KubeSphere DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能，而提升 Jenkins 功能的主要方法就是安装插件。本教程介绍如何在 Jenkins 面板上安装插件。

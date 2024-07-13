@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, role, member, management, project'
 description: 'Learn how to manage access control for a project.'
 linkTitle: "Project Role and Member Management"
 weight: 13200
+version: "v3.4"
 ---
 
 This tutorial demonstrates how to manage roles and members in a project. At the project level, you can grant permissions in the following modules to a role:

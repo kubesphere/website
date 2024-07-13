@@ -4,6 +4,7 @@ keywords: "Kubernetes, Elasticsearch, KubeSphere, 日志"
 description: "有关日志功能的常见问题。"
 linkTitle: "日志"
 weight: 16310
+version: "v3.3"
 ---
 
 本页包含一些关于日志的常见问题。

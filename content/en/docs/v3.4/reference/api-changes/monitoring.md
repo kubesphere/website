@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API, Monitoring'
 description: 'The API changes of the component **monitoring** in KubeSphere v3.4.0.'
 linkTitle: "Monitoring"
 weight: 17320
+version: "v3.4"
 ---
 
 ## API Version

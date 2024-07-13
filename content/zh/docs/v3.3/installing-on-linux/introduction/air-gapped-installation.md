@@ -5,6 +5,7 @@ description: '了解如何在离线环境下安装 KubeSphere 和 Kubernetes。'
 
 linkTitle: "离线安装"
 weight: 3130
+version: "v3.3"
 ---
 
 KubeKey 是一个用于部署 Kubernetes 集群的开源轻量级工具。它提供了一种灵活、快速、便捷的方式来仅安装 Kubernetes/K3s，或同时安装 Kubernetes/K3s 和 KubeSphere，以及其他云原生插件。除此之外，它也是扩展和升级集群的有效工具。

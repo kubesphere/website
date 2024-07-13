@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, API'
 description: 'REST API 是 KubeSphere 的基本结构。本指南向您展示如何访问 KubeSphere API 服务器。'
 linkTitle: "KubeSphere API"
 weight: 17200
+version: "v3.3"
 ---
 
 ## 架构

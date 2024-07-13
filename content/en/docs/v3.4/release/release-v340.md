@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Release Notes"
 description: "KubeSphere 3.4.0 Release Notes"
 linkTitle: "Release Notes - 3.4.0"
 weight: 18094
+version: "v3.4"
 ---
 
 ## DevOps

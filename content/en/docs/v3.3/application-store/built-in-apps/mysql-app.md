@@ -5,6 +5,8 @@ description: 'Learn how to deploy MySQL from the App Store of KubeSphere and acc
 
 link title: "Deploy MySQL"
 weight: 14260
+
+version: "v3.3"
 ---
 [MySQL](https://www.mysql.com/) is an open-source relational database management system (RDBMS), which uses the most commonly used database management language - Structured Query Language (SQL) for database management. It provides a fully managed database service to deploy cloud-native applications using the world's most popular open-source database.
 

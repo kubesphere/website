@@ -4,6 +4,7 @@ keywords: "Kubernetes, 升级, KubeSphere, v3.4.0"
 description: "升级 KubeSphere 后升级 QingCloud CSI。"
 linkTitle: "升级 QingCloud CSI"
 weight: 16210
+version: "v3.4"
 ---
 
 ## 升级 KubeSphere 后升级 QingCloud CSI

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, docker, cluster, configuration'
 description: 'Understand the environment requirements for KubeSphere.'
 linkTitle: "Environment Requirements"
 weight: 17500
+version: "v3.3"
 ---
 
 This page summarizes the some requirements for installing and using KubeSphere.

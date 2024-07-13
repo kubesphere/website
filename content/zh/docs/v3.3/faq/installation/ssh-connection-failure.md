@@ -4,6 +4,7 @@ keywords: "安装, SSH, KubeSphere, Kubernetes"
 description: "SSH 连接故障"
 linkTitle: "SSH 连接故障"
 Weight: 16600
+version: "v3.3"
 ---
 
 使用 KubeKey 设置集群时，将创建一个包含必要主机信息的配置文件。以下是 `hosts` 字段的示例：

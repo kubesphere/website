@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Docker, S2I, Source-to-Image'
 description: '如何使用 Source-to-Image 发布应用程序。'
 linkTitle: "Source to Image：无需 Dockerfile 发布应用"
 weight: 10610
+version: "v3.3"
 ---
 
 Source-to-Image (S2I) 是一个工具箱和工作流，用于从源代码构建可再现容器镜像。S2I 通过将源代码注入容器镜像，自动将编译后的代码打包成镜像。KubeSphere 集成 S2I 来自动构建镜像，并且无需任何 Dockerfile 即可发布到 Kubernetes。

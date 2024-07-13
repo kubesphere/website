@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, GlusterFS'
 description: '如何搭建 GlusterFS 服务器'
 linkTitle: "搭建 GlusterFS 服务器"
 weight: 17420
+version: "v3.4"
 ---
 
 [GlusterFS](https://kubernetes.io/zh/docs/concepts/storage/volumes/#glusterfs) 是开源的分布式文件系统，您能使用 GlusterFS 将 `glusterfs` 存储卷挂载到 Pod。如果 `glusterfs` 存储卷中预先填充了数据，则可以在 Kubernetes 集群中的 Pod 之间共享这些数据。

@@ -5,6 +5,7 @@ description: 'Understand the specific port requirements for different services i
 
 linkTitle: "Port Requirements"
 weight: 3150
+version: "v3.4"
 ---
 
 

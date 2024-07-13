@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, S2I, Source-to-Image, B2I, Binary-to-Image, W
 description: 'Learn how to configure S2I and B2I webhooks.'
 linkTitle: "Configure S2I and B2I Webhooks"
 weight: 10650
+version: "v3.4"
 ---
 
 KubeSphere provides Source-to-Image (S2I) and Binary-to-Image (B2I) features to  automate image building and pushing and application deployment. In KubeSphere v3.1.x and later versions, you can configure S2I and B2I webhooks so that your Image Builder can be automatically triggered when there is any relevant activity in your code repository.

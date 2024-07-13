@@ -4,7 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 流水线, Nexus, Jenkins'
 description: '学习如何在 KubeSphere 流水线中使用 Nexus。'
 linkTitle: "在流水线中使用 Nexus"
 weight: 11450
-
+version: "v3.4"
 
 ---
 

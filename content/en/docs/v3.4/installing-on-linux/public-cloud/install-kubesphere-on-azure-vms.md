@@ -4,6 +4,7 @@ keywords: "KubeSphere, Installation, HA, high availability, load balancer, Azure
 description: "Learn how to create a high-availability cluster on Azure virtual machines."
 linkTitle: "Deploy KubeSphere on Azure VM Instances"
 weight: 3410
+version: "v3.4"
 ---
 
 Using the [Azure cloud platform](https://azure.microsoft.com/en-us/overview/what-is-azure/), you can either install and manage Kubernetes by yourself or adopt a managed Kubernetes solution. If you want to use a fully-managed platform solution, see [Deploy KubeSphere on AKS](../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-aks/) for more details. 

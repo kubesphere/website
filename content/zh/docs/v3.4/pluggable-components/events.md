@@ -4,6 +4,7 @@ keywords: "Kubernetes, 事件, KubeSphere, k8s-events"
 description: "了解如何启用 KubeSphere 事件模块来跟踪平台上发生的所有事件。"
 linkTitle: "KubeSphere 事件系统"
 weight: 6500
+version: "v3.4"
 ---
 
 KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如节点调度状态和镜像拉取结果。这些事件会被准确记录下来，并在 Web 控制台中显示具体的原因、状态和信息。要查询事件，用户可以快速启动 Web 工具箱，在搜索栏中输入相关信息，并有不同的过滤器（如关键字和项目）可供选择。事件也可以归档到第三方工具，例如 Elasticsearch、Kafka 或 Fluentd。

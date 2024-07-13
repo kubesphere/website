@@ -4,6 +4,7 @@ keywords: "Kubernetes, auditing, KubeSphere, logs"
 description: "Learn how to enable Auditing to document platform events and activities."
 linkTitle: "KubeSphere Audit Logs"
 weight: 6700
+version: "v3.3"
 ---
 
 The KubeSphere Auditing Log System provides a security-relevant chronological set of records documenting the sequence of activities related to individual users, managers, or other components of the system. Each request to KubeSphere generates an event that is then written to a webhook and processed according to a certain rule.

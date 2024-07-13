@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, devops, jenkins, sonarqube, 流水线'
 description: '将 SonarQube 集成到流水线中进行代码质量分析。'
 linkTitle: "将 SonarQube 集成到流水线"
 weight: 11310
+version: "v3.4"
 ---
 
 [SonarQube](https://www.sonarqube.org/) 是一种主流的代码质量持续检测工具。您可以将其用于代码库的静态和动态分析。SonarQube 集成到 KubeSphere 流水线后，如果在运行的流水线中检测到问题，您可以直接在仪表板上查看常见代码问题，例如 Bug 和漏洞。

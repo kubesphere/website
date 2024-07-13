@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 项目, 网关, NodePort, LoadBalancer'
 description: '了解项目网关的概念以及如何进行管理。'
 linkTitle: "项目网关"
 weight: 13500
+version: "v3.3"
 ---
 
 KubeSphere 项目中的网关是一个[ NGINX Ingress 控制器](https://www.nginx.com/products/nginx-ingress-controller/)。KubeSphere 内置的用于 HTTP 负载均衡的机制称为[应用路由](../../project-user-guide/application-workloads/routes/)，它定义了从外部到集群服务的连接规则。如需允许从外部访问服务，用户可创建路由资源来定义 URI 路径、后端服务名称等信息。

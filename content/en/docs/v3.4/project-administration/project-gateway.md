@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, project, gateway, NodePort, LoadBalancer'
 description: 'Understand the concept of project gateway and how to manage it.'
 linkTitle: "Project Gateway"
 weight: 13500
+version: "v3.4"
 ---
 
 A gateway in a KubeSphere project is an [NGINX Ingress controller](https://www.nginx.com/products/nginx/kubernetes-ingress-controller). KubeSphere has a built‑in configuration for HTTP load balancing, called [Routes](../../project-user-guide/application-workloads/routes/). A Route defines rules for external connections to Services within a cluster. Users who need to provide external access to their Services create a Route resource that defines rules, including the URI path, backing service name, and other information.

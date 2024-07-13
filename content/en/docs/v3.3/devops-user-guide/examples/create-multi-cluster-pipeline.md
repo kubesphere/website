@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Multi-cluster, Pipeline, DevOps'
 description: 'Learn how to create a multi-cluster pipeline on KubeSphere.'
 linkTitle: "Create a Multi-cluster Pipeline"
 weight: 11440
+version: "v3.3"
 ---
 
 As cloud providers offer different hosted Kubernetes services, DevOps pipelines have to deal with use cases where multiple Kubernetes clusters are involved.

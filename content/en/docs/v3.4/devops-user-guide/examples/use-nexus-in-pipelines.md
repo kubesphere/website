@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Pipeline, Nexus, Jenkins'
 description: 'Learn how to use Nexus in pipelines on KubeSphere.'
 linkTitle: "Use Nexus in Pipelines"
 weight: 11450
+version: "v3.4"
 ---
 
 [Nexus](https://www.sonatype.com/products/repository-oss) is a repository manager that stores, organizes, and distributes artifacts. With Nexus, developers can have better control over the artifacts needed in a development process.

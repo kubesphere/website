@@ -4,6 +4,7 @@ keywords: "Installer, Telemetry, KubeSphere, Kubernetes"
 description: "Understand what Telemetry is and how to enable or disable it in KubeSphere."
 linkTitle: "Telemetry in KubeSphere"
 Weight: 16300
+version: "v3.3"
 ---
 
 Telemetry collects aggregate information about the size of KubeSphere clusters installed, KubeSphere and Kubernetes versions, components enabled, cluster running time, error logs and so on. KubeSphere promises that the information is only used by the KubeSphere community to improve products and will not be shared with any third parties.

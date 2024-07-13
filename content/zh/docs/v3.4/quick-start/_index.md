@@ -1,6 +1,7 @@
 ---
 title: "快速入门"
 description: "通过详细的图文帮助您更好地了解 KubeSphere"
+version: "v3.4"
 layout: "second"
 
 linkTitle: "快速入门"

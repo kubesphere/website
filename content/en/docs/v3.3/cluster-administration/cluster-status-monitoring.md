@@ -4,6 +4,8 @@ keywords: "Kubernetes, KubeSphere, status, monitoring"
 description: "Monitor how a cluster is functioning based on different metrics, including physical resources, etcd, and API server."
 linkTitle: "Cluster Status Monitoring"
 weight: 8200
+
+version: "v3.3"
 ---
 
 KubeSphere provides monitoring of related metrics such as CPU, memory, network, and disk of the cluster. You can also review historical monitoring data and sort nodes by different indicators based on their usage in **Cluster Status**.

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, multicluster, Amazon EKS'
 description: 'Learn how to import an Amazon Elastic Kubernetes Service cluster.'
 titleLink: "Import an AWS EKS Cluster"
 weight: 5320
+version: "v3.3"
 ---
 
 This tutorial demonstrates how to import an AWS EKS cluster through the [direct connection](../../../multicluster-management/enable-multicluster/direct-connection/) method. If you want to use the agent connection method, refer to [Agent Connection](../../../multicluster-management/enable-multicluster/agent-connection/).

@@ -4,6 +4,7 @@ keywords: "Kubernetes, 审计, KubeSphere, 日志"
 description: "了解如何启用审计来记录平台事件和活动。"
 linkTitle: "KubeSphere 审计日志"
 weight: 6700
+version: "v3.4"
 ---
 
 KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排列的记录，按顺序记录了与单个用户、管理人员或系统其他组件相关的活动。对 KubeSphere 的每个请求都会生成一个事件，然后写入 Webhook，并根据一定的规则进行处理。

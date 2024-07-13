@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Slack, 通知'
 description: '配置 Slack 通知及添加频道来接收告警策略、事件、审计等通知。'
 linkTitle: "配置 Slack 通知"
 weight: 8725
+version: "v3.3"
 ---
 
 本教程演示如何配置 Slack 通知及添加频道，以便接收告警策略的通知。

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, NFS 服务器'
 description: '如何搭建 NFS 服务器'
 linkTitle: "搭建 NFS 服务器"
 weight: 17410
+version: "v3.4"
 ---
 
 KubeSphere 支持存储插件 [NFS-client Provisioner](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client)。若想使用该插件，必须预先配置 NFS 服务器。NFS 服务器配置完成后，NFS 客户端会在服务器机器上挂载目录，以便 NFS 客户端访问 NFS 服务器上的文件，即您需要创建并输出客户端机器可以访问的目录。

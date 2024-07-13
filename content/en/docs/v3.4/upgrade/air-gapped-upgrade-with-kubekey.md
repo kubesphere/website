@@ -4,6 +4,7 @@ keywords: "Air-Gapped, kubernetes, upgrade, kubesphere, 3.4.1"
 description: "Use the offline package to upgrade Kubernetes and KubeSphere."
 linkTitle: "Air-Gapped Upgrade with KubeKey"
 weight: 7400
+version: "v3.4"
 ---
 Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by [KubeKey](../../installing-on-linux/introduction/kubekey/). If your Kubernetes cluster was provisioned by yourself or cloud providers, refer to [Air-gapped Upgrade with ks-installer](../air-gapped-upgrade-with-ks-installer/).
 

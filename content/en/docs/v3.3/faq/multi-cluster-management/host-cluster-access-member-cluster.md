@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, Multi-cluster, Host Cluster, Member Cluster"
 description: "Learn how to restore the Host Cluster access to a Member Cluster."
 linkTitle: "Restore the Host Cluster Access to A Member Cluster"
 Weight: 16720
+version: "v3.3"
 ---
 
 KubeSphere features [multi-cluster maganement](../../../multicluster-management/introduction/kubefed-in-kubesphere/) and tenants with necessary permissions (usually cluster administrators) can access the central control plane from the Host Cluster to manage all the Member Clusters. It is highly recommended that you manage your resources across your cluster through the Host Cluster.

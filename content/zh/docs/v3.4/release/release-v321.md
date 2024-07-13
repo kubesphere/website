@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, 版本说明"
 description: "KubeSphere 3.2.1 版本说明"  
 linkTitle: "3.2.1 版本说明"  
 weight: 18099
+version: "v3.4"
 ---
 
 ## 功能优化与问题修复

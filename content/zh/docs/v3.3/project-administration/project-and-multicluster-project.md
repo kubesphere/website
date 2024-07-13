@@ -5,6 +5,7 @@ description: '了解如何创建不同类型的项目。'
 
 linkTitle: "项目和多集群项目"
 weight: 13100
+version: "v3.3"
 ---
 
 KubeSphere 中的项目即 Kubernetes [命名空间](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/)，用于将资源划分成互不重叠的分组。这一功能可在多个租户之间分配集群资源，是一种逻辑分区功能。

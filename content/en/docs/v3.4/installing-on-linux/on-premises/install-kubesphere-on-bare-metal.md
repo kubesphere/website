@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, bare-metal'
 description: 'Learn how to create a multi-node cluster with one master on bare metal.'
 linkTitle: "Deploy KubeSphere on Bare Metal"
 weight: 3520
+version: "v3.4"
 ---
 
 ## Introduction

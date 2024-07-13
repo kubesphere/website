@@ -4,6 +4,7 @@ keywords: 'Kubernetes, 持久卷, 持久卷申领, 克隆, 快照, 扩容, PV, P
 description: '了解如何在 KubeSphere 中创建、编辑和挂载持久卷声明。'
 linkTitle: "持久卷声明"
 weight: 10310
+version: "v3.3"
 ---
 
  在项目中创建应用负载时，您可以为应用负载创建[持久卷声明（PVC）](https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/)。PVC 可用于创建存储请求，从而进一步为应用提供持久化存储。更具体地说，持久卷（PV）资源可用于管理持久化存储。

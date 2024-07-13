@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, HA, high availability, installation, configur
 description: 'Learn how to create a highly available cluster using a load balancer.'
 linkTitle: "Set up an HA Cluster Using a Load Balancer"
 weight: 3220
+version: "v3.4"
 ---
 
 You can set up Kubernetes cluster (a control plane node) with KubeSphere installed based on the tutorial of [Multi-node Installation](../../../installing-on-linux/introduction/multioverview/). Clusters with a control plane node may be sufficient for development and testing in most cases. For a production environment, however, you need to consider the high availability of the cluster. If key components (for example, kube-apiserver, kube-scheduler, and kube-controller-manager) are all running on the same control plane node, Kubernetes and KubeSphere will be unavailable once the control plane node goes down. Therefore, you need to set up a high-availability cluster by provisioning load balancers with multiple control plane nodes. You can use any cloud load balancer, or any hardware load balancer (for example, F5). In addition, Keepalived and [HAproxy](https://www.haproxy.com/), or Nginx is also an alternative for creating high-availability clusters.

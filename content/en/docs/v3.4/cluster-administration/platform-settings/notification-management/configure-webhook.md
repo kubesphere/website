@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, custom, platform, webhook'
 description: 'Configure a webhook server to receive platform notifications through the webhook.'
 linkTitle: "Configure Webhook Notifications"
 weight: 8726
+version: "v3.4"
 ---
 
 A webhook is a way for an app to send notifications triggered by specific events. It delivers information to other applications in real time, allowing users to receive notifications immediately.

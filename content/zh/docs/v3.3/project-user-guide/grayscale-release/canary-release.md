@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 金丝雀发布, istio, 服务网格'
 description: '了解如何在 KubeSphere 中部署金丝雀服务。'
 linkTitle: "金丝雀发布"
 weight: 10530
+version: "v3.3"
 ---
 
 KubeSphere 基于 [Istio](https://istio.io/) 向用户提供部署金丝雀服务所需的控制功能。在金丝雀发布中，您可以引入服务的新版本，并向其发送一小部分流量来进行测试。同时，旧版本负责处理其余的流量。如果一切顺利，您就可以逐渐增加向新版本发送的流量，同时逐步停用旧版本。如果出现任何问题，您可以用 KubeSphere 更改流量比例来回滚至先前版本。

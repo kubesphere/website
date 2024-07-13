@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Jenkins, 图形化流水线, 流水线模板'
 description: '了解如何在 KubeSphere 上使用流水线模板。'
 linkTitle: "使用流水线模板"
 weight: 11213
+version: "v3.3"
 ---
 
 KubeSphere 提供图形编辑面板，您可以通过交互式操作定义 Jenkins 流水线的阶段和步骤。KubeSphere 3.3 中提供了内置流水线模板，如 Node.js、Maven 以及 Golang，使用户能够快速创建对应模板的流水线。同时，KubeSphere 3.3 还支持自定义流水线模板，以满足企业不同的需求。

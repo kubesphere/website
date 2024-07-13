@@ -4,6 +4,7 @@ keywords: "会话超时, KubeSphere, Kubernetes"
 description: "理解会话超时并自定义超时时间。"
 linkTitle: "会话超时"
 Weight: 16420
+version: "v3.4"
 ---
 
 当用户登录 KubeSphere 的控制台时会话开始。当会话过期时，您会看到信息“**会话超时或此帐户在其他地方登录，请重新登录**”。

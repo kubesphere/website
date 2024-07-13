@@ -4,6 +4,7 @@ keywords: "Installer, KubeKey, KubeSphere, Kubernetes, add-ons"
 description: "Understand why the installation may fail when you use KubeKey to install an add-on through YAML."
 linkTitle: "Install an Add-on through YAML Using KubeKey"
 Weight: 16400
+version: "v3.3"
 ---
 
 When you use KubeKey to install add-ons, you put the add-on information (Chart or YAML) under the `addons` field in the configuration file (`config-sample.yaml` by default). If the add-on configuration is provided as a YAML file, in some cases, you may see an error message similar to this during the installation:

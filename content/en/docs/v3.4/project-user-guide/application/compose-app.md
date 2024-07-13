@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, service mesh, microservices'
 description: 'Learn how to compose a microservice-based application from scratch.'
 linkTitle: "Create a Microservices-based App"
 weight: 10140
+version: "v3.4"
 ---
 
 With each microservice handling a single part of the app's functionality, an app can be divided into different components. These components have their own responsibilities and limitations, independent from each other. In KubeSphere, this kind of app is called **Composed App**, which can be built through newly created Services or existing Services.

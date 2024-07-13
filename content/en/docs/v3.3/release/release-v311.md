@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, release notes"
 description: "KubeSphere Release Notes for 3.1.1"
 linkTitle: "Release Notes - 3.1.1"
 weight: 18200
+version: "v3.3"
 ---
 
 ## User Experience

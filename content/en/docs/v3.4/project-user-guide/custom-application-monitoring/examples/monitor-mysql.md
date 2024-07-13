@@ -4,6 +4,7 @@ keywords: 'monitoring, Prometheus, MySQL, MySQL Exporter'
 description: 'Deploy MySQL and MySQL Exporter and create a dashboard to monitor the app.'
 linkTitle: "Monitor MySQL"
 weight: 10812
+version: "v3.4"
 ---
 From the [Introduction](../../introduction#indirect-exposing) section, you know it is not feasible to instrument MySQL with Prometheus metrics directly. To expose MySQL metrics in Prometheus format, you need to deploy MySQL Exporter first.
 

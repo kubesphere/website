@@ -4,6 +4,7 @@ keywords: 'KubeSphere, RabbitMQ, Kubernetes, Installation'
 description: 'Learn how to deploy RabbitMQ from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy RabbitMQ on KubeSphere"
 weight: 14290
+version: "v3.4"
 ---
 [RabbitMQ](https://www.rabbitmq.com/) is the most widely deployed open-source message broker. It is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
 

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, Logs, OpenSearch, Pod, Container, Fluentbit, Output'
 description: 'Learn how to add OpenSearch to receive container logs, resource events, or audit logs.'
 linkTitle: "Add OpenSearch as a Log Receiver"
 weight: 8625
+version: "v3.4"
 ---
 
 [OpenSearch](https://opensearch.org/) is a distributed, community-driven, and 100% open-source search and analytics suite licensed under Apache 2.0. It can be used for real-time application monitoring, log analysis, website search, and more.

@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, TiDB, TiDB Operator, TiDB 集群'
 description: '了解如何在 KubeSphere 中部署 TiDB Operator 和 TiDB 集群。'
 linkTitle: "部署 TiDB Operator 和 TiDB 集群"
 weight: 14320
+version: "v3.4"
 ---
 
 [TiDB](https://en.pingcap.com/) 是一个支持混合事务和分析处理 (HTAP) 工作负载的云原生、开源 NewSQL 数据库，具有水平扩缩性、强一致性以及高可用性。

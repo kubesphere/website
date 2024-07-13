@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, TiDB, TiDB Operator, TiDB Cluster'
 description: 'Learn how to deploy TiDB Operator and a TiDB Cluster on KubeSphere.'
 linkTitle: "Deploy TiDB Operator and a TiDB Cluster"
 weight: 14320
+version: "v3.4"
 ---
 
 [TiDB](https://en.pingcap.com/) is a cloud-native, open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. It features horizontal scalability, strong consistency, and high availability.

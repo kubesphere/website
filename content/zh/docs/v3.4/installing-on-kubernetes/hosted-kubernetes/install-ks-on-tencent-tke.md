@@ -5,6 +5,7 @@ description: "介绍如何在腾讯云 TKE 上部署 KubeSphere。"
 
 
 weight: 4270
+version: "v3.4"
 ---
 
 本指南将介绍如何在[腾讯云 TKE](https://cloud.tencent.com/document/product/457/6759) 上部署并使用 KubeSphere 3.4 平台。

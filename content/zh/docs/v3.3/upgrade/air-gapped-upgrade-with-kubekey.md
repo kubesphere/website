@@ -4,6 +4,7 @@ keywords: "离线环境, kubernetes, 升级, kubesphere, 3.3"
 description: "使用离线包升级 Kubernetes 和 KubeSphere。"
 linkTitle: "使用 KubeKey 离线升级"
 weight: 7400
+version: "v3.3"
 ---
 对于 KubeSphere 和 Kubernetes 都是通过 [KubeKey](../../installing-on-linux/introduction/kubekey/) 部署的用户，推荐使用 KubeKey 离线升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考[使用 ks-installer 离线升级](../air-gapped-upgrade-with-ks-installer/)。
 

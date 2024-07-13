@@ -4,6 +4,7 @@ keywords: 'Kubesphere，Kubernetes，Ceph，安装，配置，存储'
 description: '如何创建一个使用 Ceph 提供存储服务的 KubeSphere 集群。'
 linkTitle: "安装 Ceph"
 weight: 3350
+version: "v3.3"
 ---
 
 您可以选择 [Ceph RBD](https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd) 或 [Ceph CSI ](https://github.com/ceph/ceph-csi) 作为 Ceph 服务器的底层存储插件。Ceph RBD 是 Kubernetes 上的一个树内存储插件，Ceph 容器存储接口（CSI）是一个用于 RBD 和 CephFS 的驱动程序。

@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, Meshery,Serive Mesh, Layer5, app-store'
 description: 'Learn how to deploy Meshery from the App Store of KubeSphere and access its service.'
 linkTitle: "Deploy Meshery on KubeSphere"
 weight: 14240
+version: "v3.3"
 ---
 [Meshery](https://meshery.io/) is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
 

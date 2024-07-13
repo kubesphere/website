@@ -4,6 +4,7 @@ keywords: "KubeSphere, OpenPitrix, Application, App"
 description: "Learn how to remove built-in apps from the KubeSphere App Store."
 linkTitle: "Remove Built-in Apps in KubeSphere"
 Weight: 16910
+version: "v3.3"
 ---
 
 As an open source and app-centric container platform, KubeSphere integrates apps in the App Store that is based on [OpenPitrix](https://github.com/openpitrix/openpitrix). They are accessible to all tenants in a workspace, while you can also remove them from the App Store. This tutorial demonstrates how to remove a built-in app from the App Store.

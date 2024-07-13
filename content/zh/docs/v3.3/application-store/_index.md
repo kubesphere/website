@@ -8,7 +8,7 @@ linkTitle: "应用商店"
 weight: 14000
 
 icon: "/images/docs/v3.x/docs.svg"
-
+version: "v3.3"
 ---
 
 KubeSphere 应用商店基于 [OpenPitrix](https://github.com/openpitrix/openpitrix)  （一个跨云管理应用的开源平台）为用户提供企业就绪的容器化解决方案。您可以通过应用模板上传自己的应用，或者添加应用仓库作为应用工具，供租户选择他们想要的应用。

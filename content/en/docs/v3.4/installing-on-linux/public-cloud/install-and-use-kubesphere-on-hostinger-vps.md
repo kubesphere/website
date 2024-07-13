@@ -4,6 +4,7 @@ keywords: "KubeSphere, Installation, Hostinger"
 description: "Learn how to use the KubeSphere VPS template."
 linkTitle: "Install and Use KubeSphere on Hostinger VPS"
 weight: 3450
+version: "v3.4"
 ---
 
 ## Introduction to VPS

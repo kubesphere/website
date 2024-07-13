@@ -4,6 +4,7 @@ keywords: "Kubernetes, KubeSphere, app-store, OpenPitrix"
 description: "Learn how to enable the KubeSphere App Store to share data and apps internally and set industry standards of delivery process externally."
 linkTitle: "KubeSphere App Store"
 weight: 6200
+version: "v3.4"
 ---
 
 As an open-source and app-centric container platform, KubeSphere provides users with a Helm-based App Store for application lifecycle management on the back of [OpenPitrix](https://github.com/openpitrix/openpitrix), an open-source web-based system to package, deploy and manage different types of apps. The KubeSphere App Store allows ISVs, developers, and users to upload, test, install, and release apps with just several clicks in a one-stop shop.

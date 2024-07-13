@@ -4,6 +4,7 @@ keywords: "KubeSphere, Kubernetes, installation, huawei, cce"
 description: "Learn how to deploy KubeSphere on Huawei Cloud Container Engine."
 
 weight: 4250
+version: "v3.4"
 ---
 
 This guide walks you through the steps of deploying KubeSphere on [Huaiwei CCE](https://support.huaweicloud.com/en-us/qs-cce/cce_qs_0001.html).

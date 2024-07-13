@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, Calico, Network Policy'
 description: 'Understand the concept of network isolation and how to configure network policies for a project.'
 linkTitle: "Project Network Isolation"
 weight: 13300
+version: "v3.4"
 ---
 
 KubeSphere project network isolation lets project administrators enforce which network traffic is allowed using different rules. This tutorial demonstrates how to enable network isolation among projects and set rules to control network traffic.

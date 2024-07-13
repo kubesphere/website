@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 事件, 查询'
 description: '了解如何快速执行事件查询，追踪集群的最新事件。'
 linkTitle: "事件查询"
 weight: 15200
+version: "v3.3"
 ---
 
 Kubernetes 事件系统用于深入了解集群内部发生的事件，KubeSphere 在此之上添加了跨度更长的历史查询和聚合功能，并且支持租户隔离的事件查询。

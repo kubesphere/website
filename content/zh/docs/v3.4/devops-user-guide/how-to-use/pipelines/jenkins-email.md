@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 通知, Jenkins, DevOps, CI/CD, 流水线, �
 description: '设置电子邮件服务器以接收有关您 Jenkins 流水线的通知。'
 linkTitle: "为 KubeSphere 流水线设置电子邮件服务器"
 Weight: 11218
+version: "v3.4"
 ---
 
 

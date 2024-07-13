@@ -4,6 +4,7 @@ keywords: 'KubeSphere, Kubernetes, 存储, 安装, 配置'
 description: '理解持久化存储。'
 linkTitle: "安装持久化存储"
 weight: 3310
+version: "v3.4"
 ---
 
 持久化存储是安装 KubeSphere 的**必备条件**。使用 [KubeKey](../../../installing-on-linux/introduction/kubekey/) 搭建 KubeSphere 集群时，可以安装不同的存储系统作为[插件](https://github.com/kubesphere/kubekey/blob/master/docs/addons.md)。在 Linux 上通过 KubeKey 安装 KubeSphere 的一般步骤如下：

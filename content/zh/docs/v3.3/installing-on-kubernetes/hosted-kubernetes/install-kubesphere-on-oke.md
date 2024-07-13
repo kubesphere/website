@@ -4,6 +4,7 @@ keywords: 'Kubernetes, KubeSphere, OKE, 安装, Oracle-cloud'
 description: '了解如何在 Oracle Cloud Infrastructure Container Engine 上部署 KubeSphere。'
 
 weight: 4260
+version: "v3.3"
 ---
 
 本文演示在 [Oracle Kubernetes Engine](https://www.oracle.com/cn/cloud/compute/container-engine-kubernetes.html) 上部署 KubeSphere 的步骤。
