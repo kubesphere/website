@@ -21,7 +21,7 @@
       ],
     },
     transformData: function (hits) {
-      const releaseNoteRegex = /(releases?|notes?|patches?|updates?|changelogs?)/i;
+      const releaseNoteRegex = /(releases?|notes?|patches?|updates?|changelogs?|版本|说明)/i;
       const inputValue = document.getElementById('search').value.trim();
       const isReleaseNote = releaseNoteRegex.test(inputValue);
       
