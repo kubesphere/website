@@ -17,7 +17,6 @@ Contributions of any kind are welcome! Thanks goes to these wonderful contributo
 ### Fork and clone the repository
 
 1. Fork the repository.
-
 2. Clone the repository to a local path and access it:
 
    ```
