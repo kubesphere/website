@@ -17,14 +17,14 @@
       hitsPerPage: 10,
       facetFilters: [
         `lang:${language}`,
-        `version:{{ if isset . "version" }}{{ .Version }}{{ else }}{{ .Params.version }}{{ end }}`
+        `version:{{ if isset . "version" }}{{ .Version }}{{ else }}{{ with .Parent.Params.section1.version }}{{ . }}{{ else }}{{ with .Parent.Parent.Params.section1.version }}{{ . }}{{ else }}{{ end }}{{ end }}{{ end }}`
       ],
     },
     transformData: function (hits) {
       const releaseNoteRegex = /(releases?|notes?|patches?|updates?|changelogs?|版本|说明)/i;
       const inputValue = document.getElementById('search').value.trim();
       const isReleaseNote = releaseNoteRegex.test(inputValue);
-      
+
       if (isReleaseNote) {
         return hits.filter(hit => hit.isReleaseNote.includes('yes'));
       } else {

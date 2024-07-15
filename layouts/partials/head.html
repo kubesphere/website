@@ -16,7 +16,7 @@
 <meta property="twitter:image" content="{{ with .Params.snapshot }}{{ . | absURL }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
 
 <meta name="docsearch:language" content="{{ .Site.LanguageCode }}" />
-<meta name="docsearch:version" content='{{ with .Params.section1.version }}{{ . }}{{ else }}{{ with .Params.version }}{{ . }}{{ end }}{{ end }}' />
+<meta name="docsearch:version" content='{{ with .Params.section1.version }}{{ . }}{{ else }}{{ with .Parent.Params.section1.version }}{{ . }}{{ else }}{{ with .Parent.Parent.Params.section1.version }}{{ . }}{{ else }}{{ end }}{{ end }}{{ end }}' />
 
 <link rel="canonical" href="https://kubesphere.io{{ .RelPermalink }}" />
 
