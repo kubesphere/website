@@ -1,5 +1,5 @@
 <div class="search-input-div">
-  <input id="search" type="text" placeholder="{{i18n "Search Documentation"}}">
+  <input id="search" type="text" placeholder="{{i18n " Search Documentation"}}">
   <svg width="1em" height="1em" viewBox="0 0 18 18">
     <g fill="none" fill-rule="evenodd">
       <path d="M12.606 11.192l5.24 5.24-1.415 1.414-5.239-5.24a7.041 7.041 0 0 0 1.414-1.414z" fill="#324558"></path>
@@ -7,34 +7,50 @@
     </g>
   </svg>
 </div>
+{{ define "recursiveVersion" }}{{ if isset . "version" }}{{ .Version }}{{ else if .Params.section1.version  }}{{ .Params.section1.version }}{{ else if .Parent }}{{ template "recursiveVersion" .Parent }}{{ else }}{{ end }}{{ end }}
 <script>
-docsearch({
-  appId:'P64S7K7Q7W',
-  apiKey: '1cf6480742e28cdc08c95710326ede25',
-  indexName: 'kubesphere',
-  inputSelector: '#search',
-  algoliaOptions: {
-      facetFilters: [`lang:${language}`],
+  docsearch({
+    appId: 'P64S7K7Q7W',
+    apiKey: '1cf6480742e28cdc08c95710326ede25',
+    indexName: 'kubesphere',
+    inputSelector: '#search',
+    algoliaOptions: {
       hitsPerPage: 10,
-  },
-  // transformData: function(hits) {
-  //   hits.forEach(hit => {
-  //     if (typeof window !== undefined) {
-  //       var host = window.location.host
-  //       if (host == 'kubesphere.com.cn') {
-  //         if (language == 'en') {
-  //           host = host + '/en'
-  //           hit.url = hit.url.replace('kubesphere.io', host)
-  //         } else if (language == 'zh') {
-  //           hit.url = hit.url.replace('kubesphere.io/zh', host)
-  //         }
-  //       } else {
-  //         hit.url = hit.url.replace('kubesphere.io', host)
-  //       }
-  //     }
-  //   })
-  //   return hits
-  // },
-  debug: false,
-})
+      facetFilters: [
+        `lang:${language}`,
+        `version:{{ template "recursiveVersion" . }}`
+      ],
+    },
+    transformData: function (hits) {
+      const releaseNoteRegex = /(releases?|notes?|patches?|updates?|changelogs?|版本|说明)/i;
+      const inputValue = document.getElementById('search').value.trim();
+      const isReleaseNote = releaseNoteRegex.test(inputValue);
+
+      if (isReleaseNote) {
+        return hits.filter(hit => hit.isReleaseNote.includes('yes'));
+      } else {
+        return hits.filter(hit => hit.isReleaseNote.includes('no'));
+      }
+    },
+    // transformData: function(hits) {
+    //   hits.forEach(hit => {
+    //     if (typeof window !== undefined) {
+    //       var host = window.location.host
+    //       if (host == 'kubesphere.com.cn') {
+    //         if (language == 'en') {
+    //           host = host + '/en'
+    //           hit.url = hit.url.replace('kubesphere.io', host)
+    //         } else if (language == 'zh') {
+    //           hit.url = hit.url.replace('kubesphere.io/zh', host)
+    //         }
+    //       } else {
+    //         hit.url = hit.url.replace('kubesphere.io', host)
+    //       }
+    //     }
+    //   })
+    //   return hits
+    // },
+    debug: false,
+  })
+
 </script>
