@@ -16,6 +16,8 @@
 <meta property="twitter:image" content="{{ with .Params.snapshot }}{{ . | absURL }}{{ else }}{{ with .Site.Params.snapshot }}{{ . | absURL }}{{ end }}{{ end }}"/>
 
 <meta name="docsearch:language" content="{{ .Site.LanguageCode }}" />
+{{ define "recursiveVersion" }}{{ if isset . "version" }}{{ .Version }}{{ else if .Params.section1.version  }}{{ .Params.section1.version }}{{ else if .Parent }}{{ template "recursiveVersion" .Parent }}{{ else }}{{ end }}{{ end }}
+<meta name="docsearch:version" content='{{ template "recursiveVersion" . }}' />
 
 <link rel="canonical" href="https://kubesphere.io{{ .RelPermalink }}" />
 
