@@ -10,6 +10,7 @@ section1:
   title: KubeSphere 文档
   content: 了解如何通过 KubeSphere 容器平台构建并管理云原生应用程序。获取文档、示例代码与教程等信息。
   image: /images/docs/v3.x/banner.png
+  version: "v3.3"
 
 sectionLink:
   docs:
