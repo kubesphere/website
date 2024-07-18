@@ -127,6 +127,14 @@ activities:
       link: https://kubesphere.io/zh/live/zhijianglab-kubesphere/
 
   review:
+    - text: 让容器通信变得简单：深度解析 Containerd 中的 CNI 插件
+      description: 了解 CNI 插件不仅可以帮助我们更好地管理 Kubernetes 集群，还能提升我们的整体运维效率。
+      link: https://kubesphere.io/zh/blogs/containerd-cni/
+
+    - text: 超越预期：containerd 如何成为 Kubernetes 的首选容器运行时
+      description: 通过专注于核心功能和深度集成，containerd 为容器管理提供了高效的解决方案。
+      link: https://kubesphere.io/zh/blogs/containerd-kubernetes/
+
     - text: Kubernetes 升级不弃 Docker：KubeKey 的丝滑之道
       description: 手把手教你如何借助 KubeKey 这个神器，让你在给 Kubernetes “装修升级”的过程中既稳又顺，还能把 Docker 那些贴心好用的功能保留下来。
       link: https://www.kubesphere.io/zh/blogs/upgrading-k8s-with-kubekey/
