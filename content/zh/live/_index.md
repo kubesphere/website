@@ -9,15 +9,15 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20240525.png
-  url: ./meetup-beijing-20240525/
+  image: /images/live/cloudnative-live-20240720.png
+  url: ./meetup-shanghai-20240720/
 
   notice:
-    title: KubeSphere Meetup 上海站——2024
-    tag: 预告
-    time: 2024 年 07 月 20 日
-    base: 上海
-    url: ./meetup-shanghai-20240720/
+    title: KubeSphere Meetup 北京站——2024
+    tag: 结束
+    time: 2024 年 05 月 25 日
+    base: 北京
+    url: ./meetup-beijing-20240525/
 
   over:
     title: KubeSphere Meetup 深圳站——2024
@@ -26,79 +26,114 @@ section2:
 
 section3:
   videos:
+    - title: LangChain 与 MinIO：AI 数据管理的可能性探索
+      link: ./shanghai0720-langchain/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-5.png
+      type: iframe
+      createTime: 2024.07.20
+      group: Meetup
+
+    - title: 在 KubeSphere 上构建轻量级的 K8s 数据平台
+      link: ./shanghai0720-kdp/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-4.png
+      type: iframe
+      createTime: 2024.07.20
+      group: Meetup
+
+    - title: StarShip 赋能产研高效降本增效
+      link: ./shanghai0720-starship/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-3.png
+      type: iframe
+      createTime: 2024.07.20
+      group: Meetup
+
+    - title: 基于 KubeSphere LuBan 架构将灾备能力无缝融入到控制平面中
+      link: ./shanghai0720-ys1000/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-2.png
+      type: iframe
+      createTime: 2024.07.20
+      group: Meetup
+
+    - title: 线上线下一体的开源 Hugging Face+
+      link: ./shanghai0720-csghub/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-1.png
+      type: iframe
+      createTime: 2024.07.20
+      group: Meetup
+
     - title: 闪电演讲 ⚡️——构建云原生湖仓数据智能一体化架构
       link: ./beijing0525-ai/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-ai-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-ai-cover.png
       type: iframe
       createTime: 2024.05.25
       group: Meetup
 
     - title: 以应用为中心的可插拔产品设计 KubeSphere 4.x
       link: ./beijing0525-kubesphere-2/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-kubesphere-2-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-kubesphere-2-cover.png
       type: iframe
       createTime: 2024.05.25
       group: Meetup
 
     - title: SkyWalking 二开企业级实战
       link: ./beijing0525-skywalking-2/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-skywalking-2-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-skywalking-2-cover.png
       type: iframe
       createTime: 2024.05.25
       group: Meetup
 
     - title: 使用 KubeSphere 部署 Databend，极速启动新一代云原生数据分析平台
       link: ./beijing0525-databend/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-databend-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-databend-cover.png
       type: iframe
       createTime: 2024.05.25
       group: Meetup
 
     - title: 可观测平台在 KubeSphere 4.x 可插拔架构下的演进
       link: ./beijing0525-kubesphere-1/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-kubesphere-1-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-kubesphere-1-cover.png
       type: iframe
       createTime: 2024.05.25
       group: Meetup
 
     - title: 洞察云原生服务性能--多层次剖析系统性能，分布式追踪不再是万能灵药
       link: ./beijing0525-skywalking-1/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-skywalking-1-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-meetup-20240525-skywalking-1-cover.png
       type: iframe
       createTime: 2024.05.25
       group: Meetup
 
     - title: 基于 K8s 的大数据平台构建
       link: ./shenzhen0420-kdp/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-jinjin-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-jinjin-cover.png
       type: iframe
       createTime: 2024.04.20
       group: Meetup
 
     - title: 铺设平台工程所主张的自服务路径实践
       link: ./shenzhen0420-pe/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-liyinlin-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-liyinlin-cover.png
       type: iframe
       createTime: 2024.04.20
       group: Meetup
 
     - title: 某保险基于 KubeSphere 的容器平台落地实践
       link: ./shenzhen0420-kubesphere/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-zhoujun-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-zhoujun-cover.png
       type: iframe
       createTime: 2024.04.20
       group: Meetup
 
     - title: Kubevirt 虚拟机备份保护介绍
       link: ./shenzhen0420-kubevirt/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-gongyongjie-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-gongyongjie-cover.png
       type: iframe
       createTime: 2024.04.20
       group: Meetup
 
     - title: 深入浅出 K8s 准入控制
       link: ./shenzhen0420-k8s/
-      snapshot: http://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-wanhongming-cover.png
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shenzhen-20240420-wanhongming-cover.png
       type: iframe
       createTime: 2024.04.20
       group: Meetup
