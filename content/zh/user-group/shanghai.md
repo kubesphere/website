@@ -75,8 +75,11 @@ members:
 
 activities:
   videos:
+    - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover.png
+      link: https://kubesphere.io/zh/live/meetup-shanghai-20240720/
+
     - image: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20230805-cover.png
-      link: https://www.kubesphere.io/zh/live/meetup-shanghai-20230805/
+      link: https://kubesphere.io/zh/live/meetup-shanghai-20230805/
 
     - image: https://pek3b.qingstor.com/kubesphere-community/images/driverless-cic-cover.png
       link: https://kubesphere.io/zh/live/driverless-cic/
