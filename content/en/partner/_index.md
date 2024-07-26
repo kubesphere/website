@@ -173,4 +173,8 @@ section4:
     - icon: "images/partner/logo-jibukeji.jpg"
       partnerType: "Go-to-market"
       content: Jibu specializes in providing cutting-edge cloud-native data protection products and storage solutions under a multi-cloud architecture for corporate users. We are dedicated to building data infrastructure essential for enterprises' digital and application modernization transformations. Our technical team comprises master's degree holders from renowned domestic universities, originating from IBM's core R&D team in cloud-native storage. With over a decade of profound expertise in enterprise-level storage development and years of deep exploration and practical experience in cloud-native storage, backup, and disaster recovery fields, we are poised to lead the way in technological innovation for enterprise storage solutions.
+
+    - icon: "images/partner/opencsg-logo.svg"
+      partnerType: "Go-to-market"
+      content: OpenCSG, founded in 2023, is committed to building a community for the large model ecosystem. It brings together enterprises from the entire value chain of the artificial intelligence industry to provide platform products and solutions for the application of large models in vertical industries. This helps businesses to reduce costs and improve efficiency in terms of computing power and human resources during the process of developing large models and implementing their applications.
 ---
