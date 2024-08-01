@@ -1,5 +1,45 @@
 [
   {
+    "title": "LangChain 与 MinIO——AI 数据管理的可能性探索",
+    "link": "//player.bilibili.com/player.html?aid=1906261916&bvid=BV1BS411w7ZJ&cid=1623666689&page=1&high_quality=1",
+    "createTime": "2024.07.20",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-5.png",
+    "group": "Meetup",
+    "tag": "AI"
+  },
+  {
+    "title": "在 KubeSphere 上构建轻量级的 K8s 数据平台",
+    "link": "//player.bilibili.com/player.html?aid=1906466138&bvid=BV1NU411S7kJ&cid=1623666557&page=1&high_quality=1",
+    "createTime": "2024.07.20",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-4.png",
+    "group": "Meetup",
+    "tag": "KubeSphere,大数据"
+  },
+  {
+    "title": "StarShip 赋能产研高效降本增效",
+    "link": "//player.bilibili.com/player.html?aid=1656276809&bvid=BV1wE421w755&cid=1623666343&page=1&high_quality=1",
+    "createTime": "2024.07.20",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-3.png",
+    "group": "Meetup",
+    "tag": "AI"
+  },
+  {
+    "title": "基于 KubeSphere LuBan 架构将灾备能力无缝融入到控制平面中",
+    "link": "//player.bilibili.com/player.html?aid=1006438527&bvid=BV1nx4y1s7Fq&cid=1623666061&page=1&high_quality=1",
+    "createTime": "2024.07.20",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-2.png",
+    "group": "Meetup",
+    "tag": "KubeSphere,灾备"
+  },
+  {
+    "title": "构线上线下一体的开源 Hugging Face+",
+    "link": "//player.bilibili.com/player.html?aid=1656304410&bvid=BV1nE421w7Sc&cid=16236656851&page=1&high_quality=1",
+    "createTime": "2024.07.20",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-1.png",
+    "group": "Meetup",
+    "tag": "AI"
+  },
+  {
     "title": "构建云原生湖仓数据智能一体化架构",
     "link": "//player.bilibili.com/player.html?aid=1105080916&bvid=BV15w4m1S7Au&cid=1561563253&page=1&high_quality=1",
     "createTime": "2024.05.25",
