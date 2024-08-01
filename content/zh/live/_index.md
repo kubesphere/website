@@ -1363,6 +1363,10 @@ section4:
   list:
     - year: 2024
       meetup: 
+        - place: 上海站（07.20）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-shanghai-20240720/
+
         - place: 北京站（05.25）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-beijing-20240525-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-beijing-20240525/
