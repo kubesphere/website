@@ -5,6 +5,18 @@ css: "scss/conferences.scss"
 viewDetail: 查看详情
 
 list:
+  - name: KubeCon China 2024
+    content: KubeSphere 社区在 KubeCon + CloudNativeCon + 开源峰会 + AI_dev 中国香港 2024 上的技术主题分享。
+    icon: images/conferences/kubecon.svg
+    bg: images/conferences/kubecon-bg.svg
+    bgColor: linear-gradient(270deg, rgb(101, 193, 148), rgb(76, 169, 134))
+    children:
+      - name: 超越基础：朝着使 Thanos 达到生产就绪状态的方向前进
+        summary: 作为最受欢迎且功能强大的 Prometheus 长期存储项目之一，Thanos 已被广泛采用。然而，在生产环境中使用 Thanos 仍然需要自动化许多日常操作。在这次演讲中，KubeSphere 的维护者将分享他们在生产环境中使用和维护 Thanos 的经验。
+        author: 霍秉杰，张军豪
+        link: thanos-2024/
+        image: https://pek3b.qingstor.com/kubesphere-community/images/kubecon-2024-thanos.png
+
   - name: KubeCon China 2023
     content: KubeSphere 社区在 KubeCon + CloudNativeCon 中国上海 2023 上的技术主题分享。
     icon: images/conferences/kubecon.svg
