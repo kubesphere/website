@@ -1,8 +1,13 @@
 ---
 title: "配置 NFS"
+<<<<<<< HEAD
 linkTitle: "配置 NFS"
 keywords: "Kubernetes, KubeSphere, 安装, 准备, 持久化存储, 网络文件系统, NFS"
 description: "介绍如何在生产环境中为 KubeSphere 集群配置网络文件系统（NFS）。"
+=======
+keywords: "Kubernetes, {ks_product}, 安装, 准备, 持久化存储, 网络文件系统, NFS"
+description: "介绍如何在生产环境中为{ks_product_both}集群配置网络文件系统（NFS）。"
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 weight: 05
 ---
 
@@ -36,14 +41,22 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo apt update
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Bash
 include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo apt install nfs-kernel-server
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令创建供{ks_product_both}使用的目录（将 <directory> 替换为实际的目录路径，例如 **/mnt/demo**）：
@@ -54,7 +67,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo mkdir -p <directory>
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令移除目录的访问限制（将 <directory> 替换为实际的目录路径，例如 **/mnt/demo**）：
@@ -65,14 +82,22 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo chown nobody:nogroup <directory>
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Bash
 include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo chmod 777 <directory>
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令编辑 NFS Kernel Server 的配置文件：
@@ -83,7 +108,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo vi /etc/exports
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 将{ks_product_both}集群节点的信息添加到文件中从而允许服务器访问 NFS 服务端，并保存文件：
@@ -94,7 +123,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 <directory> <IP address>(rw,sync,no_subtree_check)
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 将以下参数替换为实际值：
 
@@ -120,7 +153,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo exportfs -a
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令重启 NFS 服务端使配置生效：
@@ -131,7 +168,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo systemctl restart nfs-kernel-server
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 == 配置{ks_product_both}集群节点
@@ -154,14 +195,22 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo apt update
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Bash
 include::../../../../../_ks_components/code/bash.adoc[]
 
 sudo apt install nfs-common
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 登录用于执行{ks_product_both}安装操作的集群节点，执行以下命令创建 NFS 存储插件配置文件：
@@ -173,7 +222,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 vi nfs-client.yaml
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 将以下信息添加到配置文件中，并保存文件供后续安装{ks_product_both}时使用：
@@ -188,7 +241,11 @@ nfs:
 storageClass:
   defaultClass: true
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 将以下参数替换为实际值：
 

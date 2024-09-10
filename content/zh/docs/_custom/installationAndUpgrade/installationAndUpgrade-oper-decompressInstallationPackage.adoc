@@ -10,14 +10,22 @@ include::../../../_ks_components/code/bash.adoc[]
 
 tar -zxvf <package name>
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Bash
 include::../../../_ks_components/code/bash.adoc[]
 
 cd <directory>
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令为 KubeKey 二进制文件 **kk** 添加执行权限：
@@ -28,5 +36,9 @@ include::../../../_ks_components/code/bash.adoc[]
 
 sudo chmod +x kk
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --

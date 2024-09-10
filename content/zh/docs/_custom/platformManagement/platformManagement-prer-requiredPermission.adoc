@@ -1,2 +1,6 @@
 // :ks_include_id: 95e415bcbafa45ed8545cb7700801b09
+<<<<<<< HEAD
 您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:04-platform-management/04-access-control/02-users/[用户]和xref:04-platform-management/04-access-control/03-platform-roles/[平台角色]。
+=======
+您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:04-platform-management/04-access-control/02-users/_index.adoc[用户]和xref:04-platform-management/04-access-control/03-platform-roles/_index.adoc[平台角色]。
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3

@@ -1,8 +1,13 @@
 ---
 title: "配置 NeonSAN CSI"
+<<<<<<< HEAD
 linkTitle: "配置 NeonSAN CSI"
 keywords: "Kubernetes, KubeSphere, 安装, 准备, 持久化存储, 网络文件系统, NeonSAN CSI"
 description: "介绍如何在生产环境中为 KubeSphere 集群配置 NeonSAN CSI。"
+=======
+keywords: "Kubernetes, {ks_product}, 安装, 准备, 持久化存储, 网络文件系统, NeonSAN CSI"
+description: "介绍如何在生产环境中为{ks_product_both}集群配置 NeonSAN CSI。"
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 weight: 04
 ---
 
@@ -15,7 +20,11 @@ NeonSAN 是青云的一款企业级分布式块存储系统，NeonSAN CSI 是 Ne
 
 == 前提条件
 
+<<<<<<< HEAD
 - 您已经成功部署 NeonSAN v2.2.0 及以上版本，且容器集群的每个节点都已安装 QBD 与 NeonSAN 连通。具体操作请咨询 KubeSphere 技术支持人员。
+=======
+- 您已经成功部署 NeonSAN v2.2.0 及以上版本，且容器集群的每个节点都已安装 QBD 与 NeonSAN 连通。具体操作请咨询 KubeSphere 企业版技术支持人员。
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 - 您已经安装 Kubernetes v1.16 及其以上版本。
 - 您已经在容器集群的 master 节点安装了 Helm。本节以 Helm 3 为例。
 
@@ -36,7 +45,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 $ helm repo add ks-test https://charts.kubesphere.io/test
 "ks-test" has been added to your repositories
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令查看仓库是否添加成功。
@@ -49,7 +62,11 @@ $ helm repo list
 NAME        URL
 ks-test     https://charts.kubesphere.io/test
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令更新仓库的 Chart 列表。
@@ -60,7 +77,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 $ helm repo update
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令在仓库中查找 NeonSAN CSI 的安装包。
@@ -73,7 +94,11 @@ $ helm search repo neonsan
 NAME                CHART VERSION   APP VERSION DESCRIPTION
 ks-test/csi-neonsan 1.2.2           1.2.0       A Helm chart for NeonSAN CSI Driver
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 查看 Master 节点上安装的 qbd 版本。
@@ -88,7 +113,11 @@ Loaded Module Version: 2.2.0-336092c-202209010306-testlangchaor01n01
 NeonSAN Static Library Version: 3.0.0-092498bf
 NeonSAN Protocol Version: 1
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令安装 NeonSAN CSI。根据 Master 节点操作系统上安装的 qbd 版本，设置参数 **driver.repository**，例如如果查询到的 qbd 版本为 2.2.0，则命令里的参数为 **driver.repository="csiplugin/csi-neonsan-qbd2.2.0"**。
@@ -105,7 +134,11 @@ STATUS: deployed
 REVISION: 1
 TEST SUITE: None
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令检查 NeonSAN CSI 是否安装成功。
@@ -118,7 +151,11 @@ $ helm list -n kube-system
 NAME                    NAMESPACE   REVISION    UPDATED                                 STATUS      CHART                           APP VERSION
 csi-neonsan             kube-system 1           2020-11-20 10:28:32.240990384 +0800 CST deployed    csi-neonsan-1.2.2               1.2.0
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 检查 pod 是否在 Running 状态。
@@ -133,7 +170,11 @@ $ kubectl get pod -n kube-system | grep csi-neonsan
    kube-system                    csi-neonsan-node-dxk2z                                 2/2     Running     0          38s
    kube-system                    csi-neonsan-node-mp2b2                                 2/2     Running     0          38s
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 检查是否所有 NeonSAN CSI 组件运行正常。
@@ -149,7 +190,11 @@ $ kubectl -n kube-system get deployments.apps  csi-neonsan-controller
 NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
 csi-neonsan-controller   1/1     1            1           66m
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 * 当 **DESIRED** 取值等于 **READY** 和 **AVAILABLE** 取值时，csi-neonsan-node 正常。
@@ -162,7 +207,11 @@ $ kubectl -n kube-system get daemonsets.apps csi-neonsan-node
 NAME               DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
       csi-neonsan-node   3         3         3       3            3           <none>          66m
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 ====
 
@@ -176,7 +225,11 @@ $ kubectl get storageclass
 NAME              PROVISIONER                            RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
 csi-neonsan       neonsan.csi.qingstor.com               Delete          Immediate              true                   2m56s
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 查看存储类所使用的存储池。此存储池必须在 NeonSAN 中存在, 否则无法使用此存储类创建存储卷。
@@ -188,7 +241,11 @@ include::../../../../../_ks_components/code/bash.adoc[]
 $ kubectl get storageclass csi-neonsan -o yaml | grep pool_name
 pool_name: kube
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 登陆 NeonSAN 服务器, 查看存储类所使用的存储池是否存在，如不存在，请使用 **neonsan create_pool** 命令创建存储池。
@@ -205,7 +262,11 @@ Pool Count:  1
 | 33554432 | kube | 2020-08-07T14:53:52+08:00 |
 +----------+------+---------------------------+
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 
@@ -226,7 +287,11 @@ $ helm pull ks-test/csi-neonsan
 $ ls -l csi-neonsan*.tgz
 -rw-r--r--. 1 root root 5196 Nov 20 13:13 csi-neonsan-1.2.2.tgz
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令查看 NeonSAN CSI 所需要的所有镜像文件。
@@ -259,7 +324,11 @@ registrar:
   repository: csiplugin/csi-node-driver-registrar
   tag: v1.2.0
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 使用 Docker 将所有镜像下载到本地并打包，或上传至内网仓库（如 harbor）中。
@@ -276,7 +345,11 @@ docker pull csiplugin/csi-resizer:v0.4.0
 docker pull csiplugin/csi-snapshotter:v2.0.1
 docker pull csiplugin/csi-node-driver-registrar:v1.2.0
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 +
 --
@@ -292,7 +365,11 @@ docker save csiplugin/csi-neonsan:v1.2.0 \
   csiplugin/csi-node-driver-registrar:v1.2.0 \
   -o neonsan-csi-images.tar
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令将镜像包上传至集群所有节点的目录，如 **/tmp** 目录下，解压并安装。
@@ -304,14 +381,22 @@ include::../../../../../_ks_components/code/bash.adoc[]
 $ scp neonsan-csi-images.tar user@node1:/tmp/
 scp neonsan-csi-images.tar user@node2:/tmp/
 ...
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Bash
 include::../../../../../_ks_components/code/bash.adoc[]
 
 $ tar -xvf /tmp/neonsan-csi-images.tar -C /
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令检查安装是否完成。如果您看到所有的 NeonSAN CSI 镜像已经在列表中，那么说明安装成功。
@@ -322,11 +407,20 @@ include::../../../../../_ks_components/code/bash.adoc[]
 
 $ docker images
 
+<<<<<<< HEAD
 ----
+=======
+include::../../../../../_ks_components/code/codeEnd.adoc[]
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 参考link:#_在线安装_neonsan_csi[在线安装]中步骤 8 - 12 执行安装后检查。
 +
 --
+<<<<<<< HEAD
 NeonSAN CSI 安装成功后，您可以在 KubeSphere 控制台上的**存储**区域查看。
 --
+=======
+NeonSAN CSI 安装成功后，您可以在 KubeSphere 企业版控制台上的**存储**区域查看。
+--
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3

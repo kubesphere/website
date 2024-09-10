@@ -7,6 +7,10 @@ endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
 
+<<<<<<< HEAD
 * {ks_product_right}平台需要启用告警系统扩展组件。关于更多信息，请参阅《{ks_product_right}平台管理指南》的“扩展组件管理”章节。
+=======
+* {ks_product_right}平台需要启用告警系统扩展组件。关于更多信息，请参阅《{ks_product_full_right}平台管理指南》的“扩展组件管理”章节。
+>>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 endif::[]
