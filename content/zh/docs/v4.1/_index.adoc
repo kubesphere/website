@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: 文档中心
 css: scss/docs.scss
 isDocsRoot: true
@@ -41,64 +40,4 @@ section3:
   titleRight: 想要在您的云上托管 KubeSphere?
   btnContent: 与我们合作
   btnLink: /partner/
-=======
-title: KubeSphere 企业版
-weight: 45
-css: scss/docs.scss
-LinkTitle: KubeSphere 企业版
-pdf_coverDocName: KubeSphere 企业版 v4.1.0
-pdf_projectVersion: '4.1.0'
-pdf_releaseDate: 2024-04-12
-section1:
-  title: KubeSphere 企业版
-  content: 了解如何通过 KubeSphere 企业版构建并管理云原生应用程序。获取文档、示例代码与教程等信息。
-  image: /images/docs/banner.png
-study_section:
-  - title: 了解
-    icon: icon-note_tree_duotone
-    children:
-      - title: 产品简介
-        children:
-          - title: 产品优势
-            url: 01-intro/01-introduction/
-          - title: 应用场景
-            url: 01-intro/03-scenarios/
-  - title: 上手
-    icon: icon-gamepad_2_duotone
-    children:
-      - title: 快速入门
-        children:
-          - title: 最小化安装
-            url: 02-quickstart/01-install-ks-core
-          - title: 安装示例组件
-            url: 02-quickstart/02-install-a-demo-extension
-          - title: 控制用户权限
-            url: 02-quickstart/03-control-user-permissions
-  - title: 管理
-    icon: icon-simulation_duotone
-    children:
-      - title: 管理指南
-        children:
-          - title: 扩展组件管理
-            url: 06-extension-user-guide
-          - title: 集群管理
-            url: 07-cluster-management
-          - title: 企业空间管理
-            url: 08-workspace-management
-          - title: 项目管理
-            url: 09-project-management
-  - title: 使用
-    icon: icon-apps_2_duotone
-    children:
-      - title: 扩展组件
-        children:
-          - title: DevOps
-            url: 11-use-extensions/01-devops
-          - title: 应用商店管理
-            url: 11-use-extensions/02-app-store
-          - title: Whizard 可观测平台
-            url: 11-use-extensions/05-observability-platform
-          - title: KubeSphere 网络
-            url: 11-use-extensions/11-network
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 ---
