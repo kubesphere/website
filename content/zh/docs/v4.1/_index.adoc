@@ -1,6 +1,5 @@
 ---
 title: 文档中心
-weight: 45
 css: scss/docs.scss
 isDocsRoot: true
 LinkTitle: 文档
@@ -15,23 +14,14 @@ sectionLink:
     title: 常用文档
     description: 通过快速入门、教程和示例等学习使用 KubeSphere。
     list:
-      - /docs/v4.1/02-quickstart/01-install-ks-core
-      - /docs/v4.1/06-extension-user-guide/01-install-components-pdf.adoc
+      - /docs/v4.1/02-quickstart/01-install-kubesphere.adoc
+      - /docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc
       - /docs/v4.1/02-quickstart/03-control-user-permissions.adoc
-      - /docs/v4.1/01-intro/01-introduction.adoc
+      - /docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes.adoc
       - /docs/v4.1/07-cluster-management/10-multi-cluster-management
-      - /docs/v4.1/10-toolbox
-      
-  videos:
-    title: 视频教程
-    description: 观看视频教程学习 KubeSphere。
-    list:
-      - link: https://www.bilibili.com/video/BV1KA411s7D3
-        text: All-in-One 模式安装 KubeSphere
-      - link: https://www.bilibili.com/video/BV16y4y1v7cn
-        text: 多节点安装 KubeSphere
-      - link: https://www.bilibili.com/video/BV1Pz4y1C7jr
-        text: 离线安装 KubeSphere
+      - /docs/v4.1/09-project-management/06-project-settings/02-project-roles/01-create-a-project-role.adoc
+      - /docs/v4.1/06-extension-user-guide/01-install-components-pdf.adoc
+      - /docs/v4.1/10-toolbox/01-use-kubectl-tool.adoc
 
 section3:
   title: 在云服务上运行 KubeSphere 与 Kubernetes 技术栈

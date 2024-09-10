@@ -28,9 +28,12 @@ ignorefiles = [ ".*/_custom" ]
     toclevels = 2
     file_output_type = "html"
     relfilesuffix = "/"
-    ks_product_left = " KubeSphere "
-    ks_product_right = " KubeSphere "
+    ks_product = "KubeSphere"
+    ks_product_left = " KubeSphere"
+    ks_product_right = "KubeSphere "
     ks_product_both = " KubeSphere "
+    ks_product_full = "KubeSphere"
+    ks_product_ver = "v4.1"
 
 [security]
   enableInlineShortcodes = false
@@ -42,6 +45,9 @@ ignorefiles = [ ".*/_custom" ]
   [security.http]
     methods = ['(?i)GET|POST']
     urls = ['.*']
+
+[security.gotemplates]
+allowActionJSTmpl = true
 
 [Taxonomies]
 
@@ -153,49 +159,49 @@ hasChildren = true
     parent = "Documentation"
     name = "v3.4 <img src='/images/header/star.svg' alt='star'>"
     URL = "/docs/v3.4"
-    weight = 1
+    weight = 43
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.3"
     URL = "/docs/v3.3"
-    weight = 2
+    weight = 44
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.2"
     URL = "https://v3-2.docs.kubesphere.io/docs"
-    weight = 3
+    weight = 45
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.1"
     URL = "https://v3-1.docs.kubesphere.io/docs"
-    weight = 4
+    weight = 46
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v3.0"
     URL = "https://v3-0.docs.kubesphere.io/docs"
-    weight = 5
+    weight = 47
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v2.1"
     URL = "https://v2-1.docs.kubesphere.io/docs"
-    weight = 6
+    weight = 48
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v2.0"
     URL = "https://v2-0.docs.kubesphere.io/docs/"
-    weight = 7
+    weight = 49
 
     [[languages.en.menu.main]]
     parent = "Documentation"
     name = "v1.0"
     URL = "https://v1-0.docs.kubesphere.io/docs/"
-    weight = 8
+    weight = 50
 
 [[languages.en.menu.main]]
 weight = 5
@@ -318,51 +324,57 @@ hasChildren = true
 name = "文档中心"
     [[languages.zh.menu.main]]
     parent = "文档中心"
-    name = "v3.4 <img src='/images/header/star.svg' alt='star'>"
+    name = "v4.1 <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs/v4.1"
+    weight = 42
+
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "v3.4"
     URL = "/docs/v3.4"
-    weight = 1
+    weight = 43
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v3.3"
     URL = "/docs/v3.3"
-    weight = 2
+    weight = 44
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v3.2"
     URL = "https://v3-2.docs.kubesphere.io/zh/docs/"
-    weight = 3
+    weight = 45
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v3.1"
     URL = "https://v3-1.docs.kubesphere.io/zh/docs/"
-    weight = 4
+    weight = 46
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v3.0"
     URL = "https://v3-0.docs.kubesphere.io/zh/docs/"
-    weight = 5
+    weight = 47
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v2.1"
     URL = "https://v2-1.docs.kubesphere.io/docs/zh-CN/"
-    weight = 6
+    weight = 48
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v2.0"
     URL = "https://v2-0.docs.kubesphere.io/docs/zh-CN/"
-    weight = 7
+    weight = 49
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
     name = "v1.0"
     URL = "https://v1-0.docs.kubesphere.io/docs/zh-CN/"
-    weight = 8
+    weight = 50
 
 [[languages.zh.menu.main]]
 weight = 5

@@ -1,8 +1,8 @@
 ---
 title: "安装 Kubernetes 和 KubeSphere"
 linkTitle: "安装 Kubernetes 和 KubeSphere"
-keywords: "Kubernetes, KubeSphere, 安装, 安装 KubeSphere, 安装 Kubernetes"
-description: "介绍如何安装 Kubernetes 和 KubeSphere。"
+keywords: "Kubernetes, {ks_product}, 安装, 安装{ks_product_left}, 安装 Kubernetes"
+description: "介绍如何在生产环境中安装 Kubernetes 和{ks_product_left}。"
 weight: 02
 ---
 
@@ -14,17 +14,17 @@ weight: 02
 
 == 前提条件
 
-* 您需要联系{ks_product_both}的服务支持团队获取{ks_product_left} v4.1.0 安装包。
-
-// 如实施现场条件允许在线拉取公开仓库，具备在线安装条件，可联系 KubeSphere 产品团队获取在线安装文件及相关信息。
-
 * 您需要准备至少 1 台 Linux 服务器作为集群节点。在生产环境中，为确保集群具备高可用性，建议准备至少 5 台 Linux 服务器，其中 3 台作为控制平面节点，另外 2 台作为工作节点。如果您在多台 Linux 服务器上安装{ks_product_left}，请确保所有服务器属于同一子网。
 
 * 集群节点的操作系统和版本须为 Ubuntu 16.04、Ubuntu 18.04、Ubuntu 20.04、Ubuntu 22.04、Debian 9、Debian 10、CentOS 7、CentOS Stream、RHEL 7、RHEL 8、SLES 15 或 openSUSE Leap 15。多台服务器的操作系统可以不同。关于其它操作系统和版本支持，请联系{ks_product_both}技术支持。
 
 * 在生产环境中，为确保集群具有足够的计算和存储资源，建议每台集群节点配置至少 8 个 CPU 核心、16 GB 内存和 200 GB 磁盘空间。除此之外，建议在每台集群节点的 **/var/lib/docker**（对于 Docker）或 **/var/lib/containerd**（对于 containerd） 目录额外挂载至少 200 GB 磁盘空间用于存储容器运行时数据。
 
-* 除集群节点外，您还需要准备一台 Linux 服务器用于创建私有镜像服务，该服务器必须与{ks_product_both}集群节点网络连通，并且在 **/mnt/registry** 目录挂载至少 100 GB 磁盘空间。
+// :relfileprefix: ../../../
+
+// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-prer-offlineInstallation.adoc[]
+
+// :relfileprefix: ./
 
 * 在生产环境中，建议提前为{ks_product_both}集群配置高可用性以避免单个控制平面节点出现故障时集群服务中断。有关更多信息，请参阅link:../../../03-installation-and-upgrade/01-preparations/03-configure-high-availability/[配置高可用性]。
 +
@@ -167,45 +167,33 @@ sudo apt install socat conntrack ebtables ipset -y
 
 如果集群节点使用其他操作系统，请将 **apt** 替换为操作系统对应的软件包管理工具。
 
-== 查看安装包内容
+== 创建 Kubernetes 集群
 
-了解{ks_product_left} v4.1.0 的安装包内容，以便进行后续步骤。
+// ifeval::["{file_output_type}" == "pdf"]
+// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
+// endif::[]
 
-安装包包含以下文件：
+// ifeval::["{file_output_type}" == "html"]
+include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-downloadKubekey.adoc[]
+// endif::[]
 
-[,bash]
-----
-kse-all-v4.1.0-offline-linux-amd64/
-├── charts
-│   ├── ks-core                   # KubeSphere 核心组件
-│   ├── kse-extensions-publish    # 用于发布 KubeSphere 扩展组件
-│   ├── csi-qingcloud             # 用于对接青云云平台存储
-│   ├── csi-neonsan               # 用于对接 NeonSan 存储
-│   └── nfs-client-provisioner    # 用于对接 NFS 存储
-├── tools
-│   ├── pre-check.sh              # 用于 KubeSphere 升级前的集群环境检查
-│   ├── backup.sh                 # 用于 KubeSphere 升级前备份系统企业空间中的关键资源
-│   └── upgrade.sh                # KubeSphere 升级脚本，提供快速升级能力
-│   ├── oras                      # OCI 工具，便于镜像同步等操作
-│   └── ks-core-values.yaml       # 升级配置示例文件，用于配置各组件的升级参数
-├── kse-extensions                # 其中包含所有扩展组件的 installplan，可用于快速安装 KubeSphere 扩展组件
-├── config-sample.yaml            # 安装配置文件的模版
-├── create_project_harbor.sh      # 用于快速创建 harbor 项目
-├── kk                            # 集群部署工具
-├── kubekey-artifact.tar.gz       # KubeSphere 制品，其中包含集群部署所需的二进制文件及镜像
-└── manifest-v410-amd64.yaml      # KubeSphere 制品清单，其中包含各组件的版本以及镜像列表
+
+. 执行以下命令创建安装配置文件 **config-sample.yaml**：
++
+--
+// Bash
+include::../../../../_ks_components/code/bash.adoc[]
+
+ ./kk create config --with-kubernetes <Kubernetes version>
+ 
 ----
 
+将 <Kubernetes version> 替换为实际需要的版本，例如 **v1.27.4**。{ks_product_right}默认支持 Kubernetes v1.21~1.28。
 
-
-== 配置安装配置文件
-
-**config-sample.yaml** 是{ks_product_both}的安装配置文件，请先配置该文件，以便进行后续步骤。
+命令执行完毕后将生成安装配置文件 **config-sample.yaml**。
 
 include::../../../_custom/installationAndUpgrade/installationAndUpgrade-note-doNotDeleteConfig_v4.adoc[]
-
-include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
-+
+--
 
 . 执行以下命令编辑安装配置文件 **config-sample.yaml**：
 +
@@ -214,7 +202,6 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-dec
 include::../../../../_ks_components/code/bash.adoc[]
 
 vi config-sample.yaml
-
 ----
 
 以下为部分示例配置文件，如需了解完整示例，请参阅link:https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md[此文件]。
@@ -270,7 +257,7 @@ spec:
       "dockerhub.kubekey.local": 
         username: admin # harbor 默认用户名
         password: Harbor12345 # harbor 默认密码
-        plainHTTP: false  # 如果仓库使用 http，请将该参数设置为true
+        plainHTTP: false  # 如果仓库使用 http，请将该参数设置为 true
     privateRegistry: "dockerhub.kubekey.local/kse"   # 设置集群部署时使用的私有仓库地址
     registryMirrors: []
     insecureRegistries: []
@@ -305,14 +292,14 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-para-con
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
   - name: csi-qingcloud
     namespace: kube-system
     sources:
       chart:
         name: csi-qingcloud
-        path: charts/csi-qingcloud
+        repo: https://charts.kubesphere.io/test
         valuesFile: <configuration file path>
 ----
 --
@@ -321,16 +308,15 @@ include::../../../../_ks_components/code/bash.adoc[]
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
   - name: csi-neonsan
     namespace: kube-system
     sources:
       chart:
         name: csi-neonsan
-        path: charts/csi-neonsan
+        repo: https://charts.kubesphere.io/test
         valuesFile: <configuration file path>
-
 ----
 --
 
@@ -338,178 +324,65 @@ include::../../../../_ks_components/code/bash.adoc[]
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
   - name: nfs-client
     namespace: kube-system
     sources:
       chart:
         name: nfs-client-provisioner
-        repo: charts/nfs-client-provisioner
+        repo: https://charts.kubesphere.io/main
         valuesFile: <configuration file path>
-
 ----
 --
 ====
 
-== 创建私有镜像仓库
-
-[.admon.attention,cols="a"]
-|===
-|注意
-
-|
-如果您已有可用的镜像仓库，可跳过此步骤。但需要把私有镜像服务的默认地址 **dockerhub.kubekey.local/kse** 替换为您的实际镜像仓库地址。
-|===
-
-. 在配置文件 **config-sample.yaml** 的 **spec:hosts** 参数下设置用于创建私有镜像服务的服务器的信息。
+. 执行以下命令创建 Kubernetes 集群：
 +
 --
-[,yaml]
-----
-spec:
-  hosts:
-  - {name: registry, address: 192.168.0.6, internalAddress: 192.168.0.6, user: ubuntu, password: Testing123}
-----
-
-include::../../../_custom/installationAndUpgrade/installationAndUpgrade-para-hosts.adoc[]
---
-
-. 在 **spec:roleGroups:registry** 参数下设置用于创建私有镜像服务的服务器名称（将 <registry name> 替换为 **spec:hosts** 参数下设置的服务器实际名称）。
-+
-[,yaml]
-----
-spec:
-  roleGroups:
-    registry:
-    - <registry name>
-----
-
-. 将 **spec:registry:privateRegistry** 参数设置为私有镜像服务的默认地址 **dockerhub.kubekey.local/kse**，然后保存文件。
-+
-[,yaml]
-----
-spec:
-  registry:
-    registryMirrors: []
-    insecureRegistries: []
-    privateRegistry: dockerhub.kubekey.local/kse
-----
-
-
-. 执行以下命令初始化私有镜像服务：
-+
-====
 [,bash]
 ----
-./kk init registry -f config-sample.yaml -a kubekey-artifact.tar.gz
+ ./kk create cluster -f config-sample.yaml
 ----
-
-如果显示如下信息，则表明镜像仓库创建成功。
-
-image:/images/ks-qkcp/zh/v4.1/verify-registry.png[verify-registry, 100%]
-
-include::../../../_custom/installationAndUpgrade/installationAndUpgrade-note-initializeRegistry.adoc[]
-
-====
-
-. 若 **spec:registry:type** 参数设置为 **harbor**，执行以下命令创建 Harbor 项目。
-+
---
-// Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
-bash create_project_harbor.sh
-
-----
-
-创建 harbor 项目后，在 **config-sample.yaml** 中配置 **spec:registry:auths** 参数。
-
-[.admon.note,cols="a"]
-|===
-|说明
-
-|
-harbor 安装文件在 /opt/harbor 目录下，可在该目录下对 harbor 进行运维。
-
-|===
---
-
-+
-
-include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-editHosts_v4.adoc[]
-
-== 安装 Kubernetes
 
 // Note
 include::../../../../_ks_components/admonitions/note.adoc[]
 
-* 如果您已有可用的 Kubernetes 集群，可跳过此步骤。
-
-* 安装包中集成了 CentOS 7、Ubuntu 18.04、Ubuntu 20.04、Ubuntu 22.04 依赖包，如使用这些操作系统需要使用 kk 自动安装系统依赖，可在安装命令后添加 --with-packages ; 如使用这些操作系统之外的操作系统或由于依赖问题导致失败，需手动安装相关依赖（conntrack）。
-
-* 如需使用 openebs localpv，可在如下命令后添加参数 --with-local-storage，如需对接其他存储，可在配置文件 addons 中添加配置相关存储插件，或 Kubernetes 集群部署完成后自行安装。
-
-* 如使用 kk 部署的 harbor，请确保安装 Kubernetes 之前，已创建 harbor 项目，且配置文件 config-sample.yaml 中已配置 spec:registry:auths 参数。
+如需使用 openebs localpv，可在命令后添加参数 --with-local-storage。如需对接其他存储，可在配置文件 addons 中添加配置相关存储插件，或 Kubernetes 集群部署完成后自行安装。
 
 include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 
-执行以下命令创建 Kubernetes 集群：
-
-include::../../../_custom/installationAndUpgrade/installationAndUpgrade-startInstallationOffline.adoc[]
 
 如果显示如下信息，则表明 Kubernetes 集群创建成功。
 
 [,yaml]
 ----
 Pipeline[CreateclusterPipeline] execute successfully
-Installation is complete.
 ----
-
-
-== 导入镜像到私有镜像仓库
-
-执行以下命令将镜像导入到指定的私有镜像仓库中。
-
-[,bash]
-----
-./kk artifact images push  -f config-sample.yaml -a kubekey-artifact.tar.gz
-----
-
-如果显示如下信息，则表明导入成功。
-
-[,yaml]
-----
-Pipeline[ArtifactImagesPushPipeline] execute successfully
-----
+--
 
 == 安装{ks_product_left}
 
-=== 步骤 1：部署 ks-core
+KubeSphere Core (ks-core) 是{ks_product_both}的核心组件，为扩展组件提供基础的运行环境。KubeSphere Core 安装完成后，即可访问{ks_product_left} Web 控制台。
 
 . 在集群节点，执行以下命令安装 KubeSphere Core。
 +
 ====
+* 如果您无法访问 docker.io，请执行以下安装命令。
++
 [,bash]
 ----
-helm upgrade --install -n kubesphere-system --create-namespace ks-core charts/ks-core \
---debug \
---wait \
---set cloud.enabled=false \
---set upgrade.enabled=false \
---set global.imageRegistry=dockerhub.kubekey.local/kse \
---set extension.imageRegistry=dockerhub.kubekey.local/kse
+helm upgrade --install -n kubesphere-system --create-namespace ks-core chart=https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait -f value.yaml
 ----
 
-[.admon.attention,cols="a"]
-|===
-|注意
+* 如果您能正常访问 docker.io，请执行以下安装命令。
++
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core chart=https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait
+----
 
-|
-将 **global.imageRegistry** 和 **extension.imageRegistry** 的默认地址 **dockerhub.kubekey.local/kse** 替换为您的实际镜像仓库地址。
-|===
-
-取决于您的硬件和网络环境，您可能需要配置流量转发规则并在防火墙中放行 30880 端口。如果显示如下信息，则表明 ks-core 安装成功：
+如果显示如下信息，则表明 ks-core 安装成功：
 
 [,yaml]
 ----
@@ -550,101 +423,9 @@ For additional information and details, please visit https://kubesphere.io.
 |说明
 
 |
-此时，{ks_product_right} Web 控制台仅提供{ks_product_both}的核心功能，若要使用扩展组件，还需继续执行以下 2 个步骤以便安装扩展组件。
+取决于您的网络环境，您可能需要配置流量转发规则并在防火墙中放行 30880 端口。
 |===
 
-=== 步骤 2：发布扩展组件
+// 此时，{ks_product_right} Web 控制台仅提供{ks_product_both}的核心功能。
 
-执行以下命令，将{ks_product_both}提供的所有扩展组件导入到 Web 控制台的扩展中心。
-
-[,bash]
-----
-helm template -n kubesphere-system charts/kse-extensions-publish --set museum.enabled=true,global.imageRegistry=dockerhub.kubekey.local/kse | kubectl apply -f -
-----
-
-如果显示如下信息，则表明扩展组件发布成功。
-
-image:/images/ks-qkcp/zh/v4.1/verify-extension-release.png[verify-extension-release, 100%]
-
-=== 步骤 3：部署扩展组件
-
-发布扩展组件后，登录{ks_product_left} Web 控制台，可在扩展中心查看并安装扩展组件。或者，按照以下步骤快速部署扩展组件。
-
-. 若要安装可观测相关扩展组件，需要先部署 vector（WhizardTelemetry 数据流水线）和 whizard-monitoring（WhizardTelemetry 监控）扩展组件。否则，可跳过此步骤。
-+
---
-[,bash]
-----
-# 安装 vector 和 whizard-monitoring
-kubectl apply -f kse-extensions/vector-installplan.yaml 
-kubectl apply -f kse-extensions/whizard-monitoring-installplan.yaml
-
-# 检查 vector 和 whizard-monitoring 的安装状态，等待状态变为 Installed
-kubectl get installplan vector -w
-kubectl get installplan whizard-monitoring -w
-----
---
-
-
-. 执行以下命令，安装指定扩展组件或所有扩展组件。
-+
---
-[,bash]
-----
-# 安装指定扩展组件，请将 {EXTENSION-NAME} 替换为实际名称
-kubectl apply -f kse-extensions/{EXTENSION-NAME}-installplan.yaml
-
-# 安装所有扩展组件
-kubectl apply -f kse-extensions
-----
-
-[.admon.note,cols="a"]
-|===
-|说明
-
-|
-* 在{ks_product_both}安装包的 kse-extensions 目录下获取各个扩展组件的 `{EXTENSION-NAME}`，也可参考下图获取。
-* 点击link:../../../03-installation-and-upgrade/03-upgrade-kubesphere/05-appendix-ks-core#_升级组件清单[此处]查看组件清单，了解更多信息。
-|===
-
-[.admon.attention,cols="a"]
-|===
-|注意
-
-|
-对于已修改扩展组件配置的扩展组件，请勿重新执行 `kubectl apply -f kse-extensions/{EXTENSION-NAME}-installplan.yaml`，避免扩展组件配置被覆盖。
-|===
---
-
-. 执行以下命令，等待扩展组件状态变更为 **Installed**，则表明部署成功。
-+
---
-[,bash]
-----
-kubectl get installplan -w
-----
-
-image:/images/ks-qkcp/zh/v4.1/verify-extension-installed.png[ verify-extension-installed,100%]
---
-
-// . 如需安装 Spring Cloud 扩展组件，可提前安装。否则，可跳过此步骤。
-// +
-// --
-// [.admon.attention,cols="a"]
-// |===
-// |注意
-
-// |
-// Spring Cloud 启动较慢，且包含聚合 API，因此 Spring Cloud 完全启动前会导致需要连接 kube-apiserver 的 Pod 异常，建议提前安装。
-
-// |===
-
-// [,bash]
-// ----
-// # 安装 springcloud
-// kubectl apply -f kse-extensions/springcloud-installplan.yaml
-
-// # 检查 springcloud 运行状态，确保 spring-cloud-controller-manager 和 springcloud-agent-nacos 为 running 状态
-// kubectl get pod -n extension-springcloud
-// ----
-// --
+// * 若要使用扩展组件，还需link:../../../06-extension-user-guide/02-subscribe-and-install-components[订阅并安装扩展组件]。

@@ -1,0 +1,274 @@
+---
+title: "附录：KubeSphere Core 高级配置"
+linkTitle: "附录：KubeSphere Core 高级配置"
+keywords: "Kubernetes, KubeSphere, KubeSphere Core, 配置"
+description: "了解 KubeSphere Core 的高级配置。"
+weight: 05
+---
+
+
+== KubeSphere Helm Chart 选项
+
+=== 常用选项
+
+[%header,cols="1,1,3a"]
+|===
+|选项	|默认值	|描述
+|adminPassword	|""	|string - 为第一个管理员用户设置引导密码。登录后，管理员需要重置密码。如不设置，会使用内置默认密码 **P@88w0rd**。
+|hostname	|"example.com"	|string - KubeSphere Server 完全限定的域名。
+|ingress.enabled	|false	|bool - 如果值为 true, 创建 KubeSphere Ingress 网关。
+|ingress.tls.enabled	|true	|bool - 如果值为 true, 则为 KubeSphere  Ingress 网关启用 HTTPS。
+|ingress.tls.source	|"generation"	|string - Ingress 证书的来源，可选项："generation, importation, letsEncrypt"。
+|letsEncrypt.email	|""	|string - 邮箱地址，证书过期时会收到邮件提醒。
+|letsEncrypt.environment	|"production"	|string - 可选项："staging, production"。测试环境和生产环境证书在速率限制上存在区别，详情见：link:https://letsencrypt.org/docs/[Let’s Encrypt 官方文档]。
+
+|===
+
+=== 高级选项
+
+[%header,cols="1,1,3a"]
+|===
+|选项	|默认值	|描述
+|internalTLS | false | bool - 如果值为 true, 启用内部 TLS。console 和 apiserver 均会启用 HTTPS 服务。
+|ingress.ingressClassName | "" | string - 使用网关的可选 Ingress 类，可选项："nginx，traefik"。
+|ingress.secretName | "kubesphere-tls-certs" | string - Ingress 网关所使用的包含 TLS 证书的 Secrets。
+|extension.ingress.ingressClassName	|""	|用于扩展组件访问的外部 ingress 的 ingressClassName。
+|extension.ingress.domainSuffix	|""	|用于创建扩展组件访问入口的域名后缀；根据外部 ingress 地址，它可以是 LB 主机名地址（比如 xx.com）、{node_ip}.nip.io 或内部 DNS 地址（比如 kse.local）。
+|extension.ingress.httpPort	|80	|扩展组件的 ingress 的 http 端口。
+|extension.ingress.httpsPort	|443	|扩展组件的 ingress 的 https 端口。
+|certmanager.duration | 2160h | string - cert-manager 生成证书的过期时间。
+|certmanager.renewBefore | 360h | string - cert-manager 刷新证书到证书过期之间的时间间隔。
+|global.imageRegistry | registry.cn-beijing.aliyuncs.com | string - 设置全局的 KubeSphere 镜像仓库地址。
+|global.tag | "v4.1.2" | string - 设置全局的 KubeSphere 镜像仓库标签。
+|apiserver.image.registry | "" | string - 设置 ks-apiserver 镜像仓库地址。
+|apiserver.image.repository | "kse/ks-apiserver" | string - 设置 ks-apiserver 镜像名称。
+|apiserver.image.tag | "" | string - 设置 ks-apiserver 镜像标签。
+|apiserver.nodePort | "" | uint16 - 设置 ks-apiserver 服务 service 的 NodePort 端口。
+|console.image.registry | "" | string - 设置 ks-console 镜像仓库地址。
+|console.image.repository | "kse/ks-console" | string - 设置 ks-console 镜像名称。
+|console.image.tag | "" | string - 设置 ks-console 镜像标签。
+|console.nodePort | 30880 | uint16 - 设置 ks-console 服务 service 的 NodePort 端口。
+|controller.image.registry | "" | string - 设置 ks-controller-manager 镜像仓库地址。
+|controller.image.repository | "kse/ks-controller-manager" | string - 设置 ks-controller-manager 镜像名称。
+|controller.image.tag | "" | string - 设置 ks-controller-manager 镜像标签。
+|composedApp.appSelector | "" | string - 指定 annotation 或 label，以便对匹配的自制应用进行处理并更新状态。
+
+若 appSelector 值为空，则处理所有自制应用。若在命令或配置字典中添加以下内容，可指定只处理 KubeSphere 创建、管理的自制应用。
+
+* 安装 ks-core 时，在安装命令中添加：
++
+--set composedApp.appSelector="kubesphere.io/creator"
+
+* 升级 ks-core 时，在升级命令中添加：
++
+--set composedApp.appSelector="kubesphere.io/creator"
+
+* 安装升级完成后，在集群的 kubesphere-config 配置字典中设置为：
++
+[,yaml]
+----
+composedApp:
+  appSelector: "kubesphere.io/creator"
+----
+|===
+
+== TLS 配置
+
+. 选择 SSL 配置
++
+--
+KubeSphere 安全配置分为**网关 SSL 配置**以及**内部服务 SSL 配置**两个部分。其中**网关 SSL 配置**默认支持以下三种模式来启用 SSL/TLS，以保证访问的安全性。
+--
+
+.. 网关 SSL 配置
++
+--
+[%header,cols="1,2,1"]
+|===
+|配置	
+|Helm Chart 选项	
+|是否需要 cert-manager
+
+|KubeSphere 生成的 TLS证书	|ingress.tls.source=generation	|否
+|Let’s Encrypt	|ingress.tls.source=letsEncrypt	|是
+|导入已有的证书	|ingress.tls.source=importation	|否
+
+|===
+
+* KubeSphere 生成的 TLS 证书：支持 cert-manager 和 helm 两种方式。
+
+** 如果 Kubernetes 集群中已安装 cert-manager，则首选使用 cert-manager 生成证书。KubeSphere 使用 cert-manager 签发并维护证书。KubeSphere 会生成自己的 CA 证书，并用该 CA 签署证书，然后由 cert-manager 管理该证书。
+
+** 如果未安装 cert-manager，则使用 helm 生成证书。在使用 helm 安装的过程中，KubeSphere 会根据设置的 `hostname` 生成 CA 和 TLS 证书。在此选项下，证书不支持自动过期轮转。
+
+* Let's Encrypt
++
+使用 Let's Encrypt 选项必须使用 cert-manager。但是，在这种情况下，cert-manager 与 Let's Encrypt 的特殊颁发者相结合，该颁发者执行获取 Let's Encrypt 颁发证书所需的所有操作，包括请求和验证。此配置使用 HTTP 验证（HTTP-01），因此负载均衡器必须具有可以从互联网访问的公共 DNS 记录。
+
+* 导入已有的证书
++
+使用已有的CA 颁发的公有或私有证书。KubeSphere 将使用该证书来保护 WebSocket 和 HTTPS 流量。在这种情况下，您必须上传名称分别为 tls.crt 和 tls.key 的 PEM 格式的证书以及相关的密钥。如果您使用私有 CA，则还必须上传该 CA 证书。这是由于您的节点可能不信任此私有 CA。
+--
+
+.. 内部服务 SSL 配置
++
+--
+启用内部 SSL 配置之后，KubeSphere 中 Console UI 和 Apiserver 均会启用 HTTPS，内置支持 cert-manager 和 helm 生成证书。在 Kubernetes 集群已安装 cert-manager 的情况下优先使用 cert-manager 生成/管理证书，证书的 DNS 默认使用 Console UI 和 Apiserver 在 Kubernetes 集群内部的 Service DNS。
+
+[%header,cols="1,1,1"]
+|===
+|配置	|Helm Chart 选项	|是否需要 cert-manager
+|启用内部SSL	|internalTLS=true	|否
+
+|===
+--
+
+. 安装 cert-manager 
++
+--
+若使用自己的证书文件（ingress.tls.source=importation），您可以跳过此步骤。
+
+仅在使用 KubeSphere 生成的证书（ingress.tls.source=generation）或 Let's Encrypt 颁发的证书（ingress.tls.source=letsEncrypt）时，才需要安装 cert-manager。
+
+[,bash]
+----
+# 添加 Jetstack Helm 仓库
+helm repo add jetstack https://charts.jetstack.io
+
+# 更新本地 Helm Chart 仓库缓存
+helm repo update
+
+# 安装 cert-manager Helm Chart
+helm install cert-manager jetstack/cert-manager -n cert-manager --create-namespace --set prometheus.enabled=false
+# 或
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/<VERSION>/cert-manager.yaml
+
+----
+安装完 cert-manager 后，检查 cert-manager 命名空间中正在运行的 Pod 来验证它是否已正确部署：
+
+[,bash]
+----
+kubectl get pods --namespace cert-manager
+----
+--
+
+. 根据您选择的证书选项，通过 Helm 为 KubeSphere 开启 SSL 配置
+
+.. 启用网关 SSL 配置
++
+--
+* KubeSphere 生成的证书
++
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core $chart --version $version \
+--set ingress.enabled=true \
+--set hostname=kubesphere.my.org
+----
+
+* Let's Encrypt
++
+此选项使用 cert-manager 来自动请求和续订 Let's Encrypt 证书。Let's Encrypt 是免费的，而且是受信的 CA，因此可以提供有效的证书。
++
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core $chart --version $version \
+--set hostname=kubesphere.my.org \
+--set ingress.enabled=true \
+--set ingress.tls.source=letsEncrypt \
+--set letsEncrypt.email=me@example.org 
+----
+
+* 导入外部证书
++
+[,bash]
+----
+# 导入外部证书
+kubectl create secret tls tls-ks-core-ingress --cert=tls.crt --key=tls.key -n kubesphere-system
+
+# 安装 KubeSphere
+helm upgrade --install -n kubesphere-system --create-namespace ks-core
+$chart --version $version \
+--set ingress.enabled=true \
+--set hostname=kubesphere.my.org \
+--set ingress.tls.source=importation
+----
+--
+
+.. 启用内部服务 SSL 配置
++
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core
+$chart --version $version \
+--set internalTLS=true
+----
+
+== 配置 ratelimit 限流器
+
+启用限流器之后，限流器会对所有用户的请求独立限流，主要支持以下两种方式：
+
+* 对 KubeSphere 中的每个用户设置限流速率，暂不支持独立设置每个用户的限流速率；
+
+* 对 KubeSphere 中的每个 ServiceAccount 独立设置限流速率。
+
+[discrete]
+=== 启用限流器
+
+启用限流器就是对 KubeSphere 中的每个用户设置限流速率。
+
+. 修改 kubesphere-system 配置文件。
++
+--
+[,bash]
+----
+kubectl -n kubesphere-system edit cm kubesphere-system
+----
+
+新增以下内容：
+[,yaml]
+----
+rateLimit:
+  enable: true   # 启用限流器
+  driver: memory # 内存模式
+  QPS: 40.0      # 令牌恢复速率
+  burst: 80      # 令牌桶容量
+----
+--
+
+. 重启 ks-apiserver。
++
+[,bash]
+----
+kubectl -n kubesphere-system rollout restart deploy ks-apiserver
+----
+
+[discrete]
+=== 设置 ServiceAccount 限流器
+
+设置前，您需要按照上一步启用限流器。然后执行以下命令对 ServiceAccount 设置限流速率。
+
+[,bash]
+----
+kubectl -n <Namespace> patch serviceaccounts.kubesphere.io <ServiceAccount> --type merge -p '{"metadata": {"annotations": {"kubesphere.io/ratelimiter-qps": "20.0", "kubesphere.io/ratelimiter-burst": "40"}}}'
+----
+
+[discrete]
+=== 参数说明
+
+[%header,cols="1,1,3a"]
+|===
+|选项	|默认值	|描述
+|rateLimit.enable	|false	|bool - 启用限流器。
+|rateLimit.driver	|memory	|string - 限流器存储类型，可选项："memory"。
+|rateLimit.QPS	|5.0	|float32 - 限流器令牌桶算法中每秒恢复的令牌数。
+|rateLimit.burst	|10	|int - 限流器令牌桶算法中令牌桶的最大容量。
+|===
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|令牌的恢复速率 QPS 建议设置为桶容量 burst 的一半。
+|===
+

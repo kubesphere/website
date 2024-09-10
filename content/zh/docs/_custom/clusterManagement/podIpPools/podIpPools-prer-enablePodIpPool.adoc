@@ -5,5 +5,5 @@ ifeval::["{file_output_type}" == "html"]
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-有关更多信息，请参阅《{ks_product_full_right}平台管理指南》的“扩展组件管理”章节。
+有关更多信息，请参阅《{ks_product_right}平台管理指南》的“扩展组件管理”章节。
 endif::[]

@@ -9,4 +9,4 @@ icon: "/images/docs/common/docs.svg"
 ---
 
 
-本节介绍 KubeSphere v4.1.0 的版本更新记录。
+本节介绍 KubeSphere 的版本更新记录。

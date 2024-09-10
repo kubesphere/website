@@ -30,13 +30,9 @@ include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 == 前提条件
 
-* 您需要联系{ks_product_both}的服务支持团队获取{ks_product_left} v4.1.0 安装包。
-
-// 如实施现场条件允许在线拉取公开仓库，具备在线安装条件，可联系 KubeSphere 产品团队获取在线安装文件及相关信息。
-
 :relfileprefix: ../../../
 
-* 您需要获取安装配置文件 **config-sample.yaml** 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅xref:03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc[安装 Kubernetes 和 KubeSphere]。
+您需要获取安装配置文件 **config-sample.yaml** 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅xref:03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc[安装 Kubernetes 和 KubeSphere]。
 
 :relfileprefix: ./
 
@@ -52,22 +48,21 @@ include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 == 操作步骤
 
-// ifeval::["{file_output_type}" == "html"]
-// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-downloadKubekey.adoc[]
+// ifeval::["{file_output_type}" == "pdf"]
+// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
 // endif::[]
 
-// ifeval::["{file_output_type}" == "pdf"]
-include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
+// ifeval::["{file_output_type}" == "html"]
+include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-downloadKubekey.adoc[]
 // endif::[]
 
 . 执行以下命令查看需要删除的节点的名称：
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
 kubectl get node
-
 ----
 --
 
@@ -75,10 +70,9 @@ kubectl get node
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
 kubectl drain <node name>
-
 ----
 --
 
@@ -92,10 +86,9 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-tra
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
  ./kk delete node <node name> -f config-sample.yaml
-
 ----
 --
 
@@ -103,10 +96,9 @@ include::../../../../_ks_components/code/bash.adoc[]
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
 kubectl get node
-
 ----
 
 如果没有显示已删除节点的信息，则表明节点删除成功。

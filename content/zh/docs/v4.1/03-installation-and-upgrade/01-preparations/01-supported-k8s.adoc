@@ -198,219 +198,145 @@ weight: 01
 |N/A
 |===
 
-== 组件支持矩阵
+// == 组件支持矩阵
 
-{ks_product_right} v4.1.0 默认支持 Kubernetes v1.21~1.28。本节详细介绍{ks_product_both}各组件支持的 Kubernetes 版本。为避免使用过程中出现兼容性问题，请使用支持的 Kubernetes 版本。
+// {ks_product_right} v4.1 默认支持 Kubernetes v1.21~1.28。本节详细介绍{ks_product_both}各组件支持的 Kubernetes 版本。为避免使用过程中出现兼容性问题，请使用支持的 Kubernetes 版本。
 
-[%header,cols="2a,3a,5a"]
-|===
-|组件 |组件版本 |支持的 Kubernetes 版本
+// [%header,cols="2a,2a,3a,2a"]
+// |===
+// |组件 |组件版本 |支持的 Kubernetes 版本 |支持的架构
 
-|ks-core
-|4.1.x
-|1.21~1.28
+// |ks-core
+// |4.1.x
+// |1.21~1.28
+// |amd64、arm64
 
-|DevOps
-|4.1.0
-|1.21~1.28
+// |DevOps
+// |1.1.0
+// |1.21~1.28
+// |amd64、arm64
 
-|Storage-utils
-|1.0.x
-|1.21~1.28
+// |Storage-utils
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Vector
-|1.0.0
-|1.21~1.28
+// |Vector
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|OpenSearch
-|2.11.1
-|1.21~1.28
+// |OpenSearch
+// |2.11.1
+// |1.21~1.28
+// |amd64、arm64
 
-|Monitoring
-|1.0.0
-|1.21~1.28
+// |Monitoring
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Logging
-|1.0.0
-|1.21~1.28
+// |Logging
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Auditing
-|1.0.0
-|1.21~1.28
+// |Auditing
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Events
-|1.0.0
-|1.21~1.28
+// |Events
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Alerting
-|1.0.0
-|1.21~1.28
+// |Alerting
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|WhizardTelemetry 平台服务
-|1.0.0
-|1.21~1.28
+// |WhizardTelemetry 平台服务
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|WhizardTelemetry 事件告警
-|1.0.0
-|1.21~1.28
+// |WhizardTelemetry 事件告警
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Notification
-|2.5.1
-|1.21~1.28
+// |Notification
+// |2.5.x
+// |1.21~1.28
+// |amd64、arm64
 
-|MetricServer
-|0.7.0
-|1.21~1.28
+// |MetricServer
+// |0.7.0
+// |1.21~1.28
+// |amd64、arm64
 
-|Tower
-|1.0.x
-|1.21~1.28
+// |Tower
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|OpenPitrix
-|2.0.0
-|1.21~1.28
+// |OpenPitrix
+// |2.0.0
+// |1.21~1.28
+// |amd64、arm64
 
-|KubeFed
-|1.0.x
-|1.21~1.28
+// |KubeFed
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Gateway
-|1.0.x
-|1.22~1.25
+// |Gateway
+// |1.0.x
+// |1.22~1.25
+// |amd64、arm64
 
-|ServiceMesh
-|1.0.x
-|1.22~1.25
+// |ServiceMesh
+// |1.0.x
+// |1.22~1.25
+// |amd64、arm64
 
-|KubeEdge
-|1.31.1
-|1.21-1.23
+// |KubeEdge
+// |1.13.1
+// |1.21-1.23
+// |amd64、arm64
 
-|RadonDB DMP
-|2.1.0
-|
-* DMP 管理平台: 1.21~1.28
-* MySQL: 1.21~1.28
-* PostgreSQL: 1.21~1.28
-* Redis Cluster: 1.21~1.28
-* Redis Sentinel: 1.21~1.28
-* MongoDB: 1.21~1.28
-* OpenSearch: 1.21~1.28
-* Kafka: 1.21~1.28
-* RabbitMQ: 1.21~1.28
+// |RadonDB DMP
+// |2.1.3
+// |
+// * DMP 管理平台: 1.21~1.28
+// * MySQL: 1.21~1.28
+// * PostgreSQL: 1.21~1.28
+// * Redis Cluster: 1.21~1.28
+// * Redis Sentinel: 1.21~1.28
+// * MongoDB: 1.21~1.28
+// * OpenSearch: 1.21~1.28
+// * Kafka: 1.21~1.28
+// * RabbitMQ: 1.21~1.28
+// |amd64、arm64
 
-|SpringCloud
-|1.0.x
-|1.21~1.28
+// |SpringCloud
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Gatekeeper
-|1.0.x
-|1.21~1.28
+// |Gatekeeper
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-|Network
-|1.0.0
-|1.21~1.28
-|===
+// |Network
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
 
-== 组件架构支持矩阵
-
-[%header,cols="2a,3a,5a"]
-|===
-|组件 |组件版本 |支持的架构
-
-|ks-core
-|4.1.x
-|amd64、arm64
-
-|DevOps
-|4.1.0
-|amd64、arm64
-
-|Storage-utils
-|1.0.x
-|amd64、arm64
-
-|Vector
-|1.0.0
-|amd64、arm64
-
-|OpenSearch
-|2.11.1
-|amd64、arm64
-
-|Monitoring
-|1.0.0
-|amd64、arm64
-
-|Logging
-|1.0.0
-|amd64、arm64
-
-|Auditing
-|1.0.0
-|amd64、arm64
-
-|Events
-|1.0.0
-|amd64、arm64
-
-|Alerting
-|1.0.0
-|amd64、arm64
-
-|WhizardTelemetry 平台服务
-|1.0.0
-|amd64、arm64
-
-|WhizardTelemetry 事件告警
-|1.0.0
-|amd64、arm64
-
-|Notification
-|2.5.1
-|amd64、arm64
-
-|MetricServer
-|0.7.0
-|amd64、arm64
-
-|Tower
-|1.0.x
-|amd64、arm64
-
-|OpenPitrix
-|2.0.0
-|amd64、arm64
-
-|KubeFed
-|1.0.x
-|amd64、arm64
-
-|Gateway
-|1.0.x
-|amd64、arm64
-
-|ServiceMesh
-|1.0.x
-|amd64、arm64
-
-|KubeEdge
-|1.31.1
-|amd64、arm64
-
-|RadonDB DMP
-|2.1.0
-|amd64
-
-|SpringCloud
-|1.0.x
-|amd64、arm64
-
-|Gatekeeper
-|1.0.x
-|amd64、arm64
-
-|Network
-|1.0.0
-|amd64、arm64
-|===
+// |Ingress-utils
+// |1.0.x
+// |1.21~1.28
+// |amd64、arm64
+// |===
