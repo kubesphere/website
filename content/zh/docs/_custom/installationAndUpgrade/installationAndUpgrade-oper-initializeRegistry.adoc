@@ -7,11 +7,7 @@ include::../../../_ks_components/code/bash.adoc[]
 
 vi config-sample.yaml
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 以下为部分示例配置文件，如需了解完整示例，请参阅link:https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md[此文件]。
 
@@ -66,11 +62,7 @@ spec:
     insecureRegistries: []
   addons: []
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 
 在 **spec:hosts** 参数下设置用于创建私有镜像服务的服务器的信息。
@@ -85,11 +77,7 @@ include::../../../_ks_components/code/yaml.adoc[]
     registry:
     - <registry name>
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 将 **spec:registry:privateRegistry** 参数设置为私有镜像服务的地址 **dockerhub.kubekey.local**，然后保存文件。
 
@@ -101,11 +89,7 @@ include::../../../_ks_components/code/yaml.adoc[]
     insecureRegistries: []
     privateRegistry: dockerhub.kubekey.local
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 执行以下命令初始化私有镜像服务：
@@ -116,11 +100,7 @@ include::../../../_ks_components/code/bash.adoc[]
 
  ./kk init registry -f config-sample.yaml -a kubekey-artifact.tar.gz
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 include::installationAndUpgrade-note-initializeRegistry.adoc[]
 --

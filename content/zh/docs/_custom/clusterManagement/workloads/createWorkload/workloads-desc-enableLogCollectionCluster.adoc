@@ -1,10 +1,6 @@
 // :ks_include_id: 01792eb26cce4187b5a1f964404e6037
 ifeval::["{file_output_type}" == "pdf"]
 
-<<<<<<< HEAD
 有关如何在项目中启用**收集卷上的日志**，请参阅《{ks_product_right}项目管理指南》的“日志收集”章节。
-=======
-有关如何在项目中启用**收集卷上的日志**，请参阅《{ks_product_full_right}项目管理指南》的“日志收集”章节。
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 endif::[]

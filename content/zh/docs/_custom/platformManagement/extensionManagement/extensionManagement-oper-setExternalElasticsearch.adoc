@@ -11,11 +11,7 @@ spec:
       externalElasticsearchHost: "<Elasticsearch address>"
       externalElasticsearchPort: "<Elasticsearch port number>"
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Note
 include::../../../../_ks_components/admonitions/note.adoc[]

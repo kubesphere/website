@@ -8,9 +8,5 @@ include::../../../_ks_components/code/bash.adoc[]
 
 kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=ks-install -o jsonpath='{.items[0].metadata.name}') -f
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --

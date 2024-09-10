@@ -1,6 +1,0 @@
-// :ks_include_id: 05d7ebe027f04cc589e8baa04343e651
-<<<<<<< HEAD
-您需要加入一个企业空间并在企业空间中具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:06-workspace-management/06-workspace-settings/03-workspace-members/[企业空间成员]、xref:06-workspace-management/06-workspace-settings/04-workspace-roles/[企业空间角色]和xref:06-workspace-management/06-workspace-settings/05-departments/[部门]。
-=======
-您需要加入一个企业空间并在企业空间中具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:06-workspace-management/06-workspace-settings/03-workspace-members/_index.adoc[企业空间成员]、xref:06-workspace-management/06-workspace-settings/04-workspace-roles/_index.adoc[企业空间角色]和xref:06-workspace-management/06-workspace-settings/05-departments/_index.adoc[部门]。
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3

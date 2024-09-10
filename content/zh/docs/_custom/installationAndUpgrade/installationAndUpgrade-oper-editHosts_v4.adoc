@@ -7,11 +7,7 @@ include::../../../_ks_components/code/bash.adoc[]
 
 vi /etc/hosts
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 在 **/etc/hosts** 文件中添加以下信息，从而为集群节点配置私有镜像服务的域名解析规则（将 <registry IP address> 替换成私有镜像服务的实际 IP 地址，将私有镜像服务的默认地址 **dockerhub.kubekey.local** 替换为您的实际镜像仓库地址），然后保存文件：
 
@@ -20,9 +16,5 @@ include::../../../_ks_components/code/bash.adoc[]
 
 <registry IP address> dockerhub.kubekey.local
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --

@@ -7,10 +7,6 @@ endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
 
-<<<<<<< HEAD
 * {ks_product_right}平台需要启用 DevOps 扩展组件。有关更多信息，请参阅《{ks_product_right}平台管理指南》的“扩展组件管理”章节。
-=======
-* {ks_product_right}平台需要启用 DevOps 扩展组件。有关更多信息，请参阅《{ks_product_full_right}平台管理指南》的“扩展组件管理”章节。
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 endif::[]

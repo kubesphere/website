@@ -9,22 +9,14 @@ include::../../../_ks_components/code/bash.adoc[]
 
 curl -L -O https://github.com/kubesphere/ks-installer/releases/download/{ks_product_ver}/kubesphere-installer.yaml
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Bash
 include::../../../_ks_components/code/bash.adoc[]
 
 curl -L -O https://github.com/kubesphere/ks-installer/releases/download/{ks_product_ver}/cluster-configuration.yaml
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Note
 include::../../../_ks_components/admonitions/note.adoc[]
@@ -42,11 +34,7 @@ include::../../../_ks_components/code/bash.adoc[]
 
 sed -i "s#^\s*image: kubesphere.*/ks-installer:.*#        image: dockerhub.kubekey.local/kubesphere/ks-installer:v3.3.0#" kubesphere-installer.yaml
 
-<<<<<<< HEAD
 ----
-=======
-include::../../../_ks_components/code/codeEnd.adoc[]
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 --
 
 . 如果您的集群节点无法连接互联网，执行以下命令编辑 **cluster-configuration.yaml** 配置文件：
