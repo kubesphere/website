@@ -56,7 +56,7 @@ apt install socat conntrack -y
 +
 [,bash]
 ----
-helm upgrade --install -n kubesphere-system --create-namespace ks-core chart=https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait
 ----
 
 . 安装完成后，输出信息会显示{ks_product_left} Web 控制台的 IP 地址和端口号，默认的 NodePort 是 30880。
