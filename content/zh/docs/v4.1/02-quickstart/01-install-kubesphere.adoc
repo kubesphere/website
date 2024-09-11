@@ -54,21 +54,10 @@ apt install socat conntrack -y
 
 . 如果您已经拥有可用的 Kubernetes 集群，执行以下命令通过 `helm` 安装{ks_product_both}的核心组件 KubeSphere Core。
 +
-====
-* 如果您无法访问 docker.io，请执行以下安装命令。
-+
-[,bash]
-----
-helm upgrade --install -n kubesphere-system --create-namespace ks-core chart=https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait -f value.yaml
-----
-
-* 如果您能正常访问 docker.io，请执行以下安装命令。
-+
 [,bash]
 ----
 helm upgrade --install -n kubesphere-system --create-namespace ks-core chart=https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait
 ----
-====
 
 . 安装完成后，输出信息会显示{ks_product_left} Web 控制台的 IP 地址和端口号，默认的 NodePort 是 30880。
 +
