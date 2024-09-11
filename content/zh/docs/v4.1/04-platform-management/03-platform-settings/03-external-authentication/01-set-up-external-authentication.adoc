@@ -1,0 +1,160 @@
+---
+title: "配置外部身份验证"
+keywords: "Kubernetes, KubeSphere, 第三方认证"
+description: "了解如何在 KubeSphere 上设置外部身份验证。"
+weight: 01
+---
+
+:ks_navigation: **配置 > 保密字典**
+
+{ks_product_right}支持设置外部身份验证，平台管理员可以通过 secret（保密字典）配置身份提供者。
+
+配置外部身份提供者后，允许使用 LDAP、CAS、GitHub、阿里云 IDaas、或 OpenID Connect 的用户名和密码登录{ks_product_left} Web 控制台。
+
+== 操作步骤
+
+. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
+
+. 进入企业空间 **system-workspace** 下的项目 **kubesphere-system**。
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-clickCreate.adoc[]
+
+. 在**创建保密字典**对话框，点击右上角的**编辑 YAML** 开关，使用 yaml 创建保密字典。
+
+. 按照以下示例及配置说明修改 yaml 文件，配置完成后，点击**创建**。
+
+. 登出{ks_product_left} Web 控制台，在登录页面，根据配置的外部身份验证类型，输入 LDAP、CAS、GitHub、阿里云 IDaas、或 OpenID Connect 的用户名和密码登录。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+多集群环境中，只需要在主集群中进行配置。
+|===
+
+== OpenLDAP 示例 yaml
+
+[,yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: kubesphere-system
+  name: identity-provider-ldap          
+  labels:
+    config.kubesphere.io/type: identityprovider
+stringData:
+  configuration.yaml: |
+    name: openldap      
+    type: LDAPIdentityProvider
+    mappingMethod: auto
+    provider:
+      host: "192.168.0.2:389"
+      managerDN: uid=root,cn=users,dc=nas
+      managerPassword: "********"
+      userSearchBase: cn=users,dc=nas
+      loginAttribute: uid
+      mailAttribute: mail
+type: config.kubesphere.io/identityprovider
+----
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+- secret 必须创建在 `kubeshere-system` 项目中。
+
+- secret 必须包含 type。
++
+`type: config.kubesphere.io/identityprovider`。
+
+- secret 必须包含 label。
++
+`config.kubesphere.io/type: identityprovider`。
+|===
+
+== 配置说明
+
+上述示例的 `stringData:configuration.yaml` 参数中：
+
+- name: 指定外部身份验证的名称，必须唯一，否则会创建失败。
+
+- type: 指定外部身份验证的类型，支持以下类型：
++
+--
+- LDAP: `LDAPIdentityProvider` 
+
+- CAS: `CASIdentityProvider` 
+
+- GitHub: `GitHubIdentityProvider` 
+
+- 阿里云 IDaas: `AliyunIDaaSProvider` 
+
+- OpenID Connect: `OIDCIdentityProvider` 
+--
+
+- mappingMethod: 指定外部身份用户与{ks_product_both}用户的关联方式。
++
+--
+- auto: 自动创建相同名称的{ks_product_both}用户，当平台中已存在名称时会创建失败。
+
+- manual: 登录后创建一个任意名称的新用户。
+
+- lookup: 自动关联已存在的具有相同名称的{ks_product_both}用户，如果不存在该名称的用户，则创建失败。
+--
+
+- provider: 外部身份验证的具体参数。以下是不同身份验证类型的 provider 参数示例。
++
+--
+- LDAPIdentityProvider
+
+[,yaml]
+----
+host: 192.168.0.2:389
+managerDN: uid=root,cn=users,dc=nas
+managerPassword: "********"
+userSearchBase: cn=users,dc=nas
+loginAttribute: uid
+mailAttribute: mail
+----
+
+
+- CASIdentityProvider
+
+[,yaml]
+----
+redirectURL: "https://ks-console:30880/oauth/redirect/cas"
+casServerURL: "https://cas.example.org/cas"
+insecureSkipVerify: true
+----
+
+- OIDCIdentityProvider
+
+[,yaml]
+----
+clientID: '********'
+clientSecret: '********'
+issuer: https://accounts.google.com
+redirectURL:  'https://ks-console/oauth/redirect/google'
+----
+
+- GitHubIdentityProvider
+
+[,yaml]
+----
+clientID: '******'
+clientSecret: '******'
+redirectURL: 'https://ks-console/oauth/redirect/github'
+----
+
+阿里云 IDaaS 身份提供者的配置方法，请参阅link:https://www.alibabacloud.com/help/zh/idaas/[阿里云 IDaaS 文档]。
+
+--

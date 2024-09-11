@@ -39,11 +39,11 @@ footer:
     - title: 文档中心
       list:
         - content: 产品介绍
-          link: '../../../zh/docs/v3.4/introduction/what-is-kubesphere/'
+          link: '../../../zh/docs/v4.1/01-intro/01-introduction.adoc'
         - content: 如何安装
-          link: '../../../zh/docs/v3.4/quick-start/all-in-one-on-linux/'
+          link: '../../../zh/docs/v4.1/02-quickstart/01-install-kubesphere.adoc'
         - content: 快速入门
-          link: '../../../zh/docs/v3.4/quick-start/create-workspace-and-project/'
+          link: '../../../zh/docs/v4.1/02-quickstart/create-workspace-and-project/'
         - content: API 文档
           link: '../../../zh/docs/v3.4/reference/api-docs/'
 

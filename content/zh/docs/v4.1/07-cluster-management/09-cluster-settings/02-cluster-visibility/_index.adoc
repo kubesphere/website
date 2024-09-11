@@ -14,7 +14,8 @@ weight: 02
 * 您可以将一个集群授权给多个企业空间，从而允许企业空间中的资源运行在该集群上。
 
 ifeval::["{file_output_type}" == "html"]
-* 您也可以将多个集群授权给同一个企业空间，从而在企业空间中创建联邦项目。有关联邦项目的更多信息，请参阅link:../../../11-use-extensions/04-kubefed[联邦项目]。
+* 您也可以将多个集群授权给同一个企业空间，从而在企业空间中创建联邦项目。
+// 有关联邦项目的更多信息，请参阅link:../../../11-use-extensions/04-kubefed[联邦项目]。
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]

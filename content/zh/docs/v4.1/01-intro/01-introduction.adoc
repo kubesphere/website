@@ -1,10 +1,11 @@
 ---
 title: "KubeSphere LuBan"
 linkTitle: "KubeSphere LuBan"
+description: "介绍 KubeSphere LuBan 的背景和优势。"
 weight: 01
 ---
 
-{ks_product_right}（KubeSphere Enterprise），是基于 Kubernetes 内核的分布式多租户商用云原生操作系统。在开源能力的基础上，在多云集群管理、微服务治理、应用管理等多个核心业务场景进行功能延伸。商用扩展中心实现高度模块化，满足不同场景业务需求。以强大的企业级云原生底座，完善的专家级解决方案和服务支持，赋能企业数字化转型和规模化运营。
+{ks_product_right}，是基于 Kubernetes 内核的分布式多租户商用云原生操作系统。在开源能力的基础上，在多云集群管理、微服务治理、应用管理等多个核心业务场景进行功能延伸。商用扩展中心实现高度模块化，满足不同场景业务需求。以强大的企业级云原生底座，完善的专家级解决方案和服务支持，赋能企业数字化转型和规模化运营。
 
 自{ks_product_left} v4.0 起，引入扩展机制，推出了全新的 KubeSphere 架构：**KubeSphere LuBan**，它构建在 link:https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/[Kubernetes] 之上，支持高度可配置和可扩展。KubeSphere LuBan，是一个分布式的云原生可扩展开放架构，为扩展组件提供一个可热插拔的微内核。自此，KubeSphere 所有功能组件及第三方组件都会基于 KubeSphere LuBan，以扩展组件的方式无缝融入到 KubeSphere 控制台中，并独立维护版本，真正实现即插即用的应用级云原生操作系统。
 

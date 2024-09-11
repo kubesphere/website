@@ -10,10 +10,10 @@ export default async (req, context) => {
     let hasContentAfterDocs = false;
     const newPath = path.replace(/(\/docs\/)(.*)$/, (match, p1, p2) => {
       if (p2.trim() === "") {
-        return `${p1}v3.4/`;
+        return `${p1}v4.1/`;
       } else {
         hasContentAfterDocs = true;
-        return `${p1}v3.4/${p2}`;
+        return `${p1}v4.1/${p2}`;
       }
     });
 

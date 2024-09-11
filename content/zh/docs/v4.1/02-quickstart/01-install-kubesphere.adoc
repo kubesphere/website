@@ -1,0 +1,110 @@
+---
+title: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
+linkTitle: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
+keywords: 'KubeSphere, Kubernetes, All-in-One, 安装'
+description: '了解如何在 Linux 上最小化安装 KubeSphere。'
+weight: 01
+---
+
+本节介绍如何在单个节点上快速部署 Kubernetes 和{ks_product_left}。此安装方法仅适用于测试，若要在生产环境中安装{ks_product_left}，请参阅link:../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere]。
+
+
+== 前提条件
+
+* 准备一台 Linux 主机，并确保其满足最低硬件要求：CPU > 2 核，内存 > 4 GB， 磁盘空间 > 40 GB。
+
+* 您需要提前link:https://helm.sh/zh/docs/intro/install/[安装 Helm]。
+
+
+== 操作步骤
+
+. （可选）如果您没有可用的 Kubernetes 集群，执行以下命令快速创建一个 Kubernetes 集群。
+
+.. 如果您访问 GitHub/Googleapis 受限，请登录 Linux 主机，执行以下命令设置下载区域。
++
+[,bash]
+----
+export KKZONE=cn
+----
+
+.. 执行以下命令安装⼯具 KubeKey。
++
+--
+下载完成后当前目录下将生成 KubeKey 二进制文件 **kk**。
+
+[,bash]
+----
+curl -sfL https://get-kk.kubesphere.io | sh -
+----
+--
+
+.. 执行以下命令安装依赖项。
++
+[,bash]
+----
+apt install socat conntrack -y
+----
+
+.. 执行以下命令快速创建一个 Kubernetes 集群。
++
+[,bash]
+----
+./kk create cluster --with-local-storage  --with-kubernetes v1.31.0 --container-manager containerd  -y
+----
+
+. 如果您已经拥有可用的 Kubernetes 集群，执行以下命令通过 `helm` 安装{ks_product_both}的核心组件 KubeSphere Core。
++
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait
+----
+
+. 安装完成后，输出信息会显示{ks_product_left} Web 控制台的 IP 地址和端口号，默认的 NodePort 是 30880。
++
+--
+[,yaml]
+----
+NOTES:
+Thank you for choosing KubeSphere Helm Chart.
+
+Please be patient and wait for several seconds for the KubeSphere deployment to complete.
+
+1. Wait for Deployment Completion
+
+    Confirm that all KubeSphere components are running by executing the following command:
+
+    kubectl get pods -n kubesphere-system
+
+2. Access the KubeSphere Console
+
+    Once the deployment is complete, you can access the KubeSphere console using the following URL:
+
+    http://192.168.6.10:30880
+
+3. Login to KubeSphere Console
+
+    Use the following credentials to log in:
+
+    Account: admin
+    Password: P@88w0rd
+
+NOTE: It is highly recommended to change the default password immediately after the first login.
+
+For additional information and details, please visit https://kubesphere.io.
+----
+
+执行以下命令检查 Pod 状态。
+
+[,bash]
+----
+kubectl get pods -n kubesphere-system
+----
+
+当 Pod 状态都为 **Running** 时，使用默认的账户和密码 (admin/P@88w0rd) 通过 <NodeIP>:30880 访问{ks_product_left} Web 控制台。
+
+include::../../../_ks_components/admonitions/note.adoc[]
+
+取决于您的网络环境，您可能需要配置流量转发规则并在防火墙中放行 30880 端口。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--

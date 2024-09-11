@@ -1,62 +1,19 @@
 ---
-title: "查看和定制平台信息"
-linkTitle: "查看和定制平台信息"
-keywords: "Kubernetes, KubeSphere, 平台设置, 平台信息, 查看和定制平台信息"
-description: "介绍如何查看和定制平台信息。"
+title: "查看平台信息"
+linkTitle: "查看平台信息"
+keywords: "Kubernetes, KubeSphere, 平台设置, 平台信息, 查看平台信息"
+description: "介绍如何查看平台信息。"
 weight: 01
 ---
 
 
-:ks_navigation: **平台信息**
-:ks_permission: **平台设置管理**
+本节介绍如何查看{ks_product_left} Web 控制台的信息。
 
-
-本节介绍如何查看和定制{ks_product_left} Web 控制台的信息。
-
-== 前提条件
-
-:relfileprefix: ../../../
-
-include::../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
-
-:relfileprefix: ./
 
 == 操作步骤
 
-include::../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+. 登录{ks_product_left} Web 控制台。
 
 . 在页面右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
-
 +
-
-include::../../../../_ks_components/oper-navigate.adoc[]
-+
---
-**平台信息**页面显示平台的访问地址、标题、描述、标识、浏览器图标和登录页面背景图片。
---
-
-. 在页面右上角点击**自定义平台信息**。
-
-. 在**自定义平台信息**对话框设置平台的信息，然后点击**确定**。
-+
---
-[%header,cols="1a,4a"]
-|===
-|参数 |描述
-
-|平台标题
-|平台的名称。平台标题可包含任意字符，最长 63 个字符。
-
-|平台描述
-|描述可包含任意字符，最长 256 个字符。
-
-|平台标识
-|Web 控制台界面上方显示的标识。图片格式可以为 SVG、PNG 或 JPG，图片文件大小不能超过 2 MB，推荐的图片分辨率为 200 x 40 像素。
-
-|浏览器图标
-|浏览器页签的图标。图片格式可以为 ICO、SVG、PNG 或 JPG，图片文件大小不能超过 2 MB，推荐图片分辨率为 40 x 40 像素，推荐长宽比为 1:1。
-
-|登录页面背景图片
-|平台登录页面的背景图片。图片格式可以为 SVG、PNG 或 JPG，图片文件大小不能超过 2 MB，推荐的图片分辨率为 1920 x 1080 像素。
-|===
---
+**平台信息**页面显示平台的访问地址、标识、标题和描述。

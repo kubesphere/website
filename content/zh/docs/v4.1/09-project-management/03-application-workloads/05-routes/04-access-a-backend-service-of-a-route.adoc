@@ -21,7 +21,8 @@ include::../../../../_custom/projectManagement/projectManagement-prer-requiredPe
 
 :relfileprefix: ./
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网关**扩展组件，然后启用集群网关或项目网关。有关更多信息，请参阅 link:../../../../11-use-extensions/12-gateway[KubeSphere 网关]。
+* {ks_product_right}平台需要安装并启用 **KubeSphere 网关**扩展组件，然后启用集群网关或项目网关。
+// 有关更多信息，请参阅 link:../../../../11-use-extensions/12-gateway[KubeSphere 网关]。
 
 include::../../../../_custom/clusterManagement/routes/routes-prer-accessABackendServiceOfARoute.adoc[]
 

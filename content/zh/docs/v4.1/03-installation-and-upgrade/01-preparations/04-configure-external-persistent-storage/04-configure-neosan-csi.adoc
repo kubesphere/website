@@ -15,7 +15,7 @@ NeonSAN 是青云的一款企业级分布式块存储系统，NeonSAN CSI 是 Ne
 
 == 前提条件
 
-- 您已经成功部署 NeonSAN v2.2.0 及以上版本，且容器集群的每个节点都已安装 QBD 与 NeonSAN 连通。具体操作请咨询 KubeSphere 企业版技术支持人员。
+- 您已经成功部署 NeonSAN v2.2.0 及以上版本，且容器集群的每个节点都已安装 QBD 与 NeonSAN 连通。具体操作请咨询 KubeSphere 技术支持人员。
 - 您已经安装 Kubernetes v1.16 及其以上版本。
 - 您已经在容器集群的 master 节点安装了 Helm。本节以 Helm 3 为例。
 
@@ -328,5 +328,5 @@ $ docker images
 . 参考link:#_在线安装_neonsan_csi[在线安装]中步骤 8 - 12 执行安装后检查。
 +
 --
-NeonSAN CSI 安装成功后，您可以在 KubeSphere 企业版控制台上的**存储**区域查看。
+NeonSAN CSI 安装成功后，您可以在 KubeSphere 控制台上的**存储**区域查看。
 --

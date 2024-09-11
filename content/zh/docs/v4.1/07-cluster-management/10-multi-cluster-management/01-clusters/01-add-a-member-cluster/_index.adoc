@@ -22,7 +22,8 @@ weight: 01
 |说明
 
 |
-若要使用代理连接，{ks_product_both}平台需要安装并启用 **KubeSphere 多集群代理连接**扩展组件。有关更多信息，请参阅link:../../../../11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection/[通过代理连接添加成员集群]。
+若要使用代理连接，{ks_product_both}平台需要安装并启用 **KubeSphere 多集群代理连接**扩展组件。
+// 有关更多信息，请参阅link:../../../../11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection/[通过代理连接添加成员集群]。
 |===
 
 

@@ -8,36 +8,14 @@ weight: 03
 icon: "/images/docs/common/docs.svg"
 ---
 
-// 导出说明：此文档用于离线交付 pdf 版本，不可与 03-install-and-uninstall 同时存在。
+// 基于 v4.1.1 安装指南修改
 
-本节介绍如何安装、升级和卸载{ks_product_left}，以及如何添加和删除{ks_product_both}集群节点。
+本节介绍如何安装和卸载{ks_product_left}，以及如何添加和删除{ks_product_both}集群节点。
 
-ifeval::["{file_output_type}" == "pdf"]
-== 产品版本
-
-本文档适用于{ks_product_left} v4.1.0 版本。
-
-== 读者对象
-
-本文档主要适用于以下读者：
-
-* {ks_product_right}用户
-
-* 交付工程师
-
-* 运维工程师
-
-* 售后工程师
-
-
-== 修订记录
-
-[%header,cols="1a,1a,3a"]
+[.admon.note,cols="a"]
 |===
-|文档版本 |发布日期 |修改说明
+|说明
 
-|01
-|{pdf_releaseDate}
-|第一次正式发布。
+|
+暂不支持从{ks_product_left} v3.x 升级到 v4.1。
 |===
-endif::[]

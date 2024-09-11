@@ -1,0 +1,11 @@
+---
+title: "参考"
+linkTitle: "参考"
+weight: 25
+keywords: 'Kubernetes, KubeSphere, 术语表, 词汇表'
+description: '了解 KubeSphere 中的常用词汇表和相关信息。'
+layout: "second"
+icon: "/images/docs/common/docs.svg"
+---
+
+本节介绍{ks_product_both}中的常用词汇表和相关信息。

@@ -1,6 +1,7 @@
 ---
 title: "应用场景"
 linkTitle: "应用场景"
+description: "介绍 KubeSphere 的应用场景。"
 weight: 03
 ---
 
