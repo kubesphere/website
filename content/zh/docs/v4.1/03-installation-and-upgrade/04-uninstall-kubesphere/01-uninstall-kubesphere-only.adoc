@@ -1,20 +1,12 @@
 ---
-<<<<<<< HEAD
 title: "仅卸载 KubeSphere"
 linkTitle: "仅卸载 KubeSphere"
-=======
-title: "仅卸载{ks_product_left}"
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 keywords: "Kubernetes, {ks_product}, 仅卸载{ks_product_left}"
 description: "介绍如何卸载{ks_product_left}。"
 weight: 01
 ---
 
-<<<<<<< HEAD
 本节介绍如何卸载 KubeSphere Core，即卸载{ks_product_left}。当前集群中运⾏的 Kubernetes 将不会被卸载。
-=======
-本节介绍如何卸载{ks_product_left}。当前集群中运行的 Kubernetes 将不会被卸载。
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 
 // Warning
 include::../../../../_ks_components/admonitions/warning.adoc[]
@@ -30,7 +22,6 @@ include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 include::../../../_custom/installationAndUpgrade/installationAndUpgrade-prer-backUpData.adoc[]
 
-<<<<<<< HEAD
 == 操作步骤
 
 执行以下命令卸载{ks_product_left}。
@@ -39,105 +30,3 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-prer-bac
 ----
 helm -n kubesphere-system uninstall ks-core
 ----
-=======
-== 卸载扩展组件
-
-. 登录任意集群节点，执行以下命令查看集群中所有的扩展组件。
-+
-[,bash]
-----
-kubectl get installplan
-----
-
-. 卸载指定扩展组件或所有扩展组件。
-
-
-* 卸载指定扩展组件。
-+
---
-[,bash]
-----
-kubectl delete installplan {InstallPlan Name}
-----
-[.admon.note,cols="a"]
-|===
-|说明
-
-|
-可根据第一步的命令获取扩展组件的 `InstallPlan Name`。
-|===
-
-如果显示如下信息，表明该扩展组件卸载成功。
-
-[,bash]
-----
-installplan.kubesphere.io "{InstallPlan Name}" deleted
-----
---
-
-* 卸载全部扩展组件。
-+
---
-[,bash]
-----
-kubectl delete installplan --all
-----
-
-输出信息应如下所示：
-
-[,bash]
-----
-installplan.kubesphere.io "devops" deleted
-installplan.kubesphere.io "dmp" deleted
-installplan.kubesphere.io "gatekeeper" deleted
-installplan.kubesphere.io "gateway" deleted
-installplan.kubesphere.io "kubeedge" deleted
-installplan.kubesphere.io "kubefed" deleted
-installplan.kubesphere.io "metrics-server" deleted
-installplan.kubesphere.io "network" deleted
-installplan.kubesphere.io "openpitrix" deleted
-installplan.kubesphere.io "opensearch" deleted
-installplan.kubesphere.io "springcloud" deleted
-installplan.kubesphere.io "storage-utils" deleted
-installplan.kubesphere.io "tower" deleted
-installplan.kubesphere.io "vector" deleted
-installplan.kubesphere.io "whizard-alerting" deleted
-installplan.kubesphere.io "whizard-auditing" deleted
-installplan.kubesphere.io "whizard-events" deleted
-installplan.kubesphere.io "whizard-logging" deleted
-installplan.kubesphere.io "whizard-monitoring" deleted
-installplan.kubesphere.io "whizard-notification" deleted
-installplan.kubesphere.io "whizard-telemetry" deleted
-installplan.kubesphere.io "whizard-telemetry-ruler" deleted
-----
-
-再次执行以下命令，如果显示 No resources found，表明所有扩展组件都已卸载。
-
-[,bash]
-----
-kubectl get installplan
-----
---
-
-
-== 卸载 ks-core
-
-卸载 ks-core 之前，请确保集群中的扩展组件都已被卸载，即执行 `kubectl get installplan` 命令后显示 No resources found。
-
-. 执行以下命令卸载 ks-core。
-+
-[,bash]
-----
-helm del -n kubesphere-system ks-core
-----
-
-. 执行以下命令，如果返回结果为空（如下所示），表明{ks_product_both}卸载成功。
-+
---
-[,bash]
-----
-root@xxx:~# helm list -n kubesphere-system
-NAME    NAMESPACE               REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-----
---
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3

@@ -1,14 +1,9 @@
 ---
 title: "准备工作"
-<<<<<<< HEAD
 linkTitle: "准备工作"
 keywords: "Kubernetes, KubeSphere , 安装, 准备工作"
 description: "介绍安装 KubeSphere 前需要进行的准备工作。"
 layout: "second"
-=======
-keywords: "Kubernetes, {ks_product}, 安装, 准备工作"
-description: "介绍安装{ks_product_both}前需要进行的准备工作。"
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 weight: 01
 ---
 

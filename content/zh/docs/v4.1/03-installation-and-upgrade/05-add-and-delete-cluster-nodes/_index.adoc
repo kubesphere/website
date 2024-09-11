@@ -1,14 +1,9 @@
 ---
 title: "添加和删除集群节点"
-<<<<<<< HEAD
 linkTitle: "添加和删除集群节点"
 keywords: "Kubernetes, KubeSphere, 添加集群节点, 删除集群节点"
 description: "介绍如何添加和删除 KubeSphere 集群节点。"
 layout: "second"
-=======
-keywords: "Kubernetes, {ks_product}, 添加集群节点, 删除集群节点"
-description: "介绍如何添加和删除{ks_product_both}集群节点。"
->>>>>>> 33f730a984ccbc140ff5c4d2867db9592a37f2e3
 weight: 05
 ---
 
