@@ -1,18 +1,14 @@
 approvers:
-    - liyun95
-    - Bettygogo2021 #oncall
     - zheng1
     - rayzhou2017
     - faweizhao26
-    - yangchuansheng
+    - zhuxiujuan28
 
 reviewers:
-    - liyun95
-    - Bettygogo2021
     - zheng1
     - rayzhou2017
     - faweizhao26
-    - yangchuansheng
+    - zhuxiujuan28
     - benjaminhuo
     - calvinyv
     - pixiake
