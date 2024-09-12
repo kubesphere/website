@@ -1,0 +1,27 @@
+---
+title: "改进计划"
+linkTitle: "改进计划"
+weight: 01
+keywords: "安装器, Telemetry, KubeSphere, Kubernetes"
+description: "了解 KubeSphere 收集哪些信息，以及如何启用或禁用信息收集。"
+---
+
+
+== 什么是改进计划？
+
+改进计划会收集关于 KubeSphere 安装、使用功能的汇总信息。这些信息将仅被 KubeSphere 用于改进产品，并且不与任何第三方分享。
+
+== 改进计划报告的内容是什么？
+
+改进计划不会收集任何特定的身份信息，比如用户名、密码、资源的名称或地址。
+
+主要收集的内容包括：
+
+- 扩展组件安装信息：组件名称，组件版本和安装时间。
+- 集群信息：集群名称，集群角色，集群版本，集群 uid (kube-system 命名空间的 uid)，KubeSphere 版本，KubeSphere 的 uid (kubesphere-system 命名空间的 uid)。
+- 集群节点信息：节点名称，节点 uid，节点角色，节点架构，节点操作系统版本，节点操作系统镜像名称，内核版本，容器运行时版本，kube-proxy 版本，kubelet 版本。
+- 资源统计信息：用户数量，命名空间数量，企业空间数量。
+
+== 如何参与或退出改进计划？
+
+KubesSphere 安装或配置变更时，可以通过配置 `telemetry.enabled` 选择是否参与改进计划。更多信息，请参阅 link:../../03-installation-and-upgrade/02-install-kubesphere/05-appendix/#_高级选项[KubeSphere Core 高级配置]。
