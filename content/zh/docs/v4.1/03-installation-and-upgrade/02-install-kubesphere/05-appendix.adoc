@@ -41,7 +41,7 @@ weight: 05
 |extension.ingress.httpsPort	|443	|扩展组件的 ingress 的 https 端口。
 |certmanager.duration | 2160h | string - cert-manager 生成证书的过期时间。
 |certmanager.renewBefore | 360h | string - cert-manager 刷新证书到证书过期之间的时间间隔。
-|global.imageRegistry | registry.cn-beijing.aliyuncs.com | string - 设置全局的 KubeSphere 镜像仓库地址。
+|global.imageRegistry | docker.io | string - 设置全局的 KubeSphere 镜像仓库地址。
 |global.tag | "v4.1.2" | string - 设置全局的 KubeSphere 镜像仓库标签。
 |apiserver.image.registry | "" | string - 设置 ks-apiserver 镜像仓库地址。
 |apiserver.image.repository | "kubesphere/ks-apiserver" | string - 设置 ks-apiserver 镜像名称。
