@@ -76,3 +76,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 {{ end }}
 
+
+<script>
+  // Get the current url, if there is /zh/ in the path, it will be Chinese, otherwise it will be English.
+  // Pop up a mask on the current page to remind the user that the current version is no longer maintained, please visit kubesphere.io for the latest version. If the user doesn't click continue, it will automatically switch to kubesphere.io after 10s, and if they continue, the mask will be closed.
+  
+  window.onload = function() {
+    var isZh = window.location.pathname.startsWith("/zh/");
+  
+    var mask = document.createElement('div');
+    mask.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;';
+  
+    var box = document.createElement('div');
+    box.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:20px;border-radius:5px;text-align:center;';
+  
+    var message = document.createElement('p');
+    message.textContent = isZh ? '当前版本已经不再维护，将在 10 秒钟后重定向到 kubesphere.io 获取最新版本。' : 'This version is no longer maintained. You will be redirected to kubesphere.io for the latest version in 10 seconds.';
+    message.style.margin = '10px 0';
+  
+    var continueBtn = document.createElement('button');
+    continueBtn.textContent = isZh ? '继续浏览' : 'Continue';
+    continueBtn.style.cssText = 'margin-right:10px;padding:8px 16px;background-color:#f0f0f0;border:none;border-radius:4px;font-size:14px;cursor:pointer;transition:background-color 0.3s;';
+    continueBtn.onmouseover = function() { this.style.backgroundColor = '#e0e0e0'; };
+    continueBtn.onmouseout = function() { this.style.backgroundColor = '#f0f0f0'; };
+  
+    var redirectBtn = document.createElement('button');
+    redirectBtn.textContent = isZh ? '前往新版' : 'Go to new version';
+    redirectBtn.style.cssText = 'padding:8px 16px;background-color:#1890ff;color:white;border:none;border-radius:4px;font-size:14px;cursor:pointer;transition:background-color 0.3s;';
+    redirectBtn.onmouseover = function() { this.style.backgroundColor = '#40a9ff'; };
+    redirectBtn.onmouseout = function() { this.style.backgroundColor = '#1890ff'; };
+  
+    box.appendChild(message);
+    box.appendChild(continueBtn);
+    box.appendChild(redirectBtn);
+    mask.appendChild(box);
+  
+    document.body.appendChild(mask);
+  
+    var redirectTimer = setTimeout(function() {
+        window.location.href = 'https://kubesphere.io' + (isZh ? '/zh/' : '/');
+    }, 10000);
+  
+    continueBtn.onclick = function() {
+        document.body.removeChild(mask);
+        clearTimeout(redirectTimer);
+    };
+  
+    redirectBtn.onclick = function() {
+        window.location.href = 'https://kubesphere.io' + (isZh ? '/zh/' : '/');
+    };
+  }
+  
+  </script>
