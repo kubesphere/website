@@ -31,7 +31,7 @@ weight: 05
 [%header,cols="1,1,3a"]
 |===
 |选项	|默认值	|描述
-|telemetry.enabled | true | bool - 是否参与改进计划。
+|telemetry.enabled | true | bool - 是否参与改进计划，如果值为 true, 表示允许 KubeSphere 收集您的数据。更多信息，请参阅link:../../../24-faq/01-info-collection[改进计划]。
 |internalTLS | false | bool - 如果值为 true, 启用内部 TLS。console 和 apiserver 均会启用 HTTPS 服务。
 |ingress.ingressClassName | "" | string - 使用网关的可选 Ingress 类，可选项："nginx，traefik"。
 |ingress.secretName | "kubesphere-tls-certs" | string - Ingress 网关所使用的包含 TLS 证书的 Secrets。
