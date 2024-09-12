@@ -31,7 +31,7 @@ weight: 05
 [%header,cols="1,1,3a"]
 |===
 |选项	|默认值	|描述
-|telemetry.enabled | true | bool - 是否参与改进计划。
+|telemetry.enabled | true | bool - 是否参与改进计划，如果值为 true, 表示允许 KubeSphere 收集您的数据。更多信息，请参阅link:../../../24-faq/01-info-collection[改进计划]。
 |internalTLS | false | bool - 如果值为 true, 启用内部 TLS。console 和 apiserver 均会启用 HTTPS 服务。
 |ingress.ingressClassName | "" | string - 使用网关的可选 Ingress 类，可选项："nginx，traefik"。
 |ingress.secretName | "kubesphere-tls-certs" | string - Ingress 网关所使用的包含 TLS 证书的 Secrets。
@@ -102,7 +102,7 @@ KubeSphere 安全配置分为**网关 SSL 配置**以及**内部服务 SSL 配�
 
 ** 如果 Kubernetes 集群中已安装 cert-manager，则首选使用 cert-manager 生成证书。KubeSphere 使用 cert-manager 签发并维护证书。KubeSphere 会生成自己的 CA 证书，并用该 CA 签署证书，然后由 cert-manager 管理该证书。
 
-** 如果未安装 cert-manager，则使用 helm 生成证书。在使用 helm 安装的过程中，KubeSphere 会根据设置的 `hostname` 生成 CA 和 TLS 证书。在此选项下，证书不支持自动过期轮转。
+** 如果未安装 cert-manager，则使用 helm 生成证书。在使用 helm 安装的过程中，KubeSphere 会根据设置的 `portal.hostname` 生成 CA 和 TLS 证书。在此选项下，证书不支持自动过期轮转。
 
 * Let's Encrypt
 +
@@ -166,7 +166,7 @@ kubectl get pods --namespace cert-manager
 ----
 helm upgrade --install -n kubesphere-system --create-namespace ks-core $chart --version $version \
 --set ingress.enabled=true \
---set hostname=kubesphere.my.org
+--set portal.hostname=kubesphere.my.org
 ----
 
 * Let's Encrypt
@@ -176,7 +176,7 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core $chart --
 [,bash]
 ----
 helm upgrade --install -n kubesphere-system --create-namespace ks-core $chart --version $version \
---set hostname=kubesphere.my.org \
+--set portal.hostname=kubesphere.my.org \
 --set ingress.enabled=true \
 --set ingress.tls.source=letsEncrypt \
 --set letsEncrypt.email=me@example.org 
@@ -193,7 +193,7 @@ kubectl create secret tls tls-ks-core-ingress --cert=tls.crt --key=tls.key -n ku
 helm upgrade --install -n kubesphere-system --create-namespace ks-core
 $chart --version $version \
 --set ingress.enabled=true \
---set hostname=kubesphere.my.org \
+--set portal.hostname=kubesphere.my.org \
 --set ingress.tls.source=importation
 ----
 --
