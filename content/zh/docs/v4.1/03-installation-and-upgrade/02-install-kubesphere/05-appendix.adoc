@@ -15,7 +15,9 @@ weight: 05
 |===
 |选项	|默认值	|描述
 |adminPassword	|""	|string - 为第一个管理员用户设置引导密码。登录后，管理员需要重置密码。如不设置，会使用内置默认密码 **P@88w0rd**。
-|hostname	|"example.com"	|string - KubeSphere Server 完全限定的域名。
+|portal.hostname	|"ks-console.kubesphere-system.svc"	|string - KubeSphere Console 的完全限定域名。
+|portal.http.port	|80	|uint16 - KubeSphere Console 的 HTTP 端口。
+|portal.https.port	|443	|uint16 - KubeSphere Console 的 HTTPS 端口。
 |ingress.enabled	|false	|bool - 如果值为 true, 创建 KubeSphere Ingress 网关。
 |ingress.tls.enabled	|true	|bool - 如果值为 true, 则为 KubeSphere  Ingress 网关启用 HTTPS。
 |ingress.tls.source	|"generation"	|string - Ingress 证书的来源，可选项："generation, importation, letsEncrypt"。
