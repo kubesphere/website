@@ -73,9 +73,6 @@ weight: 05
 composedApp:
   appSelector: "kubesphere.io/creator"
 ----
-
-|telemetry.enabled |"" |bool - 如果值为 true, 则表示允许 KubeSphere 收集您的数据。更多信息，请参阅link:../../../24-faq/01-info-collection[改进计划]。
-
 |===
 
 
