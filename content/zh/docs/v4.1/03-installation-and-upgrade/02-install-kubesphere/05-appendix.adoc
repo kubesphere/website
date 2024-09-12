@@ -35,7 +35,7 @@ weight: 05
 |ingress.ingressClassName | "" | string - 使用网关的可选 Ingress 类，可选项："nginx，traefik"。
 |ingress.secretName | "kubesphere-tls-certs" | string - Ingress 网关所使用的包含 TLS 证书的 Secrets。
 |extension.ingress.ingressClassName	|""	|用于扩展组件访问的外部 ingress 的 ingressClassName。
-|extension.ingress.domainSuffix	|""	|用于创建扩展组件访问入口的域名后缀；根据外部 ingress 地址，它可以是 LB 主机名地址（比如 xx.com）、{node_ip}.nip.io 或内部 DNS 地址（比如 kse.local）。
+|extension.ingress.domainSuffix	|""	|用于创建扩展组件访问入口的域名后缀；根据外部 ingress 地址，它可以是 LB 主机名地址（比如 xx.com）、{node_ip}.nip.io 或内部 DNS 地址（比如 kubesphere.local）。
 |extension.ingress.httpPort	|80	|扩展组件的 ingress 的 http 端口。
 |extension.ingress.httpsPort	|443	|扩展组件的 ingress 的 https 端口。
 |certmanager.duration | 2160h | string - cert-manager 生成证书的过期时间。
@@ -43,15 +43,15 @@ weight: 05
 |global.imageRegistry | registry.cn-beijing.aliyuncs.com | string - 设置全局的 KubeSphere 镜像仓库地址。
 |global.tag | "v4.1.2" | string - 设置全局的 KubeSphere 镜像仓库标签。
 |apiserver.image.registry | "" | string - 设置 ks-apiserver 镜像仓库地址。
-|apiserver.image.repository | "kse/ks-apiserver" | string - 设置 ks-apiserver 镜像名称。
+|apiserver.image.repository | "kubesphere/ks-apiserver" | string - 设置 ks-apiserver 镜像名称。
 |apiserver.image.tag | "" | string - 设置 ks-apiserver 镜像标签。
 |apiserver.nodePort | "" | uint16 - 设置 ks-apiserver 服务 service 的 NodePort 端口。
 |console.image.registry | "" | string - 设置 ks-console 镜像仓库地址。
-|console.image.repository | "kse/ks-console" | string - 设置 ks-console 镜像名称。
+|console.image.repository | "kubesphere/ks-console" | string - 设置 ks-console 镜像名称。
 |console.image.tag | "" | string - 设置 ks-console 镜像标签。
 |console.nodePort | 30880 | uint16 - 设置 ks-console 服务 service 的 NodePort 端口。
 |controller.image.registry | "" | string - 设置 ks-controller-manager 镜像仓库地址。
-|controller.image.repository | "kse/ks-controller-manager" | string - 设置 ks-controller-manager 镜像名称。
+|controller.image.repository | "kubesphere/ks-controller-manager" | string - 设置 ks-controller-manager 镜像名称。
 |controller.image.tag | "" | string - 设置 ks-controller-manager 镜像标签。
 |composedApp.appSelector | "" | string - 指定 annotation 或 label，以便对匹配的自制应用进行处理并更新状态。
 
