@@ -353,7 +353,7 @@ name = "开源社区"
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "中国站"
-    URL = "https://kubesphere.com.cn/"
+    URL = "https://www.kubesphere.io/zh/"
     weight = 8
 
     [[languages.zh.menu.main]]
