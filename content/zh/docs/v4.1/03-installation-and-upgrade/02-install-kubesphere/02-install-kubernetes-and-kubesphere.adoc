@@ -1,6 +1,6 @@
 ---
-title: "安装 Kubernetes 和 KubeSphere"
-linkTitle: "安装 Kubernetes 和 KubeSphere"
+title: "在 Linux 上安装 Kubernetes 和 KubeSphere"
+linkTitle: "在 Linux 上安装 Kubernetes 和 KubeSphere"
 keywords: "Kubernetes, {ks_product}, 安装, 安装{ks_product_left}, 安装 Kubernetes"
 description: "介绍如何在生产环境中安装 Kubernetes 和{ks_product_left}。"
 weight: 02
