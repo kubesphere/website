@@ -1,8 +1,8 @@
 ---
-title: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
-linkTitle: "在 Linux 上以 All-in-One 模式安装 KubeSphere"
+title: "在 Kubernetes 上快速安装 KubeSphere"
+linkTitle: "在 Kubernetes 上快速安装 KubeSphere"
 keywords: 'KubeSphere, Kubernetes, All-in-One, 安装'
-description: '了解如何在 Linux 上最小化安装 KubeSphere。'
+description: '了解如何快速部署 Kubernetes 和 KubeSphere。'
 weight: 01
 ---
 
