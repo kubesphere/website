@@ -370,8 +370,21 @@ KubeSphere Core (ks-core) 是{ks_product_both}的核心组件，为扩展组件�
 ====
 [,bash]
 ----
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.1.tgz --debug --wait
 ----
+
++
+include::../../../_ks_components/admonitions/note.adoc[]
+
+
+如果您访问 Docker Hub 受限，请使用如下配置，修改默认的镜像拉取地址。
+
+[,bash]
+----
+--set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
 
 如果显示如下信息，则表明 ks-core 安装成功：
 
