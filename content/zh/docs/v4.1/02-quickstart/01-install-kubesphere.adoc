@@ -67,7 +67,7 @@ include::../../../_ks_components/admonitions/note.adoc[]
 +
 [,bash]
 ----
---set global.imageRegistry=hub.kubesphere.com.cn
+--set global.imageRegistry=global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
 ----
 
 +
