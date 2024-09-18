@@ -63,11 +63,11 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core https://c
 include::../../../_ks_components/admonitions/note.adoc[]
 
 +
-如果您访问 Docker Hub 受限，请使用如下自定义配置，修改默认的镜像拉取地址。
+如果您访问 Docker Hub 受限，请使用如下配置，修改默认的镜像拉取地址。
 +
 [,bash]
 ----
---set global.imageRegistry=global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+--set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
 ----
 
 +
