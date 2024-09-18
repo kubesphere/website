@@ -56,7 +56,7 @@ apt install socat conntrack -y
 +
 [,bash]
 ----
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.0.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.1.tgz --debug --wait
 ----
 
 +
