@@ -43,8 +43,9 @@ image:/images/ks-qkcp/zh/v4.0/install-extensions.png[,100%]
 . 在**差异化配置**页签，分别编辑选中集群的 YAML 配置，也可不修改，使用初始默认配置。点击**确定**，开始配置集群 Agent。
 +
 include::../../../_ks_components/admonitions/note.adoc[]
+
 部分扩展组件可能需要安装集群 Agent，以便能正常使用扩展组件的功能。
 
 include::../../../_ks_components/admonitions/admonEnd.adoc[]
 
-安装完成后，默认启用该组件。您可以在扩展中心配置、升级、禁用、卸载扩展组件，还可以点击顶部导航栏上的image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，查看使用该组件。
+安装完成后，默认启用该组件。您可以在扩展中心配置、升级、禁用、卸载扩展组件。
