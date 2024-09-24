@@ -1,0 +1,1 @@
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en}platform. For more information, refer to xref:05-users-and-roles/01-users/_index.adoc[Users] and xref:05-users-and-roles/02-platform-roles/_index.adoc[Platform Roles]。

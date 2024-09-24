@@ -1,0 +1,10 @@
+---
+title: "管理企业空间"
+linkTitle: "管理企业空间"
+keywords: "Kubernetes, KubeSphere, 访问控制, 企业空间"
+description: "介绍如何管理企业空间。"
+layout: "second"
+weight: 02
+---
+
+本节介绍如何创建和管理多个企业空间。

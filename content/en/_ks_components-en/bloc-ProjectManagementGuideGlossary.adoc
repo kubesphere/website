@@ -1,0 +1,32 @@
+// :ks_include_id: c6c90ffe51d64b43a2d6226fdeda8dd3
+
+= 术语和缩略语link:[id=59c65fc0d22a405f8a01aee13b88b437]
+
+[role='glossary',cols='1a,5a,5a']
+|===
+
+|CPU
+|Central Processing Unit
+|中央处理器
+
+|HTTP
+|Hypertext Transfer Protocol
+|超文本传输协议
+
+|IP
+|Internet Protocol
+|互联网协议
+
+|JAR
+|Java Archive
+|Java 归档
+
+|URL
+|Uniform Resource Locator
+|统一资源定位符
+
+|WAR
+|Web Application Archive
+|Web 应用程序归档
+|===
+

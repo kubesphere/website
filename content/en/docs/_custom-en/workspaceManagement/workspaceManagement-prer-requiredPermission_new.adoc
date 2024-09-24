@@ -1,0 +1,2 @@
+// :ks_include_id: 05d7ebe027f04cc589e8baa04343e651
+您需要加入一个企业空间并在企业空间中具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:08-workspace-management/05-workspace-settings/03-workspace-members/_index.adoc[企业空间成员]和xref:08-workspace-management/05-workspace-settings/04-workspace-roles/_index.adoc[企业空间角色]。

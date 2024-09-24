@@ -1,0 +1,16 @@
+// :ks_include_id: 0909f39a50384c55b38d52472ab4085e
+. 在**基本信息**页签，设置规则组的基本信息，然后点击**下一步**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|规则组的名称。
+
+名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+
+include::ruleGroups-para-aliasCheckIntervalDescription.adoc[]
+|===
+--

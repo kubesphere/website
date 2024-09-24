@@ -1,0 +1,2 @@
+// :ks_include_id: ae3aeeab99d2436aaf471a053199ed31
+* **ExternalName**：服务将业务流量转发给集群外部的其他服务。系统不为服务分配虚拟 IP 地址，可通过 `<service name>.<project name>.svc.cluster.local` 格式的域名从集群内部访问。

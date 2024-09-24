@@ -1,0 +1,6 @@
+// :ks_include_id: 8e195bed54da4a4d8f7337f34ddec2ec
+. 在需要禁用的规则组右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**禁用**。
+
+. 在**禁用规则组**对话框，输入规则组的名称，然后点击**确定**。
+
+. 在已禁用的规则组右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**启用**可启用规则组。

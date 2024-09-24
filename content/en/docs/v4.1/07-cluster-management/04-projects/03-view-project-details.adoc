@@ -1,0 +1,91 @@
+---
+title: "查看项目详情"
+linkTitle: "查看项目详情"
+keywords: "Kubernetes, KubeSphere, 集群管理, 项目, 查看项目详情"
+description: "介绍如何查看项目详情。"
+weight: 03
+---
+
+:ks_permission: **项目查看**
+:ks_navigation: **项目**
+
+
+本节介绍如何查看项目详情。
+
+
+== 前提条件
+
+:relfileprefix: ../../../
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+== 操作步骤
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-openListPage.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-openDetailsPage.adoc[]
+
++
+
+. 在项目详情页面左侧的**属性**区域，查看项目的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|状态
+|
+include::../../../_custom-en/clusterManagement/projects/projects-para-status.adoc[]
+
+|集群
+|项目所属的集群。
+
+|企业空间
+|项目所属的企业空间。
+
+|创建时间
+|项目的创建时间。
+
+|创建者
+|创建项目的用户。
+|===
+--
+
+. 在项目详情页面右侧的**概览**页签，查看当前项目的资源状态，如容器组、部署、有状态副本集、守护进程集、任务、定时任务、持久卷、服务和应用路由的数量。
+
+. 在项目详情页面右侧的**容器组**页签，查看项目中运行的所有容器组。
++
+--
+include::../../../_custom-en/clusterManagement/nodes/nodes-para-podList.adoc[]
+--
+
+. 在项目详情页面右侧点击**配额**，查看项目的配额信息。
++
+--
+[%header,cols="1a,4a"]
+|===
+|功能区 |描述
+
+include::../../../_custom-en/clusterManagement/projects/projects-para-defaultContainerQuotas.adoc[]
+
+|项目配额
+|项目中可用资源的数量和实际使用量，包括： CPU 预留、CPU 上限、内存预留、内存上限、容器组预留和容器组上限等。
+|===
+
+有关如何设置默认容器配额和项目配额，请参阅link:../07-edit-default-container-quotas/[编辑默认容器配额]和link:../06-edit-project-quotas/[编辑项目配额]。
+--
+
+. 在项目详情页面右侧点击**元数据**，查看项目的标签。

@@ -1,8 +1,8 @@
 ---
 title: "仅卸载 KubeSphere"
 linkTitle: "仅卸载 KubeSphere"
-keywords: "Kubernetes, {ks_product}, 仅卸载{ks_product_left}"
-description: "介绍如何卸载{ks_product_left}。"
+keywords: "Kubernetes, KubeSphere, 仅卸载 KubeSphere"
+description: "介绍如何卸载 KubeSphere。"
 weight: 01
 ---
 

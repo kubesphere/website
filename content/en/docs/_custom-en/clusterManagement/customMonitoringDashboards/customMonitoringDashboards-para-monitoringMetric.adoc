@@ -1,0 +1,2 @@
+// :ks_include_id: 5ed9a5c35fa945bc84988f238d7ab69a
+应用程序暴露的监控指标。您可以点击**监控指标**然后在下拉列表中选择监控指标，也可以手动输入 PromQL 语句。请确保您已配置应用程序暴露监控指标，并已配置监控导出器。有关 PromQL 表达式的更多信息，请参阅 link:https://prometheus.io/docs/prometheus/latest/querying/basics/[Prometheus 官方文档]。

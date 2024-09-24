@@ -1,0 +1,4 @@
+// :ks_include_id: 33ba2ea4cb7c42df8ab521495320a3a9
+* 您需要具有可用的容器镜像服务用于保存构建生成的容器镜像。有关更多信息，请参阅 link:https://docs.docker.com/registry/[Docker 官方文档]。
+
+* 您需要提前在项目中创建保存镜像服务信息的保密字典。有关更多信息，请参阅xref:07-project-management/05-configuration/01-secrets/01-create-a-secret.adoc[创建保密字典]。

@@ -1,0 +1,50 @@
+---
+title: "移除项目成员"
+linkTitle: "移除项目成员"
+keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 项目成员, 移除项目成员"
+description: "介绍如何移除项目成员。"
+weight: 04
+---
+
+:ks_permission: **成员查看**
+:ks_navigation: **项目设置 > 项目成员**
+
+
+本节介绍如何移除项目成员。
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+用户被从项目中移除后，将失去项目角色提供的权限。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在需要移除的项目成员右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后选择**移除**。
+
+. 在**移除成员**对话框输出项目成员的用户名，然后点击**确定**。
++
+--
+项目成员被移除后将不再显示在项目成员列表中。
+--

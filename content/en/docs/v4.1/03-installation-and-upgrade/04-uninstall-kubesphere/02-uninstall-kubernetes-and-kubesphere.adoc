@@ -1,0 +1,74 @@
+---
+title: "Uninstall Kubernetes and KubeSphere"
+linkTitle: "Uninstall Kubernetes and KubeSphere"
+keywords: "Kubernetes, KubeSphere, Uninstall Kubernetes and KubeSphere"
+description: "Learn how to uninstall Kubernetes and KubeSphere."
+weight: 02
+---
+
+
+This section explains how to uninstall Kubernetes and {ks_product-en}.
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+The uninstallation method for Kubernetes described in this section only applies to Kubernetes installed using KubeKey. If your Kubernetes is not installed through KubeKey, please refer to the link:https://kubernetes.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-reset/[Kubernetes documentation] for uninstallation instructions.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+// Warning
+include::../../../../_ks_components-en/admonitions/warning.adoc[]
+
+The uninstallation will cause business interruption to the KubeSphere cluster and cannot be undone. Please proceed with caution.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+* You should get the installation configuration file **config-sample.yaml** and transfer it to the cluster nodes where you will perform the uninstallation. For more information, refer to link:../../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere[Install Kubernetes and {ks_product-en}].
++
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+If you are unable to get the installation configuration file **config-sample.yaml**, you need to refer to link:../../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere[Install Kubernetes and {ks_product-en}] to recreate the **config-sample.yaml** file. When recreating the file, make sure that the cluster information in the file matches the current state of the cluster. Otherwise, the uninstallation process may encounter errors.
+|===
+
+* {empty}
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-prer-backUpData.adoc[]
+
+
+== Steps
+
+// ifeval::["{file_output_type}" == "pdf"]
+// include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
+// endif::[]
+
+// ifeval::["{file_output_type}" == "html"]
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-downloadKubekey.adoc[]
+// endif::[]
+
++
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-transferConfig.adoc[]
+
++
+
+. Run the following command to uninstall {ks_product-en}.
++
+--
+// Bash
+[,bash]
+----
+ ./kk delete cluster -f config-sample.yaml
+----
+
+If you see the following message, it means the uninstallation is successful:
+
+// Bash
+[,bash]
+----
+Pipeline[DeleteClusterPipeline] execute successful
+----
+--

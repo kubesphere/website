@@ -1,0 +1,14 @@
+---
+title: "持久卷声明"
+linkTitle: "持久卷声明"
+keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 持久卷声明, 持久卷"
+description: "介绍如何管理卷。"
+layout: "second"
+weight: 01
+---
+
+
+
+本节介绍如何管理持久卷声明和持久卷。
+
+持久卷声明定义了对存储资源的需求，系统将根据持久卷声明在后端存储系统中创建存储区域供容器使用，每个存储区域对应{ks_product-en}平台上的一个持久卷。

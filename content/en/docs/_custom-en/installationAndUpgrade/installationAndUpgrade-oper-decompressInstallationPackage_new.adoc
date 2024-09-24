@@ -1,0 +1,35 @@
+// :ks_include_id: 654fbac8f3b34fdfbdfb17fa841b2b0a
+
+. Transfer the {ks_product-en}installation package to a cluster node and log in to the cluster node.
+
+. Execute the following command to decompress the installation package and enter the directory generated after decompression (replace <package name> with the actual name of the installation package, and replace <directory> with the directory generated after decompression):
++
+--
+// Bash
+[,bash]
+----
+
+tar -zxvf <package name>
+
+----
+
+// Bash
+[,bash]
+----
+
+cd <directory>
+
+----
+--
+
+. Execute the following command to add execution permissions to the KubeKey binary **kk**:
++
+--
+// Bash
+[,bash]
+----
+
+sudo chmod +x kk
+
+----
+--

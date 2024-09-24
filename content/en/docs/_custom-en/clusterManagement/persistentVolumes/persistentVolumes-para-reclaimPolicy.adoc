@@ -1,0 +1,2 @@
+// :ks_include_id: 05055fc19ca74178ac595789b0863f6f
+持久卷的回收策略。{ks_product-en}平台默认使用 **Delete** 回收策略，即在持久卷声明被删除时同时删除持久卷。有关更多信息，请参阅 link:https://kubernetes.io/zh/docs/concepts/storage/storage-classes/[Kubernetes 官方文档]。

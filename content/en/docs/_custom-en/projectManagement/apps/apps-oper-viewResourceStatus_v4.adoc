@@ -1,0 +1,61 @@
+// :ks_include_id: c4590bcc1e7e440b8eaf162491107dc0
+. 在应用详情页面左侧的**资源状态**页签查看组成应用的服务和工作负载。
+
+* **服务**区域提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|服务的名称。
+
+|项目
+|服务所属的项目。
+
+|内部访问
+|服务供集群内部访问的虚拟 IP 地址。
+
+|外部访问
+|服务供集群外部访问的端口号。
+
+// |内部访问模式
+// |
+// include::../../clusterManagement/services/services-para-internalAccess.adoc[]
+
+// include::../../clusterManagement/services/services-para-virtualip-headless.adoc[]
+
+// |应用治理
+// |应用是否已启用应用治理。应用治理启用后，您可以使用{ks_product-en}提供的流量监控、灰度发布和链路追踪功能。
+
+// |虚拟 IP 地址
+// |服务供集群内部访问的虚拟 IP 地址。仅在服务的内部访问类型为 **VirtualIP** 时显示。
+|===
+--
+
+* **工作负载**区域提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|工作负载的名称。
+
+|项目
+|工作负载所属的项目。
+
+// |类型
+// |工作负载的类型。
+
+|状态
+|工作负载当前的状态。
+
+include::../../clusterManagement/workloads/workloads-para-workloadStatus.adoc[]
+
+// |修改记录
+// |工作负载的当前修改记录。
+|===
+--

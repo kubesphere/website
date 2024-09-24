@@ -1,0 +1,26 @@
+// :ks_include_id: ebcff396ff624f5f9d3e0534615ffdcb
+* 卷快照列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|卷快照的名称、别名和卷快照类。
+
+|状态
+|
+include::volumeSnapshots-para-volumeSnapshotStatus.adoc[]
+
+|项目
+|卷快照所属的项目。
+
+|容量
+|
+include::volumeSnapshots-para-capacity.adoc[]
+
+|创建时间
+|卷快照的创建时间。
+|===
+--

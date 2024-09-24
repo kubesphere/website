@@ -1,0 +1,34 @@
+// :ks_include_id: 17ab622bc96f45e68b3581c076cb1223
+. 在页面右侧选择**管理 > 编辑**。
+
+. 在弹出的对话框，修改网关的参数，然后点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|IngressClassName
+|IngressClass 的名称。
+
+|容器组副本数量
+|期望的容器组副本数量。
+
+|访问模式
+|网关服务的外部访问模式。
+
+include::../services/services-para-externalAccess.adoc[tag=bullets]
+
+|链路追踪
+|是否对网关启用链路追踪功能。如需使用链路追踪功能，KubeSphere 平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+
+|配置选项
+|网关的配置选项。KubeSphere 的网关功能底层基于 Nginx Ingress Controller 实现，您可以设置网关的配置选项控制网关的行为。有关更多信息，请参阅 link:https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/[Nginx Ingress Controller 官方文档]。
+
+|负载均衡器提供商
+|网关的负载均衡器提供商。网关的外部访问模式为 LoadBalancer 时，您需要根据负载均衡器插件和基础设施环境设置网关服务的注解以创建所需的负载均衡器。选择负载均衡器提供商后，设置网关服务注解时系统将提供注解提示。仅在网关服务的外部访问模式为 LoadBalancer 时可用。
+
+|注解
+|网关服务的注解。如果已选择负载均衡器提供商，点击**键**文本框时系统将在下拉列表中显示注解提示。仅在网关服务的外部访问模式为 LoadBalancer 时可用。有关更多信息，请联系您的基础设施环境提供商。
+|===
+--

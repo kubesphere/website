@@ -1,0 +1,2 @@
+// :ks_include_id: 69f5611b6e834378a32660759919920f
+* RadonDB ClickHouse 状态为**运行中**。

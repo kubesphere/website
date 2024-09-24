@@ -1,0 +1,21 @@
+---
+title: "集群成员"
+linkTitle: "集群成员"
+keywords: "Kubernetes, KubeSphere, 集群管理, 集群成员"
+description: "介绍如何管理集群成员。"
+layout: "second"
+weight: 03
+---
+
+
+
+本节介绍如何管理集群成员。
+
+集群成员是在集群中具有资源查看或管理权限的用户，集群成员的权限由成员在集群中的角色决定。
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-desc-initialClusterAdmin.adoc[]
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

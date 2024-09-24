@@ -1,0 +1,47 @@
+---
+title: "Platform Introduction"
+linkTitle: "Platform Introduction"
+keywords: "Kubernetes, KubeSphere, Platform, Modules"
+description: "Introduce the main functions of each module on the KubeSphere platform."
+weight: 01
+---
+
+KubeSphere adopts a fine-grained permission control mechanism. The {ks_product-en} web console varies based on the user's role.
+
+This section, from the perspective of a user with the `platform-admin` role, introduces the modules and functionalities of the {ks_product-en} web console.
+
+
+[%header,cols="1a,4a"]
+|===
+|Module |Functionality
+
+|KubeSphere Marketplace
+|The store for extensions, supporting subscription, installation, uninstallation, configuration, and updates of extensions.
+
+|App Store
+|The App Store provides application templates based on Helm Charts, supporting search and installation of applications into a specific project.
+
+.5+|Workbench
+|Cluster Management: Manages resources from an infrastructure perspective, supporting operations such as adding member clusters, editing cluster information, updating kubeconfig, and removing member clusters.
+
+|Workspace management: Provides the ability to share resources across clusters, supporting operations such as creating, editing, and deleting workspaces.
+
+|Users and Roles: Create users/platform roles, edit information of users/platform roles, enable and disable users, modify user roles, edit information & permissions of platform roles, and delete users/platform roles.
+
+|Extensions Center: Manages subscribed extensions, such as installing, uninstalling, configuring, disabling, and updating extensions.
+
+|Quick Access: Enables quick access to resources such as clusters, workspaces, and projects.
+
+|Extensions
+|Global access entry for platform-level, multi-cluster, and multi-tenant extensions, supporting quick access to installed extensions.
+
+|Platform Settings
+|View platform information.
+|===
+
+
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+For detailed information about each modules, please refer to the corresponding guides.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]

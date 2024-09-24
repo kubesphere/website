@@ -1,0 +1,70 @@
+---
+title: "KubeSphere LuBan"
+linkTitle: "KubeSphere LuBan"
+description: "Introduce the background and features of KubeSphere LuBan."
+weight: 01
+---
+
+{ks_product-en} is a distributed multi-tenant commercial cloud-native operating system based on the Kubernetes kernel. Based on open-source capabilities, it extends functionality across multiple core business scenarios, such as multi-cloud cluster management, microservice governance, and application management. Its extension center - KubeSphere Marketplace is highly modular, catering to various business needs in different scenarios. With its robust enterprise-grade cloud-native foundation, comprehensive professional solutions, and service support, it empowers enterprises for digital transformation and operations on a large scale.
+
+Since {ks_product-en} v4.0, the all-new KubeSphere architecture: **KubeSphere LuBan** has been introduced, which is built on link:https://kubernetes.io/docs/concepts/extend-kubernetes/[Kubernetes] and is highly configurable and extensible. KubeSphere LuBan, a distributed, open, and scalable cloud-native architecture, provides a pluggable microkernel for extensions. From now on, all KubeSphere functional components and third-party components will seamlessly integrate into the KubeSphere console as extensions based on KubeSphere LuBan, and maintain their versions independently, truly achieving a plug-and-play cloud-native operating system.
+
+== Why Introduce KubeSphere LuBan
+
+Since 2018, the KubeSphere multi-cloud container management platform has released over a dozen versions, including three major ones. To meet user demands, KubeSphere integrated numerous enterprise-grade features, such as multi-tenancy management, multi-cluster management, DevOps, GitOps, service mesh, microservices, observability (including monitoring, alerts, logging, auditing, events, notifications, etc.), App Store, edge computing, network, storage, etc.
+
+While KubeSphere's all-in-one container solution significantly enhances users' experience, it has also brought the following challenges:
+
+**Long release cycle**
+
+Before releasing a new version of KubeSphere, we must wait for all extensions to finish development and testing, and pass the integration testing.
+
+**Delayed user response**
+
+Since each extension cannot be iterated separately, even when we have solved the issues of extensions submitted by users, we have to wait for the new release of KubeSphere to deliver the solutions to users, resulting in a delayed response.
+
+**Code coupling**
+
+Although the old version supports enabling/disabling extensions individually, the frontend and backend code of these extensions are still coupled together, which tends to affect each other and is not architecturally elegant.
+
+**Excessive resource consumption**
+
+Some extensions are enabled by default, which may consume excessive system resources for users who do not need them.
+
+== KubeSphere LuBan Advantages
+
+**Pluggable framework**
+
+Support independent development and deployment of extensions to extend the functionality. Extensions can be added, upgraded, or removed as needed without modifying the code of the core framework.
+
+**Open UI component library**
+
+Components are open to everyone and can be freely accessed, used, and extended. Users can customize and extend them according to their needs to meet different design and functionality requirements.
+
+**Real-time updates and fixes**
+
+Developers can update and fix the frontend and backend in real time while the system is running, improving the efficiency of development and operation while ensuring the availability and user experience of applications.
+
+**Open extension center**
+
+An open extension center - KubeSphere Marketplace is provided to encourage third-party developers to add new features or enhance existing ones to the system by extensions. They can develop and integrate their extensions within the system's framework, seamlessly connect their extensions with the system, and collectively build a healthy and thriving ecosystem.
+
+== How KubeSphere LuBan Can Help You
+
+The KubeSphere LuBan architecture can benefit the following people:
+
+**KubeSphere users**
+
+KubeSphere users are free to choose and enable extensions. They can also seamlessly integrate their applications into the KubeSphere console. In addition, as the ecosystem of KubeSphere extensions is enriched, users can freely select a variety of products and services from the KubeSphere Marketplace, ultimately achieving a highly customized container management platform.
+
+**KubeSphere maintainers**
+
+The extension mechanism allows KubeSphere maintainers to pay more attention to the development of KubeSphere Core, make it lighter, and shorten the release cycle. Additionally, since extensions can be iterated independently, user needs can be met more timely.
+
+**KubeSphere contributors**
+
+The extension mechanism makes KubeSphere Core and other KubeSphere extensions more loosely coupled and easier to develop.
+
+**Cloud-native application developers (ISV) or open-source projects**
+
+Numerous ISVs or open-source projects can seamlessly integrate their products or projects into the KubeSphere ecosystem at a low cost. For example, Karmada/KubeEdge developers can develop a standalone Karmada/KubeEdge console based on KubeSphere LuBan.

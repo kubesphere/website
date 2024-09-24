@@ -20,7 +20,8 @@ weight: 05
 
 . 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
 . 点击**扩展中心**，进入扩展中心页面。
-. 点击组件右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**卸载**。
+. 点击已安装的组件名称，进入组件详情页。
+. 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**卸载**。
 . 输入扩展组件的名称，点击**确定**开始卸载。
 
 

@@ -1,0 +1,9 @@
+// :ks_include_id: 81c337c82d7743cba51347779b603d00
+本节介绍如何重新运行任务。此操作仅对普通任务可用。
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+{ks_product-en}仅允许重新运行已结束的任务。正在运行中的任务不支持此操作。
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

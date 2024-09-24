@@ -1,0 +1,77 @@
+---
+title: "从应用模板安装应用"
+linkTitle: "从应用模板安装应用"
+keywords: "Kubernetes, KubeSphere, 项目管理, 应用, 从应用模板安装应用"
+description: "介绍如何从应用模板安装应用。"
+weight: 02
+---
+
+
+:ks_permission: **应用实例创建**
+:ks_navigation: **应用负载 > 应用**
+
+
+本节介绍如何从企业空间或第三方应用仓库中的应用模板安装应用。
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+若要使用企业空间的应用模板，需要安装并启用“应用商店”扩展组件。安装后，企业空间的**应用管理**菜单下将显示**应用模板**选项。然后由具有相关权限的企业空间成员创建企业空间的应用模板。
+
+|===
+
+== 前提条件
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. 在**创建应用**对话框点击**从应用模板**。
+
+. 在**应用模板**页面，点击**当前企业空间**下拉列表，选择**当前企业空间**或一个应用仓库。
+
+. 点击需要使用的应用模板，然后点击**安装**。
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+应用模板和应用仓库由具有相关权限的企业空间成员创建。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-installApp.adoc[]
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+应用模板和应用仓库由具有相关权限的企业空间成员创建。有关应用功能参数的更多信息，请联系相关企业空间成员或应用的提供方。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+应用创建完成后将显示在应用列表中。
+--

@@ -1,0 +1,4 @@
+// :ks_include_id: 11bc8bda3d544c559d443538a8b165cb
+本节介绍如何查询容器日志。
+
+{ks_product-en}提供日志查询工具。用户可以查询自身权限范围内的日志。{ks_product-en}支持查询以下类型的日志：

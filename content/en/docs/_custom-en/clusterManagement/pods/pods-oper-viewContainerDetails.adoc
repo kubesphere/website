@@ -1,0 +1,88 @@
+// :ks_include_id: 8517e102a81e4402a8f9784a7931ff0c
+. 在容器组详情页面右侧的**资源状态**页签，在**容器**区域点击一个容器的名称打开容器详情页面。
+
+. 在容器详情页面左侧的**属性**区域查看容器的资源属性。
++
+--
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|集群
+|容器所属的集群。
+
+|项目
+|容器所属的项目。
+
+|应用
+|容器所属的应用。
+
+|状态
+|容器的状态。
+
+include::../workloads/workloads-para-containerStatus.adoc[]
+
+|镜像 ID
+|容器使用的镜像的 ID。
+
+|端口
+|容器的端口。
+
+|命令
+|容器启动时在容器内部执行的命令。
+
+|资源预留
+|系统为容器预留的 CPU 和内存资源。
+
+|资源上限
+|容器可以使用的 CPU 和内存资源上限。
+
+|镜像拉取策略
+|容器的镜像拉取策略。
+
+* **优先使用本地镜像**：容器组创建或更新时，优先使用容器运行时存储在节点的镜像文件。
+
+* **每次都拉取镜像**：容器组创建或更新时，每次都尝试从镜像服务拉取镜像。
+
+* **仅使用本地镜像**：容器组创建或更新时，仅使用容器运行时存储在节点的镜像。如果本地不存在所需的镜像，容器创建将出现异常。
+
+|重启次数
+|容器组的重启次数。
+|===
+--
+
+. 在容器详情页面右侧的**资源状态**页签查看容器中挂载卷、卷的挂载路径和访问模式。
+
+. 在容器详情页面右侧点击**监控**页签查看容器的实时资源使用情况。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|CPU 用量
+|容器的实时 CPU 用量。
+
+|内存用量
+|容器的实时内存用量。
+|===
+
+include::../../../../_ks_components-en/oper-selectTimeRange.adoc[]
+
+include::../../../../_ks_components-en/oper-Autorefresh.adoc[]
+
+include::../../../../_ks_components-en/oper-refreshData.adoc[]
+--
+
+. 在容器详情页面右侧点击**环境变量**页签查看容器的环境变量。
+
+. 在容器详情页面右侧点击**容器日志**页签查看容器的标准输出日志。
++
+--
+* 在右上角点击image:/images/ks-qkcp/zh/icons/start-dark.svg[start-dark,18,18]/image:/images/ks-qkcp/zh/icons/stop-dark-white.svg[stop-dark-white,18,18]可开启/停止实时数据刷新。
+
+* 在右上角点击image:/images/ks-qkcp/zh/icons/refresh-dark-white.svg[refresh-dark-white,18,18]可手动刷新数据。
+
+* 在右上角点击image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark-white,18,18]可下载日志文件。
+--

@@ -1,0 +1,36 @@
+---
+title: "登录并进入项目"
+linkTitle: "登录并进入项目"
+keywords: "Kubernetes, KubeSphere, 项目管理, Web 控制台, 登录并进入项目"
+description: "介绍如何登录 KubeSphere Web 控制台并进入项目。"
+weight: 01
+---
+
+
+
+本节介绍如何登录{ks_product-en} Web 控制台并进入项目。
+
+
+== 前提条件
+
+* 您需要获取项目成员用户名和密码。
+
+include::../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
+
+
+== 操作步骤
+
+include::../../../_custom-en/workspaceManagement/webConsole/webConsole-oper-logIn.adoc[]
++
+--
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../_custom-en/workspaceManagement/webConsole/webConsole-note-firstLogin.adoc[]
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. 点击**企业空间管理**。
+. 在**企业空间管理**页面点击一个企业空间的名称进入企业空间。
+. 在左侧导航栏选择**项目**，然后点击一个项目的名称进入项目。

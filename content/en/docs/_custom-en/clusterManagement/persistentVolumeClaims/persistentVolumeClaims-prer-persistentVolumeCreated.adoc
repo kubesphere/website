@@ -1,0 +1,2 @@
+// :ks_include_id: e7ab0deee8b44daabe6f1a91f7893150
+* 请确保系统已为持久卷声明创建持久卷。

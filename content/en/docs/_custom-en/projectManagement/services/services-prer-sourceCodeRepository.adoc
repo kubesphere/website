@@ -1,0 +1,4 @@
+// :ks_include_id: 87f2d9d930e741ff8798083db03186e3
+* 您需要具有可用的代码仓库。{ks_product-en}默认支持 Git 仓库和 Java、Node.js 和 Python 源代码。
+
+* 如果您使用私有代码仓库，您需要提前在项目中创建保存代码仓库密钥的保密字典。有关更多信息，请参阅xref:07-project-management/05-configuration/01-secrets/01-create-a-secret.adoc[创建保密字典]。

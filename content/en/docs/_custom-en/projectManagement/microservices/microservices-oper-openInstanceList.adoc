@@ -1,0 +1,2 @@
+// :ks_include_id: c7354e9057cd4477a7c4d78ff3c222dc
+. 在微服务右侧点击image:/images/ks-qkcp/zh/icons/plus-square.svg[plus-square,18,18]打开微服务实例列表。

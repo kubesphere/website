@@ -1,0 +1,26 @@
+---
+title: "Usage Scenarios"
+linkTitle: "Usage Scenarios"
+description: "Get usage scenarios of KubeSphere."
+weight: 03
+---
+
+{ks_product-en} is suitable for the following scenarios.
+
+== Resource Quantification Operations
+
+Resource management of multiple departments often brings huge pressure to the O&M department, which has to spend a lot of time on statistics on resource utilization of each business line, and assessment of the reasonableness of resource utilization. KubeSphere provides multi-dimensional and multi-perspective resource quantitative statistics methods, and resource data can be viewed at a glance.
+
+== Multi-level Permission Control
+
+Efficiently coordinating different business lines within a company has always been an age-old challenge. How to achieve tight collaboration between infrastructure operations, application operations, and business developers while implementing access control has become the core requirement of organizational structure. 
+
+KubeSphere provides a "three-level" user permission system, which rationally allocates permissions across platform administrators, cluster operators, and application operators, thereby promoting departmental collaboration.
+
+== Intelligent Elastic Operations
+
+Excessive waste of basic resources brings additional operational costs to enterprises. Effectively analyzing the rationality of resource usage and performing efficient resource elasticity management in different scenarios have become challenges for operations personnel. KubeSphere provides intelligent recommendations, periodic analysis, one-click application for business resources, and supports elastic scaling of custom metrics, empowering intelligent operations.
+
+== One-Stack Transformation
+
+Many enterprises face challenges when transforming to cloud native, such as difficulties in choosing the right technology solutions to achieve DevOps integration, cloud-native microservice governance, edge-cloud collaboration, AI (Artificial Intelligence), and observability in cloud native. The selection of various technology solutions and operations can be a significant trouble for enterprises. KubeSphere integrates best practices and provides a highly graphical and consistent user experience to help enterprises transform to cloud native at a low cost.

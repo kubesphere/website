@@ -1,0 +1,12 @@
+// :ks_include_id: e40e965d1a704b41a1d1e33374d37a60
+ifeval::["{file_output_type}" == "html"]
+
+* {ks_product-en}平台需要启用告警系统扩展组件。
+
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+
+* {ks_product-en}平台需要启用告警系统扩展组件。关于更多信息，请参阅《{ks_product-en}平台管理指南》的“扩展组件管理”章节。
+
+endif::[]

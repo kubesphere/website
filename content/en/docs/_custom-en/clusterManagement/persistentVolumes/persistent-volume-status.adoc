@@ -1,0 +1,10 @@
+// :ks_include_id: f3350225a1bf47a3872722fd47af4d1d
+持久卷当前的状态。
+
+* **可用**：持久卷未与持久卷声明绑定。{ks_product-en} Web 控制台目前不支持直接创建持久卷，如果您通过后台命令行直接创建持久卷，将出现状态为**可用**的持久卷。有关更多信息，请参阅 link:https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/[Kubernetes 官方文档]。
+
+* **已绑定**：持久卷已经与持久卷声明绑定。
+
+* **已释放**：与持久卷绑定的持久卷声明已被删除而持久卷尚未被删除。
+
+* **失败**：持久卷存在未知错误。

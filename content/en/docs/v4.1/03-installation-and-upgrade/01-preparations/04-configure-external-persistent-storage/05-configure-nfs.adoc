@@ -1,0 +1,218 @@
+---
+title: "Configure NFS"
+linkTitle: "Configure NFS"
+keywords: "Kubernetes, KubeSphere, Installation, Preparation, Persistent Storage, Network File System, NFS"
+description: "Learn how to configure Network File System (NFS) for the KubeSphere cluster in a production environment."
+weight: 05
+---
+
+This section describes how to configure Network File System (NFS) for the KubeSphere cluster in a production environment.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+NFS is incompatible with some applications (such as Prometheus), which may cause pod creation failure. If you do need to use NFS in a production environment, make sure you understand the risks or consult KubeSphere technical support at support@kubesphere.cloud.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+== Build NFS Server
+
+Before configuring NFS for KubeSphere, you need to set up an NFS server first. If you already have an NFS server available, you can skip this step. The following uses the Ubuntu operating system and NFS Kernel Server as an example to introduce how to build an NFS server. For specific operations on other NFS servers and other operating systems, see the user guides for the NFS servers and operating systems.
+
+
+=== Prerequisites
+
+You need to prepare a Linux server (the Ubuntu operating system is used as an example below), which must be connected to the KubeSphere cluster node network.
+
+
+=== Steps
+
+. Log in to the server used to build the NFS server and execute the following command to install the NFS Kernel Server:
++
+--
+//Bash
+[,bash]
+----
+
+sudo apt update
+
+----
+
+//Bash
+[,bash]
+----
+
+sudo apt install nfs-kernel-server
+
+----
+--
+
+. Execute the following command to create a directory for use by KubeSphere (replace <directory> with the actual directory path, such as **/mnt/demo**):
++
+--
+// Bash
+[,bash]
+----
+
+sudo mkdir -p <directory>
+
+----
+--
+
+. Execute the following command to remove access restrictions on the directory (replace <directory> with the actual directory path, such as **/mnt/demo**):
++
+--
+//Bash
+[,bash]
+----
+
+sudo chown nobody:nogroup <directory>
+
+----
+
+// Bash
+[,bash]
+----
+
+sudo chmod 777 <directory>
+
+----
+--
+
+. Execute the following command to edit the configuration file of NFS Kernel Server:
++
+--
+// Bash
+[,bash]
+----
+
+sudo vi /etc/exports
+
+----
+--
+
+. Add the KubeSphere cluster node information to the file to allow the server to access the NFS server, and save the file:
++
+--
+// Bash
+[,bash]
+----
+
+<directory> <IP address>(rw,sync,no_subtree_check)
+
+----
+
+Replace the following parameters with actual values:
+
+[%header,cols="1a,4a"]
+|===
+|Parameters |Description
+
+|<directory>
+|The directory used by KubeSphere, for example **/mnt/demo**.
+
+|<IP address>
+|The IP address of the KubeSphere cluster node, for example 192.168.0.2.
+|===
+
+If there are multiple KubeSphere cluster nodes, please set multiple configuration entries. You can also set <IP address> to a network segment so that all servers in the network segment can access the NFS server, for example **192.168.0.0/24**.
+--
+
+. Execute the following command to enable directory sharing:
++
+--
+// Bash
+[,bash]
+----
+
+sudo exportfs -a
+
+----
+--
+
+. Execute the following command to restart the NFS server to make the configuration take effect:
++
+--
+// Bash
+[,bash]
+----
+
+sudo systemctl restart nfs-kernel-server
+
+----
+--
+
+== Configure Cluster Nodes
+
+After the NFS server is built, you need to install the client tool on the KubeSphere cluster nodes and create a configuration file for subsequent installation of KubeSphere. After KubeSphere is installed, the NFS server specified in the configuration file will be used as persistent storage. The following uses the Ubuntu operating system to install NFS Common as an example to introduce how to install the NFS client and create a configuration file. For specific operations on other NFS clients and other operating systems, see the user guides for the NFS clients and operating systems.
+
+
+=== Prerequisites
+
+You should set up an NFS server. For more information, see link:#_build_nfs_server[Build NFS Server].
+
+
+=== Steps
+
+. Log in to all KubeSphere cluster nodes and execute the following command to install nfs-common:
++
+--
+//Bash
+[,bash]
+----
+
+sudo apt update
+
+----
+
+// Bash
+[,bash]
+----
+
+sudo apt install nfs-common
+
+----
+--
+
+. Log in to the cluster node used to perform the KubeSphere installation and execute the following command to create the configuration file for NFS storage plugin:
++
+--
+// Note
+// Bash
+[,bash]
+----
+
+vi nfs-client.yaml
+
+----
+--
+
+. Add the following information to the configuration file and save the file for subsequent installation of KubeSphere:
++
+--
+// YAML
+include::../../../../../_ks_components-en/code/yaml.adoc[]
+
+nfs:
+ server: "<IP address>"
+ path: "<directory>"
+storageClass:
+ defaultClass: true
+
+----
+
+Replace the following parameters with actual values:
+
+[%header,cols="1a,4a"]
+|===
+|Parameters |Description
+
+|<IP address>
+|IP address of the NFS server.
+
+|<directory>
+|The directory of NFS server used by KubeSphere.
+|===
+
+The above configuration file only contains the parameters that must be set. To set other parameters, see link:https://github.com/kubesphere/helm-charts/blob/master/src/main/nfs-client-provisioner/values.yaml[NFS Client Configuration].
+--

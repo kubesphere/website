@@ -1,0 +1,153 @@
+---
+title: "Configure External Authentication"
+linkTitle: "Configure External Authentication"
+keywords: "Kubernetes, KubeSphere, Third-party Authentication"
+description: "Learn how to set up external authentication on KubeSphere."
+weight: 01
+---
+
+:ks_navigation: **Configuration > ConfigMap**
+
+KubeSphere supports setting up external authentication. Platform administrators can configure identity providers through Secrets.
+
+After configuring external identity providers, users can log in to the {ks_product-en} web console using usernames and passwords from LDAP, CAS, GitHub, Alibaba Cloud IDaaS, or OpenID Connect.
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+
+. Navigate to the project **kubesphere-system** under the workspace **system-workspace**.
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
+. In the **Create Secrets** dialog, toggle the **Edit YAML** switch in the top right corner to create a secret using YAML.
+
+. Modify the YAML file according to the example and configuration instructions below. Once configured, click **Create**.
+
+. Log out of the KubeSphere web console. On the login page, enter the username and password for LDAP, CAS, GitHub, Alibaba Cloud IDaaS, or OpenID Connect based on the configured external authentication type.
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+In a multi-cluster environment, configuration is only required in the host cluster.
+|===
+
+== OpenLDAP YAML Sample
+
+[,yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: kubesphere-system
+  name: identity-provider-ldap          
+  labels:
+    config.kubesphere.io/type: identityprovider
+stringData:
+  configuration.yaml: |
+    name: openldap      
+    type: LDAPIdentityProvider
+    mappingMethod: auto
+    provider:
+      host: "192.168.0.2:389"
+      managerDN: uid=root,cn=users,dc=nas
+      managerPassword: "********"
+      userSearchBase: cn=users,dc=nas
+      loginAttribute: uid
+      mailAttribute: mail
+type: config.kubesphere.io/identityprovider
+----
+
+[.admon.attention,cols="a"]
+|===
+|Attention
+
+|
+- The secret must be created in the `kubeshere-system` project.
+- The secret must include a type.
++
+`type: config.kubesphere.io/identityprovider`.
+
+- The secret must include a label.
++
+`config.kubesphere.io/type: identityprovider`.
+|===
+
+== Configuration Explanation
+
+In the `stringData:configuration.yaml` parameter of the above example:
+
+- **name**: Specifies the name of the external identity provider, which must be unique to avoid creation failures.
+
+- **type**: Specifies the type of external identity provider, supporting the following types:
++
+--
+- LDAP: `LDAPIdentityProvider` 
+- CAS: `CASIdentityProvider` 
+- GitHub: `GitHubIdentityProvider` 
+- Alibaba Cloud IDaaS: `AliyunIDaaSProvider` 
+- OpenID Connect: `OIDCIdentityProvider` 
+--
+
+- **mappingMethod**: Specifies how external identity users are associated with KubeSphere users.
++
+--
+- `auto`: Automatically creates a KubeSphere user with the same name. Fails if a user with the same name already exists in the platform.
+- `manual`: Creates a new user with any name after logging in.
+- `lookup`: Automatically associates an existing KubeSphere user with the same name. Fails if no user with the specified name exists.
+--
+
+- **provider**: Contains specific parameters for the external identity authentication. Below are examples of the provider parameters for different authentication types.
++
+--
+- LDAPIdentityProvider
++
+[,yaml]
+----
+host: 192.168.0.2:389
+managerDN: uid=root,cn=users,dc=nas
+managerPassword: "********"
+userSearchBase: cn=users,dc=nas
+loginAttribute: uid
+mailAttribute: mail
+----
+
+
+- CASIdentityProvider
++
+[,yaml]
+----
+redirectURL: "https://ks-console:30880/oauth/redirect/cas"
+casServerURL: "https://cas.example.org/cas"
+insecureSkipVerify: true
+----
+
+- OIDCIdentityProvider
++
+[,yaml]
+----
+clientID: '********'
+clientSecret: '********'
+issuer: https://accounts.google.com
+redirectURL:  'https://ks-console/oauth/redirect/google'
+----
+
+- GitHubIdentityProvider
++
+[,yaml]
+----
+clientID: '******'
+clientSecret: '******'
+redirectURL: 'https://ks-console/oauth/redirect/github'
+----
+
+For the configuration method of Alibaba Cloud IDaaS provider, refer to the link:https://www.alibabacloud.com/help/zh/idaas/[Alibaba Cloud IDaaS documentation].
+--

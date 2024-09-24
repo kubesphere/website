@@ -1,0 +1,29 @@
+// :ks_include_id: 011f0f1d835947cbb1b37e80036c0b2e
+[%header,cols="1a,4a"]
+|===
+|Parameters |Description
+
+|name
+|User-defined server name.
+
+|address
+|The SSH login IP address of the server.
+
+|internalAddress
+|The IP address of the server within the subnet.
+
+|port
+|The SSH port number of the server. This parameter does not need to be set if using the default port 22.
+
+|user
+|The SSH login user name of the server, which must be the **root** user or another user with **sudo** permissions. If you use **root** user, you can not set this parameter.
+
+|password
+|The server's SSH login password. This parameter does not need to be set if **privateKeyPath** has been set.
+
+|privateKeyPath
+|The path to the server's SSH login key. This parameter does not need to be set if **password** has been set.
+
+|arch
+|The server architecture. If the server's hardware architecture is Arm64, please set this parameter to **arm64**, otherwise do not set this parameter. By default, the installation package only supports scenarios where all cluster nodes are x86_64 or arm64 architecture. If the hardware architecture of each cluster node is not exactly the same, please contact the {ks_product-en}technical support team.
+|===

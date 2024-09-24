@@ -1,0 +1,2 @@
+// :ks_include_id: 97bdd6d29117459f9e286142fe67d522
+. 在 RadonDB 应用列表中，点击 RadonDB OpenSearch 应用的名称打开其详情页面。

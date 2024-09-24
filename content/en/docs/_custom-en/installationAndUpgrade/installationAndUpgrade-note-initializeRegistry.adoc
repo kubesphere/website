@@ -1,0 +1,7 @@
+// :ks_include_id: f59af4ec0bd24d5a98d4003578c6e38d
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+KubeKey will create a private image registry on the server specified in the **spec:roleGroups:registry** parameter in **config-sample.yaml**, with the default address set to **dockerhub.kubekey.local/kse**.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]

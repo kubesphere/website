@@ -1,0 +1,16 @@
+// :ks_include_id: 532573492da34fcbb954ea832aa9fcd5
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Username
+|Name of the user who has been authorized.
+
+|Status
+|Current status of the user who has been authorized.
+
+include::../clusterMembers/clusterMembers-para-userStatus.adoc[]
+
+|Last Login
+|The user's last login time on the {ks_product-en} platform.
+|===

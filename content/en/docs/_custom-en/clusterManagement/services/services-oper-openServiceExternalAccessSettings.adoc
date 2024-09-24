@@ -1,0 +1,5 @@
+// :ks_include_id: f8bbecbf87544c4f9173c8107364d8ee
+
+. 在服务详情页面右侧点击**访问信息**页签查看服务的访问信息。
+
+. 点击页面右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后从下拉列表中选择**编辑外部访问**。

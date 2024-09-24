@@ -1,0 +1,2 @@
+// :ks_include_id: 5fdcd8cc560f4cff91cb47b7de175bd3
+* {ks_product-en}平台需要启用应用管理扩展组件。有关更多信息，请参阅xref:04-platform-management/01-extension-management/01-app-management/01-enable-app-management.adoc[启用应用管理]。

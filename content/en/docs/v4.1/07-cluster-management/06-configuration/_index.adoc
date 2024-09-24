@@ -1,0 +1,12 @@
+---
+title: "配置"
+linkTitle: "配置"
+keywords: "Kubernetes, KubeSphere, 集群管理, 配置"
+description: "介绍如何管理保密字典、配置字典和服务帐户。"
+layout: "second"
+weight: 06
+---
+
+
+
+include::../../../_custom-en/clusterManagement/clusterManagement-desc-configuration.adoc[]

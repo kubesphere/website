@@ -1,0 +1,31 @@
+// :ks_include_id: 9e29dba51eed467195d8b4402adcee08
+* 规则组列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|规则组的名称。
+
+include::ruleGroups-para-ruleGroupStatus.adoc[]
+
+|规则状态
+|规则组中包含的告警规则的状态。
+
+include::ruleGroups-para-alertingStatusInactive.adoc[]
+
+include::../alerts/alerts-para-alertingStatus.adoc[]
+
+include::ruleGroups-para-alertingStatusDisabled.adoc[]
+
+include::ruleGroups-para-timeSpent.adoc[]
+
+// |集群
+// |使用该规则组进行资源监控的集群。
+
+|最近检查
+|最近一次指标检查的执行时间。
+|===
+--

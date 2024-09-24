@@ -1,0 +1,2 @@
+// :ks_include_id: 25d819a958bf49fba9f643a2551ac347
+. 在需要删除的工作负载右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。

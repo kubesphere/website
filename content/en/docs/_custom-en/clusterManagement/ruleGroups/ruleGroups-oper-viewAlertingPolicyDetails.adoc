@@ -1,0 +1,56 @@
+// :ks_include_id: 539c72cb8f884103bce5d979f3b31d09
+. 在规则组详情页面左侧的**属性**区域查看规则组的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::ruleGroups-para-ruleGroupStatus.adoc[]
+
+|检查间隔
+|指标检查之间的时间间隔。
+
+include::ruleGroups-para-timeSpent.adoc[]
+
+|创建时间
+|规则组的创建时间。
+
+|创建者
+|规则组的创建者。
+|===
+--
+
+. 在规则组详情页面右侧的**告警规则**页签查看规则组中设置的告警规则。
++
+--
+**告警规则**页签显示告警规则的名称、告警级别、触发状态、监控目标和最近检查时间。
+
+* 在告警规则名称右侧点击image:/images/ks-qkcp/zh/icons/monitor.svg[monitor,18,18]可查看监控指标数据。
+
+* 在告警规则右侧点击image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18]可查看告警规则的触发条件、PromSQL 表达式和告警消息内容。
+--
+
+. 在规则组详情页面右侧点击**告警**页签查看当前生成的告警。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|消息
+|
+include::ruleGroups-para-message.adoc[]
+
+|告警级别
+|
+include::ruleGroups-para-alertLevel.adoc[]
+
+|监控目标
+|规则组的监控目标。
+
+|触发时间
+|
+include::ruleGroups-para-activationTime.adoc[]
+|===
+--

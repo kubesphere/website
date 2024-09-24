@@ -1,0 +1,130 @@
+---
+title: "Add Cluster Nodes"
+linkTitle: "Add Cluster Nodes"
+keywords: "Kubernetes, KubeSphere, add cluster nodes"
+description: "Introduce how to add KubeSphere cluster nodes."
+weight: 01
+---
+
+
+This section describes how to add KubeSphere cluster nodes.
+
+The open-source tool KubeKey will be used during the process. For more information about KubeKey, please visit link:https://github.com/kubesphere/kubekey[GitHub KubeKey repository].
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+The node addition method described in this section is only applicable to Kubernetes installed through KubeKey. If your Kubernetes is not installed via KubeKey, please refer to link:https://kubernetes.io/zh/docs/concepts/architecture/nodes/[Kubernetes documentation] to add nodes.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+== Prerequisites
+
+* The operating system and version of the cluster nodes must be Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 22.04, Debian 9, Debian 10, CentOS 7, CentOS Stream, RHEL 7, RHEL 8, SLES 15, or openSUSE Leap 15. The operating systems of multiple servers can be different. For support of other operating systems and versions, please contact {ks_product-en} technical support.
+
+* In a production environment, to ensure the cluster has sufficient computing and storage resources, it is recommended that each cluster node be configured with at least 8 CPU cores, 16 GB of memory, and 200 GB of disk space. In addition, it is recommended to mount an additional 200 GB of disk space in the **/var/lib/docker** (for Docker) or **/var/lib/containerd** (for containerd) directory of each cluster node for storing container runtime data.
+
+* In a production environment, it is recommended to configure high availability for the KubeSphere cluster in advance to avoid service interruption in the event of a single control plane node failure. For more information, please refer to the link:../../../03-installation-and-upgrade/01-preparations/03-configure-high-availability/[Configure High Availability].
+
+
+:relfileprefix: ../../../
+
+* You should get the installation configuration file **config-sample.yaml** and transfer it to the cluster node where you will perform this action. For more information, refer to xref:03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc[Install Kubernetes and {ks_product-en}].
+
+:relfileprefix: ./
+
+--
+// Warning
+include::../../../../_ks_components-en/admonitions/warning.adoc[]
+
+* During the process of adding nodes, it is not allowed to modify the original cluster configuration in **config-sample.yaml**.
+
+* If you are unable to get the installation configuration file **config-sample.yaml**, you need to refer to link:../../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere[Install Kubernetes and {ks_product-en}] to recreate the **config-sample.yaml** file. When recreating the file, make sure that the cluster information in the file matches the current state of the cluster. Otherwise, the uninstallation process may encounter errors.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+
+== Steps
+
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-downloadKubekey.adoc[]
+
+
++
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-transferConfig.adoc[]
+
++
+
+. Execute the following command to edit the installation configuration file **config-sample.yaml**:
++
+// Bash
+[,bash]
+----
+vi config-sample.yaml
+----
+
+. Configure the information of the new node under the **hosts** parameter in **config-sample.yaml**.
++
+--
+
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-para-hosts.adoc[]
+
+// Warning
+include::../../../../_ks_components-en/admonitions/warning.adoc[]
+
+Please do not modify the information of the original node. Otherwise, the cluster may encounter errors after adding nodes.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Configure the role of the new node in the cluster under the **roleGroups** parameter in **config-sample.yaml**.
++
+--
+
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-para-roleGroups.adoc[]
+
+// Warning
+include::../../../../_ks_components-en/admonitions/warning.adoc[]
+
+Please do not modify the role of the original node. Otherwise, the cluster may encounter errors after adding nodes.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. If a new control plane node is added and the current cluster is not configured for high availability, configure the high availability information under the **controlPlaneEndpoint** parameter in **config-sample.yaml**.
++
+--
+
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-para-controlPlaneEndpoint.adoc[]
+
+// Warning
+include::../../../../_ks_components-en/admonitions/warning.adoc[]
+
+* If the current cluster has been configured with high availability, do not modify the high availability information in the **config-sample.yaml** file. Otherwise, the cluster may encounter errors after adding nodes.
+
+* If the current cluster uses local load balancing to achieve high availability, you do not need to perform any operations on cluster high availability; if the current cluster uses a load balancer to achieve high availability, you only need to configure the load balancer to listen on port 6443 of all control plane nodes. For more information, see link:../../01-preparations/03-configure-high-availability/[Configure High Availability].
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Save the configuration file and execute the following command to start adding nodes:
++
+--
+[,bash]
+----
+ ./kk add nodes -f config-sample.yaml
+----
+// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-code-addNodes.adoc[]
+--
+
+. Execute the following command to view the nodes of the current cluster:
++
+--
+// Bash
+[,bash]
+----
+kubectl get node
+----
+
+If it displays the information about the new node, it means the node is added successfully.
+--

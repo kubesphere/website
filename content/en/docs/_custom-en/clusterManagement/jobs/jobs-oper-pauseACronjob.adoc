@@ -1,0 +1,4 @@
+// :ks_include_id: eae4a035080a4f1bb09cb87fc6034aed
+. 在需要操作的定时任务右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**暂停**。
+
+. 如需恢复定时任务运行，在需要操作的定时任务右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**启动**。

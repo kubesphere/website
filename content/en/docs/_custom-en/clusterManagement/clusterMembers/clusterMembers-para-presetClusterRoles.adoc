@@ -1,0 +1,13 @@
+// :ks_include_id: 8fa15cb04f8048cfa5479d1a77ddf099
+KubeSphere 平台提供以下预置集群角色：
+
+[%header,cols="1a,4a"]
+|===
+|角色 |描述
+
+|cluster-admin
+|集群管理员，在集群内具有除创建和删除集群以外的所有权限。
+
+|cluster-viewer
+|集群观察员，在集群内具有所有资源的查看权限。
+|===

@@ -1,0 +1,28 @@
+---
+title: "查看企业空间列表"
+linkTitle: "查看企业空间列表"
+keywords: "Kubernetes, KubeSphere, 访问控制, 企业空间, 查看企业空间列表"
+description: "介绍如何查看企业空间列表。"
+weight: 02
+---
+
+:ks_permission: **企业空间查看**
+
+本节介绍如何查看企业空间列表。
+
+
+== 前提条件
+
+您需要在{ks_product-en}平台具有pass:a,q[{ks_permission}]权限。
+
+== 操作步骤
+
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product-en} Web 控制台。
+. 点击**企业空间管理**。
++
+--
+* 企业空间列表显示当前 KubeSphere 平台的所有企业空间。
+
+* 在企业空间列表中，点击企业空间的名称可进入企业空间，查看和管理企业空间中的资源。
+--
+

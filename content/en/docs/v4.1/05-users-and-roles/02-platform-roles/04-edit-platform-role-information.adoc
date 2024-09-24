@@ -1,0 +1,35 @@
+---
+title: "Edit Platform Role Information"
+linkTitle: "Edit Platform Role Information"
+keywords: "Kubernetes, KubeSphere, Platform Management, Access Control, Platform Roles, Edit Platform Role Information"
+description: "Introduction to editing platform role information."
+weight: 04
+---
+
+:ks_menu: **Users and Roles**
+:ks_permission: **Role Management**
+:ks_navigation: **Platform Roles**
+
+This section explains how to edit platform role information.
+
+You can edit the alias and description of platform roles created by users. KubeSphere does not support editing preset platform roles and the names of platform roles.
+
+== Prerequisites
+
+You need to have pass:a,q[{ks_permission}] permissions on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has pass:a,q[{ks_permission}] permissions.
+. Click pass:a,q[{ks_menu}].
+. Select **Platform Roles** from the left navigation pane.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the platform role, then choose **Edit Information** from the drop-down list.
+. In the **Edit Information** dialog, set the alias and description of the platform role, then click **OK**.
++
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../_custom-en/platformManagement/accessControl/platformRoles/platformRoles-para-aliasDescription.adoc[]
+
+|===

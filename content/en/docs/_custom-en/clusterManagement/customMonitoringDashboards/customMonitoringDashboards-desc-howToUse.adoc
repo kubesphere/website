@@ -1,0 +1,2 @@
+// :ks_include_id: 86dce4cf97db45baa0af638a00a5a435
+KubeSphere 支持通过自定义监控面板对应用程序的运行状态进行监控。您可以通过以下方式使用自定义监控面板：

@@ -1,0 +1,14 @@
+---
+title: "Extension Management"
+linkTitle: "Extension Management"
+keywords: "Kubernetes, KubeSphere, Install extensions, KubeSphere extensions"
+description: "Introduction to installing and managing extensions."
+layout: "second"
+weight: 06
+icon: "/images/docs/common/docs.svg"
+---
+
+This section explains how to install and manage extensions.
+
+KubeSphere extensions are built on KubeSphere LuBan to extend and enhance the capabilities of KubeSphere products, further meeting the diverse business needs of enterprises. After the installation of {ks_product_en}, only the core components are enabled by default. Please install extensions in the Extensions Center to fully utilize the capabilities of {ks_product_en}.
+

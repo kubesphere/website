@@ -1,0 +1,2 @@
+// :ks_include_id: dea142b7ab3e4c6292a968da83aa19c0
+* 您需要在主集群和成员集群中都具有 **platform-admin** 角色。有关更多信息，请参阅xref:04-platform-management/04-access-control/02-users/_index.adoc[用户]和xref:04-platform-management/04-access-control/03-platform-roles/_index.adoc[平台角色]。

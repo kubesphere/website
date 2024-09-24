@@ -1,0 +1,2 @@
+// :ks_include_id: 090f3fcc283e40d2a5b07f8dcb4ac645
+为创建工作负载，{ks_product-en}将创建镜像构建器，并自动执行以下步骤：

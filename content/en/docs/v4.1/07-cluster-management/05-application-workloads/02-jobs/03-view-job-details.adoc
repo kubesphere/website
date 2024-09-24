@@ -1,0 +1,41 @@
+---
+title: "查看任务详情"
+linkTitle: "查看任务详情"
+keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 任务, 查看任务详情"
+description: "介绍如何查看任务详情。"
+weight: 03
+---
+
+:ks_permission: **应用负载查看**
+:ks_navigation: **应用负载 > 任务**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-viewJobDetails.adoc[]
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-viewJobDetails_new.adoc[]

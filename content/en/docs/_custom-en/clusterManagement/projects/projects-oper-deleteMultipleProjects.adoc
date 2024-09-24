@@ -1,0 +1,8 @@
+// :ks_include_id: c31e22ed93ad4f3fa0500c5bb67c80e3
+. 选择需要删除的项目左侧的复选框，然后在项目列表上方点击**删除**。
+
+. 在**批量删除项目**对话框，输入项目的名称，然后点击**确定**。
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

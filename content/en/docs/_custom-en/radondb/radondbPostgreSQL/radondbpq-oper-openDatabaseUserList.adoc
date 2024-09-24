@@ -1,0 +1,2 @@
+// :ks_include_id: 855e9c8a5ec24671aff7410cdffd8692
+. 在页面右侧点击 **OpenSearch 用户**页签打开数据库用户列表。

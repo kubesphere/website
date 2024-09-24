@@ -1,0 +1,109 @@
+// :ks_include_id: 2da62725a68a446abf46e55566d6ae11
+以下介绍如何设置微服务网关的参数。
+
+* 基本信息
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|微服务网关的名称，同时也是对应的部署的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+
+|镜像
+|用于创建微服务网关的容器镜像。例如 **registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest**。
+
+|副本数量
+|微服务网关部署的容器组副本数量。
+|===
+--
+
+* 资源配额
++
+--
+设置为微服务网关每个容器的资源预留和资源上限。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|CPU 预留
+|为容器预留的 CPU 资源，单位为核。
+
+|CPU 上限
+|允许容器使用的 CPU 资源上限，单位为核。
+
+|内存预留
+|为容器预留的内存资源，单位为 MiB。
+
+|内存上限
+|允许容器使用的内存资源上限，单位为 MiB。
+|===
+--
+
+* 端口设置
++
+--
+设置用于暴露微服务网关的服务的端口。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|协议
+|目标容器中的应用程序实际监听的协议。
+
+|名称
+|服务端口的名称。
+
+|容器端口
+|目标容器中的应用程序实际监听的端口号。如果使用示例容器镜像 **registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest**，请将容器端口号设置为 **8080**。
+
+|服务端口
+|服务的端口号。
+|===
+
+点击**添加**可设置多个服务端口。在已创建的服务端口右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除服务端口。
+--
+
+* 镜像拉取策略
++
+--
+include::../../clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
+--
+
+* 健康检查
++
+--
+include::../../clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
+--
+
+* 环境变量
++
+--
+include::../../clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
+--
+
+* 启动命令
++
+--
+include::../../clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
+--
+
+* 外部访问
++
+--
+设置是否允许从 KubeSphere 集群外部访问微服务网关。如果启用外部访问，您需要选择外部访问模式。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|NodePort
+|系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。
+
+|LoadBalancer
+|系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。
+|===
+--

@@ -1,0 +1,2 @@
+// :ks_include_id: 9a5774e5ba9d4e5d950143cba4a5111d
+* 在右上角点击 image:/images/ks-qkcp/zh/icons/timed-task.svg[timed-task,18,18] 可设置数据的时间范围。

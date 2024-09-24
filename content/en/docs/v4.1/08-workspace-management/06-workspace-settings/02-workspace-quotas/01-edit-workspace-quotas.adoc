@@ -1,0 +1,65 @@
+---
+title: "编辑企业空间配额"
+linkTitle: "编辑企业空间配额"
+keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间配额, 编辑企业空间配额"
+description: "编辑如何查看企业空间配额。"
+weight: 01
+---
+
+:ks_permission: **企业空间设置管理**
+:ks_navigation: **企业空间设置 > 企业空间配额**
+
+
+本节介绍如何编辑企业空间配额。
+
+在{ks_product-en}平台，多个集群可以授权给同一个企业空间，您可以在企业空间中设置针对每个集群设置资源配额。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+
+
+== 操作步骤
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在需要操作的集群右上角点击**编辑配额**。
+
++
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|CPU 限制
+|企业空间运行在单个集群中所有容器 CPU 上限总和的最大值。
+
+|CPU 预留
+|企业空间运行在单个集群中所有容器 CPU 预留总和的最大值。
+
+|内存上限
+|企业空间运行在单个集群中所有容器内存上限总和的最大值。
+
+|内存预留
+|企业空间运行在单个集群中所有容器内存预留总和的最大值。
+
+|存储资源配额
+|可以对企业空间下的存储资源总量进行限制，包括存储资源总量和存储类关联资源。
+|===
++
+
+
+. 修改配额后，点击**确定**。
