@@ -15,7 +15,7 @@ weight: 02
 每个企业空间角色都包含特定的企业空间管理或查看权限。您可以将包含特定权限的角色授予企业空间成员，以控制企业空间成员在企业空间中的权限。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -26,7 +26,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-req
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

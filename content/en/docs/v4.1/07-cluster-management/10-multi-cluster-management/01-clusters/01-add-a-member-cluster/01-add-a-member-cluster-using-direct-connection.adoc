@@ -11,7 +11,7 @@ weight: 01
 本节介绍如何通过直接连接添加成员集群。
 
 
-== 前提条件
+== Prerequisites
 
 * 您需要在主集群中具有 **platform-admin** 角色。
 

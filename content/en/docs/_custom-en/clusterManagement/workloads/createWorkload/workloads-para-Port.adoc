@@ -1,16 +1,16 @@
 // :ks_include_id: addcd8f38f374f16a793b840c8f4524b
-设置容器的端口。点击**使用默认镜像端口**可将容器端口设置为镜像的默认端口。点击**添加端口**可为容器设置多个端口。
+Configure the ports for the container.  Click **Use Default Port of Images** to set the container ports to the default ports of the image. Click **Add Port** to set multiple ports for the container.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|协议
-|容器中的应用程序实际监听的协议。如需使用{ks_product-en}提供的应用治理功能，请确保此处选择的协议与容器中的应用程序实际监听的协议保持一致。
+| Protocol
+| The protocol that the application in the container actually listens to. To use the Application Governance features provided by KubeSphere, ensure that the selected protocol matches the protocol that the application in the container actually listens to.
 
-|名称
-|端口的名称。如需使用{ks_product-en}提供的应用治理功能，请使用协议名称小写作为端口名称的前缀（例如 **http-**）。
+| Name
+| The name of the port. To use the Application Governance features provided by KubeSphere, use the lowercase protocol name as a prefix for the port name (e.g., **http-**).
 
-|容器端口
-|容器中的应用程序实际监听的端口号。
+| Container Port
+| The port number that the application in the container actually listens to.
 |===

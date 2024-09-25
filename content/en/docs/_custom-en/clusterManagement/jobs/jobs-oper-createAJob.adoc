@@ -1,10 +1,12 @@
 // :ks_include_id: ade6d86d1f0d4f1db635fb9dd96b2348
-. 在**基本信息**页签，设置任务的基本信息，以及定时任务策略，然后点击**下一步**。
+. On the **Basic Information** tab, configure the basic information of the job, as well as the scheduling strategy for a CronJob. Then click **Next**.
 
-. 在**策略设置**页签，设置单次任务的策略，然后点击**下一步**。
+. On the **Strategy Settings** tab, configure the strategy for a one-time job, and then click **Next**.
 
-. 在**容器组设置**页签，为任务管理的容器组设置重启策略和容器，然后点击**下一步**。
+. On the **Pod Settings** tab, set restart policies and containers for the pods managed by the job. Then click **Next**.
 
-. 在**存储设置**页签，为任务管理的容器挂载卷，然后点击**下一步**。
+. On the **Storage Settings** tab, mount volumes for the containers managed by the job. Then click **Next**.
 
-. 在**高级设置**页签，为任务管理的容器组指定 IP 池和节点，并设置任务的元数据，然后点击**创建**。任务创建完成后将显示在任务列表中。
+. On the **Advanced Settings** tab, specify nodes for the pods managed by the job, and set metadata for the job. Then click **Create**. 
++
+Once the job is created, it will be displayed in the job list.

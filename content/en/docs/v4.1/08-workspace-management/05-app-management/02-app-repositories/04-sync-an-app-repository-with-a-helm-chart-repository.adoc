@@ -17,7 +17,7 @@ weight: 04
 如果您在添加应用仓库时已设置同步周期，系统将根据同步周期自动同步应用仓库和 Helm Chart 仓库。您也可以按照本节介绍的步骤手动使应用仓库和 Helm Chart 仓库同步。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 
@@ -26,7 +26,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-req
 :relfileprefix: ./
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

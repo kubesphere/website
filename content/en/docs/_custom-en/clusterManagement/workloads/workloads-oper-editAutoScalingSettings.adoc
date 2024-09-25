@@ -1,23 +1,23 @@
 // :ks_include_id: d77f09013e3f495b8bea4d8b7300d5e0
-. 在工作负载详情页面左上角选择**更多操作 > 编辑自动扩缩**。
+. On the top left of the workload details page, select **More > Edit Autoscaling**.
 
-. 在**自动扩缩**对话框，设置工作负载的自动扩缩参数，然后点击**确定**。
+. In the **Autoscaling** dialog, set the autoscaling parameters for the workload, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|目标 CPU 用量
-|工作负载中所有容器组副本的目标 CPU 用量，单位为百分比。当实际 CPU 用量大于/小于目标值时，系统自动减少/增加容器组副本数量。
+|Target CPU Usage
+|Target CPU usage for all pod replicas in the workload, measured in percentage. When the actual CPU usage is higher/lower than the target value, the system automatically decreases/increases the replica count.
 
-|目标内存用量
-|工作负载中所有容器组副本的目标内存用量，单位为 MiB。当实际 CPU 用量大于/小于目标值时，系统自动减少/增加容器组副本数量。
+|Target Memory Usage
+|Target memory usage for all pod replicas in the workload, measured in MiB. When the actual memory usage is higher/lower than the target value, the system automatically decreases/increases the replica count.
 
-|最小副本数
-|允许的最小容器组副本数量，默认值为 **1**。
+|Minimum Replicas
+|The minimum allowed pod replica count, with a default value of **1**.
 
-|最大副本数
-|允许的最大容器组副本数量，默认值为 **1**。
+|Maximum Replicas
+|The maximum allowed pod replica count, with a default value of **1**.
 |===
---
+-- 

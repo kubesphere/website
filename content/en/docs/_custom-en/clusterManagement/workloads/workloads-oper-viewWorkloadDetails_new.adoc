@@ -1,51 +1,50 @@
 // :ks_include_id: c4e995deeaff4c618dca0b53432cab70
-. 在工作负载详情页面左侧的**属性**区域查看工作负载的资源属性。
+. In the **Attributes** section on the left side of the workload details page, view the attributes of the workload.
 +
 --
-
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|集群
-|工作负载所属的集群。
+| Cluster
+| The cluster to which the workload belongs.
 
-|项目
-|工作负载所属的项目。
+| Project
+| The project to which the workload belongs.
 
-|应用
-|工作负载所属的应用名称。您可以创建一个包含多个服务的应用，每个服务都对应一个工作负载。
+| Application
+| The name of the application to which the workload belongs. You can create an application that includes multiple services, each corresponding to a workload.
 
-|创建时间
-|工作负载的创建时间。
+| Creation Time
+| The creation time of the workload.
 
-|更新时间
-|工作负载的更新时间。
+| Update Time
+| The update time of the workload.
 
-|创建者
-|创建工作负载的用户。
+| Creator
+| The user who created the workload.
 |===
 --
 
-. 在工作负载详情页面右侧的**资源状态**页签查看工作负载的容器组副本数量、容器端口和容器组。
+. On the right side of the workload details page, on the **Resource Status** tab, view the pod replica count, container ports, and pods of the workload.
 +
 --
 include::../../para-replicasPortsPods.adoc[]
 --
 
-. 在工作负载详情页面右侧点击**修改信息**页签查看工作负载的修改信息。
+. Click the **Revision Records** tab on the right side of the workload details page to view  revision records for the workload.
 +
 --
-* 在下拉列表中选择一个修改记录可查看其序列号、创建时间和配置文件。{ks_product-en}系统自动为每个修改记录创建一个序列号，最多可保留 10 条修改记录。
+* Click a revision record from the dropdown list to view its serial number, creation time, and configuration file. KubeSphere automatically creates a serial number for each revision record, and up to 10 revision records can be retained.
 
-* **配置文件**区域显示当前配置文件相比前一个修订记录的配置文件的差异。点击image:/images/ks-qkcp/zh/icons/chevron-down.svg[chevron-down,18,18]可以纵向显示配置文件差异，点击image:/images/ks-qkcp/zh/icons/chevron-right.svg[chevron-right,18,18]可以横向显示配置文件的差异。
+* The **Configuration File** section displays the differences between the current configuration file and the configuration file from the previous revision record. Click image:/images/ks-qkcp/zh/icons/chevron-down.svg[chevron-down,18,18] to vertically display the  differences in the configuration files, and Click image:/images/ks-qkcp/zh/icons/chevron-right.svg[chevron-right,18,18] to horizontally display the differences in the configuration files.
 --
 
-. 在工作负载详情页面右侧点击**元数据**页签查看工作负载的标签和注解。
+. Click the **Metadata** tab on the right side of the workload details page to view the labels and annotations of the workload.
 
-. 在工作负载详情页面右侧点击**环境变量**页签查看工作负载中的所有容器的环境变量。
+. Click the **Environment Variables** tab on the right side of the workload details page to view the environment variables of all containers in the workload.
 
-. 在工作负载详情页面右侧点击**事件**页签查看工作负载相关的事件。
+. Click the **Events** tab on the right side of the workload details page to view events related to the workload.
 +
 --
 include::../clusterManagement-para-eventsTab.adoc[]

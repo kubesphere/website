@@ -1,8 +1,8 @@
 // :ks_include_id: 6dc8492ff19d4f1bb83db24a36e18f07
-* **Guaranteed**：容器组中的每个容器都具有内存上限、内存请求、CPU 上限、CPU 请求，并且内存上限等于内存请求，CPU 上限等于 CPU 请求。
+* **Guaranteed**: Each container in the pod has memory limits, memory requests, CPU limits, and CPU requests, and the memory limit is equal to the memory request, and the CPU limit is equal to the CPU request.
 
-* **Burstable**：容器组中至少有一个容器不满足 **Guaranteed** 类型的要求。
+* **Burstable**: At least one container in the pod does not meet the requirements of the **Guaranteed** type.
 
-* **BestEffort**：容器组中的容器没有配置任何内存上限、内存请求、CPU 上限或CPU 请求。
+* **BestEffort**: Containers in the pod do not configured with any memory limits, memory requests, CPU limits, or CPU requests.
 
-容器组的 QoS 类型将决定容器组运行的优先级。当系统中资源不足以运行所有容器组时，系统优先保证运行 QoS 类型为 **Guaranteed** 的容器组，其次保证运行 QoS 类型为 **Burstable** 的容器组，最后保证运行 QoS 类型为 **BestEffort** 的容器组。
+The QoS type of the pod determines the running priority of the pod. When resources in the system is insufficient to run all pods, the system gives priority to running pods of QoS type **Guaranteed** first, followed by pods of QoS type **Burstable**, and finally, pods of QoS type **BestEffort**.

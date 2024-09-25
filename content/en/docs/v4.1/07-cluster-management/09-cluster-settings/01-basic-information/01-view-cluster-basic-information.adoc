@@ -13,15 +13,11 @@ weight: 01
 本节介绍如何查看集群基本信息。
 
 
-== 前提条件
-
-:relfileprefix: ../../../../
+== Prerequisites
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
-
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 

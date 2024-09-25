@@ -12,7 +12,7 @@ Kubectl 是 Kubernetes 命令行工具。您可以用它在 Kubernetes 集群上
 
 本节演示如何使用 Web kubectl 进行集群资源操作和管理。
 
-== 前提条件
+== Prerequisites
 
 您需要在{ks_product-en}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../05-users-and-roles/01-users/[用户]和link:../../05-users-and-roles/02-platform-roles/[平台角色]。
 

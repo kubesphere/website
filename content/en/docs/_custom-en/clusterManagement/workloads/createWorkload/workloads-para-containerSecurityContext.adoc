@@ -1,27 +1,36 @@
 // :ks_include_id: 03ba4803bc5e4930b178cd6397356d2c
-设置容器进程在 Linux 系统中的权限。
+Configure the permissions of the container process in the Linux system.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|访问控制
+| Access Control
+| Access permissions for the container process.
+
+* **Privileged Mode**: Run the container process as the **root** user on the host.
+
+* **Allow Privilege Escalation**: Allow the container process to gain more privileges than the parent process. This option is enabled by default when **Privileged Mode** is enabled.
+
+* **Root Directory Read-Only**: Set the root directory of the container filesystem to read-only.
+
+|User and User Group
 |
-容器进程的访问权限。
+The users and user groups running the entry point of container processes.
 
-* **特权模式**：以主机上的 **root** 用户运行容器进程。
+* **Run as Non-root**: Checks if the container will run as the **root** user before starting. If the container is set to run as the **root** user, it won't start. When this feature is enabled, the system will ignore the **Privileged mode** setting.
 
-* **允许特权提升**：允许容器进程获取比父进程更多的特权。当**特权模式**启用时，此选项默认启用。
+* **User**: The UID (User ID) executing the container process entry point. Defaults to the UID specified in the image metadata.
 
-* **根目录只读**：将容器文件系统的根目录设置为只读。
+* **User Group**: The GID (Group ID) executing the container process entry point. Defaults to the default GID of the container runtime.
 
-include::workloads-para-uidGidSelinux.adoc[]
+|SELinux Context
+|The SELinux labels for the container process, including **Level**, **Role**, **Type**, and **User**. For more information, refer to the link:https://www.selinuxproject.org/page/Main_Page[SELinux Documentation].
 
-|权能
-|
-在 Linux 系统中对容器进程额外添加或移除的权限。请参阅 link:https://man7.org/linux/man-pages/man7/capabilities.7.html[Linux 官方文档]获取 Linux 进程的权能列表。
+| Capabilities
+| Additional capabilities added to or removed from the container process in the Linux system. Refer to the link:https://man7.org/linux/man-pages/man7/capabilities.7.html[Linux Documentation] for the list of Linux process capabilities.
 
-* 为容器进程添加或移除权能时，您需要去掉权能名称中的 **CAP_** 前缀。例如，在**移除**文本框中输入 **SYS_TIME** 可移除容器进程的 **CAP_SYS_TIME** 权能。
+* When adding or removing capabilities for the container process, you need to remove the **CAP_** prefix from the capability names. For example, entering **SYS_TIME** in the **Drop** text box will remove the **CAP_SYS_TIME** capability from the container process.
 
-* 点击**添加**可设置多条权能添加或移除指令。
+* Click **Add** to set multiple instructions for adding or removing capabilities.
 |===

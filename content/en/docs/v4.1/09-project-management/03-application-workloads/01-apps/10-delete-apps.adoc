@@ -13,7 +13,7 @@ weight: 10
 本节介绍如何删除应用。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 

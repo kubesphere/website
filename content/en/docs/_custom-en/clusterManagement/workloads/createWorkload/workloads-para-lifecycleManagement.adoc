@@ -1,36 +1,35 @@
 // :ks_include_id: 2c06de3e1ab94af48b7328587c8256b5
-设置容器启动后或终止前需要执行的动作，以进行环境检查或体面终止。使用此功能前，您需要在容器的应用程序中进行配置，使应用程序可以返回动作的执行结果。
+Configure actions to be performed after the container starts or before it terminates for environment checking or graceful termination. Before using this feature, you need to configure the application within the container to return the results of the performed action.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|启动后动作
-|容器启动后需要执行的动作。如果该动作执行失败，系统将尝试重启容器。
+| Post-start Action
+| The action to be performed after the container starts. If the post-start action fails, the system will attempt to restart the container.
 
-|终止前动作
-|
-容器终止前需要执行的动作。该动作遵循以下规则：
+| Pre-stop Action
+| The action to be performed before the container terminates. This action follows these rules:
 
-* 如果终止前动作执行失败，系统将立即终止容器。
+* If the pre-stop action fails, the system will terminate the container immediately.
 
-* 容器的体面终止期限默认值为 30s，如果达到体面终止期限时终止前动作仍在执行，系统将提供一次性宽限期 2s。
+* The default period for the graceful termination of a container is 30 seconds. If the pres-stop action is still running when the grace period ends, the system will provide a one-time grace period of 2 seconds.
 
-* 宽限期结束后，无论终止前动作是否已执行结束，系统都将终止容器。
+* After the grace period ends, regardless of whether the pres-stop action has finished, the system will terminate the container.
 |===
 
-{ks_product-en}支持以下启动后动作和终止前动作的执行方式：
+KubeSphere supports the following execution methods for post-start actions and pre-stop actions:
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|HTTP 请求
-|向容器组的虚拟 IP 地址发送 HTTP GET 请求，如果响应状态码为 2XX 或 3XX 则表明动作执行成功。
+| HTTP Request
+| Sends an HTTP GET request to the virtual IP address of the pod. If the response status code is 2XX or 3XX, the action is considered successful.
 
-|命令
-|在容器中运行命令，如果命令的退出码为 0 则表明动作执行成功。
+| Command
+| Runs a command in the container. The action is considered successful if the command's exit code is 0.
 
-|TCP 端口
-|尝试与指定的容器端口建立 TCP 连接，如果连接建立成功则表明动作执行成功。
+| TCP Port
+| Attempts to establish a TCP connection with the specified container port. The action is considered successful if the connection is established.
 |===

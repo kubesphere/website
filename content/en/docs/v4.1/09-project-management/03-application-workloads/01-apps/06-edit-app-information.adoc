@@ -16,7 +16,7 @@ weight: 06
 您可以编辑应用的别名和描述。{ks_product-en}不支持编辑已创建应用的名称。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -27,7 +27,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

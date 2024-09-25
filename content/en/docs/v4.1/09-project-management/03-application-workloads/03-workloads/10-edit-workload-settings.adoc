@@ -13,7 +13,7 @@ weight: 10
 include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-editWorkloadSettings.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -24,7 +24,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

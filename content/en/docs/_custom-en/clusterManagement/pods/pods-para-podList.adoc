@@ -1,28 +1,28 @@
 // :ks_include_id: 9b12ede280884331985685925cf5dfc4
-* 容器组列表提供以下信息：
+* The pod list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|名称
-|容器组的名称。
+| Name
+| The name of the pod.
 
-|状态
-|容器组的状态。
+| Status
+| The status of the pod.
 
 include::pods-para-podStatus.adoc[]
 
-|节点
-|容器组所在的节点和节点的 IP 地址。
+| Node
+| The node where the pod is located and the IP address of the node.
 
 include::pods-para-podIpPool.adoc[]
 
-|应用
-|容器组所属的应用。
+| Application
+| The application to which the pod belongs.
 
-|更新时间
-|容器组的更新时间。
+| Update Time
+| The update time of the pod.
 |===
---
+-- 

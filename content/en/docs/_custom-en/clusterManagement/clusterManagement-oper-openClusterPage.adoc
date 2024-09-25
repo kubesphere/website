@@ -1,2 +1,2 @@
 // :ks_include_id: ac11303d404249078087f1c605445e15
-. Log in to the {ks_product-en} web console with a user who has pass:a,q[{ks_permission}] permissions, and access your cluster.
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission, and access your cluster.

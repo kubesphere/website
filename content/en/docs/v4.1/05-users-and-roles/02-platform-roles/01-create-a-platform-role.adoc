@@ -29,11 +29,11 @@ KubeSphere provides the following preset platform roles, and you can also create
 
 == Prerequisites
 
-You need to have pass:a,q[{ks_permission}] permissions on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
 
 == Steps
 
-. Log in to the {ks_product-en} web console with a user who has pass:a,q[{ks_permission}] permissions.
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
 . Click pass:a,q[{ks_menu}].
 . Select **Platform Roles** from the left navigation pane.
 . Click **Create** on the page.

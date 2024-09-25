@@ -1,17 +1,16 @@
-// :ks_include_id: e492eb63e19b4c8d88cb2d2a4b800815
-* 容器组设置 > 重启策略
+* Pod Settings > Restart Policy
 +
 --
-设置容器运行失败时系统采取的策略。
+Select the policy the system adopts when a container in the pod fails to run.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|重新创建容器组
-|系统将重新创建整个容器组。
+| Re-create pod
+| The system will recreate the entire pod.
 
-|重启容器
-|系统将重启容器。
+| Restart container
+| The system will restart the container.
 |===
 --

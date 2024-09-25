@@ -1,2 +1,2 @@
 // :ks_include_id: cc4f326315a24232ba3df5a314ef63f3
-* 在列表上方点击搜索框并设置搜索条件，可按名称或状态搜索任务。
+* Click the search box at the top of the list and search for jobs by name or status.

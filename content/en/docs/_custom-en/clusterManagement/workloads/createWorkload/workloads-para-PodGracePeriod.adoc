@@ -1,4 +1,3 @@
 // :ks_include_id: 7e4e28a3e5ce47da9d146777b262caf4
 
-设置容器终止前等待的时间，超时后容器将强制终止。默认取值为 30s。
-
+Set the waiting time before the pod terminates; the pod will be forcefully terminated after the specified timeout. The default value is 30 seconds.

@@ -13,7 +13,7 @@ weight: 05
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-expandAPersistentVolumeClaim.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -27,7 +27,7 @@ include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persist
 * 请确保后端存储系统支持卷扩展功能，并已在持久卷声明对应的存储类上启用卷扩展功能。有关更多信息，请参阅link:../../02-storage-classes/05-enable-and-disable-volume-operations/[启用和禁用卷操作]。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 

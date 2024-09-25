@@ -6,14 +6,14 @@ description: "介绍如何查看任务列表。"
 weight: 02
 ---
 
-:ks_permission: **应用负载查看**
-:ks_navigation: **应用负载 > 任务**
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Jobs**
 
 
 include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-viewAJobList.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -24,7 +24,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

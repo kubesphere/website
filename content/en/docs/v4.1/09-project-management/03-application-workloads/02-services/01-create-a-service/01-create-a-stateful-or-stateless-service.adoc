@@ -13,7 +13,7 @@ weight: 01
 本节介绍如何创建有状态或无状态服务。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../../
@@ -24,7 +24,7 @@ include::../../../../../_custom-en/projectManagement/projectManagement-prer-requ
 
 
 
-== 操作步骤
+== Steps
 
 请参阅link:#_参数描述[参数描述]设置服务的参数。
 

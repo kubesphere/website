@@ -13,7 +13,7 @@ weight: 08
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-deletePersistentVolumeClaims.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../

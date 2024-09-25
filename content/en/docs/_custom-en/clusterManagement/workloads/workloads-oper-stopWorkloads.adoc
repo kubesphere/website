@@ -1,7 +1,7 @@
 // :ks_include_id: 7e1535bd60ce4490bccd43efa8138a1e
-. 选择需要操作的工作负载左侧的复选框，然后在工作负载列表上方点击**停止**。
+. Select the checkbox on the left side of the workloads you want to stop, then click **Stop** above the workload list.
 
-. 在**停止工作负载**对话框，输入工作负载的名称，然后点击**确定**。
+. In the **Stop Workload** dialog, enter the name of the workload, then click **OK**.
 +
 --
 include::../../note-separateNamesByComma.adoc[]

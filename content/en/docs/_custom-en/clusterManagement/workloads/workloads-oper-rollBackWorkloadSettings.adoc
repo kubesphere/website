@@ -1,4 +1,4 @@
 // :ks_include_id: 87b86dd518334714ad747818ae534b07
-. 在工作负载详情页面左上角选择**更多操作 > 回退**。
+. On the top left of the workload details page, select **More > Roll Back**.
 
-. 在**回退**对话框，设置**目标修改记录**，然后点击**确定**。
+. In the **Roll Back** dialog, select the **Target Revision Record**, then click **OK**.

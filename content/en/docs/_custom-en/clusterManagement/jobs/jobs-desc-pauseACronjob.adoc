@@ -1,4 +1,4 @@
 // :ks_include_id: a773823d564e4c93b67e89f11ac3bc64
-本节介绍如何暂停定时任务。
+This section explains how to pause a CronJob.
 
-定时任务暂停后，系统将不会在未来计划的时间点创建任务并运行，正在运行的任务不受影响。此操作仅对定时任务可用。
+After pausing a CronJob, the system will not create and run jobs at the scheduled time in the future. Running jobs are not affected. This operation is only available for CronJobs.

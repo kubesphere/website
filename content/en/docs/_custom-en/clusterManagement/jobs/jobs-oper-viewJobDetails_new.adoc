@@ -1,143 +1,140 @@
 // :ks_include_id: ae48f9c2af1e46bca4bede49d4447413
-. 在任务详情页面左侧的**属性**区域查看任务的资源属性。
+. In the left **Attributes** area on the job details page, view the resource attributes of the job.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|集群
-|任务所属的集群。
+| Cluster
+| The cluster to which the job belongs.
 
-|项目
-|任务所属的项目。
+| Project
+| The project to which the job belongs.
 
-|状态
+| Status
 |
-任务当前的状态。
+The current status of the job.
 
 include::jobs-para-jobStatus.adoc[]
 
-|最大重试次数
-|任务中的容器组可以重启的最大次数。如果达到最大重试次数仍未满足任务完成条件，任务将被标记为失败。仅对普通任务显示。
+| Maximum Retries
+| The maximum number of times the pods in the job can be restarted. If the maximum retries is reached but the job completion conditions are still not met, the job will be marked as failed. Available only for Jobs.
 
-|容器组完成数量
-|将任务标记为完成所需成功完成的容器组数量。仅对普通任务显示。
+| Complete Pods
+| The number of completed pods required to mark the job as completed. Available only for Jobs.
 
-|并行容器组数量
-|任务中并行运行的容器组副本数量。仅对普通任务显示。
+| Parallel Pods
+| The number of pods that run in parallel in the job. Available only for Jobs.
 
-|最大运行时间
-|任务的最大运行时间，单位为秒。如果达到最大运行时间仍未满足任务完成条件，任务将被终止并被标记为失败。仅对普通任务显示。
+| Maximum Duration
+| The maximum running time for the job, in seconds. If the maximum duration is reached but the job completion conditions are still not met, the job will be terminated and marked as failed. Available only for Jobs.
 
-|定时计划
-|定时任务运行周期的 CRON 表达式。仅对定时任务显示。
+| Schedule
+| The CRON expression specifying the runtime cycle for a CronJob. KubeSphere defaults to UTC time, and you may need to adjust it based on your time zone. Available only for CronJobs.
 
-|最大启动延后时间
-|由于某种原因未能按计划启动任务时，任务启动的最大延后时间。仅对定时任务显示。
+| Maximum Startup Delay
+| The maximum delay before starting a job when it fails to start according to the schedule. Available only for CronJobs.
 
-|成功任务保留数量
-|允许保留的成功任务的个数。默认值为 3。仅对定时任务显示。
+| Successful Jobs Retention
+| The number of successful jobs allowed to be retained, with a default value of **3**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
 
-|失败任务保留数量
-|允许保留的失败任务的个数。默认值为 1。仅对定时任务显示。
+| Failed Jobs Retention
+| The number of failed jobs allowed to be retained, with a default value of **1**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
 
-|并发策略
-|定时任务创建的多个任务发生重叠时系统采取的策略。
+| Concurrency Policy
+| The policy the system adopts when multiple jobs created by a CronJob overlap. Available only for CronJobs. It includes the following polices:
 
-* **同时运行任务**：新任务和旧任务并发运行。
+* **Run jobs concurrently**: New and old jobs run concurrently.
 
-* **跳过新任务**：不运行新任务。
+* **Skip new job**: Do not run new jobs.
 
-* **跳过旧任务**：立即终止旧任务然后运行新任务。
+* **Skip old job**: Immediately terminates old jobs and then runs new jobs.
 
-仅对定时任务显示。
+| Creation Time
+| The creation time of the job.
 
-|创建时间
-|任务的创建时间。
-
-|创建者
-|创建任务的用户。
+| Creator
+| The user who created the job.
 |===
 --
 
-. 在任务详情页面右侧的**运行记录**页签查看任务的运行记录。
+. On the right **Run Records** tab on the job details page, view the run records of the job.
 +
 --
-用户手动重新运行普通任务或定时任务按照定时计划运行时，系统将生成运行记录。
+When users re-run a Job manually or run a CronJob according to the schedule, the system generates run records.
 
-对于普通任务，**运行记录**页签显示以下信息：
-
-[%header,cols="1a,4a"]
-|===
-|参数 |描述
-
-|序号
-|任务运行的序号，表示每条记录是任务第几次运行。
-
-|状态
-|每次运行任务的状态结果。
-
-include::jobs-para-jobStatus.adoc[]
-
-* **未完成**：任务运行过程中用户手动重新运行任务。
-
-|消息
-|任务运行返回的消息。
-
-|开始时间
-|任务运行开始运行的时间。
-
-|结束时间
-|任务运行结束的时间。
-|===
-
-对于定时任务，**运行记录**页签显示以下信息：
+For Jobs, the **Run Records** tab displays the following information:
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|任务
-|定时任务创建的普通任务的名称。
+| No.
+| The serial number of the job, indicating the sequence of each run.
 
-|状态
-|定时任务创建的普通任务的状态。
+| Status
+| The status result of each run of the job.
 
 include::jobs-para-jobStatus.adoc[]
 
-|开始时间
-|定时任务的普通任务开始运行的创建时间。
+* **Incomplete**: Manually rerun the job during the job running.
 
-|结束时间
-|任务运行结束的时间。
+| Message
+| The message returned by the run.
+
+| Start Time
+| The time the run started.
+
+| End Time
+| The time the run ended.
+|===
+
+For CronJobs, the **Run Records** tab displays the following information:
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Job
+| The name of the job created by the CronJob.
+
+| Status
+| The status of the job created by the CronJob.
+
+include::jobs-para-jobStatus.adoc[]
+
+| Start Time
+| The start time of the job created by the CronJob.
+
+| End Time
+| The time the run ended.
 |===
 --
 
-. 对于普通任务，在任务详情页面右侧点击**资源状态**页签查看任务中的容器组副本数和容器组。
+. For Jobs, Click the **Resource Status** tab on the right of the job details page to view the number of pod replicas and pods in the job.
 +
 --
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|副本
-|任务中的容器组副本数。
+| Replicas
+| The number of pod replicas in the job.
 
-|容器组
-|
-任务中的容器组。
+| Pods
+| The pods running for the job.
 
 include::../nodes/nodes-para-podList.adoc[]
 |===
 --
 
-. 在任务详情页面右侧点击**元数据**页签查看任务的标签和注解。
+. Click the **Metadata** tab on the right of the job details page to view the labels and annotations of the job.
 
-. 对于普通任务，在任务详情页面右侧点击**环境变量**页签查看任务中的所有容器的环境变量。
+. For Jobs, Click the **Environment Variables** tab on the right of the job details page to view the environment variables of all containers in the job.
 
-. 在任务详情页面右侧点击**事件**页签查看任务相关的事件。
+. Click the **Events** tab on the right of the job details page to view events related to the job.
 +
 --
 include::../clusterManagement-para-eventsTab.adoc[]

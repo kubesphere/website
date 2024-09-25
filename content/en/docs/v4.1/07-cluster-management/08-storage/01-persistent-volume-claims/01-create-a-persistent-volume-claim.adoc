@@ -13,18 +13,14 @@ weight: 01
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-createAPersistentVolumeClaim.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
-
-:relfileprefix: ../../../../
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
 
 
-
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 

@@ -1,11 +1,13 @@
 // :ks_include_id: d02b5f4b6a354bdfbba1d532b30bda69
-. 在工作负载详情页面的**资源状态**页签，点击image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18]或image:/images/ks-qkcp/zh/icons/substract-dark.svg[subtrack-dark,18,18]调整容器组副本的数量，然后在右上角的**调整副本数量**对话框点击**确定**。
+. On the **Resource Status** tab of the workload details page, click image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18] or image:/images/ks-qkcp/zh/icons/substract-dark.svg[subtract-dark,18,18] to adjust the replica count. Then, in the **Adjust Replicas** dialog at the top right corner, click **OK**.
 +
 --
-// Warning
-include::../../../../_ks_components-en/admonitions/warning.adoc[]
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
 
-如果您将容器组副本数量调整到 0，工作负载管理的所有容器组副本将被删除，工作负载中运行的业务将中断。请谨慎执行此操作。
-
-include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
---
+|
+If you adjust the pod replica count to 0, all replicas managed by the workload will be deleted, and the running business will be interrupted. Please proceed with caution.
+|===
+-- 

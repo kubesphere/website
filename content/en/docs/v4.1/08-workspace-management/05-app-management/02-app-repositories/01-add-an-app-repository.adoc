@@ -13,7 +13,7 @@ weight: 01
 本节介绍如何在企业空间中添加应用仓库。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -24,7 +24,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-req
 * 已提前创建 Helm Chart 仓库。有关如何创建 Helm Chart 仓库，请参阅 link:https://helm.sh/zh/docs/topics/chart_repository/[Helm 官方文档]。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

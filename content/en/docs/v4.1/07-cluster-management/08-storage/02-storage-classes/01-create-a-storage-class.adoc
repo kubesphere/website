@@ -13,7 +13,7 @@ weight: 01
 本节介绍如何创建存储类。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -25,7 +25,7 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-prer-require
 * 为使存储类可以正常提供存储资源，您需要提前配置存储系统并安装与存储系统对应的存储插件。更多相关信息，请联系您的存储系统提供商。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 

@@ -1,9 +1,10 @@
 // :ks_include_id: 375914907c6948b08ccff616aa99831d
-本节介绍如何删除项目。
+This section explains how to delete projects.
 
-// Warning
-include::../../../../_ks_components-en/admonitions/warning.adoc[]
+//warning
+[.admon.warning,cols="a"]
+|===
+|Warning
 
-项目删除后不能恢复，同时项目中的所有的资源也将被删除，请谨慎执行此操作。
-
-include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+|Once a project is deleted, it cannot be recovered, and all resources within the project will be deleted. Please proceed with caution.
+|===

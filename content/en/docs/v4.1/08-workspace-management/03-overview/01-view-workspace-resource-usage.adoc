@@ -13,7 +13,7 @@ weight: 01
 本节介绍如何查看企业空间资源用量。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../
@@ -24,7 +24,7 @@ include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requir
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

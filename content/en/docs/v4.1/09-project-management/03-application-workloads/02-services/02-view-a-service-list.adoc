@@ -13,7 +13,7 @@ weight: 02
 include::../../../../_custom-en/clusterManagement/services/services-desc-viewServiceList.adoc[]
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

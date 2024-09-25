@@ -13,12 +13,12 @@ weight: 01
 本节介绍如何创建集群标签。
 
 
-== 前提条件
+== Prerequisites
 
 您需要在{ks_product-en}平台具有pass:a,q[{ks_permission}]权限。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
 

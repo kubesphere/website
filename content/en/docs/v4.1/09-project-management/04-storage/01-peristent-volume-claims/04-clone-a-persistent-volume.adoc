@@ -13,7 +13,7 @@ weight: 04
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-cloneAPersistentVolume.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -29,7 +29,7 @@ include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persist
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

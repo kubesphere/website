@@ -1,30 +1,25 @@
 ---
-title: "删除容器组"
-linkTitle: "删除容器组"
-keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 容器组, 删除容器组"
-description: "介绍如何删除容器组。"
+title: "Delete Pods"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, Delete Pods"
+description: "Learn how to delete a pod."
 weight: 05
 ---
 
-:ks_permission: **应用负载管理**
-:ks_navigation: **应用负载 > 容器组**
 
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Pods**
 
 include::../../../../_custom-en/clusterManagement/pods/pods-desc-deletePods.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
-
-:relfileprefix: ../../../../
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
 
 
-
-== 删除单个容器组
+== Delete a Single Pod
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -37,7 +32,7 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 include::../../../../_custom-en/clusterManagement/pods/pods-oper-deleteASinglePod.adoc[]
 
 
-== 批量删除容器组
+== Delete Multiple Pods
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 

@@ -13,7 +13,7 @@ weight: 01
 include::../../../../_custom-en/clusterManagement/routes/routes-desc-createARoute.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -26,7 +26,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 * 应用路由所属的项目中存在至少一个服务。有关更多信息，请参阅link:../../02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/[创建服务]。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

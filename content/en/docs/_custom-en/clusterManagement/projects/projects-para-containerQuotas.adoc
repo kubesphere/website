@@ -1,18 +1,18 @@
 // :ks_include_id: ed53650f20d543ee95f0aa14ff7b5f1e
-|CPU 预留
-|为容器预留的 CPU 资源，单位为核。
+|CPU Request
+|Reserved CPU resources for a container, measured in cores.
 
-|CPU 上限
-|允许容器使用的 CPU 资源上限，单位为核。
+|CPU Limit
+|Upper limit of CPU resources that a container is allowed to use, measured in cores.
 
-|内存预留
-|为容器预留的内存资源，单位为 MiB。
+|Memory Request
+|Reserved memory resources for a container, measured in MiB.
 
-|内存上限
-|允许容器使用的内存资源上限，单位为 MiB。
+|Memory Limit
+|Upper limit of memory resources that a container is allowed to use, measured in MiB.
 
-|GPU 类型
-|对容器上限使用量的 GPU 类型。目前仅支持设置 NVDIA GPU。
+|GPU Type
+|The GPU type that containers in the project can use. Currently, only NVIDIA GPU is supported.
 
-|GPU 上限
-|允许容器使用的 GPU 数量上限，单位为 GPU。
+|GPU Limit
+|Upper limit on the number of GPUs that a container is allowed to use, measured in GPUs.

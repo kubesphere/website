@@ -1,8 +1,10 @@
 // :ks_include_id: 7187f68c21894926871b0e1276d5aa7e
-. 在**基本信息**页签，设置工作负载的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, configure the basic information for the workload, and then click **Next**.
 
-. 在**容器组设置**页签，为工作负载管理的容器组设置副本数量、容器、更新策略、安全上下文、调度规则和元数据，然后点击**下一步**。
+. On the **Pod Settings** tab, set the replica count, containers, update strategy, security context, scheduling rules, and metadata for the pods managed by the workload, then click **Next**.
 
-. 在**存储设置**页签，为工作负载管理的容器挂载卷，然后点击**下一步**。
+. On the **Storage Settings** tab, mount volumes for the containers managed by the workload, then click **Next**.
 
-. 在**高级设置**页签，为工作负载管理的容器组指定节点，并设置工作负载的元数据，然后点击**创建**。工作负载创建完成后将显示在工作负载列表中。
+. On the **Advanced Settings** tab, specify IP pools and nodes for the pods managed by the workload, set metadata for the workload, then click **Create**. 
++
+Once the workload is created, it will be displayed in the list of workloads.

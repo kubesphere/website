@@ -1,2 +1,2 @@
 // :ks_include_id: 04ecee90589140c28c84ab59ddd6aeb7
-本节介绍如何调整工作负载的容器组副本数量。
+This section explains how to adjust the replica count of pods in a workload.

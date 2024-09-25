@@ -18,7 +18,7 @@ You need to have the pass:a,q[{ks_permission}] permission on the {ks_product-en}
 
 == Steps
 
-. Log in to the {ks_product-en} web console with a user who has pass:a,q[{ks_permission}] permissions.
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
 . Click pass:a,q[{ks_menu}].
 . Click pass:a,q[{ks_navigation}] in the left navigation pane.
 

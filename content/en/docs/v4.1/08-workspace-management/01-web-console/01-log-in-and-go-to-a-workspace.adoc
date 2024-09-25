@@ -11,14 +11,14 @@ weight: 01
 本节介绍如何登录{ks_product-en} Web 控制台并进入企业空间。
 
 
-== 前提条件
+== Prerequisites
 
 * 您需要获取企业空间成员用户名和密码。
 
 include::../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
 
 
-== 操作步骤
+== Steps
 
 include::../../../_custom-en/workspaceManagement/webConsole/webConsole-oper-logIn.adoc[]
 +

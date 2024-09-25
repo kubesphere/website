@@ -1,11 +1,13 @@
 // :ks_include_id: 963da033862c424c9fc9f2cc246602fb
-本节介绍如何回退工作负载设置。
+This section explains how to roll back workload settings.
 
-系统在工作负载创建或修改后将生成修改记录，可用于回退工作负载设置。最多可保留 10 条修改记录。
+The system generates revision records after creating or modifying workloads, which can be used to roll back workload settings. Up to 10 revision records can be retained.
 
-// Warning
-include::../../../../_ks_components-en/admonitions/warning.adoc[]
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
 
-此操作将根据用户选择的修改记录重新创建工作负载，工作负载中运行的业务将中断，请谨慎执行此操作。
-
-include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+|
+This operation will recreate the workload based on the selected revision record, and the running business will be interrupted. Please proceed with caution.
+|===

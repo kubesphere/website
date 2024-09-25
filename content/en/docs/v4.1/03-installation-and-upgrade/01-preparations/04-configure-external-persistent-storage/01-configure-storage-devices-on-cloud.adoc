@@ -8,7 +8,7 @@ weight: 01
 
 This section provides instructions on how to configure cloud storage devices for KubeSphere in a production environment.
 
-To configure cloud storage devices, create an API key in the cloud environment and set up KubeSphere using the API key to integrate with the cloud environment through the Container Storage Interface (CSI). When users create volumes on the KubeSphere platform and mount them to pods, KubeSphere will automatically create storage devices in the cloud environment for pods to use. The following steps outline the specific operations using QingCloud as an example. For instructions related to other cloud environments, please refer to the user guide of the respective cloud environment or contact your cloud service provider.
+To configure cloud storage devices, create an API key in the cloud environment and set up KubeSphere using the API key to integrate with the cloud environment through the Container Storage Interface (CSI). When users create volumes in KubeSphere and mount them to pods, KubeSphere will automatically create storage devices in the cloud environment for pods to use. The following steps outline the specific operations using QingCloud as an example. For instructions related to other cloud environments, please refer to the user guide of the respective cloud environment or contact your cloud service provider.
 
 == Prerequisites
 

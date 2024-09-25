@@ -1,13 +1,13 @@
 // :ks_include_id: 4401458e342646d99223518791c4a0b6
-|挂载方式
+|Mount Mode
 |
-卷在容器上的挂载方式。
+The mount mode of the volume on the container.
 
-* **读写**：允许容器读取卷中的数据并向其中写入数据。
+* **Read and write**: Allows the container to read from and write to the volume.
 
-* **只读**：只允许容器读取卷中的数据。
+* **Read-only**: Only allows the container to read from the volume.
 
-* **不挂载**：卷不挂载到容器上。
+* **Not mounted**: The volume is not mounted to the container.
 
-|挂载路径
-|卷挂载到容器上的路径。点击image:/images/ks-qkcp/zh/icons/textfield.svg[textfield,18,18]可设置需要挂载的卷子路径。如果不设置子路径则默认挂载整个卷。
+|Mount Path
+|The path where the volume is mounted to the container. Click image:/images/ks-qkcp/zh/icons/textfield.svg[textfield,18,18] to set the subpath that needs to be mounted. If no subpath is set, the entire volume is mounted by default.

@@ -2,7 +2,7 @@
 title: "删除工作负载"
 linkTitle: "删除工作负载"
 keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 工作负载, 删除工作负载"
-description: "介绍如何删除任务。"
+description: "介绍如何删除工作负载。"
 weight: 12
 ---
 

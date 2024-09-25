@@ -1,13 +1,13 @@
 // :ks_include_id: 64d2897f5b044d81b1a2e5772897e884
-设置容器启动时在容器内部执行的命令。
+Configure the command to be executed inside the container when it starts.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|命令
-|需要执行的命令的名称。
+| Command
+| The startup command to be executed.
 
-|参数
-|需要执行的命令的参数。您可以使用半角逗号（,）分隔多个参数。
+| Parameters
+| The parameters of the startup command. Use commas to separate multiple parameters.
 |===

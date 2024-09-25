@@ -1,2 +1,2 @@
 // :ks_include_id: c86d968a626a4554a7415088043f003c
-. 在工作负载详情页面左上角选择**更多操作 > 编辑设置**。
+. On the top left of the workload details page, select **More > Edit Settings**.

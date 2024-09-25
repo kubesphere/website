@@ -1,11 +1,10 @@
 // :ks_include_id: 8cc83a9c58b8460cbcf369b1a07288b1
+* **Running**: The pod has been assigned to a node, all containers in the pod have been created, and at least one container is running, starting, or restarting.
 
-* **运行中**：容器组已分配给某个节点，容器组中的所有容器都已被创建，至少有一个容器正在运行、启动或重启。
+* **Waiting**: The pod has been accepted by the system, but at least one container has not been created or is not running. In this state, the pod may be waiting for scheduling or waiting for the container image to finish downloading.
 
-* **等待中**：容组器已被系统接受，但有至少一个容器尚未创建也未运行。此状态下，容器组可能正在等待调度，或等待容器镜像下载完成。
+* **Completed**: All containers in the pod have successfully terminated (terminated with an exit code of 0), and no longer restart.
 
-* **已完成**：容器组中的所有容器都成功终止（以 0 退出码终止），并且不再重启。
+* **Failed**: All containers in the pod have terminated, and at least one container terminated with a non-zero exit code.
 
-* **失败**：容器组中的所有容器都已终止，并且至少有一个容器以非 0 退出码终止。
-
-* **未知**：系统无法获取容器组状态。出现这种状态通常是由于系统与容器组所在的主机通信失败。
+* **Unknown**: The system cannot retrieve the pod's status, which usually occurs when communication fails between the system and the host where the pod is located.

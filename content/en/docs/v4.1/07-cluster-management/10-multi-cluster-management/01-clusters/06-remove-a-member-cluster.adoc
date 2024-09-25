@@ -28,7 +28,7 @@ include::../../../../../_ks_components-en/admonitions/warning.adoc[]
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 您需要在主集群和需要移除的成员集群都具有 **platform-admin** 角色。
 

@@ -1,30 +1,29 @@
 // :ks_include_id: 3bea77d96c69484c89893f226380c3c4
-设置自定义的容器组调度规则。
+Configure custom rules for pod scheduling.
 
-* 点击**添加**可以设置多条规则。
-
-* 在已创建的规则右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除规则。
+* Click **Add** to set multiple rules.
+* To delete a rule, Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right of the created rule.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|类型
+|Type
 |
-规则的类型。
+The type of the rule.
 
-* **与目标调度到一起**：容器组副本将与当前项目中具特定标签的容器组调度到同一个节点。
+* **Schedule with target** : Pod replicas will be scheduled to the same node as other pods with specific labels in the current project.
 
-* **远离目标**：容器组副本将与当前项目中具特定标签的容器组调度到不同节点。
+* **Schedule away from target** : Pod replicas will be scheduled to different nodes than other pods with specific labels in the current project.
 
-|策略
+|Policy
 |
-规则实施的策略。
+The policy by which the rule is enforced.
 
-* **尽可能匹配**：尽可能满足规则要求。如果规则要求无法得到满足，容器组副本将被调度到不满足规则要求节点上。
+* **Match if possible** : Try to satisfy the rule as much as possible. If the rule cannot be satisfied, the pod replicas will be scheduled to nodes that do not meet the rule requirements.
 
-* **必须匹配**：必须满足规则要求。如果规则要求无法得到满足，容器组副本将不能调度到任何节点上。
+* **Must match** : Must satisfy the rule requirements. If the rule requirements cannot be met, the pod replicas will not be scheduled to any node.
 
-|目标
-|规则的目标。容器组副本将与具有 **app=**<target> 标签（<target> 为此处选择的值）的容器组调度到同一个节点或不同节点，取决于规则的类型和策略。
+|Target
+|The target of the rule. Pod replicas will be scheduled to the same or different nodes as pods with the label **app=**<target> (<target> is the selected value here), depending on the rule's type and policy.
 |===

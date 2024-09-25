@@ -1,8 +1,7 @@
 ---
-title: "任务"
-linkTitle: "任务"
-keywords: "Kubernetes, KubeSphere, 集群管理, 任务"
-description: "介绍如何管理任务。"
+title: "Jobs"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Jobs"
+description: "Learn how to manage jobs."
 layout: "second"
 weight: 02
 ---

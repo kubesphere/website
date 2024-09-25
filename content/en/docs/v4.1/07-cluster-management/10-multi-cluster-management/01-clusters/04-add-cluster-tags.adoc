@@ -15,7 +15,7 @@ weight: 04
 您可以使用标签对集群进行分类管理。
 
 
-== 前提条件
+== Prerequisites
 
 
 * 您需要在{ks_product-en}平台具有pass:a,q[{ks_permission}]权限。

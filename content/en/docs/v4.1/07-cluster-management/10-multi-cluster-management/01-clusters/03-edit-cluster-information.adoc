@@ -16,13 +16,13 @@ weight: 03
 您可以编辑集群的标识、提供商和描述。{ks_product-en}不支持编辑已添加集群的名称。
 
 
-== 前提条件
+== Prerequisites
 
 您需要在{ks_product-en}平台具有pass:a,q[{ks_permission}]权限。
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
 

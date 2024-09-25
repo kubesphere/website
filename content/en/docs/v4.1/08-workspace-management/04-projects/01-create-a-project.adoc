@@ -14,7 +14,7 @@ weight: 01
 本节介绍如何创建项目。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../
 
@@ -23,7 +23,7 @@ include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requir
 :relfileprefix: ./
 
 
-== 操作步骤
+== Steps
 
 include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

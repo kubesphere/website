@@ -22,7 +22,7 @@ include::../../../../../_ks_components-en/admonitions/note.adoc[]
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -34,7 +34,7 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-prer-require
 * 如需启用某个功能，请确保后端存储系统实际支持该功能。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 

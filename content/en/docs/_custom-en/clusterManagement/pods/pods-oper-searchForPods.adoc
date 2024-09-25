@@ -1,2 +1,2 @@
 // :ks_include_id: 991e787c19f9470cbc29655c78ddda5d
-* 在列表上方点击搜索框并设置搜索条件，可按名称、状态或容器组 IP 地址搜索容器组。
+* Click the search box at the top of the list and search for pods by name, status or pod IP address.

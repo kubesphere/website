@@ -1,6 +1,5 @@
 // :ks_include_id: 91f17518b6d34f729b683653e6fa81e3
-设置容器组的元数据。目前仅支持设置容器组的注解，不支持设置容器组的标签。
+Add metadata for the pod. Currently, you can only set annotations for the pod.
 
-* 点击添加可设置多条注解。
-
-* 在已创建的注解右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除注解。
+* Click **Add** to set multiple annotations.
+* To delete an annotation, Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right of the created annotation.

@@ -14,7 +14,7 @@ weight: 05
 本节介绍如何创建服务并使用现有工作负载作为后端的工作负载。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../../
 * {empty}
@@ -25,7 +25,7 @@ include::../../../../../_custom-en/projectManagement/projectManagement-prer-requ
 
 * 您需要提前在项目创建工作负载。有关更多信息，请参阅link:../../../03-workloads/01-create-a-workload/[创建工作负载]。
 
-== 操作步骤
+== Steps
 
 include::../../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

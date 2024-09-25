@@ -13,7 +13,7 @@ weight: 03
 本节介绍如何修改项目成员的角色。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -24,7 +24,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

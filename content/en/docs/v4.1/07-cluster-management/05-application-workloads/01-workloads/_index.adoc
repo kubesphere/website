@@ -1,8 +1,7 @@
 ---
-title: "工作负载"
-linkTitle: "工作负载"
-keywords: "Kubernetes, KubeSphere, 集群管理, 应用负载, 工作负载"
-description: "介绍如何管理工作负载。"
+title: "Workloads"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads"
+description: "Introduction to managing workloads."
 layout: "second"
 weight: 01
 ---

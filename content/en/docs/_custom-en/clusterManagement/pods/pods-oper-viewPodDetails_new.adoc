@@ -1,98 +1,98 @@
 // :ks_include_id: cb41056b42b540b999804717abfd497a
-. 在容器组详情页面左侧的**属性**区域查看容器组的资源属性。
+. View the resource attributes of the pod in the **Attributes** section on the left side of the pod details page.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|集群
-|容器组所属的集群。
+|Cluster
+|The cluster to which the pod belongs.
 
-|项目
-|容器组所属的项目。
+|Project
+|The project to which the pod belongs.
 
-|应用
-|容器组所属的应用。
+|Application
+|The application to which the pod belongs.
 
-|状态
-|容器组的状态。
+|Status
+|The status of the pod.
 
 include::pods-para-podStatus.adoc[]
 
 include::pods-para-podIpPool.adoc[]
 
-|节点名称
-|容器组所在节点的名称。
+|Node Name
+|The name of the node where the pod is located.
 
-|节点 IP 地址
-|容器组所在节点的 IP 地址。
+|Node IP Address
+|The IP address of the node where the pod is located.
 
-|重启次数
-|容器组的重启次数。
+|Restarts
+|The number of times the pod has been restarted.
 
-|QoS 类型
-|容器组的服务质量类型（Quality of Service），由用户设置的容器内存上限、内存请求、CPU 上限和 CPU 请求决定。
+|QoS Type
+|The Quality of Service (QoS) type of the pod, determined by user-defined memory limits, memory requests, CPU limits, and CPU requests.
 
 include::pods-para-qosTypes.adoc[]
 
-|创建时间
-|容器组的创建时间。
+|Creation Time
+|The creation time of the pod.
 
-|创建者
-|容器组的创建者。
+|Creator
+|The creator of the pod.
 |===
 --
 
-. 在容器组详情页面右侧的**资源状态**页签查看容器组中的容器和卷。
+. On the right side of the pod details page, click the **Resource Status** tab to view the containers and volumes in the pod.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|容器
-|显示容器组运行的容器的名称、状态、重启次数和容器端口。容器状态类型包括：
+|Containers
+|Displays the names, status, restarts, and container ports of the containers running in the pod. Container statuses include:
 
 include::../workloads/workloads-para-containerStatus.adoc[]
 
-在容器名称右侧点击image:/images/ks-qkcp/zh/icons/log.svg[log,18,18]可查看容器日志。将光标悬停在**探针**可查看容器上配置的探针。
+Click image:/images/ks-qkcp/zh/icons/log.svg[log,18,18] next to the container name to view the container logs. Hover over **Probes** to view the configured probes in the container.
 
-|卷
-|显示容器组中所有卷的名称、已挂载卷的容器以及卷在容器上的挂载路径。
+|Volumes
+|Displays the names of all volumes for the pod, the containers to which volumes are mounted, and the mount paths of volumes on containers.
 |===
 --
 
-. 在容器组详情页面右侧点击**调度信息**页签查看容器组的调度结果和状态信息。
+. On the right side of the pod details page, click the **Scheduling Information** tab to view the scheduling results and status information of the pod.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|调度结果
-|显示接收容器组的节点的名称。
+|Scheduling Result
+|Displays the name of node that accepted the pod.
 
-|状态信息
-|显示容器组是否成功完成所有启动步骤。如果显示image:/images/ks-qkcp/zh/icons/success.svg[success,18,18]则表明容器组已完成启动步骤，如果显示image:/images/ks-qkcp/zh/icons/error.svg[error,18,18]则表明尚未完成启动步骤。
+|Status Information
+|Shows whether the pod has successfully completed all startup steps. If image:/images/ks-qkcp/zh/icons/success.svg[success,18,18] is displayed, the pod has completed the startup steps; if image:/images/ks-qkcp/zh/icons/error.svg[error,18,18] is displayed, the startup steps are not yet completed.
 
-* **运行中**：容器组当前的状态是否为**运行中**。
+* **Running**: Whether the pod is in the **Running** state.
 
-* **容器组调度完成**：容器组是否已调度到节点。
+* **Pod Scheduled**: Whether the pod has been scheduled to a node.
 
-* **容器组初始化完成**：容器组中的所有初始化容器是否已启动完成。
+* **Initialized**: Whether all init containers in the pod have started.
 
-* **所有容器就绪**：容器组中的所有容器是否已启动完成。
+* **Containers Ready**: Whether all containers in the pod have started.
 
-* **容器组就绪**：容器组是否已就绪。
+* **Pod Ready**: Whether the pod is ready.
 |===
 --
 
-. 在容器组详情页面右侧点击**元数据**页签查看容器组的标签和注解。
+. On the right side of the pod details page, click the **Metadata** tab to view the labels and annotations of the pod.
 
-. 在容器组详情页面右侧点击**环境变量**页签查看容器组中的所有容器的环境变量。
+. On the right side of the pod details page, click the **Environment Variables** tab to view the environment variables of all containers in the pod.
 
-. 在容器组详情页面右侧点击**事件**页签查看容器组相关的事件。
+. On the right side of the pod details page, click the **Events** tab to view events related to the pod.
 +
 --
 include::../clusterManagement-para-eventsTab.adoc[]

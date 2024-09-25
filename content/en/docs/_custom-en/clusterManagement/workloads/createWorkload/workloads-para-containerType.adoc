@@ -1,8 +1,8 @@
 // :ks_include_id: 44485d9a2c89473b896d0aa6c172b2c2
-|容器类型
+| Container Type
 |
-容器的类型。
+The type of container.
 
-* **初始化容器**：为工作容器进行初始化工作的容器。工作容器只有在所有初始化容器成功完成之后才会启动。如果初始化容器运行失败，系统会把容器组的状态设置为失败。
+* **Init Container**: A container that performs initialization tasks for the working containers. The working containers will only start after all init containers have successfully completed. If an init container fails, the system sets the status of the pod to failure.
 
-* **工作容器**：运行应用程序的容器。通常建议每个容器组中只运行一个工作容器。
+* **Work Container**: A container that runs the application. It is generally recommended to have only one work container running in each pod.

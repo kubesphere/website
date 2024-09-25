@@ -1,24 +1,24 @@
 // :ks_include_id: db17210e20fc4aeb8e782acd2909f83c
-* 工作负载列表提供以下信息：
+* The workload list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|名称
-|工作负载的名称和描述信息。
+| Name
+| The name and description of the workload.
 
-|状态
+| Status
 |
-工作负载的正常容器组副本数、期望容器组副本数和运行状态。工作负载状态包括以下类型：
+Normal pod replica count, expected pod replica count, and running status of the workload. Workload status includes the following types:
 
 include::workloads-para-workloadStatus.adoc[]
 
-|项目
-|工作负载所属的项目。
+| Project
+| Project to which the workload belongs.
 
-|更新时间
-|工作负载的更新时间。
+| Update Time
+| Update time of the workload.
 |===
---
+-- 

@@ -15,7 +15,7 @@ weight: 08
 在创建应用时，您也可以编辑应用设置。有关更多信息，请参阅link:../01-install-an-app-from-the-app-store[从应用商店安装后应用]和link:../02-install-an-app-using-an-app-template[从应用模板安装应用]。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -26,7 +26,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

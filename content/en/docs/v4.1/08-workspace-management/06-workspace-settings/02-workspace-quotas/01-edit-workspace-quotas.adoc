@@ -15,7 +15,7 @@ weight: 01
 在{ks_product-en}平台，多个集群可以授权给同一个企业空间，您可以在企业空间中设置针对每个集群设置资源配额。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -26,7 +26,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-req
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

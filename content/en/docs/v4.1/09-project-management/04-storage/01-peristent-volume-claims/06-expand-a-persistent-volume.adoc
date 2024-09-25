@@ -13,7 +13,7 @@ weight: 06
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-expandAPersistentVolumeClaim.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -30,7 +30,7 @@ include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persist
 // * 请确保后端存储系统支持卷克隆功能，并且持久卷声明对应的存储类已启用卷克隆功能。有关更多信息，请参阅《{ks_product-en}集群管理指南》的“启用和禁用卷操作”章节。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

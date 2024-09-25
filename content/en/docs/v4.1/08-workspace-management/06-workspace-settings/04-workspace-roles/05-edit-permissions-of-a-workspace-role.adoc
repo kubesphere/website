@@ -14,7 +14,7 @@ weight: 05
 
 您只能编辑用户创建的企业空间角色权限。预置企业空间角色的权限无法编辑。
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -25,7 +25,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-req
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

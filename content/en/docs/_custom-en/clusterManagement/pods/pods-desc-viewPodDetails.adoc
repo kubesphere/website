@@ -1,2 +1,2 @@
 // :ks_include_id: 48b9b884c6114c8d9481866c41eda79c
-本节介绍如何查看容器组详情。
+This section explains how to view pod details.

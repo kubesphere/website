@@ -1,2 +1,2 @@
 // :ks_include_id: 4c4df684b9b74e1a9e5cf5aab6f90439
-勾选**同步主机时区**左侧的复选框将使容器和主机的时区同步。
+Select the checkbox on the left of **Synchronize Host Timezone** will synchronize the timezone between the container and the host.

@@ -2,7 +2,7 @@
 title: "Platform Introduction"
 linkTitle: "Platform Introduction"
 keywords: "Kubernetes, KubeSphere, Platform, Modules"
-description: "Introduce the main functions of each module on the KubeSphere platform."
+description: "Introduce the main functions of each module in KubeSphere."
 weight: 01
 ---
 

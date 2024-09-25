@@ -1,19 +1,19 @@
 // :ks_include_id: 5c07b382dc7041a6b8d89f45dadfad06
-设置容器组副本调度到节点的规则。
+Specify the rules for scheduling pod replicas to nodes.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|默认规则
-|不特别指定规则，由系统决定将容器组副本调度到哪个节点上。
+|Default Rules
+|No rules specified; The system determines which node the pod replicas should be scheduled to.
 
-|分散调度
-|尽可能将容器组副本调度到不同的节点上。
+|Decentralized Scheduling
+|Schedule pod replicas to different nodes whenever possible.
 
-|集中调度
-|尽可能将容器组副本调度到同一个节点上。
+|Centralized Scheduling
+|Schedule pod replicas to the same node whenever possible.
 
-|自定义规则
-|按照用户自定义的规则将容器组副本调度到节点。如果选择此选项，您需要进一步自定义调度规则。
+|Custom Rules
+|Schedule pod replicas to nodes based on user-defined rules. If you choose this option, you need to further customize the scheduling rules.
 |===

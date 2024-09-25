@@ -1,10 +1,10 @@
 // :ks_include_id: 61bf4ea84b3d4363b5a4ebfacd921138
-本节介绍如何编辑默认容器配额。
+This section explains how to edit default container quotas.
 
-默认容器配额是项目中容器的资源预留和资源上限的默认值。在项目中创建容器时，如果用户未指定资源预留和资源限制，{ks_product-en}系统将自动使用默认容器配额。
+Default container quotas are the default values for resource request and resource limit for containers in the project. When creating containers in the project, if users do not specify resource request and limit, the containers will automatically use the default container quotas.
 
-默认容器配额包括两类设置：
+Default container quotas include two types of settings:
 
-* 资源预留：系统为容器预留的资源。
+* Resource Request: Resources reserved by the system for containers.
 
-* 资源上限：容器可使用的资源上限。
+* Resource Limit: The upper limit of resources that containers can use.

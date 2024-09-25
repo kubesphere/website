@@ -13,7 +13,7 @@ weight: 04
 include::../../../../_custom-en/clusterManagement/routes/routes-desc-accessABackendServiceOfARoute.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -27,7 +27,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 include::../../../../_custom-en/clusterManagement/routes/routes-prer-accessABackendServiceOfARoute.adoc[]
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

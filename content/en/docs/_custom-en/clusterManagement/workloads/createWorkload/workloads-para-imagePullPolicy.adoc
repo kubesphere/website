@@ -1,16 +1,16 @@
 // :ks_include_id: d8d9b2087a9849b68d0e028a81a20303
-设置容器组创建或更新时是否从镜像服务拉取镜像。
+Set whether to pull images from the image registry when creating or updating Pods.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|优先使用本地镜像
-|容器组创建或更新时，优先使用容器运行时存储在节点的镜像文件。
+| Use Local Image First
+| When creating or updating a pod, prioritize using the images stored by the container runtime on the node.
 
-|每次都拉取镜像
-|容器组创建或更新时，每次都尝试从镜像服务拉取镜像。
+| Pull Image Always
+| When creating or updating a pod, pull the image from the image registry every time.
 
-|仅使用本地镜像
-|容器组创建或更新时，仅使用容器运行时存储在节点的镜像。如果本地不存在所需的镜像，容器创建将出现异常。
+| Use Local Image Only
+| When creating or updating a pod, only use the images stored by the container runtime on the node. If the required image is not available locally, the pod may be created with an exception.
 |===

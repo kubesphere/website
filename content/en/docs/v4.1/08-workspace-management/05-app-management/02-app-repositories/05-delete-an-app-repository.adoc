@@ -21,7 +21,7 @@ include::../../../../../_ks_components-en/admonitions/warning.adoc[]
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 
@@ -30,7 +30,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-req
 :relfileprefix: ./
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

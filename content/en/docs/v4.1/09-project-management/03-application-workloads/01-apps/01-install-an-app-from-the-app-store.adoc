@@ -14,7 +14,7 @@ weight: 01
 本节介绍如何从{ks_product-en}平台的应用商店安装应用。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 
@@ -23,7 +23,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 :relfileprefix: ./
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

@@ -1,4 +1,4 @@
 // :ks_include_id: 8c633944651a4fc5ab95bedaaaa6eccf
-本节介绍如何编辑工作负载信息。
+This section explains how to edit workload information.
 
-您可以编辑工作负载的别名和描述。{ks_product-en}不支持编辑已创建工作负载的名称。
+You can edit the alias and description of the workload. KubeSphere does not support editing the name of an already created workload.

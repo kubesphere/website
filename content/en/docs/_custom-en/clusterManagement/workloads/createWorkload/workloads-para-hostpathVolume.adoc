@@ -1,19 +1,19 @@
 // :ks_include_id: 9cc1c0abc4d6458bb0cfc67f88dc1f32
-将容器组所在的节点上的文件或目录挂载到容器上。
+Mount a file or directory on the node where the pod is located to the container using a HostPath volume.
 
-* 不同节点上相同路径的文件或文件夹可能不同，因此不同节点上的容器组副本可能会从 HostPath 卷中读取到不同的数据。
+* Files or folders under the same path on different nodes may differ, so pod replicas on different nodes may read different data from the HostPath volume.
 
-* 您需要确保被挂载的路径在容器组所在的节点上存在，并且容器组进程具有所需的权限，否则容器组进程将无法从 HostPath 卷上读取数据或向其中写入数据。
+* Ensure that the mounted path exists on the node where the pod is located, and the container process has the necessary permissions. Otherwise, the container process will be unable to read from or write to the data in the HostPath volume.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|卷名称
-|HostPath 卷的名称。
+|Volume Name
+|The name of the HostPath volume.
 
-|主机路径
-|节点上需要挂载的文件或文件夹的路径。
+|Host Path
+|The path to the file or folder on the node that needs to be mounted.
 
 include::workloads-para-volumeMountModePath.adoc[]
 |===

@@ -1,25 +1,25 @@
 // :ks_include_id: 5f8f7ff05ece4c439f6806ad715b9c8c
-设置容器的环境变量。
+Configure environment variables for the container.
 
-* 点击**添加环境变量**可设置多个环境变量。
+* Click **Add Environment Variable** to set multiple environment variables.
 
-* 点击**批量引用**可使用配置字典或保密字典中的数据创建环境变量。配置字典或密保字典必须与容器属于同一个项目才能被容器引用。容器创建后环境变量的值不会随配置字典或保密字典设置的变更而动态变化。
+* Click **Batch Reference** to create environment variables using data from a ConfigMap or Secret. The ConfigMap or Secret to be referenced must belong to the same project as the container. The values of environment variables will not dynamically change with changes made in the ConfigMap or Secret after the container is created.
 
-* 在已创建的环境变量右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除环境变量。
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right of the created environment variable to delete it.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|键
-|环境变量的名称。
+| Key
+| The name of the environment variable.
 
-|值
-|环境变量的值。
+| Value
+| The value of the environment variable.
 
-|资源
-|配置字典或保密字典的名称。仅在引用配置字典或保密字典时可用。
+| Resource
+| The name of the ConfigMap or Secret. Only available when referencing a ConfigMap or Secret.
 
-|资源中的键
-|配置字典或保密字典中的键。与该键对应的值将被用作环境变量的值。仅在引用配置字典或保密字典时可用。
+| Key in Resource
+| The key in the ConfigMap or Secret. The value corresponding to this key will be used as the value of the environment variable. Only available when referencing a ConfigMap or Secret.
 |===

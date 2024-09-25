@@ -20,14 +20,14 @@ You need to have pass:a,q[{ks_permission}] permission on the {ks_product-en} pla
 
 == Enable and Disable a Single User
 
-. Log in to the {ks_product-en} web console with a user who has pass:a,q[{ks_permission}] permissions.
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
 . Click pass:a,q[{ks_menu}].
 . Click pass:a,q[{ks_navigation}] in the left navigation pane.
 . Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] to the right of a user, and then select **Enable** or **Disable** from the dropdown list.
 
 == Batch Enable and Disable Users
 
-. Log in to the {ks_product-en} web console with a user who has pass:a,q[{ks_permission}] permissions.
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
 . Click pass:a,q[{ks_menu}].
 . Click pass:a,q[{ks_navigation}] in the left navigation pane.
 . Check the boxes next to the users you want, and then click **Enable** or **Disable** above the list.

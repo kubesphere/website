@@ -1,19 +1,19 @@
 // :ks_include_id: ec83e4ff0eb74cdaa02d3a52062d9bc5
-. 在服务详情页面左侧的**属性**区域查看服务的资源属性。
+. In the **Attributes** section on the left side of the service details page, view the resource attributes of the service.
 +
 --
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|集群
-|服务所属的集群。
+| Cluster
+| The cluster to which the service belongs.
 
-|项目
-|服务所属的项目。
+| Project
+| The project to which the service belongs.
 
-|类型
+| Type
 |
 include::services-para-internalAccess.adoc[]
 
@@ -21,70 +21,67 @@ include::services-para-virtualip-headless.adoc[]
 
 include::services-para-externalName.adoc[]
 
-|应用
-|服务所属的应用名称。您可以创建一个包含多个服务的应用，每个服务都对应一个工作负载。
+| App
+| The name of the application to which the service belongs. You can create an application that includes multiple services, with each service corresponding to a workload.
 
-|虚拟 IP 地址
-|服务供集群内部访问的虚拟 IP 地址，仅对 VirtualIP 类型的服务显示。
+| Virtual IP Address
+| The virtual IP address for internal access within the cluster. Displayed only for services with the VirtualIP type.
 
-|外部 IP 地址
-|服务供集群外部访问的 IP 地址，仅在服务启用外部访问时显示。
+| External IP Address
+| The IP address for external access outside the cluster. Displayed only when external access is enabled for the service.
 
-|会话保持
-|是否已启用会话保持功能，取值可以为：
+| Session Affinity
+| Whether session affinity is enabled:
 
-* **已启用**：已启用会话保持。如果服务有多个容器组，在一定时间内（默认值为 10800 秒），来自相同客户端 IP 地址的请求将被转发给同一个容器组。
+* **Enabled**: Session affinity is enabled. If the service has multiple pods, requests from the same client IP address within a certain period (default is 10800 seconds) will be forwarded to the same pod.
 
-* **未启用**：未启用会话保持。如果服务有多个容器组，来自相同客户端 IP 地址的请求将被随机转发给不同的容器组。
+* **Disabled**: Session affinity is not enabled. If the service has multiple pods, requests from the same client IP address will be randomly forwarded to different pods.
 
-|选择器
-|服务的容器组选择器。容器组选择器由一个多个容器组标签组成，服务会将客户端请求转发给具有全部指定标签的容器组。
+| Selector
+| The selector for the service's pods. The pod selector consists of one or more pod labels, and the service will route client requests to pods that have all the specified labels.
 
-|DNS
-|服务在集群内部的域名，可在集群内部访问。
+| DNS
+| The internal domain of the service within the cluster, accessible within the cluster.
 
-|端点
-|服务的目标容器组的虚拟 IP 地址和容器端口。
+| Endpoint
+| The virtual IP address and container port of the target pods for the service.
 
-|创建时间
-|服务的创建时间。
+| Creation Time
+| The creation time of the service.
 
-// |更新时间
-// |服务的最后更新时间。
-
-|创建者
-|创建服务的用户。
+| Creator
+| The user who created the service.
 |===
 --
 
-. 在服务详情页面右侧的**资源状态**页签查看服务的容器端口、工作负载和容器组。
+. In the **Resource Status** tab on the right side of the service details page, view the container ports, workloads, and pods for the service.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|端口
-|为使容器能够被正常访问，{ks_product-en}平台上定义了以下端口类型：
+| Ports
+| To enable containers to be accessed properly, KubeSphere Enterprise defines the following types of ports:
 
-* 容器端口：容器中的应用程序监听的端口，只能在容器组内部访问。
+* Container Port: The port on which the application in the container listens, only accessible within the pod.
 
-* 服务端口：服务虚拟 IP 地址的端口，只能在集群内部访问，发送到服务端口的请求将被转发给容器端口。
+* Service Port: The port for the virtual IP address of the service, only accessible within the cluster. Requests sent to the service port will be forwarded to the container port.
 
-* 节点端口：节点主机上的端口，可以从集群外部访问，发送到节点端口的请求将被转发给服务端口。NodePort 或 LoadBalancer 类型的服务具有节点端口。
+* Node Port: The port on the node host, accessible from outside the cluster. Requests sent to the node port will be forwarded to the service port. Services with the NodePort or LoadBalancer type have node ports.
 
-|工作负载
-|显示管理容器组的工作负载的名称、更新时间、类型、状态和当前修改记录。
+| Workloads
+| Displays the name, update time, type, status, and current revision records of the workload managing the pods.
 
-|容器组
+| Pods
 |
 include::../nodes/nodes-para-podList.adoc[]
 |===
 --
 
-. 在服务详情页面右侧点击**元数据**页签查看服务的标签和注解。
+. Click the **Metadata** tab on the right side of the service details page to view the labels and annotations for the service.
 
-. 在服务详情页面右侧点击**事件**页签查看服务相关的事件。
+. Click the **Events** tab on the right side of the service details page to view events related to the service.
 +
 --
 include::../clusterManagement-para-eventsTab.adoc[]

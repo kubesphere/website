@@ -9,8 +9,6 @@ weight: 04
 :ks_navigation: **Projects**
 
 
-
-
 include::../../../_custom-en/clusterManagement/projects/projects-desc-editInformation.adoc[]
 
 include::../../../_custom-en/clusterManagement/projects/projects-note-editInformation.adoc[]
@@ -18,18 +16,18 @@ include::../../../_custom-en/clusterManagement/projects/projects-note-editInform
 
 == Prerequisites
 
-:relfileprefix: ../../../
-
-You should join a cluster and have pass:a,q[{ks_permission}] permissions within the cluster. For more information, refer to xref:07-cluster-management/09-cluster-settings/03-cluster-members/_index.adoc[Cluster Members] and xref:07-cluster-management/09-cluster-settings/04-cluster-roles/_index.adoc[Cluster Roles].
-
-:relfileprefix: ./
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
 
 == Steps
 
 include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
-. Click pass:a,q[{ks_navigation}] in the left navigation pane.
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
 
 . On the right side of the project you want to edit, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], and then select **Edit** from the drop-down list.
 

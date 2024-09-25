@@ -15,7 +15,7 @@ weight: 02
 外部服务将业务流量转发给集群外部的其他服务，在集群内部可以通过 <service name>.<project name>**.svc.cluster.local** 格式的域名访问。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../../
@@ -26,7 +26,7 @@ include::../../../../../_custom-en/projectManagement/projectManagement-prer-requ
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

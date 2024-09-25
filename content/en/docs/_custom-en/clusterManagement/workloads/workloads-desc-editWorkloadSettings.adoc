@@ -1,4 +1,4 @@
 // :ks_include_id: c3706078af3f41c487c1a5fc573ef5bb
-本节介绍如何编辑已创建的工作负载的设置。
+This section explains how to edit settings for created workloads.
 
-工作负载创建完成后，您可以编辑工作负载的更新策略、容器、存储和容器组调度规则。
+After the workload is created, you can edit the workload's update strategy, containers, storage, pod scheduling rules and pod grace period.

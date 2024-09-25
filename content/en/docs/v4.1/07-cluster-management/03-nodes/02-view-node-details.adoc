@@ -83,7 +83,7 @@ include::../../../_custom-en/clusterManagement/nodes/nodes-para-nodeRole_new.ado
 
 * **Disk Pressure**: Whether the remaining disk space or inode count on the node is less than the threshold, with the default disk space threshold being 10% of the total disk space and the default inode count threshold being 5% of the maximum inode count.
 
-* **PID Pressure**: Whether the number of processes that can be created on the node is less than the threshold. The newly installed KubeSphere Enterprise cluster does not set a process count threshold by default.
+* **PID Pressure**: Whether the number of processes that can be created on the node is less than the threshold. The newly installed KubeSphere cluster does not set a process count threshold by default.
 
 * **Readiness**: Whether the node is ready to accept pods.
 

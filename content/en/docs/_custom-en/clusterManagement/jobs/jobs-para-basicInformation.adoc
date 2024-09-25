@@ -1,42 +1,41 @@
-// :ks_include_id: b3230b385e724f75b412f086ba00503e
-* 基本信息
+* Basic Information
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|名称
-|任务的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+| Name
+| The name of the job. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number, with a maximum length of 63 characters.
 
-|别名
-|任务的别名。不同任务的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+| Alias
+| The alias of the job. Aliases can be the same for different jobs. The alias can only contain Chinese characters, letters, numbers, and hyphens (-). It must not start or end with a hyphen (-), with a maximum length of 63 characters.
 
-|项目
-|任务所属的项目。系统项目通常用于管理系统资源，建议选择用户项目。
+| Project
+| The project to which the job belongs. It is recommended to choose a user project, as system projects are typically used for managing system resources.
 
-|描述
-|任务的描述信息。描述可包含任意字符，最长 256 个字符。
+| Description
+| The description of the job. The description can contain any characters, with a maximum length of 256 characters.
 
-|定时计划
-|定时任务的运行周期的 CRON 表达式。{ks_product-en}默认使用 UTC 时间，您需要根据您所在的时区进行调整。仅对**定时任务**可用。
+| Schedule
+| The CRON expression specifying the runtime cycle for a CronJob. KubeSphere defaults to UTC time, and you may need to adjust it based on your time zone. Available only for CronJobs.
 
-|最大启动延后时间
-|由于某种原因未能按计划启动任务时，任务启动的最大延后时间。仅对**定时任务**可用。
+| Maximum Startup Delay
+| The maximum delay before starting a job when it fails to start according to the schedule. Available only for CronJobs.
 
-|成功任务保留数量
-|允许保留的成功任务的个数，默认值为 **3**。定时任务每次运行都会创建任务，您可以指定保留一定数量的任务作为历史记录。仅对**定时任务**可用。
+| Successful Jobs Retention
+| The number of successful jobs allowed to be retained, with a default value of **3**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
 
-|失败任务保留数量
-|允许保留的失败任务的个数，默认值为 **1**。定时任务每次运行都会创建任务，您可以指定保留一定数量的任务作为历史记录。仅对**定时任务**可用。
+| Failed Jobs Retention
+| The number of failed jobs allowed to be retained, with a default value of **1**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
 
-|并发策略
-|定时任务创建的多个任务发生重叠时，系统采取的策略。仅对**定时任务**可用。包括以下策略类型：
+| Concurrency Policy
+| The policy the system adopts when multiple jobs created by a CronJob overlap. Available only for CronJobs. It includes the following policies:
 
-* **同时运行任务**：新任务和旧任务并发运行。
+* **Run jobs concurrently**: New and old jobs run concurrently.
 
-* **跳过新任务**：不运行新任务。
+* **Skip new job**: Do not run new jobs.
 
-* **跳过旧任务**：立即终止旧任务然后运行新任务。
+* **Skip old job**: Immediately terminates old jobs and then runs new jobs.
 |===
 --

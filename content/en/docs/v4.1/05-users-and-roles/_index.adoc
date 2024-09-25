@@ -15,7 +15,7 @@ Resources in KubeSphere are divided into four levels: Platform, Workspace, Clust
 
 Workspace serves as the smallest tenant unit, providing resource isolation capabilities across clusters. Members within a Workspace can create projects in authorized clusters and collaborate on projects by inviting users.
 
-This section explains how to manage access permissions on the KubeSphere platform, including user and platform role management.
+This section explains how to manage access permissions in KubeSphere, including user and platform role management.
 
 For more information about cluster roles, refer to link:../07-cluster-management/09-cluster-settings/04-cluster-roles/[Cluster Roles].
 

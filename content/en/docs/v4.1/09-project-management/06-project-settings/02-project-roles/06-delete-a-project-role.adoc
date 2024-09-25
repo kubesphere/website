@@ -15,7 +15,7 @@ weight: 06
 您可以删除用户创建的项目角色。预置项目角色无法删除。
 
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 * {empty}
@@ -27,7 +27,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 * 如果需要删除的项目角色已经分配给项目成员，您需要删除项目成员或修改其角色。
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

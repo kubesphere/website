@@ -14,7 +14,7 @@ weight: 05
 
 您只能编辑用户创建的项目角色权限。预置项目角色的权限无法编辑。
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -25,7 +25,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

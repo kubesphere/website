@@ -1,24 +1,22 @@
 // :ks_include_id: ae4fedba880e403d9c8c4888b5134d9c
-通过持久卷声明模板为每个容器组副本单独创建持久卷声明和持久卷，并将持久卷挂载到容器。仅对有状态副本集可用。
+Create separate Persistent Volume Claims and Persistent Volumes for each pod replica using the Persistent Volume Claim template and mount the Persistent Volumes to containers. Only available for **StatefulSets**.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|PVC 名称前缀
-|通过持久卷声明模板创建的持久卷声明的名称前缀。系统将按 <名称前缀>**-**<工作负载名称>**-**<序列号> 的格式自动命名持久卷声明。同一个有状态副本集不同容器组副本的持久卷声明通过 <序列号> 区分。
+|PVC Name Prefix
+|The prefix for the names of the Persistent Volume Claims created by the Persistent Volume Claim template. The system will automatically name the Persistent Volume Claims in the format `<Name Prefix>**-**<Workload Name>**-**<Sequence Number>`. Persistent volume claims for different pod replicas in the same StatefulSet are distinguished by the <Sequence Number>.
 
-|存储类
-|用于创建持久卷声明的存储类。
+|Storage Class
+|The storage class used to create the Persistent Volume Claims.
 
-|访问模式
+|Access Mode
 |
 include::../../persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
 
-|卷容量
-|通过持久卷声明模板创建的每个持久卷的容量。
+|Volume Capacity
+|The capacity of each Persistent Volume created by the Persistent Volume Claim template.
 
 include::workloads-para-volumeMountModePath.adoc[]
-
-// include::workloads-para-containerLogPath.adoc[]
 |===

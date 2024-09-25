@@ -23,7 +23,7 @@ weight: 02
 
 |===
 
-== 前提条件
+== Prerequisites
 
 :relfileprefix: ../../../../
 
@@ -32,7 +32,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 :relfileprefix: ./
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

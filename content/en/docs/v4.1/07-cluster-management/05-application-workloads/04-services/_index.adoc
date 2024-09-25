@@ -1,8 +1,7 @@
 ---
-title: "服务"
-linkTitle: "服务"
-keywords: "Kubernetes, KubeSphere, 集群管理, 服务"
-description: "介绍如何管理服务。"
+title: "Services"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Services"
+description: "Learn how to manage services."
 layout: "second"
 weight: 04
 ---

@@ -7,7 +7,7 @@ layout: "second"
 weight: 04
 ---
 
-This section explains how to configure an external persistent storage system for the KubeSphere cluster in a production environment. A persistent storage system is used to create volumes for storing application data on the KubeSphere platform. If an external persistent storage system is not configured, KubeSphere will default to using the local storage system of the cluster nodes. If your KubeSphere cluster does not require external persistent storage, you can skip this section.
+This section explains how to configure an external persistent storage system for the KubeSphere cluster in a production environment. A persistent storage system is used to create volumes for storing application data in KubeSphere. If an external persistent storage system is not configured, KubeSphere will default to using the local storage system of the cluster nodes. If your KubeSphere cluster does not require external persistent storage, you can skip this section.
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]

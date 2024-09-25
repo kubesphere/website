@@ -14,11 +14,11 @@ weight: 03
 您可以编辑企业空间的别名和描述。{ks_product-en}不支持编辑已创建企业空间的名称。
 
 
-== 前提条件
+== Prerequisites
 
 您需要在{ks_product-en}平台具有pass:a,q[{ks_permission}]权限。
 
-== 操作步骤
+== Steps
 
 . 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product-en} Web 控制台。
 . 点击**企业空间管理**。

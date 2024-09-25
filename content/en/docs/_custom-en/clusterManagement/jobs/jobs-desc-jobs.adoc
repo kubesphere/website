@@ -1,8 +1,8 @@
 // :ks_include_id: 3965f0c407e24d6dae5c945b45abbd6e
-本节介绍如何管理任务。
+This section explains how to manage jobs.
 
-在{ks_product-en}平台上，应用程序运行在容器组中。任务用于管理仅运行一次或周期性运行的容器组。{ks_product-en}平台支持以下任务类型：
+In KubeSphere, applications run in pods. Jobs are used to manage pods that run either once or periodically. KubeSphere supports the following types of jobs:
 
-* 普通任务：用于管理仅运行一次的容器组。如果容器组运行失败，系统将根据任务中设置的策略重启容器组，直到满足特定条件。
+* Jobs: Used to manage pods that run only once. If a pod runs failed, the system will restart the pod according to the policies set in the job until specific conditions are met.
 
-* 定时任务：用于管理周期性运行的容器组。系统根据定时任务中设置的周期创建普通任务并运行。每次运行容器组时，如果容器组运行失败，定时任务都将根据用户设置的策略重启容器组，直到满足特定条件。
+* CronJobs: Used to manage pods that run periodically. The system creates regular jobs based on the schedule set in the CronJob and runs them accordingly. Each time when the pod runs, if it fails, the CronJob will restart the pod according to the policies set by the user until specific conditions are met.

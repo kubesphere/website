@@ -15,7 +15,7 @@ weight: 02
 您可以编辑企业空间的别名和描述。{ks_product-en}不支持编辑已创建企业空间的名称。
 
 
-== 前提条件
+== Prerequisites
 
 
 :relfileprefix: ../../../../
@@ -26,7 +26,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-req
 
 
 
-== 操作步骤
+== Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 

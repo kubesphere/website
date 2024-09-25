@@ -12,15 +12,11 @@ This section introduces how to get an overview of the cluster.
 
 == Prerequisites
 
-:relfileprefix: ../../../
-
 include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 == Steps
 
-. Log in to the {ks_product-en} web console with a user who has pass:a,q[{ks_permission}] permissions, and access your cluster.
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission, and access your cluster.
 . Click pass:a,q[{ks_navigation}] in the left navigation pane.
 
 +
