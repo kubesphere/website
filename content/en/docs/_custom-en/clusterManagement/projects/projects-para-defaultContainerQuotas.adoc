@@ -1,3 +1,3 @@
 // :ks_include_id: 405d1688f4c345f49660198dbd4b2728
-|默认容器配额
-|项目中容器的默认 CPU 预留、CPU 上限、内存预留、内存上限、GPU 类型和 GPU 上限。如果没有特别设置，项目中新创建的容器将使用项目的默认容器配额。
+|Default Container Quotas
+|Default CPU request, CPU limit, memory request, memory limit, GPU type, and GPU limit for containers in the project. If not specifically configured, newly created containers in the project will use the default container quotas of the project.

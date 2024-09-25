@@ -1,13 +1,14 @@
 ---
-title: "编辑项目信息"
-linkTitle: "编辑项目信息"
-keywords: "Kubernetes, KubeSphere, 集群管理, 项目, 编辑项目信息"
-description: "介绍如何编辑项目信息。"
+title: "Edit Project Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Edit Project Information"
+description: "Learn how to edit project information."
 weight: 04
 ---
 
-:ks_permission: **项目管理**
-:ks_navigation: **项目**
+:ks_permission: **Project Management**
+:ks_navigation: **Projects**
+
+
 
 
 include::../../../_custom-en/clusterManagement/projects/projects-desc-editInformation.adoc[]
@@ -15,40 +16,34 @@ include::../../../_custom-en/clusterManagement/projects/projects-desc-editInform
 include::../../../_custom-en/clusterManagement/projects/projects-note-editInformation.adoc[]
 
 
-== 前提条件
-
+== Prerequisites
 
 :relfileprefix: ../../../
 
-include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+You should join a cluster and have pass:a,q[{ks_permission}] permissions within the cluster. For more information, refer to xref:07-cluster-management/09-cluster-settings/03-cluster-members/_index.adoc[Cluster Members] and xref:07-cluster-management/09-cluster-settings/04-cluster-roles/_index.adoc[Cluster Roles].
 
 :relfileprefix: ./
 
 
-
-== 操作步骤
+== Steps
 
 include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
-+
+. Click pass:a,q[{ks_navigation}] in the left navigation pane.
 
-include::../../../../_ks_components-en/oper-navigate.adoc[]
+. On the right side of the project you want to edit, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], and then select **Edit** from the drop-down list.
 
-+
-
-. 在需要操作的项目右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑**。
-
-. 在**编辑信息**对话框，设置项目的别名和描述，然后点击**确定**。
+. In the **Edit Information** dialog, set the alias and description for the project, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|别名
-|项目的别名。不同项目的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the project. Aliases can be the same for different projects. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-). It has a maximum length of 63 characters.
 
-|描述
-|项目的描述信息。描述可包含任意字符，最多包含 256 个字符。
+|Description
+|The description of the project. The description can contain any characters, with a maximum length of 256 characters.
 |===
 --

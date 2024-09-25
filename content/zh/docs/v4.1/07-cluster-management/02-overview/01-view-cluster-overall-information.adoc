@@ -15,11 +15,7 @@ weight: 02
 
 == 前提条件
 
-:relfileprefix: ../../../
-
 include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 == 操作步骤
 
@@ -32,13 +28,13 @@ include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermi
 |===
 |功能区 |描述
 
-|名称、标签和描述
+|名称、标识和描述
 |
-显示当前集群的名称、标签和描述。
+显示当前集群的名称、标识和描述。
 
 * 成员集群的名称由用户添加成员集群时设置。
 
-* 集群名称右侧显示当前集群的标签。
+* 集群名称右侧显示当前集群的标识。
 
 |基本信息
 |显示当前集群的提供商、Kubernetes 版本、{ks_product_right}版本和对企业空间的可见性。
@@ -48,6 +44,5 @@ include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermi
 
 |工具
 |显示 kubectl 命令行工具，和 kubeconfig 配置文件。
-
 |===
 --

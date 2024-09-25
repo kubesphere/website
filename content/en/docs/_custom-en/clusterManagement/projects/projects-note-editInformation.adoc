@@ -1,2 +1,2 @@
 // :ks_include_id: be828c992784487d9adf58c381e48b5a
-您可以编辑项目的别名和描述。{ks_product-en}不支持编辑已创建项目的名称。
+You can edit the alias and description of the project. KubeSphere does not support editing the name of an already created project.

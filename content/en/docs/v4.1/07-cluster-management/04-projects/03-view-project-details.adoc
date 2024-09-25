@@ -1,27 +1,21 @@
 ---
-title: "查看项目详情"
-linkTitle: "查看项目详情"
-keywords: "Kubernetes, KubeSphere, 集群管理, 项目, 查看项目详情"
-description: "介绍如何查看项目详情。"
+title: "View Project Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Project, View Project Details"
+description: "Learn how to view project details."
 weight: 03
 ---
 
-:ks_permission: **项目查看**
-:ks_navigation: **项目**
+:ks_permission: **Project Viewing**
+:ks_navigation: **Projects**
 
+This section explains how to view project details.
 
-本节介绍如何查看项目详情。
-
-
-== 前提条件
-
-:relfileprefix: ../../../
+== Prerequisites
 
 include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
 
-== 操作步骤
+== Steps
 
 include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -37,55 +31,53 @@ include::../../../_custom-en/clusterManagement/projects/projects-oper-openListPa
 
 include::../../../_custom-en/clusterManagement/projects/projects-oper-openDetailsPage.adoc[]
 
-+
-
-. 在项目详情页面左侧的**属性**区域，查看项目的资源属性。
+. In the **Attributes** area on the left side of the project details page, view the resource attributes of the project.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|状态
+|Status
 |
 include::../../../_custom-en/clusterManagement/projects/projects-para-status.adoc[]
 
-|集群
-|项目所属的集群。
+|Cluster
+|The cluster to which the project belongs.
 
-|企业空间
-|项目所属的企业空间。
+|Workspace
+|The workspace to which the project belongs.
 
-|创建时间
-|项目的创建时间。
+|Creation Time
+|The creation time of the project.
 
-|创建者
-|创建项目的用户。
+|Creator
+|The user who created the project.
 |===
 --
 
-. 在项目详情页面右侧的**概览**页签，查看当前项目的资源状态，如容器组、部署、有状态副本集、守护进程集、任务、定时任务、持久卷、服务和应用路由的数量。
+. On the **Overview** tab on the right side of the project details page, view the current resource status of the project, such as the number of Pods, Deployments, StatefulSets, DaemonSets, Jobs, CronJobs, Persistent Volume Claims, Services, and Ingresses.
 
-. 在项目详情页面右侧的**容器组**页签，查看项目中运行的所有容器组。
+. On the **Pods** tab on the right side of the project details page, view all the pods running in the project.
 +
 --
 include::../../../_custom-en/clusterManagement/nodes/nodes-para-podList.adoc[]
 --
 
-. 在项目详情页面右侧点击**配额**，查看项目的配额信息。
+. On the right side of the project details page, click **Quotas** to view the project's quota information.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|功能区 |描述
+|Area |Description
 
 include::../../../_custom-en/clusterManagement/projects/projects-para-defaultContainerQuotas.adoc[]
 
-|项目配额
-|项目中可用资源的数量和实际使用量，包括： CPU 预留、CPU 上限、内存预留、内存上限、容器组预留和容器组上限等。
+|Project Quotas
+|The quantity and actual usage of available resources in the project, including CPU, memory, pods, and deployments, etc.
 |===
 
-有关如何设置默认容器配额和项目配额，请参阅link:../07-edit-default-container-quotas/[编辑默认容器配额]和link:../06-edit-project-quotas/[编辑项目配额]。
+For information on how to set default container quotas and project quotas, refer to link:../07-edit-default-container-quotas/[Edit Default Container Quotas] and link:../06-edit-project-quotas/[Edit Project Quotas].
 --
 
-. 在项目详情页面右侧点击**元数据**，查看项目的标签。
+. On the right side of the project details page, click **Metadata** to view the labels and annotations of the project.

@@ -1,37 +1,30 @@
 ---
-title: "编辑节点污点"
-linkTitle: "编辑节点污点"
-keywords: "Kubernetes, KubeSphere, 集群管理, 节点, 编辑节点污点"
-description: "介绍如何编辑节点污点。"
+title: "Edit Node Taints"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, Edit Node Taints"
+description: "Explain how to edit node taints."
 weight: 05
 ---
 
-:ks_permission: **节点管理**
+:ks_permission: **Node Management**
 
+This section details how to edit node taints.
 
-本节介绍如何编辑节点污点。
+Taints are labels created by users on nodes, used in conjunction with tolerations created on pods. When a node has a taint, based on the configured taint effect, all pods with tolerations that do not match the taint will either be prevented from scheduling to the node or will be avoided from being scheduled to the node as much as possible.
 
-污点是用户在节点上创建的标记，与容器组上创建的容忍度配合使用。当节点存在污点时，根据设置的污点效果，所有缺少与污点匹配的容忍度的容器组都将被阻止调度到节点或被尽可能阻止调度到节点。
-
-一个污点由键、值和效果三部分组成。容器组容忍度必须与污点的键、值和效果匹配，容器组才能不受污点影响。
+A taint consists of three parts: key, value, and effect. The tolerations of pods must match the key, value, and effect of the taint, so that the pod can be unaffected by the taint.
 
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-{ks_product-en} Web 控制台目前暂不支持编辑容器组容忍度，因而默认情况下节点污点对所有容器组生效。
+The {ks_product-en} web console currently does not support editing pod tolerations. Therefore, by default, node taints take effect on all pods.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
-
-== 前提条件
-
-:relfileprefix: ../../../
+== Prerequisites
 
 include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
-
-== 操作步骤
+== Steps
 
 include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -39,35 +32,33 @@ include::../../../_custom-en/clusterManagement/clusterManagement-oper-openCluste
 
 include::../../../_custom-en/clusterManagement/nodes/nodes-oper-openListPage_new.adoc[]
 
-+
+. Select the checkbox next to a node, then click **Edit Taints** above the node list.
 
-. 选择需要操作的节点左侧的复选框，然后在节点列表上方点击**编辑污点**。
-
-. 在**编辑污点**对话框，设置污点的键、值和效果，然后点击**确定**。
+. In the **Edit Taints** dialog, set the key, value, and effect of the taint, then click **OK**.
 +
 --
-您可以为一个污点选择以下效果之一：
+You can choose one of the following effects for a taint:
 
 [%header,cols="1a,4a"]
 |===
-|污点效果 |描述
+|Taint Effect |Description
 
-|阻止调度
-|缺少与污点匹配的容忍度的容器组将被阻止调度到节点，节点上原本运行的容器组不受影响。
+|Prevent scheduling
+|Pods with tolerations that do not match the taint will be prevented from scheduling to the node, existing pods on the node remain unaffected.
 
-|尽可能阻止调度
-|缺少与污点匹配的容忍度的容器组将被尽可能阻止调度到节点，节点上原本运行的容器组不受影响。
+|Prevent scheduling if possible
+|Pods with tolerations that do not match the taint will be prevented from scheduling to the node as much as possible, existing pods on the node remain unaffected.
 
-|阻止调度并驱逐现有容器组
-|缺少与污点匹配的容忍度的容器组将被阻止调度到节点，节点上原本运行的容器组如果缺少与污点匹配的容忍度会被立即驱逐。
+|Prevent scheduling and evict existing pods
+|Pods with tolerations that do not match the taint will be prevented from scheduling to the node, existing pods on the node will be immediately evicted if their tolerations do not match the taint.
 |===
 
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-* 点击**添加污点**可以为节点设置多个污点。
+* Click **Add** to set multiple taints for a node.
 
-* 如果您同时编辑多个节点的污点，您可以设置多个节点的公共污点以及每个节点各自的污点。
+* If you are editing taints for multiple nodes simultaneously, you can set common taints for multiple nodes as well as individual taints for each node.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --

@@ -15,12 +15,8 @@ include::../../../../_custom/clusterManagement/workloads/workloads-desc-rollBack
 
 == 前提条件
 
-
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 include::../../../../_custom/clusterManagement/workloads/workloads-prer-workloadEdited.adoc[]

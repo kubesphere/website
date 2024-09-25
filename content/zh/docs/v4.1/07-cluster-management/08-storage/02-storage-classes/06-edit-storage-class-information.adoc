@@ -18,11 +18,7 @@ weight: 06
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 

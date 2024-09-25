@@ -1,2 +1,2 @@
 // :ks_include_id: 18321be0ac1a40aca5c8142bce4195c6
-. 在左侧导航栏选择**节点 > 集群节点**打开节点列表。
+. In the left navigation pane, select **Nodes > Cluster Nodes** to open the node list.

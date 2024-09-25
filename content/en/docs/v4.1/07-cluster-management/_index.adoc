@@ -1,13 +1,13 @@
 ---
-title: "集群管理"
-linkTitle: "集群管理"
-keywords: "Kubernetes, KubeSphere, 集群管理"
-description: "介绍如何管理集群中的资源。"
+title: "Cluster Management"
+linkTitle: "Cluster Management"
+keywords: "Kubernetes, KubeSphere, Cluster Management"
+description: "Learn how to manage resources in a cluster."
 layout: "second"
 weight: 07
 icon: "/images/docs/common/docs.svg"
 ---
 
-本文档介绍如何以集群成员身份在{ks_product-en}管理单个或多个集群中的所有资源。
+This chapter explains how to manage all resources in individual or multiple clusters within KubeSphere as a cluster member.
 
-{ks_product-en}支持对多个集群进行管理，每个集群可授权给多个企业空间，每个企业空间可包含多个项目。作为多租户系统，{ks_product-en}支持在平台、集群、企业空间和项目级别基于角色对用户的权限进行控制。
+KubeSphere supports the management of multiple clusters. Each cluster can be authorized for multiple workspaces. Each workspace can include multiple regular projects. As a multi-tenant system, KubeSphere supports role-based access control for user permissions at the platform, cluster, workspace, and project levels.

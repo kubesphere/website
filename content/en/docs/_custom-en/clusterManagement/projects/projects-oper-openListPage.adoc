@@ -1,2 +1,2 @@
 // :ks_include_id: 9bb9485dfa1c46809ddf90db983f76a1
-. 在**项目**页面，点击**用户项目**或**系统项目**打开用户项目列表或系统项目列表。
+. On the **Projects** page, click **User Projects** or **System Projects** to open the user project list or system project list.

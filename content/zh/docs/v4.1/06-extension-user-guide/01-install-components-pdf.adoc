@@ -38,7 +38,7 @@ include::../../../_ks_components/admonitions/admonEnd.adoc[]
 +
 image:/images/ks-qkcp/zh/v4.0/install-extensions.png[,100%]
 
-. 在**集群选择**页签，根据名称，标识，标签选择集群，可选择多个集群。
+. 在**集群选择**页签，根据名称、标识选择集群，可选择多个集群。
 
 . 在**差异化配置**页签，分别编辑选中集群的 YAML 配置，也可不修改，使用初始默认配置。点击**确定**，开始配置集群 Agent。
 +

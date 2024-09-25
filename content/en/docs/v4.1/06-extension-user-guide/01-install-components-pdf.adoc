@@ -39,7 +39,7 @@ If a required dependency is **Not Ready**, you need to install the required vers
 +
 image:/images/ks-qkcp/en/v4.0/install-extensions.png[,100%]
 
-. On the **Cluster Selection** tab, select clusters by name or label. Multiple clusters can be selected.
+. On the **Cluster Selection** tab, select clusters by name or identifier. Multiple clusters can be selected.
 
 . On the **Diff Config** tab, edit the selected cluster's YAML file, or leave it unchanged to use the default configuration. Then click **OK** to start configuring the cluster agent.
 +

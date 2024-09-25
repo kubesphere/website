@@ -1,25 +1,23 @@
 ---
-title: "登录并进入集群"
-linkTitle: "登录并进入集群"
-keywords: "Kubernetes, KubeSphere, 集群管理, Web 控制台, 登录并进入集群"
-description: "本节介绍如何登录并进入集群。"
+title: "Log In and Access Cluster"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Web Console, Access Cluster"
+description: "This section explains how to log in and access a cluster."
 weight: 01
 ---
 
+This section explains how to log in to the {ks_product-en} web console and access a cluster.
 
-本节介绍如何登录{ks_product-en} Web 控制台并进入集群。
+== Prerequisites
 
+* You need to have the username and password of a cluster member.
 
-== 前提条件
+* Contact the administrator to obtain the IP address and port number of the {ks_product-en} web console.
 
-* 您需要获取集群成员的用户名和密码。
+* Depending on your network environment, you may need to configure firewall policies and traffic forwarding strategies. For specific instructions, please contact your network administrator.
 
-include::../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
+== Steps
 
-
-== 操作步骤
-
-. 打开 Web 浏览器，在地址栏中输⼊{ks_product-en} Web 控制台的 IP 地址和端⼝号。 
-. 在{ks_product-en}登录⻚⾯，输⼊⽤⼾信息然后点击登录。
-. 点击**集群管理**。
-. 如果已有多个集群，在**集群管理**页面点击一个集群的名称进入集群。
+. Open a web browser and enter the IP address and port number of the {ks_product-en} web console in the address bar, such as `172.31.85.22:30880`.
+. On the login page, enter your username and password and click **Log In**.
+. Click **Cluster Management**.
+. Click the name of a cluster in the **Cluster Management** page to access the cluster.

@@ -1,21 +1,20 @@
 // :ks_include_id: 28089246770746498a85c468382fdb76
-
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|类型
-|事件的类型，包括**正常**和**告警**两种类型。
+|Type
+|The type of the event, including **Normal** and **Warning**.
 
-|原因
-|事件发生的原因。
+|Reason
+|The reason for the event.
 
-|发生时间
-|事件发生的时间。
+|Occurred
+|The time when the event occurred.
 
-|来源
-|上报事件的组件。
+|Source
+|The component that reported the event.
 
-|消息
-|事件消息的内容。
+|Message
+|The content of the event message.
 |===

@@ -16,11 +16,8 @@ include::../../../../_custom/clusterManagement/routes/routes-desc-accessABackend
 
 == 前提条件
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 * 您需要启用{ks_product_both}集群网关或项目网关。

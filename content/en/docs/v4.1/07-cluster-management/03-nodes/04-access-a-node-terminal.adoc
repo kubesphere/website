@@ -1,28 +1,20 @@
 ---
-title: "使用节点终端"
-linkTitle: "使用节点终端"
-keywords: "Kubernetes, KubeSphere, 集群管理, 节点, 使用节点终端"
-description: "介绍如何访使用节点的终端。"
+title: "Access Node Terminal"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, Access Node Terminal"
+description: "Explain how to access the terminal on nodes."
 weight: 04
 ---
 
-:ks_permission: **节点管理**
+:ks_permission: **Node Management**
 
 
-本节介绍如何使用节点的终端。
+This section explains how to use the terminal on nodes.
 
-您可以使用{ks_product-en}提供的命令行终端对节点进行操作。
-
-
-== 前提条件
-
-:relfileprefix: ../../../
+== Prerequisites
 
 include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
-
-== 操作步骤
+== Steps
 
 include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -30,15 +22,12 @@ include::../../../_custom-en/clusterManagement/clusterManagement-oper-openCluste
 
 include::../../../_custom-en/clusterManagement/nodes/nodes-oper-openListPage_new.adoc[]
 
-+
-
-. 在需要操作的节点右侧点击image:/images/ks-qkcp/zh/icons/more.svg["more",18,18]，然后在下拉列表中选择**打开终端**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg["More",18,18] on the right side of a node, and select **Open Terminal** from the dropdown list. The terminal window will pop up.
 +
 --
-
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-初次打开节点终端时，由于相关服务尚未启动，系统可能会提示缺少相关权限。如果遇到此情况，您可以稍后重试。
+When opening the terminal for the first time, you may encounter a lack of permissions due to related services not being started. If you have this problem, please try again later.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --

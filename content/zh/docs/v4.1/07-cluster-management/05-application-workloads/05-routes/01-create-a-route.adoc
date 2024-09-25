@@ -15,11 +15,8 @@ include::../../../../_custom/clusterManagement/routes/routes-desc-createARoute.a
 
 == 前提条件
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 * 如需创建支持 HTTPS 协议的应用路由，您需要创建 **TLS 信息**类型的保密字典，保密字典中必须包含 Base64 编码的证书和私钥。有关更多信息，请参阅link:../../../06-configuration/02-configmaps/[创建保密字典]。

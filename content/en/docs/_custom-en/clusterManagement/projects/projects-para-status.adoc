@@ -1,6 +1,6 @@
 // :ks_include_id: 278f7336e01e4f89b34d41a866b7acd0
-项目当前所处的状态。
+Current status of the project.
 
-* **活跃**：项目状态正常。
+* **Active**: The project is in normal status.
 
-* **删除中**：项目正在删除中。
+* **Deleting**: The project is being deleted.

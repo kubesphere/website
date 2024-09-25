@@ -1,6 +1,6 @@
 // :ks_include_id: 33f27ee37c1e4b36a0fb2c4e22a65e3f
-|别名
-|项目的别名。不同项目的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the project. Aliases can be the same for different projects. Aliases can only contain Chinese characters, letters, numbers, and hyphens (-). They must not start or end with a hyphen (-) and have a maximum length of 63 characters.
 
-|描述
-|项目的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the project. Description can contain any characters, with a maximum length of 256 characters.

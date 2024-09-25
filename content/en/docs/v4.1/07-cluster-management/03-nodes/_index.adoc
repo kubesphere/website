@@ -1,16 +1,13 @@
 ---
-title: "节点"
-linkTitle: "节点"
-keywords: "Kubernetes, KubeSphere, 集群管理, 节点"
-description: "介绍如何管理节点。"
+title: "Nodes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes"
+description: "Learn how to manage nodes."
 layout: "second"
 weight: 03
 ---
 
+This section explains how to manage cluster nodes.
 
+KubeSphere supports multiple cluster nodes, and typically, all nodes belong to the same private network.
 
-
-本节介绍如何管理节点。
-
-{ks_product-en}平台支持集群节点，通常所有集群节点都属于同一个私有网络。
 

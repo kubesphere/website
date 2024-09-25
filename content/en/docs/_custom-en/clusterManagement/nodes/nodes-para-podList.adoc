@@ -1,8 +1,8 @@
 // :ks_include_id: 5fa3835b046e429ca339319d7a09aefe
-* 点击image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18]可查看容器组中运行的容器的信息。
+* Click image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18] to view information about the containers running in the pod.
 
-* 点击容器组的名称可查看容器组详情。
+* Click the name of the pod to view container details.
 
-* 在容器组列表上方的搜索框中输入关键字，可搜索名称包含特定关健字的容器组。
+* Enter keywords in the search box above the pod list to search for pods whose names contain specific keywords.
 
-* 在容器组列表右上角点击image:/images/ks-qkcp/zh/icons/refresh-light.svg[refresh,18,18]可刷新列表信息。
+* Click image:/images/ks-qkcp/zh/icons/refresh-light.svg[Refresh,18,18] in the upper-right corner of the pod list to refresh the information.
