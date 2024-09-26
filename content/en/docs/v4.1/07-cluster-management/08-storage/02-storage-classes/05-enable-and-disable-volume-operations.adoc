@@ -1,38 +1,33 @@
 ---
-title: "启用和禁用卷操作"
-linkTitle: "启用和禁用卷操作"
-keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 存储类, 启用和禁用卷操作"
-description: "介绍如何启用和禁用卷操作。"
+title: "Enable and Disable Volume Operations"
+linkTitle: "Enable and Disable Volume Operations"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Class, Enable and Disable Volume Operations"
+description: "Instructions on how to enable and disable volume operations."
 weight: 05
 ---
 
-:ks_permission: **存储类管理**
-:ks_navigation: **存储 > 存储类**
+:ks_permission: **Storage Class Management**
+:ks_navigation: **Storage > Storage Classes**
 
 
-本节介绍如何启用和禁用卷操作。
+This section explains how to enable and disable volume operations.
 
-您可以设置是否允许用户在{ks_product-en} Web 控制台对特定存储类创建的持久卷声明进行克隆和扩展操作。
+You can configure whether users can clone and expand Persistent Volume Claims created using specific storage classes in the {ks_product-en} web console.
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-本节介绍的步骤仅控制是否允许用户在{ks_product-en} Web 控制台使用相关操作，持久卷是否实际支持这些操作取决于后端存储系统。
+The steps outlined in this section only control whether users can take these operations in the {ks_product-en} web console. The actual support for these operations by Persistent Volume Claims depends on the backend storage system.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 
 == Prerequisites
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
-
-
-* 如需启用某个功能，请确保后端存储系统实际支持该功能。
-
+* Ensure that the backend storage system actually supports the feature before enabling it.
 
 == Steps
 
@@ -48,25 +43,24 @@ include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-o
 
 +
 
-. 在存储类详情页面的左上角，选择**更多操作 > 设置卷操作**。
+. In the top-left corner of the details page, select **More > Set Volume Operations**.
 
-. 在**设置卷操作**对话框，启用或禁用卷克隆和卷扩展操作，然后点击**确定**。
+. In the **Set Volume Operations** dialog, enable or disable Volume Cloning and Volume Expansion, then click **OK**.
 +
 --
-
 [%header,cols="1,4"]
 |===
-|功能 |描述
+| Feature | Description
 
-|卷克隆
+| Volume Cloning
 |
 include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeCloning.adoc[]
 
-// |卷快照
+// |Volume Snapshot
 // |
 // include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeSnapshot.adoc[]
 
-|卷扩展
+|Volume Expansion
 |
 include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeExpansion.adoc[]
 |===

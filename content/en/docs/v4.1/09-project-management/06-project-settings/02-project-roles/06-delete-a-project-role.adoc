@@ -17,11 +17,8 @@ weight: 06
 
 == Prerequisites
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 * 如果需要删除的项目角色已经分配给项目成员，您需要删除项目成员或修改其角色。

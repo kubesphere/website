@@ -1,14 +1,12 @@
 ---
-title: "存储类"
-linkTitle: "存储类"
-keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 存储类"
-description: "介绍如何管理存储类。"
+title: "Storage Classes"
+linkTitle: "Storage Classes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Classes"
+description: "Instructions on how to manage storage classes."
 layout: "second"
 weight: 02
 ---
 
+This section explains how to manage storage classes.
 
-
-本节介绍如何管理存储类。
-
-存储类定义了可供容器使用的一类存储卷。如果您在安装{ks_product-en}时未设置外部持久化存储系统，{ks_product-en}将使用集群节点的本地存储系统作为持久化存储系统，并自动创建对应的 **local** 存储类。如果使用外部持久化存储系统，您需要为{ks_product-en}集群安装存储插件，并创建存储类以定义可供使用的存储卷类型。有关如何安装存储插件，请联系您的存储系统提供商。
+Storage classes define a class of storage volumes that containers can use. If you did not set up an external persistent storage system during the installation of {ks_product-en}, {ks_product-en} will use the local storage system of the cluster nodes as the persistent storage system and automatically create the corresponding **local** storage class. If you are using an external persistent storage system, you need to install a storage plugin for the KubeSphere cluster and create storage classes to define the classes of storage volumes that can be used. For information on how to install storage plugins, please contact your storage system provider.

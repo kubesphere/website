@@ -1,2 +1,1 @@
-// :ks_include_id: ba578c6d273d47d6b41c1255d1fa8488
-本节介绍如何创建持久卷声明。
+This section explains how to create a Persistent Volume Claim.

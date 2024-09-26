@@ -1,1 +1,1 @@
-* 请提前备份后端存储区域中的数据以避免数据丢失。
+* Please backup data in the backend storage area in advance to avoid data loss.

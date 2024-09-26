@@ -1,17 +1,14 @@
 ---
-title: "查看持久卷详情"
-linkTitle: "查看持久卷详情"
-keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 持久卷声明, 持久卷, 查看持久卷详情"
-description: "介绍如何查看集群中持久卷的详情。"
+title: "View Persistent Volume Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, View Persistent Volume Details"
+description: "Introduce how to view details of Persistent Volumes in the cluster."
 weight: 11
 ---
 
-:ks_permission: **持久卷声明查看**
-:ks_navigation: **存储 > 持久卷声明**
+:ks_permission: **Persistent Volume Claim Viewing**
+:ks_navigation: **Storage > Persistent Volume Claims**
 
-
-本节介绍如何查看集群中持久卷的详情。
-
+This section explains how to view details of Persistent Volumes in the cluster.
 
 == Prerequisites
 
@@ -30,59 +27,58 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**持久卷声明**页面点击**持久卷**打开持久卷列表，然后点击一个持久卷的名称打开其详情页面。
+. On the **Persistent Volume Claims** page, click **Persistent Volume** to open the list of Persistent Volumes. Then, click the name of a Persistent Volume to open its details page.
 
-. 在持久卷详情页面左侧的**属性**区域查看持久卷的资源属性。
+. On the left side of the Persistent Volume details page, in the **Attributes** section, view the resource attributes of the Persistent Volume.
 +
 --
-
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|状态
+|Status
 |
 include::../../../../_custom-en/clusterManagement/persistentVolumes/persistent-volume-status.adoc[]
 
-|容量
+|Capacity
 |
 include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-volumeSize.adoc[]
 
-|访问模式
+|Access Mode
 |
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
 
-|存储类
-|持久卷声明对应的存储类。有关存储类的更多信息，请参阅link:../../02-storage-classes/[存储类]。
+|Storage Class
+|The storage class corresponding to the Persistent Volume claim. For more information about storage classes, refer to link:../../02-storage-classes/[Storage Classes].
 
-|卷句柄
-|持久卷在后端存储系统中的唯一标识符。
+|Volume Handle
+|The unique identifier of the Persistent Volume in the backend storage system.
 
-|回收策略
+|Reclaim Policy
 |
 include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-reclaimPolicy.adoc[]
 
-|卷模式
-|持久卷的设备类型。
+|Volume Mode
+|The device type of the Persistent Volume.
 
-* **文件系统**：持久卷以文件系统的形式挂载到容器上供容器使用。
+* **Filesystem**: The Persistent Volume is mounted to containers in the form of a filesystem.
 
-* **块设备**：持久卷以块设备的形式提供给容器。
+* **Block Device**: The Persistent Volume is provided to containers in the form of a block device.
 
-|创建时间
-|持久卷的创建时间。
+|Creation Time
+|The creation time of the Persistent Volume.
 |===
 --
 
-. 在持久卷详情页面右侧的**资源状态**页签查看持久卷对应的持久卷声明的信息。
+. Click the **Resource Status** tab on the right side of the Persistent Volume details page to view information about the Persistent Volume Claim associated with the Persistent Volume.
 +
 --
 include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-pvcInformation.adoc[]
 --
 
-. 在持久卷详情页面右侧的**元数据**页签查看持久卷的标签和注解。
+. Click the **Metadata** tab on the right side of the Persistent Volume details page to view the labels and annotations of the Persistent Volume.
 
-. 在持久卷详情页面右侧点击**事件**页签查看持久卷的事件。
+. Click the **Events** tab on the right side of the Persistent Volume details page to view the events of the Persistent Volume.
 +
 --
 include::../../../../_custom-en/clusterManagement/clusterManagement-para-eventsTab.adoc[]

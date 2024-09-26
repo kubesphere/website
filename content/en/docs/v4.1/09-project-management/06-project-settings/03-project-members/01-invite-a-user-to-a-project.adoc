@@ -15,11 +15,8 @@ weight: 01
 
 == Prerequisites
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 * 被邀请的的用户需要先加入项目所属的企业空间。
 

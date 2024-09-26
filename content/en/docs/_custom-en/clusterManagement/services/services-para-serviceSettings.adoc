@@ -22,9 +22,9 @@
 | Ports
 | Map service ports and their corresponding container ports.
 
-* **Protocol**: The protocol that the application in the target container actually listens on. To use the application governance features provided by KubeSphere Enterprise, ensure that the protocol selected here matches the one the application in the target container actually listens on.
+* **Protocol**: The protocol that the application in the target container actually listens on. To use the application governance features provided by KubeSphere, ensure that the protocol selected here matches the one the application in the target container actually listens on.
 
-* **Name**: The name of the service port. The application governance features of KubeSphere Enterprise require the service port name to have the protocol name in lowercase as a prefix. To use the application governance features provided by KubeSphere Enterprise, use the lowercase protocol name as the prefix for the port name (e.g., **http-**).
+* **Name**: The name of the service port. The application governance features of KubeSphere require the service port name to have the protocol name in lowercase as a prefix. To use the application governance features provided by KubeSphere, use the lowercase protocol name as the prefix for the port name (e.g., **http-**).
 
 * **Container Port**: The port number on which the application in the target container actually listens.
 

@@ -1,16 +1,16 @@
 ---
-title: "设置默认存储类"
-linkTitle: "设置默认存储类"
-keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 存储类, 设置默认存储类"
-description: "介绍如何设置默认存储类。"
+title: "Set Default Storage Class"
+linkTitle: "Set Default Storage Class"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Class, Set Default Storage Class"
+description: "Instructions on how to set the default storage class."
 weight: 04
 ---
 
-:ks_permission: **存储类管理**
-:ks_navigation: **存储 > 存储类**
+:ks_permission: **Storage Class Management**
+:ks_navigation: **Storage > Storage Classes**
 
 
-本节介绍如何设置默认存储类。设置默认存储类后，如果没有特殊指定，系统将使用默认存储类创建持久卷声明。每个{ks_product-en}集群中仅允许设置一个默认存储类。
+This section explains how to set the default storage class. Once a default storage class is set, the system will use it to create Persistent Volume Claims if no specific storage class is designated. Only one default storage class is allowed in a KubeSphere cluster.
 
 
 == Prerequisites
@@ -34,6 +34,6 @@ include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-o
 
 +
 
-. 在存储类详情页面的左上角，选择**更多操作 > 设为默认存储类**。
+. In the top-left corner of the details page, select **More > Set as Default Storage Class**.
 
-. 在**设为默认存储类**对话框点击**确定**。
+. In the **Set as Default Storage Class** dialog, click **OK**.

@@ -1,6 +1,6 @@
 ---
 title: "Custom Resource Definitions"
-keywords: "Kubernetes, KubeSphere Enterprise, Cluster Management, Custom Resource Definitions"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definitions"
 description: "Explain how to manage custom resource definitions in the cluster."
 layout: "second"
 weight: 07

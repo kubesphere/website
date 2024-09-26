@@ -1,29 +1,23 @@
 ---
-title: "创建存储类"
-linkTitle: "创建存储类"
-keywords: "Kubernetes, KubeSphere, 集群管理, 存储, 存储类, 创建存储类"
-description: "介绍如何创建存储类。"
+title: "Create Storage Classes"
+linkTitle: "Create Storage Classes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Class, Create Storage Class"
+description: "Instructions on how to create a storage class."
 weight: 01
 ---
 
-:ks_permission: **存储类管理**
-:ks_navigation: **存储 > 存储类**
+:ks_permission: **Storage Class Management**
+:ks_navigation: **Storage > Storage Classes**
 
-
-本节介绍如何创建存储类。
-
+This section explains how to create a storage class.
 
 == Prerequisites
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
 
-
-* 为使存储类可以正常提供存储资源，您需要提前配置存储系统并安装与存储系统对应的存储插件。更多相关信息，请联系您的存储系统提供商。
-
+* To ensure that the storage class can provide storage resources properly, you need to pre-configure the storage system and install the storage plugin corresponding to the storage system. For more information, please contact your storage system provider.
 
 == Steps
 
@@ -39,73 +33,73 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**基本信息**页签，设置存储类的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the storage class, then click **Next**.
 +
 --
 [%header,cols="1,4"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|名称
-|存储类的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+| Name
+| The name of the storage class. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
-|别名
-|存储类的别名。不同存储类的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+| Alias
+| The alias of the storage class. The aliases of different storage classes can be the same. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), should not start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|存储类的描述信息。描述可包含任意字符，最长 256 个字符。
+| Description
+| Description information for the storage class. The description can contain any characters and can be up to 256 characters long.
 |===
 --
 
-. 在**存储系统**页签，选择一个系统或**自定义**，然后点击**下一步**。
+. On the **Storage System** tab, select a system or **Custom**, then click **Next**.
 
-. 在**存储类设置**页签，设置存储类的参数，然后点击**创建**。
+. On the **Storage Class Settings** tab, set the parameters for the storage class, then click **Create**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|卷扩展
+| Volume Expansion
 |
 include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeExpansion.adoc[]
 
-|回收策略
+|Reclaim Policy
 |
 include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-reclaimPolicy.adoc[]
 
-|访问模式
+|Access Mode
 |
-允许卷使用的读写模式。
+The modes in which the volume can be accessed.
 
-* **ReadWriteOnce**：允许单个节点读取卷中的数据并向卷写入数据。
+* **ReadWriteOnce**: Allows a single node to read from and write to the volume.
+  
+* **ReadOnlyMany**: Allows multiple nodes to read from the volume.
+  
+* **ReadWriteMany**: Allows multiple nodes to read from and write to the volume.
 
-* **ReadOnlyMany**：允许多个节点读取卷中的数据。
+You can select one or more access modes from the dropdown list. Some storage systems may not support certain access modes.
 
-* **ReadWriteMany**：允许多个节点读取卷中的数据并向卷写入数据。
-
-您可以在下拉列表中选择一种或多种访问模式。部分存储系统可能不支持某些访问模式。
-
-|供应者
+|Provisioner
 |
 include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-provisioner.adoc[]
 
-|卷绑定模式
-|持久卷声明创建后是否立即创建持久卷并将持久卷和持久卷声明绑定，支持以下模式：
+|Volume Binding Mode
+|Specifies whether a Persistent Volume is immediately created and bound to a Persistent Volume Claim upon the creation of the Persistent Volume Claim. The following modes are supported:
 
-* **立即绑定**：持久卷声明创建后立即创建持久卷并将持久卷和持久卷声明绑定。
+* **Immediate Binding**: Creates the Persistent Volume immediately after the Persistent Volume Claim is created and binds them.
 
-* **延迟绑定**：挂载持久卷的容器创建后创建持久卷并将持久卷和持久卷声明绑定。
+* **Delayed Binding**: Creates the Persistent Volume and binds it to the Persistent Volume Claim after the container mounting the Persistent Volume is created.
 
-|参数
-|与后端存储系统和存储插件匹配的参数键值对。
+|Parameters
+|Key-value pairs that match the parameters expected by the backend storage system and the storage plugin.
 
-* 点击**添加**可设置多个参数。
+* Click **Add** to set multiple parameters.
 
-* 在已创建的参数右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除参数。
+* To delete a parameter, click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] next to the parameter.
 
-更多相关信息，请联系您的存储系统提供商。
+For more information, please contact your storage system provider.
 |===
 
-存储类创建完成后将显示在存储类列表中。
+Once the storage class is created, it will be displayed in the storage class list.
 --

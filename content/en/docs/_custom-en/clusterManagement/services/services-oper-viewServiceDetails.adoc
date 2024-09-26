@@ -62,7 +62,7 @@ include::services-para-externalName.adoc[]
 | Parameter | Description
 
 | Ports
-| To enable containers to be accessed properly, KubeSphere Enterprise defines the following types of ports:
+| To enable containers to be accessed properly, KubeSphere defines the following types of ports:
 
 * Container Port: The port on which the application in the container listens, only accessible within the pod.
 

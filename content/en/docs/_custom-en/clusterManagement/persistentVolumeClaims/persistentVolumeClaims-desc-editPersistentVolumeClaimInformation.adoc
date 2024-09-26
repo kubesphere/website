@@ -1,4 +1,4 @@
 // :ks_include_id: e8b3859a8e1d48b4afe313a86d58a9f3
-本节介绍如何编辑持久卷声明的基本信息。
+This section explains how to edit Persistent Volume Claim information.
 
-您可以编辑持久卷声明的别名和描述。{ks_product-en}不支持编辑持久卷声明的名称。
+You can edit the alias and description of the Persistent Volume Claim. KubeSphere does not support editing the name of an already created Persistent Volume Claim.

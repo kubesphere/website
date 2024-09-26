@@ -1,60 +1,49 @@
-// :ks_include_id: 4527bd133db04495b10cf1930a58d5f9
-. 在**基本信息**页签，设置持久卷声明的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the Persistent Volume Claim, and then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|名称
-|持久卷声明的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。
+|Name
+|The name of the Persistent Volume Claim. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number and can be up to 253 characters long.
 
-|别名
-|持久卷声明的别名。不同持久卷声明的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the Persistent Volume Claim. The aliases of different Persistent Volume Claims can be the same. The alias can only contain Chinese characters, letters, numbers, and hyphens (-). It must not start or end with a hyphen (-) and can be up to 63 characters long.
 
-|描述
-|持久卷声明的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the Persistent Volume Claim. The description can contain any characters and can be up to 256 characters long.
 |===
 --
 
-. 在**存储设置**页签，设置存储空间需求，然后点击**下一步**。
+. On the **Storage Settings** tab, set the storage space requirements, and then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|创建方式
-|**通过存储类创建**：选择当前项目中的存储类来创建持久卷声明。
+|Creation Method
+|**From Storage Class**: Choose a storage class in the current project to create the Persistent Volume Claim.
 
-// |持久卷声明的创建方式。
+|Storage Class
+|The storage class used to create the Persistent Volume Claim.
 
-// * **通过存储类创建**：选择当前项目中的存储类来创建持久卷声明。
-
-// * **通过卷快照创建**：选择当前项目中的卷快照来创建持久卷声明。
-
-|存储类
-|用于创建持久卷声明的存储类。
-// 仅在持久卷声明创建方式为**通过存储类创建**时可用。
-
-// |卷快照
-// |用于创建持久卷声明的卷快照。仅在持久卷声明创建方式为**通过卷快照创建**时可用。
-
-|访问模式
+|Access Mode
 |
 include::persistentVolumeClaims-para-accessMode.adoc[]
 
-取决于后端的存储系统，某些访问模式类型可能不可用。
+Certain access mode may not be available depending on the backend storage system.
 
-|卷容量
-|持久卷声明的对应的卷容量大小。
+|Volume Capacity
+|The corresponding volume capacity of the Persistent Volume Claim.
 |===
 --
 
-. 在**高级设置**页签，设置持久卷声明的标签和注解，然后点击**创建**。
+. On the **Advanced Settings** tab, set the labels and annotations for the Persistent Volume Claim, and then click **Create**.
 +
 --
 include::../workloads/createWorkload/workloads-para-Metadata.adoc[]
 
-持久卷声明创建完成后将显示在持久卷声明列表中。
+The Persistent Volume Claim will be displayed in the list after creation.
 --

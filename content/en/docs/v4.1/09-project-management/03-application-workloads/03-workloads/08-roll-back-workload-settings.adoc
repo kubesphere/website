@@ -16,11 +16,8 @@ include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-rollB
 == Prerequisites
 
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 include::../../../../_custom-en/clusterManagement/workloads/workloads-prer-workloadEdited.adoc[]

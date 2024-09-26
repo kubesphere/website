@@ -1,2 +1,2 @@
 // :ks_include_id: d8e84290faee432e8c4e286dd1fa707d
-是否允许用户在{ks_product-en} Web 控制台对持久卷进行克隆。
+Cloning Persistent Volumes in the {ks_product-en} web console is allowed or not.

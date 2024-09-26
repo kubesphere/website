@@ -1,26 +1,19 @@
 ---
-title: "存储"
-linkTitle: "存储"
-keywords: "Kubernetes, KubeSphere, 集群管理, 存储"
-description: "介绍如何管理存储资源。"
+title: "Storage"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage"
+description: "Explain how to manage storage resources."
 layout: "second"
 weight: 08
 ---
 
 
 
-本节介绍如何管理存储资源。
+This section explains how to manage storage resources.
 
-{ks_product-en}支持管理以下存储资源：
+KubeSphere supports the management of the following storage resources:
 
-* 存储类：定义可供容器使用的一类持久卷声明。
+* Storage Class: Defines a class of Persistent Volume Claims available for containers.
 
-* 持久卷声明：定义持久卷的存储空间需求。
+* Persistent Volume Claim: Defines the storage space requirements for a Persistent Volume.
 
-* 持久卷：代表后端存储系统中的存储区域。系统根据持久卷声明中的参数，在后端存储系统中创建可供容器使用的存储区域，每个存储区域与{ks_product-en}平台上的一个持久卷对应。
-
-// * 卷快照类：定义可保存快照数据的一类卷快照。
-
-// * 卷快照：定义快照数据的存储需求。
-
-// * 卷快照内容：代表后端存储系统中的快照数据。系统根据卷快照中的参数，在后端存储系统中保存快照数据，每个快照数据单元与{ks_product-en}平台上的一个卷快照内容对应。
+* Persistent Volume: Represents a storage area in the backend storage system. The system creates a storage area available for containers in the backend storage system based on the parameters in the Persistent Volume Claim. Each storage area corresponds to a Persistent Volume in the KubeSphere platform.

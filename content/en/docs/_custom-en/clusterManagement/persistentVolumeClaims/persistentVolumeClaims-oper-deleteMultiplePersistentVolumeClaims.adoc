@@ -1,7 +1,7 @@
 // :ks_include_id: 20ff9a5d22c94e289133c37037d461e6
-. 选择需要删除的持久卷声明左侧的复选框，然后在持久卷声明列表上方点击**删除**。
+. Select the checkbox on the left of the Persistent Volume Claims you want to delete, then click **Delete** above the Persistent Volume Claim list.
 
-. 在**批量删除持久卷声明**对话框，输入持久卷声明的名称，然后点击**确定**。
+. In the **Delete Multiple Persistent Volume Claims** dialog, enter the name of the Persistent Volume Claims, then click **OK**.
 +
 --
 include::../../note-separateNamesByComma.adoc[]
