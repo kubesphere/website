@@ -1,16 +1,14 @@
 ---
-title: "定制资源定义"
-linkTitle: "定制资源定义"
-keywords: "Kubernetes, KubeSphere, 集群管理, 定制资源定义"
-description: "介绍如何管理集群定制资源定义。"
+title: "Custom Resource Definitions"
+keywords: "Kubernetes, KubeSphere Enterprise, Cluster Management, Custom Resource Definitions"
+description: "Explain how to manage custom resource definitions in the cluster."
 layout: "second"
 weight: 07
 ---
 
 
+This section explains how to manage custom resource definitions.
 
-本节介绍如何管理定制资源定义。
+Custom resource definitions (CRD) are used to extend existing APIs in Kubernetes. You can create custom resources using custom resource definitions and implement custom business logic by having additional controllers listen to various events related to these custom resources.
 
-定制资源定义用于对 Kubernetes 现有的 API 进行扩展。您可以使用定制资源定义创建定制资源，并通过额外的控制器监听定制资源的各种事件来实现自定义的业务逻辑。
-
-{ks_product-en} Web 控制台目前仅支持查看定制资源定义和定制资源，以及编辑现有的定制资源，不支持直接创建定制资源定义和定制资源。您可以参阅 link:https://kubernetes.io/zh/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/[Kubernetes 官方文档]通过命令行创建定制资源定义和定制资源。
+The {ks_product-en} web console currently only supports viewing custom resource definitions and custom resources, as well as editing existing custom resources. It does not support directly creating custom resource definitions and custom resources. You can refer to the link:https://kubernetes.io/zh/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/[Kubernetes Documentation] to create custom resource definitions and custom resources via the command line.
