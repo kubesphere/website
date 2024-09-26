@@ -1,13 +1,13 @@
 ---
-title: "创建配置字典"
-linkTitle: "创建配置字典"
-keywords: "Kubernetes, KubeSphere, 集群管理, 配置字典, 创建配置字典"
-description: "介绍如何创建配置字典。"
+title: "Create ConfigMaps"
+keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, Create ConfigMap"
+description: "Learn how to create a ConfigMap."
 weight: 01
 ---
 
-:ks_permission: **项目资源管理**
-:ks_navigation: **配置 > 配置字典**
+
+:ks_permission: **Project Resource Management**
+:ks_navigation: **Configuration > ConfigMaps**
 
 
 include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-createAConfigmap.adoc[]

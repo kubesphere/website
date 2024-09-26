@@ -1,4 +1,3 @@
-// :ks_include_id: 9843a92f1beb463bb37db27a61c06fe3
-本节介绍如何管理配置字典。
+This section explains how to manage ConfigMaps.
 
-配置字典以键值对的形式存储环境变量、命令行参数和配置文件等非保密数据。配置字典允许用户将容器和配置数据分离，使用户更容易管理配置、保证应用程序的可移植性。
+ConfigMaps store non-sensitive data, such as environment variables, command-line parameters, and configuration files, in key-value pairs. ConfigMaps allow users to separate containers from configuration data, making it easier to manage configurations and ensure the portability of applications.

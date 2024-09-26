@@ -1,8 +1,7 @@
 ---
-title: "服务帐户"
-linkTitle: "服务帐户"
-keywords: "Kubernetes, KubeSphere, 集群管理, 服务帐户"
-description: "介绍如何管理服务帐户。"
+title: "Service Accounts"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Service Accounts"
+description: "Learn how to manage service accounts."
 layout: "second"
 weight: 03
 ---

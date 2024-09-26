@@ -1,7 +1,7 @@
 // :ks_include_id: 713230cd132746e194d0cad61dade1d9
-. 在需要编辑的配置字典右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑设置**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the ConfigMap you want to edit, then choose **Edit Settings** from the dropdown list.
 
-. 在**编辑设置**对话框，设置配置字典的键值对数据，然后点击**创建**。
+. In the **Edit Settings** dialog, set the data for the ConfigMap, then click **OK**.
 +
 --
 include::../secrets/secrets-para-data.adoc[]

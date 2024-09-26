@@ -1,31 +1,28 @@
-// :ks_include_id: 9ff97f501cfe40f195a859dfd82902da
-. 在**基本信息**页签，设置保密字典的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the ConfigMap, and then click **Next**.
 +
 --
-
 [%header,cols="1,4"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|名称
-|配置字典的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+| Name
+| The name of the ConfigMap. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
-|别名
-|配置字典的别名。不同配置字典的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+| Alias
+| The alias of the ConfigMap. Aliases can be the same for different ConfigMaps. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), cannot start or end with a hyphen (-), and can be up to 63 characters long.
 
-|项目
-|配置字典所属的项目。
+| Project
+| The project to which the ConfigMap belongs.
 
-|描述
-|配置字典的描述信息。描述可包含任意字符，最长 256 个字符。
-
+| Description
+| The description of the ConfigMap. The description can contain any characters and can be up to 256 characters long.
 |===
 --
 
-. 在**数据设置**页签，设置配置字典的键值对数据，然后点击**创建**。
+. On the **Data Settings** tab, set the key-value pair data for the ConfigMap, then click **Create**.
 +
 --
 include::../secrets/secrets-para-data.adoc[]
 
-配置字典创建完成后将显示在配置字典列表中。
+Once created, the ConfigMap will be displayed in the ConfigMap list.
 --

@@ -1,2 +1,2 @@
 // :ks_include_id: cb26ec7cf74d406f97f87eb302012018
-* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的配置字典。
+* Click the search box at the top of the list to search for ConfigMaps by name.
