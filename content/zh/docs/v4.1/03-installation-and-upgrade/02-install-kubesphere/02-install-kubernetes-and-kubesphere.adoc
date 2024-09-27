@@ -370,7 +370,7 @@ KubeSphere Core (ks-core) 是{ks_product_both}的核心组件，为扩展组件�
 ====
 [,bash]
 ----
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.1.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --debug --wait
 ----
 
 如果显示如下信息，则表明 ks-core 安装成功：
