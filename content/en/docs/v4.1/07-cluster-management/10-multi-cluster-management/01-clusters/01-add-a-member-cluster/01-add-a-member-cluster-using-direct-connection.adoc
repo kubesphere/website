@@ -1,62 +1,56 @@
 ---
-title: "通过直接连接添加成员集群"
-linkTitle: "通过直接连接添加成员集群"
-keywords: "Kubernetes, KubeSphere, 多集群管理, 集群, 添加成员集群"
-description: "介绍如何通过直接连接添加成员集群。"
+title: "Add Member Cluster via Direct Connection"
+linkTitle: "Add Member Cluster via Direct Connection"
+keywords: "Kubernetes, {ks_product}, Multi-Cluster Management, Cluster, Add Member Clusters"
+description: "Learn how to add member clusters via direct connection."
 weight: 01
 ---
 
-
-
-本节介绍如何通过直接连接添加成员集群。
+This section explains how to add member clusters via direct connection.
 
 
 == Prerequisites
 
-* 您需要在主集群中具有 **platform-admin** 角色。
+* You need to have the **platform-admin** role in the host cluster.
 
-* 主集群所有节点必须能访问成员集群的 Kubernetes API 服务（默认为成员集群主节点的 6443 端口）。取决于您的网络环境，您可能需要配置防火墙和流量转发规则。
+* All nodes in the host cluster must be able to access the Kubernetes API service of the member cluster (usually port 6443 on the master node of the member cluster). Depending on your network environment, you may need to configure firewall and traffic forwarding rules.
 
-== 获取成员集群 kubeconfig
+== Get Member Cluster Kubeconfig
 
-在成员集群的节点上，执行以下命令获取成员集群的 kubeconfig 信息：
-
+. On a node in the member cluster, run the following command to get the kubeconfig information of the member cluster:
++
 [,bash]
 ----
 kubectl config view --raw
 ----
 
+. Copy the kubeconfig information and modify the **clusters:cluster:server** parameter as follows:
++
+[,yaml]
+----
+clusters:
+- cluster:
+    server: https://<member-cluster-node-ip>:6443
+----
 
-// Note
-include::../../../../../../_ks_components-en/admonitions/note.adoc[]
-
-// * 您可以复制 kubeconfig 信息或点击image:/images/ks-qkcp/zh/icons/download-dark.svg[download-dark,18,18]将 **kubeconfig.yaml** 文件下载到本地。
-
-请将 kubeconfig 信息中的 **clusters:cluster:server** 参数修改为成员集群的 Kubernetes API 服务的访问地址，默认在成员集群主节点的 6443 端口暴露。请确保主集群的所有节点都能访问该地址，取决于您的网络环境，您可能需要配置防火墙规则和流量转发策略。
-
-include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
-
-
-
-== 添加成员集群
+== Add Member Cluster
 
 include::../../../../../_custom-en/platformManagement/multiclusterManagement/clusters/clusters-oper-logInToHost.adoc[]
 
 +
 
-. 点击**集群管理**。
+. Click **Cluster Management**.
 
 +
 
 include::../../../../../_custom-en/platformManagement/multiclusterManagement/clusters/clusters-oper-addClusterBasicInfo.adoc[]
 +
-在**高级设置**下，设置集群的用途标识。
-+
+Under **Advanced Settings**, set the purpose identifier for the cluster.
 
-. 在**连接设置**页签，将**连接方式**设置为**直接连接**，在 **kubeconfig** 区域输入成员集群的 kubeconfig 信息，然后点击**下一步**。
+. On the **Connection Settings** tab, set the **Connection Mode** to **Direct Connection**, enter the kubeconfig information of the member cluster in the **kubeconfig** area, and then click **Next**.
 
-. 在**集群配置**页签，设置集群配置，然后点击**创建**。
+. On the **Cluster Configuration** tab, configure the cluster settings, and then click **Create**.
 +
 --
-成员集群添加完成后将显示在**集群管理**页面的集群列表中。
+Once the member cluster is added, it will be displayed in the list of clusters on the **Cluster Management** page.
 --

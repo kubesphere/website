@@ -1,21 +1,20 @@
 ---
-title: "移除集群成员"
-linkTitle: "移除集群成员"
-keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 集群成员, 移除集群成员"
-description: "介绍如何移除集群成员。"
+title: "Remove Cluster Members"
+linkTitle: "Remove Cluster Members"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Settings, Cluster Members, Remove Cluster Members"
+description: "Instructions on how to remove cluster members."
 weight: 04
 ---
 
-:ks_permission: **成员管理**
-:ks_navigation: **集群设置 > 集群成员**
+:ks_permission: **Member Management**
+:ks_navigation: **Cluster Settings > Cluster Members**
 
-
-本节介绍如何移除集群成员。
+This section explains how to remove cluster members.
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-从集群中移除用户后，用户将失去集群角色提供的权限。
+After removing a user from the cluster, the user will lose the permissions granted by the cluster role.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
@@ -37,10 +36,8 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要移除的集群成员右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后选择**移除**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to the member you want to remove, then select **Remove**.
 
-. 在**移除成员**对话框输出集群成员的用户名，然后点击**确定**。
+. In the **Remove Member** dialog, enter the username of the cluster member, then click **OK**.
 +
---
-集群成员被移除后将不再显示在集群成员列表中。
---
+Once a cluster member is removed, they will no longer appear in the cluster member list.

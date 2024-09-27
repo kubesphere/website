@@ -16,7 +16,7 @@ weight: 03
 
 == 前提条件
 
-您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。
+include::../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
 == 操作步骤
 

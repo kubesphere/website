@@ -1,17 +1,15 @@
 ---
-title: "查看集群成员列表"
-linkTitle: "查看集群成员列表"
-keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 集群成员, 查看集群成员列表"
-description: "介绍如何查看集群成员列表。"
+title: "View Cluster Member List"
+linkTitle: "View Cluster Member List"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Settings, Cluster Members, View Cluster Member List"
+description: "Instructions on how to view the cluster member list."
 weight: 02
 ---
 
-:ks_permission: **成员查看**
-:ks_navigation: **集群设置 > 集群成员**
+:ks_permission: **Member Viewing**
+:ks_navigation: **Cluster Settings > Cluster Members**
 
-
-本节介绍如何查看集群成员列表。
-
+This section explains how to view the cluster member list.
 
 == Prerequisites
 
@@ -29,35 +27,34 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClu
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 ====
-* 集群成员列表提供以下信息：
+* The cluster member list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|用户名
-|集群成员的用户名。
+| Username
+| The username of the cluster member.
 
-|状态
-|
-集群成员当前的状态。
+| Status
+| The current status of the cluster member.
 
 include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-para-userStatus.adoc[]
 
-|角色
-|集群成员在集群中的角色。
+| Role
+| The role of the cluster member within the cluster.
 
-* **cluster-admin**：集群管理员，在集群内具有除创建和删除集群以外的所有权限。
+* **cluster-admin**: Cluster administrator with all permissions within the cluster except creating and deleting clusters.
 
-* **cluster-viewer**：集群观察员，在集群内具有所有资源的查看权限。
+* **cluster-viewer**: Cluster viewer with permissions to view all resources within the cluster.
 
-|最近登录
-|集群成员最近一次登录{ks_product-en} Web 控制台的时间。
+| Last Login
+| The time of the cluster member's last login to the {ks_product-en} web console.
 |===
 --
 
-* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的集群成员。
+* Click the search box at the top of the list and search for cluster members by name.
 
 include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

@@ -1,17 +1,15 @@
 ---
-title: "集群角色"
-linkTitle: "集群角色"
-keywords: "Kubernetes, KubeSphere, 集群管理, 集群角色"
-description: "介绍如何管理集群角色。"
+title: "Cluster Roles"
+linkTitle: "Cluster Roles"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Roles"
+description: "Instructions on how to manage cluster roles."
 layout: "second"
 weight: 04
 ---
 
+This section explains how to manage cluster roles.
 
-
-本节介绍如何管理集群角色。
-
-每个集群角色都包含特定的集群管理或查看权限。您可以将包含特定权限的角色授予集群成员，以控制集群成员在集群中的权限。
+Each cluster role comes with specific cluster management or viewing permissions. You can assign roles with specific permissions to cluster members to control their access within the cluster.
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
@@ -19,6 +17,6 @@ include::../../../../../_ks_components-en/admonitions/note.adoc[]
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-desc-initialClusterAdmin.adoc[]
 
-* {ks_product-en}目前不支持创建自定义集群角色，您可以在{ks_product-en} Web 控制台查看预置集群角色的相关信息。
+* KubeSphere currently does not support creating custom cluster roles. You can view information about the built-in cluster roles in the {ks_product-en} web console.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

@@ -1,2 +1,2 @@
 // :ks_include_id: 9572433de70c4e3485289ea683e39c12
-. Click the name of a service in the service list to open its details page.
+. Click the name of a service in the list to open its details page.

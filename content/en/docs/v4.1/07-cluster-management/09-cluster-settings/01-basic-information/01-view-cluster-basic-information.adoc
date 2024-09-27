@@ -1,16 +1,16 @@
 ---
-title: "查看集群基本信息"
-linkTitle: "查看集群基本信息"
-keywords: "Kubernetes, KubeSphere, 集群管理, 基本信息, 查看集群基本信息"
-description: "介绍如何查看集群基本信息。"
+title: "View Cluster Basic Information"
+linkTitle: "View Cluster Basic Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Basic Information, View Cluster Basic Information"
+description: "Instructions on how to view cluster basic information."
 weight: 01
 ---
 
-:ks_permission: **集群设置查看**
-:ks_navigation: **集群设置 > 基本信息**
+:ks_permission: **Cluster Settings View**
+:ks_navigation: **Cluster Settings > Basic Information**
 
 
-本节介绍如何查看集群基本信息。
+This section explains how to view cluster basic information.
 
 
 == Prerequisites
@@ -27,6 +27,4 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-// . 在**基本信息**页签，查看集群的名称、提供商、Kubernetes 版本、节点数量、CPU 数量、内存容量和磁盘容量。
-
-. 在**基本信息**页签，查看集群的名称、提供商、Kubernetes 版本。
+. On the **Basic Information** tab, view the cluster's name, provider, and Kubernetes version.

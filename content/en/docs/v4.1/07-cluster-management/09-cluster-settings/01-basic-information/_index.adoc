@@ -1,12 +1,10 @@
 ---
-title: "基本信息"
-linkTitle: "基本信息"
-keywords: "Kubernetes, KubeSphere, 集群管理, 基本信息"
-description: "介绍如何查看和编辑集群基本信息。"
+title: "Basic Information"
+linkTitle: "Basic Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Basic Information"
+description: "Instructions on how to view and edit cluster basic information."
 layout: "second"
 weight: 01
 ---
 
-
-
-本节介绍如何查看和编辑集群基本信息。
+This section explains how to view and edit cluster basic information.

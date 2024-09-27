@@ -9,4 +9,4 @@ weight: 02
 
 This section explains how to manage users.
 
-The default administrator user **admin** in {ks_product-en} platform has all permissions and can create other users as needed. Users can be invited to join clusters and workspaces. Workspace members can be invited to join various projects, meaning users can be members under clusters, workspaces, and projects.
+The default administrator user **admin** in KubeSphere has all permissions and can create other users as needed. Users can be invited to join clusters and workspaces. Workspace members can be invited to join various projects, meaning users can be members under clusters, workspaces, and projects.

@@ -10,7 +10,7 @@
 = {empty}
 
 [.top_left]
-{ks_product-en}{ks_doc_type}
+{ks_product_right}{ks_doc_type}
 
 [.bottom_left]
 文档版本 01
@@ -32,7 +32,7 @@ endif::[]
 image::/images/ks-qkcp/pdf/cover_doc_image.svg[]
 
 [.cover_doc_name]
-{ks_product-en} +
+{ks_product} +
 {ks_doc_type}
 
 [.cover_footer,cols="2a,1a"]

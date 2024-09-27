@@ -13,7 +13,8 @@ weight: 02
 
 == Prerequisites
 
-您需要在{ks_product-en}平台具有pass:a,q[{ks_permission}]权限。
+include::../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
 
 == Steps
 

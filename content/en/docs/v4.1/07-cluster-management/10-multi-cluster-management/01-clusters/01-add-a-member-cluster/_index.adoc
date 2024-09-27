@@ -1,30 +1,27 @@
 ---
-title: "添加成员集群"
-linkTitle: "添加成员集群"
-keywords: "Kubernetes, KubeSphere, 多集群管理, 集群, 添加成员集群"
-description: "介绍如何添加成员集群。"
+title: "Add Member Clusters"
+linkTitle: "Add Member Clusters"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster, Add Member Clusters"
+description: "Learn how to add member clusters."
 layout: "second"
 weight: 01
 ---
 
+This section explains how to add member clusters.
 
+Depending on your network environment, the host cluster and member clusters can be connected in the following ways:
 
-本节介绍如何添加成员集群。
+* Direct Connection: If the host cluster can access the Kubernetes API service of the member cluster, you can add the kubeconfig information of the member cluster on the host cluster to directly connect the host cluster and the member cluster.
 
-取决于您的网络环境，主集群和成员集群可以采用以下连接方式：
+* Agent Connection: If the host cluster cannot access the Kubernetes API service of the member cluster, you can set up the member cluster to connect to the proxy service "tower" exposed by the host cluster, enabling the connection between the host cluster and the member cluster via tower.
 
-* 直接连接：如果主集群可以访问成员集群的 Kubernetes API 服务，您可以在主集群上添加成员集群的 kubeconfig 信息，直接连接主集群和成员集群。
-
-* 代理连接：如果主集群无法访问成员集群的 Kubernetes API 服务，您可以设置成员集群连接到主集群暴露的代理服务 tower，通过代理服务 tower 连接主集群和成员集群。
-+
 [.admon.note,cols="a"]
 |===
-|说明
+| Note
 
 |
-若要使用代理连接，{ks_product-en}平台需要安装并启用 **KubeSphere 多集群代理连接**扩展组件。
-// 有关更多信息，请参阅link:../../../../11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection/[通过代理连接添加成员集群]。
+To use a agent connection, the **KubeSphere Multi-Cluster Agent Connection** extension needs to be installed and enabled on the KubeSphere platform.
+// For more information, refer to link:../../../../11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection[Add a Member Cluster via Agent Connection].
 |===
 
-
-无论采用直接连接还是代理连接，主集群和成员集群必须至少一方可以访问另一方暴露的服务。
+Whether using a direct connection or a agent connection, at least one of the host cluster and the member cluster must be able to access the services exposed by the other side.

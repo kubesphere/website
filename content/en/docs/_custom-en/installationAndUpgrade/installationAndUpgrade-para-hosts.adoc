@@ -1,7 +1,7 @@
 // :ks_include_id: 011f0f1d835947cbb1b37e80036c0b2e
 [%header,cols="1a,4a"]
 |===
-|Parameters |Description
+|Parameter |Description
 
 |name
 |User-defined server name.
@@ -25,5 +25,5 @@
 |The path to the server's SSH login key. This parameter does not need to be set if **password** has been set.
 
 |arch
-|The server architecture. If the server's hardware architecture is Arm64, please set this parameter to **arm64**, otherwise do not set this parameter. By default, the installation package only supports scenarios where all cluster nodes are x86_64 or arm64 architecture. If the hardware architecture of each cluster node is not exactly the same, please contact the {ks_product-en}technical support team.
+|The server architecture. If the server's hardware architecture is Arm64, please set this parameter to **arm64**, otherwise do not set this parameter. By default, the installation package only supports scenarios where all cluster nodes are x86_64 or arm64 architecture. If the hardware architecture of each cluster node is not exactly the same, please contact the {ks_product-en} technical support team.
 |===

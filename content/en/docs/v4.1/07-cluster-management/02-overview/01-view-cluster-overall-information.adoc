@@ -16,8 +16,11 @@ include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPe
 
 == Steps
 
-. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission, and access your cluster.
-. Click pass:a,q[{ks_navigation}] in the left navigation pane.
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 --

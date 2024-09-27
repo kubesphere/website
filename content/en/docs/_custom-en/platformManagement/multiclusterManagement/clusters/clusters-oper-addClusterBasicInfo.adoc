@@ -1,15 +1,15 @@
 // :ks_include_id: 9db9031f82114758ae483f38e21709cb
-. 在**集群管理**页面，点击**添加集群**。
+. On the **Cluster Management** page, click **Add Cluster**.
 
-. 在**基本信息**页签，设置成员集群的名称、标签、提供商和描述信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the name, tags, provider, and description for the member cluster, then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|成员集群的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+|Name
+|The name of the member cluster. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
 include::clusters-para-tagProviderDescription.adoc[]
 |===

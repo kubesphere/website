@@ -2,6 +2,6 @@
 // Note
 include::../../../_ks_components-en/admonitions/note.adoc[]
 
-After {ks_product-en}is installed, please do not delete **config-sample.yaml**. This file will still be used for subsequent operations such as adding nodes. If this file is missing, you will need to recreate it.
+After {ks_product-en} is installed, please do not delete **config-sample.yaml**. This file will still be used for subsequent operations such as adding nodes. If this file is missing, you will need to recreate it.
 
 include::../../../_ks_components-en/admonitions/admonEnd.adoc[]

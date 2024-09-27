@@ -106,7 +106,7 @@ Replace the following parameters with actual values:
 
 [%header,cols="1a,4a"]
 |===
-|Parameters |Description
+|Parameter |Description
 
 |<directory>
 |The directory used by KubeSphere, for example **/mnt/demo**.
@@ -205,7 +205,7 @@ Replace the following parameters with actual values:
 
 [%header,cols="1a,4a"]
 |===
-|Parameters |Description
+|Parameter |Description
 
 |<IP address>
 |IP address of the NFS server.

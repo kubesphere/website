@@ -6,7 +6,7 @@ description: "介绍如何创建企业空间。"
 weight: 01
 ---
 
-:ks_permission: **企业空间管理**
+:ks_permission: **企业空间创建**
 
 
 本节介绍如何创建企业空间。
@@ -14,7 +14,7 @@ weight: 01
 
 == 前提条件
 
-您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。
+include::../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
 == 操作步骤
 

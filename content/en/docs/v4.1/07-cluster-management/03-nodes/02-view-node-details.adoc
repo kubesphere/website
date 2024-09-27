@@ -21,7 +21,7 @@ include::../../../_custom-en/clusterManagement/clusterManagement-oper-openCluste
 
 include::../../../_custom-en/clusterManagement/nodes/nodes-oper-openListPage_new.adoc[]
 
-. Click the name of a node in the node list to open its details page.
+. Click the name of a node in the list to open its details page.
 
 . In the **Attributes** area on the left side of the node details page, view the resource attributes of the node.
 +

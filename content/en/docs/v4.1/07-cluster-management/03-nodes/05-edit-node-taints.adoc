@@ -16,7 +16,7 @@ A taint consists of three parts: key, value, and effect. The tolerations of pods
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-The {ks_product-en} web console currently does not support editing pod tolerations. Therefore, by default, node taints take effect on all pods.
+KubeSphere currently does not support editing pod tolerations. Therefore, by default, node taints take effect on all pods.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 

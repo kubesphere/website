@@ -1,16 +1,15 @@
 ---
-title: "邀请用户加入集群"
-linkTitle: "邀请用户加入集群"
-keywords: "Kubernetes, KubeSphere, 集群管理, 集群设置, 集群成员, 邀请用户加入集群"
-description: "介绍如何邀请用户加入集群。"
+title: "Invite Users to Join Cluster"
+linkTitle: "Invite Users to Join Cluster"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Settings, Cluster Members, Invite Users to Join Cluster"
+description: "Instructions on how to invite users to join a cluster."
 weight: 01
 ---
 
-:ks_permission: **成员管理**
-:ks_navigation: **集群设置 > 集群成员**
+:ks_permission: **Member Management**
+:ks_navigation: **Cluster Settings > Cluster Members**
 
-
-本节介绍如何邀请用户加入集群。
+This section explains how to invite users to join a cluster.
 
 
 == Prerequisites
@@ -34,10 +33,10 @@ include::../../../../../_ks_components-en/oper-clickInvite.adoc[]
 
 +
 
-. 在**邀请成员**对话框，在需要邀请的用户右侧点击image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18]，在下拉列表中选择用户在集群中的角色，然后点击**确定**。
+. In the **Invite Members** dialog, click image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18] next to the user you want to invite, select the role for the user in the cluster from the dropdown list, and then click **OK**.
 +
 --
 include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-para-presetClusterRoles.adoc[]
 
-用户被邀请加入集群后将显示在集群成员列表中。
+After being invited to join the cluster, users will be displayed in the list of cluster members.
 --

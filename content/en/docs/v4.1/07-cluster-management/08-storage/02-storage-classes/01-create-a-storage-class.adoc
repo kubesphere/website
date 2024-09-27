@@ -91,7 +91,7 @@ include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVo
 
 * **Delayed Binding**: Creates the Persistent Volume and binds it to the Persistent Volume Claim after the container mounting the Persistent Volume is created.
 
-|Parameters
+|Parameter
 |Key-value pairs that match the parameters expected by the backend storage system and the storage plugin.
 
 * Click **Add** to set multiple parameters.

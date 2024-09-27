@@ -1,23 +1,15 @@
 ---
-title: "集群可见性"
-linkTitle: "集群可见性"
-keywords: "Kubernetes, KubeSphere, 集群管理, 集群可见性"
-description: "介绍如何管理集群可见性。"
+title: "Cluster Visibility"
+linkTitle: "Cluster Visibility"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Visibility"
+description: "Instructions on how to manage cluster visibility."
 layout: "second"
 weight: 02
 ---
 
+This section explains how to manage cluster visibility. Cluster visibility controls the cluster authorization to workspaces. After a cluster is authorized to workspaces, you can view and manage the cluster resources in the workspaces.
 
+* A cluster can be authorized to multiple workspaces, allowing resources within the workspaces to run on that cluster.
 
-本节介绍如何管理集群可见性。集群可见性用于控制集群授权给哪些企业空间。
-
-* 您可以将一个集群授权给多个企业空间，从而允许企业空间中的资源运行在该集群上。
-
-ifeval::["{file_output_type}" == "html"]
-* 您也可以将多个集群授权给同一个企业空间，从而在企业空间中创建联邦项目。
-// 有关联邦项目的更多信息，请参阅link:../../../11-use-extensions/04-kubefed[联邦项目]。
-endif::[]
-
-ifeval::["{file_output_type}" == "pdf"]
-* 您也可以将多个集群授权给同一个企业空间，从而在企业空间中创建联邦项目。有关联邦项目的更多信息，请参阅《{ks_product-en}扩展组件使用指南》的“联邦集群应用管理”章节。
-endif::[]
+* Multiple clusters can be authorized to one workspace, enabling the creation of multi-cluster projects within the workspace.
+// For more information on multi-cluster projects, refer to link:../../../11-use-extensions/04-kubefed[Multi-cluster Projects].

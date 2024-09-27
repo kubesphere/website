@@ -30,7 +30,7 @@ include::../../../../../_ks_components/oper-navigate.adoc[]
 
 +
 
-. 在需要移除的集群成员右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后选择**修改角色**。
+. 在需要编辑的集群成员右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后选择**修改角色**。
 
 . 在**修改角色**对话框，设置集群成员的角色，然后点击**确定**。
 +

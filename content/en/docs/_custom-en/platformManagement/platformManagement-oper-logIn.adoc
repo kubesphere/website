@@ -1,2 +1,2 @@
 // :ks_include_id: 541b15e404b44af589125a703978271e
-. Log in to the {ks_product-en}web console using a user account that has the pass:a,q[{ks_permission}] permission.
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
