@@ -1,26 +1,21 @@
 ---
-title: "查看资源用量"
-linkTitle: "查看资源用量"
-keywords: "Kubernetes, KubeSphere, 企业空间管理, 概览, 查看企业空间资源用量"
-description: "介绍如何查看企业空间资源用量。"
+title: "View Resource Usage"
+linkTitle: "View Resource Usage"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Overview, View Workspace Resource Usage"
+description: "Learn how to view workspace resource usage."
 weight: 01
 ---
 
-:ks_permission: **企业空间设置查看**
-:ks_navigation: **概览**
+:ks_permission: **Workspace Settings Viewing**
+:ks_navigation: **Overview**
 
-
-本节介绍如何查看企业空间资源用量。
+This section explains how to view workspace resource usage.
 
 
 == Prerequisites
 
 
-:relfileprefix: ../../../
-
 include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-:relfileprefix: ./
 
 
 
@@ -32,29 +27,4 @@ include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWo
 
 include::../../../../_ks_components-en/oper-navigate.adoc[]
 +
-**概览**页面的**资源用量**页签提供项目、角色、企业空间成员的数量信息。
-
-// ====
-// * **概览**页面的**资源用量**页签提供以下信息：
-// +
-// --
-// [%header,cols="1a,4a"]
-// |===
-// |参数 |描述
-
-// |物理资源
-// |企业空间在指定集群中的 CPU 和内存使用情况。
-
-// |应用资源
-// |企业空间在指定集群中创建的部署、有状态副本集、守护进程集、任务、定时任务和持久卷声明的数量。
-// |===
-// --
-
-// include::../../../../_ks_components-en/oper-selectTimeRange.adoc[]
-
-// include::../../../../_ks_components-en/oper-Autorefresh.adoc[]
-
-// include::../../../../_ks_components-en/oper-refreshData.adoc[]
-
-// * 在右上角点击**集群**下拉列表可查看特定集群中的数据。
-// ====
+The **Resource Usage** tab on the **Overview** page provides information on the number of projects, roles, and members in the workspace.

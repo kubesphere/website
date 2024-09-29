@@ -34,11 +34,11 @@ footer:
     - title: KubeSphere Docs
       list:
         - content: Introduction
-          link: '../../../docs/v3.4/introduction/what-is-kubesphere/'
+          link: '../../../docs/v4.1/01-intro/01-introduction.adoc'
         - content: Installation
-          link: '../../../docs/v3.4/quick-start/all-in-one-on-linux/'
+          link: '../../../docs/v4.1/02-quickstart/01-install-kubesphere.adoc'
         - content: Tutorial
-          link: '../../../docs/v3.4/quick-start/create-workspace-and-project/'
+          link: '../../../docs/v4.1/02-quickstart/create-workspace-and-project/'
         - content: API Documentation
           link: '../../../docs/v3.4/reference/api-docs/'
 

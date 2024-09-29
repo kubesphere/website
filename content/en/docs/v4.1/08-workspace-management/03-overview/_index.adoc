@@ -1,12 +1,10 @@
 ---
-title: "概览"
-linkTitle: "概览"
-keywords: "Kubernetes, KubeSphere, 企业空间管理, 概览"
-description: "介绍如何查看企业空间概览信息。"
+title: "Overview"
+linkTitle: "Overview"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Overview"
+description: "Learn how to get workspace overview info."
 layout: "second"
 weight: 03
 ---
 
-
-
-本节介绍如何查看企业空间概览信息。
+This section explains how to get workspace overview info.

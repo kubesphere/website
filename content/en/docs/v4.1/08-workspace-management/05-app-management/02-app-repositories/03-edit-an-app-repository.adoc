@@ -15,11 +15,7 @@ weight: 03
 
 == Prerequisites
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-:relfileprefix: ./
 
 
 == Steps

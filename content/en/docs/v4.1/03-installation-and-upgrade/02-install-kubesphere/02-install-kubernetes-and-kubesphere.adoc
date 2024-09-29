@@ -10,6 +10,12 @@ This section explains how to install Kubernetes and {ks_product-en}.
 
 The installation process will use the open-source tool KubeKey. For more information about KubeKey, please visit the link:https://github.com/kubesphere/kubekey[GitHub KubeKey repository].
 
+[.admon.note,cols="a"]
+|===
+|Note
+
+|You can also run the command in the link:#_install_kubesphere[Install KubeSphere] section to directly upgrade KubeSphere from v4.1.1 to v4.1.2.
+|===
 
 == Prerequisites
 
@@ -349,7 +355,7 @@ Pipeline[CreateclusterPipeline] execute successfully
 ----
 --
 
-== Install {ks_product-en}
+== Install KubeSphere
 
 KubeSphere Core (ks-core) is the core component of KubeSphere, providing a foundational runtime environment for extensions. Once KubeSphere Core is installed, you can access the {ks_product-en} web console.
 
@@ -358,7 +364,7 @@ KubeSphere Core (ks-core) is the core component of KubeSphere, providing a found
 ====
 [,bash]
 ----
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.1.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --debug --wait
 ----
 
 If you see the following information, it means that ks-core installation is successful:

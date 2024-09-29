@@ -1,19 +1,18 @@
 ---
-title: "登录并进入企业空间"
-linkTitle: "登录并进入企业空间"
-keywords: "Kubernetes, KubeSphere, 企业空间管理, Web 控制台, 登录并进入企业空间"
-description: "介绍如何登录 KubeSphere Web 控制台并进入企业空间。"
+title: "Log In and Access Workspaces"
+linkTitle: "Log In and Access Workspaces"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Web Console, Access Workspace"
+description: "This section explains how to log in and access a workspace."
 weight: 01
 ---
 
 
-
-本节介绍如何登录{ks_product-en} Web 控制台并进入企业空间。
+This section explains how to log in to the {ks_product-en} web console and access a workspace.
 
 
 == Prerequisites
 
-* 您需要获取企业空间成员用户名和密码。
+* You need to have the username and password of a workspace member.
 
 include::../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
 
@@ -30,6 +29,6 @@ include::../../../_custom-en/workspaceManagement/webConsole/webConsole-note-firs
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
-. 点击**企业空间管理**。
+. Click **Workspace Management**.
 
-. 在**企业空间管理**页面点击一个企业空间的名称进入企业空间。
+. Click the name of a workspace in the **Workspaces** page to access the workspace.

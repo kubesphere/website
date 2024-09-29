@@ -31,6 +31,6 @@ include::../../../_custom-en/workspaceManagement/webConsole/webConsole-note-firs
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --
 
-. 点击**企业空间管理**。
+. Click **Workspace Management**.
 . 在**企业空间管理**页面点击一个企业空间的名称进入企业空间。
 . 在左侧导航栏选择**项目**，然后点击一个项目的名称进入项目。

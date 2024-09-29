@@ -1,96 +1,96 @@
 ---
-title: "3.4.1 版本说明"
-keywords: "Kubernetes, KubeSphere, 版本说明"
-description: "KubeSphere 3.4.1 版本说明"
-linkTitle: "3.4.1 版本说明"
-weight: 46
+title: "Release Notes for 3.4.1"
+keywords: "Kubernetes, KubeSphere, Release Notes"
+description: "KubeSphere 3.4.1 Release Notes"
+linkTitle: "Release Notes - 3.4.1"
+weight: 18093
 ---
 
+## App Store
 
-## 应用商店
+### Bug Fixes
 
-### 问题修复
-
-- 修复应用仓库页面的报错。
-- 修复应用审核报错。
-- Appdeploy schemaform 支持 select。
-
-## 控制台
-
-### 问题修复
-
-- 修复编辑 CRD 资源后，状态丢失的问题。
-- 修复网络隔离页面的 IsolateInfo 和 RuleInfo 样式错误。
-- 修复某些页面的中文翻译错误。
-- 修复高版本 K8s 中，资源创建失败的问题。
-- 修复最近访问面板中名称被遮挡的问题。
-- 修复在列表页面点击定制内容按钮，内容显示不全。
-- 修复容器状态显示错误。
-- 修复在 PVC 页面设置卷容量时，数字显示有误。
-- 修复添加容器页面，使用 tag 搜索 image 失效。
-- 支持构建 ARM64 镜像。
+- Fix the error on the application repository page. 
+- Fix the error in the application approval process.
+- Support "select" in Appdeploy schemaform.
 
 
-## 多集群
+## Console
 
-### 问题修复
+### Bug Fixes
 
-- 修复多集群中，CD 关联集群显示错误。
-- 修复主机集群被错误地添加为其他集群的成员集群。
+- Fix the issue of losing status when modifying a CRD.
+- Fix the incorrect style for IsolateInfo and RuleInfo in the Network Policy panel.
+- Fix inaccurate Chinese translations on some pages.
+- Fix the resource creation failure issue in higher versions of Kubernetes.
+- Fix the issue in the dashboard where the names in Recently Access are obscured.
+- Fix the issue on the list page where the Customize Columns button displays incomplete content.
+- Fix the display error of pod status.
+- Fix the issue on the PVC page where the capacity selection numbers are displayed incorrectly.
+- Fix the issue when adding containers on the Create Deployment page, using tags to search for images is not working.
+- Support building ARM64 images.
+
+## Multi Cluster
+
+### Bug Fixes
+
+- Fix the issue where CD-related clusters are displayed incorrectly in a multi-cluster environment.
+- Fix the issue of mistakenly adding a host cluster as a member cluster of another cluster.
 
 
-## 可观测性
+## Observability
 
-### 问题修复
+### Bug Fixes
 
-- 修复 CPU 和内存统计图表不显示。
-- 修复通知渠道页面，API 调用错误。
-- 修复日志接收器页面，显示空白。
-- 修复新建通知渠道页面，条件过滤值丢失。
+- Fix the issue that CPU and memory statistics charts are not displaying.
+- Fix API call errors on the notification channel page.
+- Fix the blank log receiver page.
+- Fix the issue on the new notification channel page where conditional filtering values are missing.
 
-## 认证和授权
 
-### 问题修复
+## Authentication & Authorization
 
-- 修复 LDAP 登录失败。
+### Bug Fixes
+
+- Fix LDAP login failure.
 
 ## DevOps
 
-### 问题修复
+### Bug Fixes
 
-- 修复图形化编辑 Shell 不生效。
-- 当集群未就绪或未安装 DevOps 时，DevOps 项目不可用。
-- 修复 jenkins 参数传递不正确的问题。
-- 修复点击回放按钮时报错。
-- 修复 Pipeline 详情无法查看的问题。
-- 修复流水线日志过大引发的问题。
-- 修复 Jenkins 镜像漏洞。
-- 修复 DevOps 更新版本后无法正常使用的问题。
-- 修复流水线清理任务报错。
-- 修复设置 timeout 失败的问题。
-- 修复多分支流水线下载制品失败的问题。
-- 修复无法禁用已丢弃的历史 Pipelinerun。
-- 修复级联删除多个应用程序时，一些应用程序资源未被删除的问题。
+- Fix the issue where shell is not effective in graphical editing.
+- When a cluster is not ready or does not install DevOps, DevOps projects are unavailable.
+- Fix the incorrect parameter passing in Jenkins.
+- Fix the issue that clicking the replay button pops up an error prompt.
+- Fix the issue that the details of a pipeline cannot be viewed.
+-  Fix the run error due to the large DevOps pipeline logs.
+- Fix Jenkins image vulnerability.
+- Fix the issue that failed to upgrade DevOps to 3.4.0.
+- Fix the error in the cleanup task.
+- Fix the failure to set a timeout.
+- Fix the bug with downloading multi-branch-pipeline artifacts.
+- Fix the issue that disabling discarded history pipelineruns doesn't work.
+- Fix the issue that some application resources are not deleted when cascade deleting multiple applications.
+
+### Enhancements & Updates
+
+- Display the git repo link on the Pipeline page.
+- Improve the API documentation for DevOps.
+
+## User Experience
+
+### Bug Fixes
+
+- Fix the issue on the Statefuls page where the Pod Grace Period parameter is missing.
+- Fix the issue where the cluster gateway is not displayed in cluster management.
+- Fix the error when creating an application route.
+- Add pagination for listing repository tags.
 
 
-### 优化增强
+## Monitoring
 
-- 在流水线页面显示 git 仓库地址。
-- 完善 API 文档。
+### Bug Fixes
 
-## 用户体验
+- Fix the issue that the Monitoring Target field is displayed blank.
 
-### 问题修复
-
-- 修复 Statefuls 页面缺少 Pod Grace Period 参数。
-- 修复集群管理中，集群网关不显示。
-- 修复创建应用路由报错。
-- 在列出仓库标签时实现分页功能。
-
-## 监控
-
-### 问题修复
-
-- 修复监控目标显示为空。
-
-有关 KubeSphere 3.4.1 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.1.md)。
+For more information about issues and contributors of KubeSphere 3.4.1, see [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.1.md).

@@ -1,8 +1,8 @@
 ---
-title: "4.1.1 版本说明"
-keywords: "Kubernetes, KubeSphere, 版本说明"
-description: "KubeSphere 4.1.1 版本说明"
-linkTitle: "4.1.1 版本说明"
+title: "Release Notes for 4.1.1"
+keywords: "Kubernetes, KubeSphere, Release Notes"
+description: "KubeSphere 4.1.1 Release Notes"
+linkTitle: "Release Notes - 4.1.1"
 weight: 45
 ---
 

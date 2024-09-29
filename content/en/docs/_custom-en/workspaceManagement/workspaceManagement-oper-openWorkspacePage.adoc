@@ -1,2 +1,2 @@
 // :ks_include_id: 9e983855b51f4d47a0318514ec5e4d84
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product-en} Web 控制台并进入您的企业空间。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission, and access your workspace.

@@ -1,5 +1,5 @@
 ---
-title: "Log In and Access Cluster"
+title: "Log In and Access Clusters"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Web Console, Access Cluster"
 description: "This section explains how to log in and access a cluster."
 weight: 01

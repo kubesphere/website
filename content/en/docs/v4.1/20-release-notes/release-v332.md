@@ -1,97 +1,92 @@
 ---
-title: "3.3.2 版本说明"
-keywords: "Kubernetes, KubeSphere, 版本说明"
-description: "KubeSphere 3.3.2 版本说明"
-linkTitle: "3.3.2 版本说明"
-weight: 48
+title: "Release Notes for 3.3.2"
+keywords: "Kubernetes, KubeSphere, Release Notes"
+description: "KubeSphere 3.3.2 Release Notes"
+linkTitle: "Release Notes - 3.3.2"
+weight: 18095
 ---
 
 ## DevOps
 
-### 优化增强
+### Enhancements & Upgrades
 
-- 添加最新的 GitHub Actions。
-- 将 PipelineRun 的结果保存到 configmap 中。
-- 修改持续部署应用程序状态的中文描述。
-- 为持续部署参数添加更丰富的信息。
-- 为处于中止状态的 PipelineRun 添加链接。
-- 为 PipelineRun 增加 ID 列，用于执行 kubectl 命令时展示。
-- PipelineRun 生命周期中去掉 Queued 状态。
+- Add the latest GitHub Actions. 
+- Save the PipelineRun results to the configmap. 
+- Modify the Chinese description of the status of ArgoCD applications. 
+- Add more information to continuous deployment parameters.
+- Add a link for PipelineRun in the aborted state.
+- Add an ID column for PipelineRun, and the ID will be displayed when users run kubectl commands.
+- Remove the queued state from PipelineRun.
 
-### 问题修复
+### Bug Fixes
 
-- 修复用户修改并保存流水线配置后 Webhook 配置丢失的问题。
-- 修复下载 DevOps 流水线制品失败的问题。
-- 修复使用 JAR/WAR 文件创建服务时，镜像地址不匹配的问题。
-- 修复 PipelineRun 从“取消”状态变成“未运行”状态的问题。
-- 修复 Pipeline 的自动清理策略，使其与 Jenkins 的清理保持一致。
-
+- Fix an issue where webhook configurations are missing after users change and save pipeline configurations.
+- Fix an issue where downloading DevOps pipeline artifacts fails.
+- Fix an issue where the image address does not match when a service is created by using a JAR/WAR file. 
+- Fix an issue where the status of PipelineRun changes from `Cancelled` to `Not-Running`.
+- Fix the automatic cleaning behavior of pipelines to keep it consistent with the cleaning configurations of Jenkins. 
 
 ## App Store
 
-### 问题修复
+### Bug Fixes
 
-- 修复上传的应用程序模板上不显示图标的问题。
-- 修复应用商店应用信息处没有显示应用首页的问题。
-- 修复应用商店导入内置应用时导入失败的问题。
-- 修复 IPv6 环境下 UUID 生成错误的问题。
+- Fix an issue where the application icon is not displayed on the uploaded application template.
+- Fix an issue where the homepage of an application is not displayed on the application information page.
+- Fix an issue where importing built-in applications fails.
+- Fix a UUID generation error in an IPv6-only environment.
 
-## 可观测性
+## Observability
 
-### 问题修复
+### Bug Fixes
 
--  修复 logsidecar-injector 配置文件中的解析问题。
+- Fix a parsing error in the configuration file of logsidecar-injector.
 
-## 微服务
+## Service Mesh
 
-### 问题修复
+### Bug Fixes
 
-- 修复未启用 service mesh 时创建的 Bookinfo 项目没有默认关闭应用治理的问题。
-- 修复蓝绿部署发布模式下线按钮缺失的问题。
+- Fix an issue that application governance of Bookinfo projects without service mesh enabled is not disabled by default.
+- Fix an issue where the delete button is missing on the blue-green deployment details page. 
 
-## 网络
+## Network
 
-### 优化增强
+### Bug Fixes
 
-- 限制项目的网络隔离范围为当前企业空间。
+- Restrict network isolation of projects within the current workspace.
 
-## 存储
+## Storage
 
-### 优化增强
+### Enhancements & Upgrades
 
-- 在多集群环境中显示 system-workspace 所属集群。
-- 将“应用路由”的英文词条由 “route” 修改为 “ingress”。
+- Display the cluster to which system-workspace belongs in multi-cluster environments. 
+- Rename route to ingress.
 
-### 问题修复
+## Authentication & Authorization
 
-- 修复编辑联邦项目中的持久卷声明存储类错误的问题。
+### Enhancements & Upgrades
 
-## 验证和授权
+- Add dynamic options for cache.
+- Remove the "Alerting Message Management" permission.
 
-### 优化增强
+### Bug Fixes
 
-- 增加了动态的 cache 配置项。
-- 移除“告警消息管理”权限。
+- Fix an issue where platform roles with platform management permisions cannot manage clusters.
 
-### 问题修复
+## Development & Testing
 
-- 修复拥有集群管理权限的平台角色无法管理集群的问题。
+### Bug Fixes
 
-## 开发 & 测试
+- Fix an issue where some data is in the `Out of sync` state after the live-reload feature is introduced.
+- Fix an issue where the ks-apiserver fails when it is reloaded multiple times.
+- Fix an issue where caching resources fails if some required CRDs are missing.
+- Fix an issue where the ks-apiserver crashes in Kubernetes 1.24+ versions.
+- Fix an issue where Goroutine leaks occur when the audit event sender times out.
 
-### 问题修复
+## User Experience
 
-- 修复引入热加载功能后部分数据后处于“不同步”状态的问题。
-- 修复 ks-apiserver 多次重载后崩溃的问题。
-- 修复缺少必要的 CRD 造成的资源缓存失败问题。
-- 修复 ks-apiserver 在 Kubernetes 1.24+ 版本中异常崩溃的问题。
-- 修复审计功能中协程泄露的问题。 
+- Limit the length of cluster names.
+- Fix an issue where pod replicas of a federated service are not automatically refreshed. 
+- Fix an issue where related pods are not deleted after users delete a service.
+- Fix an issue where the number of nodes and roles are incorrectly displayed when there is only one node.
 
-## 用户体验
-
-- 限制集群名称长度。
-- 修复 pod 副本不能自动刷新的问题。
-- 修复删除服务时，相关的 pod 没有删除的问题。
-- 修复只有一个节点时，节点数量和角色显示错误的问题。
-
-有关 KubeSphere 3.3.2 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.2.md)。
+For more information about issues and contributors of KubeSphere 3.3.2, see [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.2.md).

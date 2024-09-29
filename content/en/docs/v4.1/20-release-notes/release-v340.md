@@ -1,156 +1,154 @@
 ---
-title: "3.4.0 版本说明"
-keywords: "Kubernetes, KubeSphere, 版本说明"
-description: "KubeSphere 3.4.0 版本说明"
-linkTitle: "3.4.0 版本说明"
-weight: 47
+title: "Release Notes for 3.4.0"
+keywords: "Kubernetes, KubeSphere, Release Notes"
+description: "KubeSphere 3.4.0 Release Notes"
+linkTitle: "Release Notes - 3.4.0"
+weight: 18094
 ---
 
 ## DevOps
 
-### 优化增强
+### Enhancements & Updates
 
-- 支持用户自定义流水线配置步骤。 
-- 优化 DevOps Jenkins JVM 内存配置。
+- Support user-defined pipeline configuration steps. 
+- Optimize the devops-jenkins JVM memory configuration. 
 
-### 问题修复
+### Bug Fixes
 
-- 修复级联删除 ArgoCD 资源的问题。
-- 修复多分支流水线下载制品失败的问题。
-- 修复流水线运行状态与 Jenkins 不一致的问题（增加重试以同步状态）。 
-- 修复新建用户运行流水线一直等待中的问题。
-
-
-## 存储
-
-### 问题修复
-
-- 修复 pvc 无法删除的问题。 
+- Fix the issue of removing ArgoCD resources without cascade parameters.
+- Fix the issue that downloading artifacts for multi-branch pipelines fails. 
+- Fix the issue that the pipeline running status is inconsistent with Jenkins (Add retry for pipelinerun annotation update). 
+- Fix the issue that the running of a pipeline created by a new user is pending. 
 
 
-## 网关和微服务
+## Storage
 
-### 新特性
+### Bug Fixes
 
-- 网关支持配置 TCP/UDP 流量转发。 
+- Fix the issue that pvc cannot be deleted.
 
-### 优化增强
+## Gateway and Microservice
 
-- 升级 ingress nginx 版本: v1.1.0 -> v1.3.1。
-- 升级 servicemesh 组件版本：istio: 1.11.1 -> 1.14.6；kiali: v1.38.1 -> v1.50.1；jaeger: 1.27 -> 1.29。
+### Features
 
-### 问题修复
+- Gateway supports the configuration of forwarding TCP/UDP traffic.
 
-- 修复返回集群网关数据重复的问题。 
-- 修复网关升级校验错误 。
-- 修复更改网关命名空间配置后，集群网关日志和资源状态显示异常的问题。 
+### Enhancements & Updates
+
+- Upgrade ingress nginx: v1.1.0 -> v1.3.1.
+- Upgrade servicemesh: 
+istio: 1.11.1 -> 1.14.6; kiali: v1.38.1 -> v1.50.1; jaeger: 1.27 -> 1.29.
+
+### Bug Fixes
+
+- Fix the issue that the returned cluster gateways duplicate. 
+- Fix the verification error when upgrading the gateway. 
+- Fix the abnormal display of cluster gateway log and resource status after changing gateway namespace configuration. 
+
+## Observability
+
+### Features
+
+- Add CRDs such as RuleGroup, ClusterRuleGroup, GlobalRuleGroup to support Alerting v2beta1 APIs. 
+- Add admission webhook for RuleGroup, ClusterRuleGroup, GlobalRuleGroup. 
+- Add controllers to sync RuleGroup, ClusterRuleGroup, GlobalRuleGroup resources to PrometheusRule resources. 
+- Add Alerting v2beta1 APIs. 
+- The ks-apiserver of Kubesphere integrates the v1 and v2 versions of opensearch, and users can use the external or built-in opensearch cluster for log storage and query. (Currently the built-in opensearch version of Kubesphere is v2). 
+- ks-installer integrates the opensearch dashboard, which should be enabled by users. 
+
+### Enhancements & Updates
+- Upgrade Prometheus stack dependencies. 
+- Support configuring the maximum number of logs that can be exported.
+- The monitoring component supports Kubernetes PDB Apiversion changes.
+- Upgrade Notification Manager to v2.3.0. 
+- Support cleaning up notification configuration in member clusters when a member cluster is deleted. 
+- Support switching notification languages. 
+- Support route notifications to specified users. 
+
+### Bug Fixes
+
+- Fix the issue that Goroutine leaks when getting audit event sender times out.
+- Fix the promql statement of ingress P95 delay. 
 
 
-## 可观测性
+## Multi-tenancy and Multi-cluster
 
-### 新特性
+### Enhancements & Updates
 
-- 新增 RuleGroup, ClusterRuleGroup, GlobalRuleGroup 等 CRDs，用于支持 Alerting v2beta1 APIs。
-- 新增 RuleGroup, ClusterRuleGroup, GlobalRuleGroup 等资源的准入控制 webhook。
-- 新增 Controllers，将 RuleGroup, ClusterRuleGroup, GlobalRuleGroup 资源同步为 PrometheusRule 资源。
-- 添加 Alerting v2beta1 APIs。
-- 在 Kubesphere 的 ks-apiserver 中集成了 opensearch 的 v1 和 v2 版本，用户可以使用外置或内置的 opensearch 集群进行日志的存储和查询。（目前 Kubesphere 内置的 opensearch 版本为 v2）
-- ks-installer 集成了 opensearch 的 dashboard，需要用户自行开启。 
+- Check the cluster ID (kube-system UID) when updating the cluster. 
 
+### Bug Fixes
 
-### 优化增强
-- 升级 Prometheus 栈依赖。
-- 支持配置最大日志导出数量。
-- 监控组件部署支持 Kubernetes PDB Apiversion 变更。 
-- 升级 Notification Manager 到 v2.3.0。
-- 支持删除集群时删除集群上的通知设置。
-- 支持切换通知语言。
-- 通知支持路由功能。
-
-
-### 问题修复
-
-- 修复潜在 Go 协程泄漏的问题。
-- 修复 ingress P95 延迟时间 promql 语句。
-
-
-## 多租户和多集群
-
-### 优化增强
-
-- 更新集群的时候校验集群 ID。
-
-### 问题修复
-
-- 确保在清理通知相关资源时集群状态正常。
-- 修复针对新集群的校验问题。
-- 修复集群状态信息不正确的问题。
-- 限制企业空间授权集群不可重复。
+- Make sure the cluster is Ready when cleaning up notifications.
+- Fix the webhook validation issue for new clusters. 
+- Fix the incorrect cluster status. 
+- Fix the issue of potentially duplicated entries for granted clusters in the workspace.
 
 
 ## App Store
 
-### 问题修复
+### Bug Fixes
 
-- 修复 IPv6 环境下应用商店模块无法生成 ID 的问题。
-- 修复应用模板 Home 字段缺失的问题。
-- 修复应用模板图标缺失的问题。
-- 修复应用模板缺少 Maintainers 字段的问题。
-- 修复应用部署失败后无法重新部署的问题。
-- 修复应用 ID 参数错误的问题。
-- 修复部分应用无法正确安装的问题。
-- 修复应用仓库状态不正确的问题。
+- Fix the ID generation failure in IPv6-only environment. 
+- Fix the missing Home field in app templates. 
+- Fix the issue that the uploaded app templates do not show icons.
+- Fix missing maintainers in Helm apps. 
+- Fix the issue that Helm applications in a failed status cannot be upgraded again. 
+- Fix the wrong "applicationId" parameter. 
+- Fix the infinite loop after app installation failure. 
+- FIx the wrong status of application repository. 
 
 
-## 网络
+## Network
 
-### 优化增强
+### Enhancements & Updates
 
-- 升级依赖。
+- Upgrade dependencies.
 
-## 验证和授权
 
-### 新特性
+## Authentication and Authorization
 
-- 新增 inmemory cache。
-- 新增 Resource Getter v1beta1。
-- 新增 Resource Manager 写操作。
+### Features
 
-### 优化增强
+- Add inmemory cache.
+- Add Resource Getter v1beta1.
+- Add write operation for Resource Manager. 
 
-- 新增 iam.kubesphere/v1beta1 RoleTemplate。
-- 更新密码最小长度为 8 位。
-- 修改 Version 的 API。
-- 修改 identityProvider 的 API。
-- 新增 IAM v1beta1 APIs。
+### Enhancements & Updates
 
-### 问题修复
+- Add iam.kubesphere/v1beta1 RoleTemplate.
+- Update the password minimum length to 8.
+- Update Version API.
+- Update identityProvider API. 
+- Add IAM v1beta1 APIs. 
 
-- 修复 enableMultiLogin 配置不生效的问题。
+### Bug Fixes
+
+- Fix the issue that the enableMultiLogin configuration does not take effect.
 
 ## API Changes
 
-- 使用 autoscaling/v2 版本 API。
-- 使用 batch/v1 版本的 API 。
-- 更新 KubeSphere 健康检查 API。
-- 修复 K8s 1.25 版本中 ks-apiserver 崩溃的问题。
+- Use autoscaling/v2 API.
+- Use batch/v1 API. 
+- Update health check API.
+- Fix the ks-apiserver crash issue in K8s v1.25.
 
-## 用户体验
 
-### 新特性
+## User Experience
 
-- Resource API 支持别名搜索。
+### Features
 
-### 问题修复
+- Resource API supports searching alias in annotations. 
 
-- 修复潜在 Websocket 链接泄漏的问题。
+### Bug Fixes
 
-### 优化增强
+- Fix the potential Websocket link leakage issue. 
 
-- 使用 helm action 包代替直接使用 helm 二进制。
-- 调整 kubectl terminal 中 bash 和 sh 的优先级。
-- 修复由于 DiscoveryAPI 异常导致 ks-apiserver 无法启动的问题。 
-- 修复容器组列表页按状态查询时，显示的状态与筛选的结果不一致的问题。
-- 查询 Secret 支持 fieldSelector 筛选。
+### Enhancements & Updates
+- Use Helm action package instead of using Helm binary.  
+- Adjust the priority of bash and sh in the kubectl terminal.
+- Fix the issue that ks-apiserver cannot start due to DiscoveryAPI exception.
+- Fix the issue that the pod status is inconsistent with the filtered status when filtering by status on the pod list page. 
+- Support querying the secret list according to the secret type by supporting fieldSelector filtering.
 
-有关 KubeSphere 3.4.0 的 Issue 和贡献者详细信息，请参阅 [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.0.md)。
+For more information about issues and contributors of KubeSphere 3.4.0, see [GitHub](https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.0.md).

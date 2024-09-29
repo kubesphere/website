@@ -1,17 +1,15 @@
 ---
-title: "企业空间管理"
-linkTitle: "企业空间管理"
-keywords: "Kubernetes, KubeSphere, 企业空间管理"
-description: "介绍如何管理单个企业空间中的资源。"
+title: "Workspace Management"
+linkTitle: "Workspace Management"
+keywords: "Kubernetes, KubeSphere, Workspace Management"
+description: "Learn how to manage resources within a single workspace."
 layout: "second"
 weight: 08
 icon: "/images/docs/common/docs.svg"
 ---
 
+This section explains how to manage resources within a workspace.
 
+In KubeSphere, a workspace is used to group resources for management. Cluster administrators can authorize one or more clusters to a workspace, allowing resources within the workspace to run on the cluster. Each workspace can contain multiple projects. Users can be invited to join a workspace and gain view and management permissions for workspace resources based on their workspace roles.
 
-本节介绍如何管理企业空间中的资源。
-
-在{ks_product-en}平台，企业空间用于对资源进行分组管理。集群管理员可以将一个或多个集群授权给企业空间，从而允许企业空间中的资源运行在集群上。每个企业空间可包含多个项目。用户可以被邀请加入企业空间，并根据企业空间角色获得企业空间资源的查看和管理权限。
-
-{ks_product-en}安装完成后系统将自动创建 **system-workspace** 企业空间，其中包含系统项目，用于管理系统资源。
+After the {ks_product-en} installation is complete, the system will automatically create the **system-workspace** workspace, which includes system projects for managing system resources.
