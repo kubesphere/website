@@ -11,6 +11,13 @@ weight: 02
 
 安装过程中将用到开源工具 KubeKey。有关 KubeKey 的更多信息，请访问 link:https://github.com/kubesphere/kubekey[GitHub KubeKey 仓库]。
 
+[.admon.note,cols="a"]
+|===
+|说明
+
+|您也可以直接运行link:#_安装kubesphere[安装 KubeSphere] 的命令将 KubeSphere v4.1.1 升级到 v4.1.2。
+
+|===
 
 == 前提条件
 
