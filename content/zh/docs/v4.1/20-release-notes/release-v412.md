@@ -8,6 +8,12 @@ weight: 44
 
 ## KubeSphere
 
+### 安装/升级命令
+
+```
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --debug --wait
+```
+
 ### 新特性
 
 - 支持基于 OCI 的 Helm Chart 仓库
