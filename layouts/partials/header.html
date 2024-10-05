@@ -1,9 +1,11 @@
 <!-- Header Start -->
+{{ $lang := .Site.Language.Lang }}
 <header class="navigation">
     {{ if eq .Site.Language.Lang "zh"}}
     <div class="join-div">
         <div class="content">
-            🚀 KubeSphere v4.1.1 已经发布，全新的可插拔架构，欢迎体验！<a href={{"/docs/v4.1/20-release-notes/release-v411/" | relLangURL }} target="_blank" rel="noopener noreferrer"> 请查看 Release notes →</a>
+            🚀 KubeSphere v4.1.1 已经发布，全新的可插拔架构，欢迎体验！<a href={{"/docs/v4.1/20-release-notes/release-v411/" | relLangURL
+                }} target="_blank" rel="noopener noreferrer"> 请查看 Release notes →</a>
             <img id="close-join" src="/images/header/close.svg" alt="close">
         </div>
     </div>
@@ -11,7 +13,9 @@
     {{ if eq .Site.Language.Lang "en"}}
     <div class="join-div">
         <div class="content">
-            🚀 KubeSphere v4.1.1 with Pluggable architecture is available now. <a href={{"https://github.com/kubesphere/kubesphere/releases/tag/v4.1.1" | relLangURL }} target="_blank" rel="noopener noreferrer">Read the release notes for v4.1.1 →</a>
+            🚀 KubeSphere v4.1.1 with Pluggable architecture is available now. <a
+                href={{"https://github.com/kubesphere/kubesphere/releases/tag/v4.1.1" | relLangURL }} target="_blank"
+                rel="noopener noreferrer">Read the release notes for v4.1.1 →</a>
             <img id="close-join" src="/images/header/close.svg" alt="close">
         </div>
     </div>
@@ -22,23 +26,23 @@
                 <img src="/images/header/logo.svg" alt="{{ .Site.Title }}" class="logo">
             </a>
 
-            <ul class="nav">
+            <ul class="nav {{$lang}}">
                 {{ $section := .Page.Section }}
                 {{ range .Site.Menus.main }}
                 {{ if .HasChildren }}
 
                 {{ $active := false }}
                 {{ range .Children }}
-                    {{ if eq $section .URL }}
-                        {{ $active = true }}
-                    {{ end}}
+                {{ if eq $section .URL }}
+                {{ $active = true }}
+                {{ end}}
                 {{ end }}
 
                 <li {{ if $active }} class="menu-li menu-active" {{ else }} class="menu-li" {{ end}}>
                     <span class='menu-span'>{{ .Name }}</span>
                     <ul class="dropdown-menu menu-{{ .Weight }}">
                         {{ range .Children }}
-                        <li {{ if eq $section .URL }} class="active"{{ end}}>
+                        <li {{ if eq $section .URL }} class="active" {{ end}}>
                             {{ if hasPrefix .URL "http" }}
                             <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer">{{ .Name | safeHTML }}</a>
                             {{ else }}
@@ -49,9 +53,10 @@
                     </ul>
                 </li>
                 {{ else }}
-                <li {{ if eq $section .URL }} class="active"{{ end}}>
+                <li {{ if eq $section .URL }} class="active" {{ end}}>
                     {{ if hasPrefix .URL "http" }}
-                    <a data-docs="{{ .Name }}" href="{{ .URL }}" target="_blank" rel="noopener noreferrer">{{ .Name }}</a>
+                    <a data-docs="{{ .Name }}" href="{{ .URL }}" target="_blank" rel="noopener noreferrer">{{ .Name
+                        }}</a>
                     {{ else }}
                     <a data-docs="{{ .Name }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
                     {{ end }}
@@ -71,26 +76,27 @@
                         {{ with .Page.AllTranslations }}
                         <ul class="dropdown-menu">
                             {{ range . }}
-                            <li onclick="handleLangClick('{{ .Language }}','{{ .RelPermalink }}')">{{ .Language.LanguageName }}</li>
+                            <li onclick="handleLangClick('{{ .Language }}','{{ .RelPermalink }}')">{{
+                                .Language.LanguageName }}</li>
                             {{ end }}
                         </ul>
                         {{ end }}
                     </li>
                     <li class='btn-li'>
                         {{ if eq .Site.Language.Lang "zh"}}
-                            <a href="{{ .Site.Params.DemoLinkZh }}" target="_blank" rel="noopener noreferrer">
-                                <button class="demo-btn">{{ i18n "Demo" }} →</button>
-                            </a>
+                        <a href="{{ .Site.Params.DemoLinkZh }}" target="_blank" rel="noopener noreferrer">
+                            <button class="demo-btn">{{ i18n "Demo" }} →</button>
+                        </a>
                         {{ else }}
-                            <a href="{{ .Site.Params.DemoLinkEn }}" target="_blank" rel="noopener noreferrer">
-                                <button class="demo-btn">{{ i18n "Demo" }} →</button>
-                            </a>
+                        <a href="{{ .Site.Params.DemoLinkEn }}" target="_blank" rel="noopener noreferrer">
+                            <button class="demo-btn">{{ i18n "Demo" }} →</button>
+                        </a>
                         {{ end }}
                         <ol class="dropdown-menu">
                             <li>{{ i18n "demo content 1" }}</li>
                             <li>{{ i18n "demo content 2" }}</li>
                             <li>{{ i18n "demo content 3" }}</li>
-                            <li>{{ i18n "demo content 4" }}</li> 
+                            <li>{{ i18n "demo content 4" }}</li>
                         </ol>
                     </li>
                     <!-- <li class='link-li'>
@@ -100,10 +106,12 @@
                     </li> -->
                     <li class="github-li">
                         <div class="github-star">
-                            <a class="star-btn" href="{{ .Site.Params.githubLink }}" rel="noopener noreferrer" target="_blank">
+                            <a class="star-btn" href="{{ .Site.Params.githubLink }}" rel="noopener noreferrer"
+                                target="_blank">
                                 <span class="star-img"></span>&nbsp;<span>Star</span>
                             </a>
-                            <a class="social-count" href="{{ .Site.Params.githubStarLink }}" rel="noopener noreferrer" target="_blank"></a>
+                            <a class="social-count" href="{{ .Site.Params.githubStarLink }}" rel="noopener noreferrer"
+                                target="_blank"></a>
                         </div>
                     </li>
                     <li class="menu-icon">
@@ -122,23 +130,24 @@
 
             {{ $active := false }}
             {{ range .Children }}
-                {{ if eq $section .URL }}
-                    {{ $active = true }}
-                {{ end}}
+            {{ if eq $section .URL }}
+            {{ $active = true }}
+            {{ end}}
             {{ end }}
 
             <li data-check="0" {{ if $active }} class="menu-li menu-active" {{ else }} class="menu-li" {{ end}}>
                 <span class='menu-span'>{{ .Name }}</span>
                 <ul class="dropdown-menu">
                     {{ range .Children }}
-                    <li {{ if eq $section .URL }} class="active"{{ end}}>
+                    <li {{ if eq $section .URL }} class="active" {{ end}}>
                         <a href="{{ .URL | relLangURL }}">{{ .Name | safeHTML }}</a>
                     </li>
                     {{ end }}
                 </ul>
             </li>
             {{ else }}
-            <li {{ if eq $section .URL }} class="active"{{ end}}><a data-docs="{{ .Name }}" href="{{ .URL | relLangURL }}">{{ .Name | safeHTML }}</a></li>
+            <li {{ if eq $section .URL }} class="active" {{ end}}><a data-docs="{{ .Name }}"
+                    href="{{ .URL | relLangURL }}">{{ .Name | safeHTML }}</a></li>
             {{ end }}
 
             {{ end }}
@@ -163,94 +172,94 @@
     </div>
 </header>
 <script>
-var githubApiLink = "{{ .Site.Params.githubApiLink }}"
+    var githubApiLink = "{{ .Site.Params.githubApiLink }}"
 
-var getStar = function() {
-    $('.social-count').hide()
-    $.getJSON(githubApiLink, function(data) {
-        $('.social-count').show().html(data.stargazers_count)
-    })
-}
-
-getStar()
-
-var bindNavMouseEvent = function(selector, element) {
-    if (!element) {
-        element = $(selector)
-    }
-    var flag = false
-    element.mouseenter(function() {
-        if (flag) {
-            return false
-        }
-        flag = true
-        $(this).find('.dropdown-menu').fadeIn(200, function() {
-            flag = false
+    var getStar = function () {
+        $('.social-count').hide()
+        $.getJSON(githubApiLink, function (data) {
+            $('.social-count').show().html(data.stargazers_count)
         })
-    });
-    element.mouseleave(function() {
-        $(this).find('.dropdown-menu').fadeOut(200)
-    });
-}
+    }
 
-var bindScrollChangeHeader = function() {
-    var check = 100
-    var header = $('header')
-    window.addEventListener('scroll', function() {
-        var scrollY = window.scrollY;
-        if (scrollY > 0) {
-            header.addClass('navigationScroll')
-        } else {
-            header.removeClass('navigationScroll')
+    getStar()
+
+    var bindNavMouseEvent = function (selector, element) {
+        if (!element) {
+            element = $(selector)
         }
+        var flag = false
+        element.mouseenter(function () {
+            if (flag) {
+                return false
+            }
+            flag = true
+            $(this).find('.dropdown-menu').fadeIn(200, function () {
+                flag = false
+            })
+        });
+        element.mouseleave(function () {
+            $(this).find('.dropdown-menu').fadeOut(200)
+        });
+    }
+
+    var bindScrollChangeHeader = function () {
+        var check = 100
+        var header = $('header')
+        window.addEventListener('scroll', function () {
+            var scrollY = window.scrollY;
+            if (scrollY > 0) {
+                header.addClass('navigationScroll')
+            } else {
+                header.removeClass('navigationScroll')
+            }
+        })
+    }
+
+    var bindClickShowMenu = function () {
+        $('.menu-icon').click(function () {
+            $('#modal-for-menu').modal()
+        })
+    }
+
+    var bindClickModalLi = function () {
+        $('.modal .menu-li').click(function () {
+            var check = $(this).data('check')
+            if (check === 0) {
+                $(this).data('check', 1)
+                $(this).find('.dropdown-menu').slideDown(200)
+            } else {
+                $(this).data('check', 0)
+                $(this).find('.dropdown-menu').slideUp(200)
+            }
+            $(this).find('.menu-span').toggleClass('up')
+        })
+    }
+
+    var bindClickClose = function () {
+        $('#close-join').click(function () {
+            $('.navigation .join-div').hide()
+            $('.main-section').removeClass('padding')
+        })
+    }
+
+    var language = '{{.Site.Language.Lang}}'
+
+    bindClickClose()
+
+    bindScrollChangeHeader()
+
+    $('.header-container .menu-li').each(function () {
+        bindNavMouseEvent('', $(this))
     })
-}
+    bindNavMouseEvent('.header-container .language-menu')
+    bindNavMouseEvent('.header-container .btn-li')
 
-var bindClickShowMenu = function() {
-    $('.menu-icon').click(function() {
-        $('#modal-for-menu').modal()
-    })
-}
-
-var bindClickModalLi = function() {
-    $('.modal .menu-li').click(function() {
-        var check = $(this).data('check')
-        if (check === 0) {
-            $(this).data('check', 1)
-            $(this).find('.dropdown-menu').slideDown(200)
-        } else {
-            $(this).data('check', 0)
-            $(this).find('.dropdown-menu').slideUp(200)
-        }
-        $(this).find('.menu-span').toggleClass('up')
-    })
-}
-
-var bindClickClose = function() {
-    $('#close-join').click(function() {
-        $('.navigation .join-div').hide()
-        $('.main-section').removeClass('padding')
-    })
-}
-
-var language = '{{.Site.Language.Lang}}'
-
-bindClickClose()
-
-bindScrollChangeHeader()
-
-$('.header-container .menu-li').each(function() {
-    bindNavMouseEvent('', $(this))
-})
-bindNavMouseEvent('.header-container .language-menu')
-bindNavMouseEvent('.header-container .btn-li')
-
-bindClickShowMenu()
-bindClickModalLi()
-var handleLangClick = function(lang, href){
-    try{
-        localStorage.setItem('lang', lang)
-    }catch(err){}
-    location.href = href
-}
+    bindClickShowMenu()
+    bindClickModalLi()
+    var handleLangClick = function (lang, href) {
+        try {
+            localStorage.setItem('lang', lang)
+        } catch (err) { }
+        location.href = href
+    }
 </script>

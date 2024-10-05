@@ -1,4 +1,5 @@
 @import 'variables';
+
 .navigation {
   position: fixed;
   z-index: 10;
@@ -6,12 +7,13 @@
   left: 0;
   right: 0;
   color: #ffffff;
-  border-bottom:  1px solid rgba($color: #e3e9ef, $alpha: 0.4);
+  border-bottom: 1px solid rgba($color: #e3e9ef, $alpha: 0.4);
   background-image: linear-gradient(to top, rgba(23, 188, 133, 0.18), rgba(0, 169, 113, 0.18));
- 
+
   .join-div {
     padding: 10px 0;
     background-image: linear-gradient(to left, #e7d44e, #ecaf24);
+
     .content {
       position: relative;
       width: 900px;
@@ -21,6 +23,7 @@
       font-size: 12px;
       font-weight: 600;
       color: #3d3e49;
+
       @media only screen and (max-width: $mobile-max-width) {
         box-sizing: border-box;
         width: 100%;
@@ -45,8 +48,9 @@
     }
   }
 
-  & > .common-layout {
+  &>.common-layout {
     height: 93px;
+
     @media only screen and (max-width: $mobile-max-width) {
       height: 74px;
     }
@@ -65,32 +69,45 @@
   }
 
   .nav {
-    height:100%;
-    margin-left: 250px;
+    height: 100%;
+    // margin-left: 250px;
+    margin-left: 200px;
+
+    &.en {
+      margin-left: 220px;
+    }
+
+    &.zh {
+      margin-left: 200px;
+    }
+
     margin-right: 360px;
     line-height: 93px;
+
+
 
     @media only screen and (max-width: $mobile-max-width) {
       display: none;
     }
 
-    & > li:first-child {
+    &>li:first-child {
       margin-left: 0;
     }
 
-    & > li {
+    &>li {
       display: inline-block;
       margin-left: 20px;
       position: relative;
       font-size: 16px;
       line-height: 20px;
       cursor: pointer;
-      & > a {
+
+      &>a {
         color: #ffffff;
       }
     }
 
-    & > .active {
+    &>.active {
       a {
         // color: #55bc8a;
       }
@@ -101,6 +118,7 @@
     span {
       // color: #55bc8a;
     }
+
     .active {
       a {
         color: #55bc8a;
@@ -122,7 +140,7 @@
     vertical-align: middle;
     content: '';
     margin-left: 5px;
-    border:  4px solid transparent;
+    border: 4px solid transparent;
     border-top-color: #fff;
   }
 
@@ -140,7 +158,7 @@
     white-space: nowrap;
     font-size: 0;
     border-radius: 6px;
-    box-shadow: 0 4px 8px 0 rgba(36,46,66,.06),0 8px 16px 0 rgba(36,46,66,.05);
+    box-shadow: 0 4px 8px 0 rgba(36, 46, 66, .06), 0 8px 16px 0 rgba(36, 46, 66, .05);
 
     li {
       padding: 0 20px;
@@ -160,10 +178,12 @@
 
     .active {
       border-left: 2px solid #55bc8a;
+
       a {
         color: #55bc8a;
       }
     }
+
     // &::after {
     //   position: absolute;
     //   top: -20px;
@@ -188,14 +208,14 @@
       height: 21px;
     }
 
-    & > ul {
+    &>ul {
       @media only screen and (max-width: $mobile-max-width) {
         display: flex;
-        flex-wrap: wrap ;
+        flex-wrap: wrap;
         justify-content: space-between;
       }
 
-      & > li {
+      &>li {
         display: inline-block;
       }
     }
@@ -203,11 +223,15 @@
     .language-menu {
       position: relative;
       cursor: pointer;
+
       &:hover {
         padding-bottom: 40px;
       }
-      & > div  {
-        img, span {
+
+      &>div {
+
+        img,
+        span {
           display: inline-block;
           vertical-align: middle;
         }
@@ -227,14 +251,16 @@
           border-top-color: #fff;
         }
       }
+
       .dropdown-menu {
         color: black;
         padding: 10px 20px;
+
         li {
           padding: 0;
           margin: 0;
           color: #36435c;
-    
+
           &:hover {
             color: #55bc8a;
           }
@@ -314,7 +340,7 @@
       top: 3px;
     }
 
-    .github-star {      
+    .github-star {
       display: flex;
       align-items: center;
       margin-left: 10px;
@@ -323,13 +349,16 @@
       box-shadow: 0px 8px 16px rgba(76, 169, 134, 0.1), 0px 10px 50px rgba(76, 169, 134, 0.05);
       border-radius: 4px;
       overflow: hidden;
+
       @media only screen and (max-width: $mobile-max-width) {
         display: none;
       }
+
       a {
         color: #3E464C;
         font-size: 16px;
         line-height: 16px;
+
         &:hover {
           color: #4CA986;
         }
@@ -348,6 +377,7 @@
           background-size: contain;
           background-image: url('/images/header/github-star.svg');
         }
+
         &:hover {
           .star-img {
             background-image: url('/images/header/github-star-hover.svg');
@@ -382,6 +412,7 @@
   cursor: pointer;
   box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2);
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #242e42, #242e42);
+
   &:hover {
     box-shadow: none;
   }
@@ -402,7 +433,8 @@
 
 #modal-for-menu {
   padding: 20px;
-  & > ul {
+
+  &>ul {
     margin-top: 60px;
 
     .active {
@@ -420,7 +452,7 @@
       font-weight: 600;
       color: #68747f;
 
-      & > a {
+      &>a {
         color: #68747f;
 
         &:hover {
@@ -428,7 +460,7 @@
         }
       }
 
-      & > ul {
+      &>ul {
         padding-left: 20px;
         display: none;
 
@@ -456,7 +488,7 @@
       &:hover {
         color: #00a971;
       }
-      
+
     }
 
     .menu-span::after {
@@ -478,12 +510,12 @@
     }
   }
 
-  & > .btn-div {
+  &>.btn-div {
     margin-top: 30px;
     text-align: center;
   }
 
-  & > .link-div {
+  &>.link-div {
     margin-top: 27px;
     text-align: center;
 
@@ -493,5 +525,3 @@
     }
   }
 }
-
-

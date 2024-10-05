@@ -1,0 +1,123 @@
+{{ define "main" }}
+
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("{{ .topImage }}");'>
+	<div class="title-div common-layout">
+		<h1 class="title-center-h1">{{ .title }}</h1>
+		<p class="common-p">{{ .content }}</p>
+	</div>
+</section>
+{{ end }}
+
+{{ with .Params.section2 }}
+<section class="section-2">
+	<div class="common-layout">
+		<h2 class="title-black-h2">{{ .title }}</h2>
+		<div class="member-grid">
+			{{ range .members }}
+			<div class="member-grid-item">
+				<a class="member-profile-link" href="{{ .link }}" target="_blank">
+					<div class="member-info-ctn">
+						<div class="member-avater-ctn">
+							<img src="{{ .avater }}" alt="{{ .nickname }}">
+						</div>
+						<div class="member-name-ctn">
+							<span class="member-name"> {{ .name }}</span>
+							<span class="member-nickname">{{ .nickname }} </span>
+						</div>
+					</div>
+					<div class="member-bg-hover">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</a>
+			</div>
+			{{ end }}
+		</div>
+</section>
+{{ end }}
+
+
+{{ with .Params.section3 }}
+<section class="section-3">
+	<div class="common-layout">
+		<div class="section-title">
+			<h2 class="title-black-h2">{{ .title }}</h2>
+			<div class="section-description">
+				{{ .description }}
+			</div>
+		</div>
+		<div class="contributor-list">
+			{{ range .contributors }}
+
+			<div class="contributor-list-item">
+				<a class="contributor-link" href="{{ .link }}" target="_blank">
+					<div>
+						<img src="{{ $.Params.section3.icon }}">
+					</div>
+					<span>kubesphere/{{ .name }}</span>
+				</a>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>
+{{ end }}
+
+
+
+{{ with .Params.section4 }}
+<section class="section-4">
+	<div class="common-layout">
+		<div class="section-title">
+			<h2 class="title-black-h2">{{ .title }}</h2>
+			<div class="section-description">
+				{{ .description }}
+			</div>
+		</div>
+		<div class="member-grid">
+			{{ range .ambassadors }}
+			<div class="member-grid-item">
+				<a class="member-profile-link" href="{{ .link }}" target="_blank">
+					<div class="member-info-ctn">
+						<div class="member-avater-ctn">
+							<img src="{{ .avater }}" alt="{{ .nickname }}">
+						</div>
+						<div class="member-name-ctn">
+							<span class="member-name"> {{ .name }}</span>
+							<span class="member-nickname">{{ .nickname }} </span>
+						</div>
+					</div>
+					<div class="member-bg-hover">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</a>
+			</div>
+			{{ end }}
+		</div>
+</section>
+
+{{ end }}
+
+{{ end }}
