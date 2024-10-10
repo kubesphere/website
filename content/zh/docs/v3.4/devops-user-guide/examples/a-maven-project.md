@@ -9,7 +9,7 @@ weight: 11430
 ## 准备工作
 
 - 您需要[启用 KubeSphere DevOps 系统](../../../pluggable-components/devops/)。
-- 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
+- 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
 - 您需要创建一个企业空间、一个 DevOps 项目和一个用户，并需要邀请该用户至 DevOps 项目中并赋予 `operator` 角色。有关更多信息，请参见[创建企业空间、项目、用户和角色](../../../quick-start/create-workspace-and-project/)。
 
 ## Maven 项目的工作流

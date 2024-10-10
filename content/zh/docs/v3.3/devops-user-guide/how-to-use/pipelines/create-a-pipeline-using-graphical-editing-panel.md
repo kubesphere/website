@@ -13,7 +13,7 @@ KubeSphere 中的图形编辑面板包含用于 Jenkins [阶段 (Stage)](https:/
 ## 准备工作
 
 - 您需要[启用 KubeSphere DevOps 系统](../../../../pluggable-components/devops/)。
-- 您需要有一个 [Docker Hub](http://www.dockerhub.com/) 帐户。
+- 您需要有一个 [Docker Hub](https://hub.docker.com/) 帐户。
 - 您需要创建一个企业空间、一个 DevOps 项目和一个用户 (`project-regular`)，必须邀请该用户至 DevOps 项目中并赋予 `operator` 角色。如果尚未创建，请参见[创建企业空间、项目、用户和角色](../../../../quick-start/create-workspace-and-project/)。
 - 设置 CI 专用节点来运行流水线。有关更多信息，请参见[为缓存依赖项设置 CI 节点](../../../../devops-user-guide/how-to-use/devops-settings/set-ci-node/)。
 - 配置您的电子邮件服务器用于接收流水线通知（可选）。有关更多信息，请参见[为 KubeSphere 流水线设置电子邮件服务器](../../../../devops-user-guide/how-to-use/pipelines/jenkins-email/)。
