@@ -373,13 +373,6 @@ KubeSphere Core (ks-core) 是{ks_product_both}的核心组件，为扩展组件�
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ----
 
-. 您需要提前link:https://helm.sh/zh/docs/intro/install/[安装 Helm]。
-+
-[,bash]
-----
-curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-----
-
 . 在集群节点，执行以下命令安装 KubeSphere Core。
 +
 ====
