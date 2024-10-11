@@ -1,0 +1,39 @@
+---
+title: "View Workspace Role Details"
+linkTitle: "View Workspace Role Details"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Role, View Workspace Role Details"
+description: "Guide on how to view workspace role details."
+weight: 03
+---
+
+:ks_permission: **Role Viewing**
+:ks_navigation: **Workspace Settings > Workspace Roles**
+
+This section explains how to view workspace role details.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click the name of a workspace role in the list to open its details page.
+
+. On the **Permissions** tab on the right side of the details page, view the permissions granted to the workspace role.
++
+====
+include::../../../../_custom-en/workspaceManagement/workspaceRoles/workspaceRoles-para-permissions_v4.adoc[]
+====
+
+. Click the **Authorized Users** tab on the right side of the details page to view the users assigned to the current workspace role.
++
+--
+include::../../../../_custom-en/clusterManagement/clusterRoles/clusterRoles-para-authorizedUsers.adoc[]
+--

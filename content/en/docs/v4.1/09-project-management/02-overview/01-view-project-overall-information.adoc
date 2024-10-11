@@ -1,0 +1,57 @@
+---
+title: "Project Overview"
+linkTitle: "Project Overview"
+keywords: "Kubernetes, KubeSphere, Project Management, Overview, Project Overview"
+description: "Learn how to get an overview of the project."
+weight: 01
+---
+
+:ks_permission: **Project Settings Viewing**
+:ks_navigation: **Overview**
+
+
+This section introduces how to get an overview of the project.
+
+
+== Prerequisites
+
+
+:relfileprefix: ../../../
+
+include::../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+
+== Steps
+
+include::../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
++
+--
+The **Overview** page provides the following information:
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Basic Information
+|Includes the project's name, description, cluster, workspace, and creator.
+
+|Project Members and Roles
+|Displays the number of project members and roles, as well as the most recently logged-in user.
+
+|Number of Created Resources
+|Shows the quantity of resources in the current project, such as pods, deployments, statefulsets, daemonsets, jobs, cron jobs, persistent volume claims, services, ingresses, etc.
+
+|Project Quota
+|The maximum total reserved resources for all containers in the project, and the maximum total resource limits for all containers in the project. If the project administrator has not set project quotas, it will not be displayed.
+
+|Default Container Quota
+|The default value for reserved resources for a single container in the project, and the default value for resource limit for a single container in the project. If the project has not set default container quotas, it will not be displayed.
+|===
+--

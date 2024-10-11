@@ -1,0 +1,2 @@
+// :ks_include_id: 05055fc19ca74178ac595789b0863f6f
+The reclaim policy of the Persistent Volume. KubeSphere defaults to the **Delete** reclaim policy, which means that when the Persistent Volume claim is deleted, the Persistent Volume is also deleted. For more information, refer to the link:https://kubernetes.io/docs/concepts/storage/storage-classes/[Kubernetes Documentation].

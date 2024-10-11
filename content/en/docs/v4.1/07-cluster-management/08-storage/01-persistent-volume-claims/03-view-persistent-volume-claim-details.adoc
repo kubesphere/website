@@ -1,0 +1,37 @@
+---
+title: "View PVC Details"
+linkTitle: "View PVC Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, View Persistent Volume Claim Details"
+description: "Explain how to view details of a Persistent Volume Claim."
+weight: 03
+---
+
+:ks_permission: **Persistent Volume Claim Viewing**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-viewPersistentVolumeClaimDetails.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-viewPersistentVolumeClaimDetails_new.adoc[]

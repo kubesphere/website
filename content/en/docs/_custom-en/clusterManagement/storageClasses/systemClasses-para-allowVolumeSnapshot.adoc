@@ -1,0 +1,2 @@
+// :ks_include_id: 48f291ba67994c06a8a69b9222de92ab
+Creating snapshots for Persistent Volumes in the {ks_product-en} web console is allowed or not.

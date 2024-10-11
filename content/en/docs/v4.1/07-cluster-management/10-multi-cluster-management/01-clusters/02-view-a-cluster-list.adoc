@@ -1,0 +1,62 @@
+---
+title: "View Cluster List"
+linkTitle: "View Cluster List"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster, View Cluster List"
+description: "Learn how to view the list of clusters."
+weight: 02
+---
+
+:ks_menu: **Cluster Management**
+:ks_permission: **Cluster Viewing**
+
+
+This section explains how to view the list of clusters.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click **Cluster Management**.
+
+====
+* The cluster list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Name, Identifier, and Description
+|The cluster's name, identifiers, and description.
+
+|Number of Nodes
+|Number of server nodes in the cluster.
+
+|Kubernetes Version
+|The version of Kubernetes running in the cluster.
+
+|Provider
+|Provider of the cluster environment.
+
+|Tags
+|Tag of the cluster, used to categorize the cluster.
+
+|Creation Time
+|The time the cluster was added to the {ks_product-en} web console.
+|===
+--
+
+* Click the search box at the top of the list to search for clusters by name, type or tag.
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+
+
+* Click the name of the cluster to access the cluster and manage the resources in it.
+====

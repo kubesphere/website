@@ -1,0 +1,35 @@
+---
+title: "Change Project Member Roles"
+linkTitle: "Change Project Member Roles"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Project Members, Change Project Member Role"
+description: "Guide on how to change the role of a project member."
+weight: 04
+---
+
+:ks_permission: **Member Management**
+:ks_navigation: **Project Settings > Project Members**
+
+This section explains how to change the role of a project member.
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the right side of the project member you want to edit, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], then select **Change Role**.
+
+. In the **Change Role** dialog, set the role for the project member from the dropdown list, then click **OK**.
++
+--
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-para-presetRoles.adoc[]
+--

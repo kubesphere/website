@@ -1,0 +1,8 @@
+---
+title: "Application Management"
+linkTitle: "Application Management"
+keywords: "Kubernetes, KubeSphere, Workspace, Application Management"
+description: "Introduces how to manage application repositories through workspace."
+layout: "second"
+weight: 05
+---

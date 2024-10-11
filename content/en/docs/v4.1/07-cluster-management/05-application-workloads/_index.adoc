@@ -1,0 +1,11 @@
+---
+title: "Application Workloads"
+linkTitle: "Application Workloads"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads"
+description: "Introduction to managing workloads, jobs, pods, and services."
+layout: "second"
+weight: 05
+---
+
+
+This section explains how to manage workloads, jobs, pods, and services.

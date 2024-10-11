@@ -1,0 +1,54 @@
+---
+title: "Delete Persistent Volumes"
+linkTitle: "Delete Persistent Volumes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Delete Persistent Volume"
+description: "Introduce how to delete a Persistent Volume."
+weight: 13
+---
+
+
+:ks_permission: **Persistent Volume Claim Management**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+This section explains how to delete a Persistent Volume.
+
+The default reclaim policy for storage classes in KubeSphere is **Delete**, meaning that by default, the system automatically deletes the Persistent Volume after the Persistent Volume Claim is deleted. If you create a storage class with a reclaim policy of **Retain** using command-line tools, there may be situations where the Persistent Volume Claim is deleted, but the Persistent Volume is not. For more information, refer to the link:https://kubernetes.io/docs/concepts/storage/storage-classes/[Kubernetes Documentation].
+
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
+
+|
+Deleting a Persistent Volume is irreversible, and the backend storage area corresponding to the Persistent Volume will also be deleted. Please proceed with caution to avoid data loss.
+|===
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+* The status of the Persistent Volume is **Available**, **Released**, or **Failed**.
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-backData.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-oper-openListPage.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the Persistent Volume you want to delete, then choose **Delete** from the dropdown list.
+
+. In the **Delete Persistent Volume** dialog, enter the name of the Persistent Volume, then click **OK**.

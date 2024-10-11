@@ -1,0 +1,17 @@
+// :ks_include_id: 4d2fb1de6b844f18938f0c8b6f08e279
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the application you want to edit, then choose **Edit Information** from the dropdown list.
+
+. In the **Edit Information** dialog, set the alias and description for the application, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Alias
+| The alias of the application. Aliases can be the same for different applications. An alias can only contain Chinese characters, letters, numbers, and hyphens (-). It cannot start or end with a hyphen (-) and has a maximum length of 63 characters.
+
+| Description
+| The description for the application. The description can contain any characters, with a maximum length of 256 characters.
+|===
+--

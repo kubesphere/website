@@ -1,0 +1,37 @@
+---
+title: "View Job Details"
+linkTitle: "View Job Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Job, View Job Details"
+description: "Learn how to view job details."
+weight: 03
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Jobs**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-viewJobDetails.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-viewJobDetails_new.adoc[]

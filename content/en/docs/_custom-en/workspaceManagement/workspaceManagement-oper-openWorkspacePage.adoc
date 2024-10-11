@@ -1,0 +1,2 @@
+// :ks_include_id: 9e983855b51f4d47a0318514ec5e4d84
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission, and access your workspace.

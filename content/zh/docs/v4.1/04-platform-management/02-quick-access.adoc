@@ -1,6 +1,8 @@
 ---
 title: "快捷访问"
 linkTitle: "快捷访问"
+keywords: "Kubernetes, KubeSphere, 快捷访问"
+description: "介绍如何添加或移除对资源的快捷访问。"
 weight: 02
 ---
 

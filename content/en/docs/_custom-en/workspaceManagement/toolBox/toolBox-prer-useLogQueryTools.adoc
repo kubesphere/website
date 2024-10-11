@@ -1,0 +1,18 @@
+// :ks_include_id: 767f7ca66b4048cd98a9ff15a50b4d62
+* 您需要获得平台、集群、企业空间或项目的资源查看权限，以查看特定范围的日志。
+
+ifeval::["{file_output_type}" == "html"]
+
+* {ks_product-en}平台需要启用日志、事件和审计扩展组件。
+
+* {ks_product-en}集群需要添加 Elasticsearch 日志接收器。
+
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+
+* {ks_product-en}平台需要启用日志、事件和审计扩展组件。有关更多信息，请参阅《{ks_product-en}平台管理指南》的“扩展组件管理”章节。
+
+* {ks_product-en}集群需要添加 Elasticsearch 日志接收器。有关更多信息，请参阅《{ks_product-en}集群管理指南》的“添加日志接收器”章节。
+
+endif::[]

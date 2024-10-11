@@ -1,0 +1,52 @@
+---
+title: "Create Projects"
+linkTitle: "Create Projects"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Project, Create Project"
+description: "Learn how to create a project."
+weight: 01
+---
+
+
+:ks_permission: **Project Creation**
+:ks_navigation: **Projects**
+
+
+This section introduces how to create a project.
+
+
+== Prerequisites
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the pop-up dialog, set the parameters for the project, and then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../_custom-en/clusterManagement/projects/projects-para-name.adoc[]
+
+include::../../../_custom-en/clusterManagement/projects/projects-para-aliasDescription.adoc[]
+
+|Cluster
+|The cluster available for the project. Resources in the project run on the selected cluster.
+|===
+
+After creating the project, you can invite users to join the project and deploy business in the project.
+--

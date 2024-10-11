@@ -1,0 +1,2 @@
+// :ks_include_id: 1c55971dc47241c0916ca8bb7a0877b2
+This section explains how to edit the data of a ConfigMap.

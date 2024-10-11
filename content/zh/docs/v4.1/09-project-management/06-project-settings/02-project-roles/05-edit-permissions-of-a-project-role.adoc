@@ -17,11 +17,7 @@ weight: 05
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 

@@ -24,11 +24,8 @@ include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 == 前提条件
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 * 持久卷的状态为**可用**、**已释放**或**失败**。

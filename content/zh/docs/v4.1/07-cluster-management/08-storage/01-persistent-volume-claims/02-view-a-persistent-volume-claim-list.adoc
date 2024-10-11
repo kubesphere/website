@@ -16,11 +16,7 @@ include::../../../../_custom/clusterManagement/pods/pods-desc-viewAPersistentVol
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 
@@ -37,7 +33,7 @@ include::../../../../_custom/clusterManagement/persistentVolumeClaims/persistent
 
 * 在列表左上角的下拉列表中选择一个项目，可以查看特定项目中的持久卷声明。
 
-* 在列表上方点击搜索框并输入关键字，可按名称和状态搜索持久卷声明。
+include::../../../../_custom/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-searchForPersistentVolumeClaims.adoc[]
 
 include::../../../../../_ks_components/oper-refreshListData.adoc[]
 

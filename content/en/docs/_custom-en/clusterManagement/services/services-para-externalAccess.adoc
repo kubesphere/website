@@ -1,0 +1,9 @@
+// :ks_include_id: 9ed594d85e2d49d189b604ba75506964
+| External Access
+| The external access mode for the service.
+
+// tag::bullets[]
+* **NodePort**: The system maps the ports of nodes to the service ports, and the service can be accessed through the node IP address and node port.
+
+* **LoadBalancer**: On the basis of a NodePort service, the system assigns an external IP address to the service and binds the external IP address to an external load balancer. The external load balancer listens on the node port corresponding to the service, allowing access to the service through the external IP address. To achieve this, LoadBalancer-type services need support from load balancer plugins and the infrastructure environment, and relevant annotations need to be set. For more information, please contact your infrastructure environment provider.
+// end::bullets[]

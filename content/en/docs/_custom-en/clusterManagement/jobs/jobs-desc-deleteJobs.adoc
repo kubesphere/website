@@ -1,0 +1,11 @@
+// :ks_include_id: 53cddf67368844919fec7ab2ca897ef6
+This section explains how to delete a job.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
+
+|
+This operation will delete the job and all pods managed by it. If the job is running, the business running in it will be interrupted. Please proceed with caution.
+|===

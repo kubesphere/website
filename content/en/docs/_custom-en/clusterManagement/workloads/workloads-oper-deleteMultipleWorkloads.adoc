@@ -1,0 +1,4 @@
+// :ks_include_id: 87be09b63bf240abaec1c953680d92e6
+. Select the checkbox on the left side of the workloads you want to delete, then click **Delete** above the workload list.
+
+. In the **Delete Multiple Workloads** dialog, confirm and select the names of the resources related to the workloads to be deleted, then click **OK**.

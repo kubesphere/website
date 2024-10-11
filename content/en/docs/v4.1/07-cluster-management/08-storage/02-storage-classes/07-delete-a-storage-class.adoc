@@ -1,0 +1,59 @@
+---
+title: "Delete Storage Classes"
+linkTitle: "Delete Storage Classes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage Class"
+description: "Instructions on how to delete a storage class."
+weight: 07
+---
+
+:ks_permission: **Storage Class Management**
+:ks_navigation: **Storage > Storage Classes**
+
+
+This section explains how to delete a storage class.
+
+// Warning
+include::../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+After deleting a storage class, Persistent Volume Claims and Persistent Volumes created based on this storage class will not be deleted. Containers can still use the mounted Persistent Volumes, but users will no longer be able to use volume cloning, volume snapshots, and volume expansion features. Additionally, it will not be possible to create storage areas in the backend storage system using this storage class.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+== Delete a Single Storage Class
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the storage class you want to delete, then choose **Delete** from the dropdown list.
+
+. In the **Delete storage class** dialog, enter the name of the storage class, then click **OK**.
+
+
+== Delete Multiple Storage Classes
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Select the checkbox on the left of the storage classes you want to delete, then click **Delete** above the storage class list.
+
+. In the **Delete Multiple Storage Classes** dialog, enter the name of the storage classes, then click **OK**.
++
+--
+include::../../../../_custom-en/note-separateNamesByComma.adoc[]
+--

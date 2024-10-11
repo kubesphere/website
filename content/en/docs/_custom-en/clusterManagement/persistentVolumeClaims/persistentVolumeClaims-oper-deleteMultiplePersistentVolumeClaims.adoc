@@ -1,0 +1,8 @@
+// :ks_include_id: 20ff9a5d22c94e289133c37037d461e6
+. Select the checkbox on the left of the Persistent Volume Claims you want to delete, then click **Delete** above the Persistent Volume Claim list.
+
+. In the **Delete Multiple Persistent Volume Claims** dialog, enter the name of the Persistent Volume Claims, then click **OK**.
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

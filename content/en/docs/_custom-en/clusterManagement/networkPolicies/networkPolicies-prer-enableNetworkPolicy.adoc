@@ -1,0 +1,7 @@
+// :ks_include_id: c68e65ce33ae49d898727cd2c7e06306
+ifeval::["{file_output_type}" == "html"]
+* {ks_product-en}平台需要启用网络策略扩展组件。
+endif::[]
+ifeval::["{file_output_type}" == "pdf"]
+* {ks_product-en}平台需要启用网络策略扩展组件。有关更多信息，请参阅《{ks_product-en}平台管理指南》的“扩展组件管理”章节。
+endif::[]

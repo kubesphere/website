@@ -16,11 +16,7 @@ include::../../../../_custom/clusterManagement/jobs/jobs-desc-pauseACronjob.adoc
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 
@@ -31,6 +27,10 @@ include::../../../../_custom/clusterManagement/clusterManagement-oper-openCluste
 +
 
 include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**任务**页面，点击**定时任务**打开定时任务列表。
 
 +
 

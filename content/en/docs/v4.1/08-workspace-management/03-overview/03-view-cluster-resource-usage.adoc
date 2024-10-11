@@ -1,0 +1,32 @@
+---
+title: "View Cluster Information"
+linkTitle: "View Cluster Information"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Overview, View Cluster Information"
+description: "Learn how to view cluster information."
+weight: 03
+---
+
+:ks_permission: **Workspace Settings Viewing**
+:ks_navigation: **Overview**
+
+This section explains how to view basic information about the clusters authorized for the workspace.
+
+
+== Prerequisites
+
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+
+== Steps
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click the **Cluster Information** tab on the **Overview** page to view basic information about the clusters authorized for the workspace.

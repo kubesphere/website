@@ -1,0 +1,2 @@
+// :ks_include_id: af7c62d166454ab193c42b8965ecfebf
+. 在 RadonDB 应用列表中，点击 RadonDB Redis Sentinel 应用的名称打开其详情页面。

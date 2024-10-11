@@ -1,0 +1,4 @@
+// :ks_include_id: 8c633944651a4fc5ab95bedaaaa6eccf
+This section explains how to edit workload information.
+
+You can edit the alias and description of the workload. KubeSphere does not support editing the name of an already created workload.

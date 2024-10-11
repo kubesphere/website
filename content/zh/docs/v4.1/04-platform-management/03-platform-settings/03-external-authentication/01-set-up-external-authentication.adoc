@@ -1,5 +1,6 @@
 ---
 title: "配置外部身份验证"
+linkTitle: "配置外部身份验证"
 keywords: "Kubernetes, KubeSphere, 第三方认证"
 description: "了解如何在 KubeSphere 上设置外部身份验证。"
 weight: 01
@@ -115,7 +116,7 @@ type: config.kubesphere.io/identityprovider
 +
 --
 - LDAPIdentityProvider
-
++
 [,yaml]
 ----
 host: 192.168.0.2:389
@@ -128,7 +129,7 @@ mailAttribute: mail
 
 
 - CASIdentityProvider
-
++
 [,yaml]
 ----
 redirectURL: "https://ks-console:30880/oauth/redirect/cas"
@@ -137,7 +138,7 @@ insecureSkipVerify: true
 ----
 
 - OIDCIdentityProvider
-
++
 [,yaml]
 ----
 clientID: '********'
@@ -147,7 +148,7 @@ redirectURL:  'https://ks-console/oauth/redirect/google'
 ----
 
 - GitHubIdentityProvider
-
++
 [,yaml]
 ----
 clientID: '******'

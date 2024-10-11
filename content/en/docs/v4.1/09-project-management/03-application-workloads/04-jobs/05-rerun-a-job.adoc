@@ -1,0 +1,33 @@
+---
+title: "Re-run Jobs"
+linkTitle: "Re-run Jobs"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Job, Re-run Job"
+description: "Instructions on how to re-run a job."
+weight: 05
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Jobs**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-rerunAJob.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-rerunAJob.adoc[]

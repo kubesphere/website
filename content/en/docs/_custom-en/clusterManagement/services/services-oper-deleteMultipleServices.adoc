@@ -1,0 +1,8 @@
+// :ks_include_id: 0497433d316e4c6e9a45cf29e12dbbd9
+. Select the checkbox on the left side of the services you want to delete, then click **Delete** above the service list.
+
+. In the **Delete Multiple Services** dialog, confirm and select the names of the resources related to the services to be deleted, then click **OK**.
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

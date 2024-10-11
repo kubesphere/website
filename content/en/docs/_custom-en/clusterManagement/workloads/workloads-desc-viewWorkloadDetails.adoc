@@ -1,0 +1,2 @@
+// :ks_include_id: 28b4a5dc9202450094b2d3bff92d4f7a
+This section explains how to view workload details.

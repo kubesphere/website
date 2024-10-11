@@ -1,6 +1,8 @@
 ---
 title: "平台介绍"
 linkTitle: "平台介绍"
+keywords: "Kubernetes, KubeSphere, 平台, 模块"
+description: "介绍 KubeSphere 平台上各模块的主要功能。"
 weight: 01
 ---
 

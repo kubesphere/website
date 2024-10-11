@@ -1,0 +1,2 @@
+// :ks_include_id: 5213a0f3567e4087adace8424f5ab2e2
+. 在 RadonDB 应用列表中，点击 RadonDB PostgreSQL 应用的名称打开其详情页面。

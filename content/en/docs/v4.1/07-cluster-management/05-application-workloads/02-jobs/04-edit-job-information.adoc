@@ -1,0 +1,38 @@
+---
+title: "Edit Job Information"
+linkTitle: "Edit Job Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application jobs, Job, Edit Job Information"
+description: "Learn how to edit job information."
+weight: 04
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Jobs**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-editJobInformation.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-openListPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-editJobInformation.adoc[]
+

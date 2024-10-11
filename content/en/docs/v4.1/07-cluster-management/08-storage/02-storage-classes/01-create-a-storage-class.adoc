@@ -1,0 +1,105 @@
+---
+title: "Create Storage Classes"
+linkTitle: "Create Storage Classes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Class, Create Storage Class"
+description: "Instructions on how to create a storage class."
+weight: 01
+---
+
+:ks_permission: **Storage Class Management**
+:ks_navigation: **Storage > Storage Classes**
+
+This section explains how to create a storage class.
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+* To ensure that the storage class can provide storage resources properly, you need to pre-configure the storage system and install the storage plugin corresponding to the storage system. For more information, please contact your storage system provider.
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. On the **Basic Information** tab, set the basic information for the storage class, then click **Next**.
++
+--
+[%header,cols="1,4"]
+|===
+| Parameter | Description
+
+| Name
+| The name of the storage class. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
+
+| Alias
+| The alias of the storage class. The aliases of different storage classes can be the same. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), should not start or end with a hyphen (-), and can be up to 63 characters long.
+
+| Description
+| Description information for the storage class. The description can contain any characters and can be up to 256 characters long.
+|===
+--
+
+. On the **Storage System** tab, select a system or **Custom**, then click **Next**.
+
+. On the **Storage Class Settings** tab, set the parameters for the storage class, then click **Create**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Volume Expansion
+|
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeExpansion.adoc[]
+
+|Reclaim Policy
+|
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-reclaimPolicy.adoc[]
+
+|Access Mode
+|
+The modes in which the volume can be accessed.
+
+* **ReadWriteOnce**: Allows a single node to read from and write to the volume.
+  
+* **ReadOnlyMany**: Allows multiple nodes to read from the volume.
+  
+* **ReadWriteMany**: Allows multiple nodes to read from and write to the volume.
+
+You can select one or more access modes from the dropdown list. Some storage systems may not support certain access modes.
+
+|Provisioner
+|
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-provisioner.adoc[]
+
+|Volume Binding Mode
+|Specifies whether a Persistent Volume is immediately created and bound to a Persistent Volume Claim upon the creation of the Persistent Volume Claim. The following modes are supported:
+
+* **Immediate Binding**: Creates the Persistent Volume immediately after the Persistent Volume Claim is created and binds them.
+
+* **Delayed Binding**: Creates the Persistent Volume and binds it to the Persistent Volume Claim after the container mounting the Persistent Volume is created.
+
+|Parameter
+|Key-value pairs that match the parameters expected by the backend storage system and the storage plugin.
+
+* Click **Add** to set multiple parameters.
+
+* To delete a parameter, click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] next to the parameter.
+
+For more information, please contact your storage system provider.
+|===
+
+Once the storage class is created, it will be displayed in the storage class list.
+--

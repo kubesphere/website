@@ -1,0 +1,1 @@
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, refer to "Platform Roles".

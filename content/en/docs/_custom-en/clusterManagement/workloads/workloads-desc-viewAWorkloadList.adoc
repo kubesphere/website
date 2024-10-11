@@ -1,0 +1,2 @@
+// :ks_include_id: 50f92d72149e46929bf7119f2fe1242a
+This section explains how to view the list of workloads.

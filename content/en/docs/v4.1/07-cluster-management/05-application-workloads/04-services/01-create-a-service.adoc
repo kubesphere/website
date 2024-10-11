@@ -1,0 +1,58 @@
+---
+title: "Create Services"
+linkTitle: "Create Services"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Create Services"
+description: "Learn how to create services."
+weight: 01
+---
+
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-createAService.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/services/services-oper-setBasicInformation.adoc[]
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../_custom-en/clusterManagement/services/services-para-serviceName.adoc[]
+
+include::../../../../_custom-en/clusterManagement/services/services-para-serviceAlias.adoc[]
+
+| Project
+| The project to which the service belongs. System projects are typically used for managing system resources, and it is recommended to choose a user project.
+
+include::../../../../_custom-en/clusterManagement/services/services-para-serviceDescription.adoc[]
+|===
+--
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-createAService.adoc[]

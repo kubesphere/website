@@ -1,0 +1,77 @@
+---
+title: "View CRD Details"
+linkTitle: "View CRD Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definitions, View Custom Resource Definitions List"
+description: "Explain how to view details of a custom resource definition."
+weight: 02
+---
+
+
+:ks_permission: **Custom Resource Definition Viewing**
+:ks_navigation: **CRDs**
+
+
+This section explains how to view details of a custom resource definition.
+
+
+
+== Prerequisites
+
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/crds/crds-oper-openDetailsPage.adoc[]
+
++
+
+. View the resource attributes of the custom resource definition in the **Attributes** section on the left side of the CRD details page.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Cluster
+|The cluster to which the custom resource definition belongs.
+
+|Scope
+|
+include::../../../_custom-en/clusterManagement/crds/crds-para-scope.adoc[]
+
+|Creation Time
+|The creation time of the custom resource definition.
+
+|Creator
+|The user who created the custom resource definition.
+|===
+--
+
+. View the custom resources created using the custom resource definition on the **Resource Status** tab on the right side of the custom resource definition details page.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Name
+|The name of the custom resource.
+
+|Project/DevOps Project
+|The project or DevOps project to which the custom resource belongs.
+
+|Creation Time
+|The creation time of the custom resource.
+|===
+--

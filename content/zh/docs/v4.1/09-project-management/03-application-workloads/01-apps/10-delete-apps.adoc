@@ -15,11 +15,7 @@ weight: 10
 
 == 前提条件
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 == 删除单个应用

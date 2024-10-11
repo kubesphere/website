@@ -1,0 +1,55 @@
+---
+title: "Edit Persistent Volume Information"
+linkTitle: "Edit Persistent Volume Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Edit Persistent Volume Information"
+description: "Introduce how to edit information of a Persistent Volume."
+weight: 12
+---
+
+
+:ks_permission: **Persistent Volume Claim Management**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+This section explains how to edit Persistent Volume information.
+
+You can edit the alias and description of the Persistent Volume. KubeSphere does not support editing the name of an already created Persistent Volume.
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-oper-openListPage.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the Persistent Volume you want to edit, then choose **Edit Information** from the dropdown list.
+
+. In the **Edit Information** dialog, set the alias and description for the Persistent Volume, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Alias
+| The alias of the Persistent Volume. Aliases can be the same for different Persistent Volumes. An alias can only contain Chinese characters, letters, numbers, and hyphens (-). It cannot start or end with a hyphen (-) and has a maximum length of 63 characters.
+
+| Description
+| The description of the Persistent Volume. The description can contain any characters, with a maximum length of 256 characters.
+|===
+--

@@ -1,0 +1,2 @@
+// :ks_include_id: 6579f3ef4c70439ca10c8e8de94ce9fb
+You should join a project and have the pass:a,q[{ks_permission}] permission within the project. For more information, refer to "Project Members" and "Project Roles".

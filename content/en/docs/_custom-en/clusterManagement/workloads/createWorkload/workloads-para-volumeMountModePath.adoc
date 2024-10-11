@@ -1,0 +1,13 @@
+// :ks_include_id: 4401458e342646d99223518791c4a0b6
+|Mount Mode
+|
+The mount mode of the volume on the container.
+
+* **Read and write**: Allows the container to read from and write to the volume.
+
+* **Read-only**: Only allows the container to read from the volume.
+
+* **Not mounted**: The volume is not mounted to the container.
+
+|Mount Path
+|The path where the volume is mounted to the container. Click image:/images/ks-qkcp/zh/icons/textfield.svg[textfield,18,18] to set the subpath that needs to be mounted. If no subpath is set, the entire volume is mounted by default.

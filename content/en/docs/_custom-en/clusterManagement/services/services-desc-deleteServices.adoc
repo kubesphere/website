@@ -1,0 +1,11 @@
+// :ks_include_id: 5e2c112952a04a0a852f249edae6a04d
+This section explains how to delete a service.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
+
+|
+Deleting a service will make it impossible to access the pods behind it through the service. Please proceed with caution.
+|===

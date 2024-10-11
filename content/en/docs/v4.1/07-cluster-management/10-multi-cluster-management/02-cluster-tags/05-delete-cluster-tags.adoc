@@ -1,0 +1,69 @@
+---
+title: "Delete Cluster Tags"
+linkTitle: "Delete Cluster Tags"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster Tags, Delete Tags"
+description: "Learn how to delete cluster tags."
+weight: 05
+---
+
+:ks_permission: **Cluster Management**
+
+This section explains how to delete cluster tags.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+If a tag has been added to a cluster, deleting the tag will also remove it from the cluster.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Delete a Single Tag
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
++
+
+. Click **Cluster Management**.
+
++
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusterTags/clusterTags-openListPage.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to the tag you want to delete, then select **Delete** from the dropdown list.
+
+. In the **Delete Tag** dialog, enter the key and value of the tag, then click **OK**.
+
+
+== Delete Multiple Tags
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
++
+
+. Click **Cluster Management**.
+
++
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusterTags/clusterTags-openListPage.adoc[]
+
++
+
+. Select the checkbox on the left of the tags you want to delete, then click **Delete** at the top of the list.
+
+. In the **Delete Tag** dialog, enter the key and value of the tag, then click **OK**.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+Please separate multiple key-value pairs with a comma and space.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

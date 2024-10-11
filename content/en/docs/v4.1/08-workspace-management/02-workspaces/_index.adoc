@@ -1,0 +1,10 @@
+---
+title: "Manage Workspaces"
+linkTitle: "Manage Workspaces"
+keywords: "Kubernetes, KubeSphere, Access Control, Workspaces"
+description: "Learn how to manage workspaces."
+layout: "second"
+weight: 02
+---
+
+This section explains how to create and manage multiple workspaces.

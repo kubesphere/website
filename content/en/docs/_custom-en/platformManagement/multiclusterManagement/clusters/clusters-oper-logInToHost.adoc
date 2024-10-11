@@ -1,0 +1,2 @@
+// :ks_include_id: 7cf91b11a38f4489821f2a2d6263ba79
+. Log in to the {ks_product-en} web console of the host cluster with a user having the **platform-admin** role.

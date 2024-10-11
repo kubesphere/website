@@ -1,0 +1,42 @@
+---
+title: "Clone Persistent Volumes"
+linkTitle: "Clone Persistent Volumes"
+keywords: "Kubernetes, KubeSphere, Project Management, Storage, Persistent Volume Claim, Persistent Volume, Clone Persistent Volume"
+description: "Explain how to clone a Persistent Volume."
+weight: 04
+---
+
+
+:ks_permission: **Persistent Volume Claim Management**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-cloneAPersistentVolume.adoc[]
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-persistentVolumeCreated.adoc[]
+
+
+* Ensure that the backend storage system supports volume cloning, and the storage class corresponding to the Persistent Volume Claim has enabled volume cloning. 
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-cloneAPersistentVolume.adoc[]

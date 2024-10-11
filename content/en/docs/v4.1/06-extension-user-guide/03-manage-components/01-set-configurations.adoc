@@ -1,0 +1,32 @@
+---
+title: "Configure Extensions"
+keywords: "Kubernetes, KubeSphere, Configure, Extensions"
+description: "Learn how to configure extensions."
+weight: 01
+---
+
+
+This section explains how to configure extensions.
+
+In addition to configuring extensions during installation, you can also modify the configuration of extensions on the extension details page.
+
+== Prerequisites
+
+* You should have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../../05-users-and-roles/01-users/[Users] and link:../../../05-users-and-roles/02-platform-roles/[Platform Roles].
+* You have successfully installed an extension.
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+. Click **Extensions Center**.
+. Click the name of the installed extension to enter the extension details page.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] below the extension icon and select **Extension Config**.
+. After editing, click **OK**.
+
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+Click image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark,18,18] to upload the configuration file **config.yaml** of the extension from your local device.
+
+Click image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark,18,18] to download the configuration file **config.yaml** of the extension to your local device.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

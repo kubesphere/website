@@ -1,0 +1,11 @@
+// :ks_include_id: 3bb6ac8d7b114854992775f89ab8debb
+This section introduces how to access the container terminal.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+KubeSphere only supports accessing the terminal of running containers.
+|===

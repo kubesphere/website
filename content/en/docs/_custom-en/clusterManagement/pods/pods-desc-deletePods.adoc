@@ -1,0 +1,22 @@
+// :ks_include_id: 12077b1940064dbc91b46df1bb4d2390
+This section explains how to delete a pod.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+* It is recommended to delete a pod by removing its managing resources (e.g., workloads or jobs) rather than directly deleting the pod.
+
+* If you directly delete the pod, depending on the policy of the managing resources, the system may recreate the pod.
+|===
+
+//warning
+[.admon.warning,cols="a"]
+|===
+|Warning
+
+|
+Deleting a running pod may cause a service interruption. Please proceed with caution.
+|===

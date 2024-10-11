@@ -1,0 +1,55 @@
+---
+title: "Edit Workspace Quotas"
+linkTitle: "Edit Workspace Quotas"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Quotas, Edit Workspace Quotas"
+description: "Instructions on how to edit workspace quotas."
+weight: 01
+---
+
+:ks_permission: **Workspace Settings Management**
+:ks_navigation: **Workspace Settings > Workspace Quotas**
+
+
+This section explains how to edit workspace quotas.
+
+In KubeSphere, multiple clusters can be authorized to the same workspace. You can set resource quotas for each cluster within a workspace.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click **Edit Quotas** in the top right corner of the cluster you want to edit.
++
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|CPU Limit
+|Maximum sum of CPU limits for all containers running in a workspace on a single cluster.
+
+|CPU Request
+|Maximum sum of CPU reservations for all containers running in a workspace on a single cluster.
+
+|Memory Limit
+|Maximum sum of memory limits for all containers running in a workspace on a single cluster.
+
+|Memory Request
+|Maximum sum of memory reservations for all containers running in a workspace on a single cluster.
+
+|Storage Resource Quota
+|Limit the total amount of storage resources under a workspace, including total storage resources and storage class bound resources.
+|===
++
+
+. After modifying the quotas, click **OK**.

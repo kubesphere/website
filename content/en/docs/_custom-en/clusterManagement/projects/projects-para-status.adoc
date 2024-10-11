@@ -1,0 +1,6 @@
+// :ks_include_id: 278f7336e01e4f89b34d41a866b7acd0
+Current status of the project.
+
+* **Active**: The project is in normal status.
+
+* **Deleting**: The project is being deleted.

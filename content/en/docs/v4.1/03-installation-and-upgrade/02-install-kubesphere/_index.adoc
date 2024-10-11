@@ -1,0 +1,10 @@
+---
+title: "Install KubeSphere"
+linkTitle: "Install KubeSphere"
+keywords: "Kubernetes, KubeSphere, installation"
+description: "Introduce how to install KubeSphere."
+layout: "second"
+weight: 02
+---
+
+This section introduces how to install Kubernetes and {ks_product-en}.

@@ -1,0 +1,32 @@
+---
+title: "Edit Project Quotas"
+linkTitle: "Edit Project Quotas"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Basic Information, Edit Project Quotas"
+description: "Instructions on how to edit project quotas."
+weight: 03
+---
+
+:ks_permission: **Project Settings Management**
+:ks_navigation: **Project Settings > Basic Information**
+
+include::../../../../_custom-en/clusterManagement/projects/projects-desc-editQuotas.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Basic Information** page, click **Manage**, then select **Edit Project Quotas** from the dropdown list.
+
++
+
+include::../../../../_custom-en/clusterManagement/projects/projects-oper-editProjectQuotas.adoc[]

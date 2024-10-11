@@ -1,0 +1,43 @@
+---
+title: "Invite Users to Join Projects"
+linkTitle: "Invite Users to Join Projects"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Project Members, Invite Users to Join Project"
+description: "Guide on how to invite users to join a project."
+weight: 01
+---
+
+:ks_permission: **Member Management**
+:ks_navigation: **Project Settings > Project Members**
+
+This section explains how to invite users to join a project.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* Invited users should have joined the workspace to which the project belongs.
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickInvite.adoc[]
+
++
+
+. In the **Invite Member** dialog, click image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18] next to the user you want to invite. Select the role of the user in the project from the dropdown list, then click **OK**.
++
+--
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-para-presetRoles.adoc[]
+
+The invited user will be displayed in the project member list.
+--

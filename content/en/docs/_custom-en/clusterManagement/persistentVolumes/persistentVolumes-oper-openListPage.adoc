@@ -1,0 +1,2 @@
+// :ks_include_id: 1883d4e9bde042c4b93fa773d65ab3bb
+. On the **Persistent Volume Claims** page, click **Persistent Volume** to open the list of Persistent Volumes.

@@ -1,6 +1,8 @@
 ---
 title: "平台设置"
 linkTitle: "平台设置"
+keywords: "Kubernetes, KubeSphere, 平台, 设置, 基本信息"
+description: "介绍介绍如何管理 KubeSphere 平台的基本信息。"
 weight: 03
 layout: "second"
 ---

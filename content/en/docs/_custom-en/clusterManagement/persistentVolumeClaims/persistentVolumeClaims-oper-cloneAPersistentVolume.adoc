@@ -1,0 +1,8 @@
+// :ks_include_id: 63eda24d0c774987bc1076d5c1cc20c4
+. In the top-left corner of the details page, select **More > Clone**.
+
+. In the **Clone Volume** dialog, set the name for the new Persistent Volume Claim, and then click **OK**.
++
+--
+The system will create identical copies for the Persistent Volume Claim and the corresponding Persistent Volume.
+--

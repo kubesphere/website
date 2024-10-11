@@ -1,0 +1,2 @@
+// :ks_include_id: 42b64c64491a4e459b1d34958715d6f8
+* Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper right corner of the list to customize the information displayed in the list.

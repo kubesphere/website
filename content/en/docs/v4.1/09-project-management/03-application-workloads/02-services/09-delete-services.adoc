@@ -1,0 +1,44 @@
+---
+title: "Delete Services"
+linkTitle: "Delete Services"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workload, Services, Delete Service"
+description: "Instructions on how to delete services."
+weight: 09
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-deleteServices.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Delete a Single Service
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-deleteASingleService.adoc[]
+
++
+
+. In the **Delete Service** dialog, select the workloads you want to delete, then click **OK**.
+
+== Delete Multiple Services
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-deleteMultipleServices.adoc[]

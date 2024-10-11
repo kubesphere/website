@@ -1,0 +1,24 @@
+---
+title: "Users and Roles"
+linkTitle: "Users and Roles"
+keywords: "Kubernetes, KubeSphere, Access Control, Users, Roles"
+description: "Learn how to control access permissions."
+layout: "second"
+weight: 05
+icon: "/images/docs/common/docs.svg"
+---
+
+
+KubeSphere is a container management platform that supports multi-tenancy. Similar to Kubernetes, it controls user permissions through Role-Based Access Control (RBAC) to achieve logical resource isolation.
+
+Resources in KubeSphere are divided into four levels: Platform, Workspace, Cluster, and Project. All resources belong to these four levels, and access to resources can be controlled through roles at each level. Each level comes with multiple built-in roles by default, and you can also create custom roles with specific permissions.
+
+Workspace serves as the smallest tenant unit, providing resource isolation capabilities across clusters. Members within a Workspace can create projects in authorized clusters and collaborate on projects by inviting users.
+
+This section explains how to manage access permissions in KubeSphere, including user and platform role management.
+
+For more information about cluster roles, refer to link:../07-cluster-management/09-cluster-settings/04-cluster-roles/[Cluster Roles].
+
+For more information about workspace roles, refer to link:../08-workspace-management/06-workspace-settings/04-workspace-roles/[Workspace Roles].
+
+For more information about project roles, refer to link:../09-project-management/06-project-settings/02-project-roles/[Project Roles].

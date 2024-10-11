@@ -1,0 +1,4 @@
+// :ks_include_id: 6d818141bdf246f49b4c4825976cc804
+* Click **Add** to set multiple labels or annotations.
+
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right of a created label or annotation to delete it.

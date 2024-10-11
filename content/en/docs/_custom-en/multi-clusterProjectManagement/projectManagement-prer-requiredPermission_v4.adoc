@@ -1,0 +1,2 @@
+// :ks_include_id: a7b11e38d6794c2692390f9d0afbb7df
+您需要加入一个联邦项目并在对应企业空间中具有pass:a,q[{ks_permission}]权限。

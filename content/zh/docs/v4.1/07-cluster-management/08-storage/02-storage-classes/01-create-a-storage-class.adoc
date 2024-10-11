@@ -15,11 +15,8 @@ weight: 01
 
 == 前提条件
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 * 为使存储类可以正常提供存储资源，您需要提前配置存储系统并安装与存储系统对应的存储插件。更多相关信息，请联系您的存储系统提供商。

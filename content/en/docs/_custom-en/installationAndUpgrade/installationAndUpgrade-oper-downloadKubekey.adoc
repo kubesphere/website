@@ -1,0 +1,47 @@
+// :ks_include_id: e25e26f73c8441e69eef35173babd610
+. If you are accessing GitHub/Googleapis from a restricted location, please log in to any cluster node and run the following command to set the download region:
++
+--
+// Bash
+[,bash]
+----
+
+export KKZONE=cn
+
+----
+--
+
+
+. Run the following command to download the latest version of KubeKey:
++
+--
+// Bash
+[,bash]
+----
+
+curl -sfL https://get-kk.kubesphere.io | sh -
+
+----
+
+After the download is complete, a KubeKey binary file **kk** will be generated in the current directory.
+
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+If the cluster node used to perform the operations cannot connect to the internet, you can manually link:https://github.com/kubesphere/kubekey/releases[download KubeKey] on a device with internet access and then transfer it to the cluster node.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+// end::download-kubekey[]
+
+. Add execute permission to the KubeKey binary file **kk**:
++
+--
+// Bash
+[,bash]
+----
+
+sudo chmod +x kk
+
+----
+--

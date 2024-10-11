@@ -1,0 +1,91 @@
+---
+title: "Configure Cloud Storage Devices"
+linkTitle: "Configure Cloud Storage Devices"
+keywords: "Kubernetes, KubeSphere, Installation, Preparation, Persistent Storage, Cloud Storage Devices"
+description: "Learn how to configure cloud storage devices for the KubeSphere cluster in a production environment."
+weight: 01
+---
+
+This section provides instructions on how to configure cloud storage devices for KubeSphere in a production environment.
+
+To configure cloud storage devices, create an API key in the cloud environment and set up KubeSphere using the API key to integrate with the cloud environment through the Container Storage Interface (CSI). When users create volumes in KubeSphere and mount them to pods, KubeSphere will automatically create storage devices in the cloud environment for pods to use. The following steps outline the specific operations using QingCloud as an example. For instructions related to other cloud environments, please refer to the user guide of the respective cloud environment or contact your cloud service provider.
+
+== Prerequisites
+
+Get a QingCloud account and ensure that your account balance is sufficient to create the required storage devices. For more information, visit link:https://www.qingcloud.com/[QingCloud Official Website].
+
+
+== Steps
+
+. Log in to the link:https://www.qingcloud.com/[QingCloud] console and click your username in the upper-right corner of the page. Select API Keys from the dropdown list.
+
+. On the **API Keys** page, click **Create**.
+
+. In the **Create API Key** dialog, set the name for the key, and click **Submit**.
+
+. Download the key file to your local machine from the popup dialog.
++
+--
+// Warning
+include::../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+KubeSphere will use this private key to connect with the storage devices in the cloud. Please keep this private key file securely to prevent any leakage of user data.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Obtain the ID of the API key from the API key list.
+
+. Log in to the cluster node used for KubeSphere installation and execute the following command to create the storage plugin configuration file:
++
+--
+// Bash
+[,bash]
+----
+
+vi csi-qingcloud.yaml
+
+----
+--
+
+. Add the following information to the configuration file and save it for future use during KubeSphere installation:
++
+--
+// YAML
+include::../../../../../_ks_components-en/code/yaml.adoc[]
+
+config:
+  qy_access_key_id: "<key ID>"
+  qy_secret_access_key: "<access key>"
+  zone: "<zone ID>"
+sc:
+  isDefaultClass: true
+
+----
+
+Replace the following parameters with actual values:
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|<key ID>
+|The ID of the API key.
+
+|<access key>
+|The key text of the API key.
+
+|<zone ID>
+|The availability zone ID of the cloud environment. The zone ID determines the region where the storage devices created by KubeSphere will be located. The ID-value mapping for the availability zones is as follows:
+
+* **sh1a/sh1b**: Shanghai Zone 1-A/Shanghai Zone 1-B
+
+* **pek3a/pek3b/pek3c/pek3d**: Beijing Zone 3-A/Beijing Zone 3-B/Beijing Zone 3-C/Beijing Zone 3-D
+
+* **gd2a/gd2b**: Guangdong Zone 2-A/Guangdong Zone 2-B
+
+* **ap2a**: Asia Pacific Zone 2-A
+|===
+
+The above configuration file includes only the necessary parameters to be set. For other parameters, please refer to link:https://github.com/kubesphere/helm-charts/tree/master/src/test/csi-qingcloud#configuration[QingCloud CSI Configuration].
+--

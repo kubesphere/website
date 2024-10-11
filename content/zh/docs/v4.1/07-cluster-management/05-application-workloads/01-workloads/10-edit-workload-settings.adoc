@@ -17,11 +17,7 @@ include::../../../../_custom/clusterManagement/workloads/workloads-desc-editWork
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 
@@ -146,22 +142,21 @@ include::../../../../_custom/clusterManagement/workloads/createWorkload/workload
 
 // include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-desc-enableLogCollectionCluster.adoc[]
 
-include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
+// include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
 
 include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-mountVolume.adoc[]
 
 include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-mountSecretOrConfigmap.adoc[]
 |===
 
-* 将光标悬停在已添加的卷上，然后在右侧点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18]可编辑卷的设置。
-* 将光标悬停在已挂载的卷上，然后在右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除卷。
+include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume_new.adoc[]
 --
 
-* 存储 > 添加持久卷声明模板
-+
---
-include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
---
+// * 存储 > 添加持久卷声明模板
+// +
+// --
+// include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
+// --
 
 * 存储 > 挂载卷 > 持久卷
 +

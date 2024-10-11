@@ -1,0 +1,45 @@
+---
+title: "View Project Basic Information"
+linkTitle: "View Project Basic Information"
+keywords: "Kubernetes, KubeSphere, Project Management, Basic Information, View Project Basic Information"
+description: "Instructions on how to view project basic information."
+weight: 01
+---
+
+:ks_permission: **Project Settings Viewing**
+:ks_navigation: **Project Settings > Basic Information**
+
+
+This section explains how to view project basic information.
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+--
+The **Basic Information** page provides the following information:
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Project Information
+|Information about the current project, including the project's name, parent workspace, creator, creation time, number of services, number of project roles, and number of project members.
+
+include::../../../../_custom-en/clusterManagement/projects/projects-para-defaultContainerQuotas.adoc[]
+
+include::../../../../_custom-en/clusterManagement/projects/projects-para-projectQuotas.adoc[]
+|===
+--

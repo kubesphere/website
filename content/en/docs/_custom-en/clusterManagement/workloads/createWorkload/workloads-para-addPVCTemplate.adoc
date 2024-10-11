@@ -1,0 +1,3 @@
+// :ks_include_id: 87861bb084774716a738a763e7cb8d5a
+|Add Persistent Volume Claim Template
+|Add Persistent Volume Claim templates for StatefulSets. The system will create separate Persistent Volume Claims and Persistent Volumes for each pod replica, and mount the Persistent Volumes to the specified containers in each pod replica. Only available for **StatefulSets**.

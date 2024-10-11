@@ -1,0 +1,36 @@
+. In the **Edit Project Quotas** dialog, set the project resource request and resource limit.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|CPU Request
+|The maximum value of the sum of all container CPU requests in the project, measured in cores.
+
+|CPU Limit
+|The maximum value of the sum of all container CPU limits in the project, measured in cores.
+
+|Memory Request
+|The maximum value of the sum of all container memory requests in the project, measured in GiB.
+
+|Memory Limit
+|The maximum value of the sum of all container memory limits in the project, measured in GiB.
+
+|GPU Type
+|The GPU type that containers in the project can use. Currently, only NVIDIA GPU is supported.
+
+|GPU Limit
+|The maximum number of GPUs that all containers in the project can use, measured in GPUs.
+|===
+--
+
+. In the **Storage Resource Quota** section of the **Edit Project Quotas** dialog, set the total storage resource quota and associated resource quota with storage classes.
+
+. In the **Application Resource Quotas** section of the **Edit Project Quotas** dialog, set the upper limits on the quantity of application resources in the project, then click **OK**.
++
+--
+* You can set upper limits on the quantity of Pods, Deployments, StatefulSets, DaemonSets, Jobs, CronJobs, Persistent Volume Claims, Services, Ingresses, Secrets, and ConfigMaps in the project.
+
+* Click **Add** to set upper limits on the quantity of more application resources.
+--

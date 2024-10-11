@@ -1,0 +1,38 @@
+---
+title: "Pause CronJobs"
+linkTitle: "Pause CronJobs"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Jobs, Pause CronJob"
+description: "Instructions on how to pause a CronJob."
+weight: 07
+---
+
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Jobs**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-pauseACronjob.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Jobs** page, click **Cronjobs** to open the list of scheduled jobs.
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-pauseACronjob.adoc[]

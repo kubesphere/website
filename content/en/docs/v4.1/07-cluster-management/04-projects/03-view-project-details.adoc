@@ -1,0 +1,84 @@
+---
+title: "View Project Details"
+linkTitle: "View Project Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Project, View Project Details"
+description: "Learn how to view project details."
+weight: 03
+---
+
+:ks_permission: **Project Viewing**
+:ks_navigation: **Projects**
+
+This section explains how to view project details.
+
+== Prerequisites
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-openListPage.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-openDetailsPage.adoc[]
+
+. In the **Attributes** area on the left side of the project details page, view the resource attributes of the project.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Status
+|
+include::../../../_custom-en/clusterManagement/projects/projects-para-status.adoc[]
+
+|Cluster
+|The cluster to which the project belongs.
+
+|Workspace
+|The workspace to which the project belongs.
+
+|Creation Time
+|The creation time of the project.
+
+|Creator
+|The user who created the project.
+|===
+--
+
+. On the **Overview** tab on the right side of the project details page, view the current resource status of the project, such as the number of Pods, Deployments, StatefulSets, DaemonSets, Jobs, CronJobs, Persistent Volume Claims, Services, and Ingresses.
+
+. On the **Pods** tab on the right side of the project details page, view all the pods running in the project.
++
+--
+include::../../../_custom-en/clusterManagement/nodes/nodes-para-podList.adoc[]
+--
+
+. On the right side of the project details page, click **Quotas** to view the project's quota information.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Area |Description
+
+include::../../../_custom-en/clusterManagement/projects/projects-para-defaultContainerQuotas.adoc[]
+
+|Project Quotas
+|The quantity and actual usage of available resources in the project, including CPU, memory, pods, and deployments, etc.
+|===
+
+For information on how to set default container quotas and project quotas, refer to link:../07-edit-default-container-quotas/[Edit Default Container Quotas] and link:../06-edit-project-quotas/[Edit Project Quotas].
+--
+
+. On the right side of the project details page, click **Metadata** to view the labels and annotations of the project.

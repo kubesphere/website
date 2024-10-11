@@ -1,0 +1,27 @@
+// :ks_include_id: 97165dd8a39e4251913b19385f46901d
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the persistent volume claim.
+
+|Storage Class
+|
+include::persistentVolumes-para-storageClass.adoc[]
+
+|Creation Time
+|The creation time of the persistent volume claim.
+
+|Provisioner
+|
+include::persistentVolumes-para-provisioner.adoc[]
+
+|Access Mode
+|
+include::../persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
+
+|Capacity
+|
+include::persistentVolumes-para-volumeSize.adoc[]
+|===

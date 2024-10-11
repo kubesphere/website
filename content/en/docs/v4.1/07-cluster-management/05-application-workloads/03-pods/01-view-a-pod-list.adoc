@@ -1,0 +1,42 @@
+---
+title: "View Pod List"
+linkTitle: "View Pod List"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, Viewing Pod Lists"
+description: "Explain how to view the list of pods."
+weight: 01
+---
+
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Pods**
+
+
+include::../../../../_custom-en/clusterManagement/pods/pods-desc-viewAPodList.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+include::../../../../_custom-en/clusterManagement/pods/pods-para-podList.adoc[]
+
+* Choose a project from the drop-down list at the top left of the list to view pods specific to that project.
+
+include::../../../../_custom-en/clusterManagement/pods/pods-oper-searchForPods.adoc[]
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

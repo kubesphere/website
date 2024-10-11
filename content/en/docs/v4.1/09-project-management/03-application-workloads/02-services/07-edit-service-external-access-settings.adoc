@@ -1,0 +1,28 @@
+---
+title: "Edit Service External Access Settings"
+linkTitle: "Edit Service External Access Settings"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workload, Services, Edit Service External Access Settings"
+description: "Instructions on how to edit service external access settings."
+weight: 07
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-editServiceExternalAccessSettings.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-editServiceExternalAccessSettings.adoc[]

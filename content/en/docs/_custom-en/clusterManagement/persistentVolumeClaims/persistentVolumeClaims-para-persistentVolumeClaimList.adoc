@@ -1,0 +1,31 @@
+// :ks_include_id: 3406d7c02c52477bb228c5d190bee2a3
+* The Persistent Volume Claim list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Name
+|The name, alias, and storage class of the Persistent Volume Claim.
+
+|Status
+|
+include::persistentVolumeClaims-para-status.adoc[]
+
+ifndef::kubefed[]
+|Persistent Volume
+|The Persistent Volume bound to the Persistent Volume Claim.
+endif::[]
+
+|Access Mode
+|
+include::persistentVolumeClaims-para-accessMode.adoc[]
+
+|Mount Status
+|Whether the Persistent Volume associated with the Persistent Volume Claim is already mounted to a container.
+
+|Creation Time
+|The creation time of the Persistent Volume Claim.
+|===
+--

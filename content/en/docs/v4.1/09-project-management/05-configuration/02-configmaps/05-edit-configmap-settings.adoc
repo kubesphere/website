@@ -1,0 +1,33 @@
+---
+title: "Edit ConfigMap Settings"
+linkTitle: "Edit ConfigMap Settings"
+keywords: "Kubernetes, KubeSphere, Project Management, ConfigMap, Edit ConfigMap Settings"
+description: "Learn how to edit ConfigMap data."
+weight: 05
+---
+
+:ks_permission: **ConfigMap Management**
+:ks_navigation: **Configuration > ConfigMaps**
+
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-editConfigmapSettings.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-oper-editConfigmapSettings.adoc[]

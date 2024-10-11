@@ -1,0 +1,27 @@
+---
+title: "Add Member Clusters"
+linkTitle: "Add Member Clusters"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster, Add Member Clusters"
+description: "Learn how to add member clusters."
+layout: "second"
+weight: 01
+---
+
+This section explains how to add member clusters.
+
+Depending on your network environment, the host cluster and member clusters can be connected in the following ways:
+
+* Direct Connection: If the host cluster can access the Kubernetes API service of the member cluster, you can add the kubeconfig information of the member cluster on the host cluster to directly connect the host cluster and the member cluster.
+
+* Agent Connection: If the host cluster cannot access the Kubernetes API service of the member cluster, you can set up the member cluster to connect to the proxy service "tower" exposed by the host cluster, enabling the connection between the host cluster and the member cluster via tower.
+
+[.admon.note,cols="a"]
+|===
+| Note
+
+|
+To use a agent connection, the **KubeSphere Multi-Cluster Agent Connection** extension needs to be installed and enabled on the KubeSphere platform.
+// For more information, refer to link:../../../../11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection[Add a Member Cluster via Agent Connection].
+|===
+
+Whether using a direct connection or a agent connection, at least one of the host cluster and the member cluster must be able to access the services exposed by the other side.

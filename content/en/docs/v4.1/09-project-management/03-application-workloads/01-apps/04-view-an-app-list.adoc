@@ -1,0 +1,67 @@
+---
+title: "View Application List"
+linkTitle: "View Application List"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications, View Application List"
+description: "Learn how to view the application list."
+weight: 04
+---
+
+
+:ks_permission: **Application Instance View**
+:ks_navigation: **Application Workloads > Applications**
+
+
+This section explains how to view the application list.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+====
+* The application list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the application.
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-status_v4.adoc[]
+
+|App Type
+|The type of application template, such as **Helm application** or **YAML application**.
+
+|App Template
+|The application template used to create the application. Only applicable to template-based applications.
+
+|Version
+|The version number of the application.
+
+* For template-based applications, it displays the version of the Helm Chart.
+
+// * For custom applications, it shows the user-defined version number.
+
+|Update Time
+|The update time of the application.
+|===
+--
+
+* Click the search box at the top of the list to search for applications by name.
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

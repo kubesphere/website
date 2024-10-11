@@ -1,0 +1,8 @@
+---
+title: "FAQ"
+linkTitle: "FAQ"
+description: "Summary and answers to common questions about KubeSphere."
+layout: "second"
+weight: 24
+icon: "/images/docs/v3.x/docs.svg"
+---

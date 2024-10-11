@@ -1,0 +1,36 @@
+---
+title: "View Workload Details"
+linkTitle: "View Workload Details"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Workloads, View Workload Details"
+description: "Learn how to view workload details."
+weight: 03
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Workloads**
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-viewWorkloadDetails.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-viewWorkloadDetails_new.adoc[]

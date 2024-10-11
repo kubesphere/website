@@ -1,0 +1,54 @@
+---
+title: "Create Projects"
+linkTitle: "Create Projects"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Projects, Create Projects"
+description: "Explain how to create projects in a cluster."
+weight: 01
+---
+
+:ks_permission: **Project Management**
+:ks_navigation: **Projects**
+
+This section explains how to create projects in a cluster.
+
+== Prerequisites
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-clickCreate.adoc[]
+
+. In the **Create Project** dialog, set the parameters for the project, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../_custom-en/clusterManagement/projects/projects-para-name.adoc[]
+
+include::../../../_custom-en/clusterManagement/projects/projects-para-aliasDescription.adoc[]
+|===
+--
+
+. In the project list, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the newly created project, then select **Assign Workspace** from the dropdown list.
+
+. In the **Assign Workspace** dialog, select a workspace to which the project belongs, and choose a member as the project administrator, then click **OK**.
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+* Once a project is assigned to a workspace, you are not allowed to change its workspace.
+
+* Once the project is created, you can invite users to join the project and deploy services within it.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

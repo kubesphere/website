@@ -1,0 +1,11 @@
+---
+title: "Platform Management"
+linkTitle: "Platform Management"
+keywords: "Kubernetes, KubeSphere, Platform Management"
+description: "Introduce the functionalities of various modules in KubeSphere and provides instructions on configuring the platform."
+layout: "second"
+weight: 04
+icon: "/images/docs/common/docs.svg"
+---
+
+This section introduces the functionalities of various modules in {ks_product-en}, and provides instructions on platform settings.

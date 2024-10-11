@@ -1,0 +1,10 @@
+---
+title: "Basic Information"
+linkTitle: "Basic Information"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Basic Information"
+description: "Explains how to view and edit basic information for workspaces."
+layout: "second"
+weight: 01
+---
+
+This section explains how to view and manage basic information for workspaces.

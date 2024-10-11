@@ -1,0 +1,6 @@
+// :ks_include_id: 6c86123b72d442d2af494a87b1b826cf
+The scope of custom resources created by custom resource definitions:
+
+* **Namespaced**: Custom resources created by custom resource definitions belong to a specific project.
+
+* **Cluster**: Custom resources created by custom resource definitions belong to the entire cluster.

@@ -1,0 +1,2 @@
+// :ks_include_id: 9207e2fe36e84eb6bffadb973c32ac47
+This section explains how to create ConfigMaps.

@@ -1,0 +1,56 @@
+---
+title: "Run Commands with kubectl"
+linkTitle: "Run Commands with kubectl"
+keywords: "Kubernetes, KubeSphere, kubectl, command, running commands with kubectl"
+description: "Introduction to running commands with kubectl."
+weight: 01
+---
+
+Kubectl is the Kubernetes command-line tool. You can use it to run commands on Kubernetes clusters to view and manage cluster resources, and more.
+
+The {ks_product-en} console provides a Web kubectl. By default, only users granted the platform-admin role (such as the default **admin** account) have permission to use the Web kubectl for cluster resource operations and management.
+
+This section demonstrates how to use the Web kubectl for cluster resource operations and management.
+
+== Prerequisites
+
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, please refer to link:../../05-users-and-roles/01-users.adoc[Users] and link:../../05-users-and-roles/02-platform-roles.adoc[Platform Roles].
+
+== Using Web Kubectl
+
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+
+. Hover the cursor over the image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18] icon in the bottom right corner of the page and click **kubectl** from the menu.
+
+. In the popup window, you will see the kubectl interface as shown below. If you have multiple clusters, you need to first select the target cluster from the dropdown list in the top right corner. If there is only one cluster, the dropdown list will not be visible.
++
+image:/images/ks-qkcp/en/v4.0/kubectl.png[,100%]
+
+. Enter kubectl commands in the command line tool to query and manage Kubernetes cluster resources. For example, execute the following command to check the status of all pods in the cluster.
++
+[source,bash]
+----
+kubectl get pods -A
+----
+
+. Run kubectl commands in the terminal window using the following syntax:
++
+--
+[source,bash]
+----
+kubectl [command] [TYPE] [NAME] [flags]
+----
+
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+* Here, command, TYPE, NAME, and flags are:
+
+** command: Specifies the operation to perform on one or more resources, such as create, get, describe, and delete.
+** TYPE: Specifies link:https://kubernetes.io/zh-cn/docs/reference/kubectl/#resource-types[resource type]. Resource types are case-insensitive, and you can specify singular, plural, or abbreviated forms.
+** NAME: Specifies the name of the resource. Names are case-sensitive. If the name is omitted, detailed information for all resources will be displayed, for example, `kubectl get pods`.
+** flags: Specifies optional parameters. For example, you can use the `-s` or `--server` flag to specify the address and port of the Kubernetes API server.
+
+* If you need help, run `kubectl help` in the terminal window or refer to link:https://kubernetes.io/zh/docs/reference/kubectl/overview.adoc[Kubernetes Kubectl Documentation].
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

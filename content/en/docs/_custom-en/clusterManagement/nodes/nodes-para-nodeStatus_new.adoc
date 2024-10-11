@@ -1,0 +1,8 @@
+// :ks_include_id: 0724df9ec5f247dcbf50e5ed6abcdf40
+The running status of each node.
+
+* **Running**: The node is running normally.
+
+* **Unschedulable**: The node is marked by the user as unschedulable. If a node is in this state, pods cannot be scheduled to this node.
+
+// * **Warning**: There are warnings on the node. You can view the warning types of the node under the **Running Status > Health Status** tab on the node details page.

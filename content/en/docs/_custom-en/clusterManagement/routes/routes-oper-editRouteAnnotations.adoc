@@ -1,0 +1,12 @@
+// :ks_include_id: 2ead4c416e934d44b2a8a404251bdfe8
+. 在需要操作的应用路由右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑注解**。
+
+. 在**编辑注解**对话框，设置注解键值对，然后点击**确定**。
++
+--
+* 点击**添加**可设置多条注解。
+
+* 在已创建的注解右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除注解。
+
+include::routes-note-annotations.adoc[]
+--

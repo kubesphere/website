@@ -1,0 +1,12 @@
+---
+title: "Jobs"
+linkTitle: "Jobs"
+keywords: "Kubernetes, KubeSphere, Project Management, Jobs"
+description: "Learn how to manage jobs."
+layout: "second"
+weight: 04
+---
+
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-jobs.adoc[]

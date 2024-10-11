@@ -24,11 +24,8 @@ include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 == 前提条件
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 * 如需启用某个功能，请确保后端存储系统实际支持该功能。

@@ -1,0 +1,2 @@
+// :ks_include_id: db20d1bbd2ed4dc9af2b84f07b0b87e3
+. Hover over image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18] in the bottom right corner of the page, then click **kubectl** in the menu.

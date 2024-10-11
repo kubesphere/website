@@ -1,0 +1,19 @@
+// :ks_include_id: a438eaa55c9043cbb3d66ebadd42472e
+KubeSphere provides the following preset workspace roles:
+
+[%header,cols="1a,4a"]
+|===
+|Role |Description
+
+|workspace-admin
+|Workspace administrator, has full permissions within the workspace.
+
+|workspace-self-provisioner
+|Workspace self-provisioner, can create projects, view workspace settings, and has management permissions for projects they create.
+
+|workspace-viewer
+|Workspace viewer, can view all resources within the workspace.
+
+|workspace-regular
+|Workspace regular user, only has permission to view workspace settings within the workspace. This role is typically assigned to project members who do not require additional workspace permissions.
+|===

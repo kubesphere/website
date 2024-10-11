@@ -1,0 +1,6 @@
+// :ks_include_id: 046dfe4aa0334cd393ccf4c776cd19f2
+. On the **Storage Settings** tab, mount volumes for the containers managed by the backend workload of the service, then click **Next**.
+
+. On the **Advanced Settings** tab, specify IP pools and nodes for the pods managed by the backend workload of the service, set the external access mode, session persistence settings, and metadata for the service, then click **Create**. 
++
+Once the service is created, it will be displayed in the list of services.

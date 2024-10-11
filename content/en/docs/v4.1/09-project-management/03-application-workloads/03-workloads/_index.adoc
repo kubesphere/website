@@ -1,0 +1,11 @@
+---
+title: "Workloads"
+linkTitle: "Workloads"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Workloads"
+description: "Instructions on how to manage application workloads."
+layout: "second"
+weight: 03
+---
+
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-workloads.adoc[]

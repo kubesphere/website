@@ -1,0 +1,28 @@
+// :ks_include_id: 95f4759b32eb4061ae07cea32fd54ac8
+. On the **Service Settings** tab, configure the service's internal access mode, workload selector, and ports, then click **Next**.
++
+--
+include::services-para-serviceSettings.adoc[]
+--
+
+. On the **Advanced Settings** tab, configure the service's external access mode, session persistence settings, and metadata, then click **Create**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::services-para-externalAccess.adoc[]
+
+include::services-para-sessionPersistence.adoc[]
+
+| Add Metadata
+| Set labels for the service.
+
+* Click **Add** to set multiple labels.
+
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of a created label to delete it.
+|===
+
+Services will be displayed in the service list after creation.
+--

@@ -15,11 +15,8 @@ include::../../../../_custom/clusterManagement/persistentVolumeClaims/persistent
 
 == 前提条件
 
-:relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 include::../../../../_custom/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-backData.adoc[]
 

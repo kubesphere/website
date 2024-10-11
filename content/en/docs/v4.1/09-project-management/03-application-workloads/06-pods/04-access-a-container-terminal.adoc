@@ -1,0 +1,37 @@
+---
+title: "Access Container Terminal"
+linkTitle: "Access Container Terminal"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Pods, Access Container Terminal"
+description: "Learn how to access the container terminal."
+weight: 04
+---
+
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Pods**
+
+include::../../../../_custom-en/clusterManagement/pods/pods-desc-accessAContainerTerminal.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/pods/pods-oper-openDetails.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/pods/pods-oper-accessAContainerTerminal.adoc[]

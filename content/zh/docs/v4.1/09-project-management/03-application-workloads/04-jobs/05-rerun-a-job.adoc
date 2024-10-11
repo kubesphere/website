@@ -16,11 +16,7 @@ include::../../../../_custom/clusterManagement/jobs/jobs-desc-rerunAJob.adoc[]
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 

@@ -1,0 +1,55 @@
+// :ks_include_id: 97d118168300404498cba8389b3a7499
+
+= 术语和缩略语link:[id=e7d3a8242fc340318d7c62a4b31260fc]
+
+[role="glossary",cols="1a,5a,5a"]
+|===
+
+|API
+|Application Programming Interface
+|应用程序编程接口
+
+|CSI
+|Container Storage Interface
+|容器存储接口
+
+|ID
+|Identifier
+|标识符
+
+|IP
+|Internet Protocol
+|互联网协议
+
+|NFS
+|Network File System
+|网络文件系统
+
+|NIC
+|Network Interface Card
+|网络接口卡
+
+|RBD
+|Rados Block Device
+|Rados 块设备
+
+|SSH
+|Secure Shell
+|安全外壳协议
+
+|TCP
+|Transmission Control Protocol
+|传输控制协议
+
+|UDP
+|User Datagram Protocol
+|用户数据报协议
+
+|URL
+|Uniform Resource Locator
+|统一资源定位符
+
+|VIP
+|Virtual Internet Protocol Address
+|虚拟 IP 地址
+|===

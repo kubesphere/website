@@ -1,0 +1,3 @@
+// :ks_include_id: de8b37eae7ea4bdba3f2534f9d1b19c2
+|名称
+|应用模板的名称、图标和描述信息。

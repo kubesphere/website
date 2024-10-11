@@ -1,0 +1,12 @@
+// :ks_include_id: 1cf098581c104c40a442ab4ebc7be6ce
+Mount a Persistent Volume for the container. The Persistent Volume Claim used to create the Persistent Volume must belong to the project where the container is located.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Select Persistent Volume Claim
+|Select the Persistent Volume Claim used to create the Persistent Volume. This Persistent Volume Claim must belong to the project where the container is located. If there is no available Persistent Volume Claim in the project of the container, you need to create one in advance.
+
+include::workloads-para-volumeMountModePath.adoc[]
+|===

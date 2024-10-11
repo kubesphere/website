@@ -1,0 +1,36 @@
+// :ks_include_id: 03ba4803bc5e4930b178cd6397356d2c
+Configure the permissions of the container process in the Linux system.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Access Control
+| Access permissions for the container process.
+
+* **Privileged Mode**: Run the container process as the **root** user on the host.
+
+* **Allow Privilege Escalation**: Allow the container process to gain more privileges than the parent process. This option is enabled by default when **Privileged Mode** is enabled.
+
+* **Root Directory Read-Only**: Set the root directory of the container filesystem to read-only.
+
+|User and User Group
+|
+The users and user groups running the entry point of container processes.
+
+* **Run as Non-root**: Checks if the container will run as the **root** user before starting. If the container is set to run as the **root** user, it won't start. When this feature is enabled, the system will ignore the **Privileged mode** setting.
+
+* **User**: The UID (User ID) executing the container process entry point. Defaults to the UID specified in the image metadata.
+
+* **User Group**: The GID (Group ID) executing the container process entry point. Defaults to the default GID of the container runtime.
+
+|SELinux Context
+|The SELinux labels for the container process, including **Level**, **Role**, **Type**, and **User**. For more information, refer to the link:https://www.selinuxproject.org/page/Main_Page[SELinux Documentation].
+
+| Capabilities
+| Additional capabilities added to or removed from the container process in the Linux system. Refer to the link:https://man7.org/linux/man-pages/man7/capabilities.7.html[Linux Documentation] for the list of Linux process capabilities.
+
+* When adding or removing capabilities for the container process, you need to remove the **CAP_** prefix from the capability names. For example, entering **SYS_TIME** in the **Drop** text box will remove the **CAP_SYS_TIME** capability from the container process.
+
+* Click **Add** to set multiple instructions for adding or removing capabilities.
+|===

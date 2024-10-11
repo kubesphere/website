@@ -1,0 +1,2 @@
+// :ks_include_id: ddde1ce7630144f8bc7460c30577b036
+. Click the name of a storage class in the list to open its details page.

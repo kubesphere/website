@@ -1,0 +1,33 @@
+---
+title: "Change Workspace Member Roles"
+linkTitle: "Change Workspace Member Roles"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Workspace Settings, Workspace Members, Change Workspace Member Role"
+description: "Guide on how to change the role of a workspace member."
+weight: 04
+---
+
+:ks_permission: **Member Management**
+:ks_navigation: **Workspace Settings > Workspace Members**
+
+This section explains how to change the role of a workspace member.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the right side of the workspace member you want to edit, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], then select **Change Role**.
+
+. In the **Change Role** dialog, set the role for the workspace member from the dropdown list, then click **OK**.
++
+--
+include::../../../../_custom-en/workspaceManagement/workspaceRoles/workspaceRoles-para-presetRoles_v4.adoc[]
+--

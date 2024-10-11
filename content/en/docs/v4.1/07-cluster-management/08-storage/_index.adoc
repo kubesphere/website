@@ -1,0 +1,20 @@
+---
+title: "Storage"
+linkTitle: "Storage"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage"
+description: "Explain how to manage storage resources."
+layout: "second"
+weight: 08
+---
+
+
+
+This section explains how to manage storage resources.
+
+KubeSphere supports the management of the following storage resources:
+
+* Storage Class: Defines a class of Persistent Volume Claims available for containers.
+
+* Persistent Volume Claim: Defines the storage space requirements for a Persistent Volume.
+
+* Persistent Volume: Represents a storage area in the backend storage system. The system creates a storage area available for containers in the backend storage system based on the parameters in the Persistent Volume Claim. Each storage area corresponds to a Persistent Volume in the KubeSphere platform.

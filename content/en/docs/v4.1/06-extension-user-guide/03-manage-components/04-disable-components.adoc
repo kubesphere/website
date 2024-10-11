@@ -1,0 +1,25 @@
+---
+title: "Disable Extensions"
+keywords: "Kubernetes, KubeSphere, Enable, Disable, Extensions"
+description: "Learn how to disable extensions."
+weight: 04
+---
+
+This section explains how to disable extensions.
+
+Once an extension is installed, it is automatically enabled. You can disable extensions on the extension details page in the Extensions Center.
+
+After disabling, you can re-enable the extension to continue using it in the cluster, workspace, or project.
+
+
+== Prerequisites
+
+You should have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../../05-users-and-roles/01-users/[Users] and link:../../../05-users-and-roles/02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+. Click **Extensions Center**.
+. Click the name of the installed extension to enter its details page.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] below the extension icon and select **Disable**.
+. After disabling, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], then select **Enable** to continue using the extension.

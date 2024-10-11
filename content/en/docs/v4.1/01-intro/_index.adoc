@@ -1,0 +1,11 @@
+---
+title: "Introduction"
+linkTitle: "Introduction"
+keywords: KubeSphere, KubeSphere LuBan, Introduction
+description: Introduce the features, architecture, and usage scenarios of KubeSphere.
+layout: "second"
+weight: 01
+icon: "/images/docs/common/docs.svg"
+---
+
+This section introduces the features, architecture, and usage scenarios of {ks_product-en}.

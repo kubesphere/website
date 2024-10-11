@@ -17,14 +17,8 @@ weight: 06
 
 == 前提条件
 
-
-:relfileprefix: ../../../../
-
 * {empty}
 include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-:relfileprefix: ./
-
 
 * 如果需要删除的企业空间角色已经分配给企业空间成员，您需要删除企业空间成员或修改其角色。
 

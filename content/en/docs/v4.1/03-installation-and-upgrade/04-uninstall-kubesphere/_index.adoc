@@ -1,0 +1,11 @@
+---
+title: "Uninstall KubeSphere"
+linkTitle: "Uninstall KubeSphere"
+keywords: "Kubernetes, KubeSphere, Uninstall"
+description: "Instructions on how to uninstall KubeSphere."
+layout: "second"
+weight: 04
+---
+
+
+This section explains how to uninstall {ks_product-en}.

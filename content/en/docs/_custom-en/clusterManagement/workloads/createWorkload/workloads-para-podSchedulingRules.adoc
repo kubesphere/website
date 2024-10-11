@@ -1,0 +1,19 @@
+// :ks_include_id: 5c07b382dc7041a6b8d89f45dadfad06
+Specify the rules for scheduling pod replicas to nodes.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Default Rules
+|No rules specified; The system determines which node the pod replicas should be scheduled to.
+
+|Decentralized Scheduling
+|Schedule pod replicas to different nodes whenever possible.
+
+|Centralized Scheduling
+|Schedule pod replicas to the same node whenever possible.
+
+|Custom Rules
+|Schedule pod replicas to nodes based on user-defined rules. If you choose this option, you need to further customize the scheduling rules.
+|===

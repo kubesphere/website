@@ -1,0 +1,6 @@
+// :ks_include_id: 9cee592273284279a2ca4b2ff0c861a5
+|Alias
+|The alias of the workspace role. The alias for different workspace roles can be the same. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and must not start or end with a hyphen (-), with a maximum length of 63 characters.
+
+|Description
+|The description of the workspace role. The description can contain any characters, with a maximum length of 256 characters.

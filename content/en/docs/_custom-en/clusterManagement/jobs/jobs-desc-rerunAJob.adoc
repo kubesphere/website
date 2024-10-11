@@ -1,0 +1,11 @@
+// :ks_include_id: 81c337c82d7743cba51347779b603d00
+This section explains how to re-run a job. This operation is only available for regular jobs.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+KubeSphere only supports re-running jobs that have already completed, rather than jobs that are currently running.
+|===

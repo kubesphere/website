@@ -1,0 +1,10 @@
+---
+title: "External Authentication"
+linkTitle: "External Authentication"
+keywords: "Kubernetes, KubeSphere, Third-party Authentication"
+description: "Set up external identity authentication on KubeSphere."
+weight: 03
+layout: "second"
+---
+
+This section demonstrates how to configure third-party authentication on KubeSphere.

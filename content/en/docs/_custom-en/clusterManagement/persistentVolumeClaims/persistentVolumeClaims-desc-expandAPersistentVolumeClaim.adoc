@@ -1,0 +1,2 @@
+// :ks_include_id: 733b66fafb0d4f2cbc99a4d8dbd20458
+This section describes how to expand the capacity of a Persistent Volume.

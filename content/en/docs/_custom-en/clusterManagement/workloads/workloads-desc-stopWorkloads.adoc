@@ -1,0 +1,11 @@
+// :ks_include_id: e824d7c6552945beaedf6ace7863defa
+This section explains how to stop workloads.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
+
+|
+This operation will adjust the pod replica count to 0, and the running business will be interrupted. Please proceed with caution.
+|===

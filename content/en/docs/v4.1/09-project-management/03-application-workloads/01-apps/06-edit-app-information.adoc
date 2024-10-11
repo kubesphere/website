@@ -1,0 +1,31 @@
+---
+title: "Edit Application Information"
+linkTitle: "Edit Application Information"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Applications, Edit Application Information"
+description: "Learn how to edit application information."
+weight: 06
+---
+
+:ks_permission: **Application Instance Management**
+:ks_navigation: **Application Workloads > Applications**
+
+
+This section explains how to edit application information.
+
+You can edit the alias and description of an application. KubeSphere does not support editing the name of an already created application.
+
+## Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+## Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-editAppInformation.adoc[]

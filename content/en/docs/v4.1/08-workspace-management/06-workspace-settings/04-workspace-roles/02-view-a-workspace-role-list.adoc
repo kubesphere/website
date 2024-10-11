@@ -1,0 +1,31 @@
+---
+title: "View Workspace Role List"
+linkTitle: "View Workspace Role List"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Role, View Workspace Role List"
+description: "Guide on how to view the workspace role list."
+weight: 02
+---
+
+:ks_permission: **Role Viewing**
+:ks_navigation: **Workspace Settings > Workspace Roles**
+
+This section explains how to view the workspace role list.
+
+Each workspace role contains specific workspace management or viewing permissions. You can grant roles with specific permissions to workspace members to control their permissions within the workspace.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+--
+include::../../../../_custom-en/workspaceManagement/workspaceRoles/workspaceRoles-para-presetRoles_v4.adoc[]
+
+You can also create custom workspace roles. For more information, see link:../01-create-a-workspace-role/[Create Workspace Roles].
+--

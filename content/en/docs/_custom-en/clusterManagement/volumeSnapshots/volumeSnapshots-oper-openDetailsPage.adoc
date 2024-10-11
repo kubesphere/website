@@ -1,0 +1,2 @@
+// :ks_include_id: abe8911b7ecb4c4dbafe2a4e32f9932a
+. 在卷快照列表中点击一个卷快照的名称打开其详情页面。

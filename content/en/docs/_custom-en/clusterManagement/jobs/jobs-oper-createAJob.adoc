@@ -1,0 +1,12 @@
+// :ks_include_id: ade6d86d1f0d4f1db635fb9dd96b2348
+. On the **Basic Information** tab, configure the basic information of the job, as well as the scheduling strategy for a CronJob. Then click **Next**.
+
+. On the **Strategy Settings** tab, configure the strategy for a one-time job, and then click **Next**.
+
+. On the **Pod Settings** tab, set restart policies and containers for the pods managed by the job. Then click **Next**.
+
+. On the **Storage Settings** tab, mount volumes for the containers managed by the job. Then click **Next**.
+
+. On the **Advanced Settings** tab, specify nodes for the pods managed by the job, and set metadata for the job. Then click **Create**. 
++
+Once the job is created, it will be displayed in the job list.

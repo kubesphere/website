@@ -1,0 +1,7 @@
+// :ks_include_id: 6bfe6884350d4647a7cca1af7853a154
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+After {ks_product-en} is installed, please do not delete **config-sample.yaml**. This file will still be used for subsequent operations such as adding nodes. If this file is missing, you will need to recreate it.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]

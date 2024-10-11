@@ -1,0 +1,125 @@
+---
+title: "Install KubeSphere on Kubernetes"
+linkTitle: "Install KubeSphere on Kubernetes"
+keywords: 'KubeSphere, Kubernetes, All-in-One, Installation'
+description: 'Learn how to quickly deploy Kubernetes and KubeSphere.'
+weight: 01
+---
+
+This section describes how to quickly deploy Kubernetes and {ks_product-en} on a single node. This installation method is only suitable for testing. For installing {ks_product-en} in a production environment, please refer to link:../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/[Install Kubernetes and {ks_product-en}].
+
+== Prerequisites
+
+* Your linux machine meets the minimum hardware requirements: CPU > 2 cores, memory > 2 GB, disk space > 40 GB.
+
+* Helm should have been installed in advance. For specific instructions, please refer to link:https://helm.sh/docs/intro/[Helm Installation].
+
+
+== Steps
+
+. (Optional) If you don't have an available Kubernetes cluster, run the following command to quickly create one.
+
+.. If you are accessing GitHub/Googleapis from a restricted location, please log in to any cluster node and run the following command to set the download region.
++
+[,bash]
+----
+export KKZONE=cn
+----
+
+.. Run the following command to install KubeKey.
++
+--
+After the download is complete, a KubeKey binary file **kk** will be generated in the current directory.
+
+[,bash]
+----
+curl -sfL https://get-kk.kubesphere.io | sh -
+----
+--
+
+.. Run the following command to install dependencies.
++
+[,bash]
+----
+apt install socat conntrack -y
+----
+
+.. Run the following command to quickly create a Kubernetes cluster.
++
+[,bash]
+----
+./kk create cluster --with-local-storage  --with-kubernetes v1.31.0 --container-manager containerd  -y
+----
+
+. If you already have an available Kubernetes cluster, run the following command to install KubeSphere Core (the core component of KubeSphere) using `helm`.
++
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --debug --wait
+----
++
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+If you are accessing Docker Hub from a restricted location, add the following configuration after the above command to modify the default image pull address.
+
+[,bash]
+----
+--set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+[,bash]
+----
+--set extension.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+. After the installation is complete, the output will display the IP address and port of the web console, with the default NodePort being 30880.
++
+--
+[,yaml]
+----
+NOTES:
+Thank you for choosing KubeSphere Helm Chart.
+
+Please be patient and wait for several seconds for the KubeSphere deployment to complete.
+
+1. Wait for Deployment Completion
+
+    Confirm that all KubeSphere components are running by executing the following command:
+
+    kubectl get pods -n kubesphere-system
+
+2. Access the KubeSphere Console
+
+    Once the deployment is complete, you can access the KubeSphere console using the following URL:
+
+    http://192.168.6.10:30880
+
+3. Login to KubeSphere Console
+
+    Use the following credentials to log in:
+
+    Account: admin
+    Password: P@88w0rd
+
+NOTE: It is highly recommended to change the default password immediately after the first login.
+
+For additional information and details, please visit https://kubesphere.io.
+----
+
+Run the following command to check the status of the pods. 
+
+[,bash]
+----
+kubectl get pods -n kubesphere-system
+----
+
+When the pod status is **Running**, you can access the {ks_product-en} web console at <NodeIP>:30880 using the default account and password (admin/P@88w0rd).
+
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+Depending on your network environment, you may need to configure traffic forwarding rules and allow port 30880 in the firewall.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

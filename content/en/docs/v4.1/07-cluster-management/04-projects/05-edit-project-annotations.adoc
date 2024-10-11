@@ -1,0 +1,39 @@
+---
+title: "Edit Project Annotations"
+linkTitle: "Edit Project Annotations"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Edit Project Annotations"
+description: "Introduction to editing project annotations."
+weight: 05
+---
+
+:ks_permission: **Project Management**
+:ks_navigation: **Projects**
+
+This section explains how to edit project annotations.
+
+Project annotations are key-value pairs used to add additional metadata or descriptive information to a project.
+
+
+== Prerequisites
+
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
+. On the right side of the project you want to edit, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], and then select **Edit Annotations** from the drop-down list.
+
+. In the **Edit Annotations** dialog, configure the key-value pair, and then click **OK**.
++
+--
+* Click **Add** to set multiple annotations.
+
+* To delete an existing annotation, click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] to the right of it.
+-- 

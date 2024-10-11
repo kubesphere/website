@@ -1,0 +1,51 @@
+---
+title: "Delete Services"
+linkTitle: "Delete Services"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Delete Services"
+description: "Learn how to delete a service."
+weight: 08
+---
+
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-deleteServices.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Delete a Single Service
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-deleteASingleService.adoc[]
+
++
+
+. In the **Delete Service** dialog, confirm and select the names of the resources related to the services to be deleted, then click **OK**.
+
+
+== Delete Multiple Services
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-deleteMultipleServices.adoc[]

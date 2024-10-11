@@ -1,0 +1,60 @@
+---
+title: "View CRD List"
+linkTitle: "View CRD List"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definitions, View Custom Resource Definitions List"
+description: "Explain how to view the list of custom resource definitions."
+weight: 01
+---
+
+:ks_permission: **Custom Resource Definition Viewing**
+:ks_navigation: **CRDs**
+
+
+This section explains how to view the list of custom resource definitions.
+
+
+== Prerequisites
+
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+====
+* The custom resource definition list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Category
+|The category and API version of the custom resource definition.
+
+|Name
+|The name of the custom resource definition.
+
+|Scope
+|
+include::../../../_custom-en/clusterManagement/crds/crds-para-scope.adoc[]
+
+|Creation Time
+|The creation time of the custom resource definition.
+|===
+--
+
+* Click on the search box at the top of the list and enter keywords to search for custom resource definitions by name.
+
+include::../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

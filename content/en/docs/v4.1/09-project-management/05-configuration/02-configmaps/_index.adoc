@@ -1,0 +1,14 @@
+---
+title: "ConfigMaps"
+linkTitle: "ConfigMaps"
+keywords: "Kubernetes, KubeSphere, Project Management, ConfigMap"
+description: "Introduction to managing ConfigMaps."
+layout: "second"
+weight: 02
+---
+
+
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-configmaps.adoc[]
+
+ConfigMaps are only used to store non-sensitive data. If you need to store sensitive data, please use link:../01-secrets/[Secrets].

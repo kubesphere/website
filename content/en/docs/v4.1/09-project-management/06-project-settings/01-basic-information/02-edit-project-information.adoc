@@ -1,0 +1,46 @@
+---
+title: "Edit Project Basic Information"
+linkTitle: "Edit Project Basic Information"
+keywords: "Kubernetes, KubeSphere, Project Management, Basic Information, Edit Project Basic Information"
+description: "Instructions on how to edit project basic information."
+weight: 02
+---
+
+:ks_permission: **Project Settings Management**
+:ks_navigation: **Project Settings > Basic Information**
+
+
+This section explains how to edit project basic information.
+
+You can edit the alias and description of a project. KubeSphere does not support editing the name of an already created project.
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Basic Information** page, click **Manage**, then select **Edit Information** from the dropdown list.
+
+. In the **Edit Information** dialog, set the alias and description for the project, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../_custom-en/clusterManagement/projects/projects-para-aliasDescription.adoc[]
+|===
+--

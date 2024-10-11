@@ -1,0 +1,2 @@
+// :ks_include_id: b79841529a1d49a19e7e17eac5decf19
+. 在 KubeSphere Web 控制台，使用监控指标创建自定义监控面板，从而对应用程序的运行状况进行监控。

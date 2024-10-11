@@ -1,0 +1,4 @@
+// :ks_include_id: 1d8e328225714a61970419e6ff20593a
+. On the **Resource Status** tab, in the **Containers** section, click image:/images/ks-qkcp/zh/icons/terminal.svg[terminal,18,18] on the right side of the container name to open the container terminal . You can use the terminal to run commands inside the container.
+
+. In the dropdown list at the top right corner of the container terminal page, select a container to quickly access the terminal of other containers in the same pod.

@@ -1,0 +1,22 @@
+---
+title: "Upgrade Extensions"
+keywords: "Kubernetes, KubeSphere, Upgrade, Extensions"
+description: "Learn how to upgrade extensions."
+weight: 03
+---
+
+This section explains how to upgrade extensions.
+
+When there is a new version of an extension, you can upgrade it in the extension details page.
+
+== Prerequisites
+
+You should have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../../05-users-and-roles/01-users/[Users] and link:../../../05-users-and-roles/02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+. Click **Extensions Center**.
+. Click the name of the installed extension to enter its details page.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] below the extension icon and select **Upgrade**.
+. In the update dialog, follow the installation process to complete the upgrade.

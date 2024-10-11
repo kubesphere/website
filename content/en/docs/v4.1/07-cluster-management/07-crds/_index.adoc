@@ -1,0 +1,15 @@
+---
+title: "Custom Resource Definitions"
+linkTitle: "Custom Resource Definitions"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definitions"
+description: "Explain how to manage custom resource definitions in the cluster."
+layout: "second"
+weight: 07
+---
+
+
+This section explains how to manage custom resource definitions.
+
+Custom resource definitions (CRD) are used to extend existing APIs in Kubernetes. You can create custom resources using custom resource definitions and implement custom business logic by having additional controllers listen to various events related to these custom resources.
+
+The {ks_product-en} web console currently only supports viewing custom resource definitions and custom resources, as well as editing existing custom resources. It does not support directly creating custom resource definitions and custom resources. You can refer to the link:https://kubernetes.io/zh/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/[Kubernetes Documentation] to create custom resource definitions and custom resources via the command line.

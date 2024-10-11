@@ -1,0 +1,2 @@
+// :ks_include_id: 58f8c216756e41e8976edccd0d0fe3be
+. Click the name of a custom resource definition in the list to open its details page.

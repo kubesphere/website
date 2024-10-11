@@ -1,0 +1,2 @@
+// :ks_include_id: 7dd8d24939c3454f805540ee4215b74a
+. On the **Workloads** page, click **Deployments**, **StatefulSets**, or **DaemonSets** to open the list of workloads.

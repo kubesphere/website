@@ -1,0 +1,78 @@
+---
+title: "Remove Member Clusters"
+linkTitle: "Remove Member Clusters"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster, Remove Member Clusters"
+description: "Learn how to remove member clusters."
+weight: 06
+---
+
+:ks_menu: **Cluster Management**
+
+This section explains how to remove member clusters.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* The host cluster cannot be removed.
+* After removing a member cluster, {ks_product-en} will no longer manage that cluster. Existing Kubernetes resources in the cluster will not be deleted.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+// Warning
+include::../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+After a cluster is removed, the existing multi-cluster configuration data in the cluster will not be automatically cleared. Uninstalling {ks_product-en} or deleting associated resources may result in data loss. Be sure to follow the link:#_clean_up_multi_cluster_configuration_data[Clean up Multi-Cluster Configuration Data] steps on the removed cluster.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+== Prerequisites
+
+You should have the **platform-admin** role on both the host cluster and the member clusters you want to remove.
+
+== Remove Clusters via the Web Console
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusters/clusters-oper-logInToHost.adoc[]
+
+. Click **Cluster Management**.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the cluster you want to remove, then select **Remove Cluster** from the dropdown list.
+
+. In the **Remove Cluster** dialog, confirm the information of the cluster to be removed, drag the slider to the right, enter the name of the cluster to be removed, choose to either delete or keep all notification configuration data in the cluster, then click **Remove**.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+In a multi-cluster system, notification channels, silence rules, notification languages, and other configuration data on the host cluster will be automatically synchronized to member clusters. If you do not choose to **delete all notification configuration data in the cluster** when removing the cluster, notifications will continue to be sent according to the original configuration even after the cluster is removed.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+== Remove Clusters via Command Line
+
+In certain situations, you may not be able to remove member clusters via the web console, for example, if there are credential errors for the member cluster. In such cases, you can follow these steps to remove unhealthy member clusters via the command line:
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusters/clusters-oper-logInToHost.adoc[]
+
++
+include::../../../../_custom-en/platformManagement/extensionManagement/extensionManagement-oper-openKubectl.adoc[]
+
++
+. In the **kubectl** dialog, run the following command to remove the member cluster (replace <cluster name> with the name of the member cluster):
++
+--
+// Bash
+[,bash]
+----
+kubectl delete cluster <cluster name>
+----
+--
+
+== Clean up Multi-Cluster Configuration Data
+
+Log in to the node of the removed cluster, run the following command to clean up the multi-cluster configuration data in the cluster:
+
+[,bash]
+----
+for ns in $(kubectl get ns --field-selector status.phase!=Terminating -o jsonpath='{.items[*].metadata.name}'); do kubectl label ns $ns kubesphere.io/workspace- && kubectl patch ns $ns --type merge -p '{"metadata":{"ownerReferences":[]}}'; done
+----

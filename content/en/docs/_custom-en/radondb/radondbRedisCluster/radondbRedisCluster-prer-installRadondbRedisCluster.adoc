@@ -1,0 +1,2 @@
+// :ks_include_id: 210842f52c304d298399d27d9035e49c
+* 您需要获取 RadonDB Redis Cluster 应用授权，并已安装 RadonDB Redis Cluster。有关更多信息，请参阅xref:19-radondb/05-radondb-redis-cluster/02-install-radondb-redis-cluster.adoc[安装 RadonDB Redis Cluster]。

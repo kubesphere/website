@@ -1,0 +1,10 @@
+---
+title: "Platform Settings"
+linkTitle: "Platform Settings"
+keywords: "Kubernetes, KubeSphere, Platform, Settings, Basic Information"
+description: "Introduce how to manage the basic information of the KubeSphere platform."
+weight: 03
+layout: "second"
+---
+
+This section explains how to manage basic information of the {ks_product-en} web console.

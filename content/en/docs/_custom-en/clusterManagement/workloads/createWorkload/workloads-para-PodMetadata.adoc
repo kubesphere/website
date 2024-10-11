@@ -1,0 +1,5 @@
+// :ks_include_id: 91f17518b6d34f729b683653e6fa81e3
+Add metadata for the pod. Currently, you can only set annotations for the pod.
+
+* Click **Add** to set multiple annotations.
+* To delete an annotation, Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right of the created annotation.

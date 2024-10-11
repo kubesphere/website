@@ -1,0 +1,19 @@
+---
+title: "Workspace Roles"
+linkTitle: "Workspace Roles"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Roles"
+description: "Guide on managing workspace roles."
+layout: "second"
+weight: 04
+---
+
+This section explains how to manage workspace roles.
+
+Workspace roles contain specific management or viewing permissions for a workspace. You can assign roles with specific permissions to workspace members to control their permissions within the workspace.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../_custom-en/workspaceManagement/workspaceMembers/workspaceMembers-desc-initialWorkspaceAdmin.adoc[]
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

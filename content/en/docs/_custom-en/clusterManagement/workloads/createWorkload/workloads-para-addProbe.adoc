@@ -1,0 +1,37 @@
+// :ks_include_id: 55d0e202da594ec3bf0eec8a473d3557
+Create probes for liveness, readiness, or startup checks on the container.
+
+* Click **Add Probe** to create a probe.
+
+* Hover over the created probe, then click image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18] on the right to edit the probe settings.
+
+* Hover over the created probe, then click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right to delete the probe.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Path
+| The protocol (HTTP or HTTPS), the path relative to the virtual IP address of the pod for HTTP requests, and the port number for the request. Only available when the health check method is **HTTP Request**.
+
+| Command
+| The command to run in the container. You can use commas (,) to separate the commands and its parameters. Only available when the health check method is **Command**.
+
+| Port
+| The container port number for TCP checks. Only available when the health check method is **TCP Port**.
+
+| Initial Delay
+| The delay time in seconds  before the probe is initiated after container startup.
+
+| Timeout
+| The timeout period for the probe in seconds. After the timeout, the check will be considered a failure. The value must be an integer, with a minimum of **0**.
+
+| Check Interval
+| The time interval for performing checks in seconds. The value must be an integer, with a minimum of **1**.
+
+| Success Threshold
+| The minimum consecutive successes required to consider the check successful after a failure. The minimum value is **1**. For liveness probes and startup probes, this parameter must be **1**.
+
+| Failure Threshold
+| The minimum consecutive failures required to consider the check failed after a success. The minimum value is **1**.
+|===

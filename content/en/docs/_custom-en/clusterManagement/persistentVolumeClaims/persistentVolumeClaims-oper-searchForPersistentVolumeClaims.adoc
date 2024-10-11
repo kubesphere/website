@@ -1,0 +1,2 @@
+// :ks_include_id: 8f4761e6cc6f4d4e92304c70275e7b0a
+* Click the search box at the top of the list to search for Persistent Volume Claims by name or status.

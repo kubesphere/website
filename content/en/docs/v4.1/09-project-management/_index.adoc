@@ -1,0 +1,14 @@
+---
+title: "Project Management"
+linkTitle: "Project Management"
+keywords: "Kubernetes, KubeSphere, Project Management"
+description: "Introduces how to manage projects, including managing application workloads, storage resources, configuration resources , and project settings."
+layout: "second"
+weight: 09
+icon: "/images/docs/common/docs.svg"
+---
+
+
+This section explains how to manage resources within a project.
+
+In KubeSphere, each workspace can contain one or more projects. Users can be invited to join projects and gain viewing and management permissions for project resources based on their project roles.

@@ -1,0 +1,16 @@
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the ConfigMap you want to edit, then choose **Edit Information** from the dropdown list.
+
+. In the **Edit Information** dialog, set the alias and description for the ConfigMap, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Alias
+| The alias of the ConfigMap. Aliases can be the same for different ConfigMaps. An alias can only contain Chinese characters, letters, numbers, and hyphens (-). It cannot start or end with a hyphen (-) and has a maximum length of 63 characters.
+
+| Description
+| The description of the ConfigMap. The description can contain any characters, with a maximum length of 256 characters.
+|===
+--

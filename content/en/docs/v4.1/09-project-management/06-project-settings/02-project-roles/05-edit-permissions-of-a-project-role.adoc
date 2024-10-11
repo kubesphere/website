@@ -1,0 +1,37 @@
+---
+title: "Edit Project Role Permissions"
+linkTitle: "Edit Project Role Permissions"
+keywords: "Kubernetes, KubeSphere, Project, Project Settings, Project Role, Edit Project Role Permissions"
+description: "Guide on how to edit project role permissions."
+weight: 05
+---
+
+:ks_permission: **Role Management**
+:ks_navigation: **Project Settings > Project Roles**
+
+This section explains how to edit project role permissions.
+
+You can only edit permissions for project roles created by users. Permissions for preset project roles cannot be edited.
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project role you want to edit, then select **Edit Permissions** from the dropdown list.
+
+. In the **Edit Permissions** dialog, set the permissions for the project role, then click **OK**.
++
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-para-permissions_v4.adoc[]

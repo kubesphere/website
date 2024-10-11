@@ -1,0 +1,2 @@
+// :ks_include_id: 3b30b4276d1c44d894011e368b54291d
+This section explains how to view details of a Persistent Volume Claim.

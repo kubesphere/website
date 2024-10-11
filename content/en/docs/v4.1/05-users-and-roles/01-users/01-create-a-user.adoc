@@ -1,0 +1,47 @@
+---
+title: "Create Users"
+linkTitle: "Create Users"
+keywords: "Kubernetes, KubeSphere, Access Control, Users, Create Users"
+description: "Explain how to create a user."
+weight: 01
+---
+
+:ks_menu: **Users and Roles**
+:ks_navigation: **Users**
+:ks_permission: **User Management**
+
+This section explains how to create a user.
+
+== Prerequisites
+
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, refer to link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click pass:a,q[{ks_menu}].
+. Click pass:a,q[{ks_navigation}] in the left navigation pane.
+. Click **Create** on the page.
+. In the **Create User** dialog, fill in the user's information, and then click **OK**.
++
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Username
+|The name of the user. The username can only contain lowercase letters, numbers, hyphens (-), and periods (.), must start and end with a lowercase letter or number, and can be up to 32 characters long.
+
+|Email
+|The email address of the user. The email address can be used to log in to the {ks_product-en} web console.
+
+|Platform Role
+|The role of the user on the {ks_product-en} platform. The platform role determines the user's permissions in {ks_product-en}.
+
+|Password
+|The password of the user. The password must contain numbers, uppercase letters, lowercase letters, and special characters, and be between 8 and 64 characters long.
+
+|Description
+|The description of the user. The description can contain any characters and be up to 256 characters long.
+|===
+
+The user will be displayed in the list after the creation.

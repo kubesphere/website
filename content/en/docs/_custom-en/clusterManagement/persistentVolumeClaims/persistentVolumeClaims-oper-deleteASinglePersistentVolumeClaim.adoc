@@ -1,0 +1,3 @@
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the Persistent Volume Claim you want to delete, then choose **Delete** from the dropdown list.
+
+. In the **Delete Persistent Volume Claim** dialog, enter the name of the Persistent Volume Claim, then click **OK**.

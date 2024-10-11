@@ -1,0 +1,67 @@
+---
+title: "Enable and Disable Volume Operations"
+linkTitle: "Enable and Disable Volume Operations"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Class, Enable and Disable Volume Operations"
+description: "Instructions on how to enable and disable volume operations."
+weight: 05
+---
+
+:ks_permission: **Storage Class Management**
+:ks_navigation: **Storage > Storage Classes**
+
+
+This section explains how to enable and disable volume operations.
+
+You can configure whether users can clone and expand Persistent Volume Claims created using specific storage classes in the {ks_product-en} web console.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+The steps outlined in this section only control whether users can take these operations in the {ks_product-en} web console. The actual support for these operations by Persistent Volume Claims depends on the backend storage system.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+* Ensure that the backend storage system actually supports the feature before enabling it.
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-oper-openDetailsPage.adoc[]
+
++
+
+. In the top-left corner of the details page, select **More > Set Volume Operations**.
+
+. In the **Set Volume Operations** dialog, enable or disable Volume Cloning and Volume Expansion, then click **OK**.
++
+--
+[%header,cols="1,4"]
+|===
+| Feature | Description
+
+| Volume Cloning
+|
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeCloning.adoc[]
+
+// |Volume Snapshot
+// |
+// include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeSnapshot.adoc[]
+
+|Volume Expansion
+|
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeExpansion.adoc[]
+|===
+--

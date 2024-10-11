@@ -17,11 +17,7 @@ include::../../../../_custom/clusterManagement/jobs/jobs-desc-createAJob.adoc[]
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 

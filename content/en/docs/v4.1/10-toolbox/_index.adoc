@@ -1,0 +1,13 @@
+---
+title: "Toolbox"
+linkTitle: "Toolbox"
+keywords: "Kubernetes, KubeSphere, kubectl, Toolbox"
+description: "Guide on how to use the toolbox."
+layout: "second"
+weight: 10
+icon: "/images/docs/common/docs.svg"
+---
+
+KubeSphere integrates the kubectl command-line tool and the kubeconfig file for the cluster. By using the kubeconfig file, you can configure access information for the current cluster.
+
+This section explains how to run commands using kubectl and how to view or download the kubeconfig file for the cluster.

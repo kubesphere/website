@@ -1,0 +1,34 @@
+---
+title: "Delete Workspace Roles"
+linkTitle: "Delete Workspace Roles"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Role, Delete Workspace Role"
+description: "Guide on how to delete workspace roles."
+weight: 06
+---
+
+:ks_permission: **Role Management**
+:ks_navigation: **Workspace Settings > Workspace Roles**
+
+This section explains how to delete workspace roles.
+
+You can delete workspace roles created by users. Preset workspace roles cannot be deleted.
+
+== Prerequisites
+
+* Ensure the workspace role you want to delete is not assigned to any workspace members. Otherwise, you need to remove the workspace members or change their roles.
+
+* {empty}
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the workspace role you want to delete, then select **Delete** from the dropdown list.
+
+. In the **Delete Role** dialog, click **OK** to confirm the deletion.

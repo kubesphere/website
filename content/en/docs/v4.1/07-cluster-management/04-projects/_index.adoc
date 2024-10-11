@@ -1,0 +1,16 @@
+---
+title: "Projects"
+linkTitle: "Projects"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Projects"
+description: "Introduce how to manage projects in a cluster."
+layout: "second"
+weight: 04
+---
+
+This section explains how to manage projects in a cluster.
+
+In KubeSphere, projects are used to group and manage resources. You can create resources within a project, invite users to join the project, and set different permissions for different users. There are two types of projects in KubeSphere:
+
+- User Projects: Projects created by users for managing their resources.
+
+- System Projects: Projects automatically created by KubeSphere for managing system resources. It is generally not recommended to create user resources in the system projects.

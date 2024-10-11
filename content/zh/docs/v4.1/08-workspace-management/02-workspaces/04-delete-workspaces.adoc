@@ -24,21 +24,24 @@ weight: 04
 
 == 前提条件
 
-您需要在{ks_product_both}平台具有pass:a,q[{ks_permission}]权限。
+include::../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
 
 == 删除单个企业空间
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台。
+include::../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
++
 . 点击**企业空间管理**。
 . 在需要操作的企业空间右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
 . 在**删除企业空间**对话框，输入企业空间的名称，然后点击**确定**。
 
 
 == 批量删除企业空间
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台。
+
+include::../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
++
 . 点击**企业空间管理**。
-. 选择需要删除的企业空间左侧的复选框，然后在项目列表上方点击**删除**。
+. 选择需要删除的企业空间左侧的复选框，然后在企业空间列表上方点击**删除**。
 . 在**批量删除企业空间**对话框，输入企业空间的名称，然后点击**确定**。
 +
 [.admon.note,cols="a"]

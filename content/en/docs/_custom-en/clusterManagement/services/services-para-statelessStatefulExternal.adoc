@@ -1,0 +1,4 @@
+// :ks_include_id: ae5f26efadb740b1b3a09e681f1ef06e
+- **Stateful Service**: The internal access mode of the service is Headless, and the backend workload is Statefulset.
+
+- **Stateless Service**: The internal access mode of the service is VirtualIP,  and the backend workload is Deployment.

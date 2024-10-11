@@ -1,0 +1,17 @@
+// :ks_include_id: 5ad1ed3919ae46abbe1b16d6a66d149c
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|CPU Limit
+|Maximum sum of CPU limits for all containers running in a workspace on a single cluster.
+
+|CPU Request
+|Maximum sum of CPU reservations for all containers running in a workspace on a single cluster.
+
+|Memory Limit
+|Maximum sum of memory limits for all containers running in a workspace on a single cluster.
+
+|Memory Request
+|Maximum sum of memory reservations for all containers running in a workspace on a single cluster.
+|===

@@ -1,0 +1,8 @@
+// :ks_include_id: c221a68eab6c49a89248bbc09f41a6f6
+. Select the checkbox on the left of the pods you want to delete, then click **Delete** above the pod list.
+
+. In the **Delete Multiple Pods** dialog, enter the name of the pods, then click **OK**.
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

@@ -1,0 +1,63 @@
+---
+title: "View Service List"
+linkTitle: "View Service List"
+keywords: "Kubernetes, KubeSphere, Project Management, Workloads, Services, View Service Lists"
+description: "Instructions on how to view the service list."
+weight: 02
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Services**
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-viewServiceList.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* The service list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../_custom-en/clusterManagement/services/services-para-name.adoc[]
+
+|Service Type
+|The type of service. Depending on how the service was created, KubeSphere categorizes services into the following types:
+
+include::../../../../_custom-en/clusterManagement/services/services-para-statelessStatefulExternal.adoc[]
+
+* **External Service**: Services forward business traffic to other services outside the cluster. The system does not allocate virtual IP addresses for services. They can be accessed internally within the cluster using the domain name format `<service name>.<project name>.svc.cluster.local`.
+
+* **Custom Service**: Services created by users with custom internal access modes and backend workloads.
+
+|App
+|The application to which the service belongs.
+
+|Internal Access
+|
+include::../../../../_custom-en/clusterManagement/services/services-para-internalAccess.adoc[]
+
+include::../../../../_custom-en/clusterManagement/services/services-para-virtualip-headless.adoc[]
+
+include::../../../../_custom-en/clusterManagement/services/services-para-externalName.adoc[]
+
+include::../../../../_custom-en/clusterManagement/services/services-para-externalAccess.adoc[]
+
+include::../../../../_custom-en/clusterManagement/services/services-para-creationTime.adoc[]
+|===
+--
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-searchForServices.adoc[]
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

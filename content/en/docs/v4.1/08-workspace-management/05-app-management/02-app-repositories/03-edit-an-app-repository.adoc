@@ -1,0 +1,34 @@
+---
+title: "Edit Application Repository"
+linkTitle: "Edit Application Repository"
+keywords: "Kubernetes, KubeSphere, Workspace, Application Repository, Edit Application Repository"
+description: "Explains how to edit an application repository."
+weight: 03
+---
+
+:ks_permission: **App Repos Management**
+:ks_navigation: **App Management > App Repositories**
+
+This section explains how to edit an application repository.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+* Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the application repository you want to edit, then select **Edit Information** from the drop-down list.
+
+* In the **Edit App Repository** dialog, configure the parameters for the application repository, then click **OK**.
++
+--
+include::../../../../_custom-en/workspaceManagement/appRepositories/appRepositories-para-createAppRepository_v4.adoc[]
+--

@@ -1,0 +1,52 @@
+---
+title: "Install Extensions"
+keywords: "Kubernetes, KubeSphere, Installation, Extensions, Multi-cluster"
+description: "Instructions on how to install extensions."
+weight: 01
+---
+
+This section explains how to install extensions.
+
+== Prerequisites
+
+You should have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../05-users-and-roles/01-users/[Users] and link:../../05-users-and-roles/02-platform-roles/[Platform Roles].
+
+
+== Installation Steps
+
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+
+. Click **Extensions Center** to view the list of extensions.
+
+. Click the name of an uninstalled extension to access the installation page.
+
+. On the **Version Selection** tab of the installation dialog, select the version of the extension and install all required dependencies (if any). Click **Next**.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+During the installation, it detects whether the extension has dependencies. Dependencies are categorized as required and optional.
+
+If a required dependency is **Not Ready**, you need to install the required version first to ensure the normal use of the extension. Optional dependencies do not affect the installation of the extension.
+|===
+--
+
+. On the **Extensions Installation** tab, make optional modifications to the configuration of the extension (if needed), and then click **Start Installation**.
++
+image:/images/ks-qkcp/en/v4.0/install-extensions.png[,100%]
+
+. On the **Cluster Selection** tab, select clusters by name or identifier. Multiple clusters can be selected.
+
+. On the **Diff Config** tab, edit the selected cluster's YAML file, or leave it unchanged to use the default configuration. Then click **OK** to start configuring the cluster agent.
++
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+Some extensions require the installation of a cluster Agent to enable the full functionality of the extension.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+Once the installation is complete, the extension is enabled by default. You can configure, upgrade, disable, or uninstall extensions in the Extensions Center.

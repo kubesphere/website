@@ -1,0 +1,13 @@
+---
+title: "Quick Start"
+linkTitle: "Quick Start"
+keywords: "Kubernetes, KubeSphere, Quick Start"
+description: "Introduce how to install KubeSphere, as well as how to control user permissions."
+layout: "second"
+weight: 02
+icon: "/images/docs/common/docs.svg"
+---
+
+This section provides a brief overview of how to install {ks_product-en}, as well as how to control user permissions, helping you quickly get started with {ks_product-en}.
+
+For more information on installing and using {ks_product-en}, please refer to other sections in the documentation.

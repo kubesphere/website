@@ -1,0 +1,2 @@
+// :ks_include_id: 9758f6b782ed465d85796e1e69cd0d24
+. In the project list, click the name of a project to open its details page.

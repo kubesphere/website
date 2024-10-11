@@ -1,0 +1,30 @@
+---
+title: "Delete Projects"
+linkTitle: "Delete Projects"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Basic Information, Delete Project"
+description: "Instructions on how to delete a project."
+weight: 05
+---
+
+:ks_permission: **Project Settings Management**
+:ks_navigation: **Project Settings > Basic Information**
+
+include::../../../../_custom-en/clusterManagement/projects/projects-desc-deleteProjects.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Basic Information** page, click **Manage**, then select **Delete Project** from the dropdown list.
+
+. In the **Delete Project** dialog, enter the project name, then click **OK**.

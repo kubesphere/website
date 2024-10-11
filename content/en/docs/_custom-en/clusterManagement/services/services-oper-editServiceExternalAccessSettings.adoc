@@ -1,0 +1,18 @@
+// :ks_include_id: f59275b4c21c49c9983d211ee4b12b66
+. In the **Edit External Access** dialog, set the external access mode for the service, then click **OK**.
++
+--
+The external access modes for the service include the following types:
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| None
+| The service cannot be accessed from outside the cluster.
+
+* **NodePort**: The system maps the ports of nodes to the service ports, and the service can be accessed through the node IP address and node port.
+
+* **LoadBalancer**: On the basis of a NodePort service, the system assigns an external IP address to the service and binds the external IP address to an external load balancer. The external load balancer listens on the node port corresponding to the service, allowing access to the service through the external IP address. To achieve this, LoadBalancer-type services need support from load balancer plugins and the infrastructure environment, and relevant annotations need to be set. For more information, please contact your infrastructure environment provider.
+|===
+--

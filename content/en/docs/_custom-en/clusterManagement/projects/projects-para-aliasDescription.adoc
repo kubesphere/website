@@ -1,0 +1,6 @@
+// :ks_include_id: 33f27ee37c1e4b36a0fb2c4e22a65e3f
+|Alias
+|The alias of the project. Aliases can be the same for different projects. Aliases can only contain Chinese characters, letters, numbers, and hyphens (-). They must not start or end with a hyphen (-) and have a maximum length of 63 characters.
+
+|Description
+|The description of the project. Description can contain any characters, with a maximum length of 256 characters.

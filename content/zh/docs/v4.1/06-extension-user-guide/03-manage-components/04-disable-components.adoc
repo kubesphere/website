@@ -8,7 +8,7 @@ weight: 04
 
 本节介绍如何禁用扩展组件。
 
-组件安装完成后，会自动启用。您可以在扩展中心的组件列表或组件详情页中禁用扩展组件。
+组件安装完成后，会自动启用。您可以在扩展中心的组件详情页中禁用扩展组件。
 
 禁用后，再次启用，即可在集群、企业空间、项目中继续使用该组件。
 
@@ -20,5 +20,6 @@ weight: 04
 
 . 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
 . 点击**扩展中心**，进入扩展中心页面。
-. 点击组件右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**禁用**。
-. 禁用后，点击组件右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**启用**即可继续使用该组件。
+. 点击已安装的组件名称，进入组件详情页。
+. 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**禁用**。
+. 禁用后，再次点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**启用**即可继续使用该组件。

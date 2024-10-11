@@ -23,11 +23,7 @@ include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 == 前提条件
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-:relfileprefix: ./
 
 
 == 操作步骤

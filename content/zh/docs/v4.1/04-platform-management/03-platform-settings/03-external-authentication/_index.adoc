@@ -1,6 +1,10 @@
 ---
 title: "外部身份验证"
+linkTitle: "外部身份验证"
+keywords: "Kubernetes, KubeSphere, 第三方认证"
+description: "在 KubeSphere 上设置外部身份验证。"
 weight: 03
+layout: "second"
 ---
 
 本节演示如何在{ks_product_both}上配置第三方身份验证。

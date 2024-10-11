@@ -1,0 +1,22 @@
+. View the resource attributes of the ConfigMap in the **Attributes** area on the left side of the ConfigMap details page.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Cluster
+| The cluster to which the ConfigMap belongs.
+
+| Project
+| The project to which the ConfigMap belongs.
+
+| Creation Time
+| The creation time of the ConfigMap.
+
+| Creator
+| The user who created the ConfigMap.
+|===
+--
+
+. On the **Data** tab on the right side of the ConfigMap details page, view the key-value pair data stored in the ConfigMap.

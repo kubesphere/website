@@ -1,0 +1,2 @@
+// :ks_include_id: f3341457c4584e59b799240a35ca496d
+您需要加入一个集群或项目，并在集群或项目中具有pass:a,q[{ks_permission}]权限。有关更多信息，请参阅xref:07-cluster-management/09-cluster-settings/04-cluster-roles/_index.adoc[集群角色]和xref:09-project-management/06-project-settings/02-project-roles/_index.adoc[项目角色]。

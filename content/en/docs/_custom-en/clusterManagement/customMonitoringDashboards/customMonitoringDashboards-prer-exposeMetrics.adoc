@@ -1,0 +1,2 @@
+// :ks_include_id: 385623699d0d48bda614b5a8de5c062d
+* 您需要配置运行在容器中的应用程序将符合 Prometheus 规范的监控指标暴露在某个服务端路径下。有关更多信息，请参阅 link:https://prometheus.io/docs/instrumenting/clientlibs/[Prometheus 官方文档]。

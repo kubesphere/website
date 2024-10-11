@@ -16,11 +16,7 @@ weight: 04
 
 == 前提条件
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 == 操作步骤
@@ -31,9 +27,6 @@ include::../../../../_custom/projectManagement/projectManagement-oper-openProjec
 
 include::../../../../../_ks_components/oper-navigate.adoc[]
 
-+
-
-. 在**应用**页面，点击**基于模板的应用**打开应用列表。
 +
 ====
 * 应用列表提供以下信息：

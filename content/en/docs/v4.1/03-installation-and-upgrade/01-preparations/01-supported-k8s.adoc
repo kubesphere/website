@@ -1,0 +1,199 @@
+---
+title: "Environment Requirements"
+linkTitle: "Environment Requirements"
+keywords: "Kubernetes, KubeSphere, Components, Support Matrix"
+description: "Introduce the environment requirements of KubeSphere."
+weight: 01
+---
+
+
+This section introduces the environment requirements for {ks_product-en}.
+
+== System Requirements
+
+[%header,cols="3a,4a,4a"]
+|===
+|OS |Minimum Requirements (per node)| Requirements for Production Environment (per node)
+
+|Ubuntu 16.04, 18.04, 20.04, 22.04
+|CPU: 2 cores, Memory: 4 GB, Disk: 40 GB
+|CPU: 8 cores, Memory: 16 GB, Disk: 200 GB
+
+|Debian Buster, Stretch
+|CPU: 2 cores, Memory: 4 GB, Disk: 40 GB
+|CPU: 8 cores, Memory: 16 GB, Disk: 200 GB
+
+|CentOS 7.x, CentOS Stream 
+|CPU: 2 cores, Memory: 4 GB, Disk: 40 GB
+|CPU: 8 cores, Memory: 16 GB, Disk: 200 GB
+
+|Red Hat Enterprise Linux 7.x, 8.x
+|CPU: 2 cores, Memory: 4 GB, Disk: 40 GB
+|CPU: 8 cores, Memory: 16 GB, Disk: 200 GB
+
+|SUSE Linux Enterprise Server 15/openSUSE Leap 15.2
+|CPU: 2 cores, Memory: 4 GB, Disk: 40 GB
+|CPU: 8 cores, Memory: 16 GB, Disk: 200 GB
+|===
+
+== Dependency Requirements
+
+[%header,cols="1a,4a,4a"]
+|===
+|Dependency |Kubernetes Version ≥ 1.18|Kubernetes Version < 1.18
+
+|socat
+|Required
+|Optional, but recommended
+
+|conntrack
+|Required
+|Optional, but recommended
+
+|ebtables
+|Optional, but recommended
+|Optional, but recommended
+
+|ipset
+|Optional, but recommended
+|Optional, but recommended
+|===
+
+== Container Runtime Requirements
+
+[%header,cols="4a,4a"]
+|===
+|Supported Container Runtimes |Version
+
+|Docker
+|20.10.0+
+
+|containerd
+|Latest version
+
+|CRI-O (Experimental, not fully tested)
+|Latest version
+
+|iSula (Experimental, not fully tested)
+|Latest version
+|===
+
+== Network Requirements
+
+* Ensure that the DNS addresses in **/etc/resolv.conf** are accessible; otherwise, it may cause DNS issues in the cluster.
+
+* If your network configuration uses firewall rules or security groups, make sure that the infrastructure components can communicate with each other through specific ports. It is recommended to disable the firewall.
+
+* Supported CNI plugins: Calico and Flannel. Other plugins such as Cilium and Kube-OVN are also compatible, but note that they have not been fully tested.
+
+== Port Requirements
+
+Certain ports are used for communication between services. If you have firewall rules in your network configuration, ensure that the infrastructure components can communicate with each other through specific ports. These ports serve as communication endpoints for certain processes or services.
+
+[%header,cols="2a,2a,2a,2a,2a,3a"]
+|===
+|Service
+|Protocol
+|Action
+|Start Port
+|End Port
+|Remarks
+
+|ssh
+|TCP
+|Allow
+|22
+|N/A
+|N/A
+
+|etcd
+|TCP
+|Allow
+|2379
+|2380
+|N/A
+
+|apiserver
+|TCP
+|Allow
+|6443
+|N/A
+|N/A
+
+|calico
+|TCP
+|Allow
+|9099
+|9100
+|N/A
+
+|bgp
+|TCP
+|Allow
+|179
+|N/A
+|N/A
+
+|nodeport
+|TCP
+|Allow
+|30000
+|32767
+|N/A
+
+|master
+|TCP
+|Allow
+|10250
+|10258
+|N/A
+
+|dns
+|TCP
+|Allow
+|53
+|N/A
+|N/A
+
+|dns
+|UDP
+|Allow
+|53
+|N/A
+|N/A
+
+|local-registry
+|TCP
+|Allow
+|5000
+|N/A
+|Required for offline environments
+
+|local-apt
+|TCP
+|Allow
+|5080
+|N/A
+|Required for offline environments
+
+|rpcbind
+|TCP
+|Allow
+|111
+|N/A
+|Required when using NFS
+
+|ipip
+|IPENCAP / IPIP
+|Allow
+|N/A
+|N/A
+|Calico requires IPIP protocol
+
+|metrics-server
+|TCP
+|Allow
+|8443
+|N/A
+|N/A
+|===

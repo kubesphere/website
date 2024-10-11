@@ -1,0 +1,20 @@
+// :ks_include_id: bcd276927dfd4924a47a068697e1b751
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|etcd
+|Nodes for installing the etcd database. Set the cluster control plane nodes under this parameter.
+
+|control-plane
+|Cluster control plane nodes. If you have configured high availability for the cluster, you can set multiple control plane nodes.
+
+|worker
+|Cluster worker nodes.
+
+|registry
+|Server used for creating a private image registry. This server is not used as a cluster node.
+ifeval::["{file_output_type}" == "html"]
+During the installation or upgrade of {ks_product-en}, if the cluster nodes cannot connect to the Internet, you need to set the server used for creating a private image registry under this parameter. Otherwise, you can comment out this parameter.
+endif::[]
+|===

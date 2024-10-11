@@ -1,0 +1,4 @@
+// :ks_include_id: 19d9bf1ea982422ea0b931f92715f227
+This section explains how to clone a Persistent Volume.
+
+After creating a Persistent Volume Claim and Persistent Volume, you can create identical copies by cloning them.

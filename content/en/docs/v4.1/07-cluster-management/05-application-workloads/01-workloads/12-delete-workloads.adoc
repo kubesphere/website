@@ -1,0 +1,59 @@
+---
+title: "Delete Workloads"
+linkTitle: "Delete Workloads"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Delete Workload"
+description: "Learn how to delete a workload."
+weight: 12
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-deleteWorkloads.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Delete a Single Workload
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openListPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-deleteASingleWorkload.adoc[]
+
++
+
+. In the **Delete Workload** dialog, confirm and select the names of the resources related to the workloads to be deleted, then click **OK**.
+
+
+== Delete Multiple Workloads
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openListPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-deleteMultipleWorkloads.adoc[]
+

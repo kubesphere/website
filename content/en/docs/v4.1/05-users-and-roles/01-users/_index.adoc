@@ -1,0 +1,12 @@
+---
+title: "Users"
+linkTitle: "Users"
+keywords: "Kubernetes, KubeSphere, Access Control, User"
+description: "Explain how to manage users."
+layout: "second"
+weight: 02
+---
+
+This section explains how to manage users.
+
+The default administrator user **admin** in KubeSphere has all permissions and can create other users as needed. Users can be invited to join clusters and workspaces. Workspace members can be invited to join various projects, meaning users can be members under clusters, workspaces, and projects.

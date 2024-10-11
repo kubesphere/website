@@ -1,0 +1,31 @@
+---
+title: "View Workspace Quotas"
+linkTitle: "View Workspace Quotas"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Quotas, View Workspace Quotas"
+description: "Guide on how to view workspace quotas."
+weight: 02
+---
+
+:ks_permission: **Workspace Settings Viewing**
+:ks_navigation: **Workspace Settings > Workspace Quotas**
+
+This section explains how to view workspace quotas.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+--
+The **Workspace Quotas** page displays resource quota information for clusters authorized to the workspace:
+
+include::../../../../_custom-en/workspaceManagement/workspace-quotas/workspaceQuotas-para-cpuMemoryQuotas.adoc[]
+--

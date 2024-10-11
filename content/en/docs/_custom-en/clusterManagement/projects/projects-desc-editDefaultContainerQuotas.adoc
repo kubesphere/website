@@ -1,0 +1,10 @@
+// :ks_include_id: 61bf4ea84b3d4363b5a4ebfacd921138
+This section explains how to edit default container quotas.
+
+Default container quotas are the default values for resource request and resource limit for containers in the project. When creating containers in the project, if users do not specify resource request and limit, the containers will automatically use the default container quotas.
+
+Default container quotas include two types of settings:
+
+* Resource Request: Resources reserved by the system for containers.
+
+* Resource Limit: The upper limit of resources that containers can use.

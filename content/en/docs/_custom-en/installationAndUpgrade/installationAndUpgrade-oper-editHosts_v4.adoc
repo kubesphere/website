@@ -1,0 +1,22 @@
+// :ks_include_id: bc97a1c3d087413bba734c07a3edb221
+. Log in to all cluster nodes and execute the following command to edit the **/etc/hosts** file:
++
+--
+// Bash
+[,bash]
+----
+
+vi /etc/hosts
+
+----
+
+Add the following information to the **/etc/hosts** file to configure the domain resolution rules for the private image registry on the cluster nodes (replace `<registry IP address>` with the actual IP address of the private image registry and replace the default address of the private image registry **dockerhub.kubekey.local** with your actual image registry address), and then save the file:
+
+// Bash
+[,bash]
+----
+
+<registry IP address> dockerhub.kubekey.local
+
+----
+--

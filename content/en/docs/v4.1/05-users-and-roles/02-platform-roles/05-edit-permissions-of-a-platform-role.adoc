@@ -1,0 +1,76 @@
+---
+title: "Edit Platform Role Permissions"
+linkTitle: "Edit Platform Role Permissions"
+keywords: "Kubernetes, KubeSphere, Platform Management, Access Control, Platform Roles, Edit Platform Role Permissions"
+description: "Introduction to editing platform role permissions."
+weight: 05
+---
+
+:ks_menu: **Users and Roles**
+:ks_permission: **Role Management**
+:ks_navigation: **Platform Roles**
+
+This section explains how to edit platform role permissions.
+
+== Prerequisites
+
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click pass:a,q[{ks_menu}].
+. Select **Platform Roles** from the left navigation pane.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the platform role, then choose **Edit Permissions** from the drop-down list.
+. In the **Edit Permissions** dialog, set the permissions for the platform role, then click **OK**.
++
+Users with the **platform-admin** role can enable and disable extensions. Other required permissions for platform operations are as follows:
+
++
+* Workspace
++
+
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Workspace Creation
+|Create workspaces and become an administrator of the created projects.
+
+|Workspace Management
+|Manage all workspaces and resources within workspaces.
+
+|Workspace Viewing
+|View all workspaces and resources within workspaces.
+|===
+
++
+* Cluster Management
++
+
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Cluster Management
+|Create clusters, delete clusters, and manage resources within all clusters.
+
+|Cluster Viewing
+|View all clusters and cluster resources.
+|===
+
+* Access Control
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|User Viewing
+|View users.
+
+|Role Viewing
+|View platform roles.
+
+|===
+--

@@ -1,0 +1,43 @@
+---
+title: "Expand Persistent Volumes"
+linkTitle: "Expand Persistent Volumes"
+keywords: "Kubernetes, KubeSphere, Project Management, Storage, Persistent Volume Claim, Persistent Volume, Expand Persistent Volume"
+description: "Learn how to expand the capacity of a Persistent Volume."
+weight: 06
+---
+
+
+:ks_permission: **Persistent Volume Claim Management**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-expandAPersistentVolumeClaim.adoc[]
+
+
+== Prerequisites
+
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-persistentVolumeCreated.adoc[]
+
+
+* Ensure that the backend storage system supports volume cloning, and the storage class corresponding to the Persistent Volume Claim has enabled volume cloning.
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-expandAPersistentVolume.adoc[]

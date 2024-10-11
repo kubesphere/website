@@ -1,0 +1,141 @@
+// :ks_include_id: ae48f9c2af1e46bca4bede49d4447413
+. In the left **Attributes** area on the job details page, view the resource attributes of the job.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Cluster
+| The cluster to which the job belongs.
+
+| Project
+| The project to which the job belongs.
+
+| Status
+|
+The current status of the job.
+
+include::jobs-para-jobStatus.adoc[]
+
+| Maximum Retries
+| The maximum number of times the pods in the job can be restarted. If the maximum retries is reached but the job completion conditions are still not met, the job will be marked as failed. Available only for Jobs.
+
+| Complete Pods
+| The number of completed pods required to mark the job as completed. Available only for Jobs.
+
+| Parallel Pods
+| The number of pods that run in parallel in the job. Available only for Jobs.
+
+| Maximum Duration
+| The maximum running time for the job, in seconds. If the maximum duration is reached but the job completion conditions are still not met, the job will be terminated and marked as failed. Available only for Jobs.
+
+| Schedule
+| The CRON expression specifying the runtime cycle for a CronJob. KubeSphere defaults to UTC time, and you may need to adjust it based on your time zone. Available only for CronJobs.
+
+| Maximum Startup Delay
+| The maximum delay before starting a job when it fails to start according to the schedule. Available only for CronJobs.
+
+| Successful Jobs Retention
+| The number of successful jobs allowed to be retained, with a default value of **3**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
+
+| Failed Jobs Retention
+| The number of failed jobs allowed to be retained, with a default value of **1**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
+
+| Concurrency Policy
+| The policy the system adopts when multiple jobs created by a CronJob overlap. Available only for CronJobs. It includes the following polices:
+
+* **Run jobs concurrently**: New and old jobs run concurrently.
+
+* **Skip new job**: Do not run new jobs.
+
+* **Skip old job**: Immediately terminates old jobs and then runs new jobs.
+
+| Creation Time
+| The creation time of the job.
+
+| Creator
+| The user who created the job.
+|===
+--
+
+. On the right **Run Records** tab on the job details page, view the run records of the job.
++
+--
+When users re-run a Job manually or run a CronJob according to the schedule, the system generates run records.
+
+For Jobs, the **Run Records** tab displays the following information:
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| No.
+| The serial number of the job, indicating the sequence of each run.
+
+| Status
+| The status result of each run of the job.
+
+include::jobs-para-jobStatus.adoc[]
+
+* **Incomplete**: Manually rerun the job during the job running.
+
+| Message
+| The message returned by the run.
+
+| Start Time
+| The time the run started.
+
+| End Time
+| The time the run ended.
+|===
+
+For CronJobs, the **Run Records** tab displays the following information:
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Job
+| The name of the job created by the CronJob.
+
+| Status
+| The status of the job created by the CronJob.
+
+include::jobs-para-jobStatus.adoc[]
+
+| Start Time
+| The start time of the job created by the CronJob.
+
+| End Time
+| The time the run ended.
+|===
+--
+
+. For Jobs, Click the **Resource Status** tab on the right of the job details page to view the number of pod replicas and pods in the job.
++
+--
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Replicas
+| The number of pod replicas in the job.
+
+| Pods
+| The pods running for the job.
+
+include::../nodes/nodes-para-podList.adoc[]
+|===
+--
+
+. Click the **Metadata** tab on the right of the job details page to view the labels and annotations of the job.
+
+. For Jobs, Click the **Environment Variables** tab on the right of the job details page to view the environment variables of all containers in the job.
+
+. Click the **Events** tab on the right of the job details page to view events related to the job.
++
+--
+include::../clusterManagement-para-eventsTab.adoc[]
+--
