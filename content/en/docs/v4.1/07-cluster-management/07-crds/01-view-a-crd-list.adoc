@@ -1,5 +1,6 @@
 ---
 title: "View CRD List"
+linkTitle: "View CRD List"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definitions, View Custom Resource Definitions List"
 description: "Explain how to view the list of custom resource definitions."
 weight: 01

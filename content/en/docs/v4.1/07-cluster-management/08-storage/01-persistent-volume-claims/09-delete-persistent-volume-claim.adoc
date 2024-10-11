@@ -1,5 +1,6 @@
 ---
 title: "Delete PVCs"
+linkTitle: "Delete PVCs"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Delete Persistent Volume Claim"
 description: "Introduce how to delete a Persistent Volume Claim."
 weight: 09

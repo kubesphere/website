@@ -6,7 +6,7 @@ description: "Instructions on how to view cluster basic information."
 weight: 01
 ---
 
-:ks_permission: **Cluster Settings View**
+:ks_permission: **Cluster Settings Viewing**
 :ks_navigation: **Cluster Settings > Basic Information**
 
 
@@ -27,4 +27,4 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. On the **Basic Information** tab, view the cluster's name, provider, and Kubernetes version.
+. On the **Basic Information** page, view the cluster's name, provider, and Kubernetes version.

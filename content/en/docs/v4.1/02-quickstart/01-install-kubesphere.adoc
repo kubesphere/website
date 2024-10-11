@@ -60,11 +60,16 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core https://c
 +
 include::../../../_ks_components-en/admonitions/note.adoc[]
 
-If you are accessing Docker Hub from a restricted location, use the following configuration to modify the default image pull address.
+If you are accessing Docker Hub from a restricted location, add the following configuration after the above command to modify the default image pull address.
 
 [,bash]
 ----
 --set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+[,bash]
+----
+--set extension.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
 ----
 
 include::../../../_ks_components-en/admonitions/admonEnd.adoc[]

@@ -13,7 +13,7 @@ For multi-cluster environments, when uninstalling, the cluster agent will be uni
 
 == Prerequisites
 
-You need to have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../../05-users-and-roles/01-users/[Users] and link:../../../05-users-and-roles/02-platform-roles/[Platform Roles].
+You should have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../../05-users-and-roles/01-users/[Users] and link:../../../05-users-and-roles/02-platform-roles/[Platform Roles].
 
 == Steps
 

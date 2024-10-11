@@ -1,5 +1,6 @@
 ---
 title: "Services"
+linkTitle: "Services"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Services"
 description: "Learn how to manage services."
 layout: "second"

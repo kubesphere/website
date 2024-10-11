@@ -1,11 +1,10 @@
 ---
-title: "基本信息"
-linkTitle: "基本信息"
-keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 基本信息"
-description: "介绍如何查看和编辑企业空间基本信息。"
+title: "Basic Information"
+linkTitle: "Basic Information"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Basic Information"
+description: "Explains how to view and edit basic information for workspaces."
 layout: "second"
 weight: 01
 ---
 
-
-本节介绍如何查看和管理企业空间基本信息。
+This section explains how to view and manage basic information for workspaces.

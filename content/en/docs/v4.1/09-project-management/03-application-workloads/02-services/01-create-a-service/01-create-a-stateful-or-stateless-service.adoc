@@ -1,32 +1,27 @@
 ---
-title: "创建有状态或无状态服务"
-linkTitle: "创建有状态或无状态服务"
-keywords: "Kubernetes, KubeSphere, 项目管理, 工作负载, 服务, 创建服务, 创建有状态或无状态服务"
-description: "介绍如何创建有状态或无状态服务。"
+title: "Create Stateful or Stateless Services"
+linkTitle: "Create Stateful or Stateless Services"
+keywords: "Kubernetes, KubeSphere, Project Management, Workloads, Services, Create Service, Create Stateful or Stateless Services"
+description: "Introduces how to create stateful or stateless services."
 weight: 01
 ---
 
-:ks_permission: **应用负载管理**
-:ks_navigation: **应用负载 > 服务**
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
 
-
-本节介绍如何创建有状态或无状态服务。
+This section introduces how to create stateful or stateless services.
 
 
 == Prerequisites
 
 
-:relfileprefix: ../../../../../
-
 include::../../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 
 == Steps
 
-请参阅link:#_参数描述[参数描述]设置服务的参数。
+Please refer to link:#_parameter_description[Parameter Description] for configuring the parameters of a service.
 
 include::../../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -40,7 +35,7 @@ include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**创建服务**对话框，根据需要选择**有状态服务**或**无状态服务**。
+. In the **Create Service** dialog, choose **Stateful Service** or **Stateless Service** based on your requirements.
 +
 --
 // Note
@@ -57,25 +52,25 @@ include::../../../../../_custom-en/projectManagement/services/services-oper-setB
 
 +
 
-. 在**容器组设置**页签，为服务后端工作负载管理的容器组设置副本数量、容器、更新策略、安全上下文、调度规则和元数据，然后点击**下一步**。
+. On the **Pod Settings** tab, configure the replica count, containers, update strategy, security context, scheduling rules, and metadata for the pods managed by the backend workload of the service, then click **Next**.
 
 +
 
 include::../../../../../_custom-en/projectManagement/services/services-oper-setStorageAdvanced.adoc[]
 
 
-== 参数描述
+== Parameter Description
 
-以下介绍如何设置有状态服务和无状态服务的参数。
+The following explains how to configure parameters for stateful and stateless services.
 
-* 基本信息
+* Basic Information
 +
 --
 include::../../../../../_custom-en/projectManagement/services/services-para-setServiceInformation.adoc[]
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
 include::../../../../../_custom-en/clusterManagement/services/services-para-serviceName.adoc[]
 
@@ -89,20 +84,20 @@ include::../../../../../_custom-en/clusterManagement/services/services-para-serv
 
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podReplicas.adoc[]
 
-* 容器组设置 > 添加容器
+* Pod Settings > Add Container
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addContainer.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 容器设置
+* Pod Settings > Add Container > Container Settings
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-setImageNameTypeResource.adoc[]
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerImage.adoc[]
 
@@ -114,120 +109,116 @@ include::../../../../../_custom-en/clusterManagement/projects/projects-para-cont
 |===
 --
 
-* 容器组设置 > 添加容器 > 端口设置
+* Pod Settings > Add Container > Port Settings
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Port.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 镜像拉取策略
+* Pod Settings > Add Container > Image Pull Policy
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 健康检查
+* Pod Settings > Add Container > Health Check
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 健康检查 > 添加探针
+* Pod Settings > Add Container > Health Check > Add Probe
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addProbe.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 生命周期管理
+* Pod Settings > Add Container > Lifecycle Management
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 生命周期管理 > 添加动作
+* Pod Settings > Add Container > Lifecycle Management > Add Action
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addAction.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 启动命令
+* Pod Settings > Add Container > Start Command
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 环境变量
+* Pod Settings > Add Container > Environment Variables
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 容器组安全上下文
+* Pod Settings > Add Container > Container Security Context
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerSecurityContext.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 同步主机时区
+* Pod Settings > Add Container > Synchronize Host Timezone
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
 --
 
-* 容器组设置 > 更新策略
+* Pod Settings > Update Strategy
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-updatePolicy.adoc[]
 --
 
-* 容器组设置 > 更新策略 > 滚动更新设置
+* Pod Settings > Update Policy > Rolling Update Settings
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-rollingUpdate.adoc[]
 --
 
-* 容器组设置 > 容器组安全上下文
+* Pod Settings > Pod Security Context
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podSecurityContext.adoc[]
 --
 
-* 容器组设置 > 容器组调度规则
+* Pod Settings > Pod Scheduling Rules
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podSchedulingRules.adoc[]
 --
 
-* 容器组设置 > 容器组调度规则 > 自定义规则
+* Pod Settings > Pod Scheduling Rules > Custom Rules
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-customRules.adoc[]
-
 --
-* 容器组设置 > 容器组优雅终止
+
+* Pod Settings > Pod Graceful Period
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-PodGracePeriod.adoc[]
 --
 
-* 容器组设置 > 添加元数据
+* Pod Settings > Add Metadata
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-PodMetadata.adoc[]
 --
 
-* 存储设置
+* Storage Settings
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-mountVolume.adoc[]
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
-
-// include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-collectLogsOnVolume.adoc[]
-
-// include::../../../../../_custom-en/projectManagement/workloads/workloads-desc-enableLogCollectionProject.adoc[]
+|Parameter |Description
 
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
 
@@ -239,48 +230,44 @@ include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/wo
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume.adoc[]
 --
 
-* 存储设置 > 添加持久卷声明模板
+* Storage Settings > Add Persistent Volume Claim Template
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
 --
 
-* 存储设置 > 挂载卷 > 持久卷
+* Storage Settings > Mount Volume > Persistent Volume
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-persistentVolume.adoc[]
 --
 
-* 存储设置 > 挂载卷 > 临时卷
+* Storage Settings > Mount Volume > Temporary Volume
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-temporaryVolume_new.adoc[]
 --
 
-* 存储设置 > 挂载卷 > HostPath 卷
+* Storage Settings > Mount Volume > HostPath Volume
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-hostpathVolume.adoc[]
 --
 
-* 存储设置 > 挂载配置字典或保密字典
+* Storage Settings > Mount ConfigMap or Secret
 +
 --
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountConfigmapSecret.adoc[]
 --
 
-* 高级设置
+* Advanced Settings
 +
 --
-// include::../../../../../_custom-en/projectManagement/services/services-desc-setLabelsAnnotations.adoc[]
-
-为服务后端工作负载管理的容器组指定节点，设置服务的外部访问模式、会话保持设置和元数据。
+Specify nodes for the pods managed by the backend workload of the service, and set the external access mode, session persistence settings, and metadata for the service.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
-
-// include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podIpPool.adoc[]
+| Parameter | Description
 
 include::../../../../../_custom-en/clusterManagement/services/services-para-externalAccess.adoc[]
 
@@ -288,7 +275,7 @@ include::../../../../../_custom-en/clusterManagement/services/services-para-sess
 
 include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-selectNode.adoc[]
 
-|添加元数据
+| Add Metadata
 |
 include::../../../../../_custom-en/projectManagement/services/services-desc-setServiceLabelWorkloadAnnotation.adoc[]
 

@@ -1,8 +1,8 @@
 ---
 title: "Release Notes for 4.1.1"
+linkTitle: "Release Notes - 4.1.1"
 keywords: "Kubernetes, KubeSphere, Release Notes"
 description: "KubeSphere 4.1.1 Release Notes"
-linkTitle: "Release Notes - 4.1.1"
 weight: 45
 ---
 

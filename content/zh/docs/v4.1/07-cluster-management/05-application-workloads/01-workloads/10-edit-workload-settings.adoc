@@ -142,21 +142,21 @@ include::../../../../_custom/clusterManagement/workloads/createWorkload/workload
 
 // include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-desc-enableLogCollectionCluster.adoc[]
 
-include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
+// include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
 
 include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-mountVolume.adoc[]
 
 include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-mountSecretOrConfigmap.adoc[]
 |===
 
-include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume.adoc[]
+include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume_new.adoc[]
 --
 
-* 存储 > 添加持久卷声明模板
-+
---
-include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
---
+// * 存储 > 添加持久卷声明模板
+// +
+// --
+// include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
+// --
 
 * 存储 > 挂载卷 > 持久卷
 +

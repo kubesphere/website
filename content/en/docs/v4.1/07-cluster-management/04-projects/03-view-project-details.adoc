@@ -1,5 +1,6 @@
 ---
 title: "View Project Details"
+linkTitle: "View Project Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Project, View Project Details"
 description: "Learn how to view project details."
 weight: 03

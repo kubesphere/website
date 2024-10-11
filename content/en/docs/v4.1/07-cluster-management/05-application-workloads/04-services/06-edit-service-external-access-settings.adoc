@@ -1,5 +1,6 @@
 ---
 title: "Edit External Access"
+linkTitle: "Edit External Access"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Edit Service External Access Settings"
 description: "Learn how to edit service external access settings."
 weight: 06

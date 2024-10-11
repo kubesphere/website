@@ -1,4 +1,4 @@
 // :ks_include_id: eae4a035080a4f1bb09cb87fc6034aed
 . Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the CronJob you want to pause, then choose **Pause** from the dropdown list.
 
-. To resume the CronJob, Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the CronJob you want to start, then choose **Start** from the dropdown list.
+. To resume the CronJob, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the CronJob you want to start, then choose **Start** from the dropdown list.

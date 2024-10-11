@@ -1,5 +1,6 @@
 ---
 title: "Edit Node Taints"
+linkTitle: "Edit Node Taints"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, Edit Node Taints"
 description: "Explain how to edit node taints."
 weight: 05

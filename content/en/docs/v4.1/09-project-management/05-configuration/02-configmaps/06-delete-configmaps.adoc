@@ -1,13 +1,13 @@
 ---
-title: "删除配置字典"
-linkTitle: "删除配置字典"
-keywords: "Kubernetes, KubeSphere, 项目管理, 配置, 配置字典, 删除配置字典"
-description: "介绍如何删除配置字典。"
+title: "Delete ConfigMaps"
+linkTitle: "Delete ConfigMaps"
+keywords: "Kubernetes, KubeSphere, Project Management, ConfigMap, Delete ConfigMap"
+description: "Learn how to delete a ConfigMap."
 weight: 06
 ---
 
-:ks_permission: **配置字典管理**
-:ks_navigation: **配置 > 配置字典**
+:ks_permission: **ConfigMap Management**
+:ks_navigation: **Configuration > ConfigMaps**
 
 
 include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-deleteConfigmaps.adoc[]
@@ -16,15 +16,11 @@ include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-del
 == Prerequisites
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-:relfileprefix: ./
 
 
-
-== 删除单个配置字典
+== Delete a Single ConfigMap
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -37,7 +33,7 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 include::../../../../_custom-en/clusterManagement/configmaps/configmaps-oper-deleteASingleConfigmap.adoc[]
 
 
-== 批量删除配置字典
+== Delete Multiple ConfigMaps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 

@@ -1,5 +1,6 @@
 ---
 title: "Edit Job Information"
+linkTitle: "Edit Job Information"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application jobs, Job, Edit Job Information"
 description: "Learn how to edit job information."
 weight: 04

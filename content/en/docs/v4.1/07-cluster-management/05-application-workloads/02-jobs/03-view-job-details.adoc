@@ -1,5 +1,6 @@
 ---
 title: "View Job Details"
+linkTitle: "View Job Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Job, View Job Details"
 description: "Learn how to view job details."
 weight: 03

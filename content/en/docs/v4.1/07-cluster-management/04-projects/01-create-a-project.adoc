@@ -1,5 +1,6 @@
 ---
 title: "Create Projects"
+linkTitle: "Create Projects"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Projects, Create Projects"
 description: "Explain how to create projects in a cluster."
 weight: 01

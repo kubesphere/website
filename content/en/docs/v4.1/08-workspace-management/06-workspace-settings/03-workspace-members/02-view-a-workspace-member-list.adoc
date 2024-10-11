@@ -1,59 +1,55 @@
 ---
-title: "查看企业空间成员列表"
-linkTitle: "查看企业空间成员列表"
-keywords: "Kubernetes, KubeSphere, 企业空间管理, 企业空间设置, 企业空间成员, 查看企业空间成员列表"
-description: "介绍如何查看企业空间成员列表。"
+title: "View Workspace Member List"
+linkTitle: "View Workspace Member List"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Workspace Settings, Workspace Members, View Workspace Member List"
+description: "Guide on how to view the workspace member list."
 weight: 02
 ---
 
-:ks_permission: **成员查看**
-:ks_navigation: **企业空间设置 > 企业空间成员**
+:ks_permission: **Member Viewing**
+:ks_navigation: **Workspace Settings > Workspace Members**
 
 
-本节介绍如何查看企业空间成员列表。
+This section explains how to view the workspace member list.
 
 
 == Prerequisites
 
-
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
 
 == Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 
 +
-
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 ====
-* 企业空间成员列表提供以下信息：
+* The workspace member list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|用户名
-|企业空间成员的用户名。
+|Username
+|The username of the workspace member.
 
-|状态
+|Status
 |
-企业空间成员当前的状态。
+The current status of the workspace member.
 
 include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-para-userStatus.adoc[]
 
-|角色
-|企业空间成员在企业空间中的角色。
+|Role
+|The role of the workspace member within the workspace.
 
-|最近登录
-|企业空间成员最近一次登录{ks_product-en} Web 控制台的时间。
+|Last Login
+|The time when the workspace member last logged into the {ks_product-en} web console.
 |===
 --
 
-* 在列表上方点击搜索框并输入关键字，可搜索用户名包含特定关键字的企业空间成员。
+* Click the search box at the top of the list to search for workspace members by name.
 
 include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

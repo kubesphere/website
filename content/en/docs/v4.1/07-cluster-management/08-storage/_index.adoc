@@ -1,5 +1,6 @@
 ---
 title: "Storage"
+linkTitle: "Storage"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage"
 description: "Explain how to manage storage resources."
 layout: "second"

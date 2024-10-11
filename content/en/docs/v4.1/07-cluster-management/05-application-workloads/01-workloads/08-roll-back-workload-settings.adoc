@@ -1,5 +1,6 @@
 ---
 title: "Roll Back Workload Settings"
+linkTitle: "Roll Back Workload Settings"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Rollback Workload Settings"
 description: "Learn how to rollback workload settings."
 weight: 08

@@ -1,8 +1,8 @@
 ---
-title: "配置字典"
-linkTitle: "配置字典"
-keywords: "Kubernetes, KubeSphere, 项目管理, 配置, 配置字典"
-description: "介绍如何管理配置字典。"
+title: "ConfigMaps"
+linkTitle: "ConfigMaps"
+keywords: "Kubernetes, KubeSphere, Project Management, ConfigMap"
+description: "Introduction to managing ConfigMaps."
 layout: "second"
 weight: 02
 ---
@@ -11,4 +11,4 @@ weight: 02
 
 include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-configmaps.adoc[]
 
-配置字典仅用于存储非保密数据。如需存储保密数据，请使用link:../01-secrets/[保密字典]。
+ConfigMaps are only used to store non-sensitive data. If you need to store sensitive data, please use link:../01-secrets/[Secrets].

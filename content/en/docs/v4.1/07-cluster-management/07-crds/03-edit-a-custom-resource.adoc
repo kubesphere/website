@@ -1,5 +1,6 @@
 ---
 title: "Edit Custom Resource"
+linkTitle: "Edit Custom Resource"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definitions, Edit Custom Resource"
 description: "Explain how to edit a custom resource."
 weight: 04

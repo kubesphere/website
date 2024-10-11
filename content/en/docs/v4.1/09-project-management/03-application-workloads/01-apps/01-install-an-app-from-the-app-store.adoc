@@ -1,27 +1,21 @@
 ---
-title: "从应用商店安装应用"
-linkTitle: "从应用商店安装应用"
-keywords: "Kubernetes, KubeSphere, 项目管理, 应用, 查看项目概览信息"
-description: "介绍如何查看项目概览信息。"
+title: "Install Applications from App Store"
+linkTitle: "Install Applications from App Store"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications"
+description: "Explains how to view project overview information."
 weight: 01
 ---
 
+:ks_permission: **Application Instance Create**
+:ks_navigation: **Application Workloads > Applications**
 
-:ks_permission: **应用实例创建**
-:ks_navigation: **应用负载 > 应用**
 
-
-本节介绍如何从{ks_product-en}平台的应用商店安装应用。
+This section explains how to install applications from the App Store.
 
 
 == Prerequisites
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
-
 
 == Steps
 
@@ -37,20 +31,20 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**创建应用**对话框点击**从应用商店**。
+. Click **From App Store** in the **Create App** dialog.
 
-. 在应用商店中，点击需要使用的应用模板，然后在右上角点击**部署**。
+. In the App Store, click the application template you want to use, then click **Deploy** in the top right corner.
 +
 --
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-如果弹出**部署须知**对话框，请仔细阅读相关内容，然后点击**同意**。
+If the **Deployment Notice** dialog appears, carefully read the relevant content, then click **Agree**.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --
 
-. 在弹出的**位置**对话框，选择应用的安装位置，然后点击**确定**。
+. In the **Location** dialog that appears, select the installation location for the application, then click **OK**.
 
 +
 
@@ -61,9 +55,9 @@ include::../../../../_custom-en/projectManagement/apps/apps-oper-installApp.adoc
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-应用商店中的应用由具有相关权限的企业空间成员发布或由第三方提供。有关应用功能参数的更多信息，请联系相关企业空间成员或应用的提供方。
+Applications in the App Store are published by members with relevant permissions in the workspace or provided by third parties. For more information on application functional parameters, please contact relevant workspace members or the application provider.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
-应用创建完成后将显示在应用列表中。
+Once the application is created, it will be displayed in the list of applications.
 --

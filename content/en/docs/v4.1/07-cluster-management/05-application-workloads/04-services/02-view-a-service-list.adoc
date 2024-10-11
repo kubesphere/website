@@ -1,5 +1,6 @@
 ---
 title: "View Service List"
+linkTitle: "View Service List"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, View Service List"
 description: "Learn how to view the service list."
 weight: 02

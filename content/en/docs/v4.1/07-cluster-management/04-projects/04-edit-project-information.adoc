@@ -1,5 +1,6 @@
 ---
 title: "Edit Project Information"
+linkTitle: "Edit Project Information"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Edit Project Information"
 description: "Learn how to edit project information."
 weight: 04

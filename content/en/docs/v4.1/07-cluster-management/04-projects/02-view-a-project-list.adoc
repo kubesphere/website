@@ -1,5 +1,6 @@
 ---
 title: "View Project List"
+linkTitle: "View Project List"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Project, View Project List"
 description: "Learn how to view the project list in a cluster."
 weight: 02

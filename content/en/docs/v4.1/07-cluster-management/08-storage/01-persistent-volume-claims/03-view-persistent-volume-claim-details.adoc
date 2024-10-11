@@ -1,5 +1,6 @@
 ---
 title: "View PVC Details"
+linkTitle: "View PVC Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, View Persistent Volume Claim Details"
 description: "Explain how to view details of a Persistent Volume Claim."
 weight: 03

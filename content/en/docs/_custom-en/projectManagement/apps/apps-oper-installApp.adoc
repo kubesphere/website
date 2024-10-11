@@ -1,23 +1,23 @@
 // :ks_include_id: 0a4b47588752413da3e9f8fdb60e06fa
-. 在**基本信息**页签，设置应用的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information of the application, then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|用户自定义的应用名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+|Name
+|User-defined name for the application. The name can only contain lowercase letters, numbers, and hyphens (-), must start with a lowercase letter and end with a lowercase letter or number, and can be up to 32 characters long.
 
-|版本
-|应用的版本。
+|Version
+|Version of the application.
 
-|描述
-|应用的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|Description of the application. The description can contain any characters and is limited to 256 characters.
 
-|位置
-|应用所属的企业空间、集群和项目。
+|Location
+|Workspace, cluster, and project to which the application belongs.
 |===
 --
 
-. 在**应用设置**页签，根据需要设置应用的功能参数，然后点击**安装**。
+. On the **App Settings** tab, configure the functional parameters of the application as needed, then click **Install**.

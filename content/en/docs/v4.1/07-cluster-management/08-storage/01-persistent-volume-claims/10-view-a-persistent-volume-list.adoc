@@ -1,5 +1,6 @@
 ---
 title: "View Persistent Volume List"
+linkTitle: "View Persistent Volume List"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, View Persistent Volume List"
 description: "Introduce how to view the list of Persistent Volumes."
 weight: 10

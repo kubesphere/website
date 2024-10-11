@@ -1,5 +1,6 @@
 ---
 title: "Edit Autoscaling Settings"
+linkTitle: "Edit Autoscaling Settings"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Edit Autoscaling"
 description: "Learn how to edit autoscaling settings for workloads."
 weight: 09

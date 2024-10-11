@@ -1,5 +1,6 @@
 ---
 title: "Create Jobs"
+linkTitle: "Create Jobs"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Job, Create Job"
 description: "Learn how to create jobs."
 weight: 01
@@ -46,7 +47,6 @@ include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-createAJob.adoc
 == Parameter Description
 
 The following explains how to configure parameters for the job.
-
 
 include::../../../../_custom-en/clusterManagement/jobs/jobs-para-basicInformation.adoc[]
 

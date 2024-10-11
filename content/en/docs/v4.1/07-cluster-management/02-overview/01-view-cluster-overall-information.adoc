@@ -1,11 +1,12 @@
 ---
 title: "Cluster Overview"
+linkTitle: "Cluster Overview"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Overview, Cluster Overview"
 description: "Learn how to get an overview of the cluster."
-weight: 02
+weight: 01
 ---
 
-:ks_permission: **Cluster Settings View**
+:ks_permission: **Cluster Settings Viewing**
 :ks_navigation: **Overview**
 
 This section introduces how to get an overview of the cluster.

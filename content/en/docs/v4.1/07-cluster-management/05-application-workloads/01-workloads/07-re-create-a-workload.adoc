@@ -1,5 +1,6 @@
 ---
 title: "Recreate Workloads"
+linkTitle: "Recreate Workloads"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Recreate Workload"
 description: "Learn how to recreate a workload."
 weight: 07

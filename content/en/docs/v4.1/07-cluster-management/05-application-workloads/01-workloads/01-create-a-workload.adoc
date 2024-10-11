@@ -1,5 +1,6 @@
 ---
 title: "Create Workloads"
+linkTitle: "Create Workloads"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Create Workloads"
 description: "Introduction to creating workloads."
 weight: 01

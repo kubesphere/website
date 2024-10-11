@@ -1,5 +1,6 @@
 ---
 title: "View Workload Details"
+linkTitle: "View Workload Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, View Workload Details"
 description: "Learn how to view workload details."
 weight: 03

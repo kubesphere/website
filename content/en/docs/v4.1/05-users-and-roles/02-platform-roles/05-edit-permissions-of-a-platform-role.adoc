@@ -14,7 +14,7 @@ This section explains how to edit platform role permissions.
 
 == Prerequisites
 
-You need to have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
 
 == Steps
 
@@ -32,7 +32,7 @@ Users with the **platform-admin** role can enable and disable extensions. Other 
 
 [%header,cols="1a,4a"]
 |===
-|Permission |Allowed Operations
+|Permission |Operations Allowed
 
 |Workspace Creation
 |Create workspaces and become an administrator of the created projects.
@@ -50,7 +50,7 @@ Users with the **platform-admin** role can enable and disable extensions. Other 
 
 [%header,cols="1a,4a"]
 |===
-|Permission |Allowed Operations
+|Permission |Operations Allowed
 
 |Cluster Management
 |Create clusters, delete clusters, and manage resources within all clusters.
@@ -64,7 +64,7 @@ Users with the **platform-admin** role can enable and disable extensions. Other 
 --
 [%header,cols="1a,4a"]
 |===
-|Permission |Allowed Operations
+|Permission |Operations Allowed
 
 |User Viewing
 |View users.

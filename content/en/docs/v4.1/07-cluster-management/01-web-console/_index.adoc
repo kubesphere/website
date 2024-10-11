@@ -1,5 +1,6 @@
 ---
 title: "Access Your Cluster"
+linkTitle: "Access Your Cluster"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Web Console"
 description: "Learn how to access clusters in the web console."
 layout: "second"

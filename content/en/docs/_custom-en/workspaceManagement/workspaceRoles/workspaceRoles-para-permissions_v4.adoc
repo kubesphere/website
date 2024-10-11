@@ -1,83 +1,56 @@
 // :ks_include_id: b53ca408cc88447789f75df42c73bcc7
-所有企业空间成员都可以查看企业空间基本信息。其他操作所需的权限如下：
+All workspace members can view basic information about the workspace. The permissions required for other operations are as follows:
 
-* 项目
+* Projects
 +
 --
 [%header,cols="1a,4a"]
 |===
-|权限 |允许操作
+|Permission | Operations Allowed
 
-|项目创建
-|创建项目，并成为所创建的项目的管理员。
+|Project Creation
+|Create projects and become an administrator of the created projects.
 
-|项目管理
-|创建、编辑和删除企业空间中的项目。
+|Project Management
+|Create, edit, and delete projects in the workspace.
 
-|项目查看
-|查看项目列表、查看项目中的所有资源。
+|Project Viewing
+|View all projects and project resources.
 |===
 --
 
-* 应用
+* Applications
 +
 --
 [%header,cols="1a,4a"]
 |===
-|权限 |允许操作
+|Permission | Operations Allowed
 
-|应用仓库管理
-|添加应用仓库、编辑应用仓库、删除应用仓库。
+|App Repos Management
+|Add app repositories, edit app repositories, delete app repositories.
 
-|应用仓库查看
-|查看应用仓库列表。
+|App Repos Viewing
+|View the list of app repositories.
 
-|应用/应用版本/应用实例管理
-|创建应用模板、编辑应用模板信息、使用应用模板安装应用、上传应用版本、删除应用版本、将应用版本发布到应用商店、删除应用模板。
+|App/App Version/App Instance Management
+|Create app templates, edit app template information, install apps using app templates, upload app versions, delete app versions, publish app versions to the app store, delete app templates.
 
-|应用/应用版本/应用实例查看
-|查看应用模板列表、查看应用模板详情、下载 Helm Chart 压缩包。
+|App/App Version/App Instance Viewing
+|View the list of app templates, view app template details, download Helm Chart compressed files.
 |===
 --
 
-* 访问控制
+* Access Control
 +
 --
 [%header,cols="1a,4a"]
 |===
-|权限 |允许操作
+|Permission | Operations Allowed
 
-// |部门管理
-// |设置部门组织结构、将用户分配到部门、移除部门成员。
+|Member Viewing
+|View the list of workspace members, view details of workspace members.
 
-// |部门查看
-// |查看部门组织结构。
-
-// |成员管理
-// |邀请用户加入企业空间、修改企业空间成员的角色、移除企业空间成员。
-
-|成员查看
-|查看企业空间成员列表、查看企业空间成员详情。
-
-// |角色管理
-// |创建企业空间角色、编辑企业空间角色信息、编辑企业空间角色权限、删除企业空间角色。
-
-|角色查看
-|查看企业空间角色列表、查看企业空间角色详情。
+|Role Viewing
+|View the list of workspace roles, view details of workspace roles.
 |===
 --
-
-// * 企业空间设置
-// +
-// --
-// [%header,cols="1a,4a"]
-// |===
-// |权限 |允许操作
-
-// |企业空间设置管理
-// |编辑企业空间信息、启用和禁用网络隔离、删除企业空间、编辑企业空间配额。
-
-// |企业空间设置查看
-// |查看集群资源用量、查看项目资源用量排行、查看企业空间资源用量、查看企业空间配额。
-// |===
-// --

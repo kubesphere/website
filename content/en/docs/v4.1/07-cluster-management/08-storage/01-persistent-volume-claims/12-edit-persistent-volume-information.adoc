@@ -1,5 +1,6 @@
 ---
 title: "Edit Persistent Volume Information"
+linkTitle: "Edit Persistent Volume Information"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Edit Persistent Volume Information"
 description: "Introduce how to edit information of a Persistent Volume."
 weight: 12

@@ -1,5 +1,6 @@
 ---
 title: "Edit Project Annotations"
+linkTitle: "Edit Project Annotations"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Edit Project Annotations"
 description: "Introduction to editing project annotations."
 weight: 05

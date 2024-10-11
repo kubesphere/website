@@ -1,13 +1,14 @@
 ---
-title: "克隆持久卷"
-linkTitle: "克隆持久卷"
-keywords: "Kubernetes, KubeSphere, 项目管理, 存储, 持久卷声明, 克隆持久卷"
-description: "介绍如何克隆持久卷。"
+title: "Clone Persistent Volumes"
+linkTitle: "Clone Persistent Volumes"
+keywords: "Kubernetes, KubeSphere, Project Management, Storage, Persistent Volume Claim, Persistent Volume, Clone Persistent Volume"
+description: "Explain how to clone a Persistent Volume."
 weight: 04
 ---
 
-:ks_permission: **持久卷声明管理**
-:ks_navigation: **存储 > 持久卷声明**
+
+:ks_permission: **Persistent Volume Claim Management**
+:ks_navigation: **Storage > Persistent Volume Claims**
 
 
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-cloneAPersistentVolume.adoc[]
@@ -21,9 +22,7 @@ include::../../../../_custom-en/projectManagement/projectManagement-prer-require
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-persistentVolumeCreated.adoc[]
 
 
-* 请确保后端存储系统支持卷克隆功能，并且持久卷声明对应的存储类已启用卷克隆功能。
-
-
+* Ensure that the backend storage system supports volume cloning, and the storage class corresponding to the Persistent Volume Claim has enabled volume cloning. 
 
 
 == Steps

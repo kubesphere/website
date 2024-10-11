@@ -1,5 +1,6 @@
 ---
 title: "Edit Default Container Quotas"
+linkTitle: "Edit Default Container Quotas"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Edit Default Container Quotas"
 description: "Learn how to edit default container quotas."
 weight: 07

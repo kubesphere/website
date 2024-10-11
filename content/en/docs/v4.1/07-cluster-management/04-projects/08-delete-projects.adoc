@@ -1,5 +1,6 @@
 ---
 title: "Delete Projects"
+linkTitle: "Delete Projects"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Delete Project"
 description: "Learn how to delete projects."
 weight: 08

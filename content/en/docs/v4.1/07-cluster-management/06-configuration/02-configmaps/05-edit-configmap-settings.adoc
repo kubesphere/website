@@ -1,5 +1,6 @@
 ---
 title: "Edit ConfigMap Settings"
+linkTitle: "Edit ConfigMap Settings"
 keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, Edit ConfigMap Settings"
 description: "Learn how to edit ConfigMap data."
 weight: 05

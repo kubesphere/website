@@ -1,18 +1,18 @@
 ---
-title: "企业空间配额"
-linkTitle: "企业空间配额"
-keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间配额"
-description: "介绍如何查看和管理企业空间配额。"
+title: "Workspace Quotas"
+linkTitle: "Workspace Quotas"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Quotas"
+description: "Guide on how to view and manage workspace quotas."
 layout: "second"
 weight: 02
 ---
 
 
 
-本节介绍如何查看和管理企业空间资源配额。
+This section explains how to view and manage workspace resource quotas.
 
-在{ks_product-en}平台，多个集群可以授权给同一个企业空间，您可以在企业空间中设置针对每个集群设置资源配额。企业空间配额包括两类设置：
+In KubeSphere, multiple clusters can be authorized to the same workspace. You can set resource quotas for each cluster within a workspace. Workspace quotas consist of two types of settings:
 
-* 资源预留：容器的资源预留是系统为单个容器预留的资源，企业空间资源预留是企业空间运行在单个集群中所有容器资源预留总和的最大值。{ks_product-en}平台目前支持设置企业空间的 CPU 预留和内存预留。
+* Resource Request: Container resource request is the resources reserved by the system for a single container. Workspace resource request is the maximum sum of all container resource requests for a workspace running in a single cluster. KubeSphere currently supports setting CPU request and memory request for workspaces.
 
-* 资源上限：容器的资源上限是单个容器可使用资源的上限，企业空间资源上限是企业空间运行在单个集群中所有容器资源上限总和的最大值。{ks_product-en}平台目前支持设置企业空间 CPU 上限和内存上限。
+* Resource Limit: Container resource limit is the maximum resources that a single container can utilize. Workspace resource limit is the maximum sum of all container resource limits for a workspace running in a single cluster. KubeSphere currently supports setting CPU limit and memory limit for workspaces.

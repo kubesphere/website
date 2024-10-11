@@ -20,7 +20,7 @@ weight: 05
 |ingress.tls.enabled | true | bool - If true, enable HTTPS for the KubeSphere ingress.
 |ingress.tls.source | "generation" | string - Source of ingress certificate, options: "generation, importation, letsEncrypt".
 |letsEncrypt.email | "" | string - Email address to receive expiration reminders for certificates.
-|letsEncrypt.environment | "production" | string - Options: "staging, production". There are rate limit differences between certificates for test and production environments, see details in the link:https://letsencrypt.org/docs/[Let’s Encrypt documentation].
+|letsEncrypt.environment | "production" | string - Options: "staging, production". There are rate limit differences between certificates for test and production environments, see details in the link:https://letsencrypt.org/docs/[Let’s Encrypt Documentation].
 |===
 
 === Advanced Options

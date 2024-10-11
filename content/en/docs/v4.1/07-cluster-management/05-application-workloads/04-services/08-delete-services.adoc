@@ -1,5 +1,6 @@
 ---
 title: "Delete Services"
+linkTitle: "Delete Services"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Delete Services"
 description: "Learn how to delete a service."
 weight: 08

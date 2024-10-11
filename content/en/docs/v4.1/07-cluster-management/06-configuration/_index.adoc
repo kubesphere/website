@@ -1,5 +1,6 @@
 ---
 title: "Configuration"
+linkTitle: "Configuration"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Configuration"
 description: "Introduction to managing Secrets, ConfigMaps, and Service Accounts."
 layout: "second"

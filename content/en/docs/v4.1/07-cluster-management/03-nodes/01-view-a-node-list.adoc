@@ -1,5 +1,6 @@
 ---
 title: "View Node List"
+linkTitle: "View Node List"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, View Node List"
 description: "Learn how to view the list of nodes."
 weight: 01

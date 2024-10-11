@@ -12,7 +12,7 @@ This section explains how to log in to the {ks_product-en} web console and acces
 
 == Prerequisites
 
-* You need to have the username and password of a workspace member.
+* You should have the username and password of a workspace member.
 
 include::../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
 

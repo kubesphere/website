@@ -1,23 +1,19 @@
 ---
-title: "查看企业空间配额"
-linkTitle: "查看企业空间配额"
-keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间配额, 查看企业空间配额"
-description: "介绍如何查看企业空间配额。"
+title: "View Workspace Quotas"
+linkTitle: "View Workspace Quotas"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Quotas, View Workspace Quotas"
+description: "Guide on how to view workspace quotas."
 weight: 02
 ---
 
-:ks_permission: **企业空间设置查看**
-:ks_navigation: **企业空间设置 > 企业空间配额**
+:ks_permission: **Workspace Settings Viewing**
+:ks_navigation: **Workspace Settings > Workspace Quotas**
 
-
-本节介绍如何查看企业空间配额。
-
+This section explains how to view workspace quotas.
 
 == Prerequisites
 
-
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
 
 
 == Steps
@@ -29,7 +25,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-ope
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 --
-**企业空间配额**页面显示授权给企业空间的各集群的资源配额信息：
+The **Workspace Quotas** page displays resource quota information for clusters authorized to the workspace:
 
 include::../../../../_custom-en/workspaceManagement/workspace-quotas/workspaceQuotas-para-cpuMemoryQuotas.adoc[]
 --

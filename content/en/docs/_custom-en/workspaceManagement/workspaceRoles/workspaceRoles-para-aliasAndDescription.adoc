@@ -1,6 +1,6 @@
 // :ks_include_id: 9cee592273284279a2ca4b2ff0c861a5
-|别名
-|企业空间角色的别名。不同企业空间角色的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the workspace role. The alias for different workspace roles can be the same. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and must not start or end with a hyphen (-), with a maximum length of 63 characters.
 
-|描述
-|企业空间角色的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the workspace role. The description can contain any characters, with a maximum length of 256 characters.

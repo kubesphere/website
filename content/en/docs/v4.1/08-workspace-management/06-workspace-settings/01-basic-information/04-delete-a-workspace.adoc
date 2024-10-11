@@ -1,30 +1,27 @@
 ---
-title: "删除企业空间"
-linkTitle: "删除企业空间"
-keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 基本信息, 删除企业空间"
-description: "介绍如何删除企业空间。"
+title: "Delete Workspaces"
+linkTitle: "Delete Workspaces"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Basic Information, Delete Workspace"
+description: "Instructions on how to delete a workspace."
 weight: 04
 ---
 
-:ks_permission: **企业空间设置管理**
-:ks_navigation: **企业空间设置 > 基本信息**
+:ks_permission: **Workspace Settings Management**
+:ks_navigation: **Workspace Settings > Basic Info**
 
-
-本节介绍如何删除企业空间。
+This section provides guidance on deleting a workspace.
 
 // Warning
 include::../../../../../_ks_components-en/admonitions/warning.adoc[]
 
-企业空间删除后无法恢复。如果您选择同时删除企业空间中的项目，企业空间中的所有项目以及其中的所有资源也将被删除。请谨慎执行此操作。
+Deleting a workspace is irreversible. If you choose to delete projects within the workspace, all projects and their resources within the workspace will also be deleted. Please proceed with caution.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 
 == Prerequisites
 
-
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
 
 
 == Steps
@@ -37,15 +34,15 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**企业空间信息**区域右上角选择**管理 > 删除企业空间**。
+. In the **Workspace Information** area, select **Manage > Delete Workspace** from the top right corner.
 
-. 在**删除企业空间**对话框，输入企业空间的名称，然后点击**确定**。
+. In the **Delete Workspace** dialog, enter the name of the workspace, then click **OK**.
 +
 --
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-您可以选择**删除企业空间中的项目**复选框，以同时删除企业空间中的所有项目。
+You can select the **Delete projects in the workspace** checkbox to delete all projects within the workspace simultaneously.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --

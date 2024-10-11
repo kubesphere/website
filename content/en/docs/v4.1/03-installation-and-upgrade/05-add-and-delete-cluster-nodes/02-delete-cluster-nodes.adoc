@@ -14,7 +14,7 @@ The open-source tool KubeKey will be used during the process. For more informati
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-The node deletion method described in this section is only applicable to Kubernetes installed through KubeKey. If your Kubernetes is not installed via KubeKey, please refer to link:https://kubernetes.io/zh/docs/concepts/architecture/nodes/[Kubernetes documentation] to delete nodes.
+The node deletion method described in this section is only applicable to Kubernetes installed through KubeKey. If your Kubernetes is not installed via KubeKey, please refer to link:https://kubernetes.io/zh/docs/concepts/architecture/nodes/[Kubernetes Documentation] to delete nodes.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 

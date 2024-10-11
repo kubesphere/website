@@ -149,5 +149,5 @@ clientSecret: '******'
 redirectURL: 'https://ks-console/oauth/redirect/github'
 ----
 
-For the configuration method of Alibaba Cloud IDaaS provider, refer to the link:https://www.alibabacloud.com/help/zh/idaas/[Alibaba Cloud IDaaS documentation].
+For the configuration method of Alibaba Cloud IDaaS provider, refer to the link:https://www.alibabacloud.com/help/zh/idaas/[Alibaba Cloud IDaaS Documentation].
 --

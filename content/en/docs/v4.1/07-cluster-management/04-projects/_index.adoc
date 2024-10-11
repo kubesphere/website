@@ -1,5 +1,6 @@
 ---
 title: "Projects"
+linkTitle: "Projects"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Projects"
 description: "Introduce how to manage projects in a cluster."
 layout: "second"

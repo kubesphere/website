@@ -1,18 +1,17 @@
 ---
-title: "删除项目角色"
-linkTitle: "删除项目角色"
-keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 项目角色, 删除项目角色"
-description: "介绍如何删除项目角色。"
+title: "Delete Project Roles"
+linkTitle: "Delete Project Roles"
+keywords: "Kubernetes, KubeSphere, Project, Project Settings, Project Role, Delete Project Role"
+description: "Guide on how to delete project roles."
 weight: 06
 ---
 
-:ks_permission: **角色管理**
-:ks_navigation: **项目设置 > 项目角色**
+:ks_permission: **Role Management**
+:ks_navigation: **Project Settings > Project Roles**
 
+This section explains how to delete project roles.
 
-本节介绍如何删除项目角色。
-
-您可以删除用户创建的项目角色。预置项目角色无法删除。
+You can delete project roles created by users. Preset project roles cannot be deleted.
 
 
 == Prerequisites
@@ -20,8 +19,7 @@ weight: 06
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-* 如果需要删除的项目角色已经分配给项目成员，您需要删除项目成员或修改其角色。
+* Ensure the project role you want to delete is not assigned to any project members. Otherwise, you need to remove the project members or change their roles.
 
 
 == Steps
@@ -34,6 +32,6 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要操作的项目角色右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project role you want to delete, then select **Delete** from the dropdown list.
 
-. 在**删除角色**对话框点击**确定**。
+. In the **Delete Role** dialog, click **OK** to confirm the deletion.

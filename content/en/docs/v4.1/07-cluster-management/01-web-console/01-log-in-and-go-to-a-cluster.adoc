@@ -1,5 +1,6 @@
 ---
 title: "Log In and Access Clusters"
+linkTitle: "Log In and Access Clusters"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Web Console, Access Cluster"
 description: "This section explains how to log in and access a cluster."
 weight: 01
@@ -9,15 +10,16 @@ This section explains how to log in to the {ks_product-en} web console and acces
 
 == Prerequisites
 
-* You need to have the username and password of a cluster member.
+* You should have the username and password of a cluster member.
 
-* Contact the administrator to obtain the IP address and port number of the {ks_product-en} web console.
-
-* Depending on your network environment, you may need to configure firewall policies and traffic forwarding strategies. For specific instructions, please contact your network administrator.
+include::../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
 
 == Steps
 
-. Open a web browser and enter the IP address and port number of the {ks_product-en} web console in the address bar, such as `172.31.85.22:30880`.
-. On the login page, enter your username and password and click **Log In**.
+include::../../../_custom-en/workspaceManagement/webConsole/webConsole-oper-logIn.adoc[]
+
++
+
 . Click **Cluster Management**.
+
 . Click the name of a cluster in the **Cluster Management** page to access the cluster.

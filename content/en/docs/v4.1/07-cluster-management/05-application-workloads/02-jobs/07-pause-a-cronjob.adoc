@@ -1,5 +1,6 @@
 ---
 title: "Pause CronJobs"
+linkTitle: "Pause CronJobs"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Jobs, Pause CronJob"
 description: "Instructions on how to pause a CronJob."
 weight: 07
@@ -27,6 +28,10 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClu
 +
 
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Jobs** page, click **Cronjobs** to open the list of scheduled jobs.
 
 +
 

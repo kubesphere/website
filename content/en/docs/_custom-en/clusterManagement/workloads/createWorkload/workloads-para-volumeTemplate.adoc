@@ -6,7 +6,7 @@ Create separate Persistent Volume Claims and Persistent Volumes for each pod rep
 |Parameter |Description
 
 |PVC Name Prefix
-|The prefix for the names of the Persistent Volume Claims created by the Persistent Volume Claim template. The system will automatically name the Persistent Volume Claims in the format `<Name Prefix>**-**<Workload Name>**-**<Sequence Number>`. Persistent volume claims for different pod replicas in the same StatefulSet are distinguished by the <Sequence Number>.
+|The prefix for the names of the Persistent Volume Claims created by the Persistent Volume Claim template. The system will automatically name the Persistent Volume Claims in the format `<Name Prefix>-<Workload Name>-<Sequence Number>`. Persistent volume claims for different pod replicas in the same StatefulSet are distinguished by the <Sequence Number>.
 
 |Storage Class
 |The storage class used to create the Persistent Volume Claims.

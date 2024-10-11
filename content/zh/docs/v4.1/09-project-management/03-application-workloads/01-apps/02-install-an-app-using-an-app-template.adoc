@@ -19,7 +19,7 @@ weight: 02
 |说明
 
 |
-若要使用企业空间的应用模板，需要安装并启用“应用商店”扩展组件。安装后，企业空间的**应用管理**菜单下将显示**应用模板**选项。然后由具有相关权限的企业空间成员创建企业空间的应用模板。
+若要使用企业空间的应用模板，需要安装并启用“应用商店管理”扩展组件。安装后，企业空间的**应用管理**菜单下将显示**应用模板**选项。然后由具有相关权限的企业空间成员创建企业空间的应用模板。
 
 |===
 
@@ -47,6 +47,11 @@ include::../../../../../_ks_components/oper-clickCreate.adoc[]
 . 在**应用模板**页面，点击**当前企业空间**下拉列表，选择**当前企业空间**或一个应用仓库。
 
 . 点击需要使用的应用模板，然后点击**安装**。
+
++
+
+include::../../../../_custom/projectManagement/apps/apps-oper-installApp.adoc[]
+
 +
 --
 // Note
@@ -54,18 +59,7 @@ include::../../../../../_ks_components/admonitions/note.adoc[]
 
 应用模板和应用仓库由具有相关权限的企业空间成员创建。
 
-include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
---
-
-+
-
-include::../../../../_custom/projectManagement/apps/apps-oper-installApp.adoc[]
-+
---
-// Note
-include::../../../../../_ks_components/admonitions/note.adoc[]
-
-应用模板和应用仓库由具有相关权限的企业空间成员创建。有关应用功能参数的更多信息，请联系相关企业空间成员或应用的提供方。
+有关应用功能参数的更多信息，请联系相关企业空间成员或应用的提供方。
 
 include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
 

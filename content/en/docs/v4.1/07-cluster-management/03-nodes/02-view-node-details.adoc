@@ -1,5 +1,6 @@
 ---
 title: "View Node Details"
+linkTitle: "View Node Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, View Node Details"
 description: "Learn how to view node details."
 weight: 02

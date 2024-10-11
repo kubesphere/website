@@ -359,6 +359,13 @@ Pipeline[CreateclusterPipeline] execute successfully
 
 KubeSphere Core (ks-core) is the core component of KubeSphere, providing a foundational runtime environment for extensions. Once KubeSphere Core is installed, you can access the {ks_product-en} web console.
 
+. `Helm` should have been installed in advance. For specific instructions, please refer to link:https://helm.sh/docs/intro/[Helm Installation].
++
+[,bash]
+----
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+----
+
 . Run the following command on the cluster node to install KubeSphere Core.
 +
 ====
@@ -366,6 +373,22 @@ KubeSphere Core (ks-core) is the core component of KubeSphere, providing a found
 ----
 helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --debug --wait
 ----
+
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+If you are accessing Docker Hub from a restricted location, add the following configuration after the above command to modify the default image pull address.
+
+[,bash]
+----
+--set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+[,bash]
+----
+--set extension.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 If you see the following information, it means that ks-core installation is successful:
 

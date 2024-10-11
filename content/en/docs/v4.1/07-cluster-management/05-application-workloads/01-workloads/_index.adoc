@@ -1,5 +1,6 @@
 ---
 title: "Workloads"
+linkTitle: "Workloads"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads"
 description: "Introduction to managing workloads."
 layout: "second"

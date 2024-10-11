@@ -1,5 +1,6 @@
 ---
 title: "Edit PVC Information"
+linkTitle: "Edit PVC Information"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Edit Persistent Volume Claim Information"
 description: "Introduce how to edit the basic information of a Persistent Volume Claim."
 weight: 08

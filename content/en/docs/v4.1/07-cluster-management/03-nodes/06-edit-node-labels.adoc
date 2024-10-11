@@ -1,5 +1,6 @@
 ---
 title: "Edit Node Labels"
+linkTitle: "Edit Node Labels"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, Edit Node Labels"
 description: "Explain how to edit node labels."
 weight: 06

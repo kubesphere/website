@@ -1,5 +1,6 @@
 ---
 title: "Delete Pods"
+linkTitle: "Delete Pods"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, Delete Pods"
 description: "Learn how to delete a pod."
 weight: 05

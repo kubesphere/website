@@ -97,6 +97,12 @@ include::../../../../_custom/clusterManagement/workloads/createWorkload/workload
 include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
 --
 
+* 容器 > 容器设置 > 生命周期管理
++
+--
+include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
+--
+
 * 容器 > 容器设置 > 启动命令
 +
 --
@@ -133,8 +139,6 @@ include::../../../../_custom/clusterManagement/workloads/createWorkload/workload
 // include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-collectLogsOnVolume.adoc[]
 
 // include::../../../../_custom/projectManagement/workloads/workloads-desc-enableLogCollectionProject.adoc[]
-
-
 
 // include::../../../../_custom/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
 

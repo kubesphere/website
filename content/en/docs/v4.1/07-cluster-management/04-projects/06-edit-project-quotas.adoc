@@ -1,5 +1,6 @@
 ---
 title: "Edit Project Quotas"
+linkTitle: "Edit Project Quotas"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Edit Project Quotas"
 description: "Learn how to edit project quotas."
 weight: 06

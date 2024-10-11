@@ -1,5 +1,6 @@
 ---
-title: "Clone Persistent Volume"
+title: "Clone Persistent Volumes"
+linkTitle: "Clone Persistent Volumes"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Clone Persistent Volume"
 description: "Explain how to clone a Persistent Volume."
 weight: 04
@@ -22,6 +23,7 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-prer-require
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-persistentVolumeCreated.adoc[]
 
 * Ensure that the backend storage system supports volume cloning, and the storage class corresponding to the Persistent Volume Claim has enabled volume cloning. For more information, please refer to link:../../02-storage-classes/05-enable-and-disable-volume-operations/[Enable and Disable Volume Operations].
+
 
 == Steps
 

@@ -1,13 +1,16 @@
 ---
 title: "Delete ConfigMaps"
+linkTitle: "Delete ConfigMaps"
 keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, Delete ConfigMap"
 description: "Learn how to delete a ConfigMap."
 weight: 06
 ---
 
-
 :ks_permission: **Project Resource Management**
 :ks_navigation: **Configuration > ConfigMaps**
+
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-deleteConfigmaps.adoc[]
 
 
 == Prerequisites

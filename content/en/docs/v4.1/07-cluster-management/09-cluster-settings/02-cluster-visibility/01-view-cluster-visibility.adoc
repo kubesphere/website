@@ -6,7 +6,7 @@ description: "Instructions on how to view which workspaces a cluster is authoriz
 weight: 01
 ---
 
-:ks_permission: **Cluster Settings View**
+:ks_permission: **Cluster Settings Viewing**
 :ks_navigation: **Cluster Settings > Cluster Visibility**
 
 This section explains how to view which workspaces a cluster is authorized to.

@@ -1,6 +1,6 @@
 // :ks_include_id: 306f31ec34bf463a85cce5be5d58905e
-|别名
-|项目角色的别名。不同项目角色的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+| Alias
+| The alias of the project role. The aliases of different project roles can be the same. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), cannot start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|项目角色的描述信息。描述可包含任意字符，最长 256 个字符。
+| Description
+| The description of the project role. The description can contain any characters and is up to 256 characters long.

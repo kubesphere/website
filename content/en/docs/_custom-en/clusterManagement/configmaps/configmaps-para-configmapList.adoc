@@ -11,10 +11,10 @@
 | Project
 | The project to which the ConfigMap belongs.
 
-|Field
+| Fields
 |The key name of the key-value pair data stored in the ConfigMap. Different keys are separated by a comma (,).
 
-|Creation Time
+| Creation Time
 |The creation time of the ConfigMap.
 |===
 --

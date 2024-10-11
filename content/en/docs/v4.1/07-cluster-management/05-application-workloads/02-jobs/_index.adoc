@@ -1,5 +1,6 @@
 ---
 title: "Jobs"
+linkTitle: "Jobs"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Jobs"
 description: "Learn how to manage jobs."
 layout: "second"

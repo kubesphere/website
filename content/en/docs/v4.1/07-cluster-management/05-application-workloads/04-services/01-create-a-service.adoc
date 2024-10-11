@@ -1,5 +1,6 @@
 ---
 title: "Create Services"
+linkTitle: "Create Services"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Create Services"
 description: "Learn how to create services."
 weight: 01

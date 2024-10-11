@@ -1,7 +1,7 @@
 ---
-title: "常见问题"
-linkTitle: "常见问题"
-description: "汇总并回答有关 KubeSphere 的常见问题。"
+title: "FAQ"
+linkTitle: "FAQ"
+description: "Summary and answers to common questions about KubeSphere."
 layout: "second"
 weight: 24
 icon: "/images/docs/v3.x/docs.svg"

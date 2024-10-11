@@ -1,5 +1,6 @@
 ---
 title: "Nodes"
+linkTitle: "Nodes"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes"
 description: "Learn how to manage nodes."
 layout: "second"

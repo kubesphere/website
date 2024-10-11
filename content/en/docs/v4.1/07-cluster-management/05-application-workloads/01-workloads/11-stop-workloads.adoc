@@ -1,5 +1,6 @@
 ---
 title: "Stop Workloads"
+linkTitle: "Stop Workloads"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Stop Workloads"
 description: "Learn how to stop workloads."
 weight: 11

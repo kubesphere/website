@@ -1,5 +1,6 @@
 ---
 title: "Pods"
+linkTitle: "Pods"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Pod"
 description: "Instructions on how to manage pods."
 layout: "second"

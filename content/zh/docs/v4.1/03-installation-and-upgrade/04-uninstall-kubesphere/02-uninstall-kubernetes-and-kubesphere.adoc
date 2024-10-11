@@ -61,7 +61,7 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-tra
 // Bash
 [,bash]
 ----
- ./kk delete cluster -f config-sample.yaml
+./kk delete cluster -f config-sample.yaml
 ----
 
 如果显示如下信息，则表明卸载成功：

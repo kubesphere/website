@@ -10,7 +10,7 @@ This section explains how to change the display language of the {ks_product-en} 
 
 == Prerequisites
 
-You need to have the username and password for the {ks_product-en} web console.
+You should have the username and password for the {ks_product-en} web console.
 
 == Steps
 

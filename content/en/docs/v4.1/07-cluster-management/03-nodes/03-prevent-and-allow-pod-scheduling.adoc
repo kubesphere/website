@@ -1,5 +1,6 @@
 ---
 title: "Prevent and Allow Pod Scheduling"
+linkTitle: "Prevent and Allow Pod Scheduling"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, Cluster Nodes, Pod Scheduling"
 description: "Learn how to prevent and allow pod scheduling."
 weight: 03

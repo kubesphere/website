@@ -1,5 +1,6 @@
 ---
 title: "Create ConfigMaps"
+linkTitle: "Create ConfigMaps"
 keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, Create ConfigMap"
 description: "Learn how to create a ConfigMap."
 weight: 01

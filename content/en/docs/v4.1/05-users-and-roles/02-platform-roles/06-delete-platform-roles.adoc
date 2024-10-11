@@ -16,7 +16,7 @@ You can delete platform roles created by users. Preset platform roles cannot be 
 
 == Prerequisites
 
-* You need to have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+* You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
 
 * If the platform role you want to delete has already been assigned to a user, you need to delete the user or modify their role.
 

@@ -1,5 +1,6 @@
 ---
 title: "Delete Workloads"
+linkTitle: "Delete Workloads"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Delete Workload"
 description: "Learn how to delete a workload."
 weight: 12

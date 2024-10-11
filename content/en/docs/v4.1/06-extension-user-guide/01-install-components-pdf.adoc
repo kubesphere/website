@@ -9,7 +9,7 @@ This section explains how to install extensions.
 
 == Prerequisites
 
-You need to have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../05-users-and-roles/01-users/[Users] and link:../../05-users-and-roles/02-platform-roles/[Platform Roles].
+You should have the **platform-admin** role on {ks_product-en} platform. For more information, refer to link:../../05-users-and-roles/01-users/[Users] and link:../../05-users-and-roles/02-platform-roles/[Platform Roles].
 
 
 == Installation Steps

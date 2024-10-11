@@ -9,6 +9,6 @@ In KubeSphere, applications run in pods. To ensure business continuity in case o
 
 KubeSphere supports the following types of workloads:
 
-* Deployment: Used to manage stateless applications. Multiple replicas managed by a Deployment share a common volume. When a pod replica is recreated, the new and old replicas have different names.
-* StatefulSet: Used to manage stateful applications. Multiple replicas managed by a StatefulSet can use independent volumes. Each pod replica has a fixed index in its name, and when a pod replica is recreated, the new and old replicas have the same name.
-* DaemonSet: Used to manage daemon processes. DaemonSet ensures that one pod replica runs on all or specific nodes. When a new node is added to the cluster, if the new node meets the scheduling rules, DaemonSet will automatically create a pod replica on the new node.
+* **Deployments**: Used to manage stateless applications. Multiple replicas managed by a Deployment share a common volume. When a pod replica is recreated, the new and old replicas have different names.
+* **StatefulSets**: Used to manage stateful applications. Multiple replicas managed by a StatefulSet can use independent volumes. Each pod replica has a fixed index in its name, and when a pod replica is recreated, the new and old replicas have the same name.
+* **DaemonSets**: Used to manage daemon processes. DaemonSet ensures that one pod replica runs on all or specific nodes. When a new node is added to the cluster, if the new node meets the scheduling rules, DaemonSet will automatically create a pod replica on the new node.

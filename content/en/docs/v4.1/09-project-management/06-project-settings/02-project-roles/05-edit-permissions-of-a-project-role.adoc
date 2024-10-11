@@ -1,27 +1,22 @@
 ---
-title: "编辑项目角色权限"
-linkTitle: "编辑项目角色权限"
-keywords: "Kubernetes, KubeSphere, 项目管理, 项目设置, 项目角色, 编辑项目角色权限"
-description: "介绍如何编辑项目角色权限。"
+title: "Edit Project Role Permissions"
+linkTitle: "Edit Project Role Permissions"
+keywords: "Kubernetes, KubeSphere, Project, Project Settings, Project Role, Edit Project Role Permissions"
+description: "Guide on how to edit project role permissions."
 weight: 05
 ---
 
-:ks_permission: **角色管理**
-:ks_navigation: **项目设置 > 项目角色**
+:ks_permission: **Role Management**
+:ks_navigation: **Project Settings > Project Roles**
 
+This section explains how to edit project role permissions.
 
-本节介绍如何编辑项目角色权限。
-
-您只能编辑用户创建的项目角色权限。预置项目角色的权限无法编辑。
+You can only edit permissions for project roles created by users. Permissions for preset project roles cannot be edited.
 
 == Prerequisites
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 
@@ -35,8 +30,8 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要操作的项目角色右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑权限**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project role you want to edit, then select **Edit Permissions** from the dropdown list.
 
-. 在**编辑权限**对话框，设置项目角色的权限，然后点击**确定**。
+. In the **Edit Permissions** dialog, set the permissions for the project role, then click **OK**.
 +
 include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-para-permissions_v4.adoc[]

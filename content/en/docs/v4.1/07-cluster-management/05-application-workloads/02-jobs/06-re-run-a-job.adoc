@@ -1,5 +1,6 @@
 ---
 title: "Re-run Jobs"
+linkTitle: "Re-run Jobs"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Job, Re-run Job"
 description: "Instructions on how to re-run a job."
 weight: 06

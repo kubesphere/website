@@ -1,5 +1,6 @@
 ---
 title: "Edit Service Settings"
+linkTitle: "Edit Service Settings"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Edit Service Settings"
 description: "Learn how to edit service settings."
 weight: 05

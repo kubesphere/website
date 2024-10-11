@@ -1,5 +1,6 @@
 ---
 title: "Persistent Volume Claims"
+linkTitle: "Persistent Volume Claims"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume"
 description: "Explain how to manage volumes."
 layout: "second"

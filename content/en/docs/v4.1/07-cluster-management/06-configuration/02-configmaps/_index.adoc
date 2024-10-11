@@ -1,5 +1,6 @@
 ---
 title: "ConfigMaps"
+linkTitle: "ConfigMaps"
 keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap"
 description: "Introduction to managing ConfigMaps."
 layout: "second"

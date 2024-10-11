@@ -1,44 +1,38 @@
 ---
-title: "查看企业空间角色详情"
-linkTitle: "查看企业空间角色详情"
-keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间角色, 查看企业空间角色详情"
-description: "介绍如何查看企业空间角色列表。"
+title: "View Workspace Role Details"
+linkTitle: "View Workspace Role Details"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Role, View Workspace Role Details"
+description: "Guide on how to view workspace role details."
 weight: 03
 ---
 
-:ks_permission: **角色查看**
-:ks_navigation: **企业空间设置 > 企业空间角色**
+:ks_permission: **Role Viewing**
+:ks_navigation: **Workspace Settings > Workspace Roles**
 
-
-本节介绍如何查看企业空间角色详情。
-
+This section explains how to view workspace role details.
 
 == Prerequisites
 
-
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
 
 == Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 
 +
-
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在企业空间角色列表点击一个企业空间角色的名称打开其详情页面。
+. Click the name of a workspace role in the list to open its details page.
 
-. 在企业空间角色详情页面右侧的**权限**页签查看企业空间角色具有的权限。
+. On the **Permissions** tab on the right side of the details page, view the permissions granted to the workspace role.
 +
 ====
 include::../../../../_custom-en/workspaceManagement/workspaceRoles/workspaceRoles-para-permissions_v4.adoc[]
 ====
 
-. 在企业空间角色详情页面右侧点击**授权用户**页签具有当前企业空间角色的用户。
+. Click the **Authorized Users** tab on the right side of the details page to view the users assigned to the current workspace role.
 +
 --
 include::../../../../_custom-en/clusterManagement/clusterRoles/clusterRoles-para-authorizedUsers.adoc[]

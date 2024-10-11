@@ -1,5 +1,6 @@
 ---
 title: "Edit Service Information"
+linkTitle: "Edit Service Information"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Edit Service Information"
 description: "Learn how to edit service information."
 weight: 04

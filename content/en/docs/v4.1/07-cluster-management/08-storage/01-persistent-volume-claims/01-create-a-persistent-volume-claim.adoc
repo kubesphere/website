@@ -1,5 +1,6 @@
 ---
 title: "Create PVCs"
+linkTitle: "Create PVCs"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Create Persistent Volume Claim"
 description: "Explain how to create a Persistent Volume Claim."
 weight: 01

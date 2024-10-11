@@ -1,5 +1,6 @@
 ---
 title: "Overview"
+linkTitle: "Overview"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Overview"
 description: "Learn how to get an overview of a cluster."
 layout: "second"

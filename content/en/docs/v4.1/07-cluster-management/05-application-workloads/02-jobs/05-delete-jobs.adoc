@@ -1,5 +1,6 @@
 ---
 title: "Delete Jobs"
+linkTitle: "Delete Jobs"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Jobs, Delete Job"
 description: "Learn how to delete a job."
 weight: 05

@@ -1,5 +1,6 @@
 ---
 title: "Secrets"
+linkTitle: "Secrets"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Configuration, Secret"
 description: "Introduction to managing Secrets."
 layout: "second"

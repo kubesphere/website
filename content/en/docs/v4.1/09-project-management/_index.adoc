@@ -1,15 +1,14 @@
 ---
-title: "项目管理"
-linkTitle: "项目管理"
-keywords: "Kubernetes, KubeSphere, 项目管理"
-description: "介绍如何管理项目，以及如何在项目中管理应用负载、存储资源、配置资源、灰度发布任务、镜像构建器、监控告警和项目设置。"
+title: "Project Management"
+linkTitle: "Project Management"
+keywords: "Kubernetes, KubeSphere, Project Management"
+description: "Introduces how to manage projects, including managing application workloads, storage resources, configuration resources , and project settings."
 layout: "second"
 weight: 09
 icon: "/images/docs/common/docs.svg"
 ---
 
 
+This section explains how to manage resources within a project.
 
-本节介绍如何管理项目中的资源。
-
-在{ks_product-en}平台，每个企业空间可以包含一个或多个项目。用户可以被邀请加入项目，并根据项目角色获得项目资源的查看和管理权限。
+In KubeSphere, each workspace can contain one or more projects. Users can be invited to join projects and gain viewing and management permissions for project resources based on their project roles.

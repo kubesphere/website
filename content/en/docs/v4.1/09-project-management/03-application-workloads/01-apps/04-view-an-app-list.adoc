@@ -1,26 +1,22 @@
 ---
-title: "查看应用列表"
-linkTitle: "查看应用列表"
-keywords: "Kubernetes, KubeSphere, 项目管理, 应用, 查看应用列表"
-description: "介绍如何查看应用列表。"
+title: "View Application List"
+linkTitle: "View Application List"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications, View Application List"
+description: "Learn how to view the application list."
 weight: 04
 ---
 
 
-:ks_permission: **应用实例查看**
-:ks_navigation: **应用负载 > 应用**
+:ks_permission: **Application Instance View**
+:ks_navigation: **Application Workloads > Applications**
 
 
-本节介绍如何查看应用列表。
+This section explains how to view the application list.
 
 
 == Prerequisites
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 == Steps
@@ -32,41 +28,38 @@ include::../../../../_custom-en/projectManagement/projectManagement-oper-openPro
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
-
-. 在**应用**页面，点击**基于模板的应用**打开应用列表。
-+
 ====
-* 应用列表提供以下信息：
+* The application list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|应用的名称。
+|Name
+|The name of the application.
 
 include::../../../../_custom-en/projectManagement/apps/apps-para-status_v4.adoc[]
 
-|应用类型
-|应用模板的类型，如 **helm 应用**或 **yaml 应用**。
+|App Type
+|The type of application template, such as **Helm application** or **YAML application**.
 
-|应用模板
-|创建应用所使用的应用模板。仅对基于模板的应用显示。
+|App Template
+|The application template used to create the application. Only applicable to template-based applications.
 
-|版本
-|应用的版本号。
+|Version
+|The version number of the application.
 
-* 对于基于模板的应用，显示 Helm Chart 的版本。
+* For template-based applications, it displays the version of the Helm Chart.
 
-// * 对于自制应用，显示用户自定义的版本号。
+// * For custom applications, it shows the user-defined version number.
 
-|更新时间
-|应用的更新时间。
+|Update Time
+|The update time of the application.
 |===
 --
 
-* 在列表上方点击搜索框并输入关键字，可按名称搜索应用。
+* Click the search box at the top of the list to search for applications by name.
 
 include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

@@ -21,7 +21,7 @@ Get a QingCloud account and ensure that your account balance is sufficient to cr
 
 . On the **API Keys** page, click **Create**.
 
-. In the **Create API Key** dialog box, set the name for the key, and click **Submit**.
+. In the **Create API Key** dialog, set the name for the key, and click **Submit**.
 
 . Download the key file to your local machine from the popup dialog.
 +

@@ -1,17 +1,17 @@
 // :ks_include_id: 4d2fb1de6b844f18938f0c8b6f08e279
-. 在需要操作的应用右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑信息**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the application you want to edit, then choose **Edit Information** from the dropdown list.
 
-. 在**编辑信息**对话框，设置应用的别名和描述，然后点击**确定**。
+. In the **Edit Information** dialog, set the alias and description for the application, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+| Parameter | Description
 
-|别名
-|应用的别名。不同应用的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+| Alias
+| The alias of the application. Aliases can be the same for different applications. An alias can only contain Chinese characters, letters, numbers, and hyphens (-). It cannot start or end with a hyphen (-) and has a maximum length of 63 characters.
 
-|描述
-|应用的描述信息。描述可包含任意字符，最多包含 256 个字符。
+| Description
+| The description for the application. The description can contain any characters, with a maximum length of 256 characters.
 |===
 --

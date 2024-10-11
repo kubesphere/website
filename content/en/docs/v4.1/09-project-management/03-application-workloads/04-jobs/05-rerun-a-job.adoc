@@ -1,8 +1,8 @@
 ---
-title: "重新运行任务"
-linkTitle: "重新运行任务"
-keywords: "Kubernetes, KubeSphere, 项目管理, 应用负载, 任务, 重新运行任务"
-description: "介绍如何重新运行任务。"
+title: "Re-run Jobs"
+linkTitle: "Re-run Jobs"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Job, Re-run Job"
+description: "Instructions on how to re-run a job."
 weight: 05
 ---
 
@@ -16,11 +16,7 @@ include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-rerunAJob.adoc[
 == Prerequisites
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 
@@ -31,10 +27,6 @@ include::../../../../_custom-en/projectManagement/projectManagement-oper-openPro
 +
 
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
-
-+
-
-. 在**任务**页面，点击**任务**打开普通任务列表。
 
 +
 

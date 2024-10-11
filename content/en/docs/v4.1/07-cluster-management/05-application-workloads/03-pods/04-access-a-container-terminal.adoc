@@ -1,5 +1,6 @@
 ---
 title: "Access Container Terminal"
+linkTitle: "Access Container Terminal"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, Access Container Terminal"
 description: "Learn how to access the container terminal."
 weight: 04

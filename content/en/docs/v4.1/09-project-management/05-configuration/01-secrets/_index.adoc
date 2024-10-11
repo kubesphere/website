@@ -1,8 +1,8 @@
 ---
-title: "保密字典"
-linkTitle: "保密字典"
-keywords: "Kubernetes, KubeSphere, 项目管理, 配置, 保密字典"
-description: "介绍如何管理保密字典。"
+title: "Secrets"
+linkTitle: "Secrets"
+keywords: "Kubernetes, KubeSphere, Project Management, Configuration, Secret"
+description: "Introduction to managing Secrets."
 layout: "second"
 weight: 01
 ---

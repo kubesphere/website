@@ -1,12 +1,12 @@
 ---
-title: "版本说明"
-linkTitle: "版本说明"
-keywords: "Kubernetes, KubeSphere, 版本说明，release notes"
-description: "版本说明"
+title: "Release Notes"
+linkTitle: "Release Notes"
+keywords: "Kubernetes, KubeSphere, Release Notes"
+description: "Release notes of different kubesphere versions."
 layout: "second"
 weight: 20
 icon: "/images/docs/common/docs.svg"
 ---
 
 
-本节介绍 KubeSphere 的版本更新记录。
+This chapter lists the release notes of all versions of KubeSphere.

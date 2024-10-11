@@ -1,8 +1,8 @@
 ---
-title: "配置"
-linkTitle: "配置"
-keywords: "Kubernetes, KubeSphere, 项目管理, 配置"
-description: "介绍如何管理保密字典、配置字典和服务帐户。"
+title: "Configuration"
+linkTitle: "Configuration"
+keywords: "Kubernetes, KubeSphere, Project Management, Configuration"
+description: "Introduction to managing Secrets, ConfigMaps, and Service Accounts."
 layout: "second"
 weight: 05
 ---

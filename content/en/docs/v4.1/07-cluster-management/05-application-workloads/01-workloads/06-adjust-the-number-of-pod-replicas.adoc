@@ -1,5 +1,6 @@
 ---
 title: "Adjust Pod Replicas Count"
+linkTitle: "Adjust Pod Replicas Count"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Adjust Pod Replicas"
 description: "Learn how to adjust the replica count of pods in a workload."
 weight: 06

@@ -12,7 +12,7 @@ This section explains how to uninstall Kubernetes and {ks_product-en}.
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-The uninstallation method for Kubernetes described in this section only applies to Kubernetes installed using KubeKey. If your Kubernetes is not installed through KubeKey, please refer to the link:https://kubernetes.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-reset/[Kubernetes documentation] for uninstallation instructions.
+The uninstallation method for Kubernetes described in this section only applies to Kubernetes installed using KubeKey. If your Kubernetes is not installed through KubeKey, please refer to the link:https://kubernetes.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-reset/[Kubernetes Documentation] for uninstallation instructions.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
@@ -61,7 +61,7 @@ include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-
 // Bash
 [,bash]
 ----
- ./kk delete cluster -f config-sample.yaml
+./kk delete cluster -f config-sample.yaml
 ----
 
 If you see the following message, it means the uninstallation is successful:

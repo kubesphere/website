@@ -16,7 +16,7 @@ You can edit the alias and description of platform roles created by users. KubeS
 
 == Prerequisites
 
-You need to have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
 
 == Steps
 

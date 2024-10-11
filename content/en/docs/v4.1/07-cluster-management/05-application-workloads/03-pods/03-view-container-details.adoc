@@ -1,12 +1,13 @@
 ---
 title: "View Container Details"
+linkTitle: "View Container Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, View Container Details"
 description: "Learn how to view container details."
 weight: 03
 ---
 
 
-:ks_permission: **Application Workload Management**
+:ks_permission: **Application Workload Viewing**
 :ks_navigation: **Application Workloads > Pods**
 
 

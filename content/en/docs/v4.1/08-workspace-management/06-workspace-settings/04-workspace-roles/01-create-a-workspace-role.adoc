@@ -1,54 +1,47 @@
 ---
-title: "创建企业空间角色"
-linkTitle: "创建企业空间角色"
-keywords: "Kubernetes, KubeSphere, 企业空间, 企业空间设置, 企业空间角色, 创建企业空间角色"
-description: "介绍如何如何创建企业空间角色。"
+title: "Create Workspace Roles"
+linkTitle: "Create Workspace Roles"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Role, Create Workspace Role"
+description: "Guide on creating a workspace role."
 weight: 01
 ---
 
-:ks_permission: **角色管理**
-:ks_navigation: **企业空间设置 > 企业空间角色**
+:ks_permission: **Role Management**
+:ks_navigation: **Workspace Settings > Workspace Roles**
 
-
-本节介绍如何创建企业空间角色。
-
+This section explains how to create a workspace role.
 
 == Prerequisites
 
-
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
 
 == Steps
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
 
 +
-
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
-
 include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**创建企业空间角色**对话框，设置企业空间角色的名称、别名和描述，然后点击**编辑权限**。
+. In the **Create Workspace Role** dialog, set the name, alias, and description of the workspace role, then click **Edit Permissions**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter | Description
 
-|名称
-|企业空间角色的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+|Name
+|The name of the workspace role. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
 include::../../../../_custom-en/workspaceManagement/workspaceRoles/workspaceRoles-para-aliasAndDescription.adoc[]
 |===
 --
 
-. 在**编辑权限**对话框，设置企业空间角色的权限，然后点击**确定**。
+. In the **Edit Permissions** dialog, set the permissions for the workspace role, then click **OK**.
 +
 ====
 include::../../../../_custom-en/workspaceManagement/workspaceRoles/workspaceRoles-para-permissions_v4.adoc[]

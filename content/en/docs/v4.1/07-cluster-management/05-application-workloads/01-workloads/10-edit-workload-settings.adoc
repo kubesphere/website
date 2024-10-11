@@ -1,5 +1,6 @@
 ---
 title: "Edit Workload Settings"
+linkTitle: "Edit Workload Settings"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Edit Workload Settings"
 description: "Learn how to edit settings for created workloads."
 weight: 10
@@ -128,7 +129,7 @@ include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workl
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
 --
 
-* Storage Settings
+* Storage
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-mountVolume.adoc[]
@@ -137,20 +138,12 @@ include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workl
 |===
 |Parameter |Description
 
-include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
-
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountVolume.adoc[]
 
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountSecretOrConfigmap.adoc[]
 |===
 
-include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume.adoc[]
---
-
-* Storage > Add Persistent Volume Claim Template
-+
---
-include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume_new.adoc[]
 --
 
 * Storage > Mount Volume > Persistent Volume

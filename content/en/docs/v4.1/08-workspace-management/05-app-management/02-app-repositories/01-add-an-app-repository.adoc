@@ -1,16 +1,15 @@
 ---
-title: "添加应用仓库"
-linkTitle: "添加应用仓库"
-keywords: "Kubernetes, KubeSphere, 企业空间, 应用仓库, 添加应用仓库"
-description: "介绍如何添加应用仓库。"
+title: "Add Application Repository"
+linkTitle: "Add Application Repository"
+keywords: "Kubernetes, KubeSphere, Workspace, Application Repository, Add Application Repository"
+description: "Introduces how to add an application repository."
 weight: 01
 ---
 
-:ks_permission: **应用仓库管理**
-:ks_navigation: **应用管理 > 应用仓库**
+:ks_permission: **App Repos Management**
+:ks_navigation: **App Management > App Repositories**
 
-
-本节介绍如何在企业空间中添加应用仓库。
+This section introduces how to add an application repository in the workspace.
 
 
 == Prerequisites
@@ -18,7 +17,7 @@ weight: 01
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
-* 已提前创建 Helm Chart 仓库。有关如何创建 Helm Chart 仓库，请参阅 link:https://helm.sh/zh/docs/topics/chart_repository/[Helm 官方文档]。
+* The Helm Chart repository has been created in advance. For information on how to create a Helm Chart repository, please refer to the link:https://helm.sh/zh/docs/topics/chart_repository/[Helm Documentation].
 
 
 == Steps
@@ -35,10 +34,10 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**添加应用仓库**对话框，设置应用仓库的参数，然后点击**确定**。
+. In the **Add App Repository** dialog, configure the parameters for the application repository, and then click **OK**.
 +
 --
 include::../../../../_custom-en/workspaceManagement/appRepositories/appRepositories-para-createAppRepository_v4.adoc[]
 
-应用仓库创建完成后将显示在应用仓库列表中。
+The newly created application repository will appear in the application repository list.
 --

@@ -1,5 +1,6 @@
 ---
-title: "Expand Persistent Volume"
+title: "Expand Persistent Volumes"
+linkTitle: "Expand Persistent Volumes"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Expand Persistent Volume"
 description: "Learn how to expand the capacity of a Persistent Volume."
 weight: 05

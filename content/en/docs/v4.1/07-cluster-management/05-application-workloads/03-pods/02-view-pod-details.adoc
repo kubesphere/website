@@ -1,5 +1,6 @@
 ---
 title: "View Pod Details"
+linkTitle: "View Pod Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, Viewing Pod Details"
 description: "Explain how to view the details of a pod."
 weight: 02

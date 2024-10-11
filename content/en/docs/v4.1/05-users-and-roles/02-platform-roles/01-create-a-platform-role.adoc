@@ -63,7 +63,7 @@ Users with the **platform-admin** role can enable and disable extensions. Other 
 
 [%header,cols="1a,4a"]
 |===
-|Permission |Allowed Operations
+|Permission |Operations Allowed
 
 |Workspace Creation
 |Create workspaces and become an administrator of the created projects.
@@ -81,7 +81,7 @@ Users with the **platform-admin** role can enable and disable extensions. Other 
 
 [%header,cols="1a,4a"]
 |===
-|Permission |Allowed Operations
+|Permission |Operations Allowed
 
 |Cluster Management
 |Create clusters, delete clusters, and manage resources within all clusters.
@@ -95,7 +95,7 @@ Users with the **platform-admin** role can enable and disable extensions. Other 
 --
 [%header,cols="1a,4a"]
 |===
-|Permission |Allowed Operations
+|Permission |Operations Allowed
 
 |User Viewing
 |View users.

@@ -11,7 +11,7 @@ This section explains how to add member clusters via direct connection.
 
 == Prerequisites
 
-* You need to have the **platform-admin** role in the host cluster.
+* You should have the **platform-admin** role in the host cluster.
 
 * All nodes in the host cluster must be able to access the Kubernetes API service of the member cluster (usually port 6443 on the master node of the member cluster). Depending on your network environment, you may need to configure firewall and traffic forwarding rules.
 

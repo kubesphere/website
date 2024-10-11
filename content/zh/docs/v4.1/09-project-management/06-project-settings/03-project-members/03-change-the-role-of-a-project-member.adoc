@@ -6,7 +6,7 @@ description: "介绍如何修改项目成员的角色。"
 weight: 03
 ---
 
-:ks_permission: **成员查看**
+:ks_permission: **成员管理**
 :ks_navigation: **项目设置 > 项目成员**
 
 

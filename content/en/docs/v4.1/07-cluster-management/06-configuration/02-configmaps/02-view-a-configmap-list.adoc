@@ -1,5 +1,6 @@
 ---
 title: "View ConfigMaps List"
+linkTitle: "View ConfigMaps List"
 keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMaps"
 description: "Introduction to viewing the list of ConfigMaps."
 weight: 02

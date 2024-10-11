@@ -1,5 +1,6 @@
 ---
 title: "View ConfigMap Details"
+linkTitle: "View ConfigMap Details"
 keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, View ConfigMap Details"
 description: "Instructions on how to view ConfigMap details."
 weight: 03

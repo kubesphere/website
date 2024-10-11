@@ -1,5 +1,6 @@
 ---
 title: "Delete Persistent Volumes"
+linkTitle: "Delete Persistent Volumes"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, Delete Persistent Volume"
 description: "Introduce how to delete a Persistent Volume."
 weight: 13

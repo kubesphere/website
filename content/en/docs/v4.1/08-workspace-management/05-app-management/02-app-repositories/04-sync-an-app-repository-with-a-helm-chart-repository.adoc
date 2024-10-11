@@ -1,26 +1,22 @@
 ---
-title: "使应用仓库和 Helm Chart 仓库同步"
-linkTitle: "使应用仓库和 Helm Chart 仓库同步"
-keywords: "Kubernetes, KubeSphere, 企业空间, 应用仓库, 使应用仓库和 Helm Chart 仓库同步"
-description: "介绍如何同步应用仓库和 Helm Chart 仓库。"
+title: "Sync App Repository with Helm Chart Repository"
+linkTitle: "Sync App Repository with Helm Chart Repository"
+keywords: "Kubernetes, KubeSphere, Workspace, Application Repository, Sync Application Repository, Helm Chart Repository"
+description: "Explains how to sync an application repository with a Helm Chart repository."
 draft: true
 weight: 04
 ---
 
+:ks_permission: **App Repos Management**
+:ks_navigation: **App Management > App Repositories**
 
-:ks_permission: **应用仓库管理**
-:ks_navigation: **应用管理 > 应用仓库**
+This section explains how to sync an application repository with a Helm Chart repository.
 
-
-本节介绍如何使应用仓库和 Helm Chart 仓库同步。
-
-如果您在添加应用仓库时已设置同步周期，系统将根据同步周期自动同步应用仓库和 Helm Chart 仓库。您也可以按照本节介绍的步骤手动使应用仓库和 Helm Chart 仓库同步。
-
+If you have set a sync interval when adding the application repository, the system will automatically sync the application repository with the Helm Chart repository based on the sync interval. You can also manually sync the application repository with the Helm Chart repository following the steps outlined in this section.
 
 == Prerequisites
 
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
 
 == Steps
 
@@ -32,8 +28,8 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 选择需要同步的应用仓库左侧的复选框，然后在列表上方点击**同步**。
+* Select the checkbox on the left of the application repository you want to sync, then click **Sync** at the top of the list.
 +
 --
-系统将根据 Helm Chart 仓库更新应用仓库。
+The system will update the application repository based on the Helm Chart repository.
 --

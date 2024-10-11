@@ -1,5 +1,6 @@
 ---
 title: "View Pod List"
+linkTitle: "View Pod List"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, Viewing Pod Lists"
 description: "Explain how to view the list of pods."
 weight: 01

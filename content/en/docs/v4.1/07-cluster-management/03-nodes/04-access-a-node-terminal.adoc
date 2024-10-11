@@ -1,5 +1,6 @@
 ---
 title: "Access Node Terminal"
+linkTitle: "Access Node Terminal"
 keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes, Access Node Terminal"
 description: "Explain how to access the terminal on nodes."
 weight: 04

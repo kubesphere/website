@@ -1,52 +1,56 @@
 ---
-title: "通过 kubectl 运行命令"
-linkTitle: "通过 kubectl 运行命令"
-keywords: "Kubernetes, KubeSphere, kubectl, 命令, 通过 kubectl 运行命令"
-description: "介绍如何过 kubectl 运行命令。"
+title: "Run Commands with kubectl"
+linkTitle: "Run Commands with kubectl"
+keywords: "Kubernetes, KubeSphere, kubectl, command, running commands with kubectl"
+description: "Introduction to running commands with kubectl."
 weight: 01
 ---
 
-Kubectl 是 Kubernetes 命令行工具。您可以用它在 Kubernetes 集群上运行命令，以便查看和管理集群资源等。
+Kubectl is the Kubernetes command-line tool. You can use it to run commands on Kubernetes clusters to view and manage cluster resources, and more.
 
-{ks_product-en}控制台提供 Web kubectl，方便用户使用。在默认情况下，当前版本中，只有被授予 platform-admin 角色的用户（例如默认账户 admin）才有权限使用 Web kubectl 进行集群资源操作和管理。
+The {ks_product-en} console provides a Web kubectl. By default, only users granted the platform-admin role (such as the default **admin** account) have permission to use the Web kubectl for cluster resource operations and management.
 
-本节演示如何使用 Web kubectl 进行集群资源操作和管理。
+This section demonstrates how to use the Web kubectl for cluster resource operations and management.
 
 == Prerequisites
 
-您需要在{ks_product-en}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../05-users-and-roles/01-users/[用户]和link:../../05-users-and-roles/02-platform-roles/[平台角色]。
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, please refer to link:../../05-users-and-roles/01-users.adoc[Users] and link:../../05-users-and-roles/02-platform-roles.adoc[Platform Roles].
 
-== 使用 Web Kubectl
+== Using Web Kubectl
 
-. 以具有 **platform-admin** 角色的用户登录{ks_product-en} Web 控制台。
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
 
-. 将光标悬停在页面右下角的image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18]图标，然后在菜单中选择 kubectl。
+. Hover the cursor over the image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18] icon in the bottom right corner of the page and click **kubectl** from the menu.
 
-. 在弹出窗口中看到 kubectl 界面，如下图所示。如果有多个集群，则需要先在右上角的下拉列表中选择目标集群。如果只有一个集群，则该下拉列表不可见。
+. In the popup window, you will see the kubectl interface as shown below. If you have multiple clusters, you need to first select the target cluster from the dropdown list in the top right corner. If there is only one cluster, the dropdown list will not be visible.
 +
-image:/images/ks-qkcp/zh/v4.0/kubectl.png[,100%]
+image:/images/ks-qkcp/en/v4.0/kubectl.png[,100%]
 
-. 在命令行工具中输入 kubectl 命令，查询并管理 Kubernetes 集群资源。例如，执行以下命令查询集群中所有 pod 的状态。
+. Enter kubectl commands in the command line tool to query and manage Kubernetes cluster resources. For example, execute the following command to check the status of all pods in the cluster.
 +
-[,bash]
+[source,bash]
 ----
 kubectl get pods -A
 ----
 
-. 在终端窗口中使用以下语法运行 kubectl 命令：
+. Run kubectl commands in the terminal window using the following syntax:
 +
-[,bash]
+--
+[source,bash]
 ----
 kubectl [command] [TYPE] [NAME] [flags]
 ----
 
 include::../../../_ks_components-en/admonitions/note.adoc[]
 
-* 其中，command、TYPE、NAME 和 flags 分别是：
+* Here, command, TYPE, NAME, and flags are:
 
-** command：指定要对一个或多个资源执行的操作，例如 create、get、describe 和 delete。
-** TYPE：指定link:https://kubernetes.io/zh-cn/docs/reference/kubectl/#resource-types[资源类型]。资源类型不区分大小写，您可以指定单数、复数或缩写形式。
-** NAME：指定资源的名称。名称区分大小写。如果省略名称，则会显示所有资源的详细信息，例如 `kubectl get pods`。
-** flags：指定可选的参数。例如，您可以使用 -s 或 --server 参数指定 Kubernetes API 服务器的地址和端口。
-* 如果您需要帮助，请在终端窗口运行 `kubectl help` 或者参阅 link:https://kubernetes.io/zh/docs/reference/kubectl/overview/[Kubernetes Kubectl 文档]。
+** command: Specifies the operation to perform on one or more resources, such as create, get, describe, and delete.
+** TYPE: Specifies link:https://kubernetes.io/zh-cn/docs/reference/kubectl/#resource-types[resource type]. Resource types are case-insensitive, and you can specify singular, plural, or abbreviated forms.
+** NAME: Specifies the name of the resource. Names are case-sensitive. If the name is omitted, detailed information for all resources will be displayed, for example, `kubectl get pods`.
+** flags: Specifies optional parameters. For example, you can use the `-s` or `--server` flag to specify the address and port of the Kubernetes API server.
+
+* If you need help, run `kubectl help` in the terminal window or refer to link:https://kubernetes.io/zh/docs/reference/kubectl/overview.adoc[Kubernetes Kubectl Documentation].
+
 include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

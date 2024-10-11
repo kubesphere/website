@@ -1,27 +1,26 @@
 ---
-title: "改进计划"
-linkTitle: "改进计划"
+title: "Improvement Plan"
+linkTitle: "Improvement Plan"
 weight: 01
-keywords: "安装器, Telemetry, KubeSphere, Kubernetes"
-description: "了解 KubeSphere 收集哪些信息，以及如何启用或禁用信息收集。"
+keywords: "Installer, Telemetry, KubeSphere, Kubernetes"
+description: "Learn about what information KubeSphere collects and how to enable or disable data collection."
 ---
 
+== What is the Improvement Plan?
 
-== 什么是改进计划？
+The Improvement Plan collects information about KubeSphere installation and feature usage. This information is used solely by KubeSphere to enhance the product and is not shared with any third parties.
 
-改进计划会收集关于 KubeSphere 安装、使用功能的汇总信息。这些信息将仅被 KubeSphere 用于改进产品，并且不与任何第三方分享。
+== What does the Improvement Plan report?
 
-== 改进计划报告的内容是什么？
+The Improvement Plan does not collect any specific identifying information such as usernames, passwords, resource names, or addresses.
 
-改进计划不会收集任何特定的身份信息，比如用户名、密码、资源的名称或地址。
+The main collected information includes:
 
-主要收集的内容包括：
+- Extension installation information: Extension name, extension version, and installation time.
+- Cluster information: Cluster name, cluster role, cluster version, cluster UID (UID of the kube-system namespace), KubeSphere version, KubeSphere UID (UID of the kubesphere-system namespace).
+- Cluster node information: Node name, node UID, node role, node architecture, node operating system version, node operating system image name, kernel version, container runtime version, kube-proxy version, kubelet version.
+- Resource statistics: Number of users, number of namespaces, number of workspaces.
 
-- 扩展组件安装信息：组件名称，组件版本和安装时间。
-- 集群信息：集群名称，集群角色，集群版本，集群 uid (kube-system 命名空间的 uid)，KubeSphere 版本，KubeSphere 的 uid (kubesphere-system 命名空间的 uid)。
-- 集群节点信息：节点名称，节点 uid，节点角色，节点架构，节点操作系统版本，节点操作系统镜像名称，内核版本，容器运行时版本，kube-proxy 版本，kubelet 版本。
-- 资源统计信息：用户数量，命名空间数量，企业空间数量。
+== How to participate in or opt out of the Improvement Plan?
 
-== 如何参与或退出改进计划？
-
-KubesSphere 安装或配置变更时，可以通过配置 `telemetry.enabled` 选择是否参与改进计划。更多信息，请参阅 link:../../03-installation-and-upgrade/02-install-kubesphere/05-appendix/#_高级选项[KubeSphere Core 高级配置]。
+When installing or configuring KubeSphere, you can choose to participate in the Improvement Plan or not by configuring `telemetry.enabled`. For more information, refer to link:../../03-installation-and-upgrade/02-install-kubesphere/05-appendix/#_advanced_options[Advanced Configuration of KubeSphere Core].

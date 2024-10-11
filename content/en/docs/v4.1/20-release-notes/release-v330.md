@@ -74,7 +74,7 @@ weight: 18098
 - Add the lifecycle management feature for containers.
 - Add support for creating container environment variables in batches from secrets and configmaps.
 - Add a time range selector on the **Traffic Monitoring** tab page.
-- Add a message in the **Audit Log Search** dialog box, which prompts users to enable the audit logs feature.
+- Add a message in the **Audit Log Search** dialog, which prompts users to enable the audit logs feature.
 - Add more Istio parameters in `ClusterConfiguration`.
 - Add support for more languages, for example, Turkish.
 - Set the **Token** parameter on the webhook settings page as mandatory.

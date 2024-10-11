@@ -1,8 +1,8 @@
 ---
 title: "从应用商店安装应用"
 linkTitle: "从应用商店安装应用"
-keywords: "Kubernetes, KubeSphere, 项目管理, 应用, 查看项目概览信息"
-description: "介绍如何查看项目概览信息。"
+keywords: "Kubernetes, KubeSphere, 项目管理, 应用"
+description: "介绍如何从应用商店安装应用。"
 weight: 01
 ---
 
