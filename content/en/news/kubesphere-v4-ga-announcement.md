@@ -67,9 +67,9 @@ The core part (KubeSphere Core) contains only the essential functionalities requ
 - Support for one-click import of member clusters via kubeconfig.
 - Support for KubeSphere Service Accounts.
 - Support for dynamic extension of the Resource API.
-Support for adding clusters, workspaces, and projects to quick access.
+- Support for adding clusters, workspaces, and projects to quick access.
 - Enabled file upload and download via container terminal.
-Adapted to cloud-native gateways (Kubernetes Ingress API) from different vendors.
+- Adapted to cloud-native gateways (Kubernetes Ingress API) from different vendors.
 - Support API rate limiting.
 - Support creating persistent volumes on the page.
 - Support OCI-based Helm Chart repositories.
