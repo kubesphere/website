@@ -1,0 +1,2 @@
+// :ks_include_id: a58c1ab91f824dfea967e391137ca1dc
+. 在**应用**页面点击 **RadonDB 应用**页签。

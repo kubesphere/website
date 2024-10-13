@@ -1,0 +1,36 @@
+---
+title: "View Project Role Details"
+linkTitle: "View Project Role Details"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Project Roles, View Project Role Details"
+description: "Instructions on how to view project role details."
+weight: 02
+---
+
+:ks_permission: **Role Viewing**
+:ks_navigation: **Project Settings > Project Roles**
+
+This section explains how to view project role details.
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click the name of a project role in the list to open its details page.
+
+. On the **Permissions** tab on the right side of the details page, you can view the permissions associated with the project role.
+
+. Click the **Authorized Users** tab on the right side of the details page to view users with the current project role.

@@ -1,0 +1,11 @@
+// :ks_include_id: eae1dea548f94792b303903d436d1b25
+. In the **Edit Default Container Quotas** dialog, set the default resource request and resource limit for containers, then click **OK**.
++
+--
+[options="header",cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::projects-para-containerQuotas.adoc[]
+|===
+--

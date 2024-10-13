@@ -1,0 +1,8 @@
+// :ks_include_id: 3965f0c407e24d6dae5c945b45abbd6e
+This section explains how to manage jobs.
+
+In KubeSphere, applications run in pods. Jobs are used to manage pods that run either once or periodically. KubeSphere supports the following types of jobs:
+
+* Jobs: Used to manage pods that run only once. If a pod runs failed, the system will restart the pod according to the policies set in the job until specific conditions are met.
+
+* CronJobs: Used to manage pods that run periodically. The system creates regular jobs based on the schedule set in the CronJob and runs them accordingly. Each time when the pod runs, if it fails, the CronJob will restart the pod according to the policies set by the user until specific conditions are met.

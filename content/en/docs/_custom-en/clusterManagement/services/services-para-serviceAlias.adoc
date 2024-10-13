@@ -1,0 +1,3 @@
+// :ks_include_id: f7106eed4381415e895021d16070780d
+| Alias
+| The alias of the service. Aliases can be the same for different services. Aliases can only contain Chinese characters, letters, numbers, and hyphens (-), and must not start or end with a hyphen (-), with a maximum length is 63 characters.

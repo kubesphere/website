@@ -1,0 +1,56 @@
+// :ks_include_id: b53ca408cc88447789f75df42c73bcc7
+All workspace members can view basic information about the workspace. The permissions required for other operations are as follows:
+
+* Projects
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission | Operations Allowed
+
+|Project Creation
+|Create projects and become an administrator of the created projects.
+
+|Project Management
+|Create, edit, and delete projects in the workspace.
+
+|Project Viewing
+|View all projects and project resources.
+|===
+--
+
+* Applications
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission | Operations Allowed
+
+|App Repos Management
+|Add app repositories, edit app repositories, delete app repositories.
+
+|App Repos Viewing
+|View the list of app repositories.
+
+|App/App Version/App Instance Management
+|Create app templates, edit app template information, install apps using app templates, upload app versions, delete app versions, publish app versions to the app store, delete app templates.
+
+|App/App Version/App Instance Viewing
+|View the list of app templates, view app template details, download Helm Chart compressed files.
+|===
+--
+
+* Access Control
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission | Operations Allowed
+
+|Member Viewing
+|View the list of workspace members, view details of workspace members.
+
+|Role Viewing
+|View the list of workspace roles, view details of workspace roles.
+|===
+--

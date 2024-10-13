@@ -1,0 +1,33 @@
+---
+title: "Edit PVC Information"
+linkTitle: "Edit PVC Information"
+keywords: "Kubernetes, KubeSphere, Project Management, Storage, Persistent Volume Claim, Persistent Volume, Edit Persistent Volume Claim Information"
+description: "Introduce how to edit the basic information of a Persistent Volume Claim."
+weight: 07
+---
+
+:ks_permission: **Persistent Volume Claim Management**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-editPersistentVolumeClaimInformation.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-editPersistentVolumeClaimInformation.adoc[]

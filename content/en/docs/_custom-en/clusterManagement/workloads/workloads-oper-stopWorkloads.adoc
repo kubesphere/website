@@ -1,0 +1,8 @@
+// :ks_include_id: 7e1535bd60ce4490bccd43efa8138a1e
+. Select the checkbox on the left side of the workloads you want to stop, then click **Stop** above the workload list.
+
+. In the **Stop Workload** dialog, enter the name of the workload, then click **OK**.
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

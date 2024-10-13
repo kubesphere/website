@@ -1,0 +1,12 @@
+// :ks_include_id: f0f32c026c8a44b7ac18acbadf465ea5
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the service you want to edit, then choose **Edit Service** from the dropdown list.
+
+. In the **Edit Service** dialog, modify the service settings, then click **OK**.
+
+* For services with an internal access mode of ExternalName, you can modify the address of the external service.
+
+* For other services, you can modify the internal access mode, workload selector, and ports of the service.
++
+--
+include::services-para-serviceSettings.adoc[]
+--

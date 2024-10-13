@@ -1,0 +1,13 @@
+// :ks_include_id: 963da033862c424c9fc9f2cc246602fb
+This section explains how to roll back workload settings.
+
+The system generates revision records after creating or modifying workloads, which can be used to roll back workload settings. Up to 10 revision records can be retained.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
+
+|
+This operation will recreate the workload based on the selected revision record, and the running business will be interrupted. Please proceed with caution.
+|===

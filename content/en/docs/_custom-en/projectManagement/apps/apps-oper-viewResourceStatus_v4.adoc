@@ -1,0 +1,46 @@
+// :ks_include_id: c4590bcc1e7e440b8eaf162491107dc0
+. On the **Resource Status** tab on the right side of the details page, view the services and workloads that make up the application.
+
+* The **Services** section provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the service.
+
+|Project
+|The project to which the service belongs.
+
+|Internal Access
+|The virtual IP address for internal access to the service within the cluster.
+
+|External Access
+|The port number for external access to the service from outside the cluster.
+|===
+--
+
+* The **Workloads** section provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the workload.
+
+|Project
+|The project to which the workload belongs.
+
+|Status
+|The current status of the workload.
+
+include::../../clusterManagement/workloads/workloads-para-workloadStatus.adoc[]
+
+// |Revision History
+// |The revision history of the workload.
+|===
+--

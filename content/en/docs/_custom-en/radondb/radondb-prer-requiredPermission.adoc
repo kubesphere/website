@@ -1,0 +1,2 @@
+// :ks_include_id: f369e4a204164378b95018c1b0b2483e
+* 您需要在{ks_product-en} Web 控制台加入一个项目，并在项目中具有pass:a,q[{ks_permission}]权限。

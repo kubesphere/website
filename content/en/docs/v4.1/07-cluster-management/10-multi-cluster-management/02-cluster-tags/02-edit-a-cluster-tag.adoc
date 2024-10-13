@@ -1,0 +1,35 @@
+---
+title: "Edit Cluster Tags"
+linkTitle: "Edit Cluster Tags"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster Tags, Edit Cluster Tags"
+description: "Learn how to edit cluster tags."
+weight: 02
+---
+
+:ks_permission: **Cluster Management**
+
+This section explains how to edit cluster tags.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
++
+
+. Click **Cluster Management**.
+
++
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusterTags/clusterTags-openListPage.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to the tag you want to edit, then select **Edit** from the dropdown list.
+
+. In the **Edit Tag** dialog, set the key and value for the tag, then click **OK**.

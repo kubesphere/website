@@ -1,0 +1,2 @@
+// :ks_include_id: cf8f148335ee4a91b16003d41eff0731
+* Click the search box at the top of the list to search for workloads by name or status.

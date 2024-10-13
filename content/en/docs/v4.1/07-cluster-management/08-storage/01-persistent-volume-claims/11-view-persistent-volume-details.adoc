@@ -1,0 +1,86 @@
+---
+title: "View Persistent Volume Details"
+linkTitle: "View Persistent Volume Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, View Persistent Volume Details"
+description: "Introduce how to view details of Persistent Volumes in the cluster."
+weight: 11
+---
+
+:ks_permission: **Persistent Volume Claim Viewing**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+This section explains how to view details of Persistent Volumes in the cluster.
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Persistent Volume Claims** page, click **Persistent Volume** to open the list of Persistent Volumes. Then, click the name of a Persistent Volume to open its details page.
+
+. On the left side of the Persistent Volume details page, in the **Attributes** section, view the resource attributes of the Persistent Volume.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Status
+|
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistent-volume-status.adoc[]
+
+|Capacity
+|
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-volumeSize.adoc[]
+
+|Access Mode
+|
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
+
+|Storage Class
+|The storage class corresponding to the Persistent Volume claim. For more information about storage classes, refer to link:../../02-storage-classes/[Storage Classes].
+
+|Volume Handle
+|The unique identifier of the Persistent Volume in the backend storage system.
+
+|Reclaim Policy
+|
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-reclaimPolicy.adoc[]
+
+|Volume Mode
+|The device type of the Persistent Volume.
+
+* **Filesystem**: The Persistent Volume is mounted to containers in the form of a filesystem.
+
+* **Block Device**: The Persistent Volume is provided to containers in the form of a block device.
+
+|Creation Time
+|The creation time of the Persistent Volume.
+|===
+--
+
+. Click the **Resource Status** tab on the right side of the Persistent Volume details page to view information about the Persistent Volume Claim associated with the Persistent Volume.
++
+--
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-pvcInformation.adoc[]
+--
+
+. Click the **Metadata** tab on the right side of the Persistent Volume details page to view the labels and annotations of the Persistent Volume.
+
+. Click the **Events** tab on the right side of the Persistent Volume details page to view the events of the Persistent Volume.
++
+--
+include::../../../../_custom-en/clusterManagement/clusterManagement-para-eventsTab.adoc[]
+--

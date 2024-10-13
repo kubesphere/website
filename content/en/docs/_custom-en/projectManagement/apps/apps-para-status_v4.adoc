@@ -1,0 +1,15 @@
+// :ks_include_id: 9db80030fef4430e98fae7a372d67f6d
+|Status
+|The current status of the application.
+
+* **Creating**: The system is currently creating the application.
+
+* **Created**: The application has been created but is not yet running.
+
+* **Running**: The application is running normally.
+
+* **Upgrading**: The system is upgrading the application.
+
+* **Deleting**: The system is deleting the application.
+
+* **Failed**: The application creation has failed.

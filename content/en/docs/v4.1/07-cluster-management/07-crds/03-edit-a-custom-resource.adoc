@@ -1,0 +1,53 @@
+---
+title: "Edit Custom Resource"
+linkTitle: "Edit Custom Resource"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definitions, Edit Custom Resource"
+description: "Explain how to edit a custom resource."
+weight: 04
+---
+
+
+:ks_permission: **Custom Resource Definition Management**
+:ks_navigation: **CRDs**
+
+
+This section explains how to edit a custom resource.
+
+
+== Prerequisites
+
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/crds/crds-oper-openDetailsPage.adoc[]
+
++
+
+. On the **CRDs** tab, click on image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the custom resource you want to edit, and then select **Edit YAML** from the dropdown list.
+
+. In the **Edit YAML** dialog, modify the YAML settings of the custom resource, and then click **OK**.
++
+--
+* Click on image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark-white,18,18] in the upper right corner of the dialog to upload a local YAML configuration file.
+
+* Click on image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark-white,18,18] in the upper right corner of the dialog to download the YAML configuration file to your local machine.
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+You need to modify the settings of the custom resource according to the specifications of the custom resource definition and the API provided by the controller. For more information, refer to the link:https://kubernetes.io/zh/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/[Kubernetes Documentation].
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

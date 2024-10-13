@@ -1,0 +1,56 @@
+---
+title: "Add Member Cluster via Direct Connection"
+linkTitle: "Add Member Cluster via Direct Connection"
+keywords: "Kubernetes, {ks_product}, Multi-Cluster Management, Cluster, Add Member Clusters"
+description: "Learn how to add member clusters via direct connection."
+weight: 01
+---
+
+This section explains how to add member clusters via direct connection.
+
+
+== Prerequisites
+
+* You should have the **platform-admin** role in the host cluster.
+
+* All nodes in the host cluster must be able to access the Kubernetes API service of the member cluster (usually port 6443 on the master node of the member cluster). Depending on your network environment, you may need to configure firewall and traffic forwarding rules.
+
+== Get Member Cluster Kubeconfig
+
+. On a node in the member cluster, run the following command to get the kubeconfig information of the member cluster:
++
+[,bash]
+----
+kubectl config view --raw
+----
+
+. Copy the kubeconfig information and modify the **clusters:cluster:server** parameter as follows:
++
+[,yaml]
+----
+clusters:
+- cluster:
+    server: https://<member-cluster-node-ip>:6443
+----
+
+== Add Member Cluster
+
+include::../../../../../_custom-en/platformManagement/multiclusterManagement/clusters/clusters-oper-logInToHost.adoc[]
+
++
+
+. Click **Cluster Management**.
+
++
+
+include::../../../../../_custom-en/platformManagement/multiclusterManagement/clusters/clusters-oper-addClusterBasicInfo.adoc[]
++
+Under **Advanced Settings**, set the purpose identifier for the cluster.
+
+. On the **Connection Settings** tab, set the **Connection Mode** to **Direct Connection**, enter the kubeconfig information of the member cluster in the **kubeconfig** area, and then click **Next**.
+
+. On the **Cluster Configuration** tab, configure the cluster settings, and then click **Create**.
++
+--
+Once the member cluster is added, it will be displayed in the list of clusters on the **Cluster Management** page.
+--

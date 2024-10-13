@@ -1,0 +1,48 @@
+---
+title: "Delete PVCs"
+linkTitle: "Delete PVCs"
+keywords: "Kubernetes, KubeSphere, Project Management, Storage, Persistent Volume Claim, Persistent Volume, Delete Persistent Volume Claim"
+description: "Introduce how to delete a Persistent Volume Claim."
+weight: 08
+---
+
+:ks_permission: **Persistent Volume Claim Management**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-deletePersistentVolumeClaims.adoc[]
+
+
+== Prerequisites
+
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-backData.adoc[]
+
+
+== Delete a Single Persistent Volume Claim
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-deleteASinglePersistentVolumeClaim.adoc[]
+
+
+== Delete Multiple Persistent Volume Claims
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-deleteMultiplePersistentVolumeClaims.adoc[]

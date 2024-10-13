@@ -1,0 +1,2 @@
+// :ks_include_id: 161aaad98ab04d7fa4240eec51d232f7
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product-en} Web 控制台并进入您的联邦项目。

@@ -1,0 +1,19 @@
+---
+title: "Cluster Members"
+linkTitle: "Cluster Members"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Members"
+description: "Instructions on how to manage cluster members."
+layout: "second"
+weight: 03
+---
+
+This section explains how to manage cluster members.
+
+Cluster members are users who have permission to view or manage resources within the cluster, and their permissions are determined by the roles they have in the cluster.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-desc-initialClusterAdmin.adoc[]
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

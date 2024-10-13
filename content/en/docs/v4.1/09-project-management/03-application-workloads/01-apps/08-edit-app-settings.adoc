@@ -1,0 +1,34 @@
+---
+title: "Edit Application Settings"
+linkTitle: "Edit Application Settings"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Applications, Edit Application Settings"
+description: "Learn how to edit application settings."
+weight: 08
+---
+
+:ks_permission: **Application Instance Management**
+:ks_navigation: **Application Workloads > Applications**
+
+This section explains how to edit the settings of a created application.
+
+When creating an application, you can also edit its settings. For more information, see link:../01-install-an-app-from-the-app-store[Install Applications from App Store] and link:../02-install-an-app-using-an-app-template[Install Applications Using App Templates].
+
+## Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+## Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Applications** page, click the name of an application to open its details page.
+   
+. On the top left corner of the application details page, select **More > Edit Settings**.
+   
+. In the **Edit App Settings** dialog, choose the target application version on the right, edit the application settings, and then click **OK**.

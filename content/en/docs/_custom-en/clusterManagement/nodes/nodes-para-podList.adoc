@@ -1,0 +1,8 @@
+// :ks_include_id: 5fa3835b046e429ca339319d7a09aefe
+* Click image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18] to view information about the containers running in the pod.
+
+* Click the name of the pod to view container details.
+
+* Enter keywords in the search box above the pod list to search for pods whose names contain specific keywords.
+
+* Click image:/images/ks-qkcp/zh/icons/refresh-light.svg[Refresh,18,18] in the upper-right corner of the pod list to refresh the information.

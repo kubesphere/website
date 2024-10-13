@@ -1,0 +1,35 @@
+---
+title: "Edit Workload Information"
+linkTitle: "Edit Workload Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Edit Workload Information"
+description: "Learn how to edit workload information."
+weight: 04
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-editWorkloadInformation.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openListPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-editWorkloadInformation.adoc[]

@@ -1,0 +1,4 @@
+// :ks_include_id: 0578975ed65b41108f5ec9903fae44ca
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the workload you want to recreate, then choose **Re-create** from the dropdown list.
+
+. In the **Re-create** dialog, click **OK**.

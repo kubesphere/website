@@ -1,0 +1,2 @@
+// :ks_include_id: 0531ad01f6504951b7876d7d79c0bc59
+. On the **Cluster Management** page, click the **Cluster Tags** tab to open the list of cluster tags.

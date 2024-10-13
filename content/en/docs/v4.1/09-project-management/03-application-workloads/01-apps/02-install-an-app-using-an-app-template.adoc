@@ -1,0 +1,67 @@
+---
+title: "Install Applications Using App Templates"
+linkTitle: "Install Applications Using App Templates"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications, Install Applications from Application Templates"
+description: "Learn how to install applications from application templates."
+weight: 02
+---
+
+
+:ks_permission: **Application Instance Create**
+:ks_navigation: **Application Workloads > Applications**
+
+
+This section explains how to install applications from application templates in the workspace or third-party application repositories.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+To use application templates in the workspace, you need to install and enable the "App Store Management" extension. After installation, **App Templates** will display under the **App Management** menu in the workspace. Workspace members with relevant permissions can then create application templates for the workspace.
+
+|===
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. Click **From App Templates** in the **Create App** dialog.
+
+. On the **App Templates** page, click the **Current workspace** dropdown list and select the **Current workspace** or an application repository.
+
+. Click the desired application template, then click **Install**.
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-installApp.adoc[]
+
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+Application templates and application repositories are created by workspace members with relevant permissions. 
+
+For more information on application functional parameters, please contact relevant workspace members or the application provider.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+Once the application is created, it will be displayed in the list of applications.
+--

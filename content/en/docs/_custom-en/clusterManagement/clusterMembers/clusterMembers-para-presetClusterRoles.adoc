@@ -1,0 +1,13 @@
+// :ks_include_id: 8fa15cb04f8048cfa5479d1a77ddf099
+KubeSphere provides the following built-in cluster roles:
+
+[%header,cols="1a,4a"]
+|===
+| Role | Description
+
+| cluster-admin
+| Cluster administrator with all permissions within the cluster except creating and deleting clusters.
+
+| cluster-viewer
+| Cluster viewer with permissions to view all resources within the cluster.
+|===

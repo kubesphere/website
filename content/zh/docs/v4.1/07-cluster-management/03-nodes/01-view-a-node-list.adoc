@@ -14,11 +14,7 @@ weight: 01
 
 == 前提条件
 
-:relfileprefix: ../../../
-
 include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 == 操作步骤
 
@@ -40,7 +36,7 @@ include::../../../_custom/clusterManagement/nodes/nodes-oper-openListPage_new.ad
 
 |名称
 |各节点的主机名称和在子网内部的 IP 地址。
-// 各节点的主机名称由用户安装集群时在安装配置文件 **config-sample.yaml** 中设置。
+各节点的主机名称由用户安装集群时在安装配置文件 **config-sample.yaml** 中设置。
 
 |状态
 |

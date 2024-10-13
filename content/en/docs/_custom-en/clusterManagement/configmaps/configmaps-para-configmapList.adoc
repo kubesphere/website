@@ -1,0 +1,20 @@
+* The ConfigMaps list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Name
+| The name and description of the ConfigMap.
+
+| Project
+| The project to which the ConfigMap belongs.
+
+| Fields
+|The key name of the key-value pair data stored in the ConfigMap. Different keys are separated by a comma (,).
+
+| Creation Time
+|The creation time of the ConfigMap.
+|===
+--

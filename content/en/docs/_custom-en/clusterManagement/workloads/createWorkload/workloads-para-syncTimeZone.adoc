@@ -1,0 +1,2 @@
+// :ks_include_id: 4c4df684b9b74e1a9e5cf5aab6f90439
+Select the checkbox on the left of **Synchronize Host Timezone** will synchronize the timezone between the container and the host.

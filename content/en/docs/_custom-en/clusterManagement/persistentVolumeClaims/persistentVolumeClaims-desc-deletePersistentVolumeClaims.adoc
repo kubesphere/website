@@ -1,0 +1,11 @@
+// :ks_include_id: f294119a3b1a45a49ff83ed852f8fadd
+This section explains how to delete a Persistent Volume Claim.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
+
+|
+Deleting a Persistent Volume Claim is irreversible, and by default, the Persistent Volume associated with the Persistent Volume Claim will also be deleted. Please proceed with caution to avoid data loss.
+|===

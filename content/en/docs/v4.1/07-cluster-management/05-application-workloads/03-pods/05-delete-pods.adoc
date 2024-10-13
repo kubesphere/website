@@ -1,0 +1,46 @@
+---
+title: "Delete Pods"
+linkTitle: "Delete Pods"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Pods, Delete Pods"
+description: "Learn how to delete a pod."
+weight: 05
+---
+
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Pods**
+
+include::../../../../_custom-en/clusterManagement/pods/pods-desc-deletePods.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Delete a Single Pod
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/pods/pods-oper-deleteASinglePod.adoc[]
+
+
+== Delete Multiple Pods
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/pods/pods-oper-deleteMultiplePods.adoc[]

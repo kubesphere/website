@@ -1,0 +1,2 @@
+// :ks_include_id: f8360981ea784a128e8db037604d4687
+* RadonDB Kafka 状态为**运行中**。

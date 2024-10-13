@@ -1,0 +1,18 @@
+---
+title: "View Platform Information"
+linkTitle: "View Platform Information"
+keywords: "Kubernetes, KubeSphere, Platform Settings, Platform Information, View Platform Information"
+description: "Introduce how to view platform information."
+weight: 01
+---
+
+This section explains how to view information of the {ks_product-en} web console.
+
+
+== Operation Steps
+
+. Log in to the {ks_product-en} web console.
+
+. Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the top right corner of the page to access the **Platform Settings** page.
++
+The **Platform Information** page displays the platform's access address, identifier, title, and description.

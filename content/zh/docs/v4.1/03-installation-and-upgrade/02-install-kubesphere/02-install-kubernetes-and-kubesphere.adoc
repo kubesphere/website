@@ -1,8 +1,8 @@
 ---
 title: "在 Linux 上安装 Kubernetes 和 KubeSphere"
 linkTitle: "在 Linux 上安装 Kubernetes 和 KubeSphere"
-keywords: "Kubernetes, {ks_product}, 安装, 安装{ks_product_left}, 安装 Kubernetes"
-description: "介绍如何在生产环境中安装 Kubernetes 和{ks_product_left}。"
+keywords: "Kubernetes, KubeSphere, 安装, 安装 KubeSphere, 安装 Kubernetes"
+description: "介绍如何在生产环境中安装 Kubernetes 和 KubeSphere。"
 weight: 02
 ---
 
@@ -26,12 +26,6 @@ weight: 02
 * 集群节点的操作系统和版本须为 Ubuntu 16.04、Ubuntu 18.04、Ubuntu 20.04、Ubuntu 22.04、Debian 9、Debian 10、CentOS 7、CentOS Stream、RHEL 7、RHEL 8、SLES 15 或 openSUSE Leap 15。多台服务器的操作系统可以不同。关于其它操作系统和版本支持，请联系{ks_product_both}技术支持。
 
 * 在生产环境中，为确保集群具有足够的计算和存储资源，建议每台集群节点配置至少 8 个 CPU 核心、16 GB 内存和 200 GB 磁盘空间。除此之外，建议在每台集群节点的 **/var/lib/docker**（对于 Docker）或 **/var/lib/containerd**（对于 containerd） 目录额外挂载至少 200 GB 磁盘空间用于存储容器运行时数据。
-
-// :relfileprefix: ../../../
-
-// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-prer-offlineInstallation.adoc[]
-
-// :relfileprefix: ./
 
 * 在生产环境中，建议提前为{ks_product_both}集群配置高可用性以避免单个控制平面节点出现故障时集群服务中断。有关更多信息，请参阅link:../../../03-installation-and-upgrade/01-preparations/03-configure-high-availability/[配置高可用性]。
 +
@@ -388,7 +382,6 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core https://c
 ----
 
 include::../../../../_ks_components/admonitions/note.adoc[]
-
 
 如果您访问 Docker Hub 受限，请在命令后添加如下配置，修改默认的镜像拉取地址。
 

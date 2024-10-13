@@ -1,0 +1,31 @@
+---
+title: "View Project Role List"
+linkTitle: "View Project Role List"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Project Roles, View Project Role Lists"
+description: "Learn how to view project role lists."
+weight: 02
+---
+
+:ks_permission: **Role Viewing**
+:ks_navigation: **Project Settings > Project Roles**
+
+This section explains how to view the project role list.
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+--
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-para-presetRoles.adoc[]
+--

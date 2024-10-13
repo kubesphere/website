@@ -1,0 +1,37 @@
+---
+title: "Adjust Pod Replicas Count"
+linkTitle: "Adjust Pod Replicas Count"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Workloads, Adjust Pod Replicas"
+description: "Learn how to adjust the replica count of pods in a workload."
+weight: 06
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-adjustTheNumberOfPodReplicas.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-adjustTheNumberOfPodReplicas.adoc[]

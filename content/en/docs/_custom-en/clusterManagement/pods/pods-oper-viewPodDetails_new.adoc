@@ -1,0 +1,99 @@
+// :ks_include_id: cb41056b42b540b999804717abfd497a
+. View the resource attributes of the pod in the **Attributes** section on the left side of the pod details page.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Cluster
+|The cluster to which the pod belongs.
+
+|Project
+|The project to which the pod belongs.
+
+|Application
+|The application to which the pod belongs.
+
+|Status
+|The status of the pod.
+
+include::pods-para-podStatus.adoc[]
+
+include::pods-para-podIpPool.adoc[]
+
+|Node Name
+|The name of the node where the pod is located.
+
+|Node IP Address
+|The IP address of the node where the pod is located.
+
+|Restarts
+|The number of times the pod has been restarted.
+
+|QoS Type
+|The Quality of Service (QoS) type of the pod, determined by user-defined memory limits, memory requests, CPU limits, and CPU requests.
+
+include::pods-para-qosTypes.adoc[]
+
+|Creation Time
+|The creation time of the pod.
+
+|Creator
+|The creator of the pod.
+|===
+--
+
+. On the right side of the pod details page, click the **Resource Status** tab to view the containers and volumes in the pod.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Containers
+|Displays the names, status, restarts, and container ports of the containers running in the pod. Container statuses include:
+
+include::../workloads/workloads-para-containerStatus.adoc[]
+
+Click image:/images/ks-qkcp/zh/icons/log.svg[log,18,18] next to the container name to view the container logs. Hover over **Probes** to view the configured probes in the container.
+
+|Volumes
+|Displays the names of all volumes for the pod, the containers to which volumes are mounted, and the mount paths of volumes on containers.
+|===
+--
+
+. On the right side of the pod details page, click the **Scheduling Information** tab to view the scheduling results and status information of the pod.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Scheduling Result
+|Displays the name of node that accepted the pod.
+
+|Status Information
+|Shows whether the pod has successfully completed all startup steps. If image:/images/ks-qkcp/zh/icons/success.svg[success,18,18] is displayed, the pod has completed the startup steps; if image:/images/ks-qkcp/zh/icons/error.svg[error,18,18] is displayed, the startup steps are not yet completed.
+
+* **Running**: Whether the pod is in the **Running** state.
+
+* **Pod Scheduled**: Whether the pod has been scheduled to a node.
+
+* **Initialized**: Whether all init containers in the pod have started.
+
+* **Containers Ready**: Whether all containers in the pod have started.
+
+* **Pod Ready**: Whether the pod is ready.
+|===
+--
+
+. On the right side of the pod details page, click the **Metadata** tab to view the labels and annotations of the pod.
+
+. On the right side of the pod details page, click the **Environment Variables** tab to view the environment variables of all containers in the pod.
+
+. On the right side of the pod details page, click the **Events** tab to view events related to the pod.
++
+--
+include::../clusterManagement-para-eventsTab.adoc[]
+--

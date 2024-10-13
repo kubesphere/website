@@ -1,0 +1,2 @@
+// :ks_include_id: 09b90b003ac64bdb80263e925944e8f3
+* 您需要获取 RadonDB ECK 应用授权，并已安装 RadonDB ECK。有关更多信息，请参阅 xref:19-radondb/07-radondb-eck/02-quickstart/01-install-radondb-eck.adoc[安装 RadonDB ECK]。

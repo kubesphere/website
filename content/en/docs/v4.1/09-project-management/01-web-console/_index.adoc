@@ -1,0 +1,11 @@
+---
+title: "Access Your Project"
+linkTitle: "Access Your Project"
+keywords: "Kubernetes, KubeSphere, Project Management, Web Console"
+description: "Learn how to access projects in the web console."
+layout: "second"
+weight: 01
+---
+
+
+This section explains how to access projects in the {ks_product-en} web console.

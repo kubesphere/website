@@ -1,0 +1,42 @@
+---
+title: "KubeSphere LuBan Architecture"
+linkTitle: "KubeSphere LuBan Architecture"
+description: "Introduce the architecture and extensions of KubeSphere LuBan."
+weight: 02
+---
+
+To make KubeSphere flexible and extensible, a `microkernel + extensions` architecture (LuBan) is designed. In this architecture, the core part (KubeSphere Core) contains only essential basic functions for system running, while independent modules are packaged in various components (Extensions). Users can dynamically install, uninstall, enable, or disable extensions while the system is running.
+
+== KubeSphere LuBan Architecture
+
+The KubeSphere LuBan architecture is designed as the following diagram.
+
+image:/images/ks-qkcp/zh/v4.0/4.0-architecture.png[architecture,80%]
+
+== What Are KubeSphere Extensions?
+
+KubeSphere extensions are Helm Charts that follow the KubeSphere extension development specification, which extends KubeSphere's functionality and orchestrates using Helm.
+
+Developers in the cloud-native field no longer have to spend a lot of time learning proprietary application orchestration methods.
+
+If you are looking for published extensions, please visit link:https://kubesphere.com.cn/extensions/marketplace/[KubeSphere Marketplace]。
+
+== What Can KubeSphere Extensions Do?
+
+From the frontend UI to the backend API, almost every part of KubeSphere can be customized and enhanced by extended APIs. Many of KubeSphere's core features are also built as extensions and use the same extended API.
+
+Here are some examples of what can be achieved using extended APIs:
+
+- Injecting new menus and functional pages in the project's left navigation pane to manage more types of resources.
+- Injecting functional entries into platform-level menus to enhance platform management capabilities.
+- Embedding pages of existing third-party extensions directly into KubeSphere to aggregate dispersed systems.
+- Overriding KubeSphere's existing page routes to implement your unique business logic.
+- Extending KubeSphere's API.
+
+If you want a more comprehensive understanding of extended APIs, please refer to link:https://dev-guide.kubesphere.io/extension-dev-guide/en/feature-customization/[Feature Customization]。
+
+== How Do I Build Extensions?
+
+View the link:https://dev-guide.kubesphere.io/extension-dev-guide/en/examples/[Development Examples] section to learn how to build extensions.
+
+If you have questions about the development process, try getting help at link:https://github.com/kubesphere/kubesphere/issues/new/choose[GitHub Issue].

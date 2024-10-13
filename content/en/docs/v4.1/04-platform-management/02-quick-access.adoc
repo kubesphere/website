@@ -1,0 +1,20 @@
+---
+title: "Quick Access"
+linkTitle: "Quick Access"
+keywords: "Kubernetes, KubeSphere, Quick Access"
+description: "Introduce how to add or remove quick access to resources."
+weight: 02
+---
+
+This section describes how to add or remove quick access to resources such as clusters, workspaces, and projects, allowing for quick navigation to their respective pages.
+
+== Prerequisites
+
+You have the username and password to access the {ks_product-en} web console.
+
+== Steps
+
+. Log in to the {ks_product-en} web console.
+. On the cluster list, workspace list, or project list page, click image:/images/ks-qkcp/zh/icons/star_none.svg[star_none,18,18] to add the corresponding resource to the **Quick Access** area on the **Workbench**. Click image:/images/ks-qkcp/zh/icons/star.svg[star,18,18] to remove the resource from the quick access.
++
+You can also click image:/images/ks-qkcp/zh/icons/star.svg[star,18,18] within the **Quick Access** area to remove the added resource.

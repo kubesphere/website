@@ -1,0 +1,79 @@
+---
+title: "View Storage Class List"
+linkTitle: "View Storage Class List"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Class, View Storage Class List"
+description: "Instructions on how to view the storage class list."
+weight: 02
+---
+
+:ks_permission: **Storage Class Viewing**
+:ks_navigation: **Storage > Storage Classes**
+
+This section explains how to view the storage class list.
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+====
+* The storage class list provides the following information:
+
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Name
+| The name, alias, and description information of the storage class.
+
+| Default Storage Class
+|
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-defaultStorageClass.adoc[]
+
+| PVCs
+| The number of Persistent Volume Claims created through the storage class.
+
+|Volume Clone Allowed
+|
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeCloning.adoc[]
+
+|Volume Snapshot Allowed
+|
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeSnapshot.adoc[]
+
+|Volume Expansion Allowed
+|
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-para-allowVolumeExpansion.adoc[]
+
+|Provisioner
+|
+include::../../../../_custom-en/clusterManagement/persistentVolumes/persistentVolumes-para-provisioner.adoc[]
+|===
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+**Volume Clone Allowed**, **Volume Snapshot Allowed** and **Volume Expansion Allowed** simply indicate whether users are permitted to perform these operations in the {ks_product-en} web console. The actual support for these operations by Persistent Volume Claims depends on the backend storage system. For more information, refer to link:../05-enable-and-disable-volume-operations/[Set Volume Operations].
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+* Click the search box at the top of the list to search for storage classes by name.
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

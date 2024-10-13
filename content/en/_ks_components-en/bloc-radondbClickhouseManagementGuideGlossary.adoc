@@ -1,0 +1,22 @@
+// :ks_include_id: 7b6a4a49214d4844b4f52db200abc0b9
+
+= 术语和缩略语link:[id=a4986b482c4e4954965443673a2c3101]
+
+[role='glossary',cols='1a,5a,5a']
+|===
+|CPU
+|Central Processing Unit
+|中央处理器
+
+|HTTP
+|Hypertext Transfer Protocol
+|超文本传输协议
+
+|IP
+|Internet Protocol
+|互联网协议
+
+|TCP
+|Transmission Control Protocol
+|传输控制协议
+|===

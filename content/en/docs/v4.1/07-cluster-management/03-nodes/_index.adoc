@@ -1,0 +1,14 @@
+---
+title: "Nodes"
+linkTitle: "Nodes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Nodes"
+description: "Learn how to manage nodes."
+layout: "second"
+weight: 03
+---
+
+This section explains how to manage cluster nodes.
+
+KubeSphere supports multiple cluster nodes, and typically, all nodes belong to the same private network.
+
+

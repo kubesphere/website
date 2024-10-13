@@ -1,0 +1,2 @@
+// :ks_include_id: 24f7afe576124e6396922b7bd7234929
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the job you want to re-run, then choose **Rerun** from the dropdown list. The job will restart according to the defined policy.

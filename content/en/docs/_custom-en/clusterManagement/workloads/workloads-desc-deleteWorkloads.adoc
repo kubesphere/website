@@ -1,0 +1,11 @@
+// :ks_include_id: 0b50b8cf874242deb4bc9fbabcd2bdb7
+This section explains how to delete a workload.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+| Warning
+
+|
+This operation will delete the workload and all pods managed by it. The business running in the workload will be interrupted. Please proceed with caution.
+|===

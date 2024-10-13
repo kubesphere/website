@@ -1,0 +1,59 @@
+// :ks_include_id: b8d5e1c74e4a446384a0cc915298e456
+
+= 术语和缩略语link:[id=9b8564b2818b4de5b00fb81c1989a9e9]
+
+[role="glossary",cols="1a,5a,5a"]
+|===
+
+|API
+|Application Programming Interface
+|应用程序编程接口
+
+|CPU
+|Central Processing Unit
+|中央处理器
+
+|DNS
+|Domain Name System
+|域名系统
+
+|GPU
+|Graphics Processing Unit
+|图形处理器
+
+|gRPC
+|gRPC Remote Procedure Calls
+|gRPC 远端程序呼叫协议
+
+|HTTP
+|Hypertext Transfer Protocol
+|超文本传输协议
+
+|HTTPS
+|Hypertext Transfer Protocol Secure
+|超文本传输安全协议
+
+|ID
+|Identifier
+|标识符
+
+|IOPS
+|Input/Output Operations Per Second
+|每秒输入输出操作数
+
+|IP
+|Internet Protocol
+|互联网协议
+
+|QoS
+|Quality of Service
+|服务质量
+
+|TLS
+|Transport Layer Security
+|传输层安全协议
+
+|WAL
+|Write Ahead Log
+|预写日志
+|===

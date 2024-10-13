@@ -1,0 +1,51 @@
+---
+title: "View Project List"
+linkTitle: "View Project List"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Project, View Project List"
+description: "Learn how to view the project list in a cluster."
+weight: 02
+---
+
+:ks_permission: **Project Viewing**
+:ks_navigation: **Projects**
+
+This section introduces how to view the project list in a cluster.
+
+== Prerequisites
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-openListPage.adoc[]
+
++
+====
+* The project list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../_custom-en/workspaceManagement/projects/projects-para-projectList_new.adoc[]
+
+|Workspace
+|The workspace to which the project belongs.
+|===
+--
+
+include::../../../_custom-en/workspaceManagement/projects/projects-oper-searchForProjects.adoc[]
+
+include::../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

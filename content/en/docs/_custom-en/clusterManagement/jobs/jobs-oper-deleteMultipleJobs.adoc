@@ -1,0 +1,8 @@
+// :ks_include_id: ae8fc7f6ef7a43999d61c74c6fa39fe5
+. Select the checkbox on the left of the jobs you want to delete, then click **Delete** above the job list.
+
+. In the **Delete Multiple Jobs** dialog, enter the name of the jobs, then click **OK**.
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

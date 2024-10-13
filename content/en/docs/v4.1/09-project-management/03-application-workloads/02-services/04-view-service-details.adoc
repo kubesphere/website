@@ -1,0 +1,32 @@
+---
+title: "View Service Details"
+linkTitle: "View Service Details"
+keywords: "Kubernetes, KubeSphere, Project Management, Workloads, Services, View Service Details"
+description: "Instructions on how to view service details."
+weight: 04
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Services**
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-viewServiceDetails.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-viewServiceDetails.adoc[]

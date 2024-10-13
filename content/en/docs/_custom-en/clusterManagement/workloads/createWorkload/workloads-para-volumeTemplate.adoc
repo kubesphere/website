@@ -1,0 +1,22 @@
+// :ks_include_id: ae4fedba880e403d9c8c4888b5134d9c
+Create separate Persistent Volume Claims and Persistent Volumes for each pod replica using the Persistent Volume Claim template and mount the Persistent Volumes to containers. Only available for **StatefulSets**.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|PVC Name Prefix
+|The prefix for the names of the Persistent Volume Claims created by the Persistent Volume Claim template. The system will automatically name the Persistent Volume Claims in the format `<Name Prefix>-<Workload Name>-<Sequence Number>`. Persistent volume claims for different pod replicas in the same StatefulSet are distinguished by the <Sequence Number>.
+
+|Storage Class
+|The storage class used to create the Persistent Volume Claims.
+
+|Access Mode
+|
+include::../../persistentVolumeClaims/persistentVolumeClaims-para-accessMode.adoc[]
+
+|Volume Capacity
+|The capacity of each Persistent Volume created by the Persistent Volume Claim template.
+
+include::workloads-para-volumeMountModePath.adoc[]
+|===

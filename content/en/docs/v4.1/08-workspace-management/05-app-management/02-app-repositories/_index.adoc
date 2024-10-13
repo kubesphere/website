@@ -1,0 +1,14 @@
+---
+title: "Application Repository"
+linkTitle: "Application Repository"
+keywords: "Kubernetes, KubeSphere, Workspace, Application Management, Application Repository"
+description: "Introduces how to add and manage application repositories to deploy and manage applications."
+layout: "second"
+weight: 02
+---
+
+This section introduces how to manage application repositories in the workspace.
+
+In KubeSphere, applications specifically refer to business programs composed of one or more workloads, services, ingresses, and other resources. The application repository in KubeSphere is based on Helm, defining the orchestration of applications through Helm Charts.
+
+You can add a Helm Chart repository as an application repository to the workspace, allowing you to install applications from the application repository into projects within the workspace. For information on how to create a Helm Chart repository, please refer to the link:https://helm.sh/zh/docs/topics/chart_repository/[Helm Documentation].

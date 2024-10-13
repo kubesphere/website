@@ -1,0 +1,16 @@
+// :ks_include_id: 9db9031f82114758ae483f38e21709cb
+. On the **Cluster Management** page, click **Add Cluster**.
+
+. On the **Basic Information** tab, set the name, tags, provider, and description for the member cluster, then click **Next**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the member cluster. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
+
+include::clusters-para-tagProviderDescription.adoc[]
+|===
+--

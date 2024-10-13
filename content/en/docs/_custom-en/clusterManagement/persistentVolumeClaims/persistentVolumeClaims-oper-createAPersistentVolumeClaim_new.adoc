@@ -1,0 +1,49 @@
+. On the **Basic Information** tab, set the basic information for the Persistent Volume Claim, and then click **Next**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Name
+|The name of the Persistent Volume Claim. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number and can be up to 253 characters long.
+
+|Alias
+|The alias of the Persistent Volume Claim. The aliases of different Persistent Volume Claims can be the same. The alias can only contain Chinese characters, letters, numbers, and hyphens (-). It must not start or end with a hyphen (-) and can be up to 63 characters long.
+
+|Description
+|The description of the Persistent Volume Claim. The description can contain any characters and can be up to 256 characters long.
+|===
+--
+
+. On the **Storage Settings** tab, set the storage space requirements, and then click **Next**.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Creation Method
+|**From Storage Class**: Choose a storage class in the current project to create the Persistent Volume Claim.
+
+|Storage Class
+|The storage class used to create the Persistent Volume Claim.
+
+|Access Mode
+|
+include::persistentVolumeClaims-para-accessMode.adoc[]
+
+Certain access mode may not be available depending on the backend storage system.
+
+|Volume Capacity
+|The corresponding volume capacity of the Persistent Volume Claim.
+|===
+--
+
+. On the **Advanced Settings** tab, set the labels and annotations for the Persistent Volume Claim, and then click **Create**.
++
+--
+include::../workloads/createWorkload/workloads-para-Metadata.adoc[]
+
+The Persistent Volume Claim will be displayed in the list after creation.
+--

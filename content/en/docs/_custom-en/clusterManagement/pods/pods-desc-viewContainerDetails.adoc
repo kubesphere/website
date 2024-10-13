@@ -1,0 +1,11 @@
+// :ks_include_id: 25f413cc757b4a79b6dd8d953602f1e9
+This section explains how to view container details.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+KubeSphere only supports viewing details of running containers, rather than containers that have already stopped running.
+|===

@@ -17,11 +17,7 @@ include::../../../../_custom/clusterManagement/services/services-desc-editServic
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 

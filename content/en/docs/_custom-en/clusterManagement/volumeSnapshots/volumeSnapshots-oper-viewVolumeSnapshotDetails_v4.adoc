@@ -1,0 +1,44 @@
+// :ks_include_id: b8f433f8547944029075f5bec8d36efe
+. 在卷快照详情页面左侧的**属性**区域查看卷快照的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|项目
+|卷快照的所属项目。
+
+|状态
+|
+include::volumeSnapshots-para-volumeSnapshotStatus_v4.adoc[]
+
+|容量
+|
+include::volumeSnapshots-para-capacity.adoc[]
+
+|快照类
+|用于保存快照数据的存储系统对应的卷快照类。
+
+|卷快照内容
+|卷快照内容的名称。
+
+|创建时间
+|卷快照的创建时间。
+
+|创建者
+|创建卷快照的用户。
+|===
+--
+
+. 在卷快照详情页面右侧的**数据源**页签查看用于创建快照的持久卷声明的信息。
++
+--
+include::../persistentVolumes/persistentVolumes-para-pvcInformation.adoc[]
+--
+
+. 在卷快照详情页面右侧点击**事件**页签查看卷快照的事件。
++
+--
+include::../clusterManagement-para-eventsTab.adoc[]
+--

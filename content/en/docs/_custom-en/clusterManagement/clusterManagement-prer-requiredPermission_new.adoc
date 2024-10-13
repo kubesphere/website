@@ -1,0 +1,2 @@
+// :ks_include_id: f3341457c4584e59b799240a35ca496d
+You should join a cluster and have the pass:a,q[{ks_permission}] permission within the cluster. For more information, refer to "Cluster Members" and "Cluster Roles".

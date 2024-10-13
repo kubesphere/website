@@ -1,0 +1,161 @@
+---
+title: "View Cluster Role Details"
+linkTitle: "View Cluster Role Details"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Settings, Cluster Roles, View Cluster Role Details"
+description: "Instructions on how to view cluster role details."
+weight: 02
+---
+
+:ks_permission: **Role Viewing**
+:ks_navigation: **Cluster Settings > Cluster Roles**
+
+This section explains how to view cluster role details.
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+. Click the name of a cluster role in the list to open its details page.
+
+. On the **Permissions** tab on the right side of the details page, you can view the permissions associated with the cluster role.
++
+====
+All cluster members can view basic information about the cluster. The permissions required for other operations are as follows:
+
+* Storage
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Persistent Volume Claim Viewing
+|View persistent volume claim list, view persistent volume claim details, view persistent volume list, view persistent volume details.
+
+|Persistent Volume Claim Management
+|Create persistent volume claim, clone persistent volume, expand persistent volume, edit persistent volume claim information, edit persistent volume information, delete persistent volume claim, delete persistent volume.
+
+|Storage Class Viewing
+|View storage class list, view storage class details.
+
+|Storage Class Management
+|Create storage class, set default storage class, enable and disable volume operations, edit storage class information, delete storage class.
+|===
+--
+
+* Access Control
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Role Viewing
+|View cluster role list, view cluster role details.
+
+|Member Viewing
+|View cluster member list.
+
+|Member Management
+|Invite users to join the cluster, change cluster member roles, remove cluster members.
+|===
+--
+
+* Project
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Project Viewing
+|View project list, view project details.
+
+|Project Management
+|Create project, edit project information, edit project annotations, edit project quotas, edit default container quotas, delete project.
+|===
+--
+
+* Cluster Resources
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Node View
+|View node list, view node details.
+
+|Node Management
+|Prevent and allow pod scheduling to nodes, access node terminal, edit node taints, edit node labels.
+
+|Custom Resource Definition Viewing
+|View custom resource definition list, view custom resource definition details.
+
+|Custom Resource Definition Management
+|Edit custom resources, delete custom resources.
+|===
+--
+
+* Cluster Settings
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Cluster Settings View
+|View cluster overview, view cluster basic information, view cluster visibility.
+
+|Cluster Settings Management
+|Use cluster management features, edit cluster basic information, edit cluster visibility.
+|===
+--
+
+* Application Workloads
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Application Workload Viewing
+|
+* Workload View: View workload list, view workload details.
+
+* Job View: View job list, view job details.
+
+* Pod View: View pod list, view pod details, view container details.
+
+* Service View: View service list, view service details.
+
+|Application Workload Management
+|
+* Workload Management: Create workload, edit workload information, recreate workload, adjust pod replica count, stop workload, rollback workload settings, edit workload settings, delete workload.
+
+* Job Management: Create job, edit job information, rerun job, pause scheduled job, delete job.
+
+* Pod Management: Access container terminal, delete pod.
+
+* Service Management: Create service, edit service information, edit service settings, edit service external access settings, delete service.
+|===
+--
+====
+
+. Click the **Authorized Users** tab on the right side of the details page to view users with the current cluster role.
++
+--
+include::../../../../_custom-en/clusterManagement/clusterRoles/clusterRoles-para-authorizedUsers.adoc[]
+--

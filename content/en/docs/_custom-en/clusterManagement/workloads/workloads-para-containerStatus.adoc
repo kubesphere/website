@@ -1,0 +1,6 @@
+// :ks_include_id: 46a592624040499bbca6afbfbae8fe0d
+* **Waiting**: The container is performing pre-start operations, such as pulling an image from the image registry or reading data from a Secret.
+
+* **Running**: The container is running normally. If the container has configured post-start actions and the status is **Running**, then the pre-start actions of the container have been completed.
+
+* **Terminated**: The container has successfully terminated, or it has terminated due to a failure.

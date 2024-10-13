@@ -1,0 +1,50 @@
+---
+title: "Add Cluster Tags"
+linkTitle: "Add Cluster Tags"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster, Add Cluster Tags"
+description: "Learn how to add cluster tags."
+weight: 04
+---
+
+:ks_permission: **Cluster Management**
+
+
+This section explains how to add cluster tags.
+
+You can use tags to categorize and manage clusters.
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+* You need to create cluster tags in advance. For more information, please refer to link:../../02-cluster-tags/01-create-a-cluster-tag/[Create Cluster Tags].
+
+
+== Add Tags to a Single Cluster
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click **Cluster Management**.
+
++
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusters/clusters-oper-addClusterTags.adoc[]
+
+
+== Add Tags to Multiple Clusters
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click **Cluster Management**.
+
++
+. Click **Batch Manage** at the top right corner of the cluster list.
+
+. Select the checkbox on the left side of the clusters where you want to add tags, then click **Add Tags** at the top of the list.
+
+. In the **Add Tags** dialog, choose the key and value for the tag, click **Add**, and then click **OK**.
++
+--
+After adding the tags, you can search for clusters by tags by clicking on the search box above the cluster list.
+--

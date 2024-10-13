@@ -1,0 +1,30 @@
+---
+title: "View Resource Usage"
+linkTitle: "View Resource Usage"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Overview, View Workspace Resource Usage"
+description: "Learn how to view workspace resource usage."
+weight: 01
+---
+
+:ks_permission: **Workspace Settings Viewing**
+:ks_navigation: **Overview**
+
+This section explains how to view workspace resource usage.
+
+
+== Prerequisites
+
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+
+== Steps
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
++
+The **Resource Usage** tab on the **Overview** page provides information on the number of projects, roles, and members in the workspace.

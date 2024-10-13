@@ -1,0 +1,284 @@
+---
+title: "Create Stateful or Stateless Services"
+linkTitle: "Create Stateful or Stateless Services"
+keywords: "Kubernetes, KubeSphere, Project Management, Workloads, Services, Create Service, Create Stateful or Stateless Services"
+description: "Introduces how to create stateful or stateless services."
+weight: 01
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+This section introduces how to create stateful or stateless services.
+
+
+== Prerequisites
+
+
+include::../../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+Please refer to link:#_parameter_description[Parameter Description] for configuring the parameters of a service.
+
+include::../../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the **Create Service** dialog, choose **Stateful Service** or **Stateless Service** based on your requirements.
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/services/services-para-statelessStatefulExternal.adoc[]
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
++
+
+include::../../../../../_custom-en/projectManagement/services/services-oper-setBasicInformation.adoc[]
+
++
+
+. On the **Pod Settings** tab, configure the replica count, containers, update strategy, security context, scheduling rules, and metadata for the pods managed by the backend workload of the service, then click **Next**.
+
++
+
+include::../../../../../_custom-en/projectManagement/services/services-oper-setStorageAdvanced.adoc[]
+
+
+== Parameter Description
+
+The following explains how to configure parameters for stateful and stateless services.
+
+* Basic Information
++
+--
+include::../../../../../_custom-en/projectManagement/services/services-para-setServiceInformation.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../../_custom-en/clusterManagement/services/services-para-serviceName.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/services/services-para-serviceAlias.adoc[]
+
+include::../../../../../_custom-en/projectManagement/services/services-para-serviceVersion.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/services/services-para-serviceDescription.adoc[]
+|===
+--
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podReplicas.adoc[]
+
+* Pod Settings > Add Container
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addContainer.adoc[]
+--
+
+* Pod Settings > Add Container > Container Settings
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-setImageNameTypeResource.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerImage.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerName.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerType.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/projects/projects-para-containerQuotas.adoc[]
+|===
+--
+
+* Pod Settings > Add Container > Port Settings
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Port.adoc[]
+--
+
+* Pod Settings > Add Container > Image Pull Policy
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
+--
+
+* Pod Settings > Add Container > Health Check
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
+--
+
+* Pod Settings > Add Container > Health Check > Add Probe
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addProbe.adoc[]
+--
+
+* Pod Settings > Add Container > Lifecycle Management
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
+--
+
+* Pod Settings > Add Container > Lifecycle Management > Add Action
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addAction.adoc[]
+--
+
+* Pod Settings > Add Container > Start Command
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
+--
+
+* Pod Settings > Add Container > Environment Variables
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
+--
+
+* Pod Settings > Add Container > Container Security Context
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerSecurityContext.adoc[]
+--
+
+* Pod Settings > Add Container > Synchronize Host Timezone
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
+--
+
+* Pod Settings > Update Strategy
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-updatePolicy.adoc[]
+--
+
+* Pod Settings > Update Policy > Rolling Update Settings
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-rollingUpdate.adoc[]
+--
+
+* Pod Settings > Pod Security Context
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podSecurityContext.adoc[]
+--
+
+* Pod Settings > Pod Scheduling Rules
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podSchedulingRules.adoc[]
+--
+
+* Pod Settings > Pod Scheduling Rules > Custom Rules
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-customRules.adoc[]
+--
+
+* Pod Settings > Pod Graceful Period
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-PodGracePeriod.adoc[]
+--
+
+* Pod Settings > Add Metadata
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-PodMetadata.adoc[]
+--
+
+* Storage Settings
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-mountVolume.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountVolume.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountSecretOrConfigmap.adoc[]
+|===
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume.adoc[]
+--
+
+* Storage Settings > Add Persistent Volume Claim Template
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
+--
+
+* Storage Settings > Mount Volume > Persistent Volume
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-persistentVolume.adoc[]
+--
+
+* Storage Settings > Mount Volume > Temporary Volume
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-temporaryVolume_new.adoc[]
+--
+
+* Storage Settings > Mount Volume > HostPath Volume
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-hostpathVolume.adoc[]
+--
+
+* Storage Settings > Mount ConfigMap or Secret
++
+--
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountConfigmapSecret.adoc[]
+--
+
+* Advanced Settings
++
+--
+Specify nodes for the pods managed by the backend workload of the service, and set the external access mode, session persistence settings, and metadata for the service.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../../_custom-en/clusterManagement/services/services-para-externalAccess.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/services/services-para-sessionPersistence.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-selectNode.adoc[]
+
+| Add Metadata
+|
+include::../../../../../_custom-en/projectManagement/services/services-desc-setServiceLabelWorkloadAnnotation.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Metadata.adoc[]
+|===
+--

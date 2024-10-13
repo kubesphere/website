@@ -8,7 +8,7 @@ weight: 10
 
 :ks_menu: **用户和角色管理**
 :ks_navigation: **用户**
-:ks_permission: **删除用户**
+:ks_permission: **用户管理**
 
 
 本节介绍如何删除用户。

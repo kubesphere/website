@@ -1,0 +1,4 @@
+// :ks_include_id: c3706078af3f41c487c1a5fc573ef5bb
+This section explains how to edit settings for created workloads.
+
+After the workload is created, you can edit the workload's update strategy, containers, storage, pod scheduling rules and pod grace period.

@@ -1,0 +1,28 @@
+---
+title: "Edit Service Settings"
+linkTitle: "Edit Service Settings"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workload, Services, Edit Service Settings"
+description: "Instructions on how to edit service settings."
+weight: 06
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-editServiceSettings.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-editServiceSettings.adoc[]

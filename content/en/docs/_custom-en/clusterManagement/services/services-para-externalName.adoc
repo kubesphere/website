@@ -1,0 +1,2 @@
+// :ks_include_id: ae3aeeab99d2436aaf471a053199ed31
+* **ExternalName**: The service routes business traffic to other services outside the cluster. The system does not assign a virtual IP address to the service, and it can be accessed internally by using the format `<service name>.<project name>.svc.cluster.local`.

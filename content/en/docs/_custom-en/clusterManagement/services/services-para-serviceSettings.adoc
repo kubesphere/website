@@ -1,0 +1,34 @@
+// :ks_include_id: 797c8dc7400f4f17940a76eb88ae5149
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Internal Access Mode
+| The way to access the service within the cluster.
+
+* **Internal Domain Name**: The system does not assign a virtual IP address to the service. It can be accessed internally by using the format `<service name>.<namespace>.svc.cluster.local` or `<service name>.<namespace>`.
+
+* **Virtual IP Address**: The system assigns a virtual IP address to the service for internal access within the cluster. It also supports access internally by using the format `<service name>.<namespace>.svc.cluster.local` or `<service name>.<namespace>`.
+
+| Workload Selector
+| Specify the workloads with specific labels to which the service routes business traffic.
+
+* Manually set selectors by entering the key and value of a label. Click **Add** to set multiple labels.
+
+* Manually select workloads by clicking **Specify Workload**.
+
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of a created label to delete it.
+
+| Ports
+| Map service ports and their corresponding container ports.
+
+* **Protocol**: The protocol that the application in the target container actually listens on. To use the application governance features provided by KubeSphere, ensure that the protocol selected here matches the one the application in the target container actually listens on.
+
+* **Name**: The name of the service port. The application governance features of KubeSphere require the service port name to have the protocol name in lowercase as a prefix. To use the application governance features provided by KubeSphere, use the lowercase protocol name as the prefix for the port name (e.g., **http-**).
+
+* **Container Port**: The port number on which the application in the target container actually listens.
+
+* **Service Port**: The port number of the service.
+
+Click **Add** to set multiple service ports. Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of a created service port to delete it.
+|===

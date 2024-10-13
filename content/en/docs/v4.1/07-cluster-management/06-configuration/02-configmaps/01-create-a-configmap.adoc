@@ -1,0 +1,38 @@
+---
+title: "Create ConfigMaps"
+linkTitle: "Create ConfigMaps"
+keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, Create ConfigMap"
+description: "Learn how to create a ConfigMap."
+weight: 01
+---
+
+
+:ks_permission: **Project Resource Management**
+:ks_navigation: **Configuration > ConfigMaps**
+
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-createAConfigmap.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-oper-createAConfigmap.adoc[]

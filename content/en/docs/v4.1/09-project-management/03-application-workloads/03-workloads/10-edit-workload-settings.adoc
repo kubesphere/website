@@ -1,0 +1,188 @@
+---
+title: "Edit Workload Settings"
+linkTitle: "Edit Workload Settings"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Workloads, Edit Workload Settings"
+description: "Learn how to edit settings for created workloads."
+weight: 10
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-editWorkloadSettings.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-editWorkloadSettings.adoc[]
+
++
+
+. In the **Edit Settings** dialog, set the workload's update strategy, containers, storage, pod scheduling rules (not available for DaemonSets), and pod graceful period. Then, click **OK**. For specific parameter settings, refer to link:#_Parameter_Description[Parameter Description].
+
+
+== Parameter Description
+
+* Update Strategy
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-updatePolicy.adoc[]
+--
+
+* Update Strategy > Rolling Update Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-rollingUpdate.adoc[]
+--
+
+* Containers > Add Container
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addContainer.adoc[]
+--
+
+* Containers > Container Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-setImageNameTypeResource.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerImage.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerName.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerType.adoc[]
+
+include::../../../../_custom-en/clusterManagement/projects/projects-para-containerQuotas.adoc[]
+|===
+--
+
+* Containers > Container Settings > Port Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Port.adoc[]
+--
+
+* Containers > Container Settings > Image Pull Policy
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
+--
+
+* Containers > Container Settings > Health Check
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
+--
+
+* Containers > Container Settings > Lifecycle Management
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
+--
+
+* Containers > Container Settings > Start Command
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
+--
+
+* Containers > Container Settings > Environment Variables
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
+--
+
+* Containers > Container Settings > Container Security Context
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerSecurityContext.adoc[]
+--
+
+* Containers > Container Settings > Synchronize Host Timezone
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
+--
+
+* Storage
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-mountVolume.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountVolume.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountSecretOrConfigmap.adoc[]
+|===
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume_new.adoc[]
+--
+
+* Storage > Mount Volume > Persistent Volume
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-persistentVolume.adoc[]
+--
+
+* Storage > Mount Volume > Temporary Volume
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-temporaryVolume_new.adoc[]
+--
+
+* Storage > Mount Volume > HostPath Volume
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-hostpathVolume.adoc[]
+--
+
+* Storage > Mount ConfigMap or Secret
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountConfigmapSecret.adoc[]
+--
+
+* Pod Scheduling Rules
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podSchedulingRules.adoc[]
+--
+
+* Pod Scheduling Rules > Custom Rules
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-customRules.adoc[]
+--
+
+* Pod Graceful Period
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-PodGracePeriod.adoc[]
+--

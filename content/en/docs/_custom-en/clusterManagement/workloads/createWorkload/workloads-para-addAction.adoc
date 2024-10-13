@@ -1,0 +1,22 @@
+// :ks_include_id: 90da833da58d47cbad5d77d94fe4d826
+Create post-start or pre-termination actions for the container.
+
+* Click **Add Action** to create an action.
+
+* Hover over the created action, then click image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18] on the right to edit the action settings.
+
+* Hover over the created action, then click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right to delete the action.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Path
+| The protocol (HTTP or HTTPS), the path relative to the virtual IP address of the pod for HTTP requests, and the port number for the request. Only available when the action execution method is **HTTP Request**.
+
+| Command
+| The command to run in the container. You can use commas (,) to separate the commands and its parameters. Only available when the action execution method is **Command**.
+
+| Port
+| The container port number for TCP checks. Only available when the action execution method is **TCP Port**.
+|===

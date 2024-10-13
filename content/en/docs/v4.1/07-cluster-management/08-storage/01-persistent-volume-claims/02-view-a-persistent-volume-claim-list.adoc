@@ -1,0 +1,42 @@
+---
+title: "View PVC List"
+linkTitle: "View PVC List"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume, View Persistent Volume Claim List"
+description: "Explain how to view the list of Persistent Volume Claims."
+weight: 02
+---
+
+
+:ks_permission: **Persistent Volume Claim Viewing**
+:ks_navigation: **Storage > Persistent Volume Claims**
+
+
+include::../../../../_custom-en/clusterManagement/pods/pods-desc-viewAPersistentVolumeList.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-para-persistentVolumeClaimList.adoc[]
+
+* In the dropdown list at the top left of the list, select a project to view the Persistent Volume Claims of that project.
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-searchForPersistentVolumeClaims.adoc[]
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

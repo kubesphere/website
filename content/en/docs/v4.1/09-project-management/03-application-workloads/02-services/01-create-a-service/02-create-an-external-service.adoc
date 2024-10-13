@@ -1,0 +1,49 @@
+---
+title: "Create External Services"
+linkTitle: "Create External Services"
+keywords: "Kubernetes, KubeSphere, Project Management, Workloads, Services, Create Service, Create External Services"
+description: "Instructions on how to create external services."
+weight: 02
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+This section explains how to create external services.
+
+External services forward business traffic to other services outside the cluster, and can be accessed internally within the cluster using the domain name format `<service name>.<project name>.svc.cluster.local`.
+
+== Prerequisites
+
+include::../../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the **Create Service** dialog, select **External Service**.
+
+. On the **Basic Information** tab, set the basic information of the service, then click **Next**.
+
+. On the **External Service** tab, set the address of the target service, then click **Create**.
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* The address of the target service must be a domain name. If you input an IP address, it will be considered as a domain composed of numbers rather than a real IP address.
+
+* To ensure that business traffic can be correctly forwarded to the target service, please make sure the domain name of the target service can be resolved to an actual IP address by a domain name server.
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

@@ -1,0 +1,2 @@
+// :ks_include_id: 63afbb864bc3418ca45d632bcda4ba1d
+告警的级别，包括**提醒、警告、重要、紧急**。

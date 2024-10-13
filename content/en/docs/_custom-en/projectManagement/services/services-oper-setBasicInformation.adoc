@@ -1,0 +1,2 @@
+// :ks_include_id: b5f9785a467642188bf3156e649b5046
+. On the **Basic Information** tab, configure the basic information for the service, and then click **Next**.

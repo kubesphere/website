@@ -1,0 +1,38 @@
+---
+title: "View Pod Details"
+linkTitle: "View Pod Details"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Pods, Viewing Pod Details"
+description: "Explain how to view the details of a pod."
+weight: 02
+---
+
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Pods**
+
+
+include::../../../../_custom-en/clusterManagement/pods/pods-desc-viewPodDetails.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/pods/pods-oper-openDetails.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/pods/pods-oper-viewPodDetails_new.adoc[]

@@ -1,0 +1,34 @@
+---
+title: "Remove Tags from Clusters"
+linkTitle: "Remove Tags from Clusters"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster Tags, Remove Tags from Cluster"
+description: "Learn how to remove tags from a cluster."
+weight: 04
+---
+
+:ks_permission: **Cluster Management**
+
+This section explains how to remove tags from a cluster.
+
+== Prerequisites
+
+include::../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
++
+
+. Click **Cluster Management**.
+
++
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusterTags/clusterTags-openListPage.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to the tag you want to remove, then select **Remove from Clusters** from the dropdown list.
+
+. In the **Remove Tag from Clusters** dialog, click image:/images/ks-qkcp/zh/icons/chain-off-duotone.svg[chain-off-duotone,18,18] next to the cluster from which you want to remove the tag, then click **OK**.

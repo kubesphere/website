@@ -1,0 +1,46 @@
+---
+title: "Create Workspaces"
+linkTitle: "Create Workspaces"
+keywords: "Kubernetes, KubeSphere, Access Control, Workspace, Create Workspace"
+description: "Learn how to create a workspace."
+weight: 01
+---
+
+:ks_permission: **Workspace Creation**
+
+This section explains how to create a workspace.
+
+== Prerequisites
+
+include::../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click **Workspace Management**.
+. Click **Create** on the page.
+. On the **Create Workspace** page, set the basic information for the workspace and then click **Next**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the workspace. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
+
+|Alias
+|The alias of the workspace. The alias can contain any characters and can be up to 63 characters long.
+
+|Administrator
+|The administrator of the workspace.
+
+|Description
+|The description of the workspace. The description can contain any characters and can be up to 256 characters long.
+|===
+--
+
+. On the **Cluster Settings** tab, select the clusters authorized for this workspace (multiple clusters can be selected at the same time), and resources within the workspace will be created on those clusters. Click **OK**.
++
+After creating the workspace, it will be displayed in the workspace list.

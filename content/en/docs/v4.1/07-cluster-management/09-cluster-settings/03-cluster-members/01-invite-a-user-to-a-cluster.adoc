@@ -1,0 +1,42 @@
+---
+title: "Invite Users to Join Cluster"
+linkTitle: "Invite Users to Join Cluster"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Settings, Cluster Members, Invite Users to Join Cluster"
+description: "Instructions on how to invite users to join a cluster."
+weight: 01
+---
+
+:ks_permission: **Member Management**
+:ks_navigation: **Cluster Settings > Cluster Members**
+
+This section explains how to invite users to join a cluster.
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickInvite.adoc[]
+
++
+
+. In the **Invite Members** dialog, click image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18] next to the user you want to invite, select the role for the user in the cluster from the dropdown list, and then click **OK**.
++
+--
+include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-para-presetClusterRoles.adoc[]
+
+After being invited to join the cluster, users will be displayed in the list of cluster members.
+--

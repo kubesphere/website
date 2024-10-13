@@ -1,0 +1,6 @@
+// :ks_include_id: 88bc02980e93473eaec099d0e0f6b2c4
+* **Running**: The job is running.
+
+* **Completed**: The job has run successfully and is completed.
+
+* **Failed**: The job has failed.

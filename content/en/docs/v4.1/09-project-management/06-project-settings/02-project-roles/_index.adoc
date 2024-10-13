@@ -1,0 +1,19 @@
+---
+title: "Project Roles"
+linkTitle: "Project Roles"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Project Roles"
+description: "Instructions on how to manage project roles."
+layout: "second"
+weight: 02
+---
+
+This section explains how to manage project roles.
+
+Each project role contains specific project management or viewing permissions. You can grant roles with specific permissions to project members to control their permissions within the project.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-desc-initialProjectAdmin.adoc[]
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

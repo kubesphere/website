@@ -1,0 +1,32 @@
+---
+title: "Edit Default Container Quotas"
+linkTitle: "Edit Default Container Quotas"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Basic Information, Edit Default Container Quotas"
+description: "Instructions on how to edit default container quotas."
+weight: 04
+---
+
+:ks_permission: **Project Settings Management**
+:ks_navigation: **Project Settings > Basic Information**
+
+include::../../../../_custom-en/clusterManagement/projects/projects-desc-editDefaultContainerQuotas.adoc[]
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Basic Information** page, click **Manage**, then select **Edit Default Container Quotas** from the dropdown list.
+
++
+
+include::../../../../_custom-en/clusterManagement/projects/projects-oper-editDefaultContainerQuotas.adoc[]

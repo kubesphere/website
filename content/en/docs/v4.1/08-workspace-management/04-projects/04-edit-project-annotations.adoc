@@ -1,0 +1,41 @@
+---
+title: "Edit Project Annotations"
+linkTitle: "Edit Project Annotations"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Project, Edit Project Annotations"
+description: "Introduces how to edit project annotations."
+weight: 04
+---
+
+:ks_permission: **Project Management**
+:ks_navigation: **Projects**
+
+
+This section introduces how to edit project annotations.
+
+Project annotations are key-value pairs used to add additional metadata or descriptive information to a project.
+
+
+== Prerequisites
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+
+== Steps
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project you want to edit, then select **Edit Annotations** from the dropdown list.
+
+. In the **Edit Annotations** dialog, set the key-value pairs, then click **OK**.
++
+--
+* Click **Add** to set multiple annotations.
+
+* To delete an annotation, click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] next to the created annotation.
+--

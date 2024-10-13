@@ -1,0 +1,10 @@
+---
+title: "Access Your Cluster"
+linkTitle: "Access Your Cluster"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Web Console"
+description: "Learn how to access clusters in the web console."
+layout: "second"
+weight: 01
+---
+
+This section explains how to access clusters in the {ks_product-en} web console.

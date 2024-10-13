@@ -1,0 +1,10 @@
+---
+title: "Access Your Workspace"
+linkTitle: "Access Your Workspace"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Web Console"
+description: "Learn how to access workspaces in the web console."
+layout: "second"
+weight: 01
+---
+
+This section explains how to access workspaces in the {ks_product-en} web console.

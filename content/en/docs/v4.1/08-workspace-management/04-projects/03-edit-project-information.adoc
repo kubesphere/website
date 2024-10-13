@@ -1,0 +1,33 @@
+---
+title: "Edit Project Information"
+linkTitle: "Edit Project Information"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Project, Edit Project Information"
+description: "Introduces how to edit project information."
+weight: 03
+---
+
+:ks_permission: **Project Management**
+:ks_navigation: **Projects**
+
+
+include::../../../_custom-en/clusterManagement/projects/projects-desc-editInformation.adoc[]
+
+include::../../../_custom-en/clusterManagement/projects/projects-note-editInformation.adoc[]
+
+
+== Prerequisites
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-editInformation.adoc[]

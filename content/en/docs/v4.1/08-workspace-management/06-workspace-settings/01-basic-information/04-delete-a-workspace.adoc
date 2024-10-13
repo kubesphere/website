@@ -1,0 +1,48 @@
+---
+title: "Delete Workspaces"
+linkTitle: "Delete Workspaces"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Basic Information, Delete Workspace"
+description: "Instructions on how to delete a workspace."
+weight: 04
+---
+
+:ks_permission: **Workspace Settings Management**
+:ks_navigation: **Workspace Settings > Basic Info**
+
+This section provides guidance on deleting a workspace.
+
+// Warning
+include::../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+Deleting a workspace is irreversible. If you choose to delete projects within the workspace, all projects and their resources within the workspace will also be deleted. Please proceed with caution.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. In the **Workspace Information** area, select **Manage > Delete Workspace** from the top right corner.
+
+. In the **Delete Workspace** dialog, enter the name of the workspace, then click **OK**.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+You can select the **Delete projects in the workspace** checkbox to delete all projects within the workspace simultaneously.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

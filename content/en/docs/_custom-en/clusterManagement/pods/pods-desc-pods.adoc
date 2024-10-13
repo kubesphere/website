@@ -1,0 +1,6 @@
+// :ks_include_id: 6a773c6c880441b0b453c3426a19cc8e
+This section explains how to manage pods.
+
+In KubeSphere, a pod is the smallest management unit of an application. Each pod contains one or more containers. Multiple containers within the same pod are tightly coupled, scheduled, and share the same network. A pod is equivalent to the logical host of an application.
+
+The {ks_product-en} web console does not support creating pods directly, but you can indirectly create pods and manage pod replicas by creating workloads or jobs.

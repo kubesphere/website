@@ -1,0 +1,2 @@
+// :ks_include_id: b48f001ab35b4c5d86dfeb6455441fd5
+Configure labels for the service and annotations for the backend workload.

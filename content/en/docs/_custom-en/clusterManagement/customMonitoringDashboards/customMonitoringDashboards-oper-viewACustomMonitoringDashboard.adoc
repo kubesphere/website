@@ -1,0 +1,18 @@
+// :ks_include_id: d52d25b1598e4adb94ab8b79c98a1e00
+. 在列表中点击一个自定义监控面板的名称打开监控面板。
++
+--
+* 在页面左侧区域可查看以文本显示的监控指标。
+
+* 在页面中间区域可查看监控指标折线图或柱状图。
+
+* 在页面右侧点击image:/images/ks-qkcp/zh/icons/chevron-right.svg[chevron-right,18,18]可查看每个监控指标的子指标及其在指定时间范围内的最大值、最小值、平均值和最后采样值。
+
+* 在页面上方点击image:/images/ks-qkcp/zh/icons/theme.svg[theme,18,18]可切换浅色和深色主题。
+
+* 在页面上方点击image:/images/ks-qkcp/zh/icons/calendar-dark.svg[calendar-dark,18,18]可设置数据的时间范围。
+
+* 在页面上方点击image:/images/ks-qkcp/zh/icons/refresh-dark.svg[refresh-dark,18,18]可设置数据的刷新间隔。
+
+* 在页面右上角点击image:/images/ks-qkcp/zh/icons/close-dark.svg[close,18,18]可返回自定义监控面板列表。
+--

@@ -1,0 +1,2 @@
+// :ks_include_id: c5751818dcc6470db19af8b18c1f1069
+The creator of a project automatically becomes the project administrator. Additionally, the **admin** user in the {ks_product-en} platform by default has all permissions in all projects. In the initial state of a project, the above users can invite other users to join the project and set their roles within the project.

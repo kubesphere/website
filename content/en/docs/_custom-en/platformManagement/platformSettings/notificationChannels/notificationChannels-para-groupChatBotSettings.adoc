@@ -1,0 +1,18 @@
+// :ks_include_id: 9f95c83dc7754be49bf6b78b7587d110
+* 群机器人设置
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|Webhook URL
+|群机器人的 Webhook URL。{ks_product-en}将向该 URL 发送通知。
+
+|Secret
+|群机器人的访问密钥。
+
+|关键词
+|群机器人接受的关键词。点击**添加**可设置多个关键词。
+|===
+--

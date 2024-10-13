@@ -1,0 +1,8 @@
+// :ks_include_id: 6d568952e6604999a005dfff5d21d3d3
+|集群
+|应用所属的集群。
+
+|项目
+|应用所属的项目。
+
+include::apps-para-status.adoc[]

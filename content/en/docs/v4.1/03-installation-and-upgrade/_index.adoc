@@ -1,0 +1,18 @@
+---
+title: "Installation Guide"
+linkTitle: "Installation Guide"
+keywords: "Kubernetes, KubeSphere, Installation, Uninstallation"
+description: "Learn how to install and uninstall KubeSphere."
+layout: "second"
+weight: 03
+icon: "/images/docs/common/docs.svg"
+---
+
+This guide introduces how to install and uninstall {ks_product-en}, as well as how to add and remove cluster nodes.
+
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+Upgrade from {ks_product-en} v3.x to v4.1 is not supported at present.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]

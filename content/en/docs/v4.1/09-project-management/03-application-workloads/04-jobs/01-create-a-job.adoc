@@ -1,0 +1,201 @@
+---
+title: "Create Jobs"
+linkTitle: "Create Jobs"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Job, Create Job"
+description: "Learn how to create jobs."
+weight: 01
+---
+
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Jobs**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-createAJob.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+Please refer to link:#_Parameter_Description[Parameter Description] for configuring job parameters.
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-createAJob.adoc[]
+
+
+== Parameter Description
+
+The following explains how to configure parameters for the job.
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-para-basicInformation.adoc[]
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-para-strategySettings.adoc[]
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-para-restartPolicy.adoc[]
+
+
+* Pod Settings > Add Container
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addContainer.adoc[]
+--
+
+* Pod Settings > Add Container > Container Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-setImageNameTypeResource.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerImage.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerName.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerType.adoc[]
+
+include::../../../../_custom-en/clusterManagement/projects/projects-para-containerQuotas.adoc[]
+|===
+--
+
+* Pod Settings > Add Container > Port Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Port.adoc[]
+--
+
+* Pod Settings > Add Container > Image Pull Policy
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
+--
+
+* Pod Settings > Add Container > Health Check
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
+--
+
+* Pod Settings > Add Container > Health Check > Add Probe
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addProbe.adoc[]
+--
+
+* Pod Settings > Add Container > Lifecycle Management
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
+--
+
+* Pod Settings > Add Container > Lifecycle Management > Add Action
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addAction.adoc[]
+--
+
+* Pod Settings > Add Container > Start Command
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
+--
+
+* Pod Settings > Add Container > Environment Variables
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
+--
+
+* Pod Settings > Add Container > Container Security Context
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerSecurityContext.adoc[]
+--
+
+* Pod Settings > Add Container > Synchronize Host Timezone
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
+--
+
+* Storage Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-mountVolume.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountVolume.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountSecretOrConfigmap.adoc[]
+|===
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume_new.adoc[]
+--
+
+* Storage Settings > Mount Volume > Persistent Volume
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-persistentVolume.adoc[]
+--
+
+* Storage Settings > Mount Volume > Temporary Volume
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-temporaryVolume_new.adoc[]
+--
+
+* Storage Settings > Mount Volume > HostPath Volume
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-hostpathVolume.adoc[]
+--
+
+* Storage Settings > Mount ConfigMap or Secret
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountConfigmapSecret.adoc[]
+--
+
+* Advanced Settings
++
+--
+Specify nodes for the pods managed by the job and set metadata for the job.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-selectNode.adoc[]
+
+| Add Metadata
+|
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-setJobMetadata.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Metadata.adoc[]
+|===
+--

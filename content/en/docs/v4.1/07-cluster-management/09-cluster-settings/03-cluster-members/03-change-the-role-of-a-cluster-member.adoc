@@ -1,0 +1,38 @@
+---
+title: "Change Cluster Member Roles"
+linkTitle: "Change Cluster Member Roles"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Settings, Cluster Members, Change Cluster Member Roles"
+description: "Instructions on how to change cluster member roles."
+weight: 03
+---
+
+:ks_permission: **Member Management**
+:ks_navigation: **Cluster Settings > Cluster Members**
+
+This section explains how to change cluster member roles.
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to the member you want to edit, then select **Change Role**.
+
+. In the **Change Role** dialog, set the role for the cluster member, then click **OK**.
++
+--
+include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-para-presetClusterRoles.adoc[]
+--

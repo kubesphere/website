@@ -1,0 +1,4 @@
+// :ks_include_id: b7d4651227e646b1b025777d274f6c4a
+* Contact the administrator to obtain the IP address and port number of the {ks_product-en} web console.
+
+* Depending on your network environment, you may need to configure firewall policies and traffic forwarding strategies. For specific instructions, please contact your network administrator.

@@ -1,0 +1,2 @@
+// :ks_include_id: eeeb5fef69924224aac5599d6e8e999b
+卷快照对应持久卷的容量。

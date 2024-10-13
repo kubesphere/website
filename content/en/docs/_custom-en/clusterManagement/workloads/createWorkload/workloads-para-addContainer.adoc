@@ -1,0 +1,8 @@
+// :ks_include_id: 26629381ce2c4637b491e4fe2386923e
+Create containers to run within the pod. You can create multiple containers within a pod.
+
+* Click **Add Container** to create a container.
+
+* Hover over a created container, then click image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18] on the right to edit the container settings.
+
+* Hover over a created container, then click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right to delete the container.

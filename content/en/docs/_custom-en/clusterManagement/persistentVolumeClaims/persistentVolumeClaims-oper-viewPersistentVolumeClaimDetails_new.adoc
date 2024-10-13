@@ -1,0 +1,63 @@
+// :ks_include_id: e06b7d959620413ebfcc3bfe526b03d1
+. In the **Attributes** section on the left side of the details page, view the resource attributes of the Persistent Volume Claim.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Project
+|The project to which the Persistent Volume Claim belongs.
+
+|Status
+|
+include::persistentVolumeClaims-para-status.adoc[]
+
+|Capacity
+|The requested storage capacity of the Persistent Volume Claim.
+
+|Access Mode
+|
+include::persistentVolumeClaims-para-accessMode.adoc[]
+
+|Storage Class
+|The storage class requested by the Persistent Volume Claim.
+
+|Provisioner
+|
+include::../persistentVolumes/persistentVolumes-para-provisioner.adoc[]
+
+|Persistent Volume
+|The Persistent Volume bound to the Persistent Volume Claim.
+
+|Creation Time
+|The creation time of the Persistent Volume Claim.
+
+|Creator
+|The user who created the Persistent Volume Claim. If the value of this field is empty, it means the Persistent Volume Claim was created automatically by the system.
+|===
+--
+
+. On the right side of the details page, click the **Resource Status** tab to view the mounted pods of the Persistent Volume bound to the Persistent Volume Claim.
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+|Mounted Pods
+|
+Displays the pods that are mounted to the Persistent Volume bound to the Persistent Volume Claim.
+
+include::../nodes/nodes-para-podList.adoc[]
+|===
+--
+
+. Click the **Metadata** tab on the right side of the details page to view the labels and annotations of the Persistent Volume Claim.
+
+. Click the **Events** tab on the right side of the details page to view the events of the Persistent Volume Claim.
++
+--
+include::../clusterManagement-para-eventsTab.adoc[]
+--
+

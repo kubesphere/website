@@ -1,0 +1,10 @@
+---
+title: "Multi-Cluster Management"
+linkTitle: "Multi-Cluster Management"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster"
+description: "Learn how to manage multiple clusters using the web console of the host cluster."
+layout: "second"
+weight: 01
+---
+
+This section explains how to use the web console of the host cluster to manage multiple clusters.

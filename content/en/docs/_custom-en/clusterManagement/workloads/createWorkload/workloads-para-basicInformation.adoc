@@ -1,0 +1,24 @@
+* Basic Information
++
+--
+Configure the basic information for the workload.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Name
+| The name of the workload. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number, with a maximum length of 253 characters.
+
+| Alias
+| The alias of the workload. Aliases can be the same for different workloads. The alias can only contain Chinese characters, letters, numbers, and hyphens (-). It must not start or end with a hyphen (-), with a maximum length of 63 characters.
+
+ifndef::kubefed[]
+| Project
+| The project in which the resources will be created.
+endif::[]
+
+| Description
+| The description of the workload. The description can contain any characters, with a maximum length of 256 characters.
+|===
+--

@@ -1,0 +1,2 @@
+// :ks_include_id: 3fb3e081dbcf4e6ba9164671a38aa755
+The storage class requested by the Persistent Volume Claim.

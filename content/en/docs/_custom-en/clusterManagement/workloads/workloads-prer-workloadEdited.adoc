@@ -1,0 +1,2 @@
+// :ks_include_id: d50e3c90a6c441ba8f7526d537afe063
+* The workload that needs to be rolled back must have been edited, so that the saved revision records can be used for rollback.

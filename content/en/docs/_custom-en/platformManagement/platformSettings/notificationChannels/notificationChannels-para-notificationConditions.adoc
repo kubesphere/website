@@ -1,0 +1,8 @@
+// :ks_include_id: cd2ef9bcec6f4a9e8c517cfa2a4c539d
+* 过滤条件
++
+--
+{ks_product-en}发送的通知以键值对的形式呈现，您可以设置系统仅发送标签符合特定条件的通知。点击**添加**可设置多个条件。
+
+include::notificationChannels-para-filterRule.adoc[]
+--

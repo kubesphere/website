@@ -33,6 +33,7 @@ ignorefiles = [ ".*/_custom" ]
     ks_product_right = "KubeSphere "
     ks_product_both = " KubeSphere "
     ks_product_full = "KubeSphere"
+    ks_product-en = "KubeSphere"
     ks_product_ver = "v4.1"
 
 [security]
@@ -157,7 +158,13 @@ name = "Documentation"
 hasChildren = true
     [[languages.en.menu.main]]
     parent = "Documentation"
-    name = "v3.4 <img src='/images/header/star.svg' alt='star'>"
+    name = "v4.1 <img src='/images/header/star.svg' alt='star'>"
+    URL = "/docs/v4.1"
+    weight = 42
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "v3.4"
     URL = "/docs/v3.4"
     weight = 43
 

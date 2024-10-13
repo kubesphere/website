@@ -1,0 +1,19 @@
+---
+title: "Workspace Members"
+linkTitle: "Workspace Members"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Members"
+description: "Guide on how to manage workspace members."
+layout: "second"
+weight: 03
+---
+
+This section explains how to manage workspace members.
+
+Workspace members are users who have permissions to view or manage resources in a workspace. The permissions of workspace members are determined by the roles they have in the workspace.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../_custom-en/workspaceManagement/workspaceMembers/workspaceMembers-desc-initialWorkspaceAdmin.adoc[]
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

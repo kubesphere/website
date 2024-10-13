@@ -1,0 +1,2 @@
+// :ks_include_id: 6e98039952c7493b968ee5210f15b6e2
+* 请确保后端存储系统支持卷快照功能，并已在持久卷声明对应的存储类上启用卷快照功能。有关更多信息，请参阅xref:05-cluster-management/10-storage/02-storage-classes/05-enable-and-disable-volume-operations.adoc[启用和禁用卷操作]。

@@ -1,0 +1,25 @@
+// :ks_include_id: a04eb03cbce9496996bd54443b6e4d64
+. 在应用模板详情页面右侧点击**应用实例**页签，查看使用应用模板在{ks_product-en}平台安装的应用。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|应用的名称。
+
+include::../../projectManagement/apps/apps-para-status.adoc[]
+
+include::appTemplates-para-version.adoc[]
+
+|项目
+|应用所属的项目。
+
+|集群
+|应用所属的集群。
+
+|创建时间
+|应用的创建时间。
+|===
+--

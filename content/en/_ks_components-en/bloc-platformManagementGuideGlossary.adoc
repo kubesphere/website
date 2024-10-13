@@ -1,0 +1,35 @@
+// :ks_include_id: f758182e5c684e5ba39019679fb97491
+
+= 术语和缩略语link:[id=0ee2fad5148241d3ba54758ec260b3d5]
+
+[role='glossary',cols='1a,5a,5a']
+|===
+
+|API
+|Application Programming Interface
+|应用程序编程接口
+
+|ID
+|Identifier
+|标识符
+
+|IP
+|Internet Protocol
+|互联网协议
+
+|SMTP
+|Simple Mail Transfer Protocol
+|简单邮件传输协议
+
+|SSL
+|Secure Socket Layer
+|安全套接层协议
+
+|TLS
+|Transport Layer Security
+|传输层安全协议
+
+|URL
+|Uniform Resource Locator
+|统一资源定位符
+|===

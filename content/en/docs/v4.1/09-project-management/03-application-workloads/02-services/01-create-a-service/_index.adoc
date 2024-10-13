@@ -1,0 +1,21 @@
+---
+title: "Create Services"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Services, Create Services"
+description: "Learn how to create services."
+layout: "second"
+weight: 01
+---
+
+
+
+include::../../../../../_custom-en/clusterManagement/services/services-desc-createAService.adoc[]
+
+KubeSphere supports creating services and their backend workloads in the following ways:
+
+- Create Stateful Services: Create services with an internal access mode set to Headless, and simultaneously create a StatefulSet as the backend workload for the service.
+
+- Create Stateless Services: Create services with an internal access mode set to VirtualIP, and simultaneously create a Deployment as the backend workload for the service.
+
+- Create External Services: Direct service traffic to services outside the cluster.
+
+- Specify Workloads: Create services with an internal access mode set to Headless or VirtualIP, and use existing workloads in the project as the backend workload for the service.

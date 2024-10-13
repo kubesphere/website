@@ -1,0 +1,4 @@
+// :ks_include_id: b4a8007c076840f1aaef0251117dd232
+This section explains how to edit job information.
+
+You can edit the alias and description of the job. KubeSphere does not support editing the name of an already created job.

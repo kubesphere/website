@@ -1,0 +1,43 @@
+---
+title: "View Workload List"
+linkTitle: "View Workload List"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Workloads, View Workload List"
+description: "Learn how to view the list of workloads."
+weight: 02
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-viewAWorkloadList.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openListPage.adoc[]
++
+====
+include::../../../../_custom-en/clusterManagement/workloads/workloads-para-workloadList_new.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-searchForWorkloads.adoc[]
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

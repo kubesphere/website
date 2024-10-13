@@ -1,0 +1,16 @@
+* Pod Settings > Restart Policy
++
+--
+Select the policy the system adopts when a container in the pod fails to run.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Re-create pod
+| The system will recreate the entire pod.
+
+| Restart container
+| The system will restart the container.
+|===
+--

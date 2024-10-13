@@ -1,0 +1,12 @@
+// :ks_include_id: cc2613e81ffc4baa9d26ef37bbdc0e9f
+|Version
+|The version of the application.
+
+|Creation Time
+|The creation time of the application.
+
+|Update Time
+|The update time of the application.
+
+|Creator
+|The user who created the application.

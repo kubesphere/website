@@ -1,0 +1,41 @@
+* Basic Information
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Name
+| The name of the job. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number, with a maximum length of 63 characters.
+
+| Alias
+| The alias of the job. Aliases can be the same for different jobs. The alias can only contain Chinese characters, letters, numbers, and hyphens (-). It must not start or end with a hyphen (-), with a maximum length of 63 characters.
+
+| Project
+| The project to which the job belongs. It is recommended to choose a user project, as system projects are typically used for managing system resources.
+
+| Description
+| The description of the job. The description can contain any characters, with a maximum length of 256 characters.
+
+| Schedule
+| The CRON expression specifying the runtime cycle for a CronJob. KubeSphere defaults to UTC time, and you may need to adjust it based on your time zone. Available only for CronJobs.
+
+| Maximum Startup Delay
+| The maximum delay before starting a job when it fails to start according to the schedule. Available only for CronJobs.
+
+| Successful Jobs Retention
+| The number of successful jobs allowed to be retained, with a default value of **3**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
+
+| Failed Jobs Retention
+| The number of failed jobs allowed to be retained, with a default value of **1**. Each time a CronJob runs, it creates a job, and you can specify the number of jobs to retain as a historical record. Available only for CronJobs.
+
+| Concurrency Policy
+| The policy the system adopts when multiple jobs created by a CronJob overlap. Available only for CronJobs. It includes the following policies:
+
+* **Run jobs concurrently**: New and old jobs run concurrently.
+
+* **Skip new job**: Do not run new jobs.
+
+* **Skip old job**: Immediately terminates old jobs and then runs new jobs.
+|===
+--

@@ -1,0 +1,12 @@
+---
+title: "Cluster Tags"
+linkTitle: "Cluster Tags"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster Tags"
+description: "Learn how to manage cluster tags."
+layout: "second"
+weight: 02
+---
+
+This section explains how to manage cluster tags using the web console of the host cluster.
+
+When you have a large number of clusters, you can create tags and assign them to clusters to categorize and manage them effectively.

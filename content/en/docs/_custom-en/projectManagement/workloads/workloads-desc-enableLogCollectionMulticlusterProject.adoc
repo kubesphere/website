@@ -1,0 +1,2 @@
+// :ks_include_id: 716996e4cfe04beaa6a39a03ae610b86
+有关如何在项目中启用**收集卷上的日志**，请参阅link:/Users/keke/works/pitrix/repo/ks-qkcp-docs/ks-qkcp/docs-zh/@ks-qkcp/docs-zh/08-multi-cluster-project-management/06-project-settings/04-log-collection/_index.adoc[日志收集]。

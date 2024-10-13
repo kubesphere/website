@@ -1,0 +1,4 @@
+// :ks_include_id: 6f57a346768f432a9a776a26c0ab55b4
+. On the right side of the project you want to delete, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], and then select **Delete** from the drop-down list.
+
+. In the **Delete Project** dialog, enter the name of the project, then click **OK**.

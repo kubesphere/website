@@ -1,8 +1,8 @@
 ---
 title: "企业空间设置"
 linkTitle: "企业空间设置"
-keywords: "KubeSphere, 网络隔离，部门管理，企业空间配额"
-description: "介绍如何设置企业空间基本信息、修改企业空间配额以及管理部门。"
+keywords: "KubeSphere, Kubernetes, 企业空间配额"
+description: "介绍如何设置企业空间基本信息、修改企业空间配额，以及管理企业空间角色和成员。"
 layout: "second"
 weight: 06
 ---

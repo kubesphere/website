@@ -1,0 +1,35 @@
+---
+title: "Edit Workspace Role Permissions"
+linkTitle: "Edit Workspace Role Permissions"
+keywords: "Kubernetes, KubeSphere, Workspace, Workspace Settings, Workspace Role, Edit Workspace Role Permissions"
+description: "Guide on how to edit workspace role permissions."
+weight: 05
+---
+
+:ks_permission: **Role Management**
+:ks_navigation: **Workspace Settings > Workspace Roles**
+
+This section explains how to edit workspace role permissions.
+
+You can only edit permissions for workspace roles created by users. Permissions for preset workspace roles cannot be edited.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the workspace role you want to edit, then select **Edit Permissions** from the dropdown list.
+
+. In the **Edit Permissions** dialog, set the permissions for the workspace role, then click **OK**.
++
+====
+include::../../../../_custom-en/workspaceManagement/workspaceRoles/workspaceRoles-para-permissions_v4.adoc[]
+====

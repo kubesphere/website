@@ -1,0 +1,8 @@
+// :ks_include_id: 03868826ceca4baea8a9365de6974f02
+The access modes of Persistent Volumes.
+
+* **RWO** (ReadWriteOnce): Allows a single node to read from and write to the Persistent Volume.
+
+* **ROX** (ReadOnlyMany): Allows multiple nodes to read from the Persistent Volume.
+
+* **RWX** (ReadWriteMany): Allows multiple nodes to read from and write to the Persistent Volume.

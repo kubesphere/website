@@ -1,0 +1,34 @@
+---
+title: "Edit External Access"
+linkTitle: "Edit External Access"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Services, Edit Service External Access Settings"
+description: "Learn how to edit service external access settings."
+weight: 06
+---
+
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Services**
+
+
+include::../../../../_custom-en/clusterManagement/services/services-desc-editServiceExternalAccessSettings.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/services/services-oper-editServiceExternalAccessSettings.adoc[]

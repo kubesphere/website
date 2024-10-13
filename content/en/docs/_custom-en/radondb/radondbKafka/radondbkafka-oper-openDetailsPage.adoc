@@ -1,0 +1,2 @@
+// :ks_include_id: 17b3b61a099b460fbea8886a5f6d43ca
+. 在 RadonDB 应用列表中，点击 RadonDB Kafka 应用的名称打开其详情页面。

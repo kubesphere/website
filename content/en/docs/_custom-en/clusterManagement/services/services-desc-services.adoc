@@ -1,0 +1,10 @@
+// :ks_include_id: 9d67f68a071549aa94a7433420ef1f66
+This section explains how to manage services.
+
+Services are used to expose applications for access either within or outside the cluster.
+
+* In KubeSphere, applications run in pods, and multiple pod replicas of the same application are managed by workloads or jobs. While each pod has a virtual IP address accessible within the cluster, pods are non-permanent resources that may be deleted or recreated. When a pod is recreated, the new pod's virtual IP address is generally different from the old one, and the old pod's IP address becomes invalid.
+
+* Services provide a stable address (domain or IP address) for client access. Services route client requests to a specific pod and offer load balancing across multiple pod replicas, so as to solve the issue of the original address becoming invalid when a pod is deleted or recreated.
+
+* In addition to providing a stable access address for workloads, services can expose workloads outside the cluster through NodePort or LoadBalancer methods.

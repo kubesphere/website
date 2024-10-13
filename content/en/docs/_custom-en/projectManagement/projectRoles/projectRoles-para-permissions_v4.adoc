@@ -1,0 +1,87 @@
+// :ks_include_id: f730ff7f032240069f81e1b59ff72366
+* Storage
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|PVC Management
+|Create Persistent Volume Claims, clone Persistent Volumes, expand Persistent Volumes, edit Persistent Volume Claim information, delete Persistent Volume Claims.
+
+|PVC Viewing
+|View Persistent Volume Claim lists, view Persistent Volume Claim details.
+|===
+--
+
+* Configuration
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|ConfigMap Management
+|Create ConfigMaps, edit ConfigMap information, edit ConfigMap settings, delete ConfigMaps.
+
+|View ConfigMaps
+|View ConfigMap lists, view ConfigMap details.
+
+|Secret Management
+|Create Secrets, edit Secret information, edit Secret settings, delete Secrets.
+
+|View Secrets
+|View Secret lists, view Secret details.
+
+|Service Account Management
+|Create service accounts, edit service account information, change service account roles, delete service accounts.
+
+|View Service Accounts
+|View service account lists, view service account details.
+|===
+--
+
+* Application Workloads
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Application Workload Management
+|Manage resources such as applications, services, workloads, and jobs in the project.
+
+|Application Workload Viewing
+|View resources such as applications, services, workloads, and jobs in the project.
+|===
+--
+
+* Applications
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Application Instance Management
+|Install applications from application templates, install applications from the App Store, delete applications.
+
+|View Application Instances
+|View application lists, view details of template-based applications.
+|===
+--
+
+* Access Control
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Role Viewing
+|View project role lists, view project role details.
+
+|Member Viewing
+|View project member lists.
+|===
+--

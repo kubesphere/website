@@ -1,0 +1,42 @@
+// :ks_include_id: 5b3a15eedffe4ef39e6a46e6adc2b335
+. 在**创建自定义监控面板**对话框，设置监控面板的名称、描述和模板，然后点击**下一步**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|自定义监控面板的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+
+|描述
+|自定义监控面板的描述信息。描述可包含任意字符，最长 256 个字符。
+
+|模板
+|自定义监控面板的模板。
+
+* KubeSphere 提供预置了 Elasticsearch、MySQL、Redis、Jenkins 和 GPU 自定义监控面板的模板。每个模板都提供了一些预置的监控指标和监控图，您可以在模板的基础上进行定制以减少操作。
+
+* 如需使用 Grafana 监控面板，您需要上传 Grafana 监控面板配置文件。
+
+* 您也可以使用选择**自定义**使用空模板。
+|===
+--
+
+. 在自定义监控面板编辑页面，根据需要设置监控图和以文本显示的监控指标。
++
+====
+* 在页面左侧点击image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18]，设置指标参数，然后点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check-dark,18,18]可创建以文本显示的监控指标。
++
+--
+include::customMonitoringDashboards-para-textMetric.adoc[]
+--
+
+* 在页面右下角点击**添加监控项**，选择**折线图**或**柱状图**，设置图表参数，然后点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check-dark,18,18]可创建监控图。
++
+--
+include::customMonitoringDashboards-para-monitoringChart.adoc[]
+--
+====
+
+. 在页面右上角点击**保存模板**。监控面板创建完成后将显示在自定义监控面板列表中。

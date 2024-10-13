@@ -1,0 +1,10 @@
+---
+title: "Workspace Settings"
+linkTitle: "Workspace Settings"
+keywords: "KubeSphere, Kubernetes, Workspace Quotas"
+description: "Explains how to set up basic information for workspaces, modify workspace quotas, set workspace roles, and manage workspace members."
+layout: "second"
+weight: 06
+---
+
+This section explains how to set up basic information for workspaces, modify workspace quotas, set workspace roles, and manage workspace members.

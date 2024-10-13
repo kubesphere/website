@@ -1,0 +1,12 @@
+---
+title: "Storage Classes"
+linkTitle: "Storage Classes"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Storage Classes"
+description: "Instructions on how to manage storage classes."
+layout: "second"
+weight: 02
+---
+
+This section explains how to manage storage classes.
+
+Storage classes define a class of storage volumes that containers can use. If you did not set up an external persistent storage system during the installation of {ks_product-en}, {ks_product-en} will use the local storage system of the cluster nodes as the persistent storage system and automatically create the corresponding **local** storage class. If you are using an external persistent storage system, you need to install a storage plugin for the KubeSphere cluster and create storage classes to define the classes of storage volumes that can be used. For information on how to install storage plugins, please contact your storage system provider.

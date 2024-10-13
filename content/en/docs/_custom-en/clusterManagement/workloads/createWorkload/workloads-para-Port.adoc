@@ -1,0 +1,16 @@
+// :ks_include_id: addcd8f38f374f16a793b840c8f4524b
+Configure the ports for the container.  Click **Use Default Port of Images** to set the container ports to the default ports of the image. Click **Add Port** to set multiple ports for the container.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Protocol
+| The protocol that the application in the container actually listens to. To use the Application Governance features provided by KubeSphere, ensure that the selected protocol matches the protocol that the application in the container actually listens to.
+
+| Name
+| The name of the port. To use the Application Governance features provided by KubeSphere, use the lowercase protocol name as a prefix for the port name (e.g., **http-**).
+
+| Container Port
+| The port number that the application in the container actually listens to.
+|===

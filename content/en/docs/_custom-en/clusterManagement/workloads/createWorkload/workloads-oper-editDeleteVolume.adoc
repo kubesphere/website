@@ -1,0 +1,3 @@
+// :ks_include_id: a03937e2a0cc45ffac2b60c8f2321638
+* Hover over the added volume or PVC template, then click image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18] on the right to edit its settings.
+* Hover over the mounted volume or PVC template, then click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right to delete it.

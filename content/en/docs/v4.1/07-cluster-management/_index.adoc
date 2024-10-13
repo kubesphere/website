@@ -1,0 +1,13 @@
+---
+title: "Cluster Management"
+linkTitle: "Cluster Management"
+keywords: "Kubernetes, KubeSphere, Cluster Management"
+description: "Learn how to manage resources in a cluster."
+layout: "second"
+weight: 07
+icon: "/images/docs/common/docs.svg"
+---
+
+This chapter explains how to manage all resources in individual or multiple clusters within KubeSphere as a cluster member.
+
+KubeSphere supports the management of multiple clusters. Each cluster can be authorized for multiple workspaces. Each workspace can include multiple regular projects. As a multi-tenant system, KubeSphere supports role-based access control for user permissions at the platform, cluster, workspace, and project levels.

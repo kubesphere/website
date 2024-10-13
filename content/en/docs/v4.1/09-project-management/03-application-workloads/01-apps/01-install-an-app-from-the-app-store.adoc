@@ -1,0 +1,63 @@
+---
+title: "Install Applications from App Store"
+linkTitle: "Install Applications from App Store"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications"
+description: "Explains how to view project overview information."
+weight: 01
+---
+
+:ks_permission: **Application Instance Create**
+:ks_navigation: **Application Workloads > Applications**
+
+
+This section explains how to install applications from the App Store.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. Click **From App Store** in the **Create App** dialog.
+
+. In the App Store, click the application template you want to use, then click **Deploy** in the top right corner.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+If the **Deployment Notice** dialog appears, carefully read the relevant content, then click **Agree**.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. In the **Location** dialog that appears, select the installation location for the application, then click **OK**.
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-installApp.adoc[]
+
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+Applications in the App Store are published by members with relevant permissions in the workspace or provided by third parties. For more information on application functional parameters, please contact relevant workspace members or the application provider.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+Once the application is created, it will be displayed in the list of applications.
+--

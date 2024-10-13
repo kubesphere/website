@@ -1,0 +1,4 @@
+// :ks_include_id: 2a8675daa13541ae83846c5eb87d5ed7
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the pod you want to delete, then choose **Delete** from the dropdown list.
+
+. In the **Delete Pod** dialog, enter the name of the pod, then click **OK**.

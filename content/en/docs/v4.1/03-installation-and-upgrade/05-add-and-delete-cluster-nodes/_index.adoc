@@ -1,0 +1,9 @@
+---
+title: "Add and Remove Cluster Nodes"
+linkTitle: "Add and Remove Cluster Nodes"
+keywords: "Kubernetes, KubeSphere, Add Cluster Nodes, Remove Cluster Nodes"
+description: "Learn how to add and remove cluster nodes in KubeSphere."
+weight: 05
+---
+
+This section explains how to add and remove cluster nodes in {ks_product-en}.

@@ -1,0 +1,7 @@
+// :ks_include_id: bcbfd3ccebad4b3285b0a8fd9daf855d
+[.admon.note,cols="a"]
+|===
+|Note
+
+|Please separate multiple names using a comma (,) and a space.
+|===

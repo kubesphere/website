@@ -1,0 +1,34 @@
+---
+title: "Edit ConfigMap Information"
+linkTitle: "Edit ConfigMap Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, Edit ConfigMap Information"
+description: "Learn how to edit ConfigMap information."
+weight: 04
+---
+
+
+:ks_permission: **Project Resource Management**
+:ks_navigation: **Configuration > ConfigMaps**
+
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-editConfigmapInformation.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-oper-editConfigmapInformation.adoc[]

@@ -1,0 +1,80 @@
+---
+title: "View Details of Template-based Applications"
+linkTitle: "View Details of Template-based Applications"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications, View Details of Template-based Applications"
+description: "Learn how to view details of template-based applications."
+weight: 05
+---
+
+
+:ks_permission: **Application Instance View**
+:ks_navigation: **Application Workloads > Applications**
+
+
+This section explains how to view details of template-based applications.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Applications** page, click the name of an application to open its details page.
+
+. In the **Attributes** section on the left side of the details page, view the resource attributes of the application.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Cluster
+|The cluster to which the application belongs.
+
+|Project
+|The project to which the application belongs.
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-status_v4.adoc[]
+
+|Application
+|The application template used by the application.
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-details2.adoc[]
+|===
+--
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-viewResourceStatus_v4.adoc[]
+
++
+
+. On the right side of the details page, click **App Template** to view information about the application template.
++
+--
+* Click **App Description** to view information about the application.
+
+* Click **Chart Files** to view files in the Helm Chart package. Click the dropdown list on the right side of **Chart Files** to select the file you want to view. Click image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download,18,18] to download the file locally.
+--
+
+. On the right side of the details page, click **App Settings** to view application settings.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+The default settings of the application are stored in the **values.yaml** file within the Helm Chart package. The **App Settings** page displays the settings customized by the user during the application installation.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

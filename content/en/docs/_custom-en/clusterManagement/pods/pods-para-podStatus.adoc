@@ -1,0 +1,10 @@
+// :ks_include_id: 8cc83a9c58b8460cbcf369b1a07288b1
+* **Running**: The pod has been assigned to a node, all containers in the pod have been created, and at least one container is running, starting, or restarting.
+
+* **Waiting**: The pod has been accepted by the system, but at least one container has not been created or is not running. In this state, the pod may be waiting for scheduling or waiting for the container image to finish downloading.
+
+* **Completed**: All containers in the pod have successfully terminated (terminated with an exit code of 0), and no longer restart.
+
+* **Failed**: All containers in the pod have terminated, and at least one container terminated with a non-zero exit code.
+
+* **Unknown**: The system cannot retrieve the pod's status, which usually occurs when communication fails between the system and the host where the pod is located.

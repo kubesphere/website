@@ -42,7 +42,7 @@ include::../../../../_custom/platformManagement/multiclusterManagement/clusters/
 
 . 在需要操作的集群右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**移除集群**。
 
-. 在**移除集群**对话框，确认需要移除的集群的信息，将滑块拖动到右侧，输入需要移除的集群的名称，根据需要选择或取消选择**删除集群中的所有通知配置数据**，然后点击**确定**。
+. 在**移除集群**对话框，确认需要移除的集群的信息，将滑块拖动到右侧，输入需要移除的集群的名称，根据需要选择或取消选择**删除集群中的所有通知配置数据**，然后点击**移除**。
 +
 --
 // Note
@@ -70,31 +70,18 @@ include::../../../../_custom/platformManagement/extensionManagement/extensionMan
 +
 --
 // Bash
-include::../../../../../_ks_components/code/bash.adoc[]
-
+[,bash]
+----
 kubectl delete cluster <cluster name>
-
 ----
 --
 
 
 == 清理多集群配置数据
 
-. 以具有 **platform-admin** 角色的用户登录被移除集群的 Web 控制台。
+登录被移除的成员集群节点，执行以下命令清理集群中的多集群配置数据：
 
-+
-
-include::../../../../_custom/platformManagement/extensionManagement/extensionManagement-oper-openKubectl.adoc[]
-
-+
-
-. 在 **kubectl** 对话框，执行以下命令清理集群中的多集群配置数据：
-+
---
-// Bash
-include::../../../../../_ks_components/code/bash.adoc[]
-
-for ns in $(kubectl get ns --field-selector status.phase!=Terminating -o jsonpath='{.items[*].metadata.name}'); do kubectl label ns $ns kubesphere.io/workspace- && kubectl patch ns $ns --type merge -p '{"metadata":{"ownerReferences":[]}}'; done
-
+[,bash]
 ----
---
+for ns in $(kubectl get ns --field-selector status.phase!=Terminating -o jsonpath='{.items[*].metadata.name}'); do kubectl label ns $ns kubesphere.io/workspace- && kubectl patch ns $ns --type merge -p '{"metadata":{"ownerReferences":[]}}'; done
+----

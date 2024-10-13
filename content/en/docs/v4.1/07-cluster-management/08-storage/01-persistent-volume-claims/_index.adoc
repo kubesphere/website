@@ -1,0 +1,12 @@
+---
+title: "Persistent Volume Claims"
+linkTitle: "Persistent Volume Claims"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Storage, Persistent Volume Claim, Persistent Volume"
+description: "Explain how to manage volumes."
+layout: "second"
+weight: 01
+---
+
+This section explains how to manage Persistent Volume Claims (PVC) and Persistent Volumes (PV).
+
+A Persistent Volume Claim defines the requirements for storage resources. The system creates a storage area in the backend storage system based on the Persistent Volume Claim, making it available for containers. Each storage area corresponds to a Persistent Volume in KubeSphere.

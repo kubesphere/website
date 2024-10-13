@@ -1,0 +1,14 @@
+// :ks_include_id: 4886da3f3a094de187d396ed1236141b
+* 对所有通知静默
++
+--
+设置静默策略适用于所有通知。
+--
+
+* 自定义静默条件
++
+--
+设置静默策略仅适用于满足指定条件的通知。点击**添加**可设置通知需要满足的条件。
+
+include::../notificationChannels/notificationChannels-para-filterRule.adoc[]
+--

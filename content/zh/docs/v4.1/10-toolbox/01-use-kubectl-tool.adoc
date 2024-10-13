@@ -35,6 +35,7 @@ kubectl get pods -A
 
 . 在终端窗口中使用以下语法运行 kubectl 命令：
 +
+--
 [,bash]
 ----
 kubectl [command] [TYPE] [NAME] [flags]
@@ -48,5 +49,8 @@ include::../../../_ks_components/admonitions/note.adoc[]
 ** TYPE：指定link:https://kubernetes.io/zh-cn/docs/reference/kubectl/#resource-types[资源类型]。资源类型不区分大小写，您可以指定单数、复数或缩写形式。
 ** NAME：指定资源的名称。名称区分大小写。如果省略名称，则会显示所有资源的详细信息，例如 `kubectl get pods`。
 ** flags：指定可选的参数。例如，您可以使用 -s 或 --server 参数指定 Kubernetes API 服务器的地址和端口。
+
 * 如果您需要帮助，请在终端窗口运行 `kubectl help` 或者参阅 link:https://kubernetes.io/zh/docs/reference/kubectl/overview/[Kubernetes Kubectl 文档]。
+
 include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--

@@ -1,0 +1,37 @@
+---
+title: "Recreate Workloads"
+linkTitle: "Recreate Workloads"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Workloads, Recreate Workload"
+description: "Learn how to recreate a workload."
+weight: 05
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-desc-recreateAWorkload.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-openListPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/workloads/workloads-oper-recreateAWorkload.adoc[]

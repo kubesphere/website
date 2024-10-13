@@ -1,0 +1,2 @@
+// :ks_include_id: 74c2d701d7a54e788036567ac9748872
+The storage class is the default storage class or not. Once a default storage class is set, the system will use it to create Persistent Volume Claims if no specific storage class is designated. Only one default storage class is allowed in a KubeSphere cluster.

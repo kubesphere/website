@@ -1,0 +1,10 @@
+---
+title: "Project Settings"
+linkTitle: "Project Settings"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings"
+description: "Instructions on how to manage project settings."
+layout: "second"
+weight: 06
+---
+
+This section explains how to view and manage the basic information, roles, and members of a project.

@@ -1,0 +1,59 @@
+---
+title: "View Application Repository List"
+linkTitle: "View Application Repository List"
+keywords: "Kubernetes, KubeSphere, Workspace, Application Repository, View Application Repository List"
+description: "Explains how to view the list of application repositories."
+weight: 02
+---
+
+:ks_permission: **App Repos Viewing**
+:ks_navigation: **App Management > App Repositories**
+
+This section explains how to view the list of application repositories.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* Application repository list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|Name, alias, and description of the application repository.
+
+|Status
+|Current status of the application repository.
+
+* **Successful**: The application repository has been added and synchronized successfully.
+
+* **Syncing**: The application repository is currently syncing with the Helm Chart repository.
+
+* **Not Syncing**: When the sync interval is set to 0, the application repository is not syncing with the Helm Chart repository.
+
+* **Failed**: Synchronization between the application repository and the Helm Chart repository has failed.
+
+|URL
+|URL of the Helm Chart repository.
+|===
+--
+
+* Click the search box at the top of the list to search for application repositories by name.
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

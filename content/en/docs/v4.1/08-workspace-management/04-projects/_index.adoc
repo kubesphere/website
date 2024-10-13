@@ -1,0 +1,12 @@
+---
+title: "Projects"
+linkTitle: "Projects"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Projects"
+description: "Learn how to view project information and manage projects."
+layout: "second"
+weight: 04
+---
+
+This section explains how to manage projects within a workspace.
+
+In KubeSphere, workspaces and projects are used for grouping and managing resources. Each workspace can contain multiple projects.

@@ -1,0 +1,9 @@
+// :ks_include_id: b4185a2af95d4c7ba1cbf681916d81a0
+|Tag
+|Tags for the member cluster. Select tags from the dropdown list.
+
+|Provider
+|The provider of the member cluster. You can select the provider from the dropdown list or enter it manually.
+
+|Description
+|Description of the member cluster. The description can contain any characters and can be up to 256 characters long.

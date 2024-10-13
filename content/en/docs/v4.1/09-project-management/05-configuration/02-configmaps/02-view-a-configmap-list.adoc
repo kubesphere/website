@@ -1,0 +1,39 @@
+---
+title: "View ConfigMaps List"
+linkTitle: "View ConfigMaps List"
+keywords: "Kubernetes, KubeSphere, Project Management, ConfigMaps"
+description: "Introduction to viewing the list of ConfigMaps."
+weight: 02
+---
+
+:ks_permission: **ConfigMap Viewing**
+:ks_navigation: **Configuration > ConfigMaps**
+
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-viewAConfigmapList.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-para-configmapList_new.adoc[]
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-oper-searchForConfigmaps.adoc[]
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

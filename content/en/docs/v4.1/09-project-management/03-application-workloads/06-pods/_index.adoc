@@ -1,0 +1,12 @@
+---
+title: "Pods"
+linkTitle: "Pods"
+keywords: "Kubernetes, KubeSphere, Project Management, Pod"
+description: "Instructions on how to manage pods."
+layout: "second"
+weight: 06
+---
+
+
+
+include::../../../../_custom-en/clusterManagement/pods/pods-desc-pods.adoc[]

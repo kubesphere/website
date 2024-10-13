@@ -1,0 +1,22 @@
+---
+title: "Cluster Roles"
+linkTitle: "Cluster Roles"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Roles"
+description: "Instructions on how to manage cluster roles."
+layout: "second"
+weight: 04
+---
+
+This section explains how to manage cluster roles.
+
+Each cluster role comes with specific cluster management or viewing permissions. You can assign roles with specific permissions to cluster members to control their access within the cluster.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-desc-initialClusterAdmin.adoc[]
+
+* KubeSphere currently does not support creating custom cluster roles. You can view information about the built-in cluster roles in the {ks_product-en} web console.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

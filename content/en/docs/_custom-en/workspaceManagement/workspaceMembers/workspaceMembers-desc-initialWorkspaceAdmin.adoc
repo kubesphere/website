@@ -1,0 +1,2 @@
+// :ks_include_id: e84bfd6e91754efa8444c040d1726c11
+The creator of a workspace automatically becomes the workspace administrator. Additionally, the **admin** user in the {ks_product-en} platform has all permissions by default in all workspaces. In the initial state of a workspace, the above users can invite other users to join the workspace and set the roles for these users within the workspace.

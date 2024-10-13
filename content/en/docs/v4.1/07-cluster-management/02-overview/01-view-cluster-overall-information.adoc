@@ -1,0 +1,49 @@
+---
+title: "Cluster Overview"
+linkTitle: "Cluster Overview"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Overview, Cluster Overview"
+description: "Learn how to get an overview of the cluster."
+weight: 01
+---
+
+:ks_permission: **Cluster Settings Viewing**
+:ks_navigation: **Overview**
+
+This section introduces how to get an overview of the cluster.
+
+== Prerequisites
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+--
+[%header,cols="1a,4a"]
+|===
+| Items | Description
+
+| Name, Identifier, and Description
+|
+The right black part displays the current cluster's name, identifiers, and description.
+
+* The name of the member cluster is set by the user when adding a member cluster.
+
+* The identifier of the current cluster is displayed to the right of the cluster name.
+
+| Basic Information
+| Displays the provider, Kubernetes version, KubeSphere version, and the visibility of the current cluster to workspaces.
+
+| Overview
+| Displays the resources in the current cluster, such as the number of projects, Pods, Deployments, StatefulSets, DaemonSets, Jobs, CronJobs, Persistent Volume Claims, Services, Ingresses, etc.
+
+| Tools
+| Displays the command-line tool `kubectl` for controlling the current cluster, and the configuration file `kubeconfig` for configuring the access information of the cluster.
+|===
+-- 

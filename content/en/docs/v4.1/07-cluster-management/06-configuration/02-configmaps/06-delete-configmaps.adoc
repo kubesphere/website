@@ -1,0 +1,45 @@
+---
+title: "Delete ConfigMaps"
+linkTitle: "Delete ConfigMaps"
+keywords: "Kubernetes, KubeSphere, Cluster Management, ConfigMap, Delete ConfigMap"
+description: "Learn how to delete a ConfigMap."
+weight: 06
+---
+
+:ks_permission: **Project Resource Management**
+:ks_navigation: **Configuration > ConfigMaps**
+
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-desc-deleteConfigmaps.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+== Delete a Single ConfigMap
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-oper-deleteASingleConfigmap.adoc[]
+
+
+== Delete Multiple ConfigMaps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/configmaps/configmaps-oper-deleteMultipleConfigmaps.adoc[]

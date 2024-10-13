@@ -1,0 +1,15 @@
+---
+title: "Cluster Visibility"
+linkTitle: "Cluster Visibility"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Visibility"
+description: "Instructions on how to manage cluster visibility."
+layout: "second"
+weight: 02
+---
+
+This section explains how to manage cluster visibility. Cluster visibility controls the cluster authorization to workspaces. After a cluster is authorized to workspaces, you can view and manage the cluster resources in the workspaces.
+
+* A cluster can be authorized to multiple workspaces, allowing resources within the workspaces to run on that cluster.
+
+* Multiple clusters can be authorized to one workspace, enabling the creation of multi-cluster projects within the workspace.
+// For more information on multi-cluster projects, refer to link:../../../11-use-extensions/04-kubefed[Multi-cluster Projects].

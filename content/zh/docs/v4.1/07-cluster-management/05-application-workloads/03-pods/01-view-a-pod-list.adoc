@@ -16,11 +16,7 @@ include::../../../../_custom/clusterManagement/pods/pods-desc-viewAPodList.adoc[
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 

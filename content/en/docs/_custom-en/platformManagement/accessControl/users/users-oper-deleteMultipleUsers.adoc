@@ -1,0 +1,8 @@
+// :ks_include_id: 0a2acbdb2d9d421396a23302b0355ee0
+. 选择需要删除的用户左侧的复选框，然后在列表上方点击**删除**。
+
+. 在**批量删除用户**对话框，输入用户的名称，然后点击**确定**。
++
+--
+include::../../../note-separateNamesByComma.adoc[]
+--

@@ -1,0 +1,13 @@
+// :ks_include_id: 0ae400ef2e644b79a0442a3a094b55b7
+Configure the parameters related to the Rolling Update strategy.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Max Unavailable Pods
+|The maximum number or percentage of unavailable pod replicas allowed during the update process.
+
+|Max Extra Pods
+|The maximum number or percentage of extra pod replicas allowed during the update process.
+|===

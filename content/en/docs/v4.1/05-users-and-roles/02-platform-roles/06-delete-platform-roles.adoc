@@ -1,0 +1,29 @@
+---
+title: "Delete Platform Roles"
+linkTitle: "Delete Platform Roles"
+keywords: "Kubernetes, KubeSphere, Platform Management, Access Control, Platform Roles, Delete Platform Roles"
+description: "Introduction to deleting platform roles."
+weight: 06
+---
+
+:ks_menu: **Users and Roles**
+:ks_permission: **Role Management**
+:ks_navigation: **Platform Roles**
+
+This section explains how to delete platform roles.
+
+You can delete platform roles created by users. Preset platform roles cannot be deleted.
+
+== Prerequisites
+
+* You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+* If the platform role you want to delete has already been assigned to a user, you need to delete the user or modify their role.
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click pass:a,q[{ks_menu}].
+. Select **Platform Roles** from the left navigation pane.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the platform role you want to delete, then choose **Delete** from the drop-down list.
+. In the **Delete Role** dialog, click **OK**.

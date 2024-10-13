@@ -12,17 +12,13 @@ weight: 01
 
 本节介绍如何编辑企业空间配额。
 
-在{ks_product_both}平台，多个集群可以授权给同一个企业空间，您可以在企业空间中设置针对每个集群设置资源配额。
+在{ks_product_both}平台，多个集群可以授权给同一个企业空间，您可以在企业空间中针对每个集群设置资源配额。
 
 
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-:relfileprefix: ./
 
 
 

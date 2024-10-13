@@ -1,0 +1,4 @@
+// :ks_include_id: e8b3859a8e1d48b4afe313a86d58a9f3
+This section explains how to edit Persistent Volume Claim information.
+
+You can edit the alias and description of the Persistent Volume Claim. KubeSphere does not support editing the name of an already created Persistent Volume Claim.

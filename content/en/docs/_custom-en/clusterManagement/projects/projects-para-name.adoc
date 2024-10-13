@@ -1,0 +1,3 @@
+// :ks_include_id: 2e7858bd5eb64ceab90c370e0337800c
+|Name
+|The name of the project. Project names must be unique within the same cluster. Names can only contain lowercase letters, numbers, and hyphens (-). They must start with a lowercase letter and end with a lowercase letter or number, with a maximum length of 63 characters.

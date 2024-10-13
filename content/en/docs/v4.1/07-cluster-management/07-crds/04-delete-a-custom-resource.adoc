@@ -1,0 +1,47 @@
+---
+title: "Delete Custom Resources"
+linkTitle: "Delete Custom Resources"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Custom Resource Definition, Delete Custom Resources"
+description: "Instructions on how to delete custom resources."
+weight: 05
+---
+
+:ks_permission: **Custom Resource Definition Management**
+:ks_navigation: **CRDs**
+
+
+This section explains how to delete a custom resource.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+|Warning
+
+|Deleting custom resources may cause interruptions to related services. Please proceed with caution.
+|===
+
+
+== Prerequisites
+
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/crds/crds-oper-openDetailsPage.adoc[]
+
++
+
+. On the **CRDs** tab, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the custom resource you want to delete, then choose **Delete** from the dropdown list.
+
+. In the **Delete CRD** dialog, enter the name of the custom resource, then click **OK**.

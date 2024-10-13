@@ -1,0 +1,435 @@
+---
+title: "Install Kubernetes and KubeSphere on Linux"
+linkTitle: "Install Kubernetes and KubeSphere on Linux"
+keywords: "Kubernetes, KubeSphere, Installation, Install KubeSphere, Install Kubernetes"
+description: "Get how to install Kubernetes and KubeSphere."
+weight: 02
+---
+
+This section explains how to install Kubernetes and {ks_product-en}.
+
+The installation process will use the open-source tool KubeKey. For more information about KubeKey, please visit the link:https://github.com/kubesphere/kubekey[GitHub KubeKey repository].
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|You can also run the command in the link:#_install_kubesphere[Install KubeSphere] section to directly upgrade KubeSphere from v4.1.1 to v4.1.2.
+|===
+
+== Prerequisites
+
+* Prepare at least 1 Linux server as a cluster node. In a production environment, to ensure high availability of the cluster, it is recommended to prepare at least 5 Linux servers, with 3 servers as control plane nodes and 2 servers as worker nodes. If you are installing {ks_product-en} on multiple Linux servers, make sure all servers belong to the same subnet.
+
+* The operating system and version of the cluster nodes must be Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 22.04, Debian 9, Debian 10, CentOS 7, CentOS Stream, RHEL 7, RHEL 8, SLES 15, or openSUSE Leap 15. The operating systems of multiple servers can be different. For support of other operating systems and versions, please contact {ks_product-en} technical support.
+
+* In a production environment, to ensure the cluster has sufficient computing and storage resources, it is recommended that each cluster node be configured with at least 8 CPU cores, 16 GB of memory, and 200 GB of disk space. In addition, it is recommended to mount an additional 200 GB of disk space in the **/var/lib/docker** (for Docker) or **/var/lib/containerd** (for containerd) directory of each cluster node for storing container runtime data.
+
+* In a production environment, it is recommended to configure high availability for the KubeSphere cluster in advance to avoid service interruption in the event of a single control plane node failure. For more information, please refer to the link:../../../03-installation-and-upgrade/01-preparations/03-configure-high-availability/[Configure High Availability].
++
+--
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+If you plan to have multiple control plane nodes, be sure to configure high availability for the cluster in advance.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+* By default, KubeSphere uses the local disk space of the cluster nodes as persistent storage. In a production environment, it is recommended to configure an external storage system as persistent storage in advance. For more information, please refer to the link:../../../03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/[Configure External Persistent Storage].
+
+* If the cluster nodes do not have a container runtime installed, the installation tool KubeKey will automatically install Docker as the container runtime for each cluster node during the installation process. You can also manually install containerd, CRI-O, or iSula as the container runtime in advance.
++
+--
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+CRI-O and iSula have not been fully tested for compatibility with KubeSphere, and there may be unknown issues.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+* Make sure the DNS server addresses configured in the **/etc/resolv.conf** file on all cluster nodes are available. Otherwise, the KubeSphere cluster may encounter domain name resolution issues.
+
+* Make sure you can use the **sudo**, **curl**, and **openssl** commands on all cluster nodes.
+
+* Make sure the time is synchronized on all cluster nodes.
+
+
+== Configure Firewall Rules
+
+KubeSphere requires specific ports and protocols for communication between services. If your infrastructure environment has enabled a firewall, you need to open the required ports and protocols in the firewall settings. If your infrastructure environment does not have a firewall enabled, you can skip this step.
+
+The following table lists the ports and protocols that need to be opened in the firewall.
+
+[%header,cols="1a,1a,1a,1a,2a"]
+|===
+|Service |Protocol |Start Port |End Port |Remarks
+
+|ssh
+|TCP
+|22
+|
+|
+
+|etcd
+|TCP
+|2379
+|2380
+|
+
+|apiserver
+|TCP
+|6443
+|
+|
+
+|calico
+|TCP
+|9099
+|9100
+|
+
+|bgp
+|TCP
+|179
+|
+|
+
+|nodeport
+|TCP
+|30000
+|32767
+|
+
+|master
+|TCP
+|10250
+|10258
+|
+
+|dns
+|TCP
+|53
+|
+|
+
+|dns
+|UDP
+|53
+|
+|
+
+|metrics-server
+|TCP
+|8443
+|
+|
+
+|local-registry
+|TCP
+|5000
+|
+|Required for offline environments
+
+|local-apt
+|TCP
+|5080
+|
+|Required for offline environments
+
+|rpcbind
+|TCP
+|111
+|
+|Required when using NFS as persistent storage
+
+|ipip
+|IPENCAP/IPIP
+|
+|
+|Required when using Calico
+|===
+
+== Install Dependencies
+
+You need to install socat, conntrack, ebtables, and ipset for all cluster nodes. If the above dependencies already exist on each cluster node, you can skip this step.
+
+On Ubuntu systems, run the following command to install the dependencies on the servers:
+
+// Bash
+[,bash]
+----
+sudo apt install socat conntrack ebtables ipset -y
+----
+
+If the cluster nodes use other operating systems, replace **apt** with the corresponding package management tool for the operating system.
+
+== Install Kubernetes
+
+// ifeval::["{file_output_type}" == "pdf"]
+// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
+// endif::[]
+
+// ifeval::["{file_output_type}" == "html"]
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-downloadKubekey.adoc[]
+// endif::[]
+
+. Create the installation configuration file **config-sample.yaml**:
++
+--
+//Bash
+[,bash]
+----
+ ./kk create config --with-kubernetes <Kubernetes version>
+----
+
+Replace `<Kubernetes version>` with the actual version needed, for example **v1.27.4**. {ks_product-en} by default supports Kubernetes v1.21~1.28.
+
+After the command completes, the installation configuration file **config-sample.yaml** will be generated.
+
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-note-doNotDeleteConfig_v4.adoc[]
+--
+
+. Edit **config-sample.yaml**：
++
+--
+//Bash
+[,bash]
+----
+vi config-sample.yaml
+----
+
+The following is a part of the configuration file sample. For a complete example, please refer to link:https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md[this file].
+
+// YAML
+include::../../../../_ks_components-en/code/yaml.adoc[]
+
+apiVersion: kubekey.kubesphere.io/v1alpha2
+Kind: Cluster
+metadata:
+ name: sample
+spec:
+ hosts:
+ - {name: controlplane1, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 23, user: ubuntu, password: Testing123, arch: arm64} # For arm64 nodes, please add the parameter arch: arm64
+ - {name: controlplane2, address: 192.168.0.3, internalAddress: 192.168.0.3, user: ubuntu, privateKeyPath: "~/.ssh/id_rsa"}
+ - {name: worker1, address: 192.168.0.4, internalAddress: 192.168.0.4, user: ubuntu, password: Testing123}
+ - {name: worker2, address: 192.168.0.5, internalAddress: 192.168.0.5, user: ubuntu, password: Testing123}
+ - {name: registry, address: 192.168.0.6, internalAddress: 192.168.0.6, user: ubuntu, password: Testing123}
+ roleGroups:
+ etcd:
+ - controlplane1
+ - controlplane2
+ control-plane:
+ - controlplane1
+ - controlplane2
+ worker:
+ - worker1
+ - worker2
+ # If you want to use kk to automatically deploy the image registry, please set up the registry (it is recommended that the image registry and cluster nodes be deployed separately to reduce mutual influence)
+ registry:
+ -registry
+ controlPlaneEndpoint:
+ internalLoadbalancer: haproxy # If you need to deploy a high availability cluster and no load balancer is available, you can enable this parameter to perform load balancing within the cluster.
+ domain: lb.kubesphere.local
+ address: ""
+ port: 6443
+ kubernetes:
+ version: v1.23.15
+ clusterName: cluster.local
+ network:
+ plugin: calico
+ kubePodsCIDR: 10.233.64.0/18
+ kubeServiceCIDR: 10.233.0.0/18
+ ## multus support. https://github.com/k8snetworkplumbingwg/multus-cni
+ enableMultusCNI: false
+ registry:
+ # If you want to use kk to deploy harbor, you can set this parameter to harbor. If you do not set this parameter and you need to use kk to deploy the image registry, docker registry will be deployed by default.
+ # Harbor does not support arm64. This parameter does not need to be configured when deploying in an arm64 environment.
+ type: harbor
+ # If you use kk to deploy harbor or other registries that require authentication, you need to set the auths of the corresponding registries. If you use kk to deploy the default docker registry, you do not need to configure the auths parameter.
+ # Note: If you use kk to deploy harbor, please set the auths parameter after creating the harbor project.
+ auths:
+ "dockerhub.kubekey.local":
+ username: admin # harbor default username
+ password: Harbor12345 # harbor default password
+ plainHTTP: false # If the registry uses http, please set this parameter to true
+ privateRegistry: "dockerhub.kubekey.local/kse" #Set the private registry address used during cluster deployment
+ registryMirrors: []
+ insecureRegistries: []
+ addons: []
+----
+--
+
+. Set the information of each server under the **spec:hosts** parameter in **config-sample.yaml**.
++
+--
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-para-hosts.adoc[]
+--
+
+. Set the server's role under the **spec:roleGroups** parameter in **config-sample.yaml**.
++
+--
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-para-roleGroups.adoc[]
+--
+
+. If you have multiple control plane nodes, set high availability information under the **spec:controlPlaneEndpoint** parameter in **config-sample.yaml**.
++
+--
+include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-para-controlPlaneEndpoint.adoc[]
+--
+
+. If you need to use external persistence storage, set the external persistence storage information under the **spec:addons** parameter in **config-sample.yaml**.
++
+====
+* If using a cloud storage device, set the following parameters under **spec:addons** (replace <configuration file path> with the actual path of the storage plugin configuration file):
++
+--
+// Bash
+[,bash]
+----
+  - name: csi-qingcloud
+    namespace: kube-system
+    sources:
+      chart:
+        name: csi-qingcloud
+        repo: https://charts.kubesphere.io/test
+        valuesFile: <configuration file path>
+----
+--
+
+* If using NeonSAN storage, set the following parameters under **spec:addons** (replace <configuration file path> with the actual path of the storage plugin configuration file):
++
+--
+// Bash
+[,bash]
+----
+  - name: csi-neonsan
+    namespace: kube-system
+    sources:
+      chart:
+        name: csi-neonsan
+        repo: https://charts.kubesphere.io/test
+        valuesFile: <configuration file path>
+----
+--
+
+* If using an NFS storage system, set the following parameters under **spec:addons** (replace <configuration file path> with the actual path of the storage plugin configuration file):
++
+--
+// Bash
+[,bash]
+----
+  - name: nfs-client
+    namespace: kube-system
+    sources:
+      chart:
+        name: nfs-client-provisioner
+        repo: https://charts.kubesphere.io/main
+        valuesFile: <configuration file path>
+----
+--
+====
+
+. Create a Kubernetes cluster.
++
+--
+[,bash]
+----
+ ./kk create cluster -f config-sample.yaml
+----
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+If you want to use OpenEBS LocalPV, you can add the `--with-local-storage` parameter after the following command. If you want to integrate with other storage solutions, configure the relevant storage plugins under the **spec:addons** parameter in **config-sample.yaml ** or install them after the Kubernetes deployment.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+If you see the following information, it means that the Kubernetes cluster is successfully created.
+
+[,yaml]
+----
+Pipeline[CreateclusterPipeline] execute successfully
+----
+--
+
+== Install KubeSphere
+
+KubeSphere Core (ks-core) is the core component of KubeSphere, providing a foundational runtime environment for extensions. Once KubeSphere Core is installed, you can access the {ks_product-en} web console.
+
+. `Helm` should have been installed in advance. For specific instructions, please refer to link:https://helm.sh/docs/intro/[Helm Installation].
++
+[,bash]
+----
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+----
+
+. Run the following command on the cluster node to install KubeSphere Core.
++
+====
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --debug --wait
+----
+
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+If you are accessing Docker Hub from a restricted location, add the following configuration after the above command to modify the default image pull address.
+
+[,bash]
+----
+--set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+[,bash]
+----
+--set extension.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks
+----
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+If you see the following information, it means that ks-core installation is successful:
+
+[,yaml]
+----
+NOTES:
+Thank you for choosing KubeSphere Helm Chart.
+
+Please be patient and wait for several seconds for the KubeSphere deployment to complete.
+
+1. Wait for Deployment Completion
+
+    Confirm that all KubeSphere components are running by executing the following command:
+
+    kubectl get pods -n kubesphere-system
+
+2. Access the KubeSphere Console
+
+    Once the deployment is complete, you can access the KubeSphere console using the following URL:
+
+    http://192.168.6.10:30880
+
+3. Login to KubeSphere Console
+
+    Use the following credentials to log in:
+
+    Account: admin
+    Password: P@88w0rd
+
+NOTE: It is highly recommended to change the default password immediately after the first login.
+
+For additional information and details, please visit https://kubesphere.io.
+----
+====
+
+. From the successful information, retrieve the **Console**, **Account**, and **Password** parameters to obtain the IP address of the {ks_product-en} web console, the admin username, and the admin password. Use a web browser to log in to the {ks_product-en} web console.
++
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+Depending on your hardware and network environment, you may need to configure traffic forwarding rules and open port 30880 in the firewall. 
+|===

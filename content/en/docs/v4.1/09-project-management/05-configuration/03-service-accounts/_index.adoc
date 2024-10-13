@@ -1,0 +1,11 @@
+---
+title: "Service Accounts"
+linkTitle: "Service Accounts"
+keywords: "Kubernetes, KubeSphere, Project Management, Service Accounts"
+description: "Learn how to manage service accounts."
+layout: "second"
+weight: 03
+---
+
+
+include::../../../../_custom-en/clusterManagement/serviceAccounts/serviceAccounts-desc-serviceAccounts.adoc[]

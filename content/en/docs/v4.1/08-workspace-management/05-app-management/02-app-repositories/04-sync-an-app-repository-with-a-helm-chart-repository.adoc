@@ -1,0 +1,35 @@
+---
+title: "Sync App Repository with Helm Chart Repository"
+linkTitle: "Sync App Repository with Helm Chart Repository"
+keywords: "Kubernetes, KubeSphere, Workspace, Application Repository, Sync Application Repository, Helm Chart Repository"
+description: "Explains how to sync an application repository with a Helm Chart repository."
+draft: true
+weight: 04
+---
+
+:ks_permission: **App Repos Management**
+:ks_navigation: **App Management > App Repositories**
+
+This section explains how to sync an application repository with a Helm Chart repository.
+
+If you have set a sync interval when adding the application repository, the system will automatically sync the application repository with the Helm Chart repository based on the sync interval. You can also manually sync the application repository with the Helm Chart repository following the steps outlined in this section.
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+* Select the checkbox on the left of the application repository you want to sync, then click **Sync** at the top of the list.
++
+--
+The system will update the application repository based on the Helm Chart repository.
+--

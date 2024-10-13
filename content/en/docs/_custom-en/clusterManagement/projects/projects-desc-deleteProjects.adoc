@@ -1,0 +1,10 @@
+// :ks_include_id: 375914907c6948b08ccff616aa99831d
+This section explains how to delete projects.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+|Warning
+
+|Once a project is deleted, it cannot be recovered, and all resources within the project will be deleted. Please proceed with caution.
+|===

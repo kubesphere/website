@@ -1,0 +1,6 @@
+// :ks_include_id: 61e727942543431594ef9dfaf58908c7
+* **Running**: The workload is running normally.
+
+* **Updating**: The workload is updating pod replicas.
+
+* **Stopped**: Both the expected and current pod replica count of the workload is 0.

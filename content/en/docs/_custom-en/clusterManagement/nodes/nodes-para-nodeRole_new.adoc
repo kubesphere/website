@@ -1,0 +1,2 @@
+// :ks_include_id: aa9a7a75dbc34278bbd88723c93fcca5
+The roles of each node in the cluster, it can be **Control Plane** or **Worker**.

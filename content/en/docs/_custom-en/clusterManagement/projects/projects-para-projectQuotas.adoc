@@ -1,0 +1,7 @@
+// :ks_include_id: 73b804640f4d4157bd471a68e571e284
+|Project Quotas
+| The amount of available resources in the project and their actual usage, including:
+
+* CPU request, CPU limit, memory request, memory limit, GPU type, and GPU limit for all containers in the project.
+
+* Maximum number of Deployments, StatefulSets, DaemonSets, Jobs, CronJobs, PVC, Services, Ingresses, Secrets, and ConfigMaps allowed to be created in the project.

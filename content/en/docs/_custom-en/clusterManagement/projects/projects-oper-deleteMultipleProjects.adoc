@@ -1,0 +1,8 @@
+// :ks_include_id: c31e22ed93ad4f3fa0500c5bb67c80e3
+. Select the checkbox on the left of the projects you want to delete, then click **Delete** above the project list.
+
+. In the **Delete Multiple Projects** dialog, enter the name of the projects, then click **OK**.
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

@@ -1,0 +1,2 @@
+// :ks_include_id: 30ad6c73ec764c0bab8d3e7638696a4a
+. Click the name of a pod in the list to open its details page.

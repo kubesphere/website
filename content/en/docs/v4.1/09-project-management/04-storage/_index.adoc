@@ -1,0 +1,15 @@
+---
+title: "Storage"
+linkTitle: "Storage"
+keywords: "Kubernetes, KubeSphere, Project Management, Storage"
+description: "Explain how to manage storage resources."
+layout: "second"
+weight: 04
+---
+
+
+This section explains how to manage storage resources.
+
+KubeSphere supports the management of the following storage resources in projects:
+
+* Persistent Volume Claim: Defines storage requirements. The system creates a storage area in the backend storage system for containers based on the parameters in the persistent volume claim. Each storage area corresponds to a persistent volume in KubeSphere.

@@ -1,0 +1,14 @@
+---
+title: "Applications"
+linkTitle: "Applications"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications"
+description: "Introduces how to manage installed applications within a project."
+layout: "second"
+weight: 01
+---
+
+This section explains how to manage applications.
+
+In KubeSphere, applications specifically refer to business programs composed of one or more resources such as workloads, services, ingresses, etc.
+
+KubeSphere currently supports creating applications based on app templates, which means creating applications from existing application templates. The application template used for creating applications can be an application template published to the App Store, uploaded to the workspace, or from a remote application repository.

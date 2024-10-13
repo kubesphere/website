@@ -1,0 +1,4 @@
+// :ks_include_id: a773823d564e4c93b67e89f11ac3bc64
+This section explains how to pause a CronJob.
+
+After pausing a CronJob, the system will not create and run jobs at the scheduled time in the future. Running jobs are not affected. This operation is only available for CronJobs.

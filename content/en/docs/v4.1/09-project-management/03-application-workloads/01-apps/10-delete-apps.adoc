@@ -1,0 +1,49 @@
+---
+title: "Delete Applications"
+linkTitle: "Delete Applications"
+keywords: "Kubernetes, KubeSphere, Project Management, Applications, Delete Application"
+description: "Learn how to delete an application."
+weight: 10
+---
+
+:ks_permission: **Application Instance Deletion**
+:ks_navigation: **Application Workloads > Applications**
+
+
+This section explains how to delete an application.
+
+## Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+## Delete a Single Application
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to the application you want to delete, and select **Delete** from the dropdown list.
+   
+. In the **Delete App** dialog, enter the name of the application, and then click **OK**.
+
+## Delete Multiple Applications
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Select the checkboxes next to the applications you want to delete, and then click **Delete** at the top of the application list.
+   
+. In the **Delete Multiple Applications** dialog, enter the names of the applications, and then click **OK**.
++
+--
+include::../../../../_custom-en/note-separateNamesByComma.adoc[]
+--

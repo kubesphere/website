@@ -1,0 +1,19 @@
+---
+title: "Project Members"
+linkTitle: "Project Members"
+keywords: "Kubernetes, KubeSphere, Project, Project Settings, Project Members"
+description: "Guide on how to manage project members."
+layout: "second"
+weight: 03
+---
+
+This section explains how to manage project members.
+
+Project members are users who have permissions to view or manage resources in a project. The permissions of project members are determined by the roles they have in the project.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-desc-initialProjectAdmin.adoc[]
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

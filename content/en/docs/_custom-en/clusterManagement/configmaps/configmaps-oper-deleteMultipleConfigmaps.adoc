@@ -1,0 +1,8 @@
+// :ks_include_id: 7120cca5f1fc4d69be0d4be24670e48b
+. Select the checkbox on the left of the ConfigMaps you want to delete, then click **Delete** above the ConfigMap list.
+
+. In the **Delete Multiple ConfigMaps** dialog, enter the name of the ConfigMaps, then click **OK**.
++
+--
+include::../../note-separateNamesByComma.adoc[]
+--

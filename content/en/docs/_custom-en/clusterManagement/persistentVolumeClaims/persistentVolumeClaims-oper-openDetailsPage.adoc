@@ -1,0 +1,2 @@
+// :ks_include_id: fd9a9a3e2e00439cb6d91dd990d83b23
+. Click the name of a Persistent Volume Claim in the list to open its details page.

@@ -1,0 +1,10 @@
+// :ks_include_id: 0314f28e62bf4e7fb08d1c779601d170
+| Select Nodes
+|
+Schedule pod replicas to nodes with specified labels.
+
+* You can manually enter key-value pairs for the labels of the target node, or click **Specify Node** to choose a node.
+
+* Click **Add Node Selector** to set multiple labels; pod replicas will be scheduled to nodes with all specified labels.
+
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right of a created label to delete it.

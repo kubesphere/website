@@ -1,0 +1,107 @@
+---
+title: "Create Platform Roles"
+linkTitle: "Create Platform Roles"
+keywords: "Kubernetes, KubeSphere, Platform Management, Access Control, Platform Roles, Create Platform Roles"
+description: "Introduction to creating platform roles."
+weight: 01
+---
+
+:ks_menu: **Users and Roles**
+:ks_navigation: **Platform Roles**
+
+This section explains how to create platform roles.
+
+KubeSphere provides the following preset platform roles, and you can also create roles to customize role permissions.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|platform-admin
+|The platform administrator has all permissions on the {ks_product-en} platform.
+
+|platform-regular
+|The role cannot access any resources before joining a workspace, which is typically granted to workspace members who do not need other platform permissions.
+
+|platform-self-provisioner
+|Create workspace and become the administrator of the created workspace.
+|===
+
+== Prerequisites
+
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click pass:a,q[{ks_menu}].
+. Select **Platform Roles** from the left navigation pane.
+. Click **Create** on the page.
+. In the **Create Platform Role** dialog, set the name, alias, and description of the platform role, and then click **Edit Permissions**.
++
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|Name of the platform role. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
+
+|Alias
+|Alias of the platform role. The alias can contain Chinese characters, letters, numbers, and hyphens (-). It must not start or end with a hyphen (-) and can be up to 63 characters long. 
+
+|Description
+|Description of the platform role. The description can contain any characters and is limited to 256 characters.
+|===
+
+. In the **Edit Permissions** dialog, set the permissions for the platform role, and then click **OK**.
++
+Users with the **platform-admin** role can enable and disable extensions. Other required permissions for platform operations are as follows:
+
++
+* Workspace
++
+
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Workspace Creation
+|Create workspaces and become an administrator of the created projects.
+
+|Workspace Management
+|Manage all workspaces and resources within workspaces.
+
+|Workspace Viewing
+|View all workspaces and resources within workspaces.
+|===
+
++
+* Cluster Management
++
+
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|Cluster Management
+|Create clusters, delete clusters, and manage resources within all clusters.
+
+|Cluster Viewing
+|View all clusters and cluster resources.
+|===
+
+* Access Control
++
+--
+[%header,cols="1a,4a"]
+|===
+|Permission |Operations Allowed
+
+|User Viewing
+|View users.
+
+|Role Viewing
+|View platform roles.
+
+|===
+--

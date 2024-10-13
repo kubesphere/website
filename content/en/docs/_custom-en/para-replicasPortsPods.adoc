@@ -1,0 +1,17 @@
+// :ks_include_id: 9dfd0319fc99473aa7930dfd36ff5321
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Replicas
+| The current and expected pod replica count of the workload.
+
+| Ports
+| The port name, protocol, and port number of the containers managed by the workload.
+
+| Pods
+|
+All the pods running in the workload.
+
+include::clusterManagement/nodes/nodes-para-podList.adoc[]
+|===

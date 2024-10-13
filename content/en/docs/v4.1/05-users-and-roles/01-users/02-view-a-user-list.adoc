@@ -1,0 +1,57 @@
+---
+title: "View User List"
+linkTitle: "View User List"
+keywords: "Kubernetes, KubeSphere, Access Control, Users, View User List"
+description: "Explain how to view the user list."
+weight: 02
+---
+
+:ks_menu: **Users and Roles**
+:ks_navigation: **Users**
+:ks_permission: **User Viewing**
+
+This section explains how to view the user list.
+
+== Prerequisites
+
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, refer to link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click pass:a,q[{ks_menu}].
+. Click pass:a,q[{ks_navigation}] in the left navigation pane.
+
+* The user list provides the following information:
++
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the user.
+
+|Status
+|The current status of the user.
+
+* **Active**: The user's current status is normal.
+
+* **Waiting**: The system is creating the user.
+
+* **Disabled**: The user is disabled by the platform administrator and cannot log in to the {ks_product-en} web console.
+
+* **Restricted**: The user has failed to log in 10 times in 10 minutes and is blocked from logging in to the {ks_product-en} web console for 10 minutes.
+
+|Platform Role
+|The role of the user on the {ks_product-en} platform.
+
+|Last Login
+|The user's last login time on the {ks_product-en} platform.
+
+|===
+
+* Click the search box above the list and enter keywords to search for users whose usernames contain specific keywords.
+
+* Click image:/images/ks-qkcp/zh/icons/refresh-light.svg[refresh,18,18] in the upper right corner of the list to refresh the list information.
+
+* Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper right corner of the list to customize the information displayed in the list.

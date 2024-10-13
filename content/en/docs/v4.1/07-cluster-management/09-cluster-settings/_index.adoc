@@ -1,0 +1,10 @@
+---
+title: "Cluster Settings"
+linkTitle: "Cluster Settings"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Cluster Settings"
+description: "Instructions on how to manage cluster settings."
+layout: "second"
+weight: 09
+---
+
+This section explains how to manage cluster settings.

@@ -1,0 +1,16 @@
+// :ks_include_id: d8d9b2087a9849b68d0e028a81a20303
+Set whether to pull images from the image registry when creating or updating Pods.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Use Local Image First
+| When creating or updating a pod, prioritize using the images stored by the container runtime on the node.
+
+| Pull Image Always
+| When creating or updating a pod, pull the image from the image registry every time.
+
+| Use Local Image Only
+| When creating or updating a pod, only use the images stored by the container runtime on the node. If the required image is not available locally, the pod may be created with an exception.
+|===

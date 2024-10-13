@@ -1,0 +1,212 @@
+---
+title: "Create Workspaces, Projects, Users, and Platform Roles"
+linkTitle: "Control User Permissions"
+keywords: "Kubernetes, KubeSphere, Quick Start, User Permissions"
+description: "Learn how to create users and control their permissions by roles in workspaces and projects."
+weight: 03
+---
+
+This section explains how to create users and control their permissions by roles in workspaces and projects. 
+For more information on permission control, please refer to link:../../05-users-and-roles/[Users and Roles].
+
+As a multi-tenant system, KubeSphere supports controlling user permissions based on roles at the platform, cluster, workspace, and project levels, achieving logical resource isolation.
+
+
+== Prerequisites
+
+{ks_product-en} has been installed.
+
+== Create Users
+
+. Log in to the {ks_product-en} web console using the default user **admin** and password **P@88w0rd**.
++
+--
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+For security, you will be asked to change your password on your first login, please change it and use the new password for subsequent logins.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Click **Users and Roles**.
+
+. In the left navigation pane, click **Users**.
+
+. Click **Create** above the user list.
+
+. In the **Create User** dialog, enter the following required parameters:
++
+--
+* Username
+* Email
+* Password
+--
+
+. Click **OK**. The newly created user will be displayed in the user list.
+
+
+== Create Workspaces
+
+. Log in to the {ks_product-en} web console.
+. Click **Workspace Management**.
+. On the list of workspaces page, click **Create** to open the **Create Workspace** dialog.
+. On the **Basic Information** tab, enter the name of the workspace (for example, **demo-workspace**), and click **Next**.
++
+--
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+For multi-cluster environments, after setting the basic information, you should select a cluster for the workspace on the **Cluster Settings** tab.
+
+|===
+--
+
+. Click **OK**. The newly created workspace will be displayed in the workspace list.
+
+== Create Workspace Roles
+
+. On the list of workspaces page, click **demo-workspace** to enter that workspace.
+
+. In the left navigation pane, click **Workspace Settings** > **Workspace Roles**.
++
+--
+The Workspace Roles page lists the following four built-in roles by default.
+
+[%header,cols="1a,2a"]
+|===
+|Roles |Description
+
+|**workspace-viewer**
+|A workspace viewer who can view all resources in the workspace.
+
+|**workspace-self-provisioner**
+|A regular member of the workspace who can view workspace settings, and create projects.
+
+|**workspace-regular**
+|A regular member of the workspace who can view workspace settings.
+
+|**workspace-admin**
+|A workspace administrator who can manage all resources in the workspace.
+
+|===
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+The names of the built-in roles in a workspace are displayed in the <workspace name>-<role name> format. For example, in a workspace named **demo-workspace**, the actual role name for the role **admin** is **demo-workspace-admin**.
+
+|===
+--
+. On the Workspace Roles page, click **Create**.
+
+. In the **Create Platform Role** dialog, enter **Name** and click **Edit Permissions** to continue.
+
+. In the **Edit Permissions** dialog, the permissions are categorized.
++
+--
+Click **Projects** and select **Project Creation**, **Project Management**, and **Project Viewing** for this role.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|**Depends On** means that the current permission depends on the listed authorizations, which will be automatically selected when you check this permission.
+
+|===
+--
+
+. Click **OK**. The newly created role will be displayed in the list of workspace roles.
+
+==  Invite Users to a Workspace
+
+. In the left navigation pane, click **Workspace Settings** > **Workspace Members**.
+
+. On the Workspace Members page, click **Invite**.
+
+. In the **Invite Member** dialog, click image:/images/ks-qkcp/zh/icons/add-dark.svg[add,18,18] to the right of the user and assign the user a role in the current workspace.
+
+. Click **OK**. The user is invited and will be displayed in the list of workspace members.
+
+
+== Create Projects
+
+. In the left navigation pane, select **Projects**.
+
+. On the **Projects** page, click **Create**.
+
+. In the **Create Project** dialog, enter the **name** of the project (e.g., **demo-project**).
+
++
+--
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+For a multi-cluster environment, you should choose the cluster where you want to create the project.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Click **OK**. The project will be displayed in the project list.
+
+== Create Project Roles
+
+. On the **Projects** page, click **demo-project** to enter the project.
+
+. In the left navigation pane, click **Project Settings** > **Project Roles**.
+
++
+--
+The Project Roles page displays the following three built-in roles by default.
+
+[%autowidth]
+|===
+| Role | Description
+
+| **viewer**
+| A project viewer who can view all resources in the project.
+
+| **operator**
+| A project operator who can manage resources in the project excluding users and roles.
+
+| **admin**
+| A project administrator who can manage all resources in the project.
+|===
+--
+
+. On the Project Roles page, click **Create**.
+
+. In the **Create Role** dialog, enter **Name**, then click **Edit Permissions** to proceed.
+
+. In the **Edit Permissions** dialog, the permissions are categorized.
+
++
+--
+In this example, click **Access Control** and select **Member Viewing** and **Role Viewing** for this role.
+
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+**Depends On** means that the current permission depends on the listed authorizations, which will be automatically selected when you check this permission.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Click **OK**. The newly created role will be displayed in the list of project roles.
+
+
+== Invite Users to a Project
+
+. In the left navigation pane, click **Project Settings** > **Project Members**.
+
+. On the Project Members page, click **Invite**.
+
+. In the **Invite Member** dialog, click image:/images/ks-qkcp/zh/icons/add-dark.svg[add,18,18] to the right of the user and assign the user a role in the current project.
+
+. Click **OK**. The user is invited and will be displayed in the list of project members.

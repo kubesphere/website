@@ -1,0 +1,16 @@
+// :ks_include_id: 2b56feb1f8cc44b5b2eda05290fc26e5
+KubeSphere provides the following preset project roles:
+
+[%header,cols="1a,4a"]
+|===
+|Role |Description
+
+|admin
+|Project administrator with all permissions within the project.
+
+|operator
+|Project operator with permissions excluding project settings management, role management, and member management.
+
+|viewer
+|Project viewer with permissions to view all resources within the project.
+|===

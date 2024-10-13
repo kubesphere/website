@@ -1,0 +1,2 @@
+// :ks_include_id: d70b04812502488cacd1e6b813dcc70d
+The capacity of the backend storage area.

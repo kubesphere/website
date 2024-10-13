@@ -1,0 +1,16 @@
+---
+title: "Platform Roles"
+linkTitle: "Platform Roles"
+keywords: "Kubernetes, KubeSphere, Access Control, Users, Platform Roles"
+description: "Explain how to manage platform roles."
+layout: "second"
+weight: 03
+---
+
+This section explains how to manage platform roles.
+
+Platform roles has specific platform management or viewing permissions. You can authorize users with roles that contain specific permissions to control their platform access.
+
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+The default administrator user **admin** has all permissions on the {ks_product-en} platform.
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

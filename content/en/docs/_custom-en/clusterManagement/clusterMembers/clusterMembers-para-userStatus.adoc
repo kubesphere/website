@@ -1,0 +1,8 @@
+// :ks_include_id: 431b5c3a6af541aa9bf2e1607c05789d
+* **Active**: The user's current status is normal.
+
+* **Waiting**: The system is creating the user.
+
+* **Disabled**: The user is disabled by the platform administrator and cannot log in to the {ks_product-en} web console.
+
+* **Restricted**: The user has failed to log in 10 times in 10 minutes and is blocked from logging in to the {ks_product-en} web console for 10 minutes.

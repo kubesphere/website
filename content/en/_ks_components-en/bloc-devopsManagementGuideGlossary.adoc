@@ -1,0 +1,55 @@
+// :ks_include_id: f74b6e7ec2b54e58893c8ba9fee38eb8
+
+= 术语和缩略语link:[id=429ec86a5f354f008e4a72c1dac37ef9]
+
+[role='glossary',cols='1a,5a,5a']
+|===
+|CD
+|Continuous Deployment
+|持续部署
+
+|CI
+|Continuous Integration
+|持续集成
+
+|ID
+|Identifier
+|标识符
+
+|IP
+|Internet Protocol
+|互联网协议
+
+|JAR
+|Java Archive
+|Java 归档
+
+|JDK
+|Java Development Kit
+|Java 开发套件
+
+|PR
+|Pull Request
+|拉取请求
+
+|SCM
+|Source Code Management
+|源代码管理
+
+|SMTP
+|Simple Mail Transfer Protocol
+|简单邮件传输协议
+
+|SSH
+|Secure Shell
+|安全外壳协议
+
+|SSL
+|Secure Socket Layer
+|安全套接层协议
+
+|URL
+|Uniform Resource Locator
+|统一资源定位符
+|===
+

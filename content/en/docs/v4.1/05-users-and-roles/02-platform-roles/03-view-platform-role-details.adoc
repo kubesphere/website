@@ -1,0 +1,30 @@
+---
+title: "View Platform Role Details"
+linkTitle: "View Platform Role Details"
+keywords: "Kubernetes, KubeSphere, Platform Management, Access Control, Platform Roles, View Platform Role Details"
+description: "Explain how to view platform role details."
+weight: 03
+---
+
+:ks_menu: **Users and Roles**
+:ks_permission: **Role Viewing**
+:ks_navigation: **Platform Roles**
+
+This section explains how to view platform role details.
+
+== Prerequisites
+
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click pass:a,q[{ks_menu}].
+. Select **Platform Roles** from the left navigation pane.
+. Click the name of a platform role in the list to open its details page.
+. On the **Permissions** tab of the details page, view the permissions owned by the role.
+. Click the **Authorized Users** tab to view users who have the current platform role.
++
+--
+include::../../../_custom-en/clusterManagement/clusterRoles/clusterRoles-para-authorizedUsers.adoc[]
+--

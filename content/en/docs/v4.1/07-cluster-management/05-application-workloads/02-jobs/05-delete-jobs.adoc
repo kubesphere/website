@@ -1,0 +1,54 @@
+---
+title: "Delete Jobs"
+linkTitle: "Delete Jobs"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Application Workloads, Jobs, Delete Job"
+description: "Learn how to delete a job."
+weight: 05
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Jobs**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-deleteJobs.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Delete a Single Job
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-openListPage.adoc[]
+
++
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-deleteASingleJob.adoc[]
+
+
+
+== Delete Multiple Jobs
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-openListPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-deleteMultipleJobs.adoc[]

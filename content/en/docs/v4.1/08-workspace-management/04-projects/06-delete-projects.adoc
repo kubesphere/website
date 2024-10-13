@@ -1,0 +1,44 @@
+---
+title: "Delete Projects"
+linkTitle: "Delete Projects"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Project, Delete Project"
+description: "Introduces how to delete a project."
+weight: 06
+---
+
+:ks_permission: **Project Management**
+:ks_navigation: **Projects**
+
+
+include::../../../_custom-en/clusterManagement/projects/projects-desc-deleteProjects.adoc[]
+
+
+== Prerequisites
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Delete a Single Project
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-deleteASingleProject.adoc[]
+
+
+== Delete Multiple Projects
+
+include::../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../_custom-en/clusterManagement/projects/projects-oper-deleteMultipleProjects.adoc[]

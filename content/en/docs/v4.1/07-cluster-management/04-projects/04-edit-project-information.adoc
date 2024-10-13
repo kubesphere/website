@@ -1,0 +1,48 @@
+---
+title: "Edit Project Information"
+linkTitle: "Edit Project Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Project, Edit Project Information"
+description: "Learn how to edit project information."
+weight: 04
+---
+
+:ks_permission: **Project Management**
+:ks_navigation: **Projects**
+
+
+include::../../../_custom-en/clusterManagement/projects/projects-desc-editInformation.adoc[]
+
+include::../../../_custom-en/clusterManagement/projects/projects-note-editInformation.adoc[]
+
+
+== Prerequisites
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the right side of the project you want to edit, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], and then select **Edit** from the drop-down list.
+
+. In the **Edit Information** dialog, set the alias and description for the project, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Alias
+|The alias of the project. Aliases can be the same for different projects. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-). It has a maximum length of 63 characters.
+
+|Description
+|The description of the project. The description can contain any characters, with a maximum length of 256 characters.
+|===
+--

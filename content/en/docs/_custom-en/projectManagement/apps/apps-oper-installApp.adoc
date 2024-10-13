@@ -1,0 +1,23 @@
+// :ks_include_id: 0a4b47588752413da3e9f8fdb60e06fa
+. On the **Basic Information** tab, set the basic information of the application, then click **Next**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|User-defined name for the application. The name can only contain lowercase letters, numbers, and hyphens (-), must start with a lowercase letter and end with a lowercase letter or number, and can be up to 32 characters long.
+
+|Version
+|Version of the application.
+
+|Description
+|Description of the application. The description can contain any characters and is limited to 256 characters.
+
+|Location
+|Workspace, cluster, and project to which the application belongs.
+|===
+--
+
+. On the **App Settings** tab, configure the functional parameters of the application as needed, then click **Install**.

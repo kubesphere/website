@@ -1,0 +1,13 @@
+// :ks_include_id: 64d2897f5b044d81b1a2e5772897e884
+Configure the command to be executed inside the container when it starts.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Command
+| The startup command to be executed.
+
+| Parameters
+| The parameters of the startup command. Use commas to separate multiple parameters.
+|===

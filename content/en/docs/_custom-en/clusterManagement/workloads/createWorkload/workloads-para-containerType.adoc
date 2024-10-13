@@ -1,0 +1,8 @@
+// :ks_include_id: 44485d9a2c89473b896d0aa6c172b2c2
+| Container Type
+|
+The type of container.
+
+* **Init Container**: A container that performs initialization tasks for the working containers. The working containers will only start after all init containers have successfully completed. If an init container fails, the system sets the status of the pod to failure.
+
+* **Work Container**: A container that runs the application. It is generally recommended to have only one work container running in each pod.

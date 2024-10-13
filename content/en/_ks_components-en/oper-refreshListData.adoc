@@ -1,0 +1,2 @@
+// :ks_include_id: 28a65f11229c45f0bcd1b632d006acbb
+* Click image:/images/ks-qkcp/zh/icons/refresh-light.svg[refresh,18,18] in the upper right corner of the list to refresh the list information.

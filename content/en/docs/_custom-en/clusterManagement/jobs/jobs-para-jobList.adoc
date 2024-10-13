@@ -1,0 +1,27 @@
+* The job list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Name
+| The name and description of the job.
+
+| Status
+|
+The current status of the job.
+
+* **Running**: The job is running.
+
+* **Completed**: The job has run successfully and is completed.
+
+* **Failed**: The job has failed.
+
+| Project
+| The project to which the job belongs.
+
+| Last Run Time
+| The time of the last run for the job.
+|===
+--

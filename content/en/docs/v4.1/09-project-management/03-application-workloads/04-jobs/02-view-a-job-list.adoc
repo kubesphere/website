@@ -1,0 +1,43 @@
+---
+title: "View Job List"
+linkTitle: "View Job List"
+keywords: "Kubernetes, KubeSphere, Project Management, Application Workloads, Job, View Job List"
+description: "Learn how to view the job list."
+weight: 02
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Jobs**
+
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-desc-viewAJobList.adoc[]
+
+
+== Prerequisites
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-openListPage.adoc[]
++
+====
+include::../../../../_custom-en/clusterManagement/jobs/jobs-para-jobList.adoc[]
+
+include::../../../../_custom-en/clusterManagement/jobs/jobs-oper-searchForJobs.adoc[]
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

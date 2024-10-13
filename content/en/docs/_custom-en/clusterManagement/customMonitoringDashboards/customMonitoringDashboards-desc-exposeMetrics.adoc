@@ -1,0 +1,4 @@
+// :ks_include_id: fb5da34edef1455388ca60e23308095f
+. 配置运行在容器中的应用程序，将符合 Prometheus 规范的监控指标暴露在某个服务端路径下。有关更多信息，请参阅 link:https://prometheus.io/docs/instrumenting/clientlibs/[Prometheus 官方文档]。
+
+. 在 KubeSphere Web 控制台，在用于暴露工作负载的服务上设置监控导出器，以声明提供应用程序监控指标的路径。KubeSphere 将根据监控导出器的相关参数获取应用程序的监控指标。

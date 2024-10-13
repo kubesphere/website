@@ -1,0 +1,2 @@
+// :ks_include_id: be828c992784487d9adf58c381e48b5a
+You can edit the alias and description of the project. KubeSphere does not support editing the name of an already created project.

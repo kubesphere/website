@@ -1,0 +1,10 @@
+// :ks_include_id: 156b3180d19240238f9195fd4cc024c5
+This section explains how to manage configuration resources.
+
+KubeSphere supports managing the following three types of configuration resources:
+
+* Secret: Contains Base64-encoded key-value pairs, used to store sensitive data such as passwords, tokens, and keys.
+
+* ConfigMap: Contains plain-text key-value pairs, used to store regular configuration data.
+
+* Service Account: Stores access information for the current KubeSphere cluster, used to provide access to the KubeSphere cluster for applications.

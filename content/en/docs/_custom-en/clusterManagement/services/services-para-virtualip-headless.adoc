@@ -1,0 +1,4 @@
+// :ks_include_id: bed3eb4cd7fa441990451420cd9a8ed4
+* **Headless**: The system does not assign a virtual IP address to the service. It can be accessed internally by using the format `<service name>.<project name>.svc.cluster.local` or `<service name>.<project name>`.
+
+* **VirtualIP**: The system assigns a virtual IP address to the service for internal access within the cluster. It also supports access internally by using the format `<service name>.<project name>.svc.cluster.local` or `<service name>.<project name>`.

@@ -1,0 +1,4 @@
+// :ks_include_id: 0be7fc7e00d24083ac5d17ec7c4dd81b
+This section explains how to edit service information.
+
+You can edit the alias and description of the service. KubeSphere does not support editing the name of an already created service.

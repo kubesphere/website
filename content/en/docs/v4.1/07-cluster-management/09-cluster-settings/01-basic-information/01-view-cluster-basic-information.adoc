@@ -1,0 +1,30 @@
+---
+title: "View Cluster Basic Information"
+linkTitle: "View Cluster Basic Information"
+keywords: "Kubernetes, KubeSphere, Cluster Management, Basic Information, View Cluster Basic Information"
+description: "Instructions on how to view cluster basic information."
+weight: 01
+---
+
+:ks_permission: **Cluster Settings Viewing**
+:ks_navigation: **Cluster Settings > Basic Information**
+
+
+This section explains how to view cluster basic information.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Basic Information** page, view the cluster's name, provider, and Kubernetes version.

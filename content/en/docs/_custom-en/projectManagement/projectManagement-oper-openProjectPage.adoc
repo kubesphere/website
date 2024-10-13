@@ -1,0 +1,2 @@
+// :ks_include_id: 9b4eef92c7d44ab79e49b128781dbfde
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission, and access your project.

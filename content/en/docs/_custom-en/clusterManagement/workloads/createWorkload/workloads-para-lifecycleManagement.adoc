@@ -1,0 +1,35 @@
+// :ks_include_id: 2c06de3e1ab94af48b7328587c8256b5
+Configure actions to be performed after the container starts or before it terminates for environment checking or graceful termination. Before using this feature, you need to configure the application within the container to return the results of the performed action.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Post-start Action
+| The action to be performed after the container starts. If the post-start action fails, the system will attempt to restart the container.
+
+| Pre-stop Action
+| The action to be performed before the container terminates. This action follows these rules:
+
+* If the pre-stop action fails, the system will terminate the container immediately.
+
+* The default period for the graceful termination of a container is 30 seconds. If the pres-stop action is still running when the grace period ends, the system will provide a one-time grace period of 2 seconds.
+
+* After the grace period ends, regardless of whether the pres-stop action has finished, the system will terminate the container.
+|===
+
+KubeSphere supports the following execution methods for post-start actions and pre-stop actions:
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| HTTP Request
+| Sends an HTTP GET request to the virtual IP address of the pod. If the response status code is 2XX or 3XX, the action is considered successful.
+
+| Command
+| Runs a command in the container. The action is considered successful if the command's exit code is 0.
+
+| TCP Port
+| Attempts to establish a TCP connection with the specified container port. The action is considered successful if the connection is established.
+|===

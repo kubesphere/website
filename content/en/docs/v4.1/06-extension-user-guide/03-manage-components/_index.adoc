@@ -1,0 +1,9 @@
+---
+title: "Manage Extensions"
+keywords: "Kubernetes, KubeSphere, Management, Extensions"
+description: "Learn how to manage extensions."
+layout: "second"
+weight: 03
+---
+
+This section explains how to configure, upgrade, disable, uninstall extensions, and configure cluster agents.

@@ -1,0 +1,2 @@
+// :ks_include_id: 05d7ebe027f04cc589e8baa04343e651
+You should join a workspace and have the pass:a,q[{ks_permission}] permission within the workspace. For more information, refer to "Workspace Members" and "Workspace Roles".

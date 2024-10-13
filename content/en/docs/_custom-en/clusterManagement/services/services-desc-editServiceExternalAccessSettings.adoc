@@ -1,0 +1,11 @@
+// :ks_include_id: 6153ebc95ef847adb6e6294e7b521d88
+This section explains how to edit external access settings for services.
+
+//note
+[.admon.note,cols="a"]
+|===
+| Note
+
+|
+This operation is only available for services with an internal access mode of VirtualIP, not available for services with internal access modes of Headless or ExternalName.
+|===

@@ -1,0 +1,11 @@
+// :ks_include_id: 373ea79d7dc9465b90f0d8a7d6ae5062
+This section explains how to recreate a workload.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+|Warning
+
+|
+This operation will delete and recreate all pods in the workload. The business in the workload will be interrupted until the new pods are created. Please proceed with caution.
+|===

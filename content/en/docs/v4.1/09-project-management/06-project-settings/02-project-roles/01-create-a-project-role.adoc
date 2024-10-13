@@ -1,0 +1,48 @@
+---
+title: "Create Project Roles"
+linkTitle: "Create Project Roles"
+keywords: "Kubernetes, KubeSphere, Project Management, Project Settings, Project Roles, Create Project Role"
+description: "Instructions on how to create a project role."
+weight: 01
+---
+
+:ks_permission: **Role Management**
+:ks_navigation: **Project Settings > Project Roles**
+
+This section explains how to create a project role.
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the **Create Role** dialog, set the name, alias, and description of the project role, then click **Edit Permissions**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the project role. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
+
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-para-aliasAndDescription.adoc[]
+|===
+--
+
+. In the **Edit Permissions** dialog, set the permissions for the project role, then click **OK**.
++
+include::../../../../_custom-en/projectManagement/projectRoles/projectRoles-para-permissions_v4.adoc[]

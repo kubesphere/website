@@ -1,0 +1,10 @@
+---
+title: "Basic Information"
+linkTitle: "Basic Information"
+keywords: "Kubernetes, KubeSphere, Project Management, Basic Information"
+description: "Instructions on how to view and edit project basic information."
+layout: "second"
+weight: 01
+---
+
+This section explains how to view and edit project basic information.

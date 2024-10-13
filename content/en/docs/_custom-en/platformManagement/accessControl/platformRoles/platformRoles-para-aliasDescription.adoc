@@ -1,0 +1,6 @@
+// :ks_include_id: ab00e2a484af4b28883732e655a5eca8
+|Alias
+|Alias of the platform role. The alias can contain Chinese characters, letters, numbers, and hyphens (-). It must not start or end with a hyphen (-) and can be up to 63 characters long. 
+
+|Description
+|Description of the platform role. The description can contain any characters and is limited to 256 characters.

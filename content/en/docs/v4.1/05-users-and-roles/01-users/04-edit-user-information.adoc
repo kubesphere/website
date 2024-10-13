@@ -1,0 +1,43 @@
+---
+title: "Edit User Information"
+linkTitle: "Edit User Information"
+keywords: "Kubernetes, KubeSphere, Access Control, Users, Edit User Information"
+description: "Learn how to edit user information."
+weight: 04
+---
+
+:ks_menu: **Users and Roles**
+:ks_navigation: **Users**
+:ks_permission: **User Management**
+
+
+This section explains how to edit user information.
+
+You can edit the user's email, platform role, and description. KubeSphere does not support editing the name of an already created user.
+
+
+== Prerequisites
+
+You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} platform. For more information, see link:../../01-users/[Users] and link:../../02-platform-roles/[Platform Roles].
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click pass:a,q[{ks_menu}].
+. Click pass:a,q[{ks_navigation}] in the left navigation pane.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] to the right of a user, and then choose **Edit** from the dropdown list.
+. In the **Edit User** dialog, edit the user's information, and then click **OK**.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Email
+|The user's email address. The email address can be used to log in to the {ks_product-en} web console.
+
+|Platform Role
+|The user's role on the {ks_product-en} platform. The platform role determines the user's permissions in {ks_product-en}.
+
+|Description
+|The description of the user. The description can contain any characters, with a maximum length of 256 characters.
+|===

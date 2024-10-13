@@ -1,0 +1,2 @@
+// :ks_include_id: 8619d925ec5a486cae57b4b228b668b2
+. On the **Jobs** page, click either **Jobs** or **CronJobs** to open the list of jobs.

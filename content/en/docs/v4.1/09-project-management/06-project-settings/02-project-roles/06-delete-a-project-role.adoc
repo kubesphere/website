@@ -1,0 +1,37 @@
+---
+title: "Delete Project Roles"
+linkTitle: "Delete Project Roles"
+keywords: "Kubernetes, KubeSphere, Project, Project Settings, Project Role, Delete Project Role"
+description: "Guide on how to delete project roles."
+weight: 06
+---
+
+:ks_permission: **Role Management**
+:ks_navigation: **Project Settings > Project Roles**
+
+This section explains how to delete project roles.
+
+You can delete project roles created by users. Preset project roles cannot be deleted.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* Ensure the project role you want to delete is not assigned to any project members. Otherwise, you need to remove the project members or change their roles.
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project role you want to delete, then select **Delete** from the dropdown list.
+
+. In the **Delete Role** dialog, click **OK** to confirm the deletion.

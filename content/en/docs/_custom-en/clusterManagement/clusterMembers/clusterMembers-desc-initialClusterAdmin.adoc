@@ -1,0 +1,2 @@
+// :ks_include_id: 498ec63e8fb645ccab190e0595b053f8
+In a multi-cluster environment, the user who adds a cluster is automatically designated as the cluster administrator. Additionally, the **admin** user by default has full permissions in all clusters. In the initial state of a cluster, the aforementioned users can invite other users to join the cluster and set the roles for these users within the cluster.

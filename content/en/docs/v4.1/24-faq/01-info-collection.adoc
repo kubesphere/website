@@ -1,0 +1,26 @@
+---
+title: "Improvement Plan"
+linkTitle: "Improvement Plan"
+weight: 01
+keywords: "Installer, Telemetry, KubeSphere, Kubernetes"
+description: "Learn about what information KubeSphere collects and how to enable or disable data collection."
+---
+
+== What is the Improvement Plan?
+
+The Improvement Plan collects information about KubeSphere installation and feature usage. This information is used solely by KubeSphere to enhance the product and is not shared with any third parties.
+
+== What does the Improvement Plan report?
+
+The Improvement Plan does not collect any specific identifying information such as usernames, passwords, resource names, or addresses.
+
+The main collected information includes:
+
+- Extension installation information: Extension name, extension version, and installation time.
+- Cluster information: Cluster name, cluster role, cluster version, cluster UID (UID of the kube-system namespace), KubeSphere version, KubeSphere UID (UID of the kubesphere-system namespace).
+- Cluster node information: Node name, node UID, node role, node architecture, node operating system version, node operating system image name, kernel version, container runtime version, kube-proxy version, kubelet version.
+- Resource statistics: Number of users, number of namespaces, number of workspaces.
+
+== How to participate in or opt out of the Improvement Plan?
+
+When installing or configuring KubeSphere, you can choose to participate in the Improvement Plan or not by configuring `telemetry.enabled`. For more information, refer to link:../../03-installation-and-upgrade/02-install-kubesphere/05-appendix/#_advanced_options[Advanced Configuration of KubeSphere Core].

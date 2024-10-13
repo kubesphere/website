@@ -1,0 +1,2 @@
+// :ks_include_id: 9bb9485dfa1c46809ddf90db983f76a1
+. On the **Projects** page, click **User Projects** or **System Projects** to open the user project list or system project list.

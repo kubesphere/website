@@ -1,0 +1,13 @@
+// :ks_include_id: 2fc5442d4a274f9dbf5b17caa5a4926a
+|User and User Group
+|
+The users and user groups running the entry point of container processes.
+
+* **Run as Non-root**: Checks if the container will run as the **root** user before starting. If the container is set to run as the **root** user, it won't start. When this feature is enabled, the system will ignore the **Privileged mode** setting.
+
+* **User**: The UID (User ID) executing the container process entry point. Defaults to the UID specified in the image metadata.
+
+* **User Group**: The GID (Group ID) executing the container process entry point. Defaults to the default GID of the container runtime.
+
+|SELinux Context
+|The SELinux labels for the container process, including **Level**, **Role**, **Type**, and **User**. For more information, refer to the link:https://www.selinuxproject.org/page/Main_Page[SELinux Documentation].

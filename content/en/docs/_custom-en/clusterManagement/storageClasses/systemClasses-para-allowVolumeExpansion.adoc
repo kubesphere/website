@@ -1,0 +1,2 @@
+// :ks_include_id: 57acc3d45ab443bdad3eee12eb83b5ca
+Expanding capacity of Persistent Volumes in the {ks_product-en} web console is allowed or not.

@@ -16,11 +16,7 @@ weight: 02
 == 前提条件
 
 
-:relfileprefix: ../../../../
-
 include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-:relfileprefix: ./
 
 
 
@@ -50,7 +46,7 @@ include::../../../../../_ks_components/oper-navigate.adoc[]
 include::../../../../_custom/clusterManagement/clusterMembers/clusterMembers-para-userStatus.adoc[]
 
 |角色
-|项目成员在集群中的角色。
+|项目成员在项目中的角色。
 
 |最近登录
 |项目成员最近一次登录{ks_product_left} Web 控制台的时间。

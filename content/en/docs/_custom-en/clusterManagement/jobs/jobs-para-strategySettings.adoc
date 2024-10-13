@@ -1,0 +1,22 @@
+* Strategy Settings
++
+--
+Configure the strategy for each job.
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| Maximum Retries
+| The maximum number of times the pods in the job can be restarted. If the maximum retries is reached but the job completion conditions are still not met, the job will be marked as failed.
+
+| Complete Pods
+| The number of completed pods required to mark the job as completed.
+
+| Parallel Pods
+| The number of pods that run in parallel in the job.
+
+| Maximum Duration
+| The maximum running time for the job, in seconds. If the maximum duration is reached but the job completion conditions are still not met, the job will be terminated and marked as failed.
+|===
+--

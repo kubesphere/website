@@ -1,0 +1,45 @@
+---
+title: "Create Cluster Tags"
+linkTitle: "Create Cluster Tags"
+keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster Tags, Create Cluster Tags"
+description: "Learn how to create cluster tags."
+weight: 01
+---
+
+:ks_permission: **Cluster Management**
+
+This section explains how to create cluster tags.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
++
+
+. Click **Cluster Management**.
+
++
+
+include::../../../../_custom-en/platformManagement/multiclusterManagement/clusterTags/clusterTags-openListPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the **Create Tags** dialog, set the key and value for the tag, then click **Create**.
++
+--
+* Click **Add** to create multiple tags at once.
+
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] next to a tag to delete it.
+
+After creating tags, they will be displayed in the list of tags.
+--

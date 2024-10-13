@@ -1,0 +1,9 @@
+// :ks_include_id: 7758d91595c844e4b4614bb148e72c76
+This section explains how to delete a ConfigMap.
+
+// Warning
+include::../../../../_ks_components-en/admonitions/warning.adoc[]
+
+Once a ConfigMap is deleted, it cannot be recovered. Please proceed with caution when performing this operation.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

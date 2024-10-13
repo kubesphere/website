@@ -1,0 +1,9 @@
+// :ks_include_id: 50920b439c7f4f4e996fecec215f24ed
+本节介绍如何编辑规则组中的告警规则。
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+{ks_product-en}仅支持编辑自定义规则组，不支持编辑内置规则组。
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

@@ -1,0 +1,36 @@
+// :ks_include_id: 9bb30ff8148c403aa266fbe96dcaa2a8
+* 告警列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|消息
+|
+include::../ruleGroups/ruleGroups-para-message.adoc[]
+
+|状态
+|
+告警当前的状态。
+
+include::alerts-para-alertingStatus.adoc[]
+
+|告警级别
+|
+include::../ruleGroups/ruleGroups-para-alertLevel.adoc[]
+
+|规则名称
+|告警规则的名称。
+
+|规则组
+|告警规则组的名称。
+
+|监控目标
+|生成告警的监控目标的类型和名称。
+
+|触发时间
+|
+include::../ruleGroups/ruleGroups-para-activationTime.adoc[]
+|===
+--

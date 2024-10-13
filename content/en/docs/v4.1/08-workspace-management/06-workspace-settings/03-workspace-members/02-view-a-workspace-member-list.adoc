@@ -1,0 +1,57 @@
+---
+title: "View Workspace Member List"
+linkTitle: "View Workspace Member List"
+keywords: "Kubernetes, KubeSphere, Workspace Management, Workspace Settings, Workspace Members, View Workspace Member List"
+description: "Guide on how to view the workspace member list."
+weight: 02
+---
+
+:ks_permission: **Member Viewing**
+:ks_navigation: **Workspace Settings > Workspace Members**
+
+
+This section explains how to view the workspace member list.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* The workspace member list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Username
+|The username of the workspace member.
+
+|Status
+|
+The current status of the workspace member.
+
+include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-para-userStatus.adoc[]
+
+|Role
+|The role of the workspace member within the workspace.
+
+|Last Login
+|The time when the workspace member last logged into the {ks_product-en} web console.
+|===
+--
+
+* Click the search box at the top of the list to search for workspace members by name.
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====
