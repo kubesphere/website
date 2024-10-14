@@ -1,0 +1,151 @@
+---
+title: "配置 OpenSearch 日志接收器"
+description: "介绍如何配置 OpenSearch 日志接收器。"
+weight: 01
+---
+
+本节介绍如何配置 OpenSearch 日志接收器，以便将日志数据发送到指定的 OpenSearch 数据库。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+在扩展组件安装时或安装完成后均可以修改扩展组件配置，以配置日志接收器。下文仅介绍扩展组件已安装的情况下，如何配置 OpenSearch 日志接收器。
+|===
+
+
+== 前提条件
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。
+* 已获取 OpenSearch 的服务地址和服务端口。
+
+== 配置步骤
+
+. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
+. 点击**扩展中心**。
+. 点击扩展组件的名称，进入组件详情页。
+. 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**扩展组件配置**。
+
+. 编辑 **WhizardTelemetry 日志**的扩展组件配置，修改 `vector-logging` 下 opensearch 的相关配置。
++
+[,yaml]
+----
+vector-logging:
+  sinks:
+    opensearch:
+      # Create opensearch sink or not
+      enabled: true
+      # Configurations for the opensearch sink, more info for https://vector.dev/docs/reference/configuration/sinks/elasticsearch/
+      # Usually users needn't change the following OpenSearch sink config, and the default sinks in secret "kubesphere-logging-system/vector-sinks" created by the WhizardTelemetry Data Pipeline extension will be used.
+      metadata:
+        api_version: v8
+        auth:
+          strategy: basic
+          user: admin
+          password: admin
+        batch:
+          timeout_secs: 5
+        buffer:
+          max_events: 10000
+        endpoints:
+          - https://<the opensearch cluster url>:<port>
+        tls:
+          verify_certificate: false
+----
+
+. 编辑 **WhizardTelemetry 审计**的扩展组件配置，修改 `kube-auditing` 下 opensearch 的相关配置。
++
+--
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+另外，还需要启用 KubeSphere 和 Kubernetes 审计。有关更多信息，请参阅扩展中心“WhizardTelemetry 审计”扩展组件的详情页说明。
+|===
+
+[,yaml]
+----
+kube-auditing:
+  sinks:
+    opensearch:
+      # Create opensearch sink or not
+      enabled: true
+      # Configurations for the opensearch sink, more info for https://vector.dev/docs/reference/configuration/sinks/elasticsearch/
+      # Usually users needn't change the following OpenSearch sink config, and the default sinks in secret "kubesphere-logging-system/vector-sinks" created by the WhizardTelemetry Data Pipeline extension will be used.
+  #    metadata:
+  #      api_version: v8
+  #      auth:
+  #        strategy: basic
+  #        user: admin
+  #        password: admin
+  #      batch:
+  #        timeout_secs: 5
+  #      buffer:
+  #        max_events: 10000
+  #      endpoints:
+  #        - https://<the opensearch cluster url>:<port>
+  #      tls:
+  #        verify_certificate: false
+----
+
+--
+
+. 编辑 **WhizardTelemetry 事件**的扩展组件配置，修改 `kube-events-exporter` 下 opensearch 的相关配置。
++
+[,yaml]
+----
+kube-events-exporter:
+  sinks:
+    opensearch:
+      # Create opensearch sink or not
+      enabled: true
+      # Configurations for the opensearch sink, more info for https://vector.dev/docs/reference/configuration/sinks/elasticsearch/
+      # Usually users needn't change the following OpenSearch sink config, and the default sinks in secret "kubesphere-logging-system/vector-sinks" created by the WhizardTelemetry Data Pipeline extension will be used.
+  #    metadata:
+  #      api_version: v8
+  #      auth:
+  #        strategy: basic
+  #        user: admin
+  #        password: admin
+  #      batch:
+  #        timeout_secs: 5
+  #      buffer:
+  #        max_events: 10000
+  #      endpoints:
+  #        - https://<the opensearch cluster url>:<port>
+  #      tls:
+  #        verify_certificate: false
+----
+
+. 编辑 **WhizardTelemetry 通知**的扩展组件配置，修改 `notification-history` 下 opensearch 的相关配置。
++
+[,yaml]
+----
+notification-history:
+  sinks:
+    opensearch:
+      # Create opensearch sink or not
+      enabled: true
+      # Configurations for the opensearch sink, more info for https://vector.dev/docs/reference/configuration/sinks/elasticsearch/
+      # Usually users needn't change the following OpenSearch sink config, and the default sinks in secret "kubesphere-logging-system/vector-sinks" created by the WhizardTelemetry Data Pipeline extension will be used.
+  #    metadata:
+  #      api_version: v8
+  #      auth:
+  #        strategy: basic
+  #        user: admin
+  #        password: admin
+  #      batch:
+  #        timeout_secs: 5
+  #      buffer:
+  #        max_events: 10000
+  #      endpoints:
+  #        - https://<the opensearch cluster url>:<port>
+  #      tls:
+  #        verify_certificate: false
+----
+
+. 编辑 **WhizardTelemetry 平台服务**的扩展组件配置，确保其中各组件配置下的 `endpoints` 与以上各个扩展组件的 `endpoints` 配置一致，以便{ks_product_both}平台能够正确查询日志数据。有关更多信息，请参阅扩展中心“WhizardTelemetry 平台服务”扩展组件的详情页说明。
++
+至此，OpenSearch 日志接收器配置完成。在**集群设置 > 日志接收器**页面，可以看到 OpenSearch 已被配置为容器日志、资源事件、审计日志和通知历史的日志接收器。

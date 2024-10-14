@@ -1,0 +1,117 @@
+---
+title: "使用审计日志查询工具"
+keywords: "Kubernetes, {ks_product}, 集群管理, 工具箱, 查询审计日志"
+description: "介绍如何使用审计日志查询工具。"
+weight: 01
+---
+
+本节介绍如何查询审计日志。
+
+审计日志：{ks_product_right} API 服务器接收请求的记录，即{ks_product_both}平台上用户的操作行为。
+
+== 前提条件
+
+* 您需要获得平台、集群、企业空间或项目的资源查看权限，以查看特定范围的日志。
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 审计**扩展组件。
+
+== 启用审计
+
+为获取审计日志数据，您需要启用 Kubernetes 和 KubeSphere 审计，即启用审计日志收集。
+
+=== 启用 Kubernetes 审计
+
+. 在集群的 master 节点上创建审计目录。
++
+[,bash]
+----
+mkdir /etc/kubernetes/audit
+----
+
+. 创建 policy 文件。
++
+--
+[,bash]
+----
+vi /etc/kubernetes/audit/audit-policy.yaml
+----
+
+[,yaml]
+----
+apiVersion: audit.k8s.io/v1 
+kind: Policy
+rules:
+- level: Metadata
+----
+--
+
+. 编辑 kube-apiserver.yaml 文件，添加以下内容。
++
+--
+[,bash]
+----
+vi /etc/kubernetes/manifests/kube-apiserver.yaml
+----
+
+[,yaml]
+----
+  spec:
+    containers:
+      - command:
+          - kube-apiserver
+          - --audit-policy-file=/etc/kubernetes/audit/audit-policy.yaml
+          - --audit-log-path=/etc/kubernetes/audit/audit.log
+          - --audit-log-maxbackup=10
+          - --audit-log-maxsize=100
+        volumeMounts:
+          - mountPath: /etc/kubernetes/audit
+            name: audit
+    volumes:
+      - hostPath:
+          path: /etc/kubernetes/audit
+          type: DirectoryOrCreate
+        name: audit
+----
+--
+
+=== 启用 KubeSphere 审计
+
+编辑 KubeSphere Core (ks-core) chart 包中的 values.yaml 文件。
+
+[,yaml]
+----
+auditing:
+  enable: true
+  auditLevel: Metadata
+  logOptions:
+    path: /etc/audit/audit.log
+
+apiserver: 
+  extraVolumeMounts:
+    - mountPath: /etc/audit
+      name: audit
+  extraVolumes:
+    - hostPath:
+        path: /etc/kubesphere/audit
+        type: DirectoryOrCreate
+      name: audit
+----
+
+== 查询审计日志
+
+. 以具有相关资源查看权限的用户登录{ks_product_left} Web 控制台。
+
+. 将光标悬停在页面右下角的image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18]图标，然后在菜单中选择**审计日志查询**。
+
+. 在弹出的对话框，设置搜索条件查询日志。
++
+--
+* 如果有多个集群，点击**集群**下拉列表可查询特定集群中的日志。
+
+* 点击搜索框，设置搜索条件，然后按 **Enter** 可查看符合特定条件的日志。您可以同时设置多个搜索条件。
+
+* 在查询结果页面可查看日志的时间分布图，点击柱状图，切换到该时间段的日志列表。点击image:/images/ks-qkcp/zh/icons/start-dark.svg[start-dark,18,18]/image:/images/ks-qkcp/zh/icons/stop-dark-white.svg[stop-dark-white,18,18]可开启/停止实时数据刷新，点击**刷新频率**的时间可选择数据的刷新频率。
+
+* 在查询结果列表右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]可定制列表中显示的信息。
+
+* 点击查询结果中的日志条目，查看日志的详细信息。
+--

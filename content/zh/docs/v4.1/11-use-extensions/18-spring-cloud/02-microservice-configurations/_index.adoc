@@ -1,0 +1,20 @@
+---
+title: "微服务配置"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 微服务配置"
+description: "介绍如何管理微服务配置。"
+weight: 02
+layout: "second"
+---
+
+
+
+本节介绍如何管理微服务配置。
+
+微服务配置中存储供微服务使用的键值数据，可用于分离微服务及其配置数据。
+
+// Note
+include::../../../../../_ks_components/admonitions/note.adoc[]
+
+本节仅介绍如何管理微服务配置。有关应用程序如何获取配置数据，请参阅 link:https://nacos.io[Nacos 官方文档]。
+
+include::../../../../../_ks_components/admonitions/admonEnd.adoc[]

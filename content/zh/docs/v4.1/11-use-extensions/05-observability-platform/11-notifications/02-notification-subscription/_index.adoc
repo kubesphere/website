@@ -1,0 +1,13 @@
+---
+title: "通知订阅"
+keywords: "Kubernetes, {ks_product}, 平台设置, 通知订阅"
+description: "介绍如何管理通知订阅。"
+weight: 02
+layout: "second"
+---
+
+本节介绍如何管理通知订阅。
+
+通过通知订阅，您可以在同一通知渠道下，配置多个不同的过滤条件以发送通知给相应的接收者。
+
+

@@ -1,0 +1,41 @@
+---
+title: "创建 Dashboard"
+keywords: "Kubernetes, {ks_product}, Grafana, 创建 Dashboard, 可观测"
+description: "介绍如何创建 Dashboard。"
+weight: 07
+---
+
+添加数据源后，创建 Dashboard， 以便将数据源中的数据可视化。
+
+Dashboard 由一个或多个 Panel（面板）组成，按行组织和排列。Panel 显示可视化内容并提供各种控制选项。
+
+本节简要介绍如何创建 Dashboard。有关更多信息，请参阅 link:https://grafana.com/docs/grafana/latest/dashboards/[Grafana dashboards]。
+
+== 操作步骤
+
+. 点击 Grafana 控制台左侧导航栏的 **Dashboards**。
+. 点击 **New > New Dashboard**。
+. 在空白 Dashboard 页面，点击 **+ Add visualization**。
+. 在弹出的对话框中，选择已添加的数据源，将自动打开 Panel 编辑页面。
++
+image:/images/ks-qkcp/zh/v4.1.2/grafana/edit-panel.png[edit-panel]
+
+.. 使用数据源的查询语言设置查询条件。
+
+.. 点击image:/images/ks-qkcp/zh/icons/refresh-light.png[refresh-light,18,18]查询数据。
+
+.. 点击右侧的图表类型（如 Time series），选择一个图表样式。数据将以该样式展示。
+
+.. 在 **Panel options** 区域，设置 Panel 的名称，描述等。
+
+.. 编辑完成后，点击 **Apply** 保存 Panel，点击 **Save** 保存 Dashboard。
++
+保存 Dashboard 时，可设置 Dashboard 的名称、描述和所在目录。
+
+. 在新建的 Dashboard 页面，点击上方的 **Add**，选择 **Visualization**，可继续添加 Panel。
+
+. 退出 Panel 编辑页面后，可拖拽 Panel 标题将其移动到任意位置；在 Panel 右下角拖动光标，可调整 Dashboard 中 Panel 的大小。
+
+. 点击 Dashboard 页面上方的保存按钮，再次保存 Dashboard。
++
+至此，一个含有多个 Panel 的 Dashboard 创建完成。

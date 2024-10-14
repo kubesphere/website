@@ -1,0 +1,138 @@
+---
+title: "添加边缘节点"
+keywords: "Kubernetes, {ks_product}, 集群管理, 节点, 添加边缘节点"
+description: "介绍如何添加边缘节点。"
+weight: 01
+---
+
+:ks_permission: **节点管理**
+:ks_navigation: **节点 > 边缘节点**
+
+本节介绍如何添加边缘节点。
+
+
+== 前提条件
+
+:relfileprefix: ../../../
+* {empty}
+include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeEdge** 扩展组件。
+
+* 待添加的边缘节点需要能够访问{ks_product_both}集群主节点的 **30000**、**30001**、**30002**、**30004** 端口。
+
+* 待添加的边缘节点已安装 Docker、containerd、CRI-O 或 Virtlet 作为容器运行时。KubeEdge 边缘节点默认使用 containerd 作为运行时。有关更多信息，请参阅 link:https://docs.kubeedge.io/zh/docs/advanced/cri/[KubeEdge 官方文档]。
+
+* 已获取待添加的边缘节点的 SSH 登录信息。
+
+
+== 配置边缘节点
+
+执行以下步骤在边缘节点上配置 link:https://kubeedge.io/zh/docs/advanced/edgemesh/[EdgeMesh]。
+
+. 执行以下命令编辑 **/etc/nsswitch.conf** 文件：
++
+--
+// Bash
+[,bash]
+----
+vi /etc/nsswitch.conf
+----
+--
+
+. 在 **/etc/nsswitch.conf** 文件中添加以下内容，然后保存文件：
++
+--
+// Bash
+[,bash]
+----
+hosts:          dns files mdns4_minimal [NOTFOUND=return]
+----
+--
+
+. 执行以下命令在边缘节点上启用 IP 转发：
++
+--
+// Bash
+[,bash]
+----
+sudo echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+----
+--
+
+. 执行以下命令验证配置结果：
++
+--
+// Bash
+[,bash]
+----
+sudo sysctl -p | grep ip_forward
+----
+
+如果显示以下信息，则表明配置成功：
+
+// Bash
+[,bash]
+----
+net.ipv4.ip_forward = 1
+----
+--
+
+
+== 添加边缘节点
+
+include::../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在页面右侧点击**添加**。
+
+. 在**添加边缘节点**对话框，设置边缘节点的参数。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|边缘节点的名称。系统会自动为边缘节点生成名称，您也可以手动设置边缘节点的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+
+// |内部 IP 地址
+// |边缘节点在{ks_product_both}集群内部的 IP 地址。边缘节点的内部 IP 地址不能与{ks_product_both}集群现有节点的内部 IP 地址相同。
+
+|添加默认污点
+|是否为边缘节点添加污点以阻止容器组调度到边缘节点上。
+|===
+--
+
+. 点击**验证**生成边缘节点配置命令。
+
+. 点击**复制**将边缘节点配置命令复制到剪贴板，然后进行以下修改。
++
+将边缘节点配置命令中的 10000,10001,10002,10004 端口修改为 cloudcore 服务暴露出来的端口 30000,30001,30002,30004。
++
+image:/images/ks-qkcp/zh/v4.1/kubeedge-port.png[ port,100%]
+
+
+. 登录边缘节点并执行已修改的命令。
++
+--
+// Note
+include::../../../../_ks_components/admonitions/note.adoc[]
+
+* 请确保边缘节点能够通过 **--cloudcore-ipport** 参数指定的 IP 地址访问{ks_product_both}集群主节点。
+
+* 请确保边缘节点能够通过 **--cloudcore-ipport**、**--quicport**、**--certport**、**--tunnelport** 参数指定的端口号分别访问{ks_product_both}集群主节点的 **30000**、**30001**、**30002**、**30004** 端口。
+
+* 取决于您的网络环境，您可能需要设置防火墙和流量转发规则。
+
+include::../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+. 刷新{ks_product_left} Web 控制台的**边缘节点**页面。如果添加成功，边缘节点将显示在边缘节点列表。

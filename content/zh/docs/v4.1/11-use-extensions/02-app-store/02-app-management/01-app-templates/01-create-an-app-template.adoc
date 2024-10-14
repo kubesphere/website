@@ -1,0 +1,62 @@
+---
+title: "创建应用模板"
+keywords: "Kubernetes, {ks_product}, 企业空间,应用模板, 创建应用模板"
+description: "介绍如何创建应用模板。"
+weight: 01
+---
+
+:ks_permission: **应用/应用版本/应用实例创建**
+:ks_navigation: **应用管理 > 应用模板**
+
+本节介绍如何创建应用模板。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+* 已准备 .tar.gz 或 .tgz 格式的 Helm Chart 压缩包，或应用的 yaml 文件。您可以link:https://kubesphere.io/files/application-templates/nginx-0.1.0.tgz[下载 Nginx Helm Chart] 用于测试。有关更多信息，请参阅 link:https://helm.sh/zh/docs/topics/charts/[Helm 官方文档]。
+
+
+== 操作步骤
+
+include::../../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-clickCreate.adoc[]
+
++
+
+. 在**创建应用**对话框，点击**上传 Helm Chart**，选择本地存储的 .tar.gz 或 .tgz 格式的 Helm Chart 压缩包。
++
+或者点击**创建 yaml 应用**，输入应用名称和版本号，使用 yaml 文件创建应用。
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+点击image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark,18,18]可从本地上传 yaml 文件。
+
+点击image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark,18,18]可将 yaml 文件下载到本地。
+|===
+--
+
+. 点击**确定**。
++
+--
+应用模板创建完成后将显示在应用模板列表中。
+--

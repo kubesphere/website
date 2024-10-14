@@ -1,0 +1,62 @@
+---
+title: "查看约束模板详情"
+description: "介绍如何查看约束模板详情。"
+weight: 03
+---
+
+:ks_permission: ** cluster-admin **
+:ks_navigation: ** Gatekeeper > 约束模板**
+
+
+本节介绍如何查看约束模板详情。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+
+* {empty}
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
+
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在约束模板列表中点击一个约束模板的名称打开其详情页面。
+
+. 在约束模板详情页面左侧的**属性**区域，查看约束模板的基本信息。
++
+--
+
+[%header,cols="2,5"]
+|===
+|参数 |描述
+
+|集群
+|约束模板所属的集群。
+
+|创建时间
+|约束模板的创建时间。
+
+|CRD
+|约束模板对应的 CRD 名称。
+|===
+--
+
+. 在约束模板详情页面右侧的**目标**页签，查看约束模板的约束对象。
+
+. 在约束模板详情页面右侧点击**状态**页签，查看约束模板的标签和注解。
+
+. 在约束模板详情页面右侧点击**约束**页签，查看使用约束模板创建的约束条件。

@@ -1,0 +1,7 @@
+---
+title: "通知历史"
+keywords: "Kubernetes, {ks_product}, 平台设置, 通知历史"
+description: "介绍如何查看通知历史记录。"
+weight: 04
+layout: "second"
+---

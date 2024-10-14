@@ -1,0 +1,106 @@
+---
+title: "查看应用模板详情"
+keywords: "Kubernetes, {ks_product}, 企业空间,应用模板, 查看应用模板详情"
+description: "介绍如何查看应用模板详情。"
+weight: 03
+---
+
+
+:ks_permission: **应用/应用版本/应用实例查看**
+:ks_navigation: **应用管理 > 应用模板**
+
+
+本节介绍如何查看应用模板详情。
+
+
+== 前提条件
+
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-viewAttributes.adoc[]
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|应用 ID
+|应用名称。
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-para-status_v4.adoc[]
+
+|分类
+|应用模板所属的分类，需手动设置。有关更多信息，请参阅link:../04-edit-app-template-information/[编辑应用模板信息]。
+
+|类型
+|应用模板的类型，如 **helm 应用**或 **yaml 应用**。
+
+|企业空间
+|应用模板所属的企业空间。
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-para-creationTime.adoc[]
+|===
+--
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-viewVersions.adoc[]
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|状态
+|应用版本当前的状态。
+
+* **未提交**：应用版本已上传到企业空间，但未提交给{ks_product_both}平台的应用商店管理员审核。
+
+* **已提交**：应用版本已提交给{ks_product_both}平台的应用商店管理员审核。
+
+* **已发布**：应用版本已获得{ks_product_both}平台的应用商店管理员的批准，可以上架到应用商店。
+
+* **已拒绝**：应用版本未获得{ks_product_both}平台的应用商店管理员的批准，审核不通过。
+
+* **未发布**：应用版本发布后被应用商店管理员取消发布，或应用版本上架到{ks_product_both}平台的应用商店后被应用商店管理员下架。
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-para-version.adoc[]
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-para-developer.adoc[]
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-para-versionUpdateTime.adoc[]
+|===
+--
+
++
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-para-viewAppInformation.adoc[]
+
++
+
+// include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-para-viewAppReviewRecords.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-viewAppInstances.adoc[]

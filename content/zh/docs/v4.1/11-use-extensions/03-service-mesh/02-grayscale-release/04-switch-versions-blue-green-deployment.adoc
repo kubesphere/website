@@ -1,0 +1,38 @@
+---
+title: "切换上线版本（蓝绿部署）"
+keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 切换上线版本（蓝绿部署）"
+description: "介绍如何为蓝绿部署任务切换上线版本。"
+weight: 04
+---
+
+:ks_permission: ** Service Mesh 管理**
+:ks_navigation: **服务网格 > 灰度发布**
+
+本节介绍如何为蓝绿部署任务切换上线版本。
+
+根据业务需要，您可以一键设置蓝绿部署任务中的新版本或旧版本立即接管全部业务流量。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+. 在**灰度发布**页面，点击**发布任务**，然后点击一个蓝绿部署任务的名称打开其详情页面。
+
+. 在**版本**区域，在一个版本右上角点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**接管**可设置该版本立即接管全部业务流量。
