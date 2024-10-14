@@ -1,0 +1,21 @@
+---
+title: "集群网关"
+keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 网关设置"
+description: "介绍如何管理集群网关。"
+weight: 03
+layout: "second"
+---
+
+
+
+本节介绍如何管理集群网关。
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+若已启用企业空间网关或项目网关，可在集群的网关设置页面查看、编辑和禁用企业空间网关或项目网关。
+|===
+

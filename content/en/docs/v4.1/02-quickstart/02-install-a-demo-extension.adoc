@@ -1,0 +1,50 @@
+---
+title: "Install Demo Extensions"
+linkTitle: "Install Demo Extensions"
+keywords: "Kubernetes,KubeSphere, Quick Start, Installation, Extensions, Example, DevOps"
+description: "Show how to install extensions with DevOps as an example."
+weight: 02
+---
+
+KubeSphere extensions run on KubeSphere Core to extend and enhance the capabilities of KubeSphere, further meeting different business requirements of enterprises.
+
+This section demonstrates how to install extensions in the {ks_product-en} web console, taking DevOps as an example. After the DevOps installation is complete, you can create DevOps projects in a workspace. 
+// For more information on DevOps projects, please refer to link:../../11-use-extensions/01-devops/[DevOps].
+
+
+== Prerequisites
+
+You should have the **platform-admin** role on {ks_product-en} platform. For more information, please refer to link:../../05-users-and-roles/01-users/[Users] and link:../../05-users-and-roles/02-platform-roles/[Platform Roles].
+
+
+== Installation Steps
+
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+. Click **Extensions Center** to view the list of extensions.
+. Click DevOps to enter its details page.
+. Click **Manage > Install** to enter the installation process.
+. On the **Version Selection** tab of the installation dialog, select the version number of DevOps and install all required dependencies (if any). Then click **Next**.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+During the installation, it detects whether the extension has dependencies. Dependencies are categorized as required and optional.
+
+If a required dependency is **Not Ready**, you need to install the required version first to ensure the normal use of the extension. Optional dependencies do not affect the installation of the extension.
+|===
+--
+
+. On the **Extensions Installation** tab, make optional modifications to the configuration of DevOps (if needed), and then click **Start Installation**.
+
++
+image:/images/ks-qkcp/en/v4.0/install-extensions.png[,100%]
+
+. On the **Cluster Selection** tab, select clusters by name or label. Multiple clusters can be selected.
+
+. On the **Diff Config** tab, edit the selected cluster's YAML file, or leave it unchanged to use the default configuration. Then click **OK** to start configuring the cluster agent.
+
+Once the installation is complete, the extension is enabled by default. You can configure, upgrade, disable, or uninstall extensions in the extensions center.

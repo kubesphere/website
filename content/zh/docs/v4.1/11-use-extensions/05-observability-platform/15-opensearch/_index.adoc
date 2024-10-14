@@ -1,0 +1,24 @@
+---
+title: "OpenSearch 分布式检索与分析引擎"
+keywords: "Kubernetes, {ks_product}, opensearch, 日志, 可观测"
+description: "介绍“OpenSearch 分布式检索与分析引擎”扩展组件。"
+weight: 15
+layout: "second"
+---
+
+“OpenSearch 分布式检索与分析引擎”扩展组件是 KubeSphere 内置的日志存储扩展组件，用于存储日志、审计、事件、通知历史等可观测数据。
+
+除支持部署 OpenSearch 外，该扩展组件还支持部署 OpenSearch Dashboard 和 OpenSearch Curator。
+
+* **OpenSearch Dashboard** 用于可视化 OpenSearch 数据以及管理 OpenSearch 集群的用户界面。部署后默认禁用，若要启用，将 `opensearch-dashboards.enabled` 字段设置为 true。
+
+* **OpenSearch Curator** 是一个定时任务，定期清理超过配置日期（默认为 7 天）的 Kubernetes 事件日志、Kubernetes 审计日志、Kubernetes 应用程序日志以及通知历史日志。部署后默认启用，若要禁用，将 `opensearch-curator.enabled` 字段设置为 false。
+
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 数据流水线”和“OpenSearch 分布式检索与分析引擎”扩展组件的详情页说明。
+|===

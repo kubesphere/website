@@ -1,0 +1,80 @@
+---
+title: "创建事件/审计的告警规则"
+description: "介绍如何为事件和审计创建告警规则。"
+weight: 01
+---
+
+本节介绍如何为 Kubernetes 原生事件和 Kubernetes/KubeSphere 审计事件定义告警规则。
+
+
+== 前提条件
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 事件告警**扩展组件。
+
+
+== 操作步骤
+
+.  在任意集群节点上，创建一个 yaml 文件，为该集群定义事件和审计的告警规则。
++
+--
+点击link:../02-example-rules-for-auditing[此处]查看完整的告警规则示例。请参阅link:../02-example-rules-for-auditing/#_告警规则参数描述[参数描述]设置告警规则的参数。
+
+简单示例如下：
+
+[,yaml]
+----
+apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: example-auditing-rule
+  namespace: kubesphere-logging-system
+spec:
+  type: auditing
+  rules:
+    - desc: all action not need to be audit
+      expr:
+        kind: list
+        list:
+          - get
+          - list
+          - watch
+      name: ignore-action
+    - desc: all operator need to be audit
+      expr:
+        kind: list
+        list:
+          - create
+          - delete
+          - update
+          - patch
+      name: action
+    - desc: pod
+      expr:
+        kind: macro
+        macro: ObjectRef.Resource="pods"
+      name: pod
+    - desc: service
+      expr:
+        kind: macro
+        macro: ObjectRef.Resource="services"
+      name: service
+    - desc: the alias of the user related to audit event
+      expr:
+        alias: User.username
+        kind: alias
+      name: user
+----
+--
+
+. 执行以下命令，创建 CRD（定制资源定义）。
++
+[,bash]
+----
+kubectl apply -f xxx.yaml  # 注意替换 yaml 文件的名称
+----
+
+. 运行成功后，在**集群管理 > 定制资源定义**页面搜索 **ClusterRuleGroup**。
+
+. 点击 **ClusterRuleGroup** 进入详情页，在右侧页面查看、编辑或删除告警规则。

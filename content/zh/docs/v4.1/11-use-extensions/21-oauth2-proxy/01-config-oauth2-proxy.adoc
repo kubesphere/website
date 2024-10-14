@@ -1,0 +1,259 @@
+---
+title: "配置并访问服务"
+keywords: "Kubernetes, {ks_product}, OAuth2-Proxy, alertmanager"
+description: "介绍如何配置 OAuth2-Proxy 扩展组件以访问服务。"
+weight: 01
+---
+
+OAuth2-Proxy 支持多种 link:https://oauth2-proxy.github.io/oauth2-proxy/configuration/providers/[OAuth Providers]。本节介绍如何配置该扩展组件将 KubeSphere 作为 OAuth Provider，以便通过 KubeSphere 认证登录后，直接访问各种服务。
+
+// 在 Ingress 场景下借助 Oauth2-Proxy 扩展组件，为应用提供基于 KubeSphere 用户的身份认证
+// 在 NodePort 场景下借助 Oauth2-Proxy 扩展组件及自定义路由，为应用提供基于 KubeSphere 用户的身份认证
+
+== 配置 OAuth2-Proxy
+
+OAuth2-Proxy 扩展组件提供 NodePort 和 Ingress 两种方式，为应用提供基于 KubeSphere 用户的统一身份认证。不同方式下，配置 OAuth2-Proxy 的方法不同。
+
+=== NodePort 方式
+
+通过将扩展组件中的 OpenResty NodePort 对外暴露，为代理应用提供统一访问入口。
+
+在扩展组件配置中，修改 `global.host`，并确认 `openresty.service.nodePort`，完成扩展组件的部署。
+
+[,yaml]
+----
+global:
+  # OAuth2-Proxy service external access address
+  # For example, using NodePort, the address is http://172.31.19.4:32080,
+  # using Ingress, the host is http://172.31.19.4.nip.io:80
+  host: "http://<oauth2-proxy-service-external-access-address>"
+
+  # Kubesphere portal address. For example, http://172.31.19.4:30880
+  # No need to set this explicitly, KubeSphere's portal address will be auto-injected.
+  portal.url: "http://<kubesphere-console-address>"
+
+openresty:
+  enabled: true
+
+  service:
+    type: NodePort
+    portNumber: 80
+    nodePort: 32080
+    annotations: {}
+
+oauth2-proxy:
+  extraArgs:
+    provider: oidc
+    provider-display-name: "kubesphere"
+    # Issuer address
+    # The KubeSphere portal URL is filled by default, but if you use another OAuth Provider, change it
+    oidc-issuer-url: "{{ .Values.global.portal.url }}"
+----
+
+=== Ingress 方式
+
+OAuth2-Proxy 支持通过 Ingress 方式为应用配置统一认证，在这种场景下，Ingress 将替代 OpenResty 提供统一的服务入口和反向代理功能。
+
+. 在扩展组件配置中，将 `openresty.enabled` 改为 false，`ingress.enabled` 改为 true，并修改 `global.host`，即可完成扩展组件的部署。
++
+--
+[,yaml]
+----
+global:
+  # OAuth2-Proxy service external access address
+  # For example, using NodePort, the address is http://172.31.19.4:32080,
+  # using Ingress, the host is http://172.31.19.4.nip.io:80
+  host: "http://<oauth2-proxy-service-external-access-address>"
+
+  # Kubesphere portal address. For example, http://172.31.19.4:30880
+  # No need to set this explicitly, KubeSphere's portal address will be auto-injected.
+  portal.url: "http://<kubesphere-console-address>"
+
+openresty:
+  enabled: false
+
+oauth2-proxy:
+  extraArgs:
+    provider: oidc
+    provider-display-name: "kubesphere"
+    # Issuer address
+    # The KubeSphere portal URL is filled by default, but if you use another OAuth Provider, change it
+    oidc-issuer-url: "{{ .Values.global.portal.url }}"
+
+  ingress:
+    enabled: true
+    className: nginx
+----
+--
+
+. 在应用的 Ingress 字段中添加相关注解，请参考 link:https://kubernetes.github.io/ingress-nginx/examples/auth/oauth-external-auth/[ingress-nginx/External OAUTH Authentication] 示例。
++
+[,yaml]
+----
+...
+metadata:
+  name: application
+  annotations:
+    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+...
+----
+
+
+=== 注意事项
+
+如果您使用 KubeSphere 4.x 作为 OAuth Provider，请确保 KubeSphere Console 的外部访问地址与 configmap `kubesphere-config` 中的 `issuer.url` 一致。如不一致，需按照以下步骤进行更新。
+
+[,yaml]
+----
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubesphere-config
+  namespace: kubesphere-system
+data:
+  kubesphere.yaml: |
+    authentication:
+      issuer:
+        url: "http://172.31.19.4:30880"     # 确认 issuer 地址
+----
+
+. 复制 ks-core 的 values.yaml 文件，新建为 `custom-kscore-values.yaml`。
++
+[,bash]
+----
+cp ks-core/values.yaml custom-kscore-values.yaml
+----
+
+. 修改 `portal.hostname`，配置为实际地址。
++
+[,yaml]
+----
+portal:
+  ## The IP address or hostname to access ks-console service.
+  ## DO NOT use IP address if ingress is enabled.
+  hostname: "172.31.19.4"
+  http:
+    port: 30880
+----
+
+. 更新 ks-core。
++
+--
+[,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core ${kscore_chart_path}  -f ./custom-kscore-values.yaml  --debug --wait
+----
+--
+
+== 示例 1：通过 NodePort 访问 AlertManager 服务
+
+. 在扩展组件配置中，修改 `global.host`，并确认 `openresty.service.nodePort`。
+
+. 然后修改 `openresty.configs` 配置如下。
++
+[,yaml]
+----
+openresty:
+  configs:
+    - name: alertmanager
+      description: KubeSphere 监控栈内部 Alertmanager 端点
+      subPath: /alertmanager/
+      endpoint: http://whizard-notification-alertmanager.kubesphere-monitoring-system.svc:9093/
+----
+
+. 配置完成后，访问 OAuth2-Proxy 的外部地址，如 http://172.31.19.4:32080，通过 KubeSphere 认证登录后，即可在首页看到 Alertmanager 服务的入口，点击即可访问。
+
+== 示例 2：通过 Ingress 访问 AlertManager 服务
+
+. 在扩展组件配置中，将 `openresty.enabled` 改为 false，`ingress.enabled` 改为 true，并修改 `global.host`。
+
+. 安装 ingress-nginx controller。
++
+[,bash]
+----
+helm upgrade --install ingress-nginx ingress-nginx \
+  --repo https://kubernetes.github.io/ingress-nginx \
+  --namespace ingress-nginx --create-namespace
+----
+
+. 修改名为 ingress-nginx-controller 的 deployment。设置 ingress 对外访问方式，当前link:https://kubernetes.github.io/ingress-nginx/deploy/baremetal/#via-the-host-network[以hostnetwork 方式暴露]。
++
+[,yaml]
+----
+spec:
+    nodeName: <node-name>  # 替换为实际节点名称
+    hostNetwork: true
+----
+
+. 创建 alertmanager 自定义资源、服务和 ingress。
++
+--
+[,bash]
+----
+vim alertmanager.yaml
+----
+
+[,yaml]
+----
+apiVersion: monitoring.coreos.com/v1
+kind: Alertmanager
+metadata:
+  name: main
+  namespace: extension-oauth2-proxy
+spec:
+  externalUrl: http://172.31.19.4.nip.io/alertmanager # 替换为实际地址
+  portName: web
+  replicas: 1
+  resources:
+    requests:
+      memory: 400Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alertmanager-main
+  namespace: extension-oauth2-proxy
+spec:
+  type: ClusterIP
+  ports:
+  - name: web
+    port: 9093
+    protocol: TCP
+    targetPort: web
+  selector:
+    alertmanager: main
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/auth-signin: https://$host/oauth2/start?rd=$escaped_request_uri
+    nginx.ingress.kubernetes.io/auth-url: https://$host/oauth2/auth
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: alertmanager-ingress
+  namespace: extension-oauth2-proxy
+spec:
+  ingressClassName: nginx 
+  rules:
+  - host: 172.31.19.4.nip.io  # 替换为实际地址
+    http:
+      paths:
+      - backend:      # 应用配置部分
+          service:
+            name: alertmanager-main
+            port:
+              number: 9093
+        path: /alertmanager(/|$)(.*)
+        pathType: ImplementationSpecific
+----
+--
+
+. 部署 Alertmanager 服务。
++
+[,bash]
+----
+kubectl apply -f alertmanager.yaml
+----
+
+. 在浏览器中访问 `<node-ip>.nip.io/alertmanager`，如 172.31.19.4.nip.io/alertmanager，即可访问 Alertmanager 的用户界面。

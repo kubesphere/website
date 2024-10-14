@@ -1,0 +1,13 @@
+---
+title: "配置字典"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 配置, 配置字典"
+description: "介绍如何管理联邦项目中的配置字典。"
+weight: 02
+layout: "second"
+---
+
+
+
+include::../../../../../_custom/clusterManagement/configmaps/configmaps-desc-configmaps.adoc[]
+
+配置字典仅用于存储非保密数据。如需存储保密数据，请使用link:../01-secrets/[保密字典]。

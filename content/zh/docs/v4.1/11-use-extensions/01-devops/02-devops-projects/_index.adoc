@@ -1,0 +1,13 @@
+---
+title: "管理 DevOps 项目"
+keywords: "Kubernetes, {ks_product}, 企业空间, DevOps 项目"
+description: "介绍如何查看 DevOps 项目信息以及管理 DevOps 项目。"
+weight: 02
+layout: "second"
+---
+
+
+
+本节介绍如何管理 DevOps 项目。
+
+DevOps 项目为用户提供了持续集成和持续部署（CI/CD）功能。您可以在 DevOps 项目中将{ks_product_both}与第三方代码仓库对接，然后通过流水线或持续部署使源代码变化自动更新到目标环境中。

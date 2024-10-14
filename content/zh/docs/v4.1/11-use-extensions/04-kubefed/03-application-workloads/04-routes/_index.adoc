@@ -1,0 +1,13 @@
+---
+title: "应用路由"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载, 应用路由"
+description: "介绍如何管理联邦项目中的应用路由。"
+weight: 04
+layout: "second"
+---
+
+
+
+include::../../../../../_custom/clusterManagement/routes/routes-desc-routes.adoc[]
+
+有关集群网关和项目网关的更多信息，请参阅 link:../../../12-gateway/[KubeSphere 网关]。

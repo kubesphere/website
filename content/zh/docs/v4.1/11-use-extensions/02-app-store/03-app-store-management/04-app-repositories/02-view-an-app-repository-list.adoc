@@ -1,0 +1,69 @@
+---
+title: "查看应用仓库列表"
+keywords: "Kubernetes, {ks_product}, 企业空间, 应用仓库, 查看应用仓库列表"
+description: "介绍如何查看应用仓库列表。"
+weight: 02
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **应用仓库**
+
+
+本节介绍如何查看应用仓库列表。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
++
+====
+* 应用仓库列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|应用仓库的名称和描述信息。
+
+|状态
+|应用仓库当前的状态。
+
+* **成功**：应用仓库已添加并同步成功。
+
+* **同步中**：应用仓库正在与 Helm Chart 仓库同步中。
+
+* **不同步**：同步间隔时间设置为 0 时，应用仓库不与 Helm Chart 仓库同步。
+
+* **失败**：应用仓库与 Helm Chart 仓库同步失败。
+
+|URL
+|Helm Chart 仓库的 URL。
+
+|===
+--
+
+* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的应用仓库。
+
+include::../../../../../../_ks_components/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components/oper-customizeColumns.adoc[]
+====

@@ -1,0 +1,71 @@
+---
+title: "从应用商店部署应用"
+description: "介绍如何从应用商店部署应用。"
+weight: 08
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **部署管理**
+
+
+本节介绍如何在应用商店管理页面从应用商店部署应用。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-clickCreate.adoc[]
+
+
++
+
+. 在**创建应用**对话框点击**从应用商店**。
+
+. 在应用商店中，点击需要使用的应用模板，然后在右上角点击**部署**。
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+如果弹出**部署须知**对话框，请仔细阅读相关内容，然后点击**同意**。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+. 在弹出的**位置**对话框，选择应用的安装位置，然后点击**确定**。
+
++
+
+include::../../../../../_custom/projectManagement/apps/apps-oper-installApp.adoc[]
+
++
+--
+// Note
+include::../../../../../../_ks_components/admonitions/note.adoc[]
+
+应用商店中的应用由具有相关权限的企业空间成员发布或由第三方提供。有关应用功能参数的更多信息，请联系相关企业空间成员或应用的提供方。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+应用创建完成后将显示在应用列表中。
+--

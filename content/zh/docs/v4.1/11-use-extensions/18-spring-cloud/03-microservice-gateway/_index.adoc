@@ -1,0 +1,13 @@
+---
+title: "微服务网关"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 微服务网关"
+description: "介绍如何管理微服务网关。"
+weight: 03
+layout: "second"
+---
+
+
+
+本节介绍如何管理微服务网关。
+
+微服务网关是微服务的反向代理。来自客户端的请求先发送给微服务网关，再由微服务网关根据微服务路由转发给微服务。
