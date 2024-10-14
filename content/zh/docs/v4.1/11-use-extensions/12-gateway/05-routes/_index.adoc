@@ -1,0 +1,11 @@
+---
+title: "应用路由"
+keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 应用路由"
+description: "介绍如何管理应用路由。"
+weight: 05
+layout: "second"
+---
+
+
+
+include::../../../../_custom/clusterManagement/routes/routes-desc-routes.adoc[]

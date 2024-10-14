@@ -1,0 +1,11 @@
+---
+title: "配置"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 配置"
+description: "介绍如何管理保密字典、配置字典和服务帐户。"
+weight: 05
+layout: "second"
+---
+
+
+
+include::../../../../_custom/multi-clusterProjectManagement/configmaps/config-desc.adoc[]

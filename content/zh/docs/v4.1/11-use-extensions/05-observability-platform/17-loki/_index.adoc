@@ -1,0 +1,22 @@
+---
+title: "Grafana Loki for WhizardTelemetry"
+keywords: "Kubernetes, {ks_product}, Grafana, loki, 对象存储, 监控, dashboard, 可观测"
+description: "介绍如何使用 Grafana Loki for WhizardTelemetry 扩展组件。"
+weight: 17
+layout: "second"
+---
+
+
+Loki 是一个受 Prometheus 启发的水平可扩展、高可用、多租户日志聚合系统。通过采集、索引和存储日志数据，使用户能够轻松地搜索、查询和可视化日志信息。Loki 支持将日志存到对象存储，并从中查询日志，是低成本存储海量日志的较好选择。
+
+// Loki 不索引日志的内容，而是为每个日志流建立一组标签。这些标签由键值对组成，对于高效组织、过滤和搜索日志数据至关重要。
+
+Grafana Loki for WhizardTelemetry 扩展组件支持在 Grafana 控制台查看存储到 Loki 的{ks_product_both}的日志、审计、事件及通知历史数据。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+Grafana Loki for WhizardTelemetry 扩展组件只需安装到一个集群即可。
+|===

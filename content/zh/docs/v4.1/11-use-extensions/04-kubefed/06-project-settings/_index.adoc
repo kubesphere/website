@@ -1,0 +1,8 @@
+---
+title: "项目设置"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 项目设置"
+description: "介绍如何管理项目设置。"
+weight: 06
+layout: "second"
+---
+

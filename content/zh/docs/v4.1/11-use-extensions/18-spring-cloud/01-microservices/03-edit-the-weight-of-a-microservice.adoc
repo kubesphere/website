@@ -1,0 +1,45 @@
+---
+title: "编辑微服务实例权重"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 编辑微服务实例权重"
+description: "介绍编辑微服务实例权重。"
+weight: 03
+---
+
+
+:ks_permission: ** Spring Cloud 微服务管理**
+:ks_navigation:  **Spring Cloud > 微服务**
+
+
+本节介绍如何编辑微服务实例权重。
+
+微服务实例的权重用于决定微服务实例的流量分配，发送给微服务的流量将根据微服务实例的权重分配给微服务实例。
+
+
+== 前提条件
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+:relfileprefix: ../../../../
+* {empty}
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+
+== 操作步骤
+
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom/projectManagement/microservices/microservices-oper-openInstanceList.adoc[]
+
++
+
+. 在需要操作的微服务实例右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑权重**。
+
+. 在**编辑权重**对话框，设置微服务实例的权重，然后点击**确定**。

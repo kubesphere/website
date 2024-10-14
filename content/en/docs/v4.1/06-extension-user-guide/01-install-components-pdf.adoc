@@ -18,7 +18,7 @@ You should have the **platform-admin** role on {ks_product-en} platform. For mor
 
 . Click **Extensions Center** to view the list of extensions.
 
-. Click the name of an uninstalled extension to access the installation page.
+. Click the name of an uninstalled extension, and then click **Manage > Install** to access the installation page.
 
 . On the **Version Selection** tab of the installation dialog, select the version of the extension and install all required dependencies (if any). Click **Next**.
 +

@@ -1,0 +1,11 @@
+---
+title: "应用负载"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载"
+description: "介绍如何管理联邦项目中的应用负载。"
+weight: 03
+layout: "second"
+---
+
+
+
+本节介绍如何管理联邦项目中的应用、服务、工作负载和应用路由。

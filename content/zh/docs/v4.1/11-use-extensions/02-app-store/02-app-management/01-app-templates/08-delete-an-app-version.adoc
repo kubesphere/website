@@ -1,0 +1,50 @@
+---
+title: "删除应用版本"
+keywords: "Kubernetes, {ks_product}, 企业空间, 应用模板, 删除应用版本"
+description: "介绍如何在应用模板中删除应用版本。"
+weight: 08
+---
+
+:ks_permission: **应用/应用版本/应用实例删除**
+:ks_navigation: **应用管理 > 应用模板**
+
+
+本节介绍如何在应用模板中删除应用版本。
+
+// Warning
+include::../../../../../../_ks_components/admonitions/warning.adoc[]
+
+应用版本删除后无法恢复，请谨慎执行此操作。
+
+include::../../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+* 如果需要删除的应用版本已上架到应用商店，您需要联系应用商店管理员将应用版本下架。
+
+
+
+== 操作步骤
+
+include::../../../../../_custom/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+. 在应用模板详情页面右侧的**版本**页签，点击需要删除的应用版本，在展开的区域中点击**删除**，然后在弹出的对话框点击**确定**。

@@ -1,0 +1,7 @@
+---
+title: "资源查询"
+keywords: "Kubernetes, {ks_product}, Whizard 可观测中心, 查询资源"
+description: "介绍如何跨集群查询资源信息。"
+weight: 07
+layout: "second"
+---

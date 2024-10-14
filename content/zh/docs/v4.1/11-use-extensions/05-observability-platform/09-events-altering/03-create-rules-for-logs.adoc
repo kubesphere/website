@@ -1,0 +1,105 @@
+---
+title: "创建日志告警规则"
+description: "介绍如何为 Kubernetes 日志定义告警规则。"
+weight: 03
+---
+
+本节介绍如何为 Kubernetes 日志定义告警规则。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+WhizardTelemetry 事件告警默认接收 Kubernetes 集群的日志。如果想要接收其他日志，需要修改 WhizardTelemetry 数据流水线的配置，或新建保密字典进行配置，请参阅 link:https://vector.dev/docs/reference/configuration/[Vector 官方文档]进行配置。
+|===
+
+== 前提条件
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 事件告警**扩展组件。
+
+* 已在 WhizardTelemetry 事件告警的扩展组件配置中，启用日志告警，即设置 `loggingAlerting.enabled` 为 true。
+
+
+== 操作步骤
+
+. 在任意集群节点上，创建一个 yaml 文件，为该集群定义日志的告警规则。有关参数配置的更多信息，请参阅link:../02-example-rules-for-auditing/#_告警规则参数描述[参数描述]。
++
+====
+
+* 基于关键字的告警
++
+--
+例如，下面的配置表示，在测试日志中包含 [ERROR] 并且 pod 名称包含 pod_name 时触发告警。
+
+[,yaml]
+----
+apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: logging-rules
+spec:
+  type: logs
+  rules:
+    - name: log-test
+      expr:
+        kind: rule
+        condition: log contains "[ERROR]" and kubernetes.pod_name contains "pod_name"
+      desc: 'test logging'
+      enable: true
+      alerts:
+        severity: warning
+----
+--
+
+
+* 滑动窗口告警
++
+--
+和基于关键字告警的配置基本相同，唯一不同的是需要增加 slidingWindow 的配置。 
+
+例如，下面的配置表示，一个 20s 的窗口，每 10s 触发一次，当窗口中的日志存在 [INFO] 并且 cluster 中包含 gcp-prod-cluster 并且数量大于等于 20 条时触发告警。
+
+[,yaml]
+----
+apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: logging-rules
+spec:
+  type: logs
+  rules:
+    - name: TestLoggingRuleWindow-02
+      expr:
+        kind: rule
+        condition: log contains "[INFO]" and cluster contains "gcp-prod-cluster"
+      desc: stream test 2
+      enable: true
+      alerts:
+        severity: info
+        annotations:
+          summary: for test
+          summaryCn: 测试TestLoggingRuleWindow-02
+        message:  告警测试TestLoggingRuleWindow-02
+      slidingWindow:
+        windowSize: 20s
+        slidingInterval: 10s
+        count: 20
+----
+--
+
+====
+
+. 执行以下命令，创建 CRD（定制资源定义）。
++
+[,bash]
+----
+kubectl apply -f xxx.yaml  # 注意替换 yaml 文件的名称
+----
+
+. 运行成功后，在**集群管理 > 定制资源定义**页面搜索 **ClusterRuleGroup**。
+
+. 点击 **ClusterRuleGroup** 进入详情页，在右侧页面查看、编辑或删除告警规则。
+

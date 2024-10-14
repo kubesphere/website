@@ -1,0 +1,45 @@
+---
+title: "下架应用模板"
+keywords: "Kubernetes, {ks_product}, 应用商店管理, 应用, 下架应用模板"
+description: "介绍如何下架应用模板。"
+weight: 10
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **应用**
+
+
+
+本节介绍如何下架应用模板。
+
+应用模板下架后，应用模板及其中所有的应用版本将被从应用商店移除，同时应用商店管理员和企业空间成员可以删除整个应用模板或其中的某一个应用版本。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../../
+* {empty}
+include::../../../../../_custom/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== 操作步骤
+
+include::../../../../../_custom/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+. 在应用模板详情页面左上角点击**下架**，然后在弹出的对话框中点击**确定**。

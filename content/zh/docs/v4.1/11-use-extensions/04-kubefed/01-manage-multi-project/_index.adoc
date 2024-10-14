@@ -1,0 +1,11 @@
+---
+title: "管理联邦项目"
+keywords: "Kuberentes, {ks_product}, 企业空间管理, 联邦项目"
+description: "介绍如何查看联邦项目信息以及管理联邦项目。"
+weight: 01.5
+layout: "second"
+---
+
+
+
+本节介绍如何管理联邦项目。

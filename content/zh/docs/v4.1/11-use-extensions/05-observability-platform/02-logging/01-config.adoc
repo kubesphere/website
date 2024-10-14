@@ -1,0 +1,76 @@
+---
+title: "配置日志管理"
+keywords: "Kubernetes, {ks_product}, 日志"
+description: "介绍如何配置“WhizardTelemetry 日志”扩展组件。"
+weight: 01
+---
+
+WhizardTelemetry 日志支持通过配置扩展组件实现收集指定日志、按项目创建日志索引等功能。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+更多配置信息，请参阅扩展中心 “WhizardTelemetry 日志”扩展组件的详情页说明。
+|===
+
+== 收集指定日志
+
+WhizardTelemetry 日志支持设置过滤条件，以收集包含或排除指定 namespace 的日志，可减少日志数量。
+
+在 WhizardTelemetry 日志的扩展组件配置中，编辑如下参数：
+
+[,yaml]
+----
+vector-logging:
+  filter:
+    extraLabelSelector: "app.kubernetes.io/name!=kube-events-exporter"
+    extraNamespaceLabelSelector: ""
+    # When includeNamespaces and excludeNamespaces are set at the same time, only excludeNamespaces will take effect.
+    includeNamespaces: []
+    excludeNamespaces: []
+----
+
+* extraLabelSelector：只收集带此标签的 pod 的日志。
+* extraNamespaceLabelSelector：只收集带此标签的 namespace 下的 pod 日志。
+* includeNamespaces：只收集指定 namespace 下的 pod 日志。
+* excludeNamespaces：不收集指定 namespace 下的 pod 日志。
+
+== 按照 namespace 创建日志索引
+
+WhizardTelemetry 日志支持为每个项目（namespace）创建一个索引，既可确定某个 namespace 的日志占用空间，方便整改业务，又便于进行日志分析。
+
+=== 前提条件
+
+版本要求：WhizardTelemetry 日志 >= 1.2.0，WhizardTelemetry 平台服务 >= 1.1.0。
+
+=== 操作步骤
+
+. 修改 WhizardTelemetry 日志扩展组件配置。无需修改 prefix 中的参数。
++
+[,yaml]
+----
+vector-logging:
+  sinks:
+    opensearch:
+      index:
+        prefix: "{{ .cluster }}-{{ .kubernetes.namespace_name }}-logs"
+        timestring: "%Y.%m.%d"
+----
+
+. 修改 WhizardTelemetry 平台服务扩展组件配置。无需修改 indexPrefix 中的参数。
++
+[,yaml]
+----
+whizard-telemetry:
+  config:
+    logging:
+      enable: true
+      servers:
+        - elasticsearch:
+            endpoints:
+              - https://opensearch-cluster-data.kubesphere-logging-system:9200
+            indexPrefix: "{{ .cluster }}-{{ .kubernetes.namespace_name }}-logs"
+            timestring: "%Y.%m.%d"
+----

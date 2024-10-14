@@ -1,0 +1,72 @@
+---
+title: "创建约束"
+description: "介绍如何创建约束。"
+weight: 01
+---
+
+:ks_permission: ** cluster-admin **
+:ks_navigation: ** Gatekeeper > 约束**
+
+
+本节介绍如何创建约束。
+
+
+== 前提条件
+
+:relfileprefix: ../../../../
+
+* {empty}
+include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+:relfileprefix: ./
+
+* {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
+
+* 已创建一个约束模板。
+
+
+
+== 操作步骤
+
+include::../../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components/oper-clickCreate.adoc[]
+
++
+
+. 在**创建约束条件**对话框，设置以下参数，然后点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|约束条件名称
+|约束条件的名称。
+
+|约束条件类型
+|约束条件使用的约束模板。
+
+|enforcementAction
+|`enforcementAction` 字段定义了处理约束违规的操作。默认设置为 `deny`，即默认拒绝任何违规的准入请求。有关更多信息，请参阅link:https://open-policy-agent.github.io/gatekeeper/website/docs/violations/[约束违规处理]。
+
+|Match Kinds
+|`match` 字段定义了约束适用的资源。有关更多信息，请参阅 link:https://open-policy-agent.github.io/gatekeeper/website/docs/howto/#the-match-field[match]。
+
+`kinds` 接受包含 `apiGroups` 和 `kinds` 字段的对象列表，这些字段列出了约束适用对象的 groups/kinds。如果指定了多个 groups/kinds 对象，只需匹配其中一个对象，资源就会在约束的适用范围内。
+
+|命名空间标签
+|针对对象所在的命名空间或对象本身（如果对象是一个命名空间）设置的可标识的键值对。
+
+|参数
+|用于描述约束的意图。有关更多信息，请参阅 link:https://open-policy-agent.github.io/gatekeeper/website/docs/howto/#the-parameters-field[parameters]。
+|===
+
+您将在**约束**页面查看已创建的约束。
+--

@@ -1,0 +1,45 @@
+---
+title: "添加数据源"
+keywords: "Kubernetes, {ks_product}, Grafana, 添加数据源, 可观测"
+description: "介绍如何添加 grafana 数据源。"
+weight: 05
+---
+
+本节简要介绍如何添加、配置和查询数据源。有关更多信息，请参阅 link:https://grafana.com/docs/grafana/latest/datasources/[Grafana data sources]。
+
+创建 Dashboard 前，必须先添加数据源。Grafana for WhizardTelemetry 扩展组件默认添加了 Prometheus 的服务器地址为数据源。您也可以自行添加数据源，如 Loki、Elasticsearch、InfluxDB、PostgreSQL、MySQL 等。
+
+添加数据源后，您可以：
+
+- 使用 Explore 查询数据。
+- 在面板中将数据可视化。
+- 创建告警规则。
+
+== 前提条件
+
+只有在 Grafana 控制台具有 admin 角色的用户才能添加或删除数据源。
+
+== 添加数据源
+
+. 登录 Grafana 控制台后，点击左侧导航栏的 **Connections**。
+. 搜索数据源，如 loki。
+. 点击数据源名称，进入数据源概览页面。
+. 点击右上角的 **Add new data source**，进入数据源配置页面。
+. 输入数据源的服务器地址，点击最下方的 **Save & test**，完成数据源的添加和配置。
++
+image:/images/ks-qkcp/zh/v4.1.2/grafana/loki-data-source.png[loki-data-source]
+
+== 查询数据源数据
+
+设置查询条件，查询数据源中特定指标一段时间范围内的数据。
+
+. 点击左侧导航栏的 **Explore**，在上方选择数据源。
+. 在查询编辑器中输入或选择 **Metric**，设置 **Label filters**，然后点击右上角的 **Run query**。
++
+image:/images/ks-qkcp/zh/v4.1.2/grafana/explore.png[explore]
+
+== 删除数据源
+
+. 点击左侧导航栏的 **Connections > Data sources**。
+. 点击需要删除的数据源名称，进入数据源配置页面。
+. 点击最下方的 **Delete**， 删除数据源。

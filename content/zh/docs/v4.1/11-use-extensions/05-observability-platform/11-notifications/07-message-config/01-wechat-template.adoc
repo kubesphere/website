@@ -1,0 +1,102 @@
+---
+title: "配置企业微信的通知消息模板"
+description: "介绍如何配置企业微信的通知消息。"
+weight:  01
+---
+
+. 登录集群节点，创建一个 markdown 模板。
++
+--
+[,bash]
+----
+vi <template-name>
+----
+
+内容如下：
+[,yaml]
+----
+apiVersion: v1
+data:
+  template: |
+    {{- define "nm.default.markdown.test" }}
+    {{- range .Alerts }}
+    {{- $rawStatus := .Status }}
+    {{- if eq $rawStatus "firing" }}
+    ### <font color="yellow">{{ template "nm.default.message" . }}</font>
+    {{- else }}
+    ### <font color="green">{{ template "nm.default.message" . }}</font>
+    {{- end }}
+    {{- range .Labels.SortedPairs }}
+    {{- if eq .Name "severity" }}
+    {{- $color := "" }}
+    {{- if eq .Value "critical" }}
+    {{- $color = "red" }}
+    {{- else if eq .Value "error" }}
+    {{- $color = "orange" }}
+    {{- else if eq .Value "warning" }}
+    {{- $color = "yellow" }}
+    {{- else if eq .Value "info" }}
+    {{- $color = "blue" }}
+    {{- end }}
+    > <font color="{{$color}}">**{{ .Name | translate }}:  {{ .Value }}**</font>
+    {{- else }}
+    > **{{ .Name | translate }}**:  {{ .Value }}
+    {{- end }}
+    {{- end }}
+    {{ range .Annotations.SortedPairs.Filter "runbook_url" "message" "summary" "summary_cn" }}
+    > **{{ .Name | translate }}**:  {{ .Value }}
+    {{- end }}
+    {{ end }}
+    {{- end }}
+
+kind: ConfigMap
+metadata:
+  name: notification-manager-template-test
+  namespace: kubesphere-monitoring-system
+----
+--
+
+. 执行以下命令创建名为 `notification-manager-template-test` 的 ConfigMap。
++
+[,bash]
+----
+kubectl apply -f <template-name>
+----
+
+. 在link:../../01-notification-channels/04-set-wecom-notification/[通知渠道]或link:../../05-users-notification/04-set-wecom-notification/[用户通知设置]中配置企业微信，以便在企业微信会话或企业微信群中接收通知消息。
+
+. 查看 wechat receiver.
++
+--
+[,bash]
+----
+kubectl -n kubesphere-monitoring-system get receiver
+----
+
+* 以 global 开头的 receiver，如 global-wechat-receiver，为全局配置的 wechat receiver。
+* 以用户名称开头的 receiver，如 admin-wechat-receiver，为租户级别配置的 wechat receiver。
+--
+
+. 编辑对应的 wechat receiver，以便在通知消息中使用 markdown 模板。
++
+--
+[,bash]
+----
+kubectl -n kubesphere-monitoring-system edit receiver <wechat-receiver-name>
+----
+
+
+[,yaml]
+----
+spec:
+  wechat:
+    enabled: true
+    template: nm.default.markdown.test
+    tmplText:
+      name: notification-manager-template-test
+      namespace: kubesphere-monitoring-system
+    tmplType: markdown
+----
+
+企业微信的通知消息将使用此 markdown 模板显示。
+--
