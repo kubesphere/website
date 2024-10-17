@@ -20,7 +20,7 @@ weight: 03
 
 == 导入代码仓库
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目。
 

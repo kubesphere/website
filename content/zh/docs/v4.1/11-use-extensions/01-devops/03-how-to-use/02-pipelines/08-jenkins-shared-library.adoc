@@ -21,9 +21,9 @@ weight: 08
 * 已有一个可用 Jenkins 共享库。本教程以 link:https://github.com/devops-ws/jenkins-shared-library[GitHub 仓库]中的 Jenkins 共享库为例。
 
 
-== 步骤 1：在 Jenkins 仪表盘配置共享库
+== 步骤 1：在 Jenkins 仪表板配置共享库
 
-. link:../../../04-how-to-integrate/01-sonarqube/[登录 Jenkins 仪表板]并点击左侧导航栏中的**系统管理**。
+. link:../07-access-jenkins-console[登录 Jenkins 仪表板]并点击左侧导航栏中的**系统管理**。
 
 . 向下滚动并点击**系统配置**。
 
@@ -58,7 +58,7 @@ weight: 08
 
 === 创建流水线
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
 

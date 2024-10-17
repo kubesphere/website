@@ -57,7 +57,7 @@ This example pipeline consists of the following stages:
 | Note
 
 |
-If your account or password contains any special characters such as **@** and **$**, errors may occur during pipeline runs due to unrecognized characters. In such cases, encode your account or password on a third-party website (e.g., link:https://www.urlencoder.org[urlencoder]) and then copy and paste the encoded result as your credential information.
+If your account or password contains special characters such as **@** and **$**, errors may occur during pipeline runs due to unrecognized characters. In such cases, encode your account or password on a third-party website (e.g., link:https://www.urlencoder.org[urlencoder]) and then copy and paste the encoded result as your credential information.
 |===
 
 [%header,cols="1a,2a,2a"]
