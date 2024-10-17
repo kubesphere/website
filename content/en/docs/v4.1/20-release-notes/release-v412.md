@@ -27,3 +27,8 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core https://c
 - Fix white screen pages of some extensions.
 - Fix problem of residual resources when uninstalling ks-core.
 - Fix installation failure in K8s 1.19 environments.
+
+
+### Known issues
+
+- The image builder (S2I, B2I) feature in DevOps is not available in this release.
