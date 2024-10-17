@@ -22,6 +22,8 @@ sectionLink:
       - /docs/v4.1/09-project-management/06-project-settings/02-project-roles/01-create-a-project-role.adoc
       - /docs/v4.1/06-extension-user-guide/01-install-components-pdf.adoc
       - /docs/v4.1/10-toolbox/01-use-kubectl-tool.adoc
+      - docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel.adoc
+      - docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile.adoc
 
 section3:
   title: 在云服务上运行 KubeSphere 与 Kubernetes 技术栈

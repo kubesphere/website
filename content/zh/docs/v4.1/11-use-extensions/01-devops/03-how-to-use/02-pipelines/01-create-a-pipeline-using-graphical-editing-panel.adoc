@@ -251,7 +251,7 @@ image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-gr
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png[,100%]
 
-. 点击 **Sonarqube 配置**，在弹出的对话框中保持默认名称 **sonar** 不变，点击**确定**保存操作。
+. 点击 **Sonarqube 配置**，在弹出的对话框中输入名称 **sonar**，点击**确定**保存操作。
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png[,100%]
 
