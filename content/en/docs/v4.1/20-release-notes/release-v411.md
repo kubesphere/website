@@ -5,7 +5,6 @@ keywords: "Kubernetes, KubeSphere, Release Notes"
 description: "KubeSphere 4.1.1 Release Notes"
 weight: 45
 ---
-
 ## KubeSphere
 
 ### Features
@@ -47,7 +46,6 @@ weight: 45
 * Optimize the display of excessively long resource names.
 * Support globally enabling fieldValidation.
 * Support horizontal movement on the cluster nodes list page.
-
 
 ### Bug Fixes
 
@@ -116,14 +114,12 @@ The multi-cluster proxy request API `/API_PREFIX/clusters/{cluster}/API_GROUP/AP
 **Access Control**
 
 - The `iam.kubesphere.io/v1alpha2` API version has been removed. Please use the `iam.kubesphere.io/v1beta1` API version instead.
-
 - Significant changes in `iam.kubesphere.io/v1beta1`:
   The API Group for Role, RoleBinding, ClusterRole, and ClusterRoleBinding resources has changed from `rbac.authorization.k8s.io` to `iam.kubesphere.io`.
 
 **Multi-tenancy**
 
 - Partial APIs in `tenant.kubesphere.io/v1alpha1` and `tenant.kubesphere.io/v1alpha2` API versions have been removed. Please use the `tenant.kubesphere.io/v1beta1` API version instead.
-
 - Significant changes in `tenant.kubesphere.io/v1beta1`:
   `spec.networkIsolation` in `Workspace` has been removed.
 
@@ -154,7 +150,8 @@ The following APIs have been marked as deprecated and will be removed in future 
 ### Known Issues
 
 * Upgrade from version 3.x to 4.x is not supported at present, but will be supported in subsequent releases.
-* The following functions are temporarily unavailable and will be offered by extensions later:
+* The following functions are offered by extensions in KubeSphere 4.1.2:
+
   * Monitoring
   * Alerting
   * Notifications
@@ -164,9 +161,8 @@ The following APIs have been marked as deprecated and will be removed in future 
   * Storage volume snapshot
   * Network isolation
   * OpenPitrix for app management
-
-
 * The following features are currently unavailable and will be supported in subsequent versions:
+
   * Department management in workspaces
 
 ### Misc

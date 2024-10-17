@@ -5,7 +5,6 @@ description: "KubeSphere 4.1.1 版本说明"
 linkTitle: "4.1.1 版本说明"
 weight: 45
 ---
-
 ## KubeSphere
 
 ### 新特性
@@ -115,18 +114,14 @@ v4.1 版本将停止提供以下 API：
 **访问控制**
 
 - `iam.kubesphere.io/v1alpha2` API 版本被移除。请使用 `iam.kubesphere.io/v1beta1` API 版本代替。
-
 - `iam.kubesphere.io/v1beta1` 中的显著变化：
-Role、RoleBinding、ClusterRole、ClusterRoleBinding 资源的 API Group 从 `rbac.authorization.k8s.io` 变更为 `iam.kubesphere.io`。
-
+  Role、RoleBinding、ClusterRole、ClusterRoleBinding 资源的 API Group 从 `rbac.authorization.k8s.io` 变更为 `iam.kubesphere.io`。
 
 **多租户**
 
 - `tenant.kubesphere.io/v1alpha1` 和 `tenant.kubesphere.io/v1alpha2` API 版本部分 API 被移除。请使用 `tenant.kubesphere.io/v1beta1` API 版本代替。
-
 - `tenant.kubesphere.io/v1beta1` 中的显著变化：
-`Workspace` 中 `spec.networkIsolation` 被移除。
-
+  `Workspace` 中 `spec.networkIsolation` 被移除。
 
 **kubectl**
 
@@ -155,7 +150,7 @@ Role、RoleBinding、ClusterRole、ClusterRoleBinding 资源的 API Group 从 `r
 ### 已知问题
 
 - 目前不支持从 3.x 版升级到 4.x，将在后续版本支持
-- 以下功能暂不可用，之后将作为扩展组件提供：
+- 以下功能已在 KubeSphere 4.1.2 中作为扩展组件提供：
   * 监控
   * 告警
   * 通知
