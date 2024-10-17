@@ -231,7 +231,7 @@ image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-gr
 +
 image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png[,100%]
 
-. Click **WithSonarQubeEnv**, keep the default name **sonar** in the pop-up dialog, and click **OK** to save it.
+. Click **WithSonarQubeEnv**, enter the name **sonar** in the pop-up dialog, and click **OK** to save it.
 +
 image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png[,100%]
 
@@ -260,103 +260,100 @@ image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-gr
 +
 image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_ready.png[,100%]
 
+=== Stage 4: Build and Push Image
 
-=== 阶段 4：构建并推送镜像
+. Click the plus icon to the right of the previous stage to add a new stage for building and pushing the image to Docker Hub. Name it **Build and Push**.
 
-. 点击前一个阶段右侧的加号图标添加一个新的阶段，以构建并推送镜像至 Docker Hub。将其命名为 **Build and Push**。
+. In the **Build and Push** stage, click **Add Step**, select **Specify Container**, name it **maven**, and then click **OK**.
 
-. 在 **Build and Push** 中，点击**添加步骤**，选择**指定容器**，将其命名为 **maven**，然后点击**确定**。
-
-. 点击 **maven** 容器步骤下的**添加嵌套步骤**，在列表中选择 **shell** 并在弹出窗口中输入以下命令，点击**确定**完成操作。
+. Click **Add nesting steps** under the **maven** container step, select **shell** from the list, enter the following command in the pop-up window, and click **OK** to complete the action.
 +
---
-[,bash]
+[source,bash]
 ----
 mvn -Dmaven.test.skip=true clean package
 ----
---
 
-. 再次点击**添加嵌套步骤**，选择 **shell**。在命令行中输入以下命令，以根据 link:https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online[Dockerfile] 构建 Docker 镜像。点击**确定**确认操作。
+. Again, click **Add nesting steps**, select **shell**. Enter the following command to build the Docker image based on the link:https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online[Dockerfile].
 +
 --
-[,bash]
+[source,bash]
 ----
 docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER .
 ----
-image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png[,100%]
+
+image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png[100%]
 --
 
-. 再次点击**添加嵌套步骤**，选择**添加凭证**。在弹出的对话框中填写以下字段，点击**确定**确认操作。
+. Once more, click **Add nesting steps**, select **WithCredential**. Fill in the following fields in the dialog that appears, and then click **OK**.
 +
 --
-* **凭证名称**：选择您创建的 Docker Hub 凭证，例如 **dockerhub-id**。
-* **用户名变量**：输入 **DOCKER_USERNAME**。
-* **密码变量**：输入 **DOCKER_PASSWORD**。
+* **Credential Name**: Choose the Docker Hub credential you created, for example, **dockerhub-id**.
+* **Username Variable**: Enter **DOCKER_USERNAME**.
+* **Password Variable**: Enter **DOCKER_PASSWORD**.
 
-image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png[,100%]
+image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png[100%]
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-出于安全原因，账户信息在脚本中显示为变量。
-
+For security reasons, account information is displayed as variables in the script.
 |===
 --
 
-. 在**添加凭证**步骤中点击**添加嵌套步骤**（第一个）。选择 **shell** 并在弹出窗口中输入以下命令，用于登录 Docker Hub。点击**确定**确认操作。
+. In the **WithCredential** step, click **Add nesting steps** (the first one). Select **shell** and enter the following command in the pop-up window to log in to Docker Hub. Click **OK** to confirm the operation.
 +
 --
-[,bash]
+[source,bash]
 ----
-echo "$DOCKER_PASSWORD"|docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
+echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
 ----
 
-image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png[,100%]
+image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png[100%]
 --
 
-. 在**添加凭证**步骤中点击**添加嵌套步骤**。选择 **shell** 并输入以下命令，将 SNAPSHOT 镜像推送至 Docker Hub。点击**确定**完成操作。
+. In the **WithCredential** step, click **Add nesting steps**. Select **shell** and enter the following command to push the SNAPSHOT image to Docker Hub. Click **OK** to complete the operation.
 +
 --
-[,bash]
+[source,bash]
 ----
 docker push $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
 ----
-image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png[,100%]
+
+image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png[100%]
 --
 
-=== 阶段 5：生成制品
+=== Stage 5: Generate Artifacts
 
-. 点击 **Build and Push** 阶段右侧的加号图标添加一个新的阶段，以保存制品，将其命名为 **Artifacts**。本示例使用 JAR 文件包。
+. Click the plus icon to the right of the **Build and Push** stage to add a new stage for storing artifacts, name it **Artifacts**. In this example, a JAR file is used.
 +
 image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_artifact_stage.png[,100%]
 
-. 选中 **Artifacts** 阶段，点击**添加步骤**，选择**保存制品**。在弹出的对话框中输入 **target/*.jar**，将其设置为 Jenkins 中制品的保存路径。点击**确定**完成操作。
+. Select the **Artifacts** stage, click **Add Step**, choose **Archive artifacts**. In the pop-up dialog, enter **target/*.jar** to set the path for archiving artifacts in Jenkins. Click **OK** to complete the editing.
 +
 image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/artifact_info.png[,100%]
 
+== Step 4: Run the Pipeline
 
-== 步骤 4：运行流水线
-
-. 使用图形编辑面板创建的流水线需要手动运行。点击**运行**，弹出的对话框会显示link:#_步骤_2创建流水线[步骤 2：创建流水线]中已定义的三个字符串参数。点击**确定**来运行流水线。
+. Pipelines created using the graphical editing panel need to be manually executed. Click **Run**, and a dialog will appear displaying the three string parameters defined in link:#_step_2_create_a_pipeline[Step 2: Create a Pipeline]. Click **OK** to run the pipeline.
 +
 image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/run_pipeline.png[,100%]
 
-. 点击**运行记录**页签，查看流水线的运行状态，点击记录查看详情。
+. Click the **Run Records** tab to view the running status of the pipeline and click a record to see details.
 
-. 流水线如果运行到 **Push with Tag** 阶段，会在此阶段暂停，需要具有审核权限的用户点击**继续**。
+. If the pipeline reaches the **Push with Tag** stage, it will pause at this stage and require a user with approval permissions to click **Continue**.
 
-. 以 **project-admin** 用户登录{ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
+. Log in to the {ks_product-en} web console as the **project-admin** user, navigate to **Workspace Management**, access your DevOps project, and click the **graphical-pipeline** pipeline. Under the **Run Records** tab, click the record to be reviewed and click **Continue** to approve the pipeline.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如果要同时运行多个不包含多分支的流水线，在**流水线**列表页面，全部选中这些流水线，然后点击**运行**来批量运行它们。
+To simultaneously run multiple pipelines that do not include multibranch pipelines, select these pipelines on the **Pipelines** list page and click **Run** to run them in bulk.
 |===
 
 == 步骤 5：查看流水线详情

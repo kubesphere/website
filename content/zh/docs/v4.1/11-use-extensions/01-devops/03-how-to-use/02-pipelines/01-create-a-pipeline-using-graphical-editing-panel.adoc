@@ -53,7 +53,7 @@ DevOps 中的图形编辑面板包含用于 Jenkins link:https://www.jenkins.io/
 
 == 步骤 1：创建凭证
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参阅link:../../05-devops-settings/01-credential-management/[凭证管理]。
 +
@@ -96,7 +96,7 @@ DevOps 中的图形编辑面板包含用于 Jenkins link:https://www.jenkins.io/
 
 == 步骤 2：创建流水线
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
 
@@ -442,7 +442,7 @@ image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-gr
 . 流水线如果运行到 **Push with Tag** 阶段，会在此阶段暂停，需要具有审核权限的用户点击**继续**。
 // . 稍等片刻，流水线如果运行成功，会在 **Deploy to Dev** 阶段停止。**project-admin** 作为流水线的审核员，需要进行审批，然后资源才会部署至开发环境。
 
-. 以 **project-admin** 用户登录{ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
+. 以 **project-admin** 用户登录{ks_product_left} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
 
 //note
 [.admon.note,cols="a"]
@@ -455,7 +455,7 @@ image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-gr
 
 == 步骤 5：查看流水线详情
 
-. 以 **project-regular** 用户登录 {ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。
 
 . 在**运行记录**页签下，点击**状态**下的记录，进入**运行记录**详情页。如果任务状态为**成功**，流水线所有阶段都会显示**成功**。
 
