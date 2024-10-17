@@ -23,7 +23,7 @@ endif::[]
 
 == 创建 DevOps 项目
 
-. 以 **project-admin** 用户登录{ks_product_both} Web 控制台，进入一个企业空间。
+. 以 **project-admin** 用户登录{ks_product_left} Web 控制台，进入一个企业空间。
 
 . 点击 **DevOps 项目**，然后点击**创建**。
 
