@@ -64,7 +64,7 @@ DevOps 中的图形编辑面板包含用于 Jenkins link:https://www.jenkins.io/
 |说明
 
 |
-如果您的账户或密码中包含任何特殊字符，例如 **@** 和 **$**，可能会因为无法识别而在流水线运行时导致错误。在这种情况下，请先在一些第三方网站（例如 link:https://www.urlencoder.org/[urlencoder]）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
+如果您的账户或密码中包含特殊字符，例如 **@** 和 **$**，可能会因为无法识别而在流水线运行时导致错误。在这种情况下，请先在一些第三方网站（例如 link:https://www.urlencoder.org/[urlencoder]）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
 
 |===
 
@@ -82,7 +82,7 @@ DevOps 中的图形编辑面板包含用于 Jenkins link:https://www.jenkins.io/
 |===
 --
 
-. 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/[为新项目创建 SonarQube 令牌 (Token)]。点击**确定**完成操作。
+. 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/#_为新项目创建_sonarqube_token[为新项目创建 SonarQube Token]。点击**确定**完成操作。
 
 . 创建完成后，您将在凭证页面看到已创建的凭证。
 
@@ -251,7 +251,7 @@ image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-gr
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png[,100%]
 
-. 点击 **Sonarqube 配置**，在弹出的对话框中保持默认名称 **sonar** 不变，点击**确定**保存操作。
+. 点击 **Sonarqube 配置**，在弹出的对话框中输入名称 **sonar**，点击**确定**保存操作。
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png[,100%]
 
@@ -274,7 +274,7 @@ image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-gr
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/timeout_set.png[,100%]
 
-. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出的对话框中选择**检查通过后开始后续任务**。点击**确定**保存操作。
+. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出的对话框中勾选**如果质量阈值状态不是绿色，则中止流水线**。点击**确定**保存操作。
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/waitforqualitygate_set.png[,100%]
 +

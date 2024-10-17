@@ -46,7 +46,7 @@ weight: 02
 
 == 创建 DevOps 项目角色
 
-. 以 **devops-admin** 用户登录 {ks_product_both} Web 控制台。
+. 以 **devops-admin** 用户登录{ks_product_left} Web  控制台。
 
 . 前往 **DevOps 项目**页面点击一个 DevOps 项目（例如 **demo-devops**）。
 +

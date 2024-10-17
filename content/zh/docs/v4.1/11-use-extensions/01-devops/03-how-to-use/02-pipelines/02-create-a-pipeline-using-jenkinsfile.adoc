@@ -65,7 +65,7 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 
 == 步骤 1：创建凭证
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参阅link:../../05-devops-settings/01-credential-management/[凭证管理]。
 +
@@ -76,7 +76,7 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 |说明
 
 |
-如果您的账户或密码中包含任何特殊字符，例如 **@** 和 **$**，可能会因为无法识别而在流水线运行时导致错误。在这种情况下，请先在一些第三方网站（例如 link:https://www.urlencoder.org/[urlencoder]）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
+如果您的账户或密码中包含特殊字符，例如 **@** 和 **$**，可能会因为无法识别而在流水线运行时导致错误。在这种情况下，请先在一些第三方网站（例如 link:https://www.urlencoder.org/[urlencoder]）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
 |===
 
 [%header,cols="1a,2a,2a"]
@@ -97,7 +97,7 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 |===
 --
 
-. 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/[为新项目创建 SonarQube 令牌 (Token)]。点击**确定**完成操作。
+. 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/#_为新项目创建_sonarqube_token[为新项目创建 SonarQube Token]。点击**确定**完成操作。
 
 . 还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的账户凭证（例如，**github-token**）。
 +
@@ -210,7 +210,7 @@ Jenkinsfile 中 **mvn** 命令的参数 **-o** 表示开启离线模式。本教
 
 == 步骤 3：创建流水线
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
 
@@ -358,7 +358,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 ----
 --
 
-. 以具有流水线审核权限的用户登录{ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击流水线名称进入详情页。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
+. 以具有流水线审核权限的用户登录{ks_product_left} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击流水线名称进入详情页。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
 
 //note
 [.admon.note,cols="a"]
@@ -416,7 +416,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 
 // == 步骤 7：访问示例服务
 
-// . 以 **platform-admin** 用户登录{ks_product_both} Web 控制台。
+// . 以 **platform-admin** 用户登录{ks_product_left} Web 控制台。
 
 // . 进入 **kubesphere-sample-dev** 项目，在**应用负载**下的**服务**中点击 **ks-sample-dev**。在详情页获取 Endpoint 用于访问该服务。
 
