@@ -21,7 +21,7 @@ link:https://gitlab.com/users/sign_in[GitLab] 是一款基于 web 的 Git 仓库
 
 == 步骤 1：创建凭证
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**中创建以下凭证。有关如何创建凭证的更多信息，请参阅link:../../05-devops-settings/01-credential-management/[凭证管理]。
 +
@@ -108,7 +108,7 @@ link:https://gitlab.com/users/sign_in[GitLab] 是一款基于 web 的 Git 仓库
 
 == 步骤 3：创建流水线
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
 

@@ -65,7 +65,7 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 
 == 步骤 1：创建凭证
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参阅link:../../05-devops-settings/01-credential-management/[凭证管理]。
 +
@@ -210,7 +210,7 @@ Jenkinsfile 中 **mvn** 命令的参数 **-o** 表示开启离线模式。本教
 
 == 步骤 3：创建流水线
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
 
@@ -358,7 +358,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 ----
 --
 
-. 以具有流水线审核权限的用户登录{ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击流水线名称进入详情页。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
+. 以具有流水线审核权限的用户登录{ks_product_left} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击流水线名称进入详情页。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
 
 //note
 [.admon.note,cols="a"]
@@ -416,7 +416,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 
 // == 步骤 7：访问示例服务
 
-// . 以 **platform-admin** 用户登录{ks_product_both} Web 控制台。
+// . 以 **platform-admin** 用户登录{ks_product_left} Web 控制台。
 
 // . 进入 **kubesphere-sample-dev** 项目，在**应用负载**下的**服务**中点击 **ks-sample-dev**。在详情页获取 Endpoint 用于访问该服务。
 

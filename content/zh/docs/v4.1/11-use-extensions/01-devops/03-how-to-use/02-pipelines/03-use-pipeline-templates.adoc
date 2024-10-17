@@ -34,7 +34,7 @@ CI & CD 流水线模板包含六个阶段。有关每个阶段的更多信息，
 
 下面以 Node.js 为例演示如何使用内置流水线模板。使用 Maven 以及 Golang 流水线模板的操作基本相同。
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 以 **project-regular** 用户登录{ks_product_left} Web 控制台。
 
 . 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
 

@@ -293,7 +293,7 @@ sonarQube:
 +
 --
 // Bash
-[,bash]
+[,bash]{ks_product_left} Web 
 ----
 kubectl edit cm -n kubesphere-system ks-console-config
 ----
