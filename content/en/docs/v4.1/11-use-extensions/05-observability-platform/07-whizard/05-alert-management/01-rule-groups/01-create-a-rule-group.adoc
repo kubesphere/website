@@ -1,0 +1,157 @@
+---
+title: "创建规则组"
+keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 告警管理, 规则组, 创建规则组"
+description: "介绍如何创建告警规则组。"
+weight: 01
+---
+
+// :ks_permission: **规则组管理**
+:ks_navigation: **全局告警 > 自定义规则组**
+
+
+include::../../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-createAnAlertingPolicy.adoc[]
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+{ks_product_right}仅支持创建自定义规则组，不支持创建内置规则组。
+|===
+
+== Prerequisites
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../../../05-users-and-roles/01-users/[用户]和link:../../../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+
+* 如需对应用程序的指标进行监控，您需要配置运行在容器中的应用程序，将符合 link:https://prometheus.io/docs/instrumenting/clientlibs/[Prometheus 规范]的监控指标暴露在某个服务端路径下，并在用于暴露工作负载的服务上设置监控导出器，以声明提供应用程序监控指标的路径。有关更多信息，请参阅link:../../../../05-monitoring/08-edit-a-metrics-exporter/[编辑监控导出器]。
+
+
+== Steps
+
+include::../../../../../../_custom-en/platformManagement/extensionManagement/extensionManagement-oper-logInAsPlatformAdmin.adoc[]
+
++
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择 **Whizard 可观测中心**。
+
++
+
+include::../../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+include::../../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-setBasicInfo.adoc[]
+
++
+
+include::../../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-addAlertRule.adoc[]
++
+include::../../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-commonParameters_new.adoc[]
+
+* 规则模板
++
+--
+通过下拉列表选择监控目标和触发条件。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|监控目标
+|需要监控的集群节点或工作负载。
+
+include::../../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-triggerCondition.adoc[]
+|===
+--
+
+* 自定义规则
++
+--
+通过 PromQL 表达式指定监控目标和触发条件。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|集群设置
+|选择需要监控的资源所在的集群。
+
+include::../../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-duration.adoc[]
+
+|告警级别
+|
+include::../../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-para-alertLevel.adoc[]
+
+include::../../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-ruleExpression.adoc[]
+|===
+--
+
++
+
+include::../../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-clickOK.adoc[]
+
+// == 创建规则组示例
+// 创建一个 Process Exporter 全局告警规则，以监控集群节点上的僵尸进程。当节点上有僵尸进程的时候，就会触发告警。
+
+// 创建 Process Exporter 告警规则需要启⽤ Process Exporter 扩展组件。
+
+// === 启用 Process Exporter 扩展组件
+
+// . 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
+
+// . 将光标悬停在页面右下角的image:/images/ks-qkcp/zh/icons/hammer.svg[hammer,18,18]图标，然后在菜单中选择 **kubectl**。
+
+// . 在 **kubectl** 对话框，执行以下命令编辑集群配置文件：
+// +
+// --
+// // bash
+// [,bash]
+// ----
+// kubectl edit cc ks-installer -n kubesphere-system
+// ----
+// --
+
+// . 在集群配置文件中，将 **spec.monitoring.process_exporter.enabled** 参数设置为 **true**，然后保存文件。## 此处未找到，其他部分已确认 ok
+// +
+// --
+// // YAML
+// [,yaml]
+// ----
+// spec:
+//   monitoring:
+//     process_exporter:
+//       enabled: true
+// ----
+
+// // Note
+// include::../../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+// include::../../../../../../_custom-en/platformManagement/extensionManagement/extensionManagement-desc-waitForExtensionEnabled.adoc[]
+
+// include::../../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+// --
+
+// === 创建 Process Exporter 规则组
+
+// . 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
+// . 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择 **Whizard 可观测中心**。
+// . 在左侧导航栏选择**监控告警 > 规则组**。
+// . 在**规则组**页面，点击**自定义规则组**打开规则组列表。
+// . 在页面点击**创建**。
+// . 在**基本信息**页签，设置规则组的基本信息，然后点击**下一步**。
+// . 在**告警规则**页签，点击**添加告警规则**，选择**自定义规则**。
+// . 配置**集群设置**、**规则名称**、**告警级别**、**概要**。
+// . 在**告警规则表达式**下填写此表达式：
+// +
+// --
+// // bash
+// [,bash]
+// ----
+// sum by (cluster, job, instance, groupname)(namedprocess_namegroup_states{state="Zombie"}) > 0
+// ----
+// --
+// include::../../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-clickOK.adoc[]

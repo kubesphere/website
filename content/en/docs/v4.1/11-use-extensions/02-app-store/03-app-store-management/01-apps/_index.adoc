@@ -1,0 +1,10 @@
+---
+title: "应用"
+keywords: "Kubernetes, {ks_product}, 平台管理, 应用商店管理, 应用"
+description: "介绍如何管理应用商店中的应用。"
+weight: 01
+layout: "second"
+---
+
+
+本节介绍如何管理应用商店中的应用模板。您可以查看、编辑应用的信息，并上架或下架应用。

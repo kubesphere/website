@@ -1,0 +1,59 @@
+---
+title: "删除工作负载"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载, 工作负载, 删除工作负载"
+description: "介绍如何删除工作负载。"
+weight: 08
+---
+
+:ks_permission: **联邦项目管理**
+:ks_navigation: **应用负载 > 工作负载**
+
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-desc-deleteWorkloads.adoc[]
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== 删除单个工作负载
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-multi-project-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-oper-deleteASingleWorkload.adoc[]
+
++
+
+. 在**删除工作负载**对话框，选择需要同时删除的相关资源，然后点击**确定**。
+
+
+
+== 批量删除工作负载
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-multi-project-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-oper-deleteMultipleWorkloads.adoc[]

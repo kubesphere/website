@@ -1,0 +1,73 @@
+---
+title: "查看自制应用列表"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 应用, 查看应用列表"
+description: "介绍如何在联邦项目中查看应用列表。"
+weight: 02
+---
+
+:ks_permission: **联邦项目查看**
+:ks_navigation: **应用负载 > 自制应用**
+
+
+本节介绍如何在联邦项目中查看应用列表。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**应用**页面，查看当前联邦项目中已创建的应用列表。
++
+====
+* 应用列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|应用的名称。
+
+|状态
+|联邦应用当前的状态。
+
+* **等待中**：系统正在创建应用。
+
+* **运行中**：应用运行正常。
+
+* **更新中**：系统正在更新应用版本。
+
+* **删除中**：系统正在删除应用。
+
+* **失败**：应用创建失败。
+
+
+|版本
+|应用的版本号。对于自制应用，显示用户自定义的版本号。
+
+|创建时间
+|应用的创建时间。
+|===
+--
+
+* 在列表上方点击搜索框并输入关键字，可按名称搜索应用。
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

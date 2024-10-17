@@ -1,0 +1,171 @@
+---
+title: "将 Harbor 集成到流水线"
+keywords: "Kubernetes, {ks_product}, DevOps 项目"
+description: "介绍如何将 Harbor 集成到流水线。"
+weight: 02
+---
+
+本文档演示如何将 Harbor 集成到{ks_product_both}流水线。
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* 已有一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。
+
+== 安装 Harbor
+
+执行以下命令，使用 Helm 3 安装 Harbor。
+
+// Bash
+[,bash]
+----
+
+helm repo add harbor https://helm.goharbor.io
+# 如需快速安装，您可以通过 NodePort 暴露 Harbor 并禁用 tls。
+# 请将 externalURL 设置为您的一个节点 IP，并确保 Jenkins 能够访问它。
+helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false
+
+----
+
+== 获取 Harbor 凭证
+
+. 安装 Harbor 后，访问 **<NodeIP>:30002** 并使用默认账户和密码 (**admin/Harbor12345**) 登录 Web 控制台。
+
+.  在左侧导航栏中点击**项目**，然后点击**新建项目**。
+
+. 在弹出的对话框中，设置项目名称 **ks-devops-harbor** 并点击**确定**。
+
+. 点击刚刚创建的项目，在**机器人账户**页签下点击**添加机器人账户**。
+
+. 在弹出的对话框中，为机器人账户设置名称 **robot-test** 并点击**添加**。请确保在**权限**中勾选推送制品的权限选框。
+
+. 在弹出的对话框中，点击**导出到文件中**，保存该令牌。
+
+== 启用 Insecure Registry
+
+配置 Docker，使其忽略您 Harbor 仓库的安全性。
+
+. 在您的主机上运行 **vim /etc/docker/daemon.json** 命令以编辑 **daemon.json** 文件，输入以下内容并保存更改。
++
+--
+[,json]
+----
+{
+  "insecure-registries" : ["103.61.38.55:30002"]
+}
+----
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+请将 **103.61.38.55:30002** 替换为您自己的 Harbor 仓库地址。对于 Linux，**daemon.json** 文件的路径为 **/etc/docker/daemon.json**；对于 Windows，该文件的路径为 **C:\ProgramData\docker\config\daemon.json**。
+|===
+--
+
+. 运行以下命令重启 Docker，使更改生效。
++
+--
+[,bash]
+----
+sudo systemctl daemon-reload
+
+sudo systemctl restart docker
+----
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+建议您在隔离的测试环境或者严格控制的离线环境中使用该方案。有关更多信息，请参阅 link:https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry[Deploy a plain HTTP registry]。完成上述操作后，即可在项目中部署工作负载时使用您 Harbor 仓库中的镜像。您需要为自己的 Harbor 仓库创建一个镜像密钥，然后在**容器镜像**页签下的**容器设置**中，选择您的 Harbor 仓库并输入镜像的绝对路径以搜索您的镜像。
+
+|===
+--
+
+== 创建凭证
+
+. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. 点击**企业空间管理**并进入您的 DevOps 项目。
+. 在 **DevOps 项目设置**下的**凭证**页面为 Harbor 创建凭证。
+. 在**创建凭证**页面，设置凭证 ID (**robot-test**)，**类型**选择**用户名和密码**，**用户名**字段必须和您刚刚下载的 JSON 文件中 **name** 的值相同，并在**密码/令牌**中输入 Harbor 令牌文件中 **token** 的值。
+
+. 点击**确定**以保存。
+
+== 创建流水线
+
+. 转到**流水线**页面，点击**创建**。
+
+. 在**基本信息**页签，输入名称 **demo-pipeline**，然后点击**下一步**。
+
+. **高级设置**中使用默认值，点击**创建**。
+
+== 编辑 Jenkinsfile
+
+. 点击该流水线进入其详情页面，然后点击**编辑 Jenkinsfile**。
+
+. 将以下内容复制粘贴至 Jenkinsfile。注意，必须将 **REGISTRY**、**HARBOR_NAMESPACE**、**APP_NAME** 和 **HARBOR_CREDENTIAL** 替换为您自己的值。
++
+--
+[,json]
+----
+
+pipeline {
+  agent {
+    node {
+      label 'maven'
+    }
+  }
+
+  environment {
+    // 您 Harbor 仓库的地址。
+    REGISTRY = '103.61.38.55:30002'
+    // 项目名称。
+    // 请确保您的机器人账户具有足够的项目访问权限。
+    HARBOR_NAMESPACE = 'ks-devops-harbor'
+    // Docker 镜像名称。
+    APP_NAME = 'docker-example'
+    // ‘robot-test’是您在{ks_product_both} Web 控制台上创建的凭证 ID。
+    HARBOR_CREDENTIAL = credentials('robot-test')
+  }
+
+  stages {
+    stage('docker login') {
+      steps{
+        container ('maven') {
+          // 请替换 -u 后面的 Docker Hub 用户名，不要忘记加上 ''。您也可以使用 Docker Hub 令牌。
+          sh '''echo $HARBOR_CREDENTIAL_PSW|docker login $REGISTRY -u 'robot$robot-test' --password-stdin'''
+        }
+      }
+    }
+
+     stage('build & push') {
+       steps {
+         container ('maven') {
+           sh 'git clone https://github.com/kstaken/dockerfile-examples.git'
+           sh 'cd dockerfile-examples/rethinkdb && docker build -t $REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test .'
+           sh 'docker push$REGISTRY/$HARBOR_NAMESPACE/$APP_NAME:devops-test'
+         }
+       }
+     }
+  }
+}
+
+----
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+您可以通过带有环境变量的 Jenkins 凭证来传送参数至 **docker login -u**。但是，每个 Harbor 机器人账户的用户名都包含一个 **$** 字符，当用于环境变量时，Jenkins 会将其转换为 **$$**。（Harbor v2.2以后可以自定义机器人后缀，避免此类问题）link:https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/[了解更多]。
+|===
+--
+
+== 运行流水线
+
+保存 Jenkinsfile 后，{ks_product_right}会自动在图形编辑面板上创建所有阶段和步骤。点击**运行**来运行该流水线。如果一切运行正常，Jenkins 将推送镜像至您的 Harbor 仓库。

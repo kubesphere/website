@@ -1,0 +1,10 @@
+---
+title: "How to Use DevOps"
+keywords: "Kubernetes, {ks_product}, DevOps Projects, Using DevOps"
+description: "Learn how to use DevOps functionality."
+weight: 03
+layout: "second"
+---
+
+
+This section explains how to use DevOps functionality.

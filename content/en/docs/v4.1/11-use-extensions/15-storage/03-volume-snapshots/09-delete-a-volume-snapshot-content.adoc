@@ -1,0 +1,81 @@
+---
+title: "删除卷快照内容"
+keywords: "Kubernetes, {ks_product}, 集群管理, 卷快照内容, 删除卷快照内容"
+description: "介绍如何删除卷快照内容。"
+weight: 09
+---
+
+
+:ks_permission: **卷快照内容管理**
+:ks_navigation: **存储 > 卷快照**
+
+
+本节介绍如何删除卷快照内容。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+当卷快照和卷快照内容绑定的时候，卷快照内容不允许删除。若要删除卷快照内容，必须首先删除卷快照。卷快照被删除后，系统将根据卷快照内容的删除策略，决定是否自动删除卷快照内容。
+|===
+
+// Warning
+include::../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+卷快照内容删除后无法恢复，并且后端存储系统中保存的快照数据也将被删除，请谨慎执行此操作以避免快照数据丢失。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+
+
+== 删除单个卷快照内容
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-oper-openListPage.adoc[]
+
++
+
+. 在需要删除的卷快照内容右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除卷快照内容**对话框，输入卷快照内容的名称，然后点击**确定**。
+
+
+== 批量删除卷快照内容
+
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-oper-openListPage.adoc[]
+
++
+
+. 选择需要删除的卷快照内容左侧的复选框，然后在列表上方点击**删除**。
+
+. 在**批量删除卷快照内容**对话框，输入卷快照的名称，然后点击**确定**。
++
+--
+include::../../../../_custom-en/note-separateNamesByComma.adoc[]
+--

@@ -1,0 +1,38 @@
+---
+title: "删除项目"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 项目设置, 基本信息, 删除项目"
+description: "介绍如何删除项目。"
+weight: 06
+---
+
+:ks_permission: **联邦项目管理**
+:ks_navigation: **项目设置 > 基本信息**
+
+
+include::../../../../../_custom-en/clusterManagement/projects/projects-desc-deleteProjects.adoc[]
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**基本信息**页面，点击**管理**，然后在下拉列表中选择**删除项目**。
+
++
+
+include::../../../../../_custom-en/clusterManagement/projects/projects-oper-deleteASingleProject.adoc[]
+

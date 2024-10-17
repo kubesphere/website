@@ -1,0 +1,18 @@
+---
+title: "卷快照"
+keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照"
+description: "介绍如何管理卷快照。"
+weight: 03
+layout: "second"
+---
+
+
+include::../../../../_custom-en/clusterManagement/volumeSnapshots/volumeSnapshots-desc-volumeSnapshots.adoc[]
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果您在安装{ks_product_both}时未指定外部持久化存储系统，{ks_product_right}将使用集群节点的本地存储系统作为持久化存储系统。通常情况下，集群节点的本地存储系统不支持卷快照功能。创建卷快照前，您需要为{ks_product_both}集群安装存储插件，确保后端存储系统支持卷快照功能，并创建link:../04-volume-snapshot-classes/01-create-a-volume-snapshot-class[卷快照类]。
+|===

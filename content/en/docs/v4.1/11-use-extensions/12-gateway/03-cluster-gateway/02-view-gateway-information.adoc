@@ -1,0 +1,43 @@
+---
+title: "查看网关信息"
+keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 网关设置, 查看网关信息"
+description: "介绍如何查看网关信息。"
+weight: 02
+---
+
+// :ks_permission: **集群设置查看**
+:ks_navigation: **集群设置 > 网关设置**
+
+
+本节介绍如何查看网关信息。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 网关**扩展组件。
+
+// // * {empty}
+// include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+// 
+
+* 您需要加入一个集群并在集群中具有 **cluster-admin** 角色。有关更多信息，请参阅link:../../../../07-cluster-management/09-cluster-settings/03-cluster-members/[集群成员]和link:../../../../07-cluster-management/09-cluster-settings/04-cluster-roles/[集群角色]。
+
+
+== Steps
+
+// include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
+. 以具有 **cluster-admin** 角色的用户登录{ks_product_left} Web 控制台。
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**网关设置**页面，点击**集群网关**，查看集群网关的信息。
++
+--
+include::../../../../_custom-en/clusterManagement/gatewaySettings/gatewaySettings-para-gatewayCard.adoc[]
+--

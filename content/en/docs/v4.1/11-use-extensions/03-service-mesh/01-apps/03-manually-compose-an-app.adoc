@@ -1,0 +1,65 @@
+---
+title: "创建自制应用"
+keywords: "Kubernetes, {ks_product}, 项目管理, 应用, 创建自制应用"
+description: "介绍如何创建自制应用。"
+weight: 03
+---
+
+:ks_permission: ** Service Mesh 管理**
+:ks_navigation: **服务网格 > 自制应用**
+
+
+本节介绍如何创建自制应用。
+
+include::../../../../_custom-en/projectManagement/apps/apps-compose-description.adoc[]
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
+. 在**基本信息**页签，设置应用的基本信息，然后点击**下一步**。
++
+--
+include::../../../../_custom-en/projectManagement/apps/apps-basic-para.adoc[]
+--
+
+. 在**服务设置**页签，点击**创建服务**，选择**有状态服务**或**无状态服务**为应用创建服务，然后点击**下一步**。
++
+--
+include::../../../../_custom-en/clusterManagement/services/services-para-statelessStatefulExternal.adoc[]
+
+ifeval::["{file_output_type}" == "html"]
+有关**有状态服务**和**无状态服务**的参数设置，请参阅link:../../../../09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/#_参数描述[创建有状态服务或无状态服务]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+有关**有状态服务**和**无状态服务**的参数设置，请参阅《{ks_product_right}项目管理指南》的“创建有状态服务或无状态服务”章节。
+endif::[]
+--
+
+. 在**路由设置**页签，点击**添加路由规则**为应用创建路由规则，然后点击**创建**。
++
+--
+include::../../../../_custom-en/clusterManagement/routes/routes-para-routingRules.adoc[]
+
+应用创建完成后将显示在**自制应用**页面。
+--

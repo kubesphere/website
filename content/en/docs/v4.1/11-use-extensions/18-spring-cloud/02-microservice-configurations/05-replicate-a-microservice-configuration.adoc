@@ -1,0 +1,50 @@
+---
+title: "复制微服务配置"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 复制微服务配置"
+description: "介绍如何复制微服务配置。"
+weight: 05
+---
+
+:ks_permission: ** Spring Cloud 微服务管理**
+:ks_navigation:  **Spring Cloud > 微服务配置**
+
+
+本节介绍如何复制微服务配置。
+
+您可以使用已有的微服务配置创建一个名称不同但数据完全相同的微服务配置。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在需要操作的微服务配置右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**复制**。
+
+. 在**复制微服务配置**对话框，设置新微服务配置的名称，然后点击**确定**。
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+根据需要，您也可以修改配置数据。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+复制完成后，复制生成的微服务配置将显示在列表中。
+--

@@ -1,0 +1,20 @@
+---
+title: "概述"
+keywords: "Kubernetes, {ks_product}, 证书管理, 更新证书"
+description: "介绍证书管理扩展组件。"
+weight: 01
+---
+
+Cert Manager (证书管理) 为 Kubernetes 中的工作负载创建 TLS 证书，并在证书过期前续订。
+
+Cert Manager 可以从各种证书颁发机构获取证书，包括：Let’s Encrypt、HashiCorp Vault、Venafi 和私有 PKI。
+
+安装扩展组件时，在扩展组件配置下，开启 `defaultIssuer` 字段下的参数，会生成一个 ClusterIssuer, 名为 `default-issuer`。 默认的 ClusterIssuer 可用来给其他组件颁发证书。例如，使用 KubeSphere 网关时，可为路由自动生成和更新证书。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+有关组件配置的更多信息，请参阅扩展中心“证书管理”扩展组件的详情页说明。
+|===

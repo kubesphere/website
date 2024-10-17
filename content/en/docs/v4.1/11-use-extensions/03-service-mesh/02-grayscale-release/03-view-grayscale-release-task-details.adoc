@@ -1,0 +1,60 @@
+---
+title: "查看灰度发布任务详情"
+keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 查看灰度发布任务详情"
+description: "介绍如何查看灰度发布任务详情。"
+weight: 03
+---
+
+:ks_permission: ** Service Mesh 查看**
+:ks_navigation: **服务网格 > 灰度发布**
+
+
+本节介绍如何查看灰度发布任务详情。
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-oper-openDetailsPage.adoc[]
++
+--
+灰度发布任务详情页面提供以下信息：
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|灰度发布任务的名称和发布模式。
+
+|版本
+|新旧版本的容器组副本数量、容器组名称、CPU 用量和内存用量。
+
+|流量分配
+|
+* 对于蓝绿部署，显示当前接收全部流量的服务版本。
+
+* 对于金丝雀发布，显示新旧版本的流量接收比例。
+
+* 对于流量镜像，显示旧版本接收新版本流量的相同副本。
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-para-trafficSuccessLatency.adoc[]
+|===
+--
+

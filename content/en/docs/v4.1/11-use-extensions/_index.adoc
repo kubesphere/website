@@ -1,0 +1,10 @@
+---
+title: "Extension User Guide"
+keywords: "Kubernetes, {ks_product}, Extensions, User Guide, DevOps, DMP, whizard, Observability"
+description: "Learn how to use various extensions."
+weight: 11
+layout: "second"
+icon: "/images/docs/common/docs.svg"
+---
+
+This section explains how to use the various extensions in KubeSphere. Before using them, please first link:../06-extension-user-guide/01-install-components-pdf/[Install Extensions].

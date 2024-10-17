@@ -1,0 +1,10 @@
+---
+title: "DevOps 项目设置"
+keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps"
+description: "介绍如何管理 DevOps 项目的设置。"
+weight: 05
+layout: "second"
+---
+
+
+本节介绍如何管理 DevOps 项目的设置。

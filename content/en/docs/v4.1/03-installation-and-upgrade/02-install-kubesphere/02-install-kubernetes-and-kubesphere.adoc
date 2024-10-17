@@ -168,7 +168,7 @@ If the cluster nodes use other operating systems, replace **apt** with the corre
 == Install Kubernetes
 
 // ifeval::["{file_output_type}" == "pdf"]
-// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
+// include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-decompressInstallationPackage_new.adoc[]
 // endif::[]
 
 // ifeval::["{file_output_type}" == "html"]

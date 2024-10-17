@@ -1,0 +1,20 @@
+---
+title: "概述"
+keywords: "Kubernetes, {ks_product}, GPU Operator, NVIDIA"
+description: "介绍 NVIDIA GPU Operator 扩展组件。"
+weight: 01
+---
+
+NVIDIA GPU Operator 是一个基于 link:https://github.com/NVIDIA/gpu-operator[GPU Operator] 改造的扩展组件，旨在适配 KubeSphere LuBan 可插拔架构，支持在 Kubernetes 上创建、配置和管理 GPU。
+
+Kubernetes 借助 link:https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/[device plugin framework] 提供对 NVIDIA GPU、NIC、Infiniband 适配器等特殊硬件资源的访问。然而，配置和管理这些硬件资源节点需要配置多个软件组件，如驱动程序、容器运行时或其他库，这些过程既复杂又容易出错。NVIDIA GPU Operator 在 Kubernetes 中使用 link:https://cloud.redhat.com/blog/introducing-the-operator-framework[operator framework] 自动管理 GPU 所需的所有 NVIDIA 软件组件，包括用于启用 CUDA 的 NVIDIA 驱动程序、用于 GPU 的 Kubernetes 设备插件、NVIDIA 容器运行时、自动节点标记、基于 link:https://developer.nvidia.com/dcgm[DCGM] 的监控等。
+
+== 受众和使用场景
+
+GPU Operator 允许 Kubernetes 集群管理员像管理集群 CPU 节点一样管理 GPU 节点。管理员不需要为 GPU 节点指定操作系统镜像，而是可以依赖于 CPU 和 GPU 节点的标准操作系统镜像，然后依赖 GPU Operator 为 GPU 提供所需的软件组件。
+
+需要注意的是，GPU Operator 特别适用于 Kubernetes 集群需要快速扩展的场景，例如在云端或本地增加 GPU 节点并管理底层软件组件的生命周期。由于 GPU Operator 将所有内容都作为容器运行，包括 NVIDIA 驱动程序，管理员可以轻松更换各种组件——只需启动或停止容器即可。
+
+== 产品文档
+
+有关平台支持和入门信息，请访问link:https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/overview.html[官方文档]。

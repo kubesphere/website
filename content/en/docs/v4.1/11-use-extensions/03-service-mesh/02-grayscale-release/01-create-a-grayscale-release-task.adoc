@@ -1,0 +1,200 @@
+---
+title: "创建灰度发布任务"
+keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 创建灰度发布任务"
+description: "介绍如何创建灰度发布任务。"
+weight: 01
+---
+
+:ks_permission: ** Service Mesh 管理**
+:ks_navigation: **服务网格 > 灰度发布**
+
+
+本节介绍如何创建灰度发布任务。
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+
+* 提前准备新版本的容器镜像并上传到容器镜像服务，同时确保存容器镜像服务与{ks_product_both}网络连接正常。
+
+
+== Steps
+
+请参阅link:#_参数描述[参数描述]设置灰度发布任务的参数。
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 根据需要创建灰度发布任务类型，将光标悬停在**蓝绿部署**、**金丝雀发布**或**流量镜像**区域，然后点击**创建**。
+
+. 在**基本信息**页签，设置灰度发布任务的名称，然后点击**下一步**。
+
+. 在**服务设置**页签，选择需要进行灰度发布的应用和服务，然后点击**下一步**。
+
+. 在**新版本设置**页签，设置新版本的服务版本号、容器组副本数量和容器，然后点击**下一步**。
+
+. 在**策略设置**页签，设置灰度发布任务的流量转发策略，然后点击**创建**。
++
+--
+灰度发布任务创建完成后将显示在**灰度发布**页面的**发布任务**页签。
+--
+
+
+== 参数描述
+
+以下介绍如何设置灰度发布任务的参数。
+
+* 基本信息
++
+--
+设置任务的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。
+--
+
+* 服务设置
++
+--
+选择需要进行灰度发布的自制应用和服务。
+
+* 点击下拉列表选择一个自制应用。
+
+* 在需要进行灰度发布的服务右侧点击**选择**。
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+灰度发布仅支持自制应用，不支持基于模板的应用。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+* 新版本设置
++
+--
+设置新版本的服务版本号、容器组副本数量和容器。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|新版本号
+|新版本的服务版本号。新版本号只能包含小写字母和数字, 最长 16 个字符。
+
+|副本
+|
+新版本的容器组副本数量。点击image:/images/ks-qkcp/zh/icons/chevron-up.svg[chevron-up,18,18]/image:/images/ks-qkcp/zh/icons/chevron-down.svg[chevron-down,18,18]可增加/减少容器组副本的数量。
+
+|添加容器
+|
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addContainer.adoc[]
+
+* 直接在文本框中输入容器镜像的 URL 可替换旧版本的容器镜像，同时保持其他容器设置不变。
+|===
+--
+
+* 新版本设置 > 添加容器 > 容器设置
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-setImageNameTypeResource.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerImage.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerName.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerType.adoc[]
+
+|CPU 预留
+|为容器预留的 CPU 资源，单位为核。
+
+|CPU 上限
+|允许容器使用的 CPU 资源上限，单位为核。
+
+|内存预留
+|为容器预留的内存资源，单位为 MiB。
+
+|内存上限
+|允许容器使用的内存资源上限，单位为 MiB。
+|===
+--
+
+* 新版本设置 > 添加容器 > 端口设置
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Port.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 镜像拉取策略
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 健康检查
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 健康检查 > 添加探针
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addProbe.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 生命周期管理
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 生命周期管理 > 添加动作
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addAction.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 启动命令
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 环境变量
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 容器组安全上下文
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerSecurityContext.adoc[]
+--
+
+* 新版本设置 > 添加容器 > 同步主机时区
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
+--
+
+* 策略设置
++
+====
+设置灰度发布任务的业务流量转发策略。
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-para-strategySettings.adoc[]
+====

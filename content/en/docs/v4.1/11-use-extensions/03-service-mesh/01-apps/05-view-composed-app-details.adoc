@@ -1,0 +1,123 @@
+---
+title: "查看自制应用详情"
+keywords: "Kubernetes, {ks_product}, 项目管理, 应用, 查看自制应用详情"
+description: "介绍如何查看自制应用详情。"
+weight: 05
+---
+
+:ks_permission: ** Service Mesh 查看**
+:ks_navigation: **服务网格 > 自制应用**
+
+
+本节介绍如何查看自制应用详情。
+
+
+== Prerequisites
+
+
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+
+
+== Steps
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**自制应用**页面，点击一个应用的名称打开其详情页面。
+
+. 在应用详情页面左侧的**属性**区域查看应用的资源属性。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-details1.adoc[]
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-details2.adoc[]
+
+|应用治理
+|应用是否已启用应用治理。应用治理启用后，您可以使用流量监控、灰度发布和链路追踪功能。
+|===
+--
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-viewResourceStatus.adoc[]
+
++
+
+. 在应用详情页面右侧点击**流量监控**查看应用的流量信息。
++
+--
+点击图形面板中的服务，在页面右侧，查看服务的流量监控信息、相关的容器组信息，并进行**流量管理**。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|流量策略 > 负载均衡
+|负载均衡算法
+
+* **轮询**：将客户端请求轮流发送给各个后端。
+* **最少请求**：随机选择两个健康的后端，并将客户端请求发送给请求数较少的后端。
+* **随机**：将客户端请求发送给一个随机的健康后端。
+* **透传**：将连接直接转发给调用者请求的原始 IP 地址，而不进行任何形式的负载均衡。用于高级配置，请谨慎使用。
+
+|流量策略 > 会话保持
+|
+根据特定的标识（例如 HTTP header、Cookie、查询参数等）将请求映射到后端服务器，以实现请求的均衡分发和负载分担。
+
+* **基于 HTTP Header 哈希**：基于特定的 HTTP header 进行哈希。
+* **基于 HTTP Cookie 哈希**：基于 HTTP cookie 进行哈希。
+* **基于 HTTP 查询参数哈希**：基于特定的 HTTP 查询参数进行哈希。
+* **基于源 IP 地址哈希**：基于源 IP 地址进行哈希。适用于 TCP 和 HTTP 连接。
+* **基于 ring/modulo 哈希**：ring/modulo 哈希负载均衡器使用一致性哈希算法对后端主机进行哈希。
+* **基于 Maglev 哈希**：Maglev 哈希负载均衡器使用一致性哈希算法对后端主机进行哈希。
+
+有关更多信息，请参阅link:https://istio.io/v1.16/zh/docs/reference/config/networking/destination-rule/#LoadBalancerSettings-ConsistentHashLB[此文档]。
+
+|连接池
+|为应用程序创建固定数量的连接对象， 并将其存储在一个连接池中供重复使用。每次请求都从连接池中获取连接对象，并在使用后将连接对象返还到连接池。
+
+启用后，需设置最大连接数、每个连接最大请求数、最大重试次数、连接超时、最大请求数量、最大等待请求数量。
+
+|熔断器
+|如果服务无法访问并且符合指定的条件， 熔断器会将服务标记为不可用，并在指定时间范围内直接向返回客户端错误响应。
+
+启用后，需设置连续 5XX 错误数量、检查间隔（秒）、最大排除比例（%）、排除时间（秒）。
+|===
+
+--
+
+. 在应用详情页面右侧点击**灰度发布**查看应用的灰度发布信息。有关更多信息，请参阅link:../../02-grayscale-release/[灰度发布]。
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+如需使用**流量监控**和**灰度发布**功能，您需要在创建自制应用时启用应用治理功能。有关更多信息，请参阅link:../03-manually-compose-an-app/[创建自制应用]。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. 在应用详情页面右侧点击**链路追踪**查看应用请求链路信息。
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* 如需使用**链路追踪**功能，您需要在创建自制应用时启用应用治理功能。有关更多信息，请参阅link:../03-manually-compose-an-app/[创建自制应用]。
+
+* 同时需要启用项目网关，并为项目网关启用**链路追踪**功能。有关更多信息，请参阅link:../../../12-gateway/01-project-gateway/01-enable-a-project-gateway[启用项目网关]。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

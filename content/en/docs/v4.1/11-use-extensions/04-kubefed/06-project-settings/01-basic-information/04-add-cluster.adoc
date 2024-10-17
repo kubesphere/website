@@ -1,0 +1,41 @@
+---
+title: "添加项目集群"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 项目设置, 基本信息,添加项目集群"
+description: "介绍如何添加项目集群。"
+weight: 04
+---
+
+:ks_permission: **联邦项目管理**
+:ks_navigation: **项目设置 > 基本信息**
+
+
+本节介绍如何添加项目到其他集群。添加后将自动在对应集群创建当前项目。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**基本信息**页面，点击**管理**，然后在下拉列表中选择**添加集群**。
+
+. 在弹出的对话框中，从下拉列表中选择想要添加当前项目的集群，然后点击**确定**。集群添加后将自动在对应集群创建当前项目。
++
+--
+* 点击**添加集群**可以将当前项目添加到一个或多个集群。
+
+* 点击 image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] 可删除当前待添加的集群。
+--

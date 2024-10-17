@@ -1,0 +1,39 @@
+---
+title: "调整流量分配比例（金丝雀发布）"
+keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 调整流量分配比例（金丝雀发布）"
+description: "介绍如何为金丝雀发布任务调整流量分配比例。"
+weight: 05
+---
+
+:ks_permission: ** Service Mesh 管理**
+:ks_navigation: **服务网格 > 灰度发布**
+
+本节介绍如何为金丝雀发布任务调整流量分配比例。
+
+根据业务需要，您可以手动调整金丝雀发布任务中的新版本和旧版本接收业务流量的分配比例。
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**灰度发布**页面，点击**发布任务**，然后点击一个金丝雀发布任务的名称打开其详情页面。
+
+. 在**流量分配**区域，拖动滑块调整新旧版本接收流量的比例，然后在弹出的对话框中点击**确定**。系统将按照设置的比例在新旧版本之间分配业务流量。
+
+. （可选）在**版本**区域，在一个版本右上角点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**接管**可设置该版本立即接管全部业务流量。

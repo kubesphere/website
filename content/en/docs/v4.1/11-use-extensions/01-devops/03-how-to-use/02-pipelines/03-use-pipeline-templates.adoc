@@ -1,0 +1,123 @@
+---
+title: "使用流水线模板创建流水线"
+keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps, 流水线"
+description: "介绍如何使用流水线模板创建流水线。"
+weight: 03
+---
+
+本文档演示如何在{ks_product_both}上使用流水线模板创建流水线。
+
+DevOps 提供图形编辑面板，支持通过交互式操作来定义 Jenkins 流水线的阶段和步骤。内置多个流水线模板，如 Node.js、Maven 以及 Golang，使用户能够快速创建对应模板的流水线。DevOps 还提供 CI 以及 CI & CD 流水线模板，但是这两个模板难以满足定制化需求，建议您采用其它内置模板或直接自定义流水线。
+
+* CI 流水线模板
++
+--
+CI 流水线模板包含两个阶段。**clone code** 阶段用于检出代码，**build & push** 阶段用于构建镜像并将镜像推送至 Docker Hub。先为代码仓库和 Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
+--
+
+* CI & CD 流水线模板
++
+--
+CI & CD 流水线模板包含六个阶段。有关每个阶段的更多信息，请参阅link:../02-create-a-pipeline-using-jenkinsfile/[使用 Jenkinsfile 创建流水线]。先为代码仓库、Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
+// CI & CD 流水线模板包含六个阶段。有关每个阶段的更多信息，请参阅link:../02-create-a-pipeline-using-jenkinsfile/[使用 Jenkinsfile 创建流水线]。先为代码仓库、Docker Hub 仓库和集群的 kubeconfig 创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
+--
+
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* 已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../../05-devops-settings/02-role-and-member-management[角色和成员管理]。
+
+
+== Steps
+
+下面以 Node.js 为例演示如何使用内置流水线模板。使用 Maven 以及 Golang 流水线模板的操作基本相同。
+
+. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+
+. 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
+
+. 在弹出的对话框中，输入流水线名称，点击**下一步**，然后点击**创建**。
+
+. 点击已创建的流水线，在**流水线配置**页签下，点击**编辑流水线**。
+
+. 在**创建流水线**对话框，点击 **Node.js**，然后点击**下一步**。
+
+. 在**参数设置**页签，按照实际情况设置以下参数，点击**创建**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|GitURL
+|需要克隆的项目仓库的地址。
+
+|GitRevision
+|需要检出的分支。
+
+|NodeDockerImage
+|Node.js 的 Docker 镜像版本。
+
+|InstallScript
+|安装依赖项的 Shell 脚本。
+
+|TestScript
+|项目测试的 Shell 脚本。
+
+|BuildScript
+|构建项目的 Sell 脚本。
+
+|ArtifactsPath
+|制品文件所在的路径。
+|===
+--
+
+. 在左侧的可视化编辑页面，系统默认已添加一系列步骤，点击**添加步骤**或**添加并行阶段**进行修改。
+
+. 点击一个步骤，在页面右侧，您可以执行以下操作。编辑完成后，点击**确定**。
++
+--
+* 修改阶段名称。
+
+* 删除阶段。
+
+* 设置代理类型。
+
+* 添加条件。
+
+* 编辑或删除某一任务。
+
+* 添加步骤或嵌套步骤。
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+请参阅link:../01-create-a-pipeline-using-graphical-editing-panel/[使用图形编辑面板创建流水线]，了解如何在流水线模板中自定义步骤和阶段。
+
+|===
+--
+
+. 在右侧的**代理**区域，选择代理类型，默认值为 **kubernetes**，点击**确定**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|代理类型|说明
+
+|any
+|调用默认的 base pod 模板创建 Jenkins agent 运行流水线。
+
+|node
+|调用指定类型的 pod 模板创建 Jenkins agent 运行流水线，可配置的 label 标签为 base、java、nodejs、maven、go 等。
+
+|kubernetes
+|通过 yaml 文件定义的标准 kubernetes pod 模板运行 agent，执行流水线任务。
+|===
+--
+
+. 查看已创建的流水线模板详情，点击**运行**即可运行该流水线。

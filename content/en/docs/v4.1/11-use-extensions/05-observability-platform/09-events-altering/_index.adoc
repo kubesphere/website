@@ -1,0 +1,38 @@
+---
+title: "WhizardTelemetry 事件告警"
+keywords: "Kubernetes, {ks_product}, 事件, 审计, 告警"
+description: "介绍如何使用“WhizardTelemetry 事件告警”扩展组件。"
+weight: 09
+layout: "second"
+draft: true
+---
+
+本节介绍如何使用“WhizardTelemetry 事件告警”扩展组件。
+
+WhizardTelemetry 事件告警支持审计告警、事件告警和日志告警功能。它支持为 Kubernetes/KubeSphere 审计事件、Kubernetes 原生事件、以及 Kubernetes 日志定义告警规则，对传入的事件数据和日志数据进行评估，并将告警发送到指定的接收器如 HTTP 端点等。
+
+其中，日志告警支持日志关键字触发告警和滑动窗口触发告警。
+
+- 基于关键字的告警：当日志中出现特定关键字时触发告警。
+
+- 滑动窗口告警：在滑动时间窗口内，当符合条件的日志数据量达到用户指定数量时触发告警。
+
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+- WhizardTelemetry 事件告警依赖于 WhizardTelemetry 数据流水线扩展组件发送过来的事件、审计和日志数据。在使用前，请确保已安装并配置好该扩展组件。
+- 审计告警和事件告警功能默认启用，请确保已安装并配置好 WhizardTelemetry 事件和 WhizardTelemetry 审计扩展组件。
+- 日志告警功能默认禁用，可修改“扩展组件配置”启用该功能。
+|===
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 事件告警”扩展组件的详情页说明。
+|===
+

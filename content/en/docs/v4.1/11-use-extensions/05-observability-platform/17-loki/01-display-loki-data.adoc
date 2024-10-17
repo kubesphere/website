@@ -1,0 +1,72 @@
+---
+title: "可视化 Loki 中的数据"
+keywords: "Kubernetes, {ks_product}, Grafana, loki, dashboard, 可观测"
+description: "介绍如何在 Grafana 可视化 loki 中的日志、审计、事件及通知历史数据。"
+weight: 01
+---
+
+
+本节介绍如何在 Grafana 控制台可视化存储到 Loki 的{ks_product_both}的日志、审计、事件及通知历史数据。
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 平台服务**扩展组件。
+* 已通过 Grafana for WhizardTelemetry 扩展组件或其他方法部署一个 Grafana 控制台。
+
+== Steps
+
+. 安装 Grafana Loki for WhizardTelemetry 扩展组件。
+
+
+. 在集群的**应用负载 > 服务**页面，查找 `loki-agent-gateway`，**编辑外部访问**，开启 NodePort。
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+取决于您的网络环境，您可能需要配置流量转发规则并在防火墙中放行该 NodePort 端口。
+|===
+
+. 安装 WhizardTelemetry 数据流水线，并配置 Loki 信息。
++
+--
+[,yaml]
+----
+  sinks:
+    loki:
+        endpoint: http://<loki-gateway-ip>:<loki-gateway-port>
+----
+
+示例如下：
+
+[,yaml]
+----
+  sinks:
+    loki:
+        endpoint: http://172.31.19.250:30858
+----
+--
+
+. 安装 WhizardTelemetry 日志、审计、事件、通知（按需安装），修改扩展组件配置，启用 Loki。
++
+--
+[,yaml]
+----
+  sinks:
+    loki:
+      enabled: true
+----
+--
+
+. 在 Grafana 控制台中配置 Loki 数据源。
++
+--
+* 若 Grafana 控制台为 Grafana for WhizardTelemetry 扩展组件所部署，Grafana Loki for WhizardTelemetry 安装完成后，会自动在 Grafana 控制台为日志、审计、事件及通知历史添加 Loki 数据源。有关如何访问 Grafana 控制台，请参阅 link:../../16-grafana/[Grafana for WhizardTelemetry]。
+
+* 若 Grafana 控制台使用其他方法部署，您需要在 Grafana 控制台手动添加 loki 数据源。更多信息，请参阅扩展中心 Grafana Loki for WhizardTelemetry 扩展组件的详情页说明。
+--
+
+. 访问 Grafana 控制台，即可在 Dashboards 下查看{ks_product_both}日志、审计、事件、通知历史的数据面板。
++
+image:/images/ks-qkcp/zh/v4.1.2/loki-data.png[]

@@ -1,0 +1,10 @@
+---
+title: "约束"
+description: "介绍如何管理约束。"
+weight: 02
+layout: "second"
+---
+
+约束（Constraints）是指用于定义和实施集群策略的规则或条件，用于声明需要强制执行的 Gatekeeper 约束模板，是约束模板的实例。
+
+有关约束的更多信息，请参阅 link:https://open-policy-agent.github.io/gatekeeper/website/docs/howto/#constraints[Constraints]。

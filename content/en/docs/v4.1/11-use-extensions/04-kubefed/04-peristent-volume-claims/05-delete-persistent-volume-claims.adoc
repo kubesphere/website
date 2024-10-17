@@ -1,0 +1,48 @@
+---
+title: "删除持久卷声明"
+keywords: "Kubernetes, {ks_product}, 联邦项目, 存储, 持久卷声明, 删除持久卷声明"
+description: "介绍如何删除持久卷声明。"
+weight: 05
+---
+
+:ks_permission: **联邦项目管理**
+:ks_navigation: **持久卷声明**
+
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-deletePersistentVolumeClaims.adoc[]
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[] 
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-backData.adoc[]
+
+
+== 删除单个持久卷声明
+
+include::../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-deleteASinglePersistentVolumeClaim.adoc[]
+
+
+== 批量删除持久卷声明
+
+include::../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-deleteMultiplePersistentVolumeClaims.adoc[]

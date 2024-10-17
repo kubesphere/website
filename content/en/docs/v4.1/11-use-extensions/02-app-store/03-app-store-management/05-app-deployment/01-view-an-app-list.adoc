@@ -1,0 +1,69 @@
+---
+title: "查看应用列表"
+description: "介绍如何查看已部署的应用列表。"
+weight: 01
+---
+
+:ks_permission: **应用商店管理**
+:ks_navigation: **部署管理**
+
+本节介绍如何查看已部署的应用列表。
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* 应用列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|应用的名称。
+
+include::../../../../../_custom-en/projectManagement/apps/apps-para-status_v4.adoc[]
+
+|应用类型
+|应用模板的类型，如 **helm 应用**或 **yaml 应用**。
+
+|应用模板
+|创建应用所使用的应用模板。仅对基于模板的应用显示。
+
+|版本
+|应用的版本号。
+
+* 对于基于模板的应用，显示 Helm Chart 的版本。
+
+// * 对于自制应用，显示用户自定义的版本号。
+
+|更新时间
+|应用的更新时间。
+|===
+--
+
+* 在列表上方点击搜索框并输入关键字，可按名称搜索应用。
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

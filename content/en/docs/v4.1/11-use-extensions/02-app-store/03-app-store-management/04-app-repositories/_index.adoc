@@ -1,0 +1,13 @@
+---
+title: "应用仓库"
+keywords: "Kubernetes, {ks_product}, 企业空间, 应用管理, 应用仓库"
+description: "介绍如何添加和管理应用仓库以部署和管理应用。"
+weight: 04
+layout: "second"
+---
+
+
+
+本节介绍如何管理{ks_product_both}平台的应用仓库。
+
+将 Helm Chart 仓库作为应用仓库添加到{ks_product_both}平台，从而在所有项目中安装应用仓库中的应用。有关如何创建 Helm Chart 仓库，请参阅 link:https://helm.sh/zh/docs/topics/chart_repository/[Helm 官方文档]。

@@ -1,0 +1,60 @@
+---
+title: "Delete DevOps Projects"
+keywords: "Kubernetes, {ks_product}, Workspace Management, DevOps Projects, Delete DevOps Project"
+description: "Learn how to delete DevOps projects."
+weight: 04
+---
+
+:ks_permission:  **DevOps Project Management**
+:ks_navigation:  **DevOps Projects**
+
+This section explains how to delete DevOps projects.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+Once a DevOps project is deleted, it cannot be recovered, and all resources within the DevOps project will also be deleted. Please proceed with caution.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+* **DevOps** must be installed and enabled.
+
+
+== Delete A Single Project
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the right side of the DevOps project you want to delete, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18], and then select **Delete** from the dropdown list.
+
+. In the **Delete DevOps Project** dialog, enter the name of the DevOps project, then click **OK**.
+
+
+== Delete Multiple Projects
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Select the checkbox on the left side of the DevOps projects you want to delete, then click **Delete** above the DevOps project list.
+
+. In the **Delete Multiple DevOps Projects** dialog, enter the names of the DevOps projects, then click **OK**.
++
+--
+include::../../../../_custom-en/note-separateNamesByComma.adoc[]
+--

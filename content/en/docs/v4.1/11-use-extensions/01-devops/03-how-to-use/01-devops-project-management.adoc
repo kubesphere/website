@@ -1,0 +1,61 @@
+---
+title: "Create and Manage DevOps Projects"
+keywords: "Kubernetes, {ks_product}, DevOps projects, DevOps project management"
+description: "Demonstrates how to create and manage DevOps projects."
+weight: 01
+---
+
+This section demonstrates how to create and manage DevOps projects.
+
+== Prerequisites
+
+* A workspace and a user (**project-admin**) have been created. Invite this user to the workspace and assign them the **workspace-self-provisioner** role. For more information, see link:../../../../02-quickstart/03-control-user-permissions[Control User Permissions].
+
+* **DevOps** must have been installed and enabled.
+
+== Create a DevOps Project
+
+. Log in to the {ks_product_both} web console as the **project-admin** user and navigate to a workspace.
+
+. Click **DevOps Projects** and then click **Create**.
+
+. Enter the basic information for the DevOps project and click **OK**.
++
+--
+* **Name**: A concise name for the DevOps project, e.g., **demo-devops**.
+* **Alias**: An alias for the DevOps project.
+* **Description**: A brief introduction to the DevOps project.
+* **Cluster Settings**: In the current version, a DevOps project cannot run across multiple clusters simultaneously. If there are multiple clusters, you must choose one cluster to run the DevOps project.
+--
+
+. Once the DevOps project is created, it will be displayed in the list on the DevOps Projects page.
+
+== View the DevOps Project
+
+Click the newly created DevOps project to navigate to its details page.
+
+In a DevOps project, users can create CI/CD pipelines, credentials, and manage project members and roles. The actions that users can perform in a DevOps project vary based on their permissions.
+
+* Pipelines
++
+--
+Pipelines are a collection of plugins that support continuously integrating, testing, and building code. Pipelines combine continuous integration (CI) and continuous delivery (CD) to provide streamlined workflows that automatically deliver your code to any target.
+--
+
+* Credentials
++
+--
+DevOps project users with appropriate permissions can configure credentials for pipelines to interact with external environments. After users add credentials in the DevOps project, the project can use these credentials to interact with third-party applications such as GitHub, GitLab, and Docker Hub. For more information, see link:../../03-how-to-use/05-devops-settings/01-credential-management[Credential Management].
+--
+
+* Members and Roles
++
+--
+Similar to projects, DevOps projects also need to assign roles to users so that they have different permissions within the DevOps project. Project administrators (e.g., **project-admin**) are responsible for inviting users and granting them different roles. For more information, see link:../../03-how-to-use/05-devops-settings/02-role-and-member-management[Role and Member Management].
+--
+
+== Edit or Delete a DevOps Project
+
+. Click **Basic Information** under **DevOps Project Settings** to view an overview of the current DevOps project, including the number of project roles and members, project name, and project creator.
+
+. Click the **Manage** button on the right to edit the basic information of this DevOps project or delete the DevOps project.

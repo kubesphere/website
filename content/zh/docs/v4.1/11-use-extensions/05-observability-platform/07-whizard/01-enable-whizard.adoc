@@ -14,7 +14,7 @@ weight: 01
 
 * 已安装 **WhizardTelemetry 平台服务**、 **WhizardTelemetry 监控**以及 **WhizardTelemetry 告警**扩展组件。
 
-* 已在**平台设置 > 许可证**页面导入分布式云可观测中心的 license，否则，无法看到 Whizard 可观测中心的入口。
+// * 已在**平台设置 > 许可证**页面导入分布式云可观测中心的 license，否则，无法看到 Whizard 可观测中心的入口。
 
 == 操作步骤
 

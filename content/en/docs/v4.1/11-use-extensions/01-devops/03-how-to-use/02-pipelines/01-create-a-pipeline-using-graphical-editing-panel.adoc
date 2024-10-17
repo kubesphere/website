@@ -1,0 +1,386 @@
+---
+title: "Create Pipelines Using the Graphic Editing Panel"
+keywords: "Kubernetes, {ks_product}, DevOps projects, Using DevOps, Pipelines, Create Pipelines Using the Graphic Editing Panel"
+description: "Introduces how to create pipelines using the graphic editing panel."
+weight: 01
+---
+
+The graphic editing panel in DevOps includes all the necessary operations for Jenkins link:https://www.jenkins.io/en/doc/book/pipeline/#阶段[Stages] and link:https://www.jenkins.io/en/doc/book/pipeline/#步骤[Steps]. DevOps supports defining these stages and steps directly on the interactive panel without the need to create any Jenkinsfile.
+
+This section demonstrates how to use the graphic editing panel to create pipelines in KubeSphere. Throughout the process, DevOps will automatically generate a Jenkinsfile based on the settings on the editing panel, eliminating the need to manually create a Jenkinsfile. Once the pipeline runs successfully, it will push the image to Docker Hub.
+
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* Already have an account on link:http://www.dockerhub.com[Docker Hub].
+
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. Refer to link:../../05-devops-settings/02-role-and-member-management[Role and Member Management].
+
+* A dedicated CI node has been set up to run pipelines. Refer to link:../../05-devops-settings/04-set-ci-node[Set up a CI node for caching dependencies].
+
+* Configured an email server to receive pipeline notifications (optional). Refer to link:../09-jenkins-email[Set up an email server for pipelines].
+
+* Configured SonarQube to include code analysis in the pipeline (optional). Refer to link:../../../04-how-to-integrate/01-sonarqube[Integrate SonarQube into the pipeline].
+
+== Pipeline Overview
+
+This example pipeline consists of the following stages:
+
+[.admon.note,cols="a"]
+|===
+| Description
+
+|
+* **Stage 1: Checkout SCM**: Fetch the source code from the GitHub repository.
+
+* **Stage 2: Unit Test**: Proceed to the next stage only after passing this test.
+
+* **Stage 3: Code Analysis**: Configure SonarQube for static code analysis.
+
+* **Stage 4: Build and Push**: Build the image, tag it as **snapshot-$BUILD_NUMBER**, and push it to Docker Hub, where **$BUILD_NUMBER** is the run ID of the record in the pipeline running records.
+
+* **Stage 5: Artifacts**: Generate an artifact (JAR package) and save it.
+|===
+
+== Step 1: Create Credentials
+
+. Log in to the {ks_product-en} web console with the **project-regular** user.
+
+. Click **Workspace Management** and navigate to your DevOps project. Under **DevOps Project Settings**, create the following credentials in the **Credentials** page. For more information on creating credentials, refer to link:../../05-devops-settings/01-credential-management[Credential Management].
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+| Note
+
+|
+If your account or password contains any special characters such as **@** and **$**, errors may occur during pipeline runs due to unrecognized characters. In such cases, encode your account or password on a third-party website (e.g., link:https://www.urlencoder.org[urlencoder]) and then copy and paste the encoded result as your credential information.
+|===
+
+[%header,cols="1a,2a,2a"]
+|===
+| Credential ID | Type | Where to use
+
+| dockerhub-id
+| Username and Password
+| Docker Hub
+|===
+--
+
+. Create another credential for SonarQube (**sonar-token**) for Stage 3 (Code Analysis). Choose the credential type **Access Token** and enter the SonarQube token in the **Token** field. Refer to link:../../../04-how-to-integrate/01-sonarqube[Create a SonarQube Token for a new project]. Click **OK** to complete the process.
+
+. Once created, you will see the created credentials on the credentials page.
+
+
+== Step 2: Create a Pipeline
+
+. Log in to the {ks_product-en} web console with the **project-regular** user.
+
+. Click **Workspace Management** and navigate to your DevOps project. Click **Pipelines** and then click **Create**.
+
+. In the pop-up dialog, name it **graphical-pipeline** and click **Next**.
+
+. On the **Advanced Settings** page, click **Add** to add the following string parameters. These parameters will be used for Docker commands in the pipeline. Once added, click **Create**.
++
+--
+[%header,cols="1a,2a,2a,2a"]
+|===
+| Parameter Type | Name | Value | Description
+
+| String
+| REGISTRY
+| `docker.io`
+| Image registry address. This example uses **docker.io**.
+
+| String
+| DOCKERHUB_NAMESPACE
+| Your Docker ID
+| Your Docker Hub account or organization name under the account.
+
+| String
+| APP_NAME
+| `devops-sample`
+| Application name. This example uses **devops-sample**.
+|===
+
+// note
+[.admon.note,cols="a"]
+|===
+| Description
+
+|
+For other fields, use default values or refer to link:../05-pipeline-settings[Pipeline Settings] for custom configurations.
+|===
+--
+
+== Step 3: Edit the Pipeline
+
+. Click the pipeline name to enter its details page.
+
+. To use the graphical editing panel, click **Edit Pipeline** under the **Pipeline Configurations** tab. In the pop-up dialog:
+
+* Click **Custom Pipeline** and follow the steps to configure each stage.
+
+* Alternatively, use the link:../03-use-pipeline-templates/[built-in pipeline templates] provided by DevOps.
+
+. Click **Next** and then click **Create**.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+The **Sync Status** on the pipeline details page shows the synchronization result between KubeSphere and Jenkins. You can also click **Edit Jenkinsfile** to manually create a Jenkinsfile for the pipeline.
+|===
+
+=== Stage 1: Fetch Source Code (Checkout SCM)
+
+The graphical editing panel consists of two areas: the **canvas** on the left and the **content** on the right. It automatically generates a Jenkinsfile based on your configurations for different stages and steps, providing a more user-friendly experience for developers.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+The pipeline includes link:https://www.jenkins.io/en/doc/book/pipeline/syntax/#declarative-pipeline[Declarative Pipeline] and link:https://www.jenkins.io/en/doc/book/pipeline/syntax/#scripted-pipeline[Scripted Pipeline]. Currently, creating Declarative Pipelines using this panel is supported. For more information on pipeline syntax, refer to the link:https://www.jenkins.io/en/doc/book/pipeline/syntax/[Jenkins Documentation].
+
+|===
+
+. On the graphical editing panel, select **node** from the **Type** dropdown list and **maven** from the **Label** dropdown list.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+**Agent** is used to define the execution environment. The **Agent** directive specifies where and how Jenkins executes the pipeline. For more information, see link:../10-choose-jenkins-agent/[Choose Jenkins Agent].
+
+|===
+
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/graphical_panel.png[,100%]
+--
+
+. Click the plus icon on the left to add a stage. Click the text box above **Add Step** and set the name for the stage on the right in the **Name** field (e.g., **Checkout SCM**).
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/edit_panel.png[,100%]
+
+. Click **Add Step**. Select **Git Clone** from the list to fetch sample code from GitHub. Fill in the required fields in the pop-up dialog. Click **OK** to confirm the operation.
++
+--
+* **URL**: Enter the GitHub repository link:https://github.com/kubesphere/devops-maven-sample.git[]. Note that this is a sample address; please use your own repository address.
+
+* **Credential ID**: No need to input a credential ID in this example.
+
+* **Branch**: Enter **v4.1.0-sonarqube**. Use the default v4.1.0 branch if the code analysis stage is not required.
+
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/enter_repo_url.png[,100%]
+--
+
+=== Stage 2: Unit Test
+
+. Click the plus icon to the right of Stage 1 to add a new stage for running unit tests in a container. Name it **Unit Test**.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/unit_test.png[,100%]
+
+. Click **Add Step**, select **Specify Container** from the list. Name it **maven** and click **OK**.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/container_maven.png[,100%]
+
+. Click the **maven** container step and **Add nesting  steps**. Select **shell** from the list and enter the following command. Click **OK** to save it.
++
+--
+[,bash]
+----
+mvn clean test
+----
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+In the graphical editing panel, you can specify a series of link:https://www.jenkins.io/en/doc/book/pipeline/syntax/#steps[steps] to be executed within a given stage.
+|===
+--
+
+=== Stage 3: Code Analysis (Optional)
+
+This stage uses SonarQube for code testing. If code analysis is not needed, this stage can be skipped.
+
+. Click the plus icon to the right of **Unit Test** to add a stage for performing SonarQube code analysis in a container. Name it **Code Analysis**.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/code_analysis_stage.png[,100%]
+
+. In **Code Analysis**, click **Add Step** and select **Specify Container**. Name it **maven** and click **OK**.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/maven_container.png[,100%]
+
+. Click the **maven** container step and **Add nesting steps** to add a nested step. Click **WithCredentials** and select SonarQube token (**sonar-token**) from the **Credential Name** list. Enter **SONAR_TOKEN** in the **Variable** and click **OK**.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonarqube_credentials.png[,100%]
+
+. Under the **WithCredentials** step, click **Add nesting steps** to add another nested step.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/nested_step.png[,100%]
+
+. Click **WithSonarQubeEnv**, keep the default name **sonar** in the pop-up dialog, and click **OK** to save it.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_env.png[,100%]
+
+. Under the **WithSonarQubeEnv** step, click **Add nesting steps** to add another nested step.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step.png[,100%]
+
+. Click **shell** and enter the following command in the command line for SonarQube authentication and analysis. Click **OK** to complete the operation.
++
+--
+[,bash]
+----
+mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN
+----
+--
+
+. Click **Add nesting steps** under the **Specify Container** step (the third one), select **Timeout**. Enter **1** in time and choose **hours** as the unit, then click **OK** to complete the operation.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_nested_step_2.png[,100%]
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/timeout_set.png[,100%]
+
+. Click **Add nesting steps** under the **Timeout** step, select **waitForQualityGate**. Check **Abort the pipeline if quality gate status is not green** in the pop-up dialog. Click **OK** to save it.
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/waitforqualitygate_set.png[,100%]
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/sonar_ready.png[,100%]
+
+
+=== 阶段 4：构建并推送镜像
+
+. 点击前一个阶段右侧的加号图标添加一个新的阶段，以构建并推送镜像至 Docker Hub。将其命名为 **Build and Push**。
+
+. 在 **Build and Push** 中，点击**添加步骤**，选择**指定容器**，将其命名为 **maven**，然后点击**确定**。
+
+. 点击 **maven** 容器步骤下的**添加嵌套步骤**，在列表中选择 **shell** 并在弹出窗口中输入以下命令，点击**确定**完成操作。
++
+--
+[,bash]
+----
+mvn -Dmaven.test.skip=true clean package
+----
+--
+
+. 再次点击**添加嵌套步骤**，选择 **shell**。在命令行中输入以下命令，以根据 link:https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Dockerfile-online[Dockerfile] 构建 Docker 镜像。点击**确定**确认操作。
++
+--
+[,bash]
+----
+docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER .
+----
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png[,100%]
+--
+
+. 再次点击**添加嵌套步骤**，选择**添加凭证**。在弹出的对话框中填写以下字段，点击**确定**确认操作。
++
+--
+* **凭证名称**：选择您创建的 Docker Hub 凭证，例如 **dockerhub-id**。
+* **用户名变量**：输入 **DOCKER_USERNAME**。
+* **密码变量**：输入 **DOCKER_PASSWORD**。
+
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png[,100%]
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+出于安全原因，账户信息在脚本中显示为变量。
+
+|===
+--
+
+. 在**添加凭证**步骤中点击**添加嵌套步骤**（第一个）。选择 **shell** 并在弹出窗口中输入以下命令，用于登录 Docker Hub。点击**确定**确认操作。
++
+--
+[,bash]
+----
+echo "$DOCKER_PASSWORD"|docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
+----
+
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png[,100%]
+--
+
+. 在**添加凭证**步骤中点击**添加嵌套步骤**。选择 **shell** 并输入以下命令，将 SNAPSHOT 镜像推送至 Docker Hub。点击**确定**完成操作。
++
+--
+[,bash]
+----
+docker push $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
+----
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png[,100%]
+--
+
+=== 阶段 5：生成制品
+
+. 点击 **Build and Push** 阶段右侧的加号图标添加一个新的阶段，以保存制品，将其命名为 **Artifacts**。本示例使用 JAR 文件包。
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/add_artifact_stage.png[,100%]
+
+. 选中 **Artifacts** 阶段，点击**添加步骤**，选择**保存制品**。在弹出的对话框中输入 **target/*.jar**，将其设置为 Jenkins 中制品的保存路径。点击**确定**完成操作。
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/artifact_info.png[,100%]
+
+
+== 步骤 4：运行流水线
+
+. 使用图形编辑面板创建的流水线需要手动运行。点击**运行**，弹出的对话框会显示link:#_步骤_2创建流水线[步骤 2：创建流水线]中已定义的三个字符串参数。点击**确定**来运行流水线。
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/run_pipeline.png[,100%]
+
+. 点击**运行记录**页签，查看流水线的运行状态，点击记录查看详情。
+
+. 流水线如果运行到 **Push with Tag** 阶段，会在此阶段暂停，需要具有审核权限的用户点击**继续**。
+
+. 以 **project-admin** 用户登录{ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
+
+//note
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果要同时运行多个不包含多分支的流水线，在**流水线**列表页面，全部选中这些流水线，然后点击**运行**来批量运行它们。
+|===
+
+== 步骤 5：查看流水线详情
+
+. 以 **project-regular** 用户登录 {ks_product_both} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击 **graphical-pipeline** 流水线。
+
+. 在**运行记录**页签下，点击**状态**下的记录，进入**运行记录**详情页。如果任务状态为**成功**，流水线所有阶段都会显示**成功**。
+
+. 在**运行日志**页签下，点击每个阶段查看其详细日志。点击**查看完整日志**，根据日志排除故障和问题，也可以将日志下载到本地进行进一步分析。
+
+== 步骤 6：下载制品
+
+在**运行记录**详情页，点击**制品**页签，然后点击制品右侧的图标下载该制品。
+
+== 步骤 7：查看代码分析结果
+
+在**代码检查**页面，查看由 SonarQube 提供的本示例流水线的代码分析结果。如果没有事先配置 SonarQube，则该部分不可用。有关更多信息，请参阅link:../../../04-how-to-integrate/01-sonarqube/[将 SonarQube 集成到流水线]。
+
+== 步骤 8：验证 Kubernetes 资源
+
+如果流水线的每个阶段都成功运行，则会自动构建一个 Docker 镜像并推送至您的 Docker Hub 仓库。
+
+. 流水线成功运行后，会推送一个镜像至 Docker Hub。登录 Docker Hub 查看结果。
++
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/dockerhub_image.png[,100%]
+
+. 该应用名称为 **APP_NAME** 的值，本示例中即 **devops-sample**。Tag 为 **SNAPSHOT-$BUILD_NUMBER** 的值，**$BUILD_NUMBER** 即**运行记录**页签下记录的**运行 ID**。

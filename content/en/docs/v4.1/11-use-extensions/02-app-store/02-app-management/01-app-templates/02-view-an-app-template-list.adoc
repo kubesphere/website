@@ -1,0 +1,62 @@
+---
+title: "查看应用模板列表"
+keywords: "Kubernetes, {ks_product}, 企业空间,应用模板, 查看应用模板列表"
+description: "介绍如何查看应用模板列表。"
+weight: 02
+---
+
+:ks_permission: **应用/应用版本/应用实例查看**
+:ks_navigation: **应用管理 > 应用模板**
+
+本节介绍如何查看应用模板列表。
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+
+
+== Steps
+
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* 应用模板列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-appTemplateName.adoc[]
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-status_v4.adoc[]
+
+|企业空间
+|应用模板所属的企业空间。
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-latestVersion_v4.adoc[]
+
+|应用模板
+|应用模板的类型，如 **helm 应用**或 **yaml 应用**。
+
+|更新时间
+|应用模板的更新时间。
+|===
+--
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-searchForAppTemplates.adoc[]
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

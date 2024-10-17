@@ -1,0 +1,37 @@
+---
+title: "查看服务详情"
+keywords: "Kubernetes, {ks_product}, 项目管理, 工作负载, 服务, 查看服务详情"
+description: "介绍如何查看服务详情。"
+weight: 03
+---
+
+:ks_permission: **联邦项目查看**
+:ks_navigation: **应用负载 > 服务**
+
+
+include::../../../../../_custom-en/clusterManagement/services/services-desc-viewServiceDetails.adoc[]
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-viewServiceDetails-for-kubefed.adoc[]

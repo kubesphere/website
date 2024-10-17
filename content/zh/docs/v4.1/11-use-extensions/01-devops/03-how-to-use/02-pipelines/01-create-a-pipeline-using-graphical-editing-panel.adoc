@@ -65,7 +65,6 @@ DevOps 中的图形编辑面板包含用于 Jenkins link:https://www.jenkins.io/
 
 |
 如果您的账户或密码中包含任何特殊字符，例如 **@** 和 **$**，可能会因为无法识别而在流水线运行时导致错误。在这种情况下，请先在一些第三方网站（例如 link:https://www.urlencoder.org/[urlencoder]）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
-
 |===
 
 [%header,cols="1a,2a,2a"]
@@ -274,7 +273,7 @@ image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-gr
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/timeout_set.png[,100%]
 
-. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出的对话框中选择**检查通过后开始后续任务**。点击**确定**保存操作。
+. 点击**超时**步骤下的**添加嵌套步骤**，选择**代码质量检查 (SonarQube)**。在弹出的对话框中勾选**如果质量阈值状态不是绿色，则中止流水线**。点击**确定**保存操作。
 +
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/waitforqualitygate_set.png[,100%]
 +

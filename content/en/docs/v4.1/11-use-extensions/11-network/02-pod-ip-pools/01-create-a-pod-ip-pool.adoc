@@ -1,0 +1,152 @@
+---
+title: "创建容器组 IP 池"
+keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 创建容器组 IP 池"
+description: "介绍如何创建容器组 IP 池。"
+weight: 01
+---
+
+:ks_permission: **集群网络资源管理**
+:ks_navigation: **网络 > 容器组 IP 池**
+
+
+本节介绍如何创建容器组 IP 池。
+
+
+== Prerequisites
+
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
+
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. 在**创建容器组 IP 池**对话框，设置容器组 IP 池的参数，然后点击**下一步**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|IP 地址
+|容器组 IP 池对应网段的网络地址。
+
+|掩码
+|容器组 IP 池对应网段的掩码位数。
+
+|数量
+|创建容器组 IP 池的数量。最多可同时创建 10 个容器组 IP 池。如果创建数量大于或等于 2，系统将根据自动填充其他 IP 池的网络地址。您也可以根据需要自定义其他 IP 池的网络地址。
+|===
+--
+
+. 在**容器组 IP 池**对话框，点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18]，在弹出的**编辑容器组 IP 池**区域，设置以下参数，然后点击**创建**。
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|网段
+|容器组 IP 池的 IP 范围。
+
+|名称
+|容器组 IP 池名称。您可以修改系统默认生成的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头或结尾，最长 63 个字符。
+
+|IP 池块大小
+|IP 池用于分配 IP 的 block 的 CIDR 大小。
+
+|NAT outgoing
+|是否允许通过 NAT 方式跨 IP 池通信。
+
+启用此功能后，来自此 IP 池中的 Calico 网络容器发送到任何 Calico IP 池之外的目的地的数据包将被伪装。
+
+若启用 IPIP 或 VXLAN 模式，建议开启 NAT outgoing，否则运行 Calico 的工作负载和主机之间的路由是非对称的，并且可能由于 RPF 检查失败而导致流量被过滤。
+
+|别名
+|容器组 IP 池的别名。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+
+|描述
+|容器组 IP 池的描述信息。描述可包含任意字符，最多包含 256 个字符。
+
+|选择节点
+|使用标签选择器为 IP 池匹配合适的节点。
+
+* **节点范围**
+
+** 全部：匹配标签选择范围内的所有节点。
+** 全部禁止：禁止自动分配 IP 池的 IP 地址到任一节点的容器组。
+
+* **标签选择**
+
+ifeval::["{file_output_type}" == "html"]
+** 键：节点标签的键。点击输入自定义的键。有关节点标签的更多信息，请参阅link:../../../../07-cluster-management/03-nodes/06-edit-node-labels.adoc[编辑节点标签]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+** 键：节点标签的键。点击输入自定义的键。有关节点标签的更多信息，请参阅《{ks_product_right}集群管理指南》的“节点”章节。
+endif::[]
+
+** 操作符：筛选条件的操作符。
+
+*** 包含：键对应的值包含特定的字符串。
+
+*** 不包含：键对应的值不包含特定的字符串。
+
+*** 存在：节点标签中存在特定的键。
+
+*** 不存在：节点标签中不存在特定的键。
+
+** 值: 键对应的值必须包含的字符串。按 **Enter** 可设置多个字符串，键对应的值包含其中一个字条串即满足条件。
+
+** 点击**添加**可同时创建多个标签。
+
+** 在已添加的标签右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] 可删除标签。
+
+* **自定义**
+
+通过自定义表达式来筛选符合条件的节点。有关表达式的更多信息，请参阅link:https://docs.tigera.io/calico/latest/reference/resources/ippool#node-selector[节点选择器]。
+
+|IPIP 模式
+
+|IPIP 模式属于 Overlay 模式之一，不能与 VXLAN 模式同时设置。若两者都设置为 Never，则使用 BGP 模式。
+
+IPIP 模式: 在每个节点上创建一个 IP in IP 隧道来实现容器之间的通信。取值如下:
+
+** Always: 永远进行 IPIP 封装（默认）。
+
+** CrossSubnet: 只在跨网段时才进行 IPIP 封装。
+
+** Never: 从不进行 IPIP 封装。
+
+
+|VXLAN 模式
+
+|VXLAN 模式属于 Overlay 模式之一，不能与 IPIP 模式同时设置。若两者都设置为 Never，则使用 BGP 模式。
+
+VXLAN 模式：在每个节点上创建一个 VXLAN 隧道来实现容器之间的通信。取值如下:
+
+** Always: 永远进行 VXLAN 封装。
+
+** CrossSubnet: 只在跨网段时才进行 VXLAN 封装。
+
+** Never: 从不进行 VXLAN 封装。
+|===
+
+--
