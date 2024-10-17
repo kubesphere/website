@@ -97,7 +97,7 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 |===
 --
 
-. 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/[为新项目创建 SonarQube 令牌 (Token)]。点击**确定**完成操作。
+. 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/#_为新项目创建_sonarqube_token[为新项目创建 SonarQube Token]。点击**确定**完成操作。
 
 . 还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的账户凭证（例如，**github-token**）。
 +
