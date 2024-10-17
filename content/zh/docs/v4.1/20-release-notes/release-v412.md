@@ -27,3 +27,7 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core https://c
 - 修复部分扩展组件页面白屏的问题
 - 修复 ks-core 卸载时部分资源残留的问题
 - 修复 K8s 1.19 环境无法安装的问题
+
+### 已知问题
+
+-  DevOps 中镜像构建器（S2I、B2I）功能在此版本暂不可用

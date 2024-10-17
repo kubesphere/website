@@ -121,5 +121,5 @@ whizard-telemetry:
 // |说明
 
 // |
-// 修改 WhizardTelemetry 平台服务的扩展组件配置，可配合 WhizardTelemetry 监控扩展组件，启用 Whizard 可观测中心。有关更多信息，请参阅 link:../07-whizard/01-enable-whizard/[Whizard 可观测中心]。
+// 修改 WhizardTelemetry 平台服务的扩展组件配置，可配合 WhizardTelemetry 监控扩展组件，启用 Whizard 可观测中心。有关更多信息，请参阅 link:../../07-whizard/01-enable-whizard/[Whizard 可观测中心]。
 // |===
