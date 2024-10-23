@@ -1,72 +1,84 @@
 ---
-title: "将 Harbor 集成到流水线"
-keywords: "Kubernetes, {ks_product}, DevOps 项目"
-description: "介绍如何将 Harbor 集成到流水线。"
+title: "Integrate Harbor into Pipelines"
+keywords: "Kubernetes, {ks_product-en}, DevOps project"
+description: "Introduction on how to integrate Harbor into pipelines."
 weight: 02
 ---
 
-本文档演示如何将 Harbor 集成到{ks_product_both}流水线。
+This document demonstrates how to integrate Harbor into KubeSphere pipelines.
 
 == Prerequisites
 
 * **DevOps** must have been installed and enabled.
 
-* 已有一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. 
 
-== 安装 Harbor
+== Install Harbor
 
-执行以下命令，使用 Helm 3 安装 Harbor。
+Run the following command to install Harbor using Helm 3.
 
-// Bash
 [,bash]
 ----
-
 helm repo add harbor https://helm.goharbor.io
-# 如需快速安装，您可以通过 NodePort 暴露 Harbor 并禁用 tls。
-# 请将 externalURL 设置为您的一个节点 IP，并确保 Jenkins 能够访问它。
-helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false
 
+# For a quick installation, you can expose Harbor through NodePort and disable TLS.
+# Set externalURL to one of your node IPs and ensure Jenkins can access it.
+helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false
 ----
 
-== 获取 Harbor 凭证
+== Get Harbor Credentials
 
-. 安装 Harbor 后，访问 **<NodeIP>:30002** 并使用默认账户和密码 (**admin/Harbor12345**) 登录 Web 控制台。
+. After installing Harbor, access **<NodeIP>:30002** and log in to the web console using the default account and password (**admin/Harbor12345**).
 
-.  在左侧导航栏中点击**项目**，然后点击**新建项目**。
+. Click **Projects** in the left navigation pane, then click **New Project**.
 
-. 在弹出的对话框中，设置项目名称 **ks-devops-harbor** 并点击**确定**。
+. In the dialog box that appears, set the project name **ks-devops-harbor** and click **OK**.
 
-. 点击刚刚创建的项目，在**机器人账户**页签下点击**添加机器人账户**。
+. Click the project you just created, then click **New Robot Account** under the **Robot Accounts** tab.
 
-. 在弹出的对话框中，为机器人账户设置名称 **robot-test** 并点击**添加**。请确保在**权限**中勾选推送制品的权限选框。
+. In the dialog box that appears, set the robot account name **robot-test** and **Expiration Time**. Then check all permissions under **Artifact**. Click **Finish**.
 
-. 在弹出的对话框中，点击**导出到文件中**，保存该令牌。
+. In the dialog box that appears, click **Export to file** to save the Harbor token.
 
-== 启用 Insecure Registry
+== Enable Insecure Registry
 
-配置 Docker，使其忽略您 Harbor 仓库的安全性。
+Configure Docker to ignore the security of your Harbor repository.
 
-. 在您的主机上运行 **vim /etc/docker/daemon.json** 命令以编辑 **daemon.json** 文件，输入以下内容并保存更改。
+. Run the command **vim /etc/docker/daemon.json** on your cluster node to edit the **daemon.json** file, add the following content, and save the changes.
 +
 --
 [,json]
 ----
-{
   "insecure-registries" : ["103.61.38.55:30002"]
-}
 ----
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-请将 **103.61.38.55:30002** 替换为您自己的 Harbor 仓库地址。对于 Linux，**daemon.json** 文件的路径为 **/etc/docker/daemon.json**；对于 Windows，该文件的路径为 **C:\ProgramData\docker\config\daemon.json**。
+* Replace **103.61.38.55:30002** with your own Harbor repository address.
+
+* For Linux, the path of the **daemon.json** file is **/etc/docker/daemon.json**; for Windows, the path is **C:\ProgramData\docker\config\daemon.json**.
 |===
+
+The file content should look like this:
+
+[source,json]
+----
+{
+  "log-opts": {
+    "max-size": "5m",
+    "max-file": "3"
+  },
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "insecure-registries": ["103.61.38.55:30002"]
+}
+----
 --
 
-. 运行以下命令重启 Docker，使更改生效。
+. Run the following commands to restart Docker and apply the changes.
 +
 --
 [,bash]
@@ -78,36 +90,37 @@ sudo systemctl restart docker
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-建议您在隔离的测试环境或者严格控制的离线环境中使用该方案。有关更多信息，请参阅 link:https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry[Deploy a plain HTTP registry]。完成上述操作后，即可在项目中部署工作负载时使用您 Harbor 仓库中的镜像。您需要为自己的 Harbor 仓库创建一个镜像密钥，然后在**容器镜像**页签下的**容器设置**中，选择您的 Harbor 仓库并输入镜像的绝对路径以搜索您的镜像。
+It is recommended to use this solution in an isolated test environment or a strictly controlled offline environment. For more information, see link:https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry[Deploy a plain HTTP registry].
 
+After completing the above operations, you can use the images in your Harbor repository when deploying workloads in projects. You need to create a secret with the **Image registry information** type for your Harbor repository, then when adding a container for deploying workloads, click **Docker Hub**, select your Harbor repository, and enter the absolute path of the image to search for your image.
 |===
 --
 
-== 创建凭证
+== Create Credentials
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
-. 点击**企业空间管理**并进入您的 DevOps 项目。
-. 在 **DevOps 项目设置**下的**凭证**页面为 Harbor 创建凭证。
-. 在**创建凭证**页面，设置凭证 ID (**robot-test**)，**类型**选择**用户名和密码**，**用户名**字段必须和您刚刚下载的 JSON 文件中 **name** 的值相同，并在**密码/令牌**中输入 Harbor 令牌文件中 **token** 的值。
+. Log in to the {ks_product_left} web console as the **project-regular** user.
+. Click **Workspace Management** and enter your DevOps project.
+. On the **Credentials** page under **DevOps Project Settings**, create credentials for Harbor.
+. On the **Create Credentials** page, set the name (`robot-test`), select **Username and password** for **Type**, enter the value of **name** from the Harbor token file you just exported for **Username**, and enter the value of **secret** from the Harbor token file for **Password/Token**.
 
-. 点击**确定**以保存。
+. Click **OK** to save.
 
-== 创建流水线
+== Create a Pipeline
 
-. 转到**流水线**页面，点击**创建**。
+. Go to the **Pipelines** page and click **Create**.
 
-. 在**基本信息**页签，输入名称 **demo-pipeline**，然后点击**下一步**。
+. On the **Basic Information** tab, enter the name **demo-pipeline** and click **Next**.
 
-. **高级设置**中使用默认值，点击**创建**。
+. Use the default values in **Advanced Settings** and click **Create**.
 
-== 编辑 Jenkinsfile
+== Edit Jenkinsfile
 
-. 点击该流水线进入其详情页面，然后点击**编辑 Jenkinsfile**。
+. Click the pipeline to enter its detail page, then click **Edit Jenkinsfile**.
 
-. 将以下内容复制粘贴至 Jenkinsfile。注意，必须将 **REGISTRY**、**HARBOR_NAMESPACE**、**APP_NAME** 和 **HARBOR_CREDENTIAL** 替换为您自己的值。
+. Copy and paste the following content into the Jenkinsfile. Note that you must replace **REGISTRY**, **HARBOR_NAMESPACE**, **APP_NAME**, and **HARBOR_CREDENTIAL** with actual values.
 +
 --
 [,json]
@@ -121,14 +134,14 @@ pipeline {
   }
 
   environment {
-    // 您 Harbor 仓库的地址。
+    // Your Harbor repository address.
     REGISTRY = '103.61.38.55:30002'
-    // 项目名称。
-    // 请确保您的机器人账户具有足够的项目访问权限。
+    // Project name.
+    // Ensure your robot account has sufficient project access permissions.
     HARBOR_NAMESPACE = 'ks-devops-harbor'
-    // Docker 镜像名称。
+    // Docker image name.
     APP_NAME = 'docker-example'
-    // ‘robot-test’是您在{ks_product_both} Web 控制台上创建的凭证 ID。
+    // ‘robot-test’ is the credential ID you created on the KubeSphere web console.
     HARBOR_CREDENTIAL = credentials('robot-test')
   }
 
@@ -136,7 +149,7 @@ pipeline {
     stage('docker login') {
       steps{
         container ('maven') {
-          // 请替换 -u 后面的 Docker Hub 用户名，不要忘记加上 ''。您也可以使用 Docker Hub 令牌。
+          // Replace the Docker Hub username after -u, do not forget to add ''. You can also use a Docker Hub token.
           sh '''echo $HARBOR_CREDENTIAL_PSW|docker login $REGISTRY -u 'robot$robot-test' --password-stdin'''
         }
       }
@@ -159,13 +172,13 @@ pipeline {
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-您可以通过带有环境变量的 Jenkins 凭证来传送参数至 **docker login -u**。但是，每个 Harbor 机器人账户的用户名都包含一个 **$** 字符，当用于环境变量时，Jenkins 会将其转换为 **$$**。（Harbor v2.2以后可以自定义机器人后缀，避免此类问题）link:https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/[了解更多]。
+You can pass parameters to **docker login -u** through Jenkins credentials with environment variables. However, each Harbor robot account username contains a **$** character, which Jenkins converts to **$$** when used in environment variables (Harbor v2.2 and later allows custom robot suffixes to avoid such issues). link:https://number1.co.za/rancher-cannot-use-harbor-robot-account-imagepullbackoff-pull-access-denied/[Learn more].
 |===
 --
 
-== 运行流水线
+== Run the Pipeline
 
-保存 Jenkinsfile 后，{ks_product_right}会自动在图形编辑面板上创建所有阶段和步骤。点击**运行**来运行该流水线。如果一切运行正常，Jenkins 将推送镜像至您的 Harbor 仓库。
+After saving the Jenkinsfile, KubeSphere will automatically create all stages and steps on the graphical editing panel. Click **Run** to run the pipeline. If everything runs smoothly, Jenkins will push the image to your Harbor repository.

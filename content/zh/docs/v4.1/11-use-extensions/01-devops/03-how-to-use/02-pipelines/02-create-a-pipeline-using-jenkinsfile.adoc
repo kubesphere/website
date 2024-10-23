@@ -10,7 +10,7 @@ Jenkinsfile 是一个文本文件，包含 Jenkins 流水线的定义，并被�
 本文档演示如何基于 GitHub 仓库中的 Jenkinsfile 创建流水线。
 // 本文档演示如何基于 GitHub 仓库中的 Jenkinsfile 创建流水线，并使用该流水线将示例应用程序分别部署到可从外部访问的开发环境和生产环境。
 
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -39,7 +39,7 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 
 本示例流水线包括以下阶段。
 
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -70,7 +70,7 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 . 点击**企业空间管理**并进入您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**页面创建以下凭证。有关如何创建凭证的更多信息，请参阅link:../../05-devops-settings/01-credential-management/[凭证管理]。
 +
 --
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -99,11 +99,11 @@ Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句
 
 . 再为 SonarQube 创建一个凭证 (**sonar-token**)，用于上述的阶段 3（代码分析）。凭证类型选择**访问令牌**，在**令牌**字段输入 SonarQube 令牌，请参阅link:../../../04-how-to-integrate/01-sonarqube/#_为新项目创建_sonarqube_token[为新项目创建 SonarQube Token]。点击**确定**完成操作。
 
-. 还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的账户凭证（例如，**github-token**）。
+. 还需要创建具有如下图所示权限的 GitHub 个人访问令牌 (PAT)，然后在 DevOps 项目中，使用生成的令牌创建用于 GitHub 认证的账户凭证（例如 **github-token**），凭证类型为**访问令牌**。
 +
 --
 image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-a-jenkinsfile/github-token-scope.png[,100%]
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -163,7 +163,7 @@ image:/images/ks-qkcp/zh/devops-user-guide/use-devops/create-a-pipeline-using-a-
 |您在{ks_product_both}中为 SonarQube 令牌设置的**名称**，用于代码质量检测。
 |===
 
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -181,7 +181,7 @@ Jenkinsfile 中 **mvn** 命令的参数 **-o** 表示开启离线模式。本教
 
 // 创建两个项目，例如 **kubesphere-sample-dev** 和 **kubesphere-sample-prod**，分别代表开发环境和生产环境。待流水线成功运行，将在这两个项目中自动创建应用程序的相关部署 (Deployment) 和服务 (Service)。
 
-// //note
+// 
 // [.admon.note,cols="a"]
 // |===
 // |说明
@@ -242,7 +242,7 @@ Jenkinsfile 中 **mvn** 命令的参数 **-o** 表示开启离线模式。本教
 
 * 分支最大数量：分支数量超过最大数量时，删除最旧的分支。
 
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -256,6 +256,14 @@ Jenkinsfile 中 **mvn** 命令的参数 **-o** 表示开启离线模式。本教
 . 在**策略设置**中，DevOps 默认提供四种策略。本示例不会使用**从 Fork 仓库中发现 PR** 这条策略，因此您可以删除该策略。对于其他策略，无需修改设置，直接使用默认值即可。
 +
 --
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+选择 GitHub 作为代码仓库，才能启用此处的**策略设置**。
+|===
+
 Jenkins 流水线运行时，开发者提交的 Pull Request (PR) 也将被视为一个单独的分支。
 
 **发现分支**
@@ -269,23 +277,12 @@ Jenkins 流水线运行时，开发者提交的 Pull Request (PR) 也将被视�
 * **拉取 PR 合并后的代码**：PR 合并到目标分支后，基于源代码创建并运行流水线。
 * **拉取 PR 提交时的代码**：根据 PR 本身的源代码创建并运行流水线。
 * **分别创建两个流水线**：创建两个流水线，一个流水线使用 PR 与目标分支合并后的源代码版本，另一个使用 PR 本身的源代码版本。
-
-//note
-[.admon.note,cols="a"]
-|===
-|说明
-
-|
-选择 GitHub 作为代码仓库，才能启用此处的**策略设置**设置。
-
-|===
 --
 
 . 向下滚动到**脚本路径**，将其更改为 **Jenkinsfile-online**，这是示例仓库中位于根目录下的 Jenkinsfile 的文件名。该字段指定代码仓库中的 Jenkinsfile 路径。它表示仓库的根目录。如果文件位置变更，则脚本路径也需要更改。
 
 . 在**扫描触发器**中，勾选**定时扫描**并设置时间间隔为 **5 分钟**。点击**创建**完成配置。
-
-//note
++
 [.admon.note,cols="a"]
 |===
 |说明
@@ -301,7 +298,7 @@ Jenkins 流水线运行时，开发者提交的 Pull Request (PR) 也将被视�
 . 流水线创建后，会展示在列表中。点击流水线名称查看其详情页。
 +
 --
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -317,7 +314,7 @@ Jenkins 流水线运行时，开发者提交的 Pull Request (PR) 也将被视�
 . 在**运行记录**页签下，正在扫描多个分支。点击右侧的**运行**，流水线将根据您设置的行为策略来运行。从下拉列表中选择 **v4.1.0-sonarqube** 分支，然后添加标签号，例如 **v0.0.2**。点击**确定**开始运行。
 +
 --
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
@@ -332,13 +329,13 @@ Jenkins 流水线运行时，开发者提交的 Pull Request (PR) 也将被视�
 . 稍等片刻，点击运行记录查看详情。
 +
 --
-//note
+
 [.admon.note,cols="a"]
 |===
 |说明
 
 |
-运行失败可能由不同因素所引起。本示例中，在上述步骤中编辑分支的环境变量时，仅更改了 v4.1.0-sonarqube 分支的 Jenkinsfile。而 v4.1.0 分支中的这些变量没有修改（使用了错误的 GitHub 和 Docker Hub 账户），从而导致失败。其他原因如网络问题、Jenkinsfile 中的编码不正确等也可能导致运行失败。
+运行失败可能由不同因素所引起。本示例中，在上述步骤中编辑分支的环境变量时，仅更改了 v4.1.0-sonarqube 分支的 Jenkinsfile，而 v4.1.0 分支中的这些变量没有修改（使用了错误的 GitHub 和 Docker Hub 账户），若选择 v4.1.0 分支，则会运行失败。其他原因如网络问题、Jenkinsfile 中的编码不正确等也可能导致运行失败。
 
 在运行记录详情页的**运行日志**页签下，查看其日志的详细信息，根据日志排除故障和问题。
 |===
@@ -359,8 +356,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 --
 
 . 以具有流水线审核权限的用户登录{ks_product_left} Web 控制台，点击**企业空间管理**并进入您的 DevOps 项目，点击流水线名称进入详情页。在**运行记录**页签下，点击要审核的记录，点击**继续**以批准流水线。
-
-//note
++
 [.admon.note,cols="a"]
 |===
 |说明
@@ -371,13 +367,14 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 
 == 步骤 5：检查流水线状态
 
-. 在运行记录的**流水线**页签下，查看流水线的运行状态。流水线在刚创建时会初始化几分钟。示例流水线有八个阶段，它们已在 link:https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Jenkinsfile-online[Jenkinsfile-online] 中单独定义。
+. 在运行记录的**流水线**页签下，查看流水线的运行状态。流水线在刚创建时会初始化几分钟。
+// 示例流水线有八个阶段，它们已在 link:https://github.com/kubesphere/devops-maven-sample/blob/sonarqube/Jenkinsfile-online[Jenkinsfile-online] 中单独定义。
 
 . 点击**运行日志**页签查看流水线运行日志。点击每个阶段查看其详细日志。点击**查看完整日志**，根据日志排除故障和问题，也可以将日志下载到本地进行进一步分析。
 
 == 步骤 6：验证结果
 
-. 流水线成功运行后，点击**代码检查**通过 SonarQube 查看结果。
+. 流水线成功运行后，点击**代码检查**通过 SonarQube 查看结果。如果没有事先配置 SonarQube，则该部分不可用。
 
 . 按照 Jenkinsfile 中的定义，通过流水线构建的 Docker 镜像也已成功推送到 Docker Hub。在 Docker Hub 中，您会看到带有标签 **v0.0.2** 的镜像，该标签在流水线运行之前已指定。
 
@@ -403,7 +400,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 // |ks-sample
 // |===
 
-// //note
+// 
 // [.admon.note,cols="a"]
 // |===
 // |说明
@@ -435,7 +432,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 // ----
 // Really appreciate your star, that's the power of our life.
 // ----
-// //note
+// 
 // [.admon.note,cols="a"]
 // |===
 // |说明

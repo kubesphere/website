@@ -1,100 +1,96 @@
 ---
-title: "导入代码仓库"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps"
-description: "介绍如何导入代码仓库。"
+title: "Import Code Repositories"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduce how to import code repositories."
 weight: 04
 ---
 
-
-{ks_product_right}支持导入 GitHub、GitLab、Bitbucket 或其它基于 Git 的代码仓库，如 Gitee。下面以 Github 仓库为例，展示如何导入代码仓库。
-
+KubeSphere supports importing GitHub, GitLab, Bitbucket, or other Git-based code repositories, such as Gitee. Below is an example of how to import a GitHub repository.
 
 == Prerequisites
 
 * **DevOps** must have been installed and enabled.
 
-* 已有一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../05-devops-settings/02-role-and-member-management[角色和成员管理]。
-
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. See link:../05-devops-settings/02-role-and-member-management[Role and Member Management].
 
 == Steps
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 
-. 点击**企业空间管理**并进入您的 DevOps 项目。
+. Click **Workspace Management** and enter your DevOps project.
 
-. 在左侧导航栏，点击**代码仓库**。
+. In the left navigation pane, click **Code Repositories**.
 
-. 在右侧的代码仓库页面，点击**添加**。
+. On the right side of the page, click **Add**.
 
-. 在**导入代码仓库**对话框，输入代码仓库名称，点击选择代码仓库。您也可以为代码仓库设置别名和添加描述信息。
+. In the **Import Code Repository** dialog, enter a code repository name, and click **Select a code repository**. You can also set an alias and add a description for the code repository.
 +
 --
-下表列举了支持导入的代码仓库和参数设置项。以下步骤以 GitHub 为例。
+The table below lists the supported code repositories and parameter settings. The following steps use GitHub as an example.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 |GitHub
-|**凭证**：选择访问代码仓库的凭证。
+|**Credential**: Select the credential for accessing the code repository.
 
 |GitLab
 |
-* **GitLab 服务器地址**：选择 GitLab 服务器地址，默认值为 link:https://gitlab.com[]。
-* **项目组/所有者**：输入 GitLab 账号。
-* **凭证**：选择访问代码仓库的凭证。
-* **代码仓库**：选择代码仓库。
+* **GitLab Server Address**: Select the GitLab server address, the default value is link:https://gitlab.com[].
+* **Project Group/Owner**: Enter the GitLab account.
+* **Credential**: Select the credential for accessing the code repository.
+* **Code Repository**: Select the code repository.
 
 |Bitbucket
 |
-* **Bitbucket 服务器地址**：设置 Bitbucket 服务器地址。
-* **凭证**：选择访问代码仓库的凭证。
+* **Bitbucket Server Address**: Set the Bitbucket server address.
+* **Credential**: Select the credential for accessing the code repository.
 
 |Git
 |
-* **代码仓库地址**：输入代码仓库地址，如 link:https://gitee.com[]。
-* **凭证**：选择访问代码仓库的凭证。
+* **Code Repository URL**: Enter the code repository address, such as link:https://gitee.com[].
+* **Credential**: Select the credential for accessing the code repository.
 |===
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如需使用 GitLab 私有仓库，请参阅link:../02-pipelines/04-gitlab-multibranch-pipeline/[使用 GitLab 创建多分支流水线]。
+For using GitLab private repositories, see link:../02-pipelines/04-gitlab-multibranch-pipeline/[Create a Multi-branch Pipeline with GitLab].
 
 |===
 --
 
-. 在**凭证**区域，点击**创建凭证**。在弹出的**创建凭证**对话框，设置以下参数，点击**确定**。
+. In the **Credential** area, click **Create Credential**. In the **Create Credential** dialog that appears, set the following parameters and click **OK**.
 +
 --
-* **名称**：输入凭证名称，如 **github-id**。
-* **类型**：取值包括**用户名和密码**、**SSH 密钥**和**访问令牌**。在 DevOps 项目中，建议使用**用户名和密码**。
-// * **类型**：取值包括**用户名和密码**、**SSH 密钥**、**访问令牌**和 **kubeconfig**。在 DevOps 项目中，建议使用**用户名和密码**。
-* **用户名**：此处默认用户名为 **admin**。
-* **密码/令牌**：输入您的 GitHub 令牌。
-* **描述**：添加描述信息。
+* **Name**: Enter a credential name, such as **github-id**.
+* **Type**: The values include **Username and password**, **SSH key**, **Access token**, and **kubeconfig**. In DevOps projects, it is recommended to use **Username and password**.
+* **Username**: The default username here is **admin**.
+* **Password/Token**: Enter your GitHub token.
+* **Description**: Add a description.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
 
-更多关于如何添加凭证的信息，请参阅link:../05-devops-settings/01-credential-management/[凭证管理]。
+For more information on how to add credentials, see link:../05-devops-settings/01-credential-management/[Credential Management].
 |===
 --
 
-. 在**凭证**下拉列表中，选择创建的凭证，点击**确定**。
-. 在弹出的 GitHub 仓库中，选择代码仓库，点击**确定**。
+. In the **Credential** dropdown list, select the created credential and click **OK**.
+. In the pop-up GitHub repository, select the code repository and click **OK**.
 
-. 点击代码仓库右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，可以执行以下操作：
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the code repository, and you can perform the following operations:
 +
 --
-* **编辑**：修改代码仓库别名和描述信息，以及重新选择代码仓库。
-* **编辑 YAML**：编辑代码仓库 YAML 文件。
-* **删除**：删除代码仓库。
+* **Edit**: Modify the alias and description of the code repository, and reselect the code repository.
+* **Edit YAML**: Edit the YAML file of the code repository.
+* **Delete**: Delete the code repository.
 --

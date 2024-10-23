@@ -1,41 +1,36 @@
 ---
-title: "为依赖项缓存设置 CI 节点"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps"
-description: "介绍如何为依赖项缓存设置 CI 节点。"
+title: "Set CI Nodes for Dependency Cache"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduce how to set CI nodes for dependency cache."
 weight: 04
 ---
 
+Building applications often requires pulling different dependencies. Issues such as long pulling times and unstable networks may occur during the pulling process, leading to build failures. To provide a more reliable and stable environment, you can configure nodes or node groups specifically for continuous integration (CI) and speed up the build process by using cache.
 
-构建应用程序通常需要拉取不同的依赖项。拉取过程中可能会遇到某些问题，例如拉取时间长、网络不稳定，进而导致构建失败。为了提供更可靠和稳定的环境，可以配置节点或节点组，专门用于持续集成 (CI)，并通过使用缓存来加快构建过程。
-
-本文档演示如何设置 CI 节点，以便{ks_product_both}将流水线的任务调度到这些节点。
-// 本文档演示如何设置 CI 节点，以便{ks_product_both}将流水线的任务以及 S2I/B2I 构建的任务调度到这些节点。
+This document demonstrates how to set CI nodes so that KubeSphere schedules pipeline tasks to these nodes.
 
 == Prerequisites
 
-您需要在{ks_product_both}平台具有**集群管理**权限。
+You should have the **Cluster Management** permission on the {ks_product-en} platform.
 
-== 标记 CI 节点
+== Label CI Nodes
 
-. 以具有**集群管理**权限的账户登录{ks_product_left} Web 控制台。
+. Log in to the {ks_product-en} web console with an account that has the **Cluster Management** permission.
 
-. 点击**集群管理**，进入一个集群。
+. Click **Cluster Management** and enter a cluster.
 
-. 在左侧导航栏中选择**节点**下的**集群节点**，查看当前集群中的现有节点。
+. In the left navigation pane, select **Nodes** > **Cluster Nodes** to view the existing nodes in the current cluster.
 
-. 从列表中选择一个节点用来运行 CI 任务。点击节点名称转到其详情页面，点击**更多操作** > **编辑标签**。
+. Select a node from the list to run CI tasks. Click the node name to go to its detail page, and click **More** > **Edit Labels**.
 
-. 在弹出的对话框中，在键为 **node-role.kubernetes.io/worker** 的后面，输入 **ci** 作为此标签的值，点击**确定**。
+. In the dialog that appears, enter **ci** as the value after the key **node-role.kubernetes.io/worker**, and click **OK**.
 
+== Add Taints to CI Nodes
 
-== 给 CI 节点添加污点
+Pipelines generally determine whether to schedule tasks to a node based on link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity[node affinity]. If you want to dedicate a node to CI tasks, i.e., not allow other workloads to be scheduled to that node, you can add link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/[taints] to that node.
 
-流水线一般会根据link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity[节点亲和性]来确定是否调度任务到某一节点。如果要将节点专用于 CI 任务，即不允许将其他工作负载调度到该节点，可以在该节点上添加link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/[污点]。
+. Click **More** > **Edit Taints**.
 
-// 流水线和 S2I/B2I 工作流一般会根据link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity[节点亲和性]来确定是否调度任务到某一节点。如果要将节点专用于 CI 任务，即不允许将其他工作负载调度到该节点，可以在该节点上添加link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/[污点]。
+. Click **Add**, enter the key **node.kubernetes.io/ci** without specifying a value. Select **Prevent scheduling**, **Prevent scheduling if possible**, or **Prevent scheduling and evict existing pods** as needed.
 
-. 点击**更多操作** > **编辑污点**。
-
-. 点击**添加**，输入键 **node.kubernetes.io/ci** 而不指定值。根据需要选择**阻止调度**、**尽可能阻止调度**或**阻止调度并驱逐现有容器组** 。
-
-. 点击**确定**。{ks_product_right}将根据您设置的污点调度任务。
+. Click **OK**. KubeSphere will schedule tasks based on the taints you set.

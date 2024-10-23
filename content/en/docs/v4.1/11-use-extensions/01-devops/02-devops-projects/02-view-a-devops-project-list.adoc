@@ -1,6 +1,6 @@
 ---
 title: "View DevOps Project List"
-keywords: "Kubernetes, {ks_product}, Workspace, DevOps Projects, View DevOps Project List"
+keywords: "Kubernetes, {ks_product-en}, Workspace, DevOps Projects, View DevOps Project List"
 description: "Learn how to view the DevOps project list."
 weight: 02
 ---

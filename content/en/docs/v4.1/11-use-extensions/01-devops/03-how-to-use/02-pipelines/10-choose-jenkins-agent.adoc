@@ -1,19 +1,17 @@
 ---
-title: "选择 Jenkins Agent"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps, 流水线"
-description: "介绍如何选择 Jenkins Agent。"
+title: "Choose Jenkins Agent"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Introduce how to select Jenkins Agent."
 weight: 10
 ---
 
+The **agent** section specifies where the entire pipeline or a specific stage will be executed in the Jenkins environment, depending on where the `agent` section is placed. This section must be defined at the top level inside the **pipeline** block, but stage-level usage is optional. For more information, see link:https://www.jenkins.io/zh/doc/book/pipeline/syntax/#代理[Jenkins Documentation].
 
-**agent** 部分指定整个流水线或特定阶段 (Stage) 将在 Jenkins 环境中执行的位置，具体取决于该 **agent** 部分的放置位置。该部分必须在 **pipeline** 块的顶层进行定义，但是阶段级别的使用是可选的。有关更多信息，请参阅 link:https://www.jenkins.io/zh/doc/book/pipeline/syntax/#代理[Jenkins 官方文档]。
+== Built-in podTemplate
 
+podTemplate is a Pod template used to create Agents. You can define podTemplates to be used in the Kubernetes plugin.
 
-== 内置 podTemplate
-
-podTemplate 是一种 Pod 模板，用于创建 Agent。您可以定义在 Kubernetes 插件中使用的 podTemplate。
-
-在流水线运行期间，每个 Jenkins Agent Pod 必须具有一个名为 **jnlp** 的容器，以便实现 Jenkins Controller 与 Jenkins Agent 之间的通信。此外，您可以在 podTemplate 中添加容器，以满足个性化需求。可选择使用自定义的 Pod YAML 来灵活控制运行时环境（Runtime），并通过 **container** 命令来切换容器。以下是相关示例。
+During the pipeline run, each Jenkins Agent Pod must have a container named **jnlp** to facilitate communication between the Jenkins Controller and the Jenkins Agent. Additionally, you can add containers in the podTemplate to meet personalized needs. You can use a custom Pod YAML to flexibly control the runtime environment and switch containers using the **container** command. The following is an example.
 
 [,json]
 ----
@@ -47,9 +45,9 @@ spec:
 }
 ----
 
-在目前版本中，{ks_product_right}内置了 4 种类型的 podTemplate：**base**、**nodejs**、**maven** 和 **go**，并且在 Pod 中提供隔离的 Docker 环境。
+In the current version, KubeSphere comes with 4 types of podTemplates: **base**, **nodejs**, **maven**, and **go**, and provides an isolated Docker environment in the Pod.
 
-您可以通过指定 Agent 的标签来使用内置 podTemplate。例如，要使用 nodejs 的 podTemplate，在创建流水线时指定标签为 **nodejs** 即可，具体参阅以下示例。
+You can use the built-in podTemplate by specifying the label of the Agent. For example, to use the nodejs podTemplate, specify the label as **nodejs** when creating the pipeline, as shown in the following example.
 
 [,json]
 ----
@@ -76,21 +74,20 @@ pipeline {
 }
 ----
 
-
 * podTemplate base
 +
 --
 [%header,cols="1a,4a"]
 |===
-|名称 |类型/版本
+|Name |Type/Version
 
-|Jenkins Agent 标签
+|Jenkins Agent Label
 |base
 
-|容器名称
+|Container Name
 |base
 
-|操作系统
+|Operating System
 |centos-7
 
 |Docker
@@ -100,10 +97,10 @@ pipeline {
 |2.11.0
 
 |Kubectl
-|稳定版
+|Stable version
 
-|内置工具
-|unzip、which、make、wget、zip、bzip2、git
+|Built-in Tools
+|unzip, which, make, wget, zip, bzip2, git
 |===
 --
 
@@ -112,15 +109,15 @@ pipeline {
 --
 [%header,cols="1a,4a"]
 |===
-|名称 |类型/版本
+|Name |Type/Version
 
-|Jenkins Agent 标签
+|Jenkins Agent Label
 |nodejs
 
-|容器名称
+|Container Name
 |nodejs
 
-|操作系统
+|Operating System
 |centos-7
 
 |Node
@@ -136,10 +133,10 @@ pipeline {
 |2.11.0
 
 |Kubectl
-|稳定版
+|Stable version
 
-|内置工具
-|unzip、which、make、wget、zip、bzip2、git
+|Built-in Tools
+|unzip, which, make, wget, zip, bzip2, git
 |===
 --
 
@@ -148,15 +145,15 @@ pipeline {
 --
 [%header,cols="1a,4a"]
 |===
-|名称|类型/版本
+|Name |Type/Version
 
-|Jenkins Agent 标签
+|Jenkins Agent Label
 |maven
 
-|容器名称
+|Container Name
 |maven
 
-|操作系统
+|Operating System
 |centos-7
 
 |Jdk
@@ -172,10 +169,10 @@ pipeline {
 |2.11.0
 
 |Kubectl
-|稳定版
+|Stable version
 
-|内置工具
-|unzip、which、make、wget、zip、bzip2、git
+|Built-in Tools
+|unzip, which, make, wget, zip, bzip2, git
 |===
 --
 
@@ -184,15 +181,15 @@ pipeline {
 --
 [%header,cols="1a,4a"]
 |===
-|名称|类型/版本
+|Name |Type/Version
 
-|Jenkins Agent 标签
+|Jenkins Agent Label
 |go
 
-|容器名称
+|Container Name
 |go
 
-|操作系统
+|Operating System
 |centos-7
 
 |Go
@@ -211,9 +208,9 @@ pipeline {
 |2.11.0
 
 |Kubectl
-|稳定版
+|Stable version
 
-|内置工具
-|unzip、which、make、wget、zip、bzip2、git
+|Built-in Tools
+|unzip, which, make, wget, zip, bzip2, git
 |===
 --

@@ -1,31 +1,30 @@
 ---
-title: "添加持续部署白名单"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps"
-description: "介绍如何添加持续部署白名单。"
+title: "Add Continuous Deployment Whitelist"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduce how to add a continuous deployment whitelist."
 weight: 03
 ---
 
+KubeSphere supports restricting the code repositories and deployment locations for resource continuous deployment by setting a whitelist.
 
-{ks_product_right}支持通过设置白名单，限制资源持续部署的代码仓库和目标位置。
-
-本文档介绍如何添加持续部署白名单。
+This document introduces how to add a continuous deployment whitelist.
 
 == Prerequisites
 
 * **DevOps** must have been installed and enabled.
 
-* 已有一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../02-role-and-member-management[角色和成员管理]。
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. See link:../02-role-and-member-management[Role and Member Management].
 
-* 已link:../../04-import-code-repositories/[导入代码仓库]。
+* You have link:../../04-import-code-repositories/[imported a code repository].
 
 == Steps
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 
-. 点击**企业空间管理**并进入您的 DevOps 项目。
+. Click **Workspace Management** and enter your DevOps project.
 
-. 在左侧导航栏，选择 **DevOps 项目设置 > 基本信息**。
+. In the left navigation pane, select **DevOps Project Settings** > **Basic Information**.
 
-. 在右侧**基本信息**下的**持续部署白名单**区域，点击**编辑白名单**。
+. In the **Continuous Deployment Allowlist** area, click **Edit Allowlist**.
 
-. 在弹出的**编辑白名单**对话框，选择代码仓库、部署集群和项目，点击**确定**。点击**添加**可添加多个代码仓库和部署位置。
+. In the **Edit Allowlist** dialog that appears, select the code repository, cluster, and project, and click **OK**. Click **Add** to add multiple code repositories and deployment locations.

@@ -1,6 +1,6 @@
 ---
 title: "Create DevOps Projects"
-keywords: "Kubernetes, {ks_product}, Workspace, DevOps Projects, Create DevOps Projects"
+keywords: "Kubernetes, {ks_product-en}, Workspace, DevOps Projects, Create DevOps Projects"
 description: "Learn how to create DevOps projects."
 weight: 01
 ---

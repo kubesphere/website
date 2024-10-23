@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-keywords: "Kubernetes, {ks_product}, DevOps, Overview"
+keywords: "Kubernetes, {ks_product-en}, DevOps, Overview"
 description: "Introduces the basic principles of DevOps."
 weight: 01
 ---

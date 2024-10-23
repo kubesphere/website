@@ -1,255 +1,223 @@
 ---
-title: "使用 GitOps 实现应用持续部署"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps"
-description: "介绍如何创建持续部署以实现应用的部署。"
+title: "Use GitOps to Achieve Continuous Deployment of Applications"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduce how to create continuous deployment to achieve application deployment."
 weight: 03
 ---
 
+KubeSphere introduces a philosophy for implementing continuous deployment of cloud-native applications – GitOps. The core idea of GitOps is to have a Git repository where the declarative infrastructure and applications of the application system are stored and version-controlled. GitOps combined with Kubernetes can use an automated delivery pipeline to apply changes to any number of specified clusters, thus solving the consistency problem of cross-cloud deployment.
 
-{ks_product_right}引入了一种为云原生应用实现持续部署的理念 – GitOps。GitOps 的核心思想是拥有一个 Git 仓库，并将应用系统的申明式基础架构和应用程序存放在 Git 仓库中进行版本控制。GitOps 结合 Kubernetes 能够利用自动交付流水线将更改应用到指定的任意多个集群中，从而解决跨云部署的一致性问题。
-
-本文档演示如何创建持续部署以实现应用的部署。
-
+This document walks you through the process of deploying an application using a continuous deployment.
 
 == Prerequisites
 
 * **DevOps** must have been installed and enabled.
 
-* 已有一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../05-devops-settings/02-role-and-member-management[角色和成员管理]。
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. See link:../05-devops-settings/02-role-and-member-management[Role and Member Management].
 
+== Import a Code Repository
 
-== 导入代码仓库
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. Click **Workspace Management** and enter your DevOps project.
 
-. 点击**企业空间管理**并进入您的 DevOps 项目。
+. In the left navigation pane, click **Code Repositories**.
 
-. 在左侧导航栏，点击**代码仓库**。
+. On the right side of the code repositories page, click **Add**.
 
-. 在右侧的代码仓库页面，点击**添加**。
+. In the **Import Code Repository** dialog, enter a code repository name, such as **open-podcasts**, and click **Select a code repository**. You can also set an alias and add a description for the code repository.
 
-. 在**导入代码仓库**对话框，输入代码仓库名称，如 **open-podcasts**，点击选择代码仓库。您也可以为代码仓库设置别名和添加描述信息。
-
-
-. 在**选择代码仓库**对话框，点击 **Git**，在**代码仓库地址**区域，输入代码仓库地址，如 link:https://github.com/kubesphere-sigs/open-podcasts[]，点击**确定**。
+. In the **Select Code Repository** dialog, click **Git**, enter the repository address in the **Code Repository URL** area, such as link:https://github.com/kubesphere-sigs/open-podcasts[], and click **OK**.
 +
 --
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-此处导入的是公共仓库，因此不需要创建凭证。如果您添加的是私有仓库，则需要创建凭证。有关如何添加凭证的更多信息，请参阅link:../05-devops-settings/01-credential-management/[凭证管理]。
+The repository imported here is a public repository, so no credentials are needed. If you are adding a private repository, you need to create credentials. For more information on how to add credentials, see link:../05-devops-settings/01-credential-management/[Credential Management].
 
 |===
 --
 
+== Create Continuous Deployment
 
-== 创建持续部署
+. In the left navigation pane, click **Continuous Deployments**.
 
-. 在左侧导航栏，点击**持续部署**。
+. On the right side of the **Continuous Deployments** page, click **Create**.
 
-. 在右侧的**持续部署**页面，点击**创建**。
+. On the **Basic Information** tab, enter a continuous deployment name, such as **open-podcasts**. In the **Deployment Location** area, select the cluster and project for continuous deployment. Click **Next**.
 
-. 在**基本信息**页签，输入持续部署名称，如 **open-podcasts**。在**部署位置**区域，选择持续部署的部署集群和项目。点击**下一步**。
-
-. 在**代码仓库设置**页签，选择上一步创建的代码仓库，设置代码仓库的分支或标签以及 Kustomization 清单文件路径。点击**下一步**。
+. On the **Code Repository Settings** tab, select the code repository created in the previous step, set the branch or tag of the code repository, and the path of the `Kustomization` manifest file. Click **Next**.
 +
 --
 [%header, cols="1a,3a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|修订版本
-|Git 仓库中的 commit ID、分支或标签。例如，**master**, **v1.2.0**, **0a1b2c3** 或 **HEAD**。
+|Revision
+|The commit ID, branch, or tag of the Git repository. For example, **master**, **v1.2.0**, **0a1b2c3**, or **HEAD**.
 
-|清单文件路径
-|设置清单文件路径。例如，**config/default**。
+|Manifest File Path
+|Set the path of the manifest file. For example, **config/default**.
 |===
 --
 
-. 在**同步策略**区域，根据需要选择**自动同步**或**手动同步**。
+. On the **Sync Settings** tab, in the **Sync Strategy** area, select **Auto Sync** or **Manual Sync** as needed.
 +
 --
 
-* **自动同步**：在检测到 Git 仓库中的清单与部署资源的实时状态之间存在差异时，根据设置的同步选项，自动触发应用程序同步。具体参数如下表所示。
+* **Auto Sync**: Automatically trigger application synchronization when a difference is detected between the manifest in the Git repository and the real-time state of the deployment resources, according to the sync options. The specific parameters are shown in the table below.
 +
 ====
 [%header, cols="1a,3a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|清理资源
-|如果勾选，自动同步时会删除 Git 仓库中不存在的资源。不勾选时，自动同步触发时不会删除集群中的资源。
+|Prune resources
+|If selected, resources that do not exist in Git will be deleted during automatic sync. If not selected, resources in the cluster will not be deleted when automatic sync is triggered.
 
-|自恢复
-|如果勾选，当检测到 Git 仓库中定义的状态与部署资源中有偏差时，将强制应用 Git 仓库中的定义。不勾选时，对部署资源做更改时不会触发自动同步。
+|Self-heal
+|If selected, when there is a deviation between the defined state in Git and the deployed resources, the defined state in Git will be enforced. If not selected, automatic sync will not be triggered when changes are made to the deployed resources.
+
 |===
 ====
 
-* **手动同步**：根据设置的同步选项，手动触发应用程序同步。
-
-// 具体参数如下表所示。
-// +
-// ====
-// [%header, cols="1a,3a"]
-// |===
-// |参数 |描述
-
-// |清理资源
-// |如果勾选，同步会删除 Git 仓库中不存在的资源。不勾选时，同步不会删除集群中的资源，而是会显示 **out-of-sync**。
-
-// |模拟运行
-// |模拟同步，不影响最终部署资源。
-
-// |仅执行 Apply
-// |如果勾选，同步应用资源时会跳过 **pre/post** 钩子，仅执行 **kubectl apply**。
-
-// |强制 Apply
-// |如果勾选，同步时会执行 **kubectl apply --force**。
-// |===
-// ====
-
+* **Manual Sync**: Manually trigger application synchronization according to the sync options.
 --
 
-. 在**同步设置**区域，根据需要设置同步相关参数。
+. In the **Sync Settings** area, set the sync options as needed.
 +
 --
 [%header, cols="1a,3a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|跳过规范校验
-|跳过 **kubectl** 验证。执行 **kubectl apply** 时，增加 **--validate=false** 标识。
+|Skip schema validation
+|Skip **kubectl** validation. When executing **kubectl apply**, add the **--validate=false** flag.
 
-|自动创建项目
-|在项目不存在的情况下自动为应用程序资源创建项目。
+|Auto create project
+|Automatically create a project for application resources if the project does not exist.
 
-|最后清理
-|同步操作时，其他资源都完成部署且处于健康状态后，再清理资源。
+|Prune last
+|Clean up resources after all other resources have been deployed and are in a healthy state.
 
-|选择性同步
-|仅同步 **out-of-sync** 状态的资源。
+|Apply out of sync only
+|Only sync resources in the **out-of-sync** state.
 |===
 --
 
-
-. 在**依赖清理策略**区域，根据需要选择依赖清理策略。
+. In the **Prune Propagation Policy** area, select the dependency cleanup policy as needed.
 +
 --
 [%header, cols="1a,3a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 |foreground
-|先删除依赖资源，再删除主资源。
+|Delete dependent resources first, then delete the main resource.
 
 |background
-|先删除主资源，再删除依赖资源。
+|Delete the main resource first, then delete the dependent resources.
 
 |orphan
-|删除主资源，留下依赖资源成为孤儿。
+|Delete the main resource, leaving the dependent resource as an orphan.
 |===
 --
 
-. 在**替换资源**区域，选择是否需要替换已存在的资源。
+. In the **Replace Resource** area, select whether existing resources need to be replaced.
 +
 --
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-
-如果勾选，将执行 **kubectl replace/create** 命令同步资源。不勾选时，使用 **kubectl apply** 命令同步资源。
+If checked, the **kubectl replace/create** command will be executed to sync resources. If unchecked, the **kubectl apply** command will be used to sync resources.
 |===
 --
 
-. 点击**创建**。资源创建完成后将显示在持续部署列表中。
+. Click **Create**. The created continuous deployment will be displayed in the list.
 
+== View the Created Continuous Deployment
 
-== 查看已创建的持续部署信息
-
-. 在**持续部署**页面上查看到已创建的持续部署信息。具体参数如下表所示。
+. On the **Continuous Deployments** page, view the created continuous deployment information. The parameters are shown in the table below.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|持续部署的名称。
+|Name
+|The name of the continuous deployment.
 
-|健康状态
-|持续部署的健康状态。主要包含以下几种状态：
+|Health Status
+|The health status of the continuous deployment, which includes:
 
-* **健康**：资源健康。
-* **已降级**：资源已经被降级。
-* **进行中**：资源正在同步。默认返回该状态。
-* **暂停**：资源已经被暂停并等待恢复。
-* **未知**：资源健康状态未知。
-* **丢失**：资源已缺失。
+* **Healthy**: The resources are healthy.
+* **Degraded**: The resources have been degraded.
+* **Progressing**: The resources are being synchronized. This state is returned by default.
+* **Suspended**: The resources have been paused and are waiting to be resumed.
+* **Unknown**: The health status of the resources is unknown.
+* **Missing**: The resources are missing.
 
-|同步状态
-|持续部署的同步状态。主要包含以下几种状态：
+|Sync Status
+|The sync status of the continuous deployment, which includes:
 
-* **已同步**：资源同步已完成。
-* **未同步**：资源的实际运行状态和期望状态不一致。
-* **未知**：资源同步状态未知。
+* **Synced**: The resource sync has been completed.
+* **Out of Sync**: The actual running status of the resources is inconsistent with the expected status.
+* **Unknown**: The sync status of the resources is unknown.
 
-|部署位置
-|资源部署的集群和项目。
+|Deployment Location
+|The cluster and project where the resources are deployed.
 
-|更新时间
-|资源更新的时间。
+|Update Time
+|The time when the resources are updated.
 |===
 --
 
-. 点击持续部署右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，您可以执行以下操作：
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the continuous deployment, and you can perform the following operations:
 +
 --
-* **编辑信息**：编辑别名和描述信息。
+* **Edit Information**: Edit the alias and description of the continuous deployment.
 
-* **编辑 YAML**：编辑持续部署的 YAML 文件。
+* **Edit YAML**: Edit the YAML file of the continuous deployment.
 
-* **同步**：触发资源同步。
+* **Sync**: Trigger resource synchronization.
 
-* **删除**：删除持续部署。
+* **Delete**: Delete the continuous deployment.
 
 //warning
 [.admon.warning,cols="a"]
 |===
-|警告
+|Warning
 
 |
-
-删除持续部署的同时会删掉和该持续部署关联的资源。请谨慎操作。
+Deleting the continuous deployment will also delete the resources associated with it. Please proceed with caution.
 |===
-
 --
 
-. 点击已创建的持续部署进入详情页面，查看同步状态和同步结果。
+. Click the created continuous deployment to enter the detail page and view the sync status and results.
 
+== Access the Created Application
 
-== 访问已创建的应用
+. Enter the project to which the continuous deployment belongs, and in the left navigation pane, click **Application Workloads** > **Services**.
 
-. 进入持续部署所属的项目，在左侧导航栏，点击**应用负载** > **服务**。
+. On the **Services** page, find the deployed application and click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side, then select **Edit External Access**.
 
-. 在右侧的**服务**区域，找到已部署的应用，并点击右侧image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**编辑外部访问**。
+. Select **NodePort** in the **Access Mode**, and click **OK**.
 
-. 在**访问模式**中选择 **NodePort**，点击**确定**。
-
-. 在服务列表页面的**外部访问**列，查看暴露的端口，通过 {Node IP}:{NodePort} 访问此应用。
+. On the service list page, view the exposed port in the **External Access** column, and access the application through {Node IP}:{NodePort}.
 +
 --
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-在访问服务之前，请确保安全组中的端口已打开。
+Before accessing the service, please ensure that the port is open in the security group.
 |===
 --

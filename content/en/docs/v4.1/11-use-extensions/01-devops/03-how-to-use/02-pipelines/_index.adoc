@@ -1,6 +1,6 @@
 ---
 title: "Pipelines"
-keywords: "Kubernetes, {ks_product}, DevOps projects, Using DevOps, Pipelines"
+keywords: "Kubernetes, {ks_product-en}, DevOps projects, Using DevOps, Pipelines"
 description: "This section introduces how to use pipelines."
 weight: 02
 layout: "second"

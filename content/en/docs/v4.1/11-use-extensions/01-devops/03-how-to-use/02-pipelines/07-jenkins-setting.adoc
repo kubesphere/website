@@ -1,55 +1,50 @@
 ---
-title: "设置 Jenkins 系统"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps, 流水线"
-description: "介绍如何在 Jenkins 仪表板上设置 Jenkins 并重新加载配置。"
+title: "Jenkins System Settings"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Learn how to set up Jenkins and reload configurations on the Jenkins dashboard."
 weight: 07
 ---
 
-DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。Jenkins 作为 CI/CD 工作流的事实标准，具备强大而灵活的特性。然而，许多插件要求用户在使用 Jenkins 之前必须进行系统级配置。
+The DevOps system provides containerized CI/CD functionalities based on Jenkins. As the standard for CI/CD workflows, Jenkins is powerful and flexible. However, many plugins require users to perform system-level configurations before using Jenkins.
 
-为了提供可调度的 Jenkins 环境，{ks_product_right}采用了 **Configuration as Code** 的方式进行 Jenkins 系统设置。用户需要登录 Jenkins 仪表板，修改配置后再重新加载。
+To provide a schedulable Jenkins environment, KubeSphere adopts the **Configuration as Code** approach for Jenkins system settings. Users need to log in to the Jenkins dashboard, modify the configurations, and then reload them.
 
-本文档演示如何在 Jenkins 仪表板上设置 Jenkins 并重新加载配置。
+This document demonstrates how to set up Jenkins and reload configurations on the Jenkins dashboard.
 
 == Prerequisites
 
-{ks_product_right}平台需要安装并启用 **DevOps** 扩展组件。
-
+**DevOps** must have been installed and enabled.
 
 == Jenkins Configuration as Code
 
-{ks_product_right}默认安装 Jenkins Configuration as Code 插件，支持通过 YAML 文件定义 Jenkins 的期望状态，便于再现 Jenkins 的配置（包括插件配置）。请参阅link:https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos[该目录]查看具体的 Jenkins 配置和示例 YAML 文件。
+KubeSphere installs the Jenkins Configuration as Code plugin by default, which supports defining the desired state of Jenkins through YAML files, making it easy to reproduce Jenkins configurations (including plugin configurations). Refer to link:https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos[this directory] for specific Jenkins configurations and example YAML files.
 
-此外，还可以在 link:https://github.com/kubesphere/ks-jenkins[ks-jenkins] 仓库中找到 **formula.yaml** 文件，查看插件版本并按需自定义这些版本。
+Additionally, you can find the **formula.yaml** file in the link:https://github.com/kubesphere/ks-jenkins[ks-jenkins] repository to view plugin versions and customize these versions as needed.
 
+== Modify ConfigMap
 
-== 修改 ConfigMap
+It is recommended to configure Jenkins in KubeSphere through Configuration as Code (CasC). The built-in Jenkins CasC file is stored as a ConfigMap.
 
-建议通过 Configuration as Code (CasC) 在{ks_product_both}中配置 Jenkins。将内置 Jenkins CasC 文件存储为 ConfigMap。
+. Log in to the {ks_product-en} web console as the **platform-admin** user.
 
-. 以 **platform-admin** 用户登录{ks_product_left} Web 控制台。
+. Click **Cluster Management** and enter a cluster.
 
-. 点击**集群管理**，进入一个集群。
+. In the left navigation pane, select **Configuration** > **ConfigMaps**. On the **ConfigMaps** page, select **kubesphere-devops-system** from the list, then click **jenkins-casc-config**.
 
-. 在左侧导航栏中选择**配置**下的**配置字典**。在**配置字典**页面，从下拉列表中选择 **kubesphere-devops-system**，然后点击 **jenkins-casc-config**。
+. On the details page, click **More** and select **Edit YAML** from the dropdown list.
 
-. 在详情页面，点击**更多操作**，在下拉列表中选择**编辑 YAML**。
+. The configuration template for **jenkins-casc-config** is a YAML file located under **data:jenkins_user.yaml:**. Modify the container image, labels, resource requests (Request), and limits (Limit) in the ConfigMap's agent (Kubernetes Jenkins Agent), or add containers in the `podTemplate`. After completing the operations, click **OK**.
 
-. **jenkins-casc-config** 的配置模板是一个 YAML 文件，位于 **data:jenkins_user.yaml:** 部分。在 ConfigMap 的代理 (Kubernetes Jenkins Agent) 中修改容器镜像、标签、资源请求 (Request) 和限制 (Limit) 等内容，或者在 podTemplate 中添加容器。完成操作后，点击**确定**。
-
-. 等待 1 ~ 2 分钟，会自动重新加载新的配置。
-
-
+. Wait for 1 to 2 minutes, and the new configuration will be reloaded automatically.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-* 有关如何通过 CasC 设置 Jenkins 的更多信息，请参阅 link:https://github.com/jenkinsci/configuration-as-code-plugin[Jenkins 文档]。
+* For more information on how to configure Jenkins through CasC, refer to link:https://github.com/jenkinsci/configuration-as-code-plugin[Jenkins Documentation].
 
-* 在当前版本中，并非所有插件都支持 CasC 设置。CasC 仅会覆盖通过 CasC 设置的插件配置。
+* In the current version, not all plugins support CasC settings. CasC only overrides plugin configurations set through CasC.
 
 |===
-

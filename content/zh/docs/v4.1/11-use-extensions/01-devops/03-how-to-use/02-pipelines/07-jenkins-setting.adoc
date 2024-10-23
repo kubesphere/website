@@ -39,8 +39,6 @@ DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。Jenkins 作为 CI/
 
 . 等待 1 ~ 2 分钟，会自动重新加载新的配置。
 
-
-
 //note
 [.admon.note,cols="a"]
 |===

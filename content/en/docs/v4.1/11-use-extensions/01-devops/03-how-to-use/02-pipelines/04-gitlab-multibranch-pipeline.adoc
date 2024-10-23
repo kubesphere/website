@@ -1,225 +1,159 @@
 ---
-title: "使用 GitLab 创建多分支流水线"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps, 流水线"
-description: "介绍如何使用 GitLab 创建多分支流水线。"
+title: "Create a Multi-branch Pipeline with GitLab"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Learn how to create a multi-branch pipeline using GitLab."
 weight: 04
 ---
 
+link:https://gitlab.com/users/sign_in[GitLab] is a web-based Git repository management tool that supports public and private repositories, and provides comprehensive DevOps functionalities including source code management, code review, issue tracking, continuous integration, and more. With GitLab, teams can collaborate efficiently on a single platform to complete the entire software development process from coding to deployment.
 
-link:https://gitlab.com/users/sign_in[GitLab] 是一款基于 web 的 Git 仓库管理工具，支持公开和私有仓库，并提供了全面的 DevOps 功能，包括源代码管理、代码审查、问题跟踪、持续集成等。通过 GitLab，团队能够在一个平台上高效协作，完成从代码编写到部署的整个软件开发过程。
-
-{ks_product_right}支持在 DevOps 项目中使用 GitLab 创建多分支流水线。本文档演示如何使用 GitLab 创建多分支流水线。
-
+{ks_product-en} supports creating multi-branch pipelines using GitLab in DevOps projects. This document demonstrates how to create a multi-branch pipeline with GitLab.
 
 == Prerequisites
 
 * **DevOps** must have been installed and enabled.
 
-* 已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../../05-devops-settings/02-role-and-member-management[角色和成员管理]。
+* A workspace, a DevOps project, and a user (e.g., **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. Refer to link:../../05-devops-settings/02-role-and-member-management[Role and Member Management].
 
-* 已有一个 link:https://gitlab.com/users/sign_in[GitLab] 账户以及一个 link:https://hub.docker.com/[Docker Hub] 账户。
+* You have a link:https://gitlab.com/users/sign_in[GitLab] account and a link:https://hub.docker.com/[Docker Hub] account.
 
-== 步骤 1：创建凭证
+== Step 1: Create Credentials
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 
-. 点击**企业空间管理**并进入您的 DevOps 项目，在 **DevOps 项目设置**下的**凭证**中创建以下凭证。有关如何创建凭证的更多信息，请参阅link:../../05-devops-settings/01-credential-management/[凭证管理]。
+. Click **Workspace Management** and enter your DevOps project, then create the following credentials under **Credentials** in **DevOps Project Settings**. For more information on how to create credentials, refer to link:../../05-devops-settings/01-credential-management/[Credential Management].
 +
 --
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如果您的账户或密码中包含任何特殊字符，例如 **@** 和 **$**，则可能会因为无法识别而在流水线运行时导致错误。在此情况下，您需要先在第三方网站（例如 link:https://www.urlencoder.org/[urlencoder]）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。
-
+If your account or password contains special characters such as **@** and **$**, errors may occur during pipeline runs due to unrecognized characters. In such cases, encode your account or password on a third-party website (e.g., link:https://www.urlencoder.org[urlencoder]) and then copy and paste the encoded result as your credential information.
 |===
 
 [%header,cols="1a,2a,2a"]
 |===
-|凭证 ID|类型|用途
+| Credential ID | Type | Where to use
 
 |dockerhub-id
-|用户名和密码
+|Username and password
 |Docker Hub
 
 |gitlab-id
-|用户名和密码
+|Username and password
 |GitLab
-
-// |demo-kubeconfig
-// |kubeconfig
-// |Kubernetes
 |===
 --
 
-. 创建完成后，您将在凭证页面看到已创建的凭证。
+. After creation, you will see the created credentials on the credentials page.
 
+== Step 2: Edit the Jenkinsfile in your GitLab Repository
 
-== 步骤 2：在 GitLab 仓库中编辑 Jenkinsfile
+. Log in to GitLab and create a public project. Click **New Project > Import Project**, select **Import repository from URL**, enter the URL of link:https://github.com/kubesphere/devops-maven-sample[devops-maven-sample], choose the visibility level **Public**, and then click **Create Project**.
 
-. 登录 GitLab 并创建一个公开项目。点击**新建项目 > 导入项目**，选择**从 URL 导入仓库**，输入 link:https://github.com/kubesphere/devops-maven-sample[devops-maven-sample] 的 URL，可见性级别选择**公开**，然后点击**新建项目**。
+. In the newly created project, create a new branch from the v4.1.0 branch, named **gitlab-demo**.
 
-. 在刚刚创建的项目中，从 v4.1.0 分支中创建一个新分支，命名为 **gitlab-demo**。
+. In the **gitlab-demo** branch, click the **Jenkinsfile-online** file in the root directory.
 
-. 在 **gitlab-demo** 分支中，点击根目录中的 **Jenkinsfile-online** 文件。
-
-. 点击**编辑**，分别将 **GITHUB_CREDENTIAL_ID**、**GITHUB_ACCOUNT** 以及 **@github.com** 更改为 **GITLAB_CREDENTIAL_ID**、**GITLAB_ACCOUNT** 以及 **@gitlab.com**，然后编辑下表所列条目。还要将 **push latest** 中 **branch** 的值更改为 **gitlab-demo**。
-// . 点击**编辑**，分别将 **GITHUB_CREDENTIAL_ID**、**GITHUB_ACCOUNT** 以及 **@github.com** 更改为 **GITLAB_CREDENTIAL_ID**、**GITLAB_ACCOUNT** 以及 **@gitlab.com**，然后编辑下表所列条目。还要将 **push latest** 和 **deploy to dev** 中 **branch** 的值更改为 **gitlab-demo**。
+. Click **Edit**, change **GITHUB_CREDENTIAL_ID**, **GITHUB_ACCOUNT**, and **@github.com** to **GITLAB_CREDENTIAL_ID**, **GITLAB_ACCOUNT**, and **@gitlab.com** respectively, and edit the entries listed in the table below. Also, change the value of **branch** in **push latest** to **gitlab-demo**.
 +
 --
 [%header,cols="1a,2a,2a"]
 |===
-|条目|值|描述信息
+|Entry|Value|Description
 
 |GITLAB_CREDENTIAL_ID
 |gitlab-id
-|您在{ks_product_both}中为自己的 GitLab 账户设置的**名称**，用于将标签推送至您的 GitLab 仓库。
+|The **name** you set for your GitLab account in KubeSphere, used to push tags to your GitLab repository.
 
 |DOCKERHUB_NAMESPACE
 |your-dockerhub-id
-|请替换为您的 Docker Hub 账户名，也可以替换为该账户下的 Organization 名称。
+|Replace with your Docker Hub account name, or the name of an organization under the account.
 
 |GITLAB_ACCOUNT
 |your-gitlab-id
-|请替换为您的 GitLab 账户名，也可以使用该账户的用户组名称。
+|Replace with your GitLab account name, or the name of a user group under the account.
 |===
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-有关 Jenkinsfile 中环境变量的更多信息，请参阅link:../02-create-a-pipeline-using-jenkinsfile/[使用 Jenkinsfile 创建流水线]。
-
+For more information about environment variables in Jenkinsfile, refer to link:../02-create-a-pipeline-using-jenkinsfile/[Create a Pipeline Using Jenkinsfile].
 |===
 --
 
-. 点击 **Commit changes** 更新该文件。
+. Click **Commit changes** to update the file.
 
+== Step 3: Create a Pipeline
 
-// == 步骤 3：创建项目
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 
-// 创建两个项目，例如 **kubesphere-sample-dev** 和 **kubesphere-sample-prod**，分别代表开发环境和生产环境。待流水线成功运行，将在这两个项目中自动创建应用程序的相关部署 (Deployment) 和服务 (Service)。
+. Click **Workspace Management** and enter your DevOps project, then click **Create** on the **Pipelines** page.
 
-// 有关更多信息，请参阅link:../02-create-a-pipeline-using-jenkinsfile/#_步骤_2在_github_仓库中修改_jenkinsfile[使用 Jenkinsfile 创建流水线]。
+. In the pop-up dialog, name it **gitlab-multi-branch**.
 
-== 步骤 3：创建流水线
+. Under **Pipeline Category**, select **Multi-branch Pipeline**.
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
-
-. 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
-
-. 在弹出的对话框中，将其命名为 **gitlab-multi-branch**。
-
-. 在**流水线类别**下，选择**多分支流水线**。
-
-. 在**代码仓库**下，选择一个代码仓库，点击**下一步**继续。
+. Under **Code Repository**, select a code repository and click **Next** to continue.
 +
 --
-若没有可用的代码仓库，点击下方的**创建代码仓库**。有关更多信息，请参阅link:../../04-import-code-repositories/[导入代码仓库]。
+If no code repository is available, click **Create a code repository** below. For more information, refer to link:../../04-import-code-repositories/[Import Code Repositories].
 --
 
-.. 在**导入代码仓库**对话框，输入代码仓库名称（自定义），点击选择代码仓库。
+.. In the **Import Code Repository** dialog, enter a name for the code repository (customizable), then click to select the code repository.
 
-.. 在 **GitLab** 页签下的 **GitLab 服务器地址**中选择默认选项 link:https://gitlab.com[]，在**项目组/所有者**中输入该 GitLab 项目所属组的名称，然后从**代码仓库**的下拉菜单中选择 **devops-maven-sample** 仓库。点击右下角的image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]，然后点击**下一步**。
+.. On the **GitLab** tab, select the default option link:https://gitlab.com[] under **GitLab Server Address**, enter the name of the group the GitLab project belongs to in **Project Group/Owner**, then select the **devops-maven-sample** repository from the dropdown menu under **Code Repository**. Click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] in the bottom right corner, then click **OK**.
 +
 --
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如需使用 GitLab 私有仓库，请参考以下步骤：
+To use a private GitLab repository, follow these steps:
 
-* 在 GitLab 上前往**用户设置 > 访问令牌**，创建拥有 API 和 read_repository 权限的个人访问令牌。
+* Go to **User Settings > Access Tokens** on GitLab, create a personal access token with API and read_repository permissions.
 
-* link:../../../04-how-to-integrate/01-sonarqube/[登录 Jenkins 面板]，前往**系统管理 > Manage Credentials**，使用您的 GitLab 令牌创建 Jenkins 凭证，用于访问 GitLab。然后前往**系统管理 > 系统配置**，在 **GitLab 服务**中添加该凭证。
+* link:../07-access-jenkins-console[Access Jenkins Dashboard], go to **Manage Jenkins > Manage Credentials**, create Jenkins credentials using your GitLab token for accessing GitLab. Then go to **Manage Jenkins > Configure System**, add the credentials in **GitLab**.
 
-* 在 DevOps 项目中，选择 **DevOps 项目设置 > 凭证**，使用您的 GitLab 令牌创建一个凭证。创建流水线时，在 **GitLab** 页签的**凭证**中指定该凭证，以便流水线能够从您的 GitLab 私有仓库中拉取代码。
-
+* In the DevOps project, select **DevOps Project Settings > Credentials**, create a credential using your GitLab token. When creating the pipeline, specify this credential in the **Credentials** under the **GitLab** tab so that the pipeline can pull code from your private GitLab repository.
 |===
 --
 
-. 在**高级设置**页签中，将**脚本路径**更改为 **Jenkinsfile-online** 然后点击**创建**。
+. On the **Advanced Settings** tab, change the **Script Path** to **Jenkinsfile-online** and then click **Create**.
 +
 --
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-该字段指定代码仓库中的 Jenkinsfile 路径，它表示该仓库的根目录。如果文件位置变更，则脚本路径也需要更改。
-
+This field specifies the path of the Jenkinsfile in the code repository, which represents the root directory of the repository. If the file location changes, the script path also needs to be changed.
 |===
 --
 
+== Step 4: Run the Pipeline
 
-== 步骤 4：运行流水线
+. After the pipeline is created, it will be displayed in the list. Click the pipeline name to view its details page.
+. Click **Run** on the right. In the pop-up dialog, select **gitlab-demo** from the dropdown menu and add a tag number, such as **v0.0.2**. Click **OK** to trigger a new run.
+. Wait a moment, then click the run record to view the details.
+. If the pipeline reaches the **Push with Tag** stage, it will pause at this stage and require a user with approval permissions to click **Proceed**.
 
-. 流水线创建后，会展示在列表中。点击流水线名称查看其详情页。
-. 点击右侧的**运行**。在弹出的对话框中，从下拉菜单中选择 **gitlab-demo** 并添加一个标签号，比如 **v0.0.2**。点击**确定**来触发一个新运行。
-. 稍等片刻，点击运行记录查看详情。
-. 流水线如果运行到 **Push with Tag** 阶段，会在此阶段暂停，需要具有审核权限的用户点击**继续**。
-// . 流水线如果运行成功，会在 **Deploy to Dev** 阶段暂停，需要具有审核权限的用户点击**继续**。
-// +
-// --
-// //note
-// [.admon.note,cols="a"]
-// |===
-// |说明
+== Step 5: Check Pipeline Status
 
-// |
-// 在 Jenkinsfile 中定义了三个阶段 **deploy to dev**、**push with tag** 和 **deploy to production**，每个阶段都需要审核。因此在运行到这些阶段时，流水线会暂停，等待审核。
-// |===
-// --
+. On the **Pipeline** tab of the run record, check the running status of the pipeline.
 
+. Click the **Run Logs** tab to view the pipeline run logs. Click each stage to view its detailed logs. Click **View Full Logs** to troubleshoot and resolve issues based on the logs, or download the logs to your local machine for further analysis.
 
-== 步骤 5：检查流水线状态
+== Step 6: Verify Results
 
-. 在运行记录的**流水线**页签下，查看流水线的运行状态。
+. As defined in the Jenkinsfile, the Docker image built by the pipeline has also been successfully pushed to Docker Hub. In Docker Hub, you will see the image with the tag **v0.0.2**, which was specified before the pipeline run.
 
-. 点击**运行日志**页签查看流水线运行日志。点击每个阶段查看其详细日志。点击**查看完整日志**，根据日志排除故障和问题，也可以将日志下载到本地进行进一步分析。
-
-
-== 步骤 6：验证结果
-
-. 按照 Jenkinsfile 中的定义，通过流水线构建的 Docker 镜像也已成功推送到 Docker Hub。在 Docker Hub 中，您会看到带有标签 **v0.0.2** 的镜像，该标签在流水线运行之前已指定。
-
-. 同时，GitLab 中也已生成一个新标签。
-
-// . 示例应用程序将部署到 **kubesphere-sample-dev** 和 **kubesphere-sample-prod**，并创建相应的部署和服务。转到这两个项目，预期结果如下所示：
-
-// +
-// --
-// [%header,cols="1,2,2,1,1"]
-// |===
-// |环境|URL|命名空间|部署|服务
-
-// |开发环境
-// |http://{$NodeIP}:{$30861}
-// |kubesphere-sample-dev
-// |ks-sample-dev
-// |ks-sample-dev
-
-// |生产环境
-// |http://{$NodeIP}:{$30961}
-// |kubesphere-sample-prod
-// |ks-sample
-// |ks-sample
-// |===
-
-// //note
-// [.admon.note,cols="a"]
-// |===
-// |说明
-
-// |
-// 您可能需要在安全组中打开端口，以便使用 URL 访问该应用。有关更多信息，请参阅link:../02-create-a-pipeline-using-jenkinsfile/#_步骤_8访问示例服务[访问示例服务]。
-
-// |===
-// --
+. Meanwhile, a new tag has been generated in GitLab.

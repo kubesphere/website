@@ -1,76 +1,72 @@
 ---
-title: "在流水线中使用 Jenkins 共享库"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps, 流水线"
-description: "介绍如何在流水线中使用 Jenkins 共享库。"
+title: "Use Jenkins Shared Libraries in a Pipeline"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Learn how to use Jenkins shared libraries in a pipeline."
 weight: 08
 ---
 
+For Jenkins pipelines that contain the same stages or steps, you can use Jenkins shared libraries in the Jenkinsfile to avoid pipeline code duplication.
 
-
-对于包含相同阶段或步骤的 Jenkins 流水线，可以在 Jenkinsfile 中使用 Jenkins 共享库避免流水线代码重复。
-
-本文档演示如何在 DevOps 流水线中使用 Jenkins 共享库。
-
+This document demonstrates how to use Jenkins shared libraries in a DevOps pipeline.
 
 == Prerequisites
 
 * **DevOps** must have been installed and enabled.
 
-* 已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../../05-devops-settings/02-role-and-member-management[角色和成员管理]。
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. See link:../../05-devops-settings/02-role-and-member-management[Role and Member Management].
 
-* 已有一个可用 Jenkins 共享库。本教程以 link:https://github.com/devops-ws/jenkins-shared-library[GitHub 仓库]中的 Jenkins 共享库为例。
+* You have a usable Jenkins shared library. This tutorial uses the Jenkins shared library in the link:https://github.com/devops-ws/jenkins-shared-library[GitHub repository] as an example.
 
 
-== 步骤 1：在 Jenkins 仪表盘配置共享库
+== Step 1: Configure Shared Libraries in the Jenkins Dashboard
 
-. link:../../../04-how-to-integrate/01-sonarqube/[登录 Jenkins 仪表板]并点击左侧导航栏中的**系统管理**。
+. link:../07-access-jenkins-console[Log in to the Jenkins dashboard] and click **Manage Jenkins** in the left navigation pane.
 
-. 向下滚动并点击**系统配置**。
+. Scroll down and click **Configure System**.
 
-. 向下滚动到 **Global Pipeline Libraries**，然后点击**新增**。
+. Scroll down to **Global Pipeline Libraries** and click **Add**.
 
-. 配置字段如下所示。
+. Configure the fields as follows.
 
-* **Name：** 为共享库设置名称（例如，`demo-shared-library`），以便在 Jenkinsfile 中引用此名称来导入共享库。
+* **Name:** Set a name for the shared library (e.g., `demo-shared-library`) so that you can import the shared library by referring to this name in a Jenkinsfile.
 
-* **Default version：** 设置共享库所在仓库的一个分支名称，将其作为导入共享库的默认分支。本教程将使用 master。
+* **Default version:** Set a branch name of the repository where the shared library is located as the default branch to import the shared library. Enter `master` for this tutorial.
 
-* 在 **Retrieval method** 下，选择 **Modern SCM**。
+* Under **Retrieval method**, select **Modern SCM**.
 
-* 在 **Source Code Management** 下，选择 **Git**，并为**项目仓库**输入示例仓库的 URL 。如果您使用自己的仓库且访问此仓库需要凭证，还需要配置**凭证**。
+* Under **Source Code Management**, select **Git** and enter the URL of the example repository for **Project Repository**. If you use your own repository and access to this repository requires credentials, you also need to configure **Credentials**.
 
-. 编辑完成后，点击**应用**。
+. After editing, click **Apply**.
 +
 --
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-您还可以配置link:https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries[文件夹级别的共享库]。
+You can also configure link:https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries[folder-level shared libraries].
 
 |===
 --
 
-== 步骤 2：在流水线中使用共享库
+== Step 2: Use Shared Libraries in a Pipeline
 
+=== Create a Pipeline
 
-=== 创建流水线
+. Log in to the {ks_product_both} web console as the **project-regular** user.
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. Click **Workspace Management** and enter your DevOps project, then click **Create** on the **Pipelines** page.
 
-. 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
+. In the dialog that appears, name it **demo-shared-library** and click **Next**.
 
-. 在弹出的对话框中，将其命名为 **demo-shared-library**，点击**下一步**。
+. In **Advanced Settings**, click **Create** directly to create the pipeline with the default settings.
 
-. 在**高级设置**中，直接点击**创建**，使用默认设置创建流水线。
+=== Edit the Pipeline
 
-=== 编辑流水线
+. On the pipeline list page, click the pipeline name to enter its detail page, then click **Edit Jenkinsfile**.
 
-. 在流水线列表页面，点击流水线名称进入其详情页面，然后点击**编辑 Jenkinsfile**。
-
-. 在弹出的对话框中，添加以下示例 Jenkinsfile。完成编辑后，点击**确定**。
+. In the dialog that appears, add the following example Jenkinsfile. After editing, click **OK**.
 +
 --
 [,json]
@@ -100,16 +96,16 @@ pipeline {
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-根据需要，为 **agent** 指定 **label**。
+Specify a **label** for **agent** as needed.
 
 |===
 --
 
 +
-或者，使用以 **@Library('<配置好的共享库名称>') _** 开头的 Jenkinsfile。如果使用这种类型的 Jenkinsfile，需要提前在 Jenkins 仪表板上配置共享库。在本教程中，您可以使用以下示例 Jenkinsfile。
+Alternatively, use a Jenkinsfile that starts with **@Library('<the configured shared library name>') _**. If you use this type of Jenkinsfile, you need to configure the shared library on the Jenkins dashboard in advance. In this tutorial, you can use the following example Jenkinsfile.
 +
 --
 [,json]
@@ -135,16 +131,16 @@ pipeline {
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-使用 **@Library('demo-shared-library@<分支名称>') _** 来指定特定的分支。
+Use **@Library('demo-shared-library@<branch name>') _** to specify a specific branch.
 
 |===
 --
 
-== 步骤 3：运行流水线
+== Step 3: Run the Pipeline
 
-. 在流水线详情页面，点击**运行**运行流水线。
+. On the pipeline detail page, click **Run** to run the pipeline.
 
-. 点击**运行记录**页签下的记录，查看流水线运行详情。点击**运行日志**查看日志详细信息。
+. Click the record under the **Run Records** tab to view the pipeline run details. Click **Run Logs** to view the log details.

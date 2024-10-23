@@ -1,123 +1,119 @@
 ---
-title: "使用流水线模板创建流水线"
-keywords: "Kubernetes, {ks_product}, DevOps 项目, 使用 DevOps, 流水线"
-description: "介绍如何使用流水线模板创建流水线。"
+title: "Create Pipelines Using Pipeline Templates"
+keywords: "Kubernetes, {ks_product-en}, DevOps Projects, Using DevOps, Pipelines"
+description: "Learn how to create pipelines using pipeline templates."
 weight: 03
 ---
 
-本文档演示如何在{ks_product_both}上使用流水线模板创建流水线。
+This document illustrates how to create pipelines using pipeline templates on KubeSphere.
 
-DevOps 提供图形编辑面板，支持通过交互式操作来定义 Jenkins 流水线的阶段和步骤。内置多个流水线模板，如 Node.js、Maven 以及 Golang，使用户能够快速创建对应模板的流水线。DevOps 还提供 CI 以及 CI & CD 流水线模板，但是这两个模板难以满足定制化需求，建议您采用其它内置模板或直接自定义流水线。
+DevOps provides a graphic editing panel that facilitates the definition of stages and steps in Jenkins pipelines through interactive operations. It includes various built-in pipeline templates like Node.js, Maven, and Golang, enabling users to swiftly create pipelines based on these templates. While DevOps also offers CI and CI & CD pipeline templates, they might not fully align with custom requirements. It is advisable to use other built-in templates or directly customize pipelines.
 
-* CI 流水线模板
+* CI Pipeline Template
 +
 --
-CI 流水线模板包含两个阶段。**clone code** 阶段用于检出代码，**build & push** 阶段用于构建镜像并将镜像推送至 Docker Hub。先为代码仓库和 Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
+The CI pipeline template comprises two stages. The **clone code** stage fetches the code, while the **build & push** stage builds the image and pushes it to Docker Hub. Prior to editing, create credentials for the code repository and Docker Hub repository, and then configure the URLs and credentials in the corresponding steps. Once editing is finalized, the pipeline can be initiated.
 --
 
-* CI & CD 流水线模板
+* CI & CD Pipeline Template
 +
 --
-CI & CD 流水线模板包含六个阶段。有关每个阶段的更多信息，请参阅link:../02-create-a-pipeline-using-jenkinsfile/[使用 Jenkinsfile 创建流水线]。先为代码仓库、Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
-// CI & CD 流水线模板包含六个阶段。有关每个阶段的更多信息，请参阅link:../02-create-a-pipeline-using-jenkinsfile/[使用 Jenkinsfile 创建流水线]。先为代码仓库、Docker Hub 仓库和集群的 kubeconfig 创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。
+The CI & CD pipeline template consists of six stages. For detailed information on each stage, please refer to link:../02-create-a-pipeline-using-jenkinsfile/[Create a Pipeline Using a Jenkinsfile]. Prior to editing, create credentials for the code repository and Docker Hub repository, and then configure the URLs and credentials in the corresponding steps. Once editing is finalized, the pipeline can be initiated.
 --
-
 
 == Prerequisites
 
 * **DevOps** must have been installed and enabled.
 
-* 已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 **project-regular**)，并已邀请该用户至 DevOps 项目且授予 **operator** 角色。请参阅link:../../05-devops-settings/02-role-and-member-management[角色和成员管理]。
-
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. Refer to link:../../05-devops-settings/02-role-and-member-management[Role and Member Management].
 
 == Steps
 
-下面以 Node.js 为例演示如何使用内置流水线模板。使用 Maven 以及 Golang 流水线模板的操作基本相同。
+The following takes Node.js as an example to show how to use a built-in pipeline template. Steps for using Maven and Golang pipeline templates are analogous.
 
-. 以 **project-regular** 用户登录{ks_product_both} Web 控制台。
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 
-. 点击**企业空间管理**并进入您的 DevOps 项目，在**流水线**页面点击**创建**。
+. Click **Workspace Management** and navigate to your DevOps project. Click **Pipelines** and then click **Create**.
 
-. 在弹出的对话框中，输入流水线名称，点击**下一步**，然后点击**创建**。
+. In the pop-up dialog, input the pipeline name, click **Next**, and then click **Create**.
 
-. 点击已创建的流水线，在**流水线配置**页签下，点击**编辑流水线**。
+. Click the created pipeline, proceed to the **Pipeline Configurations** tab, and select **Edit Pipeline**.
 
-. 在**创建流水线**对话框，点击 **Node.js**，然后点击**下一步**。
+. In the **Create Pipeline** dialog, select **Node.js**, and then click **Next**.
 
-. 在**参数设置**页签，按照实际情况设置以下参数，点击**创建**。
+. On the **Parameter Configuration** tab, configure the following parameters according to the actual situation, and then click **Create**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 |GitURL
-|需要克隆的项目仓库的地址。
+|The URL of the project repository to be cloned.
 
 |GitRevision
-|需要检出的分支。
+|The branch to be checked out.
 
 |NodeDockerImage
-|Node.js 的 Docker 镜像版本。
+|The Docker image version for Node.js.
 
 |InstallScript
-|安装依赖项的 Shell 脚本。
+|Shell script to install dependencies.
 
 |TestScript
-|项目测试的 Shell 脚本。
+|Shell script for project testing.
 
 |BuildScript
-|构建项目的 Sell 脚本。
+|Shell script to build the project.
 
-|ArtifactsPath
-|制品文件所在的路径。
+|ArtifactsLocation
+|Path where artifact files are located.
 |===
 --
 
-. 在左侧的可视化编辑页面，系统默认已添加一系列步骤，点击**添加步骤**或**添加并行阶段**进行修改。
+. By default, a series of steps has been added on the left graphic editing panel. Select **Add Step** or **Add Parallel Stage** to make adjustments.
 
-. 点击一个步骤，在页面右侧，您可以执行以下操作。编辑完成后，点击**确定**。
+. Click on a step, on the right side of the page, you can:
 +
 --
-* 修改阶段名称。
+* Modify the stage name.
 
-* 删除阶段。
+* Delete the stage.
 
-* 设置代理类型。
+* Specify the agent type.
 
-* 添加条件。
+* Add conditions.
 
-* 编辑或删除某一任务。
+* Edit or remove a specific task.
 
-* 添加步骤或嵌套步骤。
+* Add steps or add nesting steps.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-请参阅link:../01-create-a-pipeline-using-graphical-editing-panel/[使用图形编辑面板创建流水线]，了解如何在流水线模板中自定义步骤和阶段。
-
+Refer to link:../01-create-a-pipeline-using-graphical-editing-panel/[Create a Pipeline Using Graphic Editing Panels] to get how to customize steps and stages in the pipeline template.
 |===
 --
 
-. 在右侧的**代理**区域，选择代理类型，默认值为 **kubernetes**，点击**确定**。
+. In the **Agent** section on the right, choose the agent type, defaulting to **kubernetes**, and click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|代理类型|说明
+|Agent Type |Description
 
 |any
-|调用默认的 base pod 模板创建 Jenkins agent 运行流水线。
+|Uses the default base pod template to create a Jenkins agent for running pipelines.
 
 |node
-|调用指定类型的 pod 模板创建 Jenkins agent 运行流水线，可配置的 label 标签为 base、java、nodejs、maven、go 等。
+|Uses a pod template with the specific label to create a Jenkins agent for running pipelines. Available labels include base, java, nodejs, maven, go, and more.
 
 |kubernetes
-|通过 yaml 文件定义的标准 kubernetes pod 模板运行 agent，执行流水线任务。
+|Use a standard Kubernetes pod template defined in a yaml file to create a jenkins agent for running pipelines.
 |===
 --
 
-. 查看已创建的流水线模板详情，点击**运行**即可运行该流水线。
+. Review the details of the created pipeline template, and click **Run** to run the pipeline.

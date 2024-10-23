@@ -1,6 +1,6 @@
 ---
 title: "Edit DevOps Project Information"
-keywords: "Kubernetes, {ks_product}, Workspace Management, DevOps Projects, Edit DevOps Project Information"
+keywords: "Kubernetes, {ks_product-en}, Workspace Management, DevOps Projects, Edit DevOps Project Information"
 description: "Learn how to edit DevOps project information."
 weight: 03
 ---

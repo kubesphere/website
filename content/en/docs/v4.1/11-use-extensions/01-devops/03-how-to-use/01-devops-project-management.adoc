@@ -1,6 +1,6 @@
 ---
 title: "Create and Manage DevOps Projects"
-keywords: "Kubernetes, {ks_product}, DevOps projects, DevOps project management"
+keywords: "Kubernetes, {ks_product-en}, DevOps projects, DevOps project management"
 description: "Demonstrates how to create and manage DevOps projects."
 weight: 01
 ---

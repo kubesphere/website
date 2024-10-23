@@ -1,6 +1,6 @@
 ---
 title: "DevOps"
-keywords: "Kubernetes, {ks_product}, DevOps"
+keywords: "Kubernetes, {ks_product-en}, DevOps"
 description: "Managing and operating in DevOps projects, including running pipelines, creating credentials, and integrating tools."
 weight: 01
 layout: "second"

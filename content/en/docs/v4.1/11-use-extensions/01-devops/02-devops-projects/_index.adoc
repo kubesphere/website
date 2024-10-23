@@ -1,6 +1,6 @@
 ---
 title: "Manage DevOps Projects"
-keywords: "Kubernetes, {ks_product}, Workspace, DevOps Projects"
+keywords: "Kubernetes, {ks_product-en}, Workspace, DevOps Projects"
 description: "Learn how to view and manage DevOps projects."
 weight: 02
 layout: "second"

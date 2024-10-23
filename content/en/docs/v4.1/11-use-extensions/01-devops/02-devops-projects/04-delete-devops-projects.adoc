@@ -1,6 +1,6 @@
 ---
 title: "Delete DevOps Projects"
-keywords: "Kubernetes, {ks_product}, Workspace Management, DevOps Projects, Delete DevOps Project"
+keywords: "Kubernetes, {ks_product-en}, Workspace Management, DevOps Projects, Delete DevOps Project"
 description: "Learn how to delete DevOps projects."
 weight: 04
 ---
