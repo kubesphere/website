@@ -38,7 +38,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 . 点击刚刚创建的项目，在**机器人账户**页签下点击**添加机器人账户**。
 
-. 在弹出的对话框中，为机器人账户设置名称 **robot-test** 和**过期时间**。然后在**权限**中勾选制品（Artifact）的所有权限。点击**完成**。
+. 在弹出的对话框中，为机器人账户设置名称 **robot-test** 和**过期时间**。然后在**权限**中勾选制品（Artifact）和仓库的所有权限。点击**完成**。
 
 . 在弹出的对话框中，点击**导出到文件中**，保存该 Harbor 令牌。
 
@@ -46,7 +46,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 配置 Docker，使其忽略您 Harbor 仓库的安全性。
 
-. 在您的主机上运行 **vim /etc/docker/daemon.json** 命令以编辑 **daemon.json** 文件，输入以下内容并保存更改。
+. 在所有集群节点上运行 **vim /etc/docker/daemon.json** 命令以编辑 **daemon.json** 文件，添加以下内容并保存更改。
 +
 --
 [,json]
@@ -75,6 +75,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
     "max-size": "5m",
     "max-file": "3"
   },
+  // 注意添加逗号
   "exec-opts": ["native.cgroupdriver=systemd"],
   "insecure-registries": ["103.61.38.55:30002"]
 }
@@ -87,7 +88,6 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 [,bash]
 ----
 sudo systemctl daemon-reload
-
 sudo systemctl restart docker
 ----
 //note
@@ -98,7 +98,7 @@ sudo systemctl restart docker
 |
 建议您在隔离的测试环境或者严格控制的离线环境中使用该方案。有关更多信息，请参阅 link:https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry[Deploy a plain HTTP registry]。
 
-完成上述操作后，即可在项目中部署工作负载时使用您 Harbor 仓库中的镜像。您需要为自己的 Harbor 仓库创建一个镜像密钥，然后在部署工作负载添加容器时，点击**Docker Hub**，选择您的 Harbor 仓库并输入镜像的绝对路径以搜索您的镜像。
+完成上述操作后，即可在项目中部署工作负载时使用您 Harbor 仓库中的镜像。您需要为自己的 Harbor 仓库创建一个镜像密钥，然后在部署工作负载添加容器时，点击 **Docker Hub**，选择您的 Harbor 仓库并输入镜像的绝对路径以搜索您的镜像。
 
 |===
 --
@@ -127,7 +127,7 @@ sudo systemctl restart docker
 . 将以下内容复制粘贴至 Jenkinsfile。注意，必须将 **REGISTRY**、**HARBOR_NAMESPACE**、**APP_NAME** 和 **HARBOR_CREDENTIAL** 替换为您自己的值。
 +
 --
-[,json]
+[,yaml]
 ----
 
 pipeline {
@@ -153,7 +153,7 @@ pipeline {
     stage('docker login') {
       steps{
         container ('maven') {
-          // 请替换 -u 后面的 Docker Hub 用户名，不要忘记加上 ''。您也可以使用 Docker Hub 令牌。
+          // 请将 -u 后面的参数替换为 Harbor 令牌文件中 name 的值，不要忘记加上 ''
           sh '''echo $HARBOR_CREDENTIAL_PSW|docker login $REGISTRY -u 'robot$robot-test' --password-stdin'''
         }
       }

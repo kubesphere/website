@@ -1,9 +1,9 @@
 // :ks_include_id: b1063d2135a7413f839d796f93c2afa0
-|状态
-|应用模板当前的状态。
+|Status
+|The current status of the application template.
 
-* **未上架**：应用模板已创建成功，但是未上架到{ks_product-en}平台的应用商店。
+* **Not Listed**: The application template has been successfully created but is not listed in the App Store.
 
-* **已上架**：应用模板已创建成功，并且已上架到{ks_product-en}平台的应用商店。
+* **Listed**: The application template has been successfully created and is listed in in the App Store.
 
-* **已下架**：应用模板上架到{ks_product-en}平台的应用商店后被应用商店管理员下架。
+* **Suspended**: The application template was listed in the App Store but has been delisted by the App Store administrator.

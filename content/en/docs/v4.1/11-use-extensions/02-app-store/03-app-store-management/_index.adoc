@@ -1,17 +1,15 @@
 ---
-title: "应用商店管理"
-keywords: "Kubernetes, {ks_product}, 平台管理, 应用商店管理"
-description: "介绍如何管理应用商店。"
+title: "App Store Management"
+keywords: "Kubernetes, {ks_product-en}, platform management, app store management"
+description: "Describes how to manage the App Store."
 weight: 03
 layout: "second"
 ---
 
+This section describes how to manage the App Store.
 
+The App Store provides application templates based on Helm Chart, and all project members of the {ks_product-en} platform can access the App Store.
 
-本节介绍如何管理应用商店。
+The App Store administrator can categorize, review, list, and delist application templates in the App Store, manage the platform's application repositories and all deployed application instances, and directly deploy applications to projects.
 
-应用商店提供了基于 Helm Chart 的应用模板，{ks_product_right}平台所有项目的成员都可以访问应用商店。
-
-应用商店管理员可以对应用商店中的应用模板进行分类、审核、上架、下架等操作，管理平台的应用仓库和所有已部署的应用实例，并直接部署应用到项目。
-
-安装“KubeSphere 应用商店管理”扩展组件后，在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**，进入应用商店的管理页面。
+After installing the "KubeSphere App Store Management" extension, click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the top-right corner of the page, click **App Store Management**, and enter the App Store management page.

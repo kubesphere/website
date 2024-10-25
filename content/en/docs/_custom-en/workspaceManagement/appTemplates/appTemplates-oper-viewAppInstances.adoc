@@ -1,25 +1,25 @@
 // :ks_include_id: a04eb03cbce9496996bd54443b6e4d64
-. 在应用模板详情页面右侧点击**应用实例**页签，查看使用应用模板在{ks_product-en}平台安装的应用。
+. Click the **Application Instance** tab on the right side of the details page to view the applications installed using the application template on the {ks_product-en} platform.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|应用的名称。
+|Name
+|The name of the application.
 
 include::../../projectManagement/apps/apps-para-status.adoc[]
 
 include::appTemplates-para-version.adoc[]
 
-|项目
-|应用所属的项目。
+|Project
+|The project to which the application belongs.
 
-|集群
-|应用所属的集群。
+|Cluster
+|The cluster to which the application belongs.
 
-|创建时间
-|应用的创建时间。
+|Creation Time
+|The creation time of the application.
 |===
 --

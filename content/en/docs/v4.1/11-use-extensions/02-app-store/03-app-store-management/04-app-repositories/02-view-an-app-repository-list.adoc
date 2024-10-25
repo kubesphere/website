@@ -1,66 +1,61 @@
 ---
-title: "查看应用仓库列表"
-keywords: "Kubernetes, {ks_product}, 企业空间, 应用仓库, 查看应用仓库列表"
-description: "介绍如何查看应用仓库列表。"
+title: "View App Repository List"
+keywords: "Kubernetes, {ks_product-en}, Workspace, App Repositories, View App Repository List"
+description: "Describes how to view the app repository list."
 weight: 02
 ---
 
-:ks_permission: **应用商店管理**
-:ks_navigation: **应用仓库**
+:ks_permission: **App Store Management**
+:ks_navigation: **App Repositories**
 
-
-本节介绍如何查看应用仓库列表。
-
+This section describes how to view the app repository list.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
-
+* **KubeSphere App Store Management** should have been installed and enabled.
 
 == Steps
 
 include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
 
-. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择**应用商店管理**。
+. Click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the upper-right corner and select **App Store Management**.
 
 +
 
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 ====
-* 应用仓库列表提供以下信息：
+* The app repository list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|应用仓库的名称和描述信息。
+|Name
+|The name and description of the app repository.
 
-|状态
-|应用仓库当前的状态。
+|Status
+|The current status of the app repository.
 
-* **成功**：应用仓库已添加并同步成功。
+* **Successful**: The app repository has been added and synchronized successfully.
 
-* **同步中**：应用仓库正在与 Helm Chart 仓库同步中。
+* **Syncing**: The app repository is currently being synchronized with the Helm Chart repository.
 
-* **不同步**：同步间隔时间设置为 0 时，应用仓库不与 Helm Chart 仓库同步。
+* **Out-sync**: The app repository is not synchronized with the Helm Chart repository when the sync interval is set to 0.
 
-* **失败**：应用仓库与 Helm Chart 仓库同步失败。
+* **Failed**: The app repository failed to synchronize with the Helm Chart repository.
 
 |URL
-|Helm Chart 仓库的 URL。
+|The URL of the Helm Chart repository.
 
 |===
 --
 
-* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的应用仓库。
+* Click the search box at the top of the list to search for app repositories by name.
 
 include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

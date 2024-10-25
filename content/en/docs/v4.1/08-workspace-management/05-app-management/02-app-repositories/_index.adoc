@@ -11,4 +11,4 @@ This section introduces how to manage application repositories in the workspace.
 
 In KubeSphere, applications specifically refer to business programs composed of one or more workloads, services, ingresses, and other resources. The application repository in KubeSphere is based on Helm, defining the orchestration of applications through Helm Charts.
 
-You can add a Helm Chart repository as an application repository to the workspace, allowing you to install applications from the application repository into projects within the workspace. For information on how to create a Helm Chart repository, please refer to the link:https://helm.sh/zh/docs/topics/chart_repository/[Helm Documentation].
+You can add a Helm Chart repository as an application repository to the workspace, allowing you to install applications from the application repository into projects within the workspace. For information on how to create a Helm Chart repository, please refer to the link:https://helm.sh/docs/topics/chart_repository/[Helm Documentation].

@@ -1,7 +1,7 @@
 ---
 title: "Set an Email Server for Pipelines"
 keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
-description: "Introduce how to set an email server for pipelines."
+description: "Introduces how to set an email server for pipelines."
 weight: 09
 ---
 

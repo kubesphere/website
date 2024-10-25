@@ -1,7 +1,7 @@
 ---
 title: "Add Continuous Deployment Whitelist"
 keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
-description: "Introduce how to add a continuous deployment whitelist."
+description: "Introduces how to add a continuous deployment whitelist."
 weight: 03
 ---
 

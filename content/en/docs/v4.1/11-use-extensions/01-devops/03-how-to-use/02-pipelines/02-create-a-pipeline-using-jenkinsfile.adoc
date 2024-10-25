@@ -253,7 +253,7 @@ You can set a specific interval to allow pipelines to scan remote repositories, 
 |Note
 
 |
-* On the **Pipelines** list page, click the image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] icon on the right of the pipeline, and select **Copy** to create a duplicate of that pipeline.
+* On the **Pipelines** list page, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right of the pipeline, and select **Copy** to create a duplicate of that pipeline.
 
 * To simultaneously run multiple pipelines that do not include multibranch configurations , select these pipelines on the **Pipelines** list page and click **Run** to run them in bulk.
 

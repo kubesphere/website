@@ -1,7 +1,7 @@
 ---
 title: "Set CI Nodes for Dependency Cache"
 keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
-description: "Introduce how to set CI nodes for dependency cache."
+description: "Introduces how to set CI nodes for dependency cache."
 weight: 04
 ---
 

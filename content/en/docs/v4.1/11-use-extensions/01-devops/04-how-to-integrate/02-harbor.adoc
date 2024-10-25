@@ -36,7 +36,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 . Click the project you just created, then click **New Robot Account** under the **Robot Accounts** tab.
 
-. In the dialog box that appears, set the robot account name **robot-test** and **Expiration Time**. Then check all permissions under **Artifact**. Click **Finish**.
+. In the dialog box that appears, set the robot account name **robot-test** and **Expiration Time**. Then check all permissions under **Artifact** and **Repository**. Click **Finish**.
 
 . In the dialog box that appears, click **Export to file** to save the Harbor token.
 
@@ -44,7 +44,7 @@ helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL
 
 Configure Docker to ignore the security of your Harbor repository.
 
-. Run the command **vim /etc/docker/daemon.json** on your cluster node to edit the **daemon.json** file, add the following content, and save the changes.
+. Run the command **vim /etc/docker/daemon.json** to edit the **daemon.json** file on all your cluster nodes, add the following content, and save the changes.
 +
 --
 [,json]
@@ -84,7 +84,6 @@ The file content should look like this:
 [,bash]
 ----
 sudo systemctl daemon-reload
-
 sudo systemctl restart docker
 ----
 //note
@@ -123,7 +122,7 @@ After completing the above operations, you can use the images in your Harbor rep
 . Copy and paste the following content into the Jenkinsfile. Note that you must replace **REGISTRY**, **HARBOR_NAMESPACE**, **APP_NAME**, and **HARBOR_CREDENTIAL** with actual values.
 +
 --
-[,json]
+[,yaml]
 ----
 
 pipeline {
@@ -149,7 +148,7 @@ pipeline {
     stage('docker login') {
       steps{
         container ('maven') {
-          // Replace the Docker Hub username after -u, do not forget to add ''. You can also use a Docker Hub token.
+          // Replace the parameter after -u with the name in the Harbor token file, do not forget to add ''
           sh '''echo $HARBOR_CREDENTIAL_PSW|docker login $REGISTRY -u 'robot$robot-test' --password-stdin'''
         }
       }

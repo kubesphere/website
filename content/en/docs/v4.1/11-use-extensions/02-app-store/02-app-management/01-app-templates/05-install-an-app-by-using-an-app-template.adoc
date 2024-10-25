@@ -1,15 +1,14 @@
 ---
-title: "使用应用模板安装应用"
-keywords: "Kubernetes, {ks_product}, 企业空间, 应用模板, 使用应用模板安装应用"
-description: "介绍如何使用应用模板安装应用。"
+title: "Install Applications Using Application Templates"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, install application using application template"
+description: "Describes how to install an application using an application template in a workspace."
 weight: 05
 ---
 
-:ks_permission: **应用/应用版本/应用实例管理**
-:ks_navigation: **应用管理 > 应用模板**
+:ks_permission: **Application/Application Version/Application Instance Management**
+:ks_navigation: **App Management > App Templates**
 
-
-本节介绍如何在企业空间中使用应用模板安装应用。
+This section describes how to install an application using an application template in a workspace.
 
 
 == Prerequisites
@@ -17,9 +16,7 @@ weight: 05
 * {empty}
 include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+* **KubeSphere App Store Management** should have been installed and enabled.
 
 
 == Steps
@@ -36,46 +33,40 @@ include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates
 
 +
 
-. 在应用模板详情页面右侧的**版本**页签，点击所需的应用版本，然后在展开的区域中点击**部署**。
+. In the **Versions** tab on the right side of the details page, click the desired application version, then click **Deployment**.
 
-. 在弹出的**位置**对话框，选择应用的安装位置，然后点击**确定**。
+. In the pop-up **Location** dialog, select the installation location for the application, then click **OK**.
 
-. 在**基本信息**页签，设置应用的基本信息，然后点击**下一步**。
+. In the **Basic Information** tab, set the basic information for the application, then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|用户自定义的应用名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。
+|Name
+|The user-defined name of the application. The name can only contain lowercase letters, numbers, and hyphens (-), must start with a lowercase letter and end with a lowercase letter or number, and can be up to 32 characters long.
 
-|版本
-|需要安装的应用版本。
+|Version
+|The version of the application to be installed.
 
-|描述
-|应用的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the application. The description can contain any characters, with a maximum length of 256 characters.
 
-|位置
-|应用所属的集群和项目。应用所属的企业空间默认为应用模板所属的企业空间。
+|Location
+|The cluster and project to which the application belongs. The workspace to which the application belongs is the workspace to which the application template belongs by default.
 |===
 --
 
-. 在**应用设置**页签，根据需要修改应用的参数设置，然后点击**安装**。
+. In the **App Settings** tab, modify the application's parameter settings as needed, then click **Install**.
 +
 --
 // Note
 include::../../../../../../_ks_components-en/admonitions/note.adoc[]
 
-{ks_product_right}的应用模板功能底层基于 Helm Chart 实现。**应用设置**页签的参数设置应符合 Helm Chart 的 Values 文件规范。有关更多信息，请参阅 link:https://helm.sh/zh/docs/chart_template_guide/values_files/[Helm 官方文档]。
+The application template functionality is based on Helm Chart. The parameter settings in the **App Settings** tab should comply with the Values file specification of Helm Chart . For more information, see link:https://helm.sh/docs/chart_template_guide/values_files/[Helm Documentation].
 
 include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
-ifeval::["{file_output_type}" == "html"]
-应用安装完成后，即可在目标项目中查看已安装的应用。
-endif::[]
-
-ifeval::["{file_output_type}" == "pdf"]
-应用安装完成后，即可在目标项目中查看已安装的应用。有关更多信息，请参阅《{ks_product_right}项目管理指南》的“应用”章节。
-endif::[]
+After the application is installed, you can view the installed application in the target project.
 --

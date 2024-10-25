@@ -1,7 +1,7 @@
 ---
 title: "Use GitOps to Achieve Continuous Deployment of Applications"
 keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
-description: "Introduce how to create continuous deployment to achieve application deployment."
+description: "Introduces how to create continuous deployment to achieve application deployment."
 weight: 03
 ---
 

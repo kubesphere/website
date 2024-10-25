@@ -1,16 +1,14 @@
 ---
-title: "下载 Helm Chart 压缩包"
-keywords: "Kubernetes, {ks_product}, 企业空间, 应用模板, 下载 Helm Chart 压缩包"
-description: "介绍如何下载应用版本的 Helm Chart 压缩包。"
+title: "Download the Helm Chart package"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, download Helm Chart package"
+description: "Describes how to download the Helm Chart package of an application version."
 weight: 09
 ---
 
+:ks_permission: **Application/Application Version/Application Instance View**
+:ks_navigation: **App Management > App Templates**
 
-:ks_permission: **应用/应用版本/应用实例查看**
-:ks_navigation: **应用管理 > 应用模板**
-
-
-本节介绍如何下载应用版本的 Helm Chart 压缩包。
+This section describes how to download the Helm Chart package of an application version.
 
 
 == Prerequisites
@@ -18,9 +16,7 @@ weight: 09
 * {empty}
 include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+* **KubeSphere App Store Management** should have been installed and enabled.
 
 == Steps
 
@@ -36,8 +32,8 @@ include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates
 
 +
 
-. 在应用模板详情页面右侧的**版本**页签，点击所需的应用版本，然后在展开的区域中点击**下载**。
+. In the **Versions** tab on the right side of the details page, click the desired application version, then click **Download**.
 +
 --
-应用版本的 Helm Chart 压缩包将通过浏览器下载到本地。
+The Helm Chart package of the application version will be downloaded to your local machine via the browser.
 --

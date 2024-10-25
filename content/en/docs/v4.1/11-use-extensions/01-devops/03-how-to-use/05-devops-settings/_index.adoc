@@ -1,7 +1,7 @@
 ---
 title: "DevOps Project Settings"
 keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
-description: "Introduce how to manage DevOps project settings."
+description: "Introduces how to manage DevOps project settings."
 weight: 05
 layout: "second"
 ---

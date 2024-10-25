@@ -1,11 +1,9 @@
 ---
-title: "部署管理"
-keywords: "Kubernetes, {ks_product}, 平台管理, 应用, 应用管理, 应用部署"
-description: "介绍如何管理所有已部署的应用实例，以及如何直接部署应用到项目。"
+title: "Deployment Management"
+keywords: "Kubernetes, {ks_product-en}, Platform Management, Apps, App Management, App Deployment"
+description: "Describes how to manage all deployed app instances and how to directly deploy apps to projects."
 weight: 05
 layout: "second"
 ---
 
-
-
-本节介绍如何管理{ks_product_both}平台中所有已部署的应用实例，以及如何直接部署应用到项目。
+This section describes how to manage all deployed app instances on the {ks_product-en} platform and how to directly deploy apps to projects.

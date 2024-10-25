@@ -1,22 +1,15 @@
 ---
-title: "应用管理"
-keywords: "Kubernetes, {ks_product}, 企业空间, 应用管理, 应用模板"
-description: "介绍如何通过企业空间管理应用模板。"
+title: "Application Management"
+keywords: "Kubernetes, {ks_product-en}, workspace, application management, application template"
+description: "Introduces how to manage application templates through a workspace."
 weight: 02
 layout: "second"
 ---
 
+In KubeSphere, an application refers to a business program composed of one or more workloads, services, Ingresses, etc. Application templates in KubeSphere is based on Helm, defining the application's orchestration through Helm Chart.
 
-在{ks_product_both}平台，应用特指由一个或多个工作负载、服务、应用路由等资源组成的业务程序。{ks_product_right}平台的应用模板功能底层基于 Helm 实现，通过 Helm Chart 定义应用的编排方式。
+You can create an application template in a workspace that contains one or more application versions (each version defined by a Helm Chart), thereby installing the applications defined in the application template in the projects of the workspace.
 
-您可以在企业空间中创建包含一个或多个应用版本的应用模板（每个应用版本由一个 Helm Chart 定义），从而在企业空间的项目中安装应用模板中定义的应用。
+For more information about application repositories in a workspace, see link:../../../08-workspace-management/05-app-management/02-app-repositories/[App Repositories].
 
-ifeval::["{file_output_type}" == "html"]
-有关企业空间中应用仓库的更多信息，请参阅link:../../../08-workspace-management/05-app-management/02-app-repositories/[应用仓库]。
-endif::[]
-
-ifeval::["{file_output_type}" == "pdf"]
-有关企业空间中应用仓库的更多信息，请参阅《{ks_product_right}企业空间管理指南》的“应用仓库”章节。
-endif::[]
-
-有关 Helm 的更多信息，请参阅 link:https://helm.sh/zh/docs/[Helm 官方文档]。
+For more information about Helm, see link:https://helm.sh/docs/[Helm Documentation].

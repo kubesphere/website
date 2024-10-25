@@ -1,13 +1,13 @@
 // :ks_include_id: 9db80030fef4430e98fae7a372d67f6d
-|状态
-|应用当前的状态。
+|Status
+|The current status of the application.
 
-* **创建中**：系统正在创建应用。
+* **Creating**: The system is creating the application.
 
-* **运行中**：应用运行正常。
+* **Running**: The application is running normally.
 
-* **升级中**：系统正在升级应用版本。
+* **Upgrading**: The system is upgrading the application version.
 
-* **删除中**：系统正在删除应用。
+* **Deleting**: The system is deleting the application.
 
-* **失败**：应用创建失败。
+* **Failed**: The application creation failed.

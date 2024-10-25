@@ -1,14 +1,14 @@
 ---
-title: "查看应用模板列表"
-keywords: "Kubernetes, {ks_product}, 企业空间,应用模板, 查看应用模板列表"
-description: "介绍如何查看应用模板列表。"
+title: "View Application Template List"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, view application template list"
+description: "Describes how to view the application template list."
 weight: 02
 ---
 
-:ks_permission: **应用/应用版本/应用实例查看**
-:ks_navigation: **应用管理 > 应用模板**
+:ks_permission: **Application/Application Version/Application Instance View**
+:ks_navigation: **App Management > App Templates**
 
-本节介绍如何查看应用模板列表。
+This section describes how to view the application template list.
 
 
 == Prerequisites
@@ -16,9 +16,7 @@ weight: 02
 * {empty}
 include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
+* **KubeSphere App Store Management** should have been installed and enabled.
 
 
 == Steps
@@ -30,27 +28,27 @@ include::../../../../../_custom-en/workspaceManagement/workspaceManagement-oper-
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 ====
-* 应用模板列表提供以下信息：
+* The application template list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-appTemplateName.adoc[]
 
 include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-status_v4.adoc[]
 
-|企业空间
-|应用模板所属的企业空间。
+|Workspace
+|The workspace to which the application template belongs.
 
 include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-latestVersion_v4.adoc[]
 
-|应用模板
-|应用模板的类型，如 **helm 应用**或 **yaml 应用**。
+|Application Template
+|The type of the application template, such as **helm application** or **yaml application**.
 
-|更新时间
-|应用模板的更新时间。
+|Update Time
+|The update time of the application template.
 |===
 --
 

@@ -1,7 +1,7 @@
 ---
 title: "Customize Jenkins Agent"
 keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
-description: "Introduce how to customize Jenkins Agent."
+description: "Introduces how to customize Jenkins Agent."
 weight: 11
 ---
 

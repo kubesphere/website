@@ -1,2 +1,2 @@
 // :ks_include_id: 2f8bbec5d37b4c239396337ce7576a71
-* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的应用模板。
+* Click the search box at the top of the list to search for application templates by name.

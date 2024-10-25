@@ -54,7 +54,7 @@ include::../../../../_custom-en/clusterManagement/clusterMembers/clusterMembers-
 |===
 --
 
-* Click the search box at the top of the list and search for cluster members by name.
+* Click the search box at the top of the list to search for cluster members by name.
 
 include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

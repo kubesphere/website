@@ -1,16 +1,14 @@
 ---
-title: "上传应用版本"
-keywords: "Kubernetes, {ks_product}, 企业空间, 应用模板, 上传应用版本"
-description: "介绍如何在应用模板创建后上传应用版本。"
+title: "Upload an Application Version"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, upload application version"
+description: "Describes how to upload an application version after creating an application template."
 weight: 06
 ---
 
+:ks_permission: **Application/Application Version/Application Instance Management**
+:ks_navigation: **App Management > App Templates**
 
-:ks_permission: **应用/应用版本/应用实例管理**
-:ks_navigation: **应用管理 > 应用模板**
-
-
-本节介绍如何在应用模板创建后上传应用版本。
+This section describes how to upload an application version after creating an application template.
 
 
 == Prerequisites
@@ -18,11 +16,9 @@ weight: 06
 * {empty}
 include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
+* **KubeSphere App Store Management** should have been installed and enabled.
 
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 应用商店管理**扩展组件。
-
-* 已准备 .tar.gz 或 .tgz 格式的 Helm Chart 压缩包。有关更多信息，请参阅 link:https://helm.sh/zh/docs/topics/charts/[Helm 官方文档]。
+* Already have a Helm Chart package in .tar.gz or .tgz format. For more information, see link:https://helm.sh/docs/topics/charts/[Helm Documentation].
 
 
 == Steps
@@ -37,10 +33,10 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
 
-. 在应用模板详情页面右侧的**版本**页签，点击**上传版本**。
+. In the **Versions** tab on the right side of the details page, click **Upload Version**.
 
-. 在弹出的对话框中，点击**上传 Helm Chart**，选择本地存储的 .tar.gz 或 .tgz 格式 Helm Chart 压缩包，然后点击**确定**。
+. In the pop-up dialog, click **Upload Helm Chart**, select the Helm Chart package in .tar.gz or .tgz format stored locally, then click **OK**.
 +
 --
-应用新版本上传完成后将显示在应用模板详情页面的**版本**页签。
+The new version will be displayed in the **Versions** tab of the details page after uploading.
 --

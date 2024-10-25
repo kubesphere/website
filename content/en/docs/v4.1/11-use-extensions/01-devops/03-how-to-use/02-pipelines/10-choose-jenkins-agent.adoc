@@ -1,7 +1,7 @@
 ---
 title: "Choose Jenkins Agent"
 keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
-description: "Introduce how to select Jenkins Agent."
+description: "Introduces how to select Jenkins Agent."
 weight: 10
 ---
 
