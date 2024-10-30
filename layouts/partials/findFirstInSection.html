@@ -1,0 +1,9 @@
+{{ if ne .Parent.CurrentSection .Parent.FirstSection }} <!-- out of boundary -->
+{{ with .}}
+<a class="next" href="{{.RelPermalink}}">
+	{{ i18n "Next" }}
+	<span>: {{.LinkTitle}}</span>
+	<img src="/images/docs/v3.3/next.svg" alt="{{ i18n " Next" }}">
+</a>
+{{ end }}
+{{ end }}
