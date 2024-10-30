@@ -1,7 +1,7 @@
 ---
-title: "服务"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载, 服务"
-description: "介绍如何管理联邦项目中的服务。"
+title: "Services"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, services"
+description: "Learn how to manage services in multi-cluster projects."
 weight: 02
 layout: "second"
 ---

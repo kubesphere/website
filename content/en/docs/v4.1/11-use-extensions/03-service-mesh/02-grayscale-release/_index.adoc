@@ -1,27 +1,27 @@
 ---
-title: "灰度发布"
-keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布"
-description: "介绍如何管理灰度发布任务。"
+title: "Grayscale Release"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release"
+description: "Learn how to manage grayscale release tasks."
 weight: 02
 layout: "second"
 ---
 
 
-本节介绍如何使用灰度发布功能。
+This section describes how to use the grayscale release feature.
 
-当容器的版本需要更新时，如果新版本未经充分测试而直接发布到生产环境，可能会给业务带来很大风险。使用灰度发布功能将生产环境的业务流量转发给测试中的新版本，从而在新版本正式发布前充分暴露并及时修复新版本可能存在的问题。
+When a container version needs to be updated, directly releasing a new version without sufficient testing to the production environment may pose significant risks to the business. Using the grayscale release feature, the business traffic in the production environment is forwarded to the new version being tested, thereby fully exposing and promptly fixing potential issues in the new version before its official release.
 
-{ks_product_right}支持以下灰度发布模式：
+KubeSphere supports the following grayscale release modes:
 
-* 蓝绿部署：将业务流量发送给新版本进行测试。如果新版本运行不正常，可立即将业务流量切换给旧版本。
+* Blue-Green Deployment: Sends business traffic to the new version for testing. If the new version does not function normally, the business traffic can be immediately switched back to the old version.
 
-* 金丝雀发布：将业务流量按一定比例分配给新版本和旧版本，在测试新版本的同时保证业务连续性。
+* Canary Release: Allocates business traffic to both the new and old versions according to a certain ratio, ensuring business continuity while testing the new version.
 
-* 流量镜像：将业务流量的副本发送给新版本进行测试，而不实际暴露新版本。
+* Traffic Mirroring: Sends a copy of the business traffic to the new version for testing without actually exposing the new version.
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-灰度发布仅支持自制应用，不支持基于模板的应用。
+Grayscale release only supports composed apps, not apps based on templates.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

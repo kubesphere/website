@@ -52,6 +52,21 @@ include::../../../../_custom/clusterManagement/projects/projects-para-aliasDescr
 |可供项目使用的集群。项目中的资源运行在此处选择的集群中。创建联邦项目时，可点击**添加**选择多个集群从而使项目中的资源运行不同的集群中。
 |===
 
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+ifeval::["{file_output_type}" == "html"]
+若要联邦项目运行在多个集群上，联邦项目所属的企业空间必须获得多个集群的授权。有关更多信息，请参阅link:../../../../08-workspace-management/02-workspaces/01-create-a-workspace[创建企业空间]。
+
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+若要联邦项目运行在多个集群上，联邦项目所属的企业空间必须获得多个集群的授权。有关更多信息，请参阅《{ks_product_right}企业空间管理指南》的“创建企业空间”章节。
+
+endif::[]
+|===
 项目创建完成后，您可以邀请用户加入项目并在项目中部署业务。
 
 --

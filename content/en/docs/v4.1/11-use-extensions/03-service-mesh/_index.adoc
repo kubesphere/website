@@ -1,21 +1,21 @@
 ---
-title: "KubeSphere 服务网格"
-keywords: "Kubernetes, {ks_product}, 服务网格"
-description: "介绍如何使用 KubeSphere 服务网格组件。"
+title: "KubeSphere Service Mesh"
+keywords: "Kubernetes, {ks_product-en}, Service Mesh"
+description: "Describes how to use the KubeSphere Service Mesh extension."
 weight: 03
 layout: "second"
 ---
 
-本节介绍如何使用“KubeSphere 服务网格”扩展组件。
+This section describes how to use the "KubeSphere Service Mesh" extension.
 
-“KubeSphere 服务网格”扩展组件用于启用{ks_product_both}平台的服务网格功能，基于开源项目 Istio 构建，将微服务治理和流量管理可视化。它拥有强大的工具包，包括熔断机制、蓝绿部署、金丝雀发布、流量镜像、链路追踪、可观测性和流量控制等。
+KubeSphere Service Mesh is used to enable the service mesh functionality of KubeSphere, built on the open-source project Istio, and visualizes microservice governance and traffic management. It has a powerful toolkit, including circuit breakers, blue-green deployments, canary releases, traffic mirroring, tracing, observability, and traffic control.
 
-安装“KubeSphere 服务网格”扩展组件后，项⽬左侧导航栏将显⽰**服务网格**选项，支持创建自制应用、管理自制应用的灰度发布。
+After installing the "KubeSphere Service Mesh" extension, **Service Mesh** will be displayed in the project's left navigation pane, supporting creating composed apps and managing grayscale releases for composed apps.
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Note
 
 |
-安装 KubeSphere 服务网格前，需要在扩展组件配置中设置可用的 Prometheus 服务和 OpenSearch 服务。有关组件配置的更多信息，请参阅扩展中心“KubeSphere 服务网格”扩展组件的详情页说明。
+Before installing KubeSphere Service Mesh, you need to set up available Prometheus and OpenSearch services in the extension configuration. For more information about the extension configuration, see the details page of the "KubeSphere Service Mesh" extension in the Extensions Center.
 |===

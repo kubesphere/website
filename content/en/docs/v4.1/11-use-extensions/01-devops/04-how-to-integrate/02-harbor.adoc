@@ -100,7 +100,7 @@ After completing the above operations, you can use the images in your Harbor rep
 
 == Create Credentials
 
-. Log in to the {ks_product_left} web console as the **project-regular** user.
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 . Click **Workspace Management** and enter your DevOps project.
 . On the **Credentials** page under **DevOps Project Settings**, create credentials for Harbor.
 . On the **Create Credentials** page, set the name (`robot-test`), select **Username and password** for **Type**, enter the value of **name** from the Harbor token file you just exported for **Username**, and enter the value of **secret** from the Harbor token file for **Password/Token**.

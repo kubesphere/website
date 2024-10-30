@@ -1,2 +1,2 @@
 // :ks_include_id: 04ecee90589140c28c84ab59ddd6aeb7
-This section explains how to adjust the replica count of pods in a workload.
+This section explains how to adjust the number of pod replicas in a workload.

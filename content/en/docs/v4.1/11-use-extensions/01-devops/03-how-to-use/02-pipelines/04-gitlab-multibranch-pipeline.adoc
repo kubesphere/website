@@ -83,7 +83,7 @@ If your account or password contains special characters such as **@** and **$**,
 |Note
 
 |
-For more information about environment variables in Jenkinsfile, refer to link:../02-create-a-pipeline-using-jenkinsfile/[Create a Pipeline Using Jenkinsfile].
+For more information about environment variables in Jenkinsfile, refer to link:../02-create-a-pipeline-using-jenkinsfile/[Create a Pipeline Using a Jenkinsfile].
 |===
 --
 

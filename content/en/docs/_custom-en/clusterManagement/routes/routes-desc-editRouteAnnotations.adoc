@@ -1,2 +1,2 @@
 // :ks_include_id: 9a1f0d5fdb294c79a6051a90fe1a17be
-本节介绍如何编辑应用路由注解。
+This section describes how to edit Ingress annotations.

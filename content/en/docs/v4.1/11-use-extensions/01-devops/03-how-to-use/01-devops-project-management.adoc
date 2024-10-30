@@ -15,7 +15,7 @@ This section demonstrates how to create and manage DevOps projects.
 
 == Create a DevOps Project
 
-. Log in to the {ks_product_both} web console as the **project-admin** user and navigate to a workspace.
+. Log in to the {ks_product-en} web console as the **project-admin** user and navigate to a workspace.
 
 . Click **DevOps Projects** and then click **Create**.
 

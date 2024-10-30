@@ -1,12 +1,12 @@
 ---
-title: "编辑联邦项目信息"
-keywords: "Kuberentes, {ks_product}, 企业空间管理, 联邦项目, 编辑项目信息"
-description: "介绍如何编辑项目信息。"
+title: "Edit Multi-cluster Project Information"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects, edit project information"
+description: "Learn how to edit project information."
 weight: 03
 ---
 
-:ks_permission: **联邦项目管理**
-:ks_navigation: **项目 > 联邦项目**
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Projects > Multi-cluster Projects**
 
 
 include::../../../../_custom-en/clusterManagement/projects/projects-desc-editInformation.adoc[]
@@ -16,14 +16,10 @@ include::../../../../_custom-en/clusterManagement/projects/projects-note-editInf
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
-// * 如需编辑联邦项目信息，您需要确保企业空间中存在联邦项目。
-
 
 
 == Steps

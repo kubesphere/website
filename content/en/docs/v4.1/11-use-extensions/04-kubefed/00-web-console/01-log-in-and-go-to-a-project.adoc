@@ -1,20 +1,18 @@
 ---
-title: "登录并进入联邦项目"
-keywords: "Kubernetes, {ks_product}, 项目管理, Web 控制台, 联邦项目"
-description: "介绍如何登录并进入联邦项目。"
+title: "Log In and Access Multi-cluster Projects"
+keywords: "Kubernetes, {ks_product-en}, project management, web console, multi-cluster projects"
+description: "Learn how to log in and access multi-cluster projects."
 weight: 01
 ---
 
-
-
-本节介绍如何登录{ks_product_left} Web 控制台并进入联邦项目。
+This section describes how to log in to the {ks_product-en} web console and access multi-cluster projects.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
-* 您需要获取联邦项目成员用户名和密码。
+* You should get the username and password for a multi-cluster project member.
 
 include::../../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
 
@@ -26,15 +24,15 @@ include::../../../../_custom-en/workspaceManagement/webConsole/webConsole-oper-l
 --
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
 include::../../../../_custom-en/workspaceManagement/webConsole/webConsole-note-firstLogin.adoc[]
 |===
 --
 
-. 点击**企业空间管理**，然后点击一个企业空间的名称进入企业空间。
+. Click **Workspace Management**, then click the name of a workspace to enter the workspace.
 
-. 在左侧导航栏选择**项目**，然后点击**联邦项目**进入联邦项目列表页面。
+. In the left navigation pane, select **Projects**, then click **Multi-cluster Projects** to enter the multi-cluster project list page.
 
-. 在**联邦项目**页面，点击一个联邦项目的名称进入联邦项目。
+. On the **Multi-cluster Projects** page, click the name of a multi-cluster project to enter the project.

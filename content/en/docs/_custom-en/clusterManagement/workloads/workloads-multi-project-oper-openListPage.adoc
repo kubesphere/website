@@ -1,2 +1,2 @@
 // :ks_include_id: d908eb90806d4d4ba8b6cbb65a3b96e1
-. 在**工作负载**页面，点击**部署**或**有状态副本集**打开工作负载列表。
+. On the **Workloads** page, click **Deployments** or **StatefulSets** to open the workload list.

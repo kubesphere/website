@@ -1,4 +1,4 @@
 // :ks_include_id: ab9cb5143fe449bb900ce47e7fb62049
-本节介绍如何编辑应用路由信息。
+This section describes how to edit Ingress information.
 
-您可以编辑应用路由的别名和描述。{ks_product-en}不支持编辑已创建应用路由的名称。
+You can edit the alias and description of an Ingress. KubeSphere does not support editing the name of an already created Ingress.

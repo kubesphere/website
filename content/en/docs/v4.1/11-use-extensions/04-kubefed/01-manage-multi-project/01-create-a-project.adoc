@@ -1,25 +1,24 @@
 ---
-title: "创建联邦项目"
-keywords: "Kuberentes, {ks_product}, 企业空间管理, 联邦项目, 创建联邦项目"
-description: "介绍如何创建联邦项目。"
+title: "Create Multi-cluster Projects"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects, create multi-cluster project"
+description: "Learn how to create multi-cluster projects."
 weight: 01
 ---
 
 
-:ks_permission: **联邦项目管理**
-:ks_navigation: **项目 > 联邦项目**
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Projects > Multi-cluster Projects**
 
 
-本节介绍如何创建联邦项目。
+This section describes how to create multi-cluster projects.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
 
 
 == Steps
@@ -36,21 +35,36 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在弹出的对话框，设置项目的参数，然后点击**确定**。
+. In the pop-up dialog, set the project parameters, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 include::../../../../_custom-en/clusterManagement/projects/projects-para-name.adoc[]
 
 include::../../../../_custom-en/clusterManagement/projects/projects-para-aliasDescription.adoc[]
 
-|集群
-|可供项目使用的集群。项目中的资源运行在此处选择的集群中。创建联邦项目时，可点击**添加**选择多个集群从而使项目中的资源运行不同的集群中。
+|Cluster
+|The clusters available for the project. Resources in the project run in the clusters selected here. When creating a multi-cluster project, you can click **Add** to select multiple clusters, allowing resources in the project to run on different clusters.
 |===
 
-项目创建完成后，您可以邀请用户加入项目并在项目中部署业务。
+[.admon.note,cols="a"]
+|===
+|Note
 
+|
+ifeval::["{file_output_type}" == "html"]
+To run a multi-cluster project on multiple clusters, the workspace to which the multi-cluster project belongs must be authorized to access multiple clusters. For more information, see link:../../../../08-workspace-management/02-workspaces/01-create-a-workspace[Create Workspaces].
+
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+To run a multi-cluster project on multiple clusters, the workspace to which the multi-cluster project belongs must be authorized to access multiple clusters. For more information, see the "Create Workspaces" section in the {ks_product-en} Workspace Management Guide.
+
+endif::[]
+|===
+
+After the project is created, you can invite users to join the project and deploy business in the project.
 --

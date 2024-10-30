@@ -1,3 +1,2 @@
 // :ks_include_id: 479a0d3323374bee8e2220e0fdafd307
-
-* 在**集群**区域，勾选项目所在的一个或多个集群，可为指定集群中的应用添加路由规则。
+* In the **Cluster** area, select one or more clusters where the project belongs to add routing rules for the app in the specified clusters.

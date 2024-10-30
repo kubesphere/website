@@ -1,30 +1,29 @@
 ---
-title: "自制应用"
-keywords: "Kubernetes, {ks_product}, 项目管理, 应用"
-description: "介绍如何管理项目中安装的应用。"
+title: "Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, Project Management, Apps"
+description: "Describes how to manage composed apps installed in a project."
 weight: 01
 layout: "second"
 ---
 
-
-本节介绍如何管理自制应用。
+This section describes how to manage composed apps.
 
 include::../../../../_custom-en/projectManagement/apps/apps-types.adoc[]
 
 ifeval::["{file_output_type}" == "html"]
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
-|有关基于模板的应用的更多信息，请参阅link:../../../09-project-management/03-application-workloads/01-apps[应用]。
+|For more information about template-based apps, see link:../../../09-project-management/03-application-workloads/01-apps[Apps].
 |===
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
-|有关基于模板的应用的更多信息，请参阅《{ks_product_right}项目管理指南》的“应用负载 > 应用”章节。
+|For more information about template-based apps, see the "Application Workloads > Apps" section in the {ks_product-en} Project Management Guide.
 |===
 endif::[]

@@ -1,26 +1,18 @@
 ---
-title: "查看自制应用列表"
-keywords: "Kubernetes, {ks_product}, 项目管理, 应用, 查看应用列表"
-description: "介绍如何查看应用列表。"
+title: "View Composed App List"
+keywords: "Kubernetes, {ks_product-en}, Project Management, Apps, View App List"
+description: "Describes how to view the app list."
 weight: 04
 ---
 
-:ks_permission: ** Service Mesh 查看**
-:ks_navigation: **服务网格 > 自制应用**
+:ks_permission: **Service Mesh View**
+:ks_navigation: **Service Mesh > Composed Apps**
 
-
-本节介绍如何查看自制应用列表。
-
+This section describes how to view the composed app list.
 
 == Prerequisites
 
-
-
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-
-
-
 
 == Steps
 
@@ -32,34 +24,34 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**自制应用**页面，查看应用列表。
+. On the **Composed Apps** page, view the app list.
 +
 ====
-* 应用列表提供以下信息：
+* The app list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|应用的名称。
+|Name
+|The name of the app.
 
 include::../../../../_custom-en/projectManagement/apps/apps-para-status_v4.adoc[]
 
-|版本
-|应用的版本号。
+|Version
+|The version of the app.
 
-// * 对于基于模板的应用，显示 Helm Chart 的版本。
+// * For template-based apps, it displays the Helm Chart version.
 
-* 对于自制应用，显示用户自定义的版本号。
+* For composed apps, it displays the user-defined version number.
 
-|创建时间
-|应用的创建时间。
+|Creation Time
+|The creation time of the app.
 |===
 --
 
-* 在列表上方点击搜索框并输入关键字，可按名称搜索应用。
+* Click the search box at the top of the list to search for apps by name.
 
 include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

@@ -1,45 +1,23 @@
 ---
-title: "删除自制应用"
-keywords: "Kubernetes, {ks_product}, 项目管理, 应用, 删除应用"
-description: "介绍如何删除应用。"
+title: "Delete Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, project management, application, delete app"
+description: "Learn how to delete an app."
 weight: 10
 ---
 
-:ks_permission: ** Service Mesh 管理**
-:ks_navigation: **服务网格 > 自制应用**
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Composed Apps**
 
 
-本节介绍如何删除自制应用。
+This section describes how to delete a composed app.
 
 
 == Prerequisites
 
-
-* {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
-
-
-== 删除单个应用
-include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
-
-+
-
-include::../../../../../_ks_components-en/oper-navigate.adoc[]
-
-+
-. 在**自制应用**页面，查看应用列表。
-
-. 在需要删除的应用右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
-
-. 在**删除应用**对话框，输入应用的名称，然后点击**确定**。
-
-
-== 批量删除应用
+== Delete a Single App
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -48,12 +26,28 @@ include::../../../../_custom-en/projectManagement/projectManagement-oper-openPro
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
+. On the **Composed Apps** page, view the app list.
 
-. 在**自制应用**页面，查看应用列表。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the app you want to delete, then select **Delete** from the dropdown list.
 
-. 选择需要删除的应用左侧的复选框，然后在应用列表上方点击**删除**。
+. In the **Delete App** dialog, enter the name of the app, then click **OK**.
 
-. 在**批量删除应用**对话框，输入应用的名称，然后点击**确定**。
+
+== Delete Multiple Apps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Composed Apps** page, view the app list.
+
+. Select the checkbox on the left side of the apps you want to delete, then click **Delete** above the app list.
+
+. In the **Delete Multiple Apps** dialog, enter the names of the apps, then click **OK**.
 +
 --
 include::../../../../_custom-en/note-separateNamesByComma.adoc[]

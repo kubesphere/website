@@ -1,42 +1,40 @@
 ---
-title: "为联邦项目添加集群"
-keywords: "Kuberentes, {ks_product}, 企业空间管理, 联邦项目, 为联邦项目添加集群"
-description: "介绍如何为联邦项目添加集群。"
+title: "Add Clusters to Multi-cluster Project"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects, add clusters to multi-cluster project"
+description: "Learn how to add clusters to a multi-cluster project."
 weight: 05
 ---
 
-:ks_permission: **联邦项目管理**
-:ks_navigation: **项目 > 联邦项目**
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Projects > Multi-cluster Projects**
 
 
-本节介绍如何为联邦项目添加集群。
+This section describes how to add clusters to a multi-cluster project.
 
-联邦项目是基于多个集群创建的项目。联邦项目中的资源可运行在不同集群上。
+A multi-cluster project is a project created based on multiple clusters. Resources in a multi-cluster project can run on different clusters.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
 ifeval::["{file_output_type}" == "html"]
-若要联邦项目运行在多个集群上，联邦项目所属的企业空间必须获得多个集群的授权。有关更多信息，请参阅link:../../../../08-workspace-management/02-workspaces/01-create-a-workspace[创建企业空间]。
+To run a multi-cluster project on multiple clusters, the workspace to which the multi-cluster project belongs must be authorized to access multiple clusters. For more information, see link:../../../../08-workspace-management/02-workspaces/01-create-a-workspace[Create Workspaces].
 
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-若要联邦项目运行在多个集群上，联邦项目所属的企业空间必须获得多个集群的授权。有关更多信息，请参阅《{ks_product_right}企业空间管理指南》的“创建企业空间”章节。
+To run a multi-cluster project on multiple clusters, the workspace to which the multi-cluster project belongs must be authorized to access multiple clusters. For more information, see the "Create Workspaces" section in the {ks_produc-en} Workspace Management Guide.
 
 endif::[]
 |===
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
 
 
 == Steps
@@ -47,12 +45,12 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-ope
 
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
-. 在需要操作的项目右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**添加集群**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project you want to operate, then select **Add Cluster** from the dropdown list.
 
-. 在**添加集群**对话框，从下拉列表中选择集群，然后点击**确定**。
+. In the **Add Cluster** dialog, select clusters from the dropdown list, then click **OK**.
 +
 --
-* 点击**添加**可添加多个集群。
+* Click **Add Cluster** to add multiple clusters.
 
-* 在已添加的集群右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可取消添加该集群。
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of an added cluster to cancel adding that cluster.
 --

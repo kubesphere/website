@@ -44,7 +44,7 @@ include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
 include::../../../../../../_ks_components-en/admonitions/note.adoc[]
 
 App templates are created by workspace members with relevant permissions, and app repositories are created by App Store administrators.
-For more information, see link:../../../02-app-management/01-app-templates/01-create-an-app-template/[Create an App Template] and link:../../../03-app-store-management/04-app-repositories/01-add-an-app-repository/[Add an App Repository].
+For more information, see link:../../../02-app-management/01-app-templates/01-create-an-app-template/[Create App Templates] and link:../../../03-app-store-management/04-app-repositories/01-add-an-app-repository/[Add an App Repository].
 
 include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --

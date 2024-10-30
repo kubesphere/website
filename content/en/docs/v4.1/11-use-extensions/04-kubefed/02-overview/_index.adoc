@@ -1,9 +1,7 @@
 ---
-title: "概览"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 概览"
-description: "介绍如何查看联邦项目概览信息。"
+title: "Overview"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, overview"
+description: "Learn how to view the overview information of multi-cluster projects."
 weight: 02
 layout: "second"
 ---
-
-

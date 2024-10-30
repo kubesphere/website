@@ -1,20 +1,20 @@
 ---
-title: "查看自制应用详情"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用, 查看应用详情"
-description: "介绍如何在联邦项目中查看应用详情。"
+title: "View Composed App Details"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, applications, view application details"
+description: "Learn how to view application details in a multi-cluster project."
 weight: 03
 ---
 
-:ks_permission: **联邦项目查看**
-:ks_navigation: **应用负载 > 自制应用**
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Application Workloads > Composed Apps**
 
 
-本节介绍如何在联邦项目中查看应用详情。
+This section describes how to view application details in a multi-cluster project.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
 * {empty}
 include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
@@ -30,14 +30,14 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**应用**页面，点击一个应用的名称打开其详情页面。
+. On the **Apps** page, click the name of an app to open its details page.
 
-. 在应用详情页面左侧的**属性**区域查看应用的资源属性。
+. On the app details page, view the app's resource attributes in the **Attributes** area on the left.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 include::../../../../../_custom-en/multi-clusterProjectManagement/apps/apps-para-details.adoc[]
 
@@ -50,33 +50,33 @@ include::../../../../../_custom-en/multi-clusterProjectManagement/apps/apps-oper
 
 +
 
-. 在应用详情页面右侧点击**外部访问**查看应用的外部访问模式。
+. On the app details page, click **External Access** on the right to view the app's external access mode.
 
-. 在应用详情页面右侧点击**流量管理**查看应用的流量信息。
+. On the app details page, click **Traffic Management** on the right to view the app's traffic information.
 +
 --
 // Note
 include::../../../../../../_ks_components-en/admonitions/note.adoc[]
 
-* 在**集群**区域，可选择应用所在的某一集群，查看指定集群的应用流量信息。
+* In the **Cluster** area, you can select a cluster where the app is located to view the traffic information of the app in the specified cluster.
 
-* 如需使用**流量监控**功能，{ks_product_right}平台需要安装并启用 KubeSphere 服务网格扩展组件，同时您需要在创建应用时启用应用治理功能。有关更多信息，请参阅link:../01-compose-an-app/[创建自制应用]。
+* To use the **Traffic Monitoring** feature, the KubeSphere Service Mesh extension should have been installed and enabled, and you need to enable application governance when creating the app. For more information, see link:../01-compose-an-app/[Create Composed Apps].
 
 include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --
 
-. 在应用详情页面右侧点击**链路追踪**查看应用请求链路信息。
+. On the app details page, click **Tracing** on the right to view the app's request tracing information.
 +
 --
 // Note
 include::../../../../../../_ks_components-en/admonitions/note.adoc[]
 
-* 在**集群**区域，可选择应用所在的某一集群，查看指定集群的应用请求链路信息。
+* In the **Cluster** area, you can select a cluster where the app is located to view the request tracing information of the app in the specified cluster.
 
-* 如需使用**链路追踪**功能，{ks_product_right}平台需要安装并启用 KubeSphere 服务网格扩展组件，同时您需要进行以下操作：
+* To use the **Tracing** feature, the KubeSphere Service Mesh extension should have been installed and enabled, and you need to perform the following operations:
 
-** 创建应用时启用应用治理功能。有关更多信息，请参阅link:../01-compose-an-app/[创建自制应用]。
+** Enable application governance when creating the app. For more information, see link:../01-compose-an-app/[Create Composed Apps].
 
-** 启用项目网关，并为项目网关启用链路追踪功能。有关更多信息，请参阅link:../../../../12-gateway/01-project-gateway/01-enable-a-project-gateway[启用项目网关]。
+** Enable the project gateway and enable the tracing feature for the project gateway. For more information, see link:../../../../12-gateway/01-project-gateway/01-enable-a-project-gateway[Enable Project Gateway].
 include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --

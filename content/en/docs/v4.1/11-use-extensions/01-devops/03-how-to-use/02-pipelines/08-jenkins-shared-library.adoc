@@ -54,7 +54,7 @@ You can also configure link:https://www.jenkins.io/zh/doc/book/pipeline/shared-l
 
 === Create a Pipeline
 
-. Log in to the {ks_product_both} web console as the **project-regular** user.
+. Log in to the {ks_product-en} web console as the **project-regular** user.
 
 . Click **Workspace Management** and enter your DevOps project, then click **Create** on the **Pipelines** page.
 

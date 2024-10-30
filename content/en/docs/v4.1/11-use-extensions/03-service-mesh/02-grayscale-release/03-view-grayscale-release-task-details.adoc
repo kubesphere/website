@@ -1,15 +1,15 @@
 ---
-title: "查看灰度发布任务详情"
-keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 查看灰度发布任务详情"
-description: "介绍如何查看灰度发布任务详情。"
+title: "View Grayscale Release Task Details"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, view grayscale release task details"
+description: "Learn how to view the grayscale release task details."
 weight: 03
 ---
 
-:ks_permission: ** Service Mesh 查看**
-:ks_navigation: **服务网格 > 灰度发布**
+:ks_permission: ** Service Mesh View**
+:ks_navigation: **Service Mesh > Grayscale Release**
 
 
-本节介绍如何查看灰度发布任务详情。
+This section describes how to view the grayscale release task details.
 
 
 == Prerequisites
@@ -17,9 +17,7 @@ weight: 03
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+* **KubeSphere Service Mesh** should have been installed and enabled.
 
 == Steps
 
@@ -34,27 +32,26 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-oper-openDetailsPage.adoc[]
 +
 --
-灰度发布任务详情页面提供以下信息：
+The task details page provides the following information:
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|灰度发布任务的名称和发布模式。
+|Name
+|The name and release mode of the grayscale release task.
 
-|版本
-|新旧版本的容器组副本数量、容器组名称、CPU 用量和内存用量。
+|Version
+|The number of pod replicas, pod name, CPU usage, and memory usage for the new and old versions.
 
-|流量分配
+|Traffic Distribution
 |
-* 对于蓝绿部署，显示当前接收全部流量的服务版本。
+* For Blue-Green Deployment, shows the service version currently receiving all traffic.
 
-* 对于金丝雀发布，显示新旧版本的流量接收比例。
+* For Canary Release, shows the traffic distribution ratio between the new and old versions.
 
-* 对于流量镜像，显示旧版本接收新版本流量的相同副本。
+* For Traffic Mirroring, shows the same copy of traffic received by the old version for the new version.
 
 include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-para-trafficSuccessLatency.adoc[]
 |===
 --
-

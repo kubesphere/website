@@ -1,11 +1,9 @@
 ---
-title: "应用负载"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载"
-description: "介绍如何管理联邦项目中的应用负载。"
+title: "Application Workloads"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads"
+description: "Learn how to manage application workloads in multi-cluster projects."
 weight: 03
 layout: "second"
 ---
 
-
-
-本节介绍如何管理联邦项目中的应用、服务、工作负载和应用路由。
+This section describes how to manage applications, services, workloads, and ingresses in multi-cluster projects.

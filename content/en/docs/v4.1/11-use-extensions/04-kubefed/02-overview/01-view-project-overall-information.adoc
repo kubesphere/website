@@ -1,20 +1,20 @@
 ---
-title: "查看联邦项目概览信息"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 概览, 查看联邦项目概览信息"
-description: "介绍如何查看联邦项目概览信息。"
+title: "Multi-cluster Project Overview"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, overview, view multi-cluster project overview information"
+description: "Learn how to view the overview information of multi-cluster projects."
 weight: 01
 ---
 
-:ks_permission: **联邦项目查看**
-:ks_navigation: **概览**
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Overview**
 
 
-本节介绍如何查看联邦项目概览信息。
+This section describes how to view the overview information of multi-cluster projects.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
@@ -29,26 +29,26 @@ include::../../../../_custom-en/multi-clusterProjectManagement/projectManagement
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 --
-**概览**页面提供以下信息：
+The **Overview** page provides the following information:
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|企业空间
-|联邦项目所属的企业空间。
+|Workspace
+|The workspace to which the multi-cluster project belongs.
 
-|创建者
-|创建联邦项目的用户。
+|Creator
+|The user who created the multi-cluster project.
 
-|资源状态
-|联邦项目中已创建的应用资源和已使用的物理资源。在右上角点击下拉列表可选择联邦项目所在的某一集群和数据的时间范围。
+|Resource Status
+|The application resources created and physical resources used in the multi-cluster project. Click the dropdown list in the top-right corner to select a cluster and a time range for the data.
 
-* **应用资源**：联邦项目中已创建的部署、有状态副本集、持久卷声明、服务和应用路由的数量。
+* **Application Resources**: The number of deployments, statefulsets, persistent volume claims, services, and ingresses created in the multi-cluster project.
 
-* **物理资源**：联邦项目的 CPU 和内存使用量。
+* **Physical Resources**: The CPU and memory usage of the multi-cluster project.
 
-|资源用量 Top 5
-|联邦项目中特定资源用量最高的 5 个工作负载。点击下拉列表可选择联邦项目所在的某一集群，并按 CPU、内存、出站流量或入站流量排序。
+|Top 5 for Resource Usage
+|The top 5 workloads in the multi-cluster project with the highest usage of specific resources. Click the dropdown list to select a cluster and sort by CPU, memory, outbound traffic, or inbound traffic.
 |===
 --

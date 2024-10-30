@@ -1,24 +1,24 @@
 // :ks_include_id: 570405898db841389a0ce7ed42a9a8e3
-. 在**基本信息**页签，设置应用路由的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the Ingress, then click **Next**.
 +
 --
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|应用路由的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。
+|Name
+|The name of the Ingress. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 253 characters long.
 
-|别名
-|应用路由的别名。不同应用路由的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the Ingress. Different Ingresses can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), cannot start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|应用路由的描述。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the Ingress. The description can contain any characters and can be up to 256 characters long.
 |===
 --
 
-. 在**路由规则**页签，点击**添加路由规则**，设置路由规则参数，然后点击**下一步**。
+. On the **Routing Rules** tab, click **Add Routing Rule**, set the routing rule parameters, then click **Next**.
 +
 --
 ifdef::multicluster[]
@@ -28,14 +28,14 @@ endif::[]
 include::routes-para-routingRules.adoc[]
 --
 
-. 在**高级设置**页签，为应用路由设置标签和注解，然后点击**创建**。
+. On the **Advanced Settings** tab, set labels and annotations for the Ingress, then click **Create**.
 +
 --
-* 点击**添加**可设置多条标签或注解。
+* Click **Add** to set multiple labels or annotations.
 
-* 在已创建的标签或注解右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除标签或注解。
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of a created label or annotation to delete it.
 
 include::routes-note-annotations.adoc[]
 
-应用路由创建完成后将显示在应用路由列表中。
+After the Ingress is created, it will be displayed in the Ingress list.
 --

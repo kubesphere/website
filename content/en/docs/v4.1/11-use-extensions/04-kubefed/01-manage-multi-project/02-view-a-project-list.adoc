@@ -1,12 +1,12 @@
 ---
-title: "查看联邦项目列表"
-keywords: "Kuberentes, {ks_product}, 企业空间管理, 联邦项目, 介绍如何查看项目列表"
-description: "介绍如何查看项目列表。"
+title: "View Multi-cluster Project List"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects, how to view project list"
+description: "Learn how to view the project list."
 weight: 02
 ---
 
-:ks_permission: **联邦项目查看**
-:ks_navigation: **项目 > 联邦项目**
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Projects > Multi-cluster Projects**
 
 
 include::../../../../_custom-en/workspaceManagement/projects/projects-desc-viewProjectList.adoc[]
@@ -14,12 +14,10 @@ include::../../../../_custom-en/workspaceManagement/projects/projects-desc-viewP
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
 
 
 == Steps
@@ -32,27 +30,27 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 ====
-* 项目列表提供以下信息：
+* The project list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|项目的名称和描述信息。
+|Name
+|The name and description of the project.
 
-|状态
-|项目当前所处的状态。
+|Status
+|The current status of the project.
 
-* **活跃**：项目状态正常。
-* **删除中**：项目正在删除中。
+* **Active**: The project is in normal status.
+* **Deleting**: The project is in the process of being deleted.
 
-|集群
-|可供项目使用的集群。
+|Cluster
+|The clusters available for the project.
 
-|创建时间
-|项目的创建时间。
+|Creation Time
+|The creation time of the project.
 |===
 --
 
@@ -63,6 +61,6 @@ include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
 
 
-* 在列表中点击一个项目的名称可打开项目管理页面。您可以在项目管理页面查看和管理项目中的资源。
+* Click the name of a project in the list to open the project management page. You can view and manage resources in the project on the page.
 
 ====

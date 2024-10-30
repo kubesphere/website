@@ -1,15 +1,15 @@
 ---
-title: "查看灰度发布任务列表"
-keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 查看灰度发布任务列表"
-description: "介绍如何查看灰度发布任务列表。"
+title: "View Grayscale Release Task List"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, view grayscale release task list"
+description: "Learn how to view the grayscale release task list."
 weight: 02
 ---
 
-:ks_permission: ** Service Mesh 查看**
-:ks_navigation: **服务网格 > 灰度发布**
+:ks_permission: ** Service Mesh View**
+:ks_navigation: **Service Mesh > Grayscale Release**
 
 
-本节介绍如何查看灰度发布任务列表。
+This section describes how to view the grayscale release task list.
 
 
 == Prerequisites
@@ -17,9 +17,7 @@ weight: 02
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+* **KubeSphere Service Mesh** should have been installed and enabled.
 
 == Steps
 
@@ -31,20 +29,20 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**灰度发布**页面，点击**发布任务**打开灰度发布任务列表。
+. On the **Grayscale Release** page, click **Release Tasks** to open the grayscale release task list.
 +
 --
-灰度发布任务列表提供以下信息：
+The grayscale release task list provides the following information:
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|灰度发布任务的名称、应用、发布模式和服务。
+|Name
+|The name, app, release mode, and service of the grayscale release task.
 
-|版本
-|新旧版本的版本号和容器组副本数量。
+|Version
+|The version number and number of pod replicas for the new and old versions.
 
 include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-para-trafficSuccessLatency.adoc[]
 |===

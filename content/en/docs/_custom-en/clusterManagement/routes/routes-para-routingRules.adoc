@@ -1,27 +1,27 @@
 // :ks_include_id: cd11a468685d4e6fadc53bf1c8827311
-* 点击**添加路由规则**可设置路由规则。您可以设置多条路由规则，每条规则对应一个域名。
+* Click **Add Routing Rule** to set routing rules. You can set multiple routing rules, each corresponding to a domain name.
 
-* 将光标悬停在已创建的路由规则上，然后在右侧点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18]可编辑路由规则的设置。
+* Hover the cursor over a created routing rule, then click image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18] on the right side to edit the routing rule settings.
 
-* 将光标悬停在已创建的路由规则上，然后在右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除路由规则。
+* Hover the cursor over a created routing rule, then click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side to delete the routing rule.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|域名
-|用户自定义的域名。
+|Domain
+|The user-defined domain name.
 
-|协议
-|应用路由支持的协议，参数值可以为 **HTTP** 或 **HTTPS**。
+|Protocol
+|The protocol supported by the Ingress. The value can be **HTTP** or **HTTPS**.
 
-|保密字典
-|应用路由协议为 **HTTPS** 时，用于提供证书和密钥的保密字典。该保密字典必须包含 **tls.cert** 和 **tls.key** 字段，分别存储 Base64 编码的证书和私钥。
+|Secret
+|The Secret used to provide the certificate and key when the Ingress protocol is **HTTPS**. This Secret must contain the **tls.cert** and **tls.key** fields, which store the Base64-encoded certificate and private key, respectively.
 
-|路径
-|域名路径及其与服务端口的映射关系。
+|Path
+|The domain path and its mapping relationship with the service port.
 
-* 点击**添加**可设置多条路径。
+* Click **Add** to set multiple paths.
 
-* 在已创建的路径右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除路径。
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of a created path to delete the path.
 |===

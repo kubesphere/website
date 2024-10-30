@@ -1,20 +1,20 @@
 ---
-title: "删除灰度发布任务"
-keywords: "Kubernetes, {ks_product}, 项目管理, 灰度发布, 删除灰度发布任务"
-description: "介绍如何删除灰度发布任务。"
+title: "Delete Grayscale Release Tasks"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, delete grayscale release task"
+description: "Learn how to delete a grayscale release task."
 weight: 07
 ---
 
-:ks_permission: ** Service Mesh 管理**
-:ks_navigation: **服务网格 > 灰度发布**
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Grayscale Release**
 
 
-本节介绍如何删除灰度发布任务。
+This section describes how to delete a grayscale release task.
 
 // Warning
 include::../../../../../_ks_components-en/admonitions/warning.adoc[]
 
-只有在新旧版本之一已接管全部业务流量时才能删除灰度发布任务。灰度发布任务删除后，未接管业务流量的版本（服务、工作负载和容器组）也将被删除。
+A grayscale release task can only be deleted when one of the new or old versions has taken over all business traffic. After the grayscale release task is deleted, the version (includes services, workloads, and pods) that has not taken over the business traffic will also be deleted.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
@@ -24,11 +24,9 @@ include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
+* **KubeSphere Service Mesh** should have been installed and enabled.
 
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
-
-* 新旧版本之一已接管全部业务流量。有关更多信息，请参阅link:../04-switch-versions-blue-green-deployment/[切换上线版本（蓝绿部署）]和link:../05-adjust-traffic-distribution-ratio-canary-release/[调整流量分配比例（金丝雀发布）]。
+* One of the new or old versions has taken over all business traffic. For more information, see link:../04-switch-versions-blue-green-deployment/[Switch Online Version (Blue-Green Deployment)] and link:../05-adjust-traffic-distribution-ratio-canary-release/[Adjust Traffic Distribution Ratio (Canary Release)].
 
 == Steps
 
@@ -44,8 +42,8 @@ include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRele
 
 +
 
-. 在灰度发布详情页面右上角，点击**删除**。
+. In the top-right corner of the grayscale release details page, click **Delete**.
 +
 --
-系统将删除灰度发布任务，同时删除未接管业务流量的版本。
+The system will delete the grayscale release task and also delete the version that has not taken over the business traffic.
 --

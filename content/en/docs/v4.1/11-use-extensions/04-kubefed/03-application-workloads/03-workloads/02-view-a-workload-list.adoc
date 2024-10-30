@@ -1,12 +1,12 @@
 ---
-title: "查看工作负载列表"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 应用负载, 工作负载, 查看工作负载列表"
-description: "介绍如何查看工作负载列表。"
+title: "View Workload List"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, workloads, view workload list"
+description: "Learn how to view the workload list."
 weight: 02
 ---
 
-:ks_permission: **联邦项目查看**
-:ks_navigation: **应用负载 > 工作负载**
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Application Workloads > Workloads**
 
 
 include::../../../../../_custom-en/clusterManagement/workloads/workloads-desc-viewAWorkloadList.adoc[]
@@ -14,7 +14,7 @@ include::../../../../../_custom-en/clusterManagement/workloads/workloads-desc-vi
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用**联邦集群应用管理**扩展组件。
+* **Application Management for Cluster Federation** should have been installed and enabled.
 
 * {empty}
 include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]

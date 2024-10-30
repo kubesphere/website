@@ -1,2 +1,2 @@
 // :ks_include_id: a3a4d6c4c46d4b8dbf054da9c20cd804
-* 在列表上方点击搜索框并设置搜索条件，可按名称搜索应用路由。
+* Click the search box at the top of the list to search for Ingresses by name.

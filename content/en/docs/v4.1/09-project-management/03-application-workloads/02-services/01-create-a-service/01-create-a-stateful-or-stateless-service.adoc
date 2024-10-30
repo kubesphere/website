@@ -1,6 +1,6 @@
 ---
-title: "Create Stateful or Stateless Services"
-linkTitle: "Create Stateful or Stateless Services"
+title: "Create a Stateful or Stateless Service"
+linkTitle: "Create a Stateful or Stateless Service"
 keywords: "Kubernetes, KubeSphere, Project Management, Workloads, Services, Create Service, Create Stateful or Stateless Services"
 description: "Introduces how to create stateful or stateless services."
 weight: 01
