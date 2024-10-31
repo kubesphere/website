@@ -75,7 +75,7 @@ apt install socat conntrack -y
 
 [source,bash]
 ----
-curl -sfL https://get-kk.kubesphere.io | VERSION=v3.1.6 sh -
+curl -sSL https://get-kk.kubesphere.io | sh -
 ----
 
 

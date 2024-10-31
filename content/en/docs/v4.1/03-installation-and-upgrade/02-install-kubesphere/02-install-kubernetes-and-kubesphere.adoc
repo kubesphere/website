@@ -248,7 +248,6 @@ spec:
  # Harbor does not support arm64. This parameter does not need to be configured when deploying in an arm64 environment.
  type: harbor
  # If you use kk to deploy harbor or other registries that require authentication, you need to set the auths of the corresponding registries. If you use kk to deploy the default docker registry, you do not need to configure the auths parameter.
- # Note: If you use kk to deploy harbor, please set the auths parameter after creating the harbor project.
  auths:
  "dockerhub.kubekey.local":
  username: admin # harbor default username
