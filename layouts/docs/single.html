@@ -41,10 +41,14 @@
             </div>
         </section>
 
+        {{ $version := index (strings.FindRE `v[0-9]+\.[0-9]+` .Page.RelPermalink) 0}}
+        <!-- {{ $doc_version := printf "/docs/%s" $version }} -->
+
         <section class="section-menu">
+
             {{ with (.GetPage "/docs") }}
             <div class="common-layout">
-                {{ partial "section" . }}
+                {{ partial "section" (dict "context" . "ver" $version) }}
             </div>
             {{ end }}
         </section>
@@ -54,6 +58,7 @@
                 <div class="left-div left-tree">
                     <div class="inner-tree">
                         {{ partial "tree.html" . }}
+
                         <!-- <div class="download-div">
                         <span class="download-icon"></span>
                         <span>{{ i18n "Download this page (PDF)" }}</span>
@@ -146,35 +151,30 @@
                                     {{ partial "subscribe.html" .}}
                                 </div>
                             </div>
-                            
+
                             <br>
                             <p class="msg-thank">{{ i18n "Msg-Thank" }}</p>
                         </div>
                     </div>
-                    {{ if .IsPage }}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
-                    <div class="page-div common-flex-layout">
-                        {{ with .Next }}
-                        <!-- {{ if .IsDescendant (.GetPage "/docs")}} -->
-                        <a class="last" href="{{.RelPermalink}}">
-                            <img src="/images/docs/v3.3/last.svg" alt="{{ i18n " Previous" }}">
-                            {{ i18n "Previous" }}
-                            <span>: {{.LinkTitle}}</span>
-                        </a>
-                        <!-- {{ end }} -->
-                        {{ end }}
-                        {{ with .Prev }}
-                        <!-- {{ if .IsDescendant (.GetPage "/docs")}} -->
-                        <a class="next" href="{{.RelPermalink}}">
-                            {{ i18n "Next" }}
-                            <span>: {{.LinkTitle}}</span>
-                            <img src="/images/docs/v3.3/next.svg" alt="{{ i18n " Next" }}">
-                        </a>
-                        <!-- {{ end }} -->
-                        {{ end }}
-                    </div>
+>>>>>>> b5c946198 (fix: try to fix page navigation)
+                    {{ if .IsPage }}
+=======
+>>>>>>> 701c81afc (尝试修复上下页跳转混乱和 hover 文档错误)
+
+
+                    <!-- DEBUG {{ partial "page_navigate" (dict "context" . "prev" true)}}  -->
+
+                    {{ if .IsPage }}
+                    <!-- <div class="page-div common-flex-layout"> -->
+                    {{ partial "pagination" . }}
+                    <!-- </div> -->
                     {{ end }}
                     <div></div>
+
                 </div>
                 {{ if .IsPage }}
                 <div class="aside">
@@ -334,7 +334,7 @@
 
             __main()
 
-            $(".asciicast").children().attr( "title", "video" );
+            $(".asciicast").children().attr("title", "video");
 
         </script>
     </main>
@@ -349,16 +349,20 @@
                         <img src="/images/footer/wechat_code.svg" alt="">
                     </div>
                 </a>
-                <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank" aria-label="facebook"></a>
+                <a class='facebook-a' href="https://www.facebook.com/kubesphere" target="_blank"
+                    aria-label="facebook"></a>
                 <a class='twitter-a' href="{{ .Site.Params.twitterLink }}" target="_blank" aria-label="twitter"
                     rel="noopener noreferrer"></a>
                 <a class='linkedin-a' href="{{ .Site.Params.linkedinLink }}" target="_blank" aria-label="linkedin"
                     rel="noopener noreferrer"></a>
                 <a class='youtube-a' href="{{ .Site.Params.youtubeLink }}" target="_blank" aria-label="youtube"
                     rel="noopener noreferrer"></a>
-                <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" aria-label="slack" rel="noopener noreferrer"></a>
-                <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" aria-label="github" rel="noopener noreferrer"></a>
-                <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" aria-label="medium" rel="noopener noreferrer"></a>
+                <a class='slack-a' href="{{ .Site.Params.slackLink }}" target="_blank" aria-label="slack"
+                    rel="noopener noreferrer"></a>
+                <a class='github-a' href="{{ .Site.Params.githubLink }}" target="_blank" aria-label="github"
+                    rel="noopener noreferrer"></a>
+                <a class='medium-a' href="{{ .Site.Params.mediumLink }}" target="_blank" aria-label="medium"
+                    rel="noopener noreferrer"></a>
             </div>
             <p class='p1'>{{ i18n "KubeSphere®️ 2023 All Rights Reserved." }}</p>
         </div>

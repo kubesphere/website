@@ -1,22 +1,29 @@
+<!-- {{ $secs := .FirstSection.Sections.ByWeight }} -->
+<!-- secs := v3.3 v3.4 v4.1-->
+<!-- .FirstSection  eg:/zh/docs -->
+
 <div>
-  <nav class='nav-menu'>
+	<nav class='nav-menu'>
 		{{ $sections := .FirstSection.Sections.ByWeight }}
 		{{ $secondSection := .FirstSection }}
-		{{ $page := . }}
-		{{ range $sections }}
-			{{ if $page.IsDescendant . }}
-				{{ $secondSection = . }}
-			{{ end }}
+		{{ $page := . }} <!-- cur page -->
+		{{ range $sections }} <!--  v3.3 v3.4 v4.1  -->
+		{{ if $page.IsDescendant . }}
+		{{ $secondSection = . }}
 		{{ end }}
-    {{ template "section-tree-nav-section" (dict "page" . "section" $secondSection)  }}
-  </nav>
+		{{ end }}
+		{{ template "section-tree-nav-section" (dict "page" . "section" $secondSection) }}
+	</nav>
 </div>
+
+
 
 {{ define "section-tree-nav-section" }}
 {{ $s := .section }}
 {{ $p := .page }}
 {{ $list_active := $p.IsDescendant $s }}
-{{ if eq $s.Parent $s.FirstSection }}
+
+{{ if eq $s.Parent $s.FirstSection }} <!-- don't show when we in vx.x _index page  -->
 {{ else }}
 <p class="list-title">
 	<span class="arrow {{ if $list_active }}arrow-open{{ end }}"></span>
@@ -25,7 +32,21 @@
 {{ end }}
 
 <ul class="{{ if $list_active }}ul-active{{ end }}">
+	<!-- here s.pages seems eq to s.section /vx.x/0x-.. ispage = false -->
 	{{ $pages := (union (where $s.Pages ".Params._build.render" "!=" false) $s.Sections).ByWeight }}
+
+	<!-- {{ range $s.Sections}}
+	<div style="position: relative ;z-index: 99;top:0;width: 100;height: 100;color: blue;">
+		{{.RelPermalink}}
+	</div>
+	{{ end }} -->
+
+	<!-- {{range $s.Pages }}
+	<div style="position: relative ;z-index: 99;top:0;width: 100;height: 100;color: red;">
+		{{ .RelPermalink }}
+	</div>
+	{{end}} -->
+
 	{{ range $pages }}
 	{{ $active := eq . $p }}
 	<li class="list{{ if $active }} active{{ end }}">
@@ -39,7 +60,7 @@
 </ul>
 {{ end }}
 <script>
-	$('.nav-menu .list-title').click(function() {
+	$('.nav-menu .list-title').click(function () {
 		$(this).find('.arrow').toggleClass('arrow-open')
 		$(this).next().toggleClass('ul-active')
 	})
