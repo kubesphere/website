@@ -1,0 +1,71 @@
+{{ $current := .context }}
+
+<!-- choose different bottom up step -->
+<!-- in this case page.parent is index -->
+{{ $g_parent := "" }}
+{{ if $current.IsPage }}
+{{ $g_parent = $current.Parent.Parent }}
+{{ else }}
+{{ $g_parent = $current.Parent}}
+{{ end }}
+
+<!-- SECTION1 -->
+<!-- important! here we need call .Pages to include both pure page and _index -->
+{{ $p_section := $g_parent.Pages.ByWeight }}
+{{ $length := len $p_section }}
+<!-- page prev -->
+{{ if .prev }}
+{{ $first := index $p_section 0}}
+
+<!-- check if is already the first section -->
+<!-- if is first section,we need to bottom up -->
+{{ if $current.InSection $first.CurrentSection }}
+<!-- bottom up -->
+{{ partial "page_navigation" (dict "context" $g_parent "prev" true)}}
+
+<!--if not the first section just go to pre section last page (last page of pre section of p_section)-->
+{{else}}
+
+<!-- find current page's section position -->
+{{ $curIndex := 0 }}
+{{ range $i, $p_sec := $p_section}}
+{{ if eq $p_sec $current.CurrentSection}}
+{{ $curIndex = $i }}
+{{ end }}
+{{ end }}
+
+{{ $prevPage := index $p_section (sub $curIndex 1) }}
+{{ partial "findLastInPreSection" $prevPage}}
+
+{{ end }} <!-- close of check page prev bottom up -->
+<!-- SECTION1 -->
+
+<!-- page next -->
+{{ else }}
+
+<!-- SECTION2 -->
+{{ $last := index $p_section (sub $length 1)}}
+
+<!-- if is last section,we need to bottom up -->
+{{ if $current.InSection $last.CurrentSection }}
+
+<!-- bottom up -->
+{{ partial "page_navigation" (dict "context" $g_parent "prev" false)}}
+
+<!--if not the last section just go to next section -->
+{{ else }}
+
+{{ $curIndex := 0 }}
+{{ range $i, $p_sec := $p_section}}
+{{ if eq $p_sec $current.CurrentSection}}
+{{ $curIndex = $i }}
+{{ end }}
+{{ end }}
+
+{{ $nextPage := index $p_section (add $curIndex 1) }}
+{{ partial "findFirstInNextSection" $nextPage}}
+
+{{ end }} <!-- close of check next bottom up -->
+<!-- SECTION2 -->
+
+{{ end }}
