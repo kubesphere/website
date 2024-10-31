@@ -295,11 +295,30 @@ section {
   }
 }
 
+.admon{
+  thead > tr > th {
+    padding: 0 10px;
+    margin: 0!important;
+    height: 30px;
+    line-height: 30px;
+    color: #ffffff;
+  }
+}
+
 .notices.note {
   & > p {
     background: #6ab0de
   }
   & > div {
+    background: #e7f2fa;
+  }
+}
+
+.admon.note {
+  thead > tr > th {
+    background: #6ab0de;
+  }
+  td  {
     background: #e7f2fa;
   }
 }
@@ -313,6 +332,15 @@ section {
   }
 }
 
+.admon.tip {
+  thead > tr > th {
+    background: #78C578
+  }
+  td  {
+    background: #E6F9E6;
+  }
+}
+
 .notices.info {
   & > p {
     background: #F0B37E
@@ -322,11 +350,29 @@ section {
   }
 }
 
+.admon.attention {
+  thead > tr > th {
+    background: #F0B37E
+  }
+  td  {
+    background: #FFF2DB;
+  }
+}
+
 .notices.warning {
   & > p {
     background: #E06F6C
   }
   & > div {
+    background: #FAE2E2;
+  }
+}
+
+.admon.warning {
+  thead > tr > th {
+    background: #E06F6C
+  }
+  td  {
     background: #FAE2E2;
   }
 }
