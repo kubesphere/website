@@ -1,41 +1,22 @@
-{{ $sections := .Sections.ByWeight }}
 <ul class="common-flex-layout">
-    {{ range $sections }}
-    <li>
-        <p>
-            <span><img src="{{ .Params.icon }}" alt="{{ .LinkTitle }}"></span>
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        </p>
-        {{ $page_list := (union (where .Pages ".Params._build.render" "!=" false) .Sections).ByWeight }}
-        {{ $length := len $page_list}}
-        <ul>
+    {{ if .ver }}
+    {{ $sections := where .context.Sections ".Params.section1.version" "==" .ver }}
 
-            {{ if gt $length 6 }}
-                {{ range first 5 $page_list }}
-                <li>
-                    {{ if .IsPage }}
-                    <a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-                    {{ else }}
-                    {{ partial "firstPageInSection" (dict "section" . "firstSection" .) }}
-                    {{ end }}
-                </li>
-                {{ end }}
-                <li><a href="{{ .RelPermalink }}">{{ i18n "Learn More" }}...</a></li>
-            {{ else }}
-                {{ range first 6 $page_list }}
-                <li>
-                    {{ if .IsPage }}
-                    <a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
-                    {{ else }}
-                    {{ partial "firstPageInSection" (dict "section" . "firstSection" .) }}
-                    {{ end }}
-                </li>
-                {{ end }}
-            {{ end }}
-        </ul>
-    </li>
+    {{ range $sections }}
+    {{ partial "section_item" . }}
     {{ end }}
     {{ range $sections }}
     <li style="height: 0; margin: 0; padding: 0;"></li>
+    {{ end }}
+
+    <!-- render all -->
+    {{ else }}
+    {{ $sections := .context.Sections.ByWeight }}
+    {{ range $sections }}
+    {{ partial "section_item" . }}
+    {{ end }}
+    {{ range $sections }}
+    <li style="height: 0; margin: 0; padding: 0;"></li>
+    {{ end }}
     {{ end }}
 </ul>

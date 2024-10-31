@@ -41,10 +41,13 @@
             </div>
         </section>
 
+        {{ $version := index (strings.FindRE `v[0-9]+\.[0-9]+` .Page.RelPermalink) 0}}
+        <!-- {{ $doc_version := printf "/docs/%s"  $version }} -->
+
         <section class="section-menu">
             {{ with (.GetPage "/docs") }}
             <div class="common-layout">
-                {{ partial "section" . }}
+                {{ partial "section" (dict "context" . "ver" $version) }}
             </div>
             {{ end }}
         </section>
