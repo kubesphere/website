@@ -159,12 +159,11 @@ include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 在 Ubuntu 操作系统上，执行以下命令为服务器安装依赖项：
 
-// Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
-sudo apt install socat conntrack ebtables ipset -y
-
+[source,bash]
 ----
+sudo apt install socat conntrack ebtables ipset -y
+----
+
 
 如果集群节点使用其他操作系统，请将 **apt** 替换为操作系统对应的软件包管理工具。
 
@@ -183,7 +182,8 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-dow
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
+[source,bash]
+----
 
  ./kk create config --with-kubernetes <Kubernetes version>
  
@@ -200,16 +200,16 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-note-doN
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 vi config-sample.yaml
 ----
 
 以下为部分示例配置文件，如需了解完整示例，请参阅link:https://github.com/kubesphere/kubekey/blob/master/docs/config-example.md[此文件]。
 
 // YAML
-include::../../../../_ks_components/code/yaml.adoc[]
-
+[source,yaml]
+----
 apiVersion: kubekey.kubesphere.io/v1alpha2
 kind: Cluster
 metadata:
@@ -253,7 +253,6 @@ spec:
     # harbor 不支持 arm64，arm64 环境部署时，可不配置该参数。
     type: harbor
     # 如使用 kk 部署的 harbor 或其他需要登录的仓库，需设置对应仓库的 auths，如使用 kk 部署默认的 docker registry 仓库，则无需配置 auths 参数。
-    # 注意：如使用 kk 部署 harbor，auths 参数请于创建 harbor 项目之后设置。
     auths:
       "dockerhub.kubekey.local": 
         username: admin # harbor 默认用户名
@@ -263,7 +262,6 @@ spec:
     registryMirrors: []
     insecureRegistries: []
   addons: []
-
 ----
 --
 
