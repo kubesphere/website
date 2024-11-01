@@ -121,7 +121,7 @@ export KKZONE=cn
 vi manifest-sample.yaml
 ----
 
-. 复制 `kubesphere-images.txt` 中的 KubeSphere 镜像列表，添加到新创建的 `manifest-sample.yaml` 文件中。
+. 复制 `kk-manifest.yaml` 中的 KubeSphere 镜像列表，添加到新创建的 `manifest-sample.yaml` 文件中。
 +
 --
 [.admon.attention,cols="a"]
@@ -137,7 +137,7 @@ vi manifest-sample.yaml
 |说明
 
 |
-如果您访问 DockerHub 受限，请复制华为云上的镜像地址（以 `swr.cn-southwest-2.myhuaweicloud.com` 开头），添加到 `manifest-sample.yaml` 文件中。
+如果您访问 DockerHub 受限，请复制 `kk-manifest-mirror.yaml` 中的华为云镜像地址，添加到 `manifest-sample.yaml` 文件中。
 |===
 
 [source,yaml]
@@ -199,7 +199,7 @@ spec:
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.16
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/redis:7.2.4-alpine
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/haproxy:2.9.6-alpine
-  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-extensions-museum:v1.1.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-extensions-museum:v1.1.2
   ## devops
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-apiserver:v4.1.2
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-controller:v4.1.2
@@ -260,6 +260,8 @@ spec:
   - swr.cn-southwest-2.myhuaweicloud.com/ks/library/memcached:1.6.23-alpine
   - swr.cn-southwest-2.myhuaweicloud.com/ks/prom/memcached-exporter:v0.14.2
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kiwigrid/k8s-sidecar:1.24.3
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/minio/minio:RELEASE.2022-09-17T00-09-45Z
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/minio/mc:RELEASE.2022-09-16T09-16-47Z
   ## metrics-server
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/metrics-server:v0.7.0
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/addon-resizer:1.8.20
@@ -269,10 +271,10 @@ spec:
   ## openpitrix
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/apps-manage:v2.0.1
   ## opensearch
-  - swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch:2.11.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch:2.8.0
   - swr.cn-southwest-2.myhuaweicloud.com/ks/library/busybox:1.35.0
   - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/opensearch-curator:v0.0.5
-  - swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch-dashboards:2.11.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch-dashboards:2.8.0
   ## servicemesh
   - swr.cn-southwest-2.myhuaweicloud.com/ks/istio/pilot:1.16.5
   - swr.cn-southwest-2.myhuaweicloud.com/ks/istio/proxyv2:1.16.5
@@ -516,21 +518,117 @@ Pipeline[InitRegistryPipeline] execute successfully
 * 公共项目（Public）：任何用户都可以从这个项目中拉取镜像。
 * 私有项目（Private）：只有作为项目成员的用户可以拉取镜像。
 
-Harbor 管理员账号：admin，密码：Harbor12345。
+Harbor 管理员账号：**admin**，密码：**Harbor12345**。
 
 harbor 安装文件在 `/opt/harbor` 目录下，可在该目录下对 harbor 进行运维。
 |===
 
 执行以下命令创建 harbor 项目。
 
+. 下载指定脚本初始化 Harbor 仓库。
++
 [source,bash]
 ----
-url="https://dockerhub.kubekey.local"
-user=admin
-password=Harbor12345
-curl -u "${user}:${password}" -X POST -H "Content-Type: application/json" "${url}/api/v2.0/projects" -d "{ \"project_name\": \"kubesphereio\", \"public\": true}" -k
-curl -u "${user}:${password}" -X POST -H "Content-Type: application/json" "${url}/api/v2.0/projects" -d "{ \"project_name\": \"ks\", \"public\": true}" -k
+curl -O https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts/create_project_harbor.sh
 ----
+
+. 修改脚本配置文件。
++
+--
+[source,bash]
+----
+vim create_project_harbor.sh
+----
+
+[source,bash]
+----
+#!/usr/bin/env bash
+
+# Copyright 2018 The KubeSphere Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+url="https://dockerhub.kubekey.local"  # 修改 url 的值为 https://dockerhub.kubekey.local
+user="admin"
+passwd="Harbor12345"
+
+harbor_projects=(
+        ks
+        kubesphere
+        kubesphereio
+        coredns
+        calico
+        flannel
+        cilium
+        hybridnetdev
+        kubeovn
+        openebs
+        library
+        plndr
+        jenkins
+        argoproj
+        dexidp
+        openpolicyagent
+        curlimages
+        grafana
+        kubeedge
+        nginxinc
+        prom
+        kiwigrid
+        minio
+        opensearchproject
+        istio
+        jaegertracing
+        timberio
+        prometheus-operator
+        jimmidyson
+        elastic
+        thanosio
+        brancz
+        prometheus
+)
+
+for project in "${harbor_projects[@]}"; do
+    echo "creating $project"
+    curl -u "${user}:${passwd}" -X POST -H "Content-Type: application/json" "${url}/api/v2.0/projects" -d "{ \"project_name\": \"${project}\", \"public\": true}" -k  # 注意在 curl 命令末尾加上 -k
+done
+----
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+* 修改 url 的值为 https://dockerhub.kubekey.local。
+* 脚本末尾 curl 命令末尾加上 -k。
+|===
+
+--
+
+. 创建 Harbor 项目。
++
+--
+[source,bash]
+----
+chmod +x create_project_harbor.sh
+----
+
+[source,bash]
+----
+./create_project_harbor.sh
+----
+--
+
 
 === 5. 安装 Kubernetes
 
@@ -567,7 +665,7 @@ Installation is complete.
 helm upgrade --install -n kubesphere-system --create-namespace ks-core ks-core-1.1.3.tgz \
      --set global.imageRegistry=dockerhub.kubekey.local/ks \
      --set extension.imageRegistry=dockerhub.kubekey.local/ks \
-     --set ksExtensionRepository.image.tag=v1.1.1 \
+     --set ksExtensionRepository.image.tag=v1.1.2 \
      --debug \
      --wait
 ----
