@@ -8,6 +8,7 @@ section1:
   title: KubeSphere
   content: 了解如何通过 KubeSphere 构建并管理云原生应用程序。获取文档、示例代码与教程等信息。
   image: /images/docs/common/banner.png
+  version: v4.1
 
 sectionLink:
   docs:
