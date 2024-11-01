@@ -526,14 +526,7 @@ harbor 安装文件在 `/opt/harbor` 目录下，可在该目录下对 harbor �
 
 执行以下命令创建 harbor 项目。
 
-. 下载指定脚本初始化 Harbor 仓库。
-+
-[source,bash]
-----
-curl -O https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts/create_project_harbor.sh
-----
-
-. 修改脚本配置文件。
+. 创建脚本配置文件。
 +
 --
 [source,bash]
@@ -559,7 +552,7 @@ vi create_project_harbor.sh
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-url="https://dockerhub.kubekey.local"  # 修改为 https://dockerhub.kubekey.local 或实际镜像仓库地址。
+url="https://dockerhub.kubekey.local"  # 或修改为实际镜像仓库地址
 user="admin"
 passwd="Harbor12345"
 
@@ -604,16 +597,6 @@ for project in "${harbor_projects[@]}"; do
     curl -u "${user}:${passwd}" -X POST -H "Content-Type: application/json" "${url}/api/v2.0/projects" -d "{ \"project_name\": \"${project}\", \"public\": true}" -k  # 注意在 curl 命令末尾加上 -k
 done
 ----
-
-[.admon.attention,cols="a"]
-|===
-|注意
-
-|
-* 修改 url 的值为 https://dockerhub.kubekey.local。
-* 脚本末尾 curl 命令末尾加上 -k。
-|===
-
 --
 
 . 创建 Harbor 项目。
