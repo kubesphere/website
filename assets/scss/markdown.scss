@@ -202,6 +202,10 @@
   list-style: decimal;
 }
 
+.md-body ol ol > li {
+  list-style: lower-alpha;
+}
+
 .md-body ul.no-list,
 .md-body ol.no-list {
   padding: 0;
