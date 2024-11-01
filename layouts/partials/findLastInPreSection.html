@@ -1,0 +1,18 @@
+<!-- find last page in section -->
+{{ if ne .Parent.CurrentSection .Parent.FirstSection }} <!-- out of boundary -->
+
+{{ if .IsSection}} <!-- recursive  -->
+{{ $curSection := .Pages.ByWeight }}
+{{ $l := len $curSection}}
+{{ $page := index $curSection (sub $l 1)}}
+{{ partial "findLastInPreSection" $page}}
+{{ else }} <!-- not recursive -->
+
+<a class="last" href="{{.RelPermalink}}">
+	<img src="/images/docs/v3.3/last.svg" alt="{{ i18n " Previous" }}">
+	{{ i18n "Previous" }}
+	<span>: {{.LinkTitle}}</span>
+</a>
+{{ end }}
+
+{{ end }}

@@ -1,0 +1,49 @@
+<div class="page-div common-flex-layout">
+{{ if .IsPage }}
+	<!-- if not each page in a section is pure page we can't simply use prev/nextInsection -->
+	<!-- todo!!! is there a better way to solve this ? -->
+	{{ $current := .}}
+	{{ $p := .Parent.Pages.ByWeight }}
+	{{ $length := len $p }}
+
+	<!-- find current page's section position -->
+	{{ $curIndex := 0 }}
+	{{ range $i, $p_sec := $p}}
+	
+	{{ if eq $p_sec $current}}
+	{{ $curIndex = $i }}
+	{{ end }}
+	{{ end }}
+
+	<!-- prev -->
+	{{ if gt $curIndex 0}}
+	{{ $prevPage := index $p (sub $curIndex 1) }}
+	{{ partial "findLastInPreSection" $prevPage}}
+	{{ else }}
+	{{ partial "page_navigation" (dict "context" . "prev" true)}}
+	{{ end }}
+
+	<!-- next -->
+	{{ if lt $curIndex (sub $length 1) }}
+	{{ $nextPage := index $p (add $curIndex 1)}}
+	{{ partial "findFirstInNextSection" $nextPage}}
+	{{ else }}
+	{{ partial "page_navigation" (dict "context" . "prev" false)}}
+	{{ end }}
+{{ else }}
+	<!-- index prev -->
+	{{ partial "page_navigation" (dict "context" . "prev" true)}}
+
+	<!-- index next -->
+	{{ $pages:= .Pages.ByWeight}}
+	{{ if gt $pages 0}}
+	{{ with (index $pages 0)}}
+	<a class="next" href="{{.RelPermalink}}">
+		{{ i18n "Next" }}
+		<span>: {{.LinkTitle}}</span>
+		<img src="/images/docs/v3.3/next.svg" alt="{{ i18n " Next" }}">
+	</a>
+	{{ end }}
+	{{ end }}
+{{ end }}
+</div>

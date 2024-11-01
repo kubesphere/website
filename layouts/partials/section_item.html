@@ -1,0 +1,32 @@
+<li>
+	<p>
+		<span><img src="{{ .Params.icon }}" alt="{{ .LinkTitle }}"></span>
+		<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+	</p>
+	{{ $page_list := (union (where .Pages ".Params._build.render" "!=" false) .Sections).ByWeight }}
+	{{ $length := len $page_list}}
+	<ul>
+		{{ if gt $length 6 }}
+		{{ range first 5 $page_list }}
+		<li>
+			{{ if .IsPage }}
+			<a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+			{{ else }}
+			{{ partial "firstPageInSection" (dict "section" . "firstSection" .) }}
+			{{ end }}
+		</li>
+		{{ end }}
+		<li><a href="{{ .RelPermalink }}">{{ i18n "Learn More" }}...</a></li>
+		{{ else }}
+		{{ range first 6 $page_list }}
+		<li>
+			{{ if .IsPage }}
+			<a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
+			{{ else }}
+			{{ partial "firstPageInSection" (dict "section" . "firstSection" .) }}
+			{{ end }}
+		</li>
+		{{ end }}
+		{{ end }}
+	</ul>
+</li>
