@@ -1,6 +1,7 @@
 <div class="page-div common-flex-layout">
+{{ if .IsPage }}
 	<!-- if not each page in a section is pure page we can't simply use prev/nextInsection -->
-	<!-- or is there a better way -->
+	<!-- todo!!! is there a better way to solve this ? -->
 	{{ $current := .}}
 	{{ $p := .Parent.Pages.ByWeight }}
 	{{ $length := len $p }}
@@ -29,5 +30,20 @@
 	{{ else }}
 	{{ partial "page_navigation" (dict "context" . "prev" false)}}
 	{{ end }}
+{{ else }}
+	<!-- index prev -->
+	{{ partial "page_navigation" (dict "context" . "prev" true)}}
 
+	<!-- index next -->
+	{{ $pages:= .Pages.ByWeight}}
+	{{ if gt $pages 0}}
+	{{ with (index $pages 0)}}
+	<a class="next" href="{{.RelPermalink}}">
+		{{ i18n "Next" }}
+		<span>: {{.LinkTitle}}</span>
+		<img src="/images/docs/v3.3/next.svg" alt="{{ i18n " Next" }}">
+	</a>
+	{{ end }}
+	{{ end }}
+{{ end }}
 </div>
