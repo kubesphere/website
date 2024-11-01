@@ -1,12 +1,12 @@
 ---
-title: "查看持久卷声明列表"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 存储, 持久卷声明, 查看持久卷声明列表"
-description: "介绍如何查看持久卷声明列表。"
+title: "View Persistent Volume Claim List"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, storage, persistent volume claims, view persistent volume claim list"
+description: "Learn how to view the persistent volume claim list."
 weight: 02
 ---
 
 :ks_permission: **Federated Project Viewing**
-:ks_navigation: **持久卷声明**
+:ks_navigation: **Persistent Volume Claim**
 :kubefed:
 
 include::../../../../_custom-en/clusterManagement/pods/pods-desc-viewAPersistentVolumeList.adoc[]

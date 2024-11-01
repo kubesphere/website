@@ -1,15 +1,15 @@
 ---
-title: "查看项目基本信息"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 项目设置, 基本信息, 查看项目基本信息"
-description: "介绍如何查看项目基本信息。"
+title: "View Project Basic Information"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, project settings, basic information, view project basic information"
+description: "Learn how to view project basic information."
 weight: 01
 ---
 
 :ks_permission: **Federated Project Viewing**
-:ks_navigation: **项目设置 > 基本信息**
+:ks_navigation: **Project Settings > Basic Information**
 
 
-本节介绍如何查看项目基本信息。
+This section describes how to view project basic information.
 
 
 == Prerequisites
@@ -29,14 +29,14 @@ include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagem
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 --
-**基本信息**页面提供以下信息：
+The **Basic Information** page provides the following information:
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|项目信息
-|当前项目的信息，包括项目名称、所属企业空间、创建者和创建时间。
+|Project Information
+|Information about the current project, including the project name, workspace it belongs to, creator, and creation time.
 
 include::../../../../../_custom-en/clusterManagement/projects/projects-para-defaultContainerQuotas.adoc[]
 

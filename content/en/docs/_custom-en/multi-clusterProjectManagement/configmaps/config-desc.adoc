@@ -1,8 +1,8 @@
 // :ks_include_id: b4d12ee4d7d748a4915f6f72d47fa1d7
-本节介绍如何管理配置资源。
+This section describes how to manage configuration resources.
 
-{ks_product-en}支持管理以下两类配置资源：
+{ks_product-en} supports managing the following two types of configuration resources:
 
-* 保密字典：包含 Base64 编码的键值对，用于存储密码、令牌、密钥等保密数据。
+* Secret: Contains Base64-encoded key-value pairs used to store confidential data such as passwords, tokens, and keys.
 
-* 配置字典：包含明文键值对，用于存储普通配置数据。
+* ConfigMap: Contains plaintext key-value pairs used to store general configuration data.

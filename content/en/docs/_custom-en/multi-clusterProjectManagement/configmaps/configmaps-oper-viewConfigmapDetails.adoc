@@ -1,20 +1,20 @@
 // :ks_include_id: 69e70e31d4604cfaaab5683e4ecae96c
-. 在配置字典详情页面左侧的**属性**区域查看配置字典的资源属性。
+. On the details page, view the resource attributes of the ConfigMap in the **Attributes** area on the left.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|项目
-|配置字典所属的项目。
+|Project
+|The project to which the ConfigMap belongs.
 
-|创建时间
-|配置字典的创建时间。
+|Creation Time
+|The creation time of the ConfigMap.
 
-|创建者
-|创建配置字典的用户。
+|Creator
+|The user who created the ConfigMap.
 |===
 --
 
-. 在配置字典右侧的**数据**页签查看配置字典中存储的键值对数据。
+. On the right side of the details page, view the key-value data stored in the ConfigMap in the **Data** tab.

@@ -18,12 +18,13 @@ ifndef::kubefed[]
 |The Persistent Volume bound to the Persistent Volume Claim.
 endif::[]
 
+|Mount Status
+|Whether the Persistent Volume associated with the Persistent Volume Claim is already mounted to a container.
+
 |Access Mode
 |
 include::persistentVolumeClaims-para-accessMode.adoc[]
 
-|Mount Status
-|Whether the Persistent Volume associated with the Persistent Volume Claim is already mounted to a container.
 
 |Creation Time
 |The creation time of the Persistent Volume Claim.

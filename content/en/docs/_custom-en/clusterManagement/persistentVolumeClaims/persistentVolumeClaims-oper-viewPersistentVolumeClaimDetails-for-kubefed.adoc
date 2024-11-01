@@ -1,101 +1,100 @@
 // :ks_include_id: e06b7d959620413ebfcc3bfe526b03d1
-. 在持久卷声明详情页面左侧的**属性**区域查看持久卷声明的资源属性。
+. On the details page, view the resource attributes of the persistent volume claim in the **Attributes** area on the left.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|项目
-|持久卷声明所属的项目。
+|Project
+|The project to which the persistent volume claim belongs.
 
-// |状态
+// |Status
 // |
 // include::persistentVolumeClaims-para-status.adoc[]
 
-|容量
-|持久卷声明请求的存储容量大小。
+|Capacity
+|The storage capacity size requested by the persistent volume claim.
 
-|访问模式
+|Access Mode
 |
 include::persistentVolumeClaims-para-accessMode.adoc[]
 
-|存储类
-|持久卷声明请求的存储类。
+|Storage Class
+|The storage class requested by the persistent volume claim.
 
-|供应者
+|Provisioner
 |
 include::../persistentVolumes/persistentVolumes-para-provisioner.adoc[]
 
-// |持久卷
-// |与持久卷声明绑定的持久卷。
+// |Persistent Volume
+// |The persistent volume bound to the persistent volume claim.
 
-|创建时间
-|持久卷声明的创建时间。
+|Creation Time
+|The creation time of the persistent volume claim.
 
-|创建者
-|创建持久卷声明的用户。如果该字段的值为空，则表明持久卷声明由系统自动创建。
+|Creator
+|The user who created the persistent volume claim. If this field is empty, it indicates that the persistent volume claim was created automatically by the system.
 |===
 --
 
-. 在持久卷声明详情页面右侧的**资源状态**页签查看持久卷声明对应持久卷的资源用量。
+. On the details page, view the resource usage of the persistent volume corresponding to the persistent volume claim in the **Resource Status** tab on the right.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|持久卷
-|显示持久卷的已使用容量百分比、剩余容量大小和总容量大小。
+|Persistent Volume
+|Displays the used capacity percentage, remaining capacity size, and total capacity size of the persistent volume.
 
-|Inode 用量
-|显示指定时间范围内的集群 Inode 使用量百分比。
-
+|Inode Usage
+|Displays the Inode usage percentage of the cluster within the specified time range.
 |===
 --
 
-. 在持久卷声明详情页面右侧的**挂载信息**页签查看持久卷声明对应持久卷的已挂载容器组。
+. On the details page, view the pods that have mounted the persistent volume corresponding to the persistent volume claim in the **Mount Information** tab on the right.
 +
 --
 // include::../nodes/nodes-para-podList.adoc[]
 
-点击image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18]可查看容器组中运行的容器的信息。
+Click image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18] to view the information of the containers running in the pod.
 --
 
-. 在持久卷声明详情页面右侧点击**元数据**页签查看持久卷声明的标签和注解。
+. On the persistent volume claim details page, click the **Metadata** tab on the right to view the labels and annotations of the persistent volume claim.
 
-. 在持久卷声明详情页面右侧点击**事件**页签查看持久卷声明的事件。
+. On the persistent volume claim details page, click the **Events** tab on the right to view events related to the persistent volume claim.
 +
 --
 include::../clusterManagement-para-eventsTab.adoc[]
 --
 
-// . 在持久卷声明详情页面右侧的**快照**页签查看持久卷声明对应持久卷的快照。
+// . On the persistent volume claim details page, view the snapshots of the persistent volume corresponding to the persistent volume claim in the **Snapshots** tab on the right.
 // +
 // --
 
 // [%header,cols="1a,4a"]
 // |===
-// |参数 |描述
+// |Parameter |Description
 
-// |名称
-// |快照的名称、别名和快照类。
+// |Name
+// |The name, alias, and snapshot class of the snapshot.
 
-// |状态
-// |快照的状态。
+// |Status
+// |The status of the snapshot.
 
-// * **创建中**：快照正在创建中。
+// * **Creating**: The snapshot is being created.
 
-// * **创建失败**：快照创建失败。
+// * **Creation Failed**: The snapshot creation failed.
 
-// * **创建成功**：快照创建成功。
+// * **Creation Succeeded**: The snapshot creation succeeded.
 
-// * **删除中**：正在删除快照。
+// * **Deleting**: The snapshot is being deleted.
 
-// |容量
-// |快照的容量大小。
+// |Capacity
+// |The capacity size of the snapshot.
 
-// |创建时间
-// |快照的创建时间。
+// |Creation Time
+// |The creation time of the snapshot.
 // |===
 // --
