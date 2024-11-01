@@ -19,7 +19,7 @@ weight:  04
 
 |192.168.0.2 |node1 |联网主机，用于制作离线包
 |192.168.0.3 |master |离线环境的主节点
-|192.168.0.4 |node2 |离线环境的镜像仓库节点
+|192.168.0.4 |node2 |离线环境的镜像仓库节点（若已有镜像仓库，可忽略）
 |===
 
 * master 和 node2 上需安装 socat 和 conntrack。
@@ -121,7 +121,7 @@ export KKZONE=cn
 vi manifest-sample.yaml
 ----
 
-. 复制 `kk-manifest.yaml` 中的 KubeSphere 镜像列表，添加到新创建的 `manifest-sample.yaml` 文件中。
+. 复制 `kk-manifest.yaml` 或 `kk-manifest-mirror.yaml`（若访问 DockerHub 受限） 中的镜像列表，添加到新创建的 `manifest-sample.yaml` 文件中。
 +
 --
 [.admon.attention,cols="a"]
@@ -132,13 +132,6 @@ vi manifest-sample.yaml
 
 |===
 
-[.admon.note,cols="a"]
-|===
-|说明
-
-|
-如果您访问 DockerHub 受限，请复制 `kk-manifest-mirror.yaml` 中的华为云镜像地址，添加到 `manifest-sample.yaml` 文件中。
-|===
 
 [source,yaml]
 ----
@@ -475,9 +468,9 @@ spec:
         # username: admin
         # password: Harbor12345
         skipTLSVerify: true
-    # 设置集群部署时使用的私有仓库地址。
+    # 设置集群部署时使用的私有仓库地址。如果您已有可用的镜像仓库，请替换为您的实际镜像仓库地址。
     # 如果离线包中为原始 dockerhub 镜像（即 manifest 文件中的镜像地址为 docker.io/***），可以将该参数设置为 dockerhub.kubekey.local/ks, 表示将镜像全部推送至名为 ks 的 harbor 项目中。
-    privateRegistry: "dockerhub.kubekey.local"
+    privateRegistry: "dockerhub.kubekey.local" 
     # 如果构建离线包时 Kubernetes 镜像使用的是阿里云仓库镜像，需配置该参数。如果使用 dockerhub 镜像，则无需配置此参数。
     namespaceOverride: "kubesphereio"
     registryMirrors: []
@@ -487,6 +480,14 @@ spec:
 --
 
 === 3. 创建镜像仓库
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果您已有可用的镜像仓库，可跳过此步骤。
+|===
 
 执行以下命令创建镜像仓库。
 
@@ -537,7 +538,7 @@ curl -O https://raw.githubusercontent.com/kubesphere/ks-installer/master/scripts
 --
 [source,bash]
 ----
-vim create_project_harbor.sh
+vi create_project_harbor.sh
 ----
 
 [source,bash]
@@ -558,7 +559,7 @@ vim create_project_harbor.sh
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-url="https://dockerhub.kubekey.local"  # 修改 url 的值为 https://dockerhub.kubekey.local
+url="https://dockerhub.kubekey.local"  # 修改为 https://dockerhub.kubekey.local 或实际镜像仓库地址。
 user="admin"
 passwd="Harbor12345"
 
