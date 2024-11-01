@@ -1,0 +1,33 @@
+---
+title: "Edit Ingress Annotations"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, ingresses, edit ingress annotations"
+description: "Learn how to edit ingress annotations."
+weight: 06
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-desc-editRouteAnnotations.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-oper-editRouteAnnotations.adoc[]

@@ -1,0 +1,112 @@
+---
+title: "Role and Member Management"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduces how to manage roles and members in a DevOps project."
+weight: 02
+---
+
+This document demonstrates how to manage roles and members in a DevOps project.
+
+Within the scope of a DevOps project, you can grant permissions for the following resources to roles:
+
+* DevOps project settings
+* Pipelines
+* Credentials
+* Continuous deployments
+* Code repositories
+* Access control
+
+== Prerequisites
+
+* A DevOps project has been created, for example, **demo-devops**.
+
+* A user (e.g. **devops-admin**) with the **admin** role in the DevOps project.
+
+== Preset Roles
+
+In **DevOps Project Roles**, there are three preset roles as follows. Preset roles are automatically created when a DevOps project is created and cannot be edited or deleted.
+
+[%header,cols="1a,4a"]
+|===
+|Preset Role |Description
+
+|viewer
+|DevOps project viewer, view all resources in the DevOps project.
+
+|operator
+|DevOps project regular member, manage DevOps credentials and pipelines, and view members and roles in the DevOps project.
+
+|admin
+|DevOps project administrator, manage all resources in the DevOps project.
+|===
+
+== Create a DevOps Project Role
+
+. Log in to the {ks_product-en} web console as the **devops-admin** user.
+
+. Go to the **DevOps Projects** page and click a DevOps project (e.g. **demo-devops**).
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+This document uses the **devops-admin** account as an example. As long as the role granted to the account includes the **Role Management** permission in the DevOps project, this account can create DevOps project roles.
+
+|===
+--
+
+. Select **DevOps Project Settings** > **DevOps Project Roles** and click **Create**.
+
+. Set the **Name**. In this example, a role named **pipeline-creator** will be created. Click **Edit Permissions** to continue.
+
+. On the **Pipeline** tab, select the permissions you want to grant to this role. For example, select **Pipeline Management** and **Pipeline Viewing** for this role. Click **OK** to complete the operation.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+**Depends on** means the current authorization item depends on the listed authorization items. After checking the permission, the system will automatically select all dependent permissions.
+|===
+--
+
+. The newly created role will be displayed in the **DevOps Project Roles** list. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side to edit it.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+The **pipeline-creator** role is only granted **Pipeline Management** and **Pipeline Viewing** permissions, which may not meet your actual needs. This example is for demonstration purposes only. Please create custom roles according to your actual needs.
+
+|===
+--
+
+== Invite DevOps Project Members
+
+. In **DevOps Project Settings**, select **DevOps Project Members** and then click **Invite**.
+
+. Click image:/images/ks-qkcp/zh/icons/add-dark.svg[add,18,18] to invite an account to join this DevOps project and grant the **pipeline-creator** role to this account.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+You must first invite the user to join the workspace where the DevOps project is located.
+
+|===
+--
+
+. Click **OK** to add the user to this DevOps project. On the **DevOps Project Members** page, the newly invited member will be displayed.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project member to modify the role of the member or remove the user from the DevOps project.

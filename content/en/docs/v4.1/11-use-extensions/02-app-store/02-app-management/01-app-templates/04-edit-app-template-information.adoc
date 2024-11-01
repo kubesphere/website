@@ -1,0 +1,66 @@
+---
+title: "Edit Application Template Information"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, edit application template information"
+description: "Describes how to edit application template information."
+weight: 04
+---
+
+:ks_permission: **Application/Application Version/Application Instance Management**
+:ks_navigation: **App Management > App Templates**
+
+This section describes how to edit application template information.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+
+== Steps
+
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+. Click **Edit** in the top-left corner of the details page.
+
+. Set the parameters for the application template in the **Edit Information** dialog, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Alias
+|The alias of the application. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-). The maximum length is 63 characters.
+
+|Description
+|The description of the application. The description can contain any characters, with a maximum length of 120 characters.
+
+|Icon
+|The icon of the application. If the icon of the application template is not set, the system will use the first character of the application name in uppercase as the default icon. The icon format must be .png or .jpg, with a maximum size of 96 x 96 pixels and 20 KB.
+
+|App Category
+|The functional category of the application. The application template will be automatically categorized under the selected category after being uploaded to the App Store.
+
+|Service Provider Website
+|The website address of the service provider. Users who install the application from the App Store can contact the service provider for technical support.
+
+|App Screenshots
+|The images of the application. A maximum of 6 screenshots can be uploaded, with each screenshot not exceeding 2 MB in size.
+
+|App Introduction
+|The introduction information of the application. Supports entering text and images in markdown format.
+|===
+--

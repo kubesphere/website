@@ -1,0 +1,11 @@
+---
+title: "App Repositories"
+keywords: "Kubernetes, {ks_product-en}, Workspace, App Management, App Repositories"
+description: "Describes how to add and manage app repositories."
+weight: 04
+layout: "second"
+---
+
+This section describes how to manage app repositories on the {ks_product-en} platform.
+
+Add Helm Chart repositories as app repositories to the {ks_product-en} platform, so that users can install apps from these repositories across all projects. For information on how to create a Helm Chart repository, see the link:https://helm.sh/docs/topics/chart_repository/[Helm Documentation].

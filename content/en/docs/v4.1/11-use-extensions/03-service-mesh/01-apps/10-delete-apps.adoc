@@ -1,0 +1,54 @@
+---
+title: "Delete Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, project management, application, delete app"
+description: "Learn how to delete an app."
+weight: 10
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Composed Apps**
+
+
+This section describes how to delete a composed app.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Delete a Single App
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+. On the **Composed Apps** page, view the app list.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the app you want to delete, then select **Delete** from the dropdown list.
+
+. In the **Delete App** dialog, enter the name of the app, then click **OK**.
+
+
+== Delete Multiple Apps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Composed Apps** page, view the app list.
+
+. Select the checkbox on the left side of the apps you want to delete, then click **Delete** above the app list.
+
+. In the **Delete Multiple Apps** dialog, enter the names of the apps, then click **OK**.
++
+--
+include::../../../../_custom-en/note-separateNamesByComma.adoc[]
+--

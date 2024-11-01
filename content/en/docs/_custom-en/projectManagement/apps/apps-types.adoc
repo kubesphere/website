@@ -1,7 +1,6 @@
 // :ks_include_id: faff93159cca48358390bdd176c1577d
+In KubeSphere, an application refers to a business program composed of one or more workloads, services, Ingresses, and other resources. Based on the creation method, apps in KubeSphere are divided into the following two types:
 
-在{ks_product-en}平台，应用特指由一个或多个工作负载、服务、应用路由等资源组成的业务程序。根据应用的创建方式，{ks_product-en}平台上的应用分为以下两类：
+* Template-based apps: Apps created using existing app templates. The app templates used to create apps can be app templates uploaded to the workspace, app templates published to the App Store, or app templates from third-party app repositories.
 
-* 基于模板的应用：通过已有的应用模板创建的应用。创建应用所使用的应用模板可以为上传到企业空间的应用模板、已发布到应用商店的应用模板或第三方应用仓库中的应用模板。
-
-* 自制应用：由用户手动编排工作负载、服务、应用路由等资源创建的应用。在创建自制应用时，您可以启用应用治理以使用{ks_product-en}提供的流量监控、灰度发布和链接追踪功能。
+* Composed apps: Apps created by manually orchestrating workloads, services, Ingresses, and other resources. When creating a composed app, you can enable application governance to use the traffic monitoring, grayscale release, and tracing features provided by KubeSphere.

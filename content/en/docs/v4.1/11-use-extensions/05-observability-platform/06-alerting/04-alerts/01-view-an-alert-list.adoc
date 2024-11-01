@@ -1,0 +1,45 @@
+---
+title: "查看告警列表"
+keywords: "Kubernetes, {ks_product}, 集群管理, 告警, 查看告警列表"
+description: "介绍如何查看告警列表。"
+weight: 01
+---
+
+:ks_permission: **告警查看**
+:ks_navigation: **监控告警 > 告警**
+
+
+include::../../../../../_custom-en/clusterManagement/alerts/alerts-desc-viewAnAlertingMessageList.adoc[]
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 告警**扩展组件。
+
+* {empty}
+include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+
+
+
+
+== Steps
+
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../..//_custom-en/clusterManagement/alerts/alerts-oper-openListPage.adoc[]
+
++
+====
+include::../../../../../_custom-en/clusterManagement/alerts/alerts-para-alertingMessageList.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/alerts/alerts-oper-searchForAlertingMessages_new.adoc[]
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

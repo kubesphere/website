@@ -1,2 +1,2 @@
 // :ks_include_id: 2f8f4e8c4cba43e0b81959fc339f9ca5
-* 在列表上方点击搜索框并设置搜索条件，可按名称搜索工作负载。
+* Click the search box at the top of the list to search for workloads by name.

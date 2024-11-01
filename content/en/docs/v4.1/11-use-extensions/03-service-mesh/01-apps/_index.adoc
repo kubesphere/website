@@ -1,0 +1,29 @@
+---
+title: "Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, Project Management, Apps"
+description: "Describes how to manage composed apps installed in a project."
+weight: 01
+layout: "second"
+---
+
+This section describes how to manage composed apps.
+
+include::../../../../_custom-en/projectManagement/apps/apps-types.adoc[]
+
+ifeval::["{file_output_type}" == "html"]
+[.admon.note,cols="a"]
+|===
+|Note
+
+|For more information about template-based apps, see link:../../../09-project-management/03-application-workloads/01-apps[Apps].
+|===
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+[.admon.note,cols="a"]
+|===
+|Note
+
+|For more information about template-based apps, see the "Application Workloads > Apps" section in the {ks_product-en} Project Management Guide.
+|===
+endif::[]

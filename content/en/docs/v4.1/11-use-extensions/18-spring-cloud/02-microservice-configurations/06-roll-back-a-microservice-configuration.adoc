@@ -1,0 +1,43 @@
+---
+title: "回退微服务配置"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 回退微服务配置"
+description: "介绍如何回退微服务配置。"
+weight: 06
+---
+
+:ks_permission: ** Spring Cloud 微服务管理**
+:ks_navigation:  **Spring Cloud > 微服务配置**
+
+
+本节介绍如何回退微服务配置。
+
+每次编辑微服务配置都会生成修改记录，您可以使用修改记录将微服务配置回退到历史版本。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/microserviceConfiguration/microserviceConfiguration-oper-openDetailsPage.adoc[]
+
++
+
+. 在微服务配置详情页面左上角，选择**更多操作 > 回退**。
+
+. 在**回退**对话框，选择目标修改记录，然后点击**确定**。

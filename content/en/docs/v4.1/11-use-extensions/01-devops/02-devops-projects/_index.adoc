@@ -1,0 +1,11 @@
+---
+title: "Manage DevOps Projects"
+keywords: "Kubernetes, {ks_product-en}, Workspace, DevOps Projects"
+description: "Learn how to view and manage DevOps projects."
+weight: 02
+layout: "second"
+---
+
+This section covers managing DevOps projects.
+
+DevOps projects provide users with Continuous Integration and Continuous Deployment (CI/CD) capabilities. You can integrate KubeSphere with third-party code repositories in a DevOps project and then automatically update source code changes to the target environment through pipelines or continuous deployment.

@@ -1,0 +1,70 @@
+---
+title: "Create Multi-cluster Projects"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects, create multi-cluster project"
+description: "Learn how to create multi-cluster projects."
+weight: 01
+---
+
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Projects > Multi-cluster Projects**
+
+
+This section describes how to create multi-cluster projects.
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the pop-up dialog, set the project parameters, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../_custom-en/clusterManagement/projects/projects-para-name.adoc[]
+
+include::../../../../_custom-en/clusterManagement/projects/projects-para-aliasDescription.adoc[]
+
+|Cluster
+|The clusters available for the project. Resources in the project run in the clusters selected here. When creating a multi-cluster project, you can click **Add** to select multiple clusters, allowing resources in the project to run on different clusters.
+|===
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+ifeval::["{file_output_type}" == "html"]
+To run a multi-cluster project on multiple clusters, the workspace to which the multi-cluster project belongs must be authorized to access multiple clusters. For more information, see link:../../../../08-workspace-management/02-workspaces/01-create-a-workspace[Create Workspaces].
+
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+To run a multi-cluster project on multiple clusters, the workspace to which the multi-cluster project belongs must be authorized to access multiple clusters. For more information, see the "Create Workspaces" section in the {ks_product-en} Workspace Management Guide.
+
+endif::[]
+|===
+
+After the project is created, you can invite users to join the project and deploy business in the project.
+--

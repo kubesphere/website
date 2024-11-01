@@ -1,0 +1,19 @@
+---
+title: "用户通知设置"
+keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知渠道"
+description: "介绍如何设置用户的通知渠道。"
+weight: 05
+layout: "second"
+---
+
+:ks_permission: **接收通知**
+
+本节介绍如何设置当前用户的通知渠道，用于接收其所在项目的告警消息。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|用户必须在所在项目中具有pass:a,q[{ks_permission}]权限，才能接收该项目的告警消息。
+
+|===

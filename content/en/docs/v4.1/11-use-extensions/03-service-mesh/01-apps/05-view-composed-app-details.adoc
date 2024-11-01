@@ -1,0 +1,118 @@
+---
+title: "View Composed App Details"
+keywords: "Kubernetes, {ks_product-en}, project management, application, view composed app details"
+description: "Learn how to view composed app details."
+weight: 05
+---
+
+:ks_permission: ** Service Mesh View**
+:ks_navigation: **Service Mesh > Composed Apps**
+
+
+This section describes how to view composed app details.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Composed Apps** page, click the name of an app to open its details page.
+
+. On the app details page, view the app's resource attributes in the **Attributes** area on the left.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-details1.adoc[]
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-details2.adoc[]
+
+|Application Governance
+|Whether application governance is enabled for the app. After enabling app governance, you can use traffic monitoring, grayscale release, and tracing features.
+|===
+--
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-viewResourceStatus.adoc[]
+
++
+
+. On the app details page, click **Traffic Monitoring** on the right to view the app's traffic information.
++
+--
+Click a service in the graphic panel, and on the right side of the page, view the service's traffic monitoring information, related pods, and perform **Traffic Management**.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Traffic Policies > Load Balancing
+|Load Balancing Algorithm
+
+* **Round Robin**: Distributes client requests to backends in rotation.
+* **Least Request**: Randomly selects two healthy backends and sends client requests to the one with fewer connections.
+* **Random**: Sends client requests to a backend randomly selected from all healthy backends.
+* **Pass Through**: Directly forwards the connection to the original IP address of the caller's request without any form of load balancing.  It is for advanced configurations, please use with caution.
+
+|Traffic Policies > Session Persistence
+|
+Maps requests to backend servers based on specific identifiers (e.g., HTTP header, Cookie, query parameter) to achieve balanced distribution and load sharing.
+
+* **Hash based on HTTP header **: Hashes based on a specific HTTP header.
+* **Hash based on HTTP cookie**: Hashes based on an HTTP cookie.
+* **Hash based on HTTP Query Parameter Name**: Hashes based on a specific HTTP query parameter.
+* **Hash based on Source IP Address**: Hashes based on the source IP address. Applicable to TCP and HTTP connections.
+* **Ring/Modulo Hash**: The ring/modulo hash load balancer uses a consistent hashing algorithm to hash backend hosts.
+* **Maglev Hash**: The Maglev hash load balancer uses a consistent hashing algorithm to hash backend hosts.
+
+For more information, see link:https://istio.io/v1.16/docs/reference/config/networking/destination-rule/#LoadBalancerSettings-ConsistentHashLB[this document].
+
+|Connection Pool
+|Creates a fixed number of connection objects for the application and stores them in a connection pool for reuse. A connection object is retrieved from the connection pool for each request and returned to the pool after use.
+
+After enabling, set the maximum number of connections, maximum requests per connection, maximum retries, connection timeout, maximum request quantity, and maximum pending request quantity.
+
+|Circuit Breaker
+|If a service cannot be accessed and the specified criteria are met, the ciruit breaker marks the service as unavailable and returns error response to clients directly for a specified period of time.
+
+After enabling, set the number of consecutive 5XX errors, inspection interval (seconds), maximum ejection ratio (%), and base ejection time (seconds).
+|===
+
+--
+
+. On the app details page, click **Grayscale Release** on the right to view the app's grayscale release information. For more information, see link:../../02-grayscale-release/[Grayscale Release].
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+To use the **Traffic Monitoring** and **Grayscale Release** features, you need to enable application governance when creating a composed app. For more information, see link:../03-manually-compose-an-app/[Create Composed Apps].
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. On the app details page, click **Tracing** on the right to view the app's request tracing information.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* To use the **Tracing** feature, you need to enable application governance when creating a composed app. For more information, see link:../03-manually-compose-an-app/[Create Composed Apps].
+
+* Additionally, you need to enable the project gateway and enable the **Tracing** feature for the project gateway. For more information, see link:../../../12-gateway/01-project-gateway/01-enable-a-project-gateway[Enable Project Gateway].
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

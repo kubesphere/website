@@ -1,0 +1,61 @@
+---
+title: "Edit Application Templates"
+description: "Describes how to edit application template information in the App Store."
+weight: 04
+---
+
+:ks_permission: **App Store Management**
+:ks_navigation: **Apps**
+
+This section describes how to edit information for application templates in the App Store.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the top-right corner of the page, then select **App Store Management**.
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the application template you want to edit, then select **Edit** from the dropdown list.
+
+. Set the parameters for the application template in the **Edit Information** dialog, then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Alias
+|The alias of the application. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-). The maximum length is 63 characters.
+
+|Description
+|The description of the application. The description can contain any characters, with a maximum length of 120 characters.
+
+|Icon
+|The icon of the application. If the icon of the application template is not set, the system will use the first character of the application name in uppercase as the default icon. The icon format must be .png or .jpg, with a maximum size of 96 x 96 pixels and 20 KB.
+
+|App Category
+|The functional category of the application. The application template will be automatically categorized under the selected category after being uploaded to the App Store.
+
+|Service Provider Website
+|The website address of the service provider. Users who install the application from the App Store can contact the service provider for technical support.
+
+|App Screenshots
+|The introduction images of the application. A maximum of 6 screenshots can be uploaded, with each screenshot not exceeding 2 MB in size.
+
+|App Introduction
+|The introduction information of the application. Supports entering text and images in markdown format.
+|===
+--

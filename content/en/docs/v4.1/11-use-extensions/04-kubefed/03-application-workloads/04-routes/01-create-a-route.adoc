@@ -1,0 +1,41 @@
+---
+title: "Create Ingresses"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, ingresses, create ingress"
+description: "Learn how to create an ingress."
+weight: 01
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-desc-createARoute.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+* To create an ingress that supports the HTTPS protocol, you need to create a secret of type **TLS Information**, which must contain the Base64-encoded certificate and private key. For more information, see link:../../../05-configuration/01-secrets/01-create-a-secret/[Create a Secret].
+
+* There must be at least one service in the project to which the ingress belongs. For more information, see link:../../02-services/01-create-a-stateful-or-stateless-service/[Create a Stateful or Stateless Service].
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-oper-createARoute.adoc[]

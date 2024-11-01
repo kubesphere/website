@@ -1,0 +1,82 @@
+---
+title: "View Composed App Details"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, applications, view application details"
+description: "Learn how to view application details in a multi-cluster project."
+weight: 03
+---
+
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Application Workloads > Composed Apps**
+
+
+This section describes how to view application details in a multi-cluster project.
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Apps** page, click the name of an app to open its details page.
+
+. On the app details page, view the app's resource attributes in the **Attributes** area on the left.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/apps/apps-para-details.adoc[]
+
+|===
+--
+
++
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/apps/apps-oper-viewResourceStatus.adoc[]
+
++
+
+. On the app details page, click **External Access** on the right to view the app's external access mode.
+
+. On the app details page, click **Traffic Management** on the right to view the app's traffic information.
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* In the **Cluster** area, you can select a cluster where the app is located to view the traffic information of the app in the specified cluster.
+
+* To use the **Traffic Monitoring** feature, the KubeSphere Service Mesh extension should have been installed and enabled, and you need to enable application governance when creating the app. For more information, see link:../01-compose-an-app/[Create Composed Apps].
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. On the app details page, click **Tracing** on the right to view the app's request tracing information.
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* In the **Cluster** area, you can select a cluster where the app is located to view the request tracing information of the app in the specified cluster.
+
+* To use the **Tracing** feature, the KubeSphere Service Mesh extension should have been installed and enabled, and you need to perform the following operations:
+
+** Enable application governance when creating the app. For more information, see link:../01-compose-an-app/[Create Composed Apps].
+
+** Enable the project gateway and enable the tracing feature for the project gateway. For more information, see link:../../../../12-gateway/01-project-gateway/01-enable-a-project-gateway[Enable Project Gateway].
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

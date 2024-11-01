@@ -1,0 +1,11 @@
+---
+title: "Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, applications, management"
+description: "Learn how to manage composed apps in multi-cluster projects."
+weight: 01
+layout: "second"
+---
+
+This section describes how to manage applications installed in multi-cluster projects. Only composed apps can be created in multi-cluster projects, not apps based on templates.
+
+include::../../../../../_custom-en/projectManagement/apps/apps-types.adoc[]

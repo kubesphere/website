@@ -1,0 +1,46 @@
+---
+title: "附录：member 集群网关日志无数据的解决办法"
+description: "介绍如何处理 member 集群的网关日志无数据的问题。"
+weight: 07
+---
+
+若 member 集群的“集群网关”详情页中，“网关日志”页签不显示数据，可采用以下方法解决。
+
+. 启用 host 集群上 whizard-telemetry-apiserver 服务的 NodePort 访问模式。
+
+.. 在 host 集群的**应用负载**菜单下，点击**服务**进入服务页面。
+
+.. 搜索服务 `whizard-telemetry-apiserver`，点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] > **编辑外部访问**。
+
+.. 在**编辑外部访问**对话框，选择 NodePort，然后点击**确定**。
+
+. 修改 KubeSphere 网关的扩展组件配置，将 `backend.config.gateway.logSearchEndpoint` 设置为 host 集群上 whizard-telemetry-apiserver 服务的访问地址。
++
+[,yaml]
+----
+backend:
+  enabled: true
+  config:
+    gateway:
+      namespace: kubesphere-controls-system
+      valuesOverride:
+        controller:
+          image:
+            registry: ""
+            image: kubesphereio/nginx-ingress-controller
+            tag: "v1.4.0"
+            pullPolicy: IfNotPresent
+            digest: ""
+      exposeNodeLabelKey: "node-role.kubernetes.io/control-plane"
+      versionConstraint: ">= 4.3.0, < 4.5.0"
+      logSearchEndpoint: "http://whizard-telemetry-apiserver.extension-whizard-telemetry.svc:9090" # 替换为 http://<node-ip>:<whizard-telemetry-apiserver-nodeport>
+----
+
+. 在 member 集群上，重启网关 `gateway-agent-backend-apiserver`。
++
+[,bash]
+----
+kubectl -n extension-gateway rollout restart deploy gateway-agent-backend-apiserver
+----
+
+. 刷新 member 集群的**网关日志**页签，即可看到网关日志数据。

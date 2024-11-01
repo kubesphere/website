@@ -1,0 +1,41 @@
+---
+title: "Unpublish an App Version"
+description: "Describes how to unpublish an application version."
+weight: 08
+---
+
+:ks_permission: **App Store Management**
+:ks_navigation: **Apps**
+
+This section describes how to unpublish an application version.
+
+After an application template is listed, if an application version within it is unpublished, the version will be removed from the App Store. If all application versions in the application template are in the **Unpublished** status, the application template will be automatically delisted from the App Store.
+
+After an application version is unpublished, both the App Store administrator and workspace members can delete the application version.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the top-right corner of the page, then select **App Store Management**.
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+. In the **Versions** tab on the right side of the details page, click the application version you want to operate on, click **Unpublish**, and click **OK** in the pop-up dialog.

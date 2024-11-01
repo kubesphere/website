@@ -1,0 +1,50 @@
+---
+title: "Delete Services"
+keywords: "Kubernetes, {ks_product-en}, project management, workloads, services, delete service"
+description: "Learn how to delete a service."
+weight: 07
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Services**
+
+
+include::../../../../../_custom-en/clusterManagement/services/services-desc-deleteServices.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Delete a Single Service
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-deleteASingleService.adoc[]
+
++
+
+. In the **Delete Service** dialog, select the workloads to be deleted simultaneously, then click **OK**.
+
+
+== Delete Multiple Services
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-deleteMultipleServices.adoc[]

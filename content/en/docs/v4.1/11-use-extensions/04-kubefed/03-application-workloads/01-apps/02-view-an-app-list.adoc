@@ -1,0 +1,73 @@
+---
+title: "View Composed App List"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, applications, view application list"
+description: "Learn how to view the application list in a multi-cluster project."
+weight: 02
+---
+
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Application Workloads > Composed Apps**
+
+
+This section describes how to view the application list in a multi-cluster project.
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Apps** page, view the list of apps created in the current multi-cluster project.
++
+====
+* The app list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the app.
+
+|Status
+|The current status of the app.
+
+* **Waiting**: The system is creating the app.
+
+* **Running**: The app is running normally.
+
+* **Updating**: The system is updating the app version.
+
+* **Deleting**: The system is deleting the app.
+
+* **Failed**: The app creation failed.
+
+
+|Version
+|The version number of the app. For composed apps, it displays the user-defined version number.
+
+|Creation Time
+|The creation time of the app.
+|===
+--
+
+* Click the search box at the top of the list and enter keywords to search for apps by name.
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

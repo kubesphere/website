@@ -1,0 +1,100 @@
+---
+title: "View Application Template Details"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, view application template details"
+description: "Describes how to view the application template details."
+weight: 03
+---
+
+:ks_permission: **Application/Application Version/Application Instance View**
+:ks_navigation: **App Management > App Templates**
+
+This section describes how to view the application template details.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+
+== Steps
+
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-viewAttributes.adoc[]
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|App ID
+|The name of the application.
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-status_v4.adoc[]
+
+|Category
+|The category to which the application template belongs, which needs to be manually set. For more information, see link:../04-edit-app-template-information/[Edit Application Template Information].
+
+|Type
+|The type of the application template, such as **helm application** or **yaml application**.
+
+|Workspace
+|The workspace to which the application template belongs.
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-creationTime.adoc[]
+|===
+--
+
++
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-viewVersions.adoc[]
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Status
+|The current status of the application version.
+
+* **Not Submitted**: The application version has been uploaded to the workspace but has not been submitted for review.
+
+* **Submitted**: The application version has been submitted for review.
+
+* **Published**: The application version has been approved by the App Store administrator and can be listed in the App Store.
+
+* **Rejected**: The application version has not been approved by the App Store administrator, and the review was not passed.
+
+* **Unpublished**: The application version was published but has been canceled by the App Store administrator, or the application version was listed in the App Store but has been delisted by the App Store administrator.
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-version.adoc[]
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-developer.adoc[]
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-versionUpdateTime.adoc[]
+|===
+--
+
++
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-viewAppInformation.adoc[]
+
++
+
+// include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-viewAppReviewRecords.adoc[]
+
++
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-viewAppInstances.adoc[]

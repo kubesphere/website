@@ -1,0 +1,51 @@
+---
+title: "查看资源用量排行"
+keywords: "Kubernetes, {ks_product}, 多集群, Whizard 可观测中心, 资源用量排行"
+description: "介绍如何查看资源用量排行。"
+weight: 03
+---
+
+:ks_navigation: **资源监控 > 资源统计排行**
+
+
+本节介绍如何查看资源用量排行，即当前资源用量最多的集群、节点、项目和容器组。
+
+
+== Prerequisites
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../../05-users-and-roles/01-users/[用户]和link:../../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+
+* host 集群和需要监控的成员集群需要启用 Whizard 可观测中心。
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+如果成员集群未启用 Whizard 可观测中心，Whizard 可观测中心将无法获取成员集群的数据。
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/extensionManagement/extensionManagement-oper-logInAsPlatformAdmin.adoc[]
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择 **Whizard 可观测中心**。
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
+
+. 在**集群**、**节点**、**项目**和**容器组**页签，查看资源用量详情。
++
+--
+* 点击**选择集群**，选择需要监控的集群。
+
+* 点击下拉列表可选择对象类型和排序依据。
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+--

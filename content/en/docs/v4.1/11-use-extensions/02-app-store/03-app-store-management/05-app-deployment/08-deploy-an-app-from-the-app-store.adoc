@@ -1,0 +1,64 @@
+---
+title: "Deploy App from App Store"
+description: "Describes how to deploy an app from the App Store."
+weight: 08
+---
+
+:ks_permission: **App Store Management**
+:ks_navigation: **Deployment Management**
+
+This section describes how to deploy an app from the App Store on the App Store Management page.
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the upper-right corner and select **App Store Management**.
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the **Create App** dialog, click **From App Store**.
+
+. In the App Store, click the app template you want to use, then click **Deployment** in the upper-right corner.
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+If the **Deployment Notice** dialog pops up, please read the related content carefully, then click **Agree**.
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. In the pop-up **Location** dialog, select the installation location of the app, then click **OK**.
+
++
+
+include::../../../../../_custom-en/projectManagement/apps/apps-oper-installApp.adoc[]
+
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+Apps in the App Store are provided by workspace members with relevant permissions or third parties. For more information about app parameters, please contact the relevant workspace members or the app provider.
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+The app will be displayed in the app list after it is created.
+--

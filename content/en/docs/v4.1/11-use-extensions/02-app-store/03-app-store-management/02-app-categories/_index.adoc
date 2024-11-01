@@ -1,0 +1,11 @@
+---
+title: "App Categories"
+keywords: "Kubernetes, {ks_product-en}, Platform Management, App Store Management, App Categories"
+description: "Describes how to manage app categories."
+weight: 02
+layout: "second"
+---
+
+This section describes how to manage app categories.
+
+You can assign app templates to a category as needed for easier management.

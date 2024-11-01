@@ -1,0 +1,223 @@
+---
+title: "Use GitOps to Achieve Continuous Deployment of Applications"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduces how to create continuous deployment to achieve application deployment."
+weight: 03
+---
+
+KubeSphere introduces a philosophy for implementing continuous deployment of cloud-native applications – GitOps. The core idea of GitOps is to have a Git repository where the declarative infrastructure and applications of the application system are stored and version-controlled. GitOps combined with Kubernetes can use an automated delivery pipeline to apply changes to any number of specified clusters, thus solving the consistency problem of cross-cloud deployment.
+
+This document walks you through the process of deploying an application using a continuous deployment.
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. See link:../05-devops-settings/02-role-and-member-management[Role and Member Management].
+
+== Import a Code Repository
+
+. Log in to the {ks_product-en} web console as the **project-regular** user.
+
+. Click **Workspace Management** and enter your DevOps project.
+
+. In the left navigation pane, click **Code Repositories**.
+
+. On the right side of the code repositories page, click **Add**.
+
+. In the **Import Code Repository** dialog, enter a code repository name, such as **open-podcasts**, and click **Select a code repository**. You can also set an alias and add a description for the code repository.
+
+. In the **Select Code Repository** dialog, click **Git**, enter the repository address in the **Code Repository URL** area, such as link:https://github.com/kubesphere-sigs/open-podcasts[], and click **OK**.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+The repository imported here is a public repository, so no credentials are needed. If you are adding a private repository, you need to create credentials. For more information on how to add credentials, see link:../05-devops-settings/01-credential-management/[Credential Management].
+
+|===
+--
+
+== Create Continuous Deployment
+
+. In the left navigation pane, click **Continuous Deployments**.
+
+. On the right side of the **Continuous Deployments** page, click **Create**.
+
+. On the **Basic Information** tab, enter a continuous deployment name, such as **open-podcasts**. In the **Deployment Location** area, select the cluster and project for continuous deployment. Click **Next**.
+
+. On the **Code Repository Settings** tab, select the code repository created in the previous step, set the branch or tag of the code repository, and the path of the `Kustomization` manifest file. Click **Next**.
++
+--
+[%header, cols="1a,3a"]
+|===
+|Parameter |Description
+
+|Revision
+|The commit ID, branch, or tag of the Git repository. For example, **master**, **v1.2.0**, **0a1b2c3**, or **HEAD**.
+
+|Manifest File Path
+|Set the path of the manifest file. For example, **config/default**.
+|===
+--
+
+. On the **Sync Settings** tab, in the **Sync Strategy** area, select **Auto Sync** or **Manual Sync** as needed.
++
+--
+
+* **Auto Sync**: Automatically trigger application synchronization when a difference is detected between the manifest in the Git repository and the real-time state of the deployment resources, according to the sync options. The specific parameters are shown in the table below.
++
+====
+[%header, cols="1a,3a"]
+|===
+|Parameter |Description
+
+|Prune resources
+|If selected, resources that do not exist in Git will be deleted during automatic sync. If not selected, resources in the cluster will not be deleted when automatic sync is triggered.
+
+|Self-heal
+|If selected, when there is a deviation between the defined state in Git and the deployed resources, the defined state in Git will be enforced. If not selected, automatic sync will not be triggered when changes are made to the deployed resources.
+
+|===
+====
+
+* **Manual Sync**: Manually trigger application synchronization according to the sync options.
+--
+
+. In the **Sync Settings** area, set the sync options as needed.
++
+--
+[%header, cols="1a,3a"]
+|===
+|Parameter |Description
+
+|Skip schema validation
+|Skip **kubectl** validation. When executing **kubectl apply**, add the **--validate=false** flag.
+
+|Auto create project
+|Automatically create a project for application resources if the project does not exist.
+
+|Prune last
+|Clean up resources after all other resources have been deployed and are in a healthy state.
+
+|Apply out of sync only
+|Only sync resources in the **out-of-sync** state.
+|===
+--
+
+. In the **Prune Propagation Policy** area, select the dependency cleanup policy as needed.
++
+--
+[%header, cols="1a,3a"]
+|===
+|Parameter |Description
+
+|foreground
+|Delete dependent resources first, then delete the main resource.
+
+|background
+|Delete the main resource first, then delete the dependent resources.
+
+|orphan
+|Delete the main resource, leaving the dependent resource as an orphan.
+|===
+--
+
+. In the **Replace Resource** area, select whether existing resources need to be replaced.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+If checked, the **kubectl replace/create** command will be executed to sync resources. If unchecked, the **kubectl apply** command will be used to sync resources.
+|===
+--
+
+. Click **Create**. The created continuous deployment will be displayed in the list.
+
+== View the Created Continuous Deployment
+
+. On the **Continuous Deployments** page, view the created continuous deployment information. The parameters are shown in the table below.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the continuous deployment.
+
+|Health Status
+|The health status of the continuous deployment, which includes:
+
+* **Healthy**: The resources are healthy.
+* **Degraded**: The resources have been degraded.
+* **Progressing**: The resources are being synchronized. This state is returned by default.
+* **Suspended**: The resources have been paused and are waiting to be resumed.
+* **Unknown**: The health status of the resources is unknown.
+* **Missing**: The resources are missing.
+
+|Sync Status
+|The sync status of the continuous deployment, which includes:
+
+* **Synced**: The resource sync has been completed.
+* **Out of Sync**: The actual running status of the resources is inconsistent with the expected status.
+* **Unknown**: The sync status of the resources is unknown.
+
+|Deployment Location
+|The cluster and project where the resources are deployed.
+
+|Update Time
+|The time when the resources are updated.
+|===
+--
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the continuous deployment, and you can perform the following operations:
++
+--
+* **Edit Information**: Edit the alias and description of the continuous deployment.
+
+* **Edit YAML**: Edit the YAML file of the continuous deployment.
+
+* **Sync**: Trigger resource synchronization.
+
+* **Delete**: Delete the continuous deployment.
+
+//warning
+[.admon.warning,cols="a"]
+|===
+|Warning
+
+|
+Deleting the continuous deployment will also delete the resources associated with it. Please proceed with caution.
+|===
+--
+
+. Click the created continuous deployment to enter the detail page and view the sync status and results.
+
+== Access the Created Application
+
+. Enter the project to which the continuous deployment belongs, and in the left navigation pane, click **Application Workloads** > **Services**.
+
+. On the **Services** page, find the deployed application and click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side, then select **Edit External Access**.
+
+. Select **NodePort** in the **Access Mode**, and click **OK**.
+
+. On the service list page, view the exposed port in the **External Access** column, and access the application through {Node IP}:{NodePort}.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+Before accessing the service, please ensure that the port is open in the security group.
+|===
+--

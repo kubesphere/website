@@ -1,0 +1,37 @@
+---
+title: "Stop Workloads"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, workloads, stop workload"
+description: "Learn how to stop a workload."
+weight: 06
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-desc-stopWorkloads.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-multi-project-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-oper-stopWorkloads.adoc[]

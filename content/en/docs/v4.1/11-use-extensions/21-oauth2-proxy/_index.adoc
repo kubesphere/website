@@ -1,0 +1,18 @@
+---
+title: "OAuth2-Proxy"
+keywords: "Kubernetes, {ks_product}, OAuth2-Proxy, alertmanager"
+description: "介绍如何使用 OAuth2-Proxy 扩展组件。"
+weight: 21
+layout: "second"
+draft: true
+---
+
+
+OAuth2-Proxy 扩展组件旨在保护后端应用并提供统一的认证服务。通过处理 OAuth2 协议的认证流程，允许用户通过第三方认证服务（如 Google、GitHub、KubeSphere）进行登录，并生成用户会话。link:https://openresty.org/[OpenResty] 作为反向代理服务器，接收 HTTP 请求并转发给后端应用。
+
+OAuth2-Proxy 提供统一认证接口确保所有应用通过相同流程保护，简化多应用环境下的身份验证管理，提高安全性和用户体验，适用于需要对多个后端应用进行统一认证管理的企业环境，以及需要通过第三方认证服务进行用户身份验证的应用。
+
+// 扩展组件配置后，可通过{ks_product_both}平台鉴权后访问多种服务，如 AlertManager、Prometheus、Whizard 等。
+
+
+

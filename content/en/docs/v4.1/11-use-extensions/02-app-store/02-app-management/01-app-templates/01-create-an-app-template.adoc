@@ -1,0 +1,59 @@
+---
+title: "Create Application Templates"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, create application template"
+description: "Describes how to create an application template."
+weight: 01
+---
+
+:ks_permission: **Application/Application Version/Application Instance Create**
+:ks_navigation: **App Management > App Templates**
+
+This section describes how to create an application template.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+* Already have a Helm Chart package in .tar.gz or .tgz format, or an application's yaml file. You can link:https://kubesphere.io/files/application-templates/nginx-0.1.0.tgz[download the Nginx Helm Chart] for testing. For more information, see link:https://helm.sh/docs/topics/charts/[Helm Documentation].
+
+
+== Steps
+
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+. In the **Create App** dialog, click **Upload Helm Chart** and select the Helm Chart package in .tar.gz or .tgz format stored locally.
++
+Alternatively, click **Create yaml application**, enter the application name and version number, and create the application using the yaml file.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+Click image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark,18,18] to upload the yaml file from your local machine.
+
+Click image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark,18,18] to download the yaml file to your local machine.
+|===
+--
+
+. Click **OK**.
++
+--
+The application template will be displayed in the app template list after creation.
+--

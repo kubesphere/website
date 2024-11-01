@@ -1,0 +1,63 @@
+---
+title: "View App Repository List"
+keywords: "Kubernetes, {ks_product-en}, Workspace, App Repositories, View App Repository List"
+description: "Describes how to view the app repository list."
+weight: 02
+---
+
+:ks_permission: **App Store Management**
+:ks_navigation: **App Repositories**
+
+This section describes how to view the app repository list.
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the upper-right corner and select **App Store Management**.
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* The app repository list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name and description of the app repository.
+
+|Status
+|The current status of the app repository.
+
+* **Successful**: The app repository has been added and synchronized successfully.
+
+* **Syncing**: The app repository is currently being synchronized with the Helm Chart repository.
+
+* **Out-sync**: The app repository is not synchronized with the Helm Chart repository when the sync interval is set to 0.
+
+* **Failed**: The app repository failed to synchronize with the Helm Chart repository.
+
+|URL
+|The URL of the Helm Chart repository.
+
+|===
+--
+
+* Click the search box at the top of the list to search for app repositories by name.
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

@@ -1,0 +1,21 @@
+---
+title: "KubeSphere Service Mesh"
+keywords: "Kubernetes, {ks_product-en}, Service Mesh"
+description: "Describes how to use the KubeSphere Service Mesh extension."
+weight: 03
+layout: "second"
+---
+
+This section describes how to use the "KubeSphere Service Mesh" extension.
+
+KubeSphere Service Mesh is used to enable the service mesh functionality of KubeSphere, built on the open-source project Istio, and visualizes microservice governance and traffic management. It has a powerful toolkit, including circuit breakers, blue-green deployments, canary releases, traffic mirroring, tracing, observability, and traffic control.
+
+After installing the "KubeSphere Service Mesh" extension, **Service Mesh** will be displayed in the project's left navigation pane, supporting creating composed apps and managing grayscale releases for composed apps.
+
+[.admon.attention,cols="a"]
+|===
+|Note
+
+|
+Before installing KubeSphere Service Mesh, you need to set up available Prometheus and OpenSearch services in the extension configuration. For more information about the extension configuration, see the details page of the "KubeSphere Service Mesh" extension in the Extensions Center.
+|===

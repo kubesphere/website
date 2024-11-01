@@ -1,0 +1,39 @@
+---
+title: "View Ingress List"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, ingresses, view ingress list"
+description: "Learn how to view the ingress list."
+weight: 02
+---
+
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-desc-viewARouteList.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+include::../../../../../_custom-en/multi-clusterProjectManagement/routes/routes-para-routeList.adoc[]
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-oper-searchForRoutes.adoc[]
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

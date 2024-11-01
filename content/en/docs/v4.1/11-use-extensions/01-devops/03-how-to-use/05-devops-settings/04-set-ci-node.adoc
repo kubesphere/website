@@ -1,0 +1,36 @@
+---
+title: "Set CI Nodes for Dependency Cache"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduces how to set CI nodes for dependency cache."
+weight: 04
+---
+
+Building applications often requires pulling different dependencies. Issues such as long pulling times and unstable networks may occur during the pulling process, leading to build failures. To provide a more reliable and stable environment, you can configure nodes or node groups specifically for continuous integration (CI) and speed up the build process by using cache.
+
+This document demonstrates how to set CI nodes so that KubeSphere schedules pipeline tasks to these nodes.
+
+== Prerequisites
+
+You should have the **Cluster Management** permission on the {ks_product-en} platform.
+
+== Label CI Nodes
+
+. Log in to the {ks_product-en} web console with an account that has the **Cluster Management** permission.
+
+. Click **Cluster Management** and enter a cluster.
+
+. In the left navigation pane, select **Nodes** > **Cluster Nodes** to view the existing nodes in the current cluster.
+
+. Select a node from the list to run CI tasks. Click the node name to go to its detail page, and click **More** > **Edit Labels**.
+
+. In the dialog that appears, enter **ci** as the value after the key **node-role.kubernetes.io/worker**, and click **OK**.
+
+== Add Taints to CI Nodes
+
+Pipelines generally determine whether to schedule tasks to a node based on link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity[node affinity]. If you want to dedicate a node to CI tasks, i.e., not allow other workloads to be scheduled to that node, you can add link:https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/[taints] to that node.
+
+. Click **More** > **Edit Taints**.
+
+. Click **Add**, enter the key **node.kubernetes.io/ci** without specifying a value. Select **Prevent scheduling**, **Prevent scheduling if possible**, or **Prevent scheduling and evict existing pods** as needed.
+
+. Click **OK**. KubeSphere will schedule tasks based on the taints you set.

@@ -1,0 +1,59 @@
+---
+title: "View Composed App List"
+keywords: "Kubernetes, {ks_product-en}, Project Management, Apps, View App List"
+description: "Describes how to view the app list."
+weight: 04
+---
+
+:ks_permission: **Service Mesh View**
+:ks_navigation: **Service Mesh > Composed Apps**
+
+This section describes how to view the composed app list.
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Composed Apps** page, view the app list.
++
+====
+* The app list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the app.
+
+include::../../../../_custom-en/projectManagement/apps/apps-para-status_v4.adoc[]
+
+|Version
+|The version of the app.
+
+// * For template-based apps, it displays the Helm Chart version.
+
+* For composed apps, it displays the user-defined version number.
+
+|Creation Time
+|The creation time of the app.
+|===
+--
+
+* Click the search box at the top of the list to search for apps by name.
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

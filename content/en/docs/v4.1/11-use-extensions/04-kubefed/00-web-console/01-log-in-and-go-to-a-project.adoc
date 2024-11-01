@@ -1,0 +1,38 @@
+---
+title: "Log In and Access Multi-cluster Projects"
+keywords: "Kubernetes, {ks_product-en}, project management, web console, multi-cluster projects"
+description: "Learn how to log in and access multi-cluster projects."
+weight: 01
+---
+
+This section describes how to log in to the {ks_product-en} web console and access multi-cluster projects.
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* You should get the username and password for a multi-cluster project member.
+
+include::../../../../_custom-en/workspaceManagement/webConsole/webConsole-prer-logIn.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/webConsole/webConsole-oper-logIn.adoc[]
++
+--
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+include::../../../../_custom-en/workspaceManagement/webConsole/webConsole-note-firstLogin.adoc[]
+|===
+--
+
+. Click **Workspace Management**, then click the name of a workspace to enter the workspace.
+
+. In the left navigation pane, select **Projects**, then click **Multi-cluster Projects** to enter the multi-cluster project list page.
+
+. On the **Multi-cluster Projects** page, click the name of a multi-cluster project to enter the project.

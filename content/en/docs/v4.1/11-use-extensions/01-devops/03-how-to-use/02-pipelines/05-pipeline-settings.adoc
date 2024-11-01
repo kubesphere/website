@@ -1,0 +1,204 @@
+---
+title: "Pipeline Settings"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Learn how to customize pipeline configurations."
+weight: 05
+---
+
+When creating a pipeline, you can customize the pipeline configuration through various settings.
+
+After the pipeline is created, you can also edit the pipeline's configuration by entering the pipeline details page, clicking **Edit Information** and **More > Edit Settings**.
+
+This document details how to configure pipelines.
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* A workspace, a DevOps project, and a user (e.g., **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. Refer to link:../../05-devops-settings/02-role-and-member-management[Role and Member Management].
+
+== Basic Information
+
+When creating a pipeline, on the **Basic Information** tab, you can customize the following information:
+
+* **Name**: The name of the pipeline. Pipelines within the same DevOps project cannot have the same name.
+
+* **DevOps Project**: The DevOps project to which the pipeline belongs.
+
+* **Description**: Additional information describing the pipeline. The description should not exceed 256 characters.
+
+* **Pipeline Type**: Regular pipeline or multi-branch pipeline. If you choose a multi-branch pipeline, you need to select a code repository.
+
+* **Code Repository (Optional)**: Select a code repository as the code source for the pipeline. You can choose GitHub, GitLab, Bitbucket, and Git as the code source.
++
+====
+* GitHub
++
+--
+If you choose **GitHub**, you must specify the credentials for accessing GitHub. If you have already created credentials using your GitHub token, select the existing credentials from the dropdown menu, or click **Create Credential** to create new credentials. After selecting the credentials, click **OK** to choose your repository on the right. After completing all operations, click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18].
+--
+
+* GitLab
++
+--
+If you choose **GitLab**, you must specify the GitLab server address, group/owner, and code repository. If credentials are required to access the code repository, you need to specify a credential. After completing all operations, click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18].
+--
+
+* Bitbucket
++
+--
+If you choose **Bitbucket**, you need to enter your Bitbucket server address. Create a credential using your Bitbucket username and password in advance, or click **Create Credential** to create a new credential. After entering the information, click **OK** to choose your repository on the right. After completing all operations, click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18].
+--
+
+* Git
++
+--
+If you choose **Git**, you need to specify the repository URL. If credentials are required to access the code repository, you need to specify a credential, or click **Create Credential** to add a new credential. After completing all operations, click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18].
+--
+====
+
+== Advanced Settings
+
+=== Code Repository Specified
+
+If you specify a code repository, you can customize the following configurations on the **Advanced Settings** tab:
+
+* Branch Settings
++
+--
+**Delete outdated branches**: Automatically delete old branches. Branch records will be deleted together. The branch record includes console output, archived artifacts and other relevant metadata of specific branches. Fewer branches mean that you can save the disk space used by Jenkins. KubeSphere provides two options to determine when old branches are discarded:
+
+* **Branch Retention Period (days)**: Branches that exceed the retention period are deleted.
+
+* **Maximum Branches**: The earliest branch is deleted when the number of branches exceeds the maximum number.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+**Branch Retention Period (days)** and **Maximum Branches** apply to branches at the same time. As long as a branch meets the condition of either field, it is deleted. For example, if you specify 2 as the retention period and 3 as the maximum number of branches, any branch that exceed either number is deleted. DevOps prepopulates these two fields with 7 and 5 by default respectively.
+|===
+--
+
+* Strategy Settings
++
+--
+DevOps provides four default policies in **Strategy Settings**. As a Jenkins pipeline runs, the Pull Request (PR) submitted by developers will also be regarded as a separate branch.
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+To enable **Strategy Settings** here, you should select GitHub as the code repository.
+|===
+
+**Discover Branches**
+
+- **Exclude branches field as PRs**. The source branch is not scanned such as the origin's master branch. These branches need to be merged.
+- **Include only branches filed as PRs**. Only scan the PR branch.
+- **Include all branches**. Pull all the branches from the repository origin.
+
+
+**Discover Tags**
+
+* **Enable tag discovery**: Branches with specified tags are scanned.
+* **Disable tag discovery**: Branches with specified tags are not scanned.
+
+**Discover PRs from Origin**
+
+* **Pull the code with the PR merged**. A pipeline is created and runs based on the source code after the PR is merged into the target branch.
+* **Pull the code at the point of the PR**. A pipeline is created and runs based on the source code of the PR itself.
+* **Create two pipelines respectively**. Two pipelines are created, one is based on the source code after the PR is merged into the target branch, and the other is based on the source code of the PR itself.
+
+**Discover PRs from Forks**
+
+Pull Strategy:
+
+* **Pull the code with the PR merged**. A pipeline is created and runs based on the source code after the PR is merged into the target branch.
+* **Pull the code at the point of the PR**. A pipeline is created and runs based on the source code of the PR itself.
+* **Create two pipelines respectively**. Two pipelines are created, one is based on the source code after the PR is merged into the target branch, and the other is based on the source code of the PR itself.
+
+Trusted Users:
+
+* **Contributors**: Users who have contributed to the PR.
+* **Everyone**: Every user who can access the PR.
+* **Users with admin or write permission**: Only users with admin or write permissions to the PR.
+* **None**: If you choose this option, PRs will not be discovered regardless of the option selected in **Pull Strategy**.
+--
+
+* Filter by Regex
++
+--
+Check the box to specify a regular expression to filter branches, PRs, and tags.
+--
+
+* Script Path
++
+--
+The **Script Path** parameter specifies the path of the Jenkinsfile in the code repository, which represents the root directory of the repository. If the file location changes, the script path also needs to be changed.
+--
+
+* Scan Trigger
++
+--
+Check **Scan periodically** and set the scan interval from the dropdown list.
+--
+
+* Build Trigger
++
+--
+Check **Trigger through pipeline events** and select a pipeline from the dropdown lists of **Trigger on Pipeline Creation** and **Trigger on Pipeline Deletion** to automatically trigger tasks in the specified pipeline when a new pipeline is created or an existing pipeline is deleted.
+--
+
+* Clone Settings
++
+--
+* **Enable shallow clone**: If shallow clone is enabled, the cloned code will not include tags.
+* **Clone Depth**: The number of commits to fetch during cloning.
+* **Clone Timeout Period (min)**: The time required to complete the cloning process (in minutes).
+--
+
+* Webhook
++
+--
+**Webhook** effectively allows the pipeline to discover changes in the remote code repository and automatically trigger a new run. Webhook should be the primary method to trigger Jenkins to automatically scan GitHub and Git (e.g., GitLab). For more information, refer to link:../06-pipeline-webhook/[Trigger a Pipeline Using a Webhook].
+--
+
+=== Code Repository Not Specified
+
+If you do not specify a code repository, you can customize the following configurations on the **Advanced Settings** tab:
+
+* Build Settings
++
+--
+**Delete outdated build records**: Specify when to delete build records under branches. Build records include console output, archived artifacts, and other metadata related to specific builds. Fewer builds mean that you can save the disk space used by Jenkins. KubeSphere provides two options to determine when old builds are discarded:
+
+* **Build Record Retention Period (Days)**: Build records that exceed the retention period are deleted. 
+* **Maximum Build Records**: When the number of build records exceeds the maximum number allowed, the earliest build record is deleted. 
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+**Build Record Retention Period (Days)** and **Maximum Build Records** can be applied to build records simultaneously. As long as a build record meets the condition set by one of the fields, it will be deleted. For example, if you specify 2 days for retention and 3 for the maximum number of build records, a build record will be deleted if its retention days exceed 2 or the number of build records exceeds 3. DevOps prepopulates these two fields with 7 and 10 by default respectively.
+|===
+
+* **No concurrent builds**: If this option is checked, multiple builds cannot run concurrently.
+--
+
+* Build Parameters
++
+--
+Parameterized build processes allow passing one or more parameters when starting the pipeline run. DevOps provides five default parameter types, including **String**, **Multi-line string**, **Boolean**, **Options**, and **Password**. When parameterizing a project, the build is replaced with a parameterized build, which will prompt the user to enter a value for each defined parameter.
+--
+
+* Build Trigger
++
+--
+**Build periodically**: Allows periodic execution of builds. Enter a CRON expression to set the schedule.
+--

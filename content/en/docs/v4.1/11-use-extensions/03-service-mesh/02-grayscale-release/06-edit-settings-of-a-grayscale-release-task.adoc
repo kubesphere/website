@@ -1,0 +1,53 @@
+---
+title: "Edit Grayscale Release Task Settings"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, edit grayscale release task settings"
+description: "Learn how to edit grayscale release task settings."
+weight: 06
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Grayscale Release**
+
+
+This section describes how to edit grayscale release task settings.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* **KubeSphere Service Mesh** should have been installed and enabled.
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-oper-openDetailsPage.adoc[]
+
++
+
+. In the **Versions** area, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] in the top-right corner of the new version, then select **Edit** from the dropdown list.
+
+. On the **New Version Settings** tab, click image:/images/ks-qkcp/zh/icons/chevron-up.svg[chevron-up,18,18]/image:/images/ks-qkcp/zh/icons/chevron-down.svg[chevron-down,18,18] to increase/decrease the number of pod replicas.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+Grayscale release does not support modifying the version number and container image of the new version.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Click the **Strategy Settings** tab, set the traffic distribution strategy for the grayscale release task, then click **OK**.
++
+====
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-para-strategySettings.adoc[]
+====

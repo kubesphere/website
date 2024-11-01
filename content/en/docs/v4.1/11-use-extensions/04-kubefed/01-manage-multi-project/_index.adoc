@@ -1,0 +1,10 @@
+---
+title: "Manage Multi-cluster Projects"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects"
+description: "Learn how to view multi-cluster project information and manage multi-cluster projects."
+weight: 01.5
+layout: "second"
+---
+
+
+This section describes how to manage multi-cluster projects.

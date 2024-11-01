@@ -1,0 +1,68 @@
+---
+title: "View Review Records of App Versions"
+keywords: "Kubernetes, {ks_product-en}, App Store, App Review, View App Version Review Records"
+description: "Describes how to view review records of app versions."
+weight: 02
+---
+
+:ks_navigation: **Application Review**
+:ks_permission: **App Store Management**
+
+This section describes how to view review records of app versions.
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the upper-right corner and select **App Store Management**.
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Application Review** page, click the **New**, **Completed**, or **All** tab to view the review records of app versions.
++
+====
+* The **Application Review** page provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The icon, name, and Helm Chart version of the app version.
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-workspace.adoc[]
+
+|Submitter
+|The user who submitted the app version.
+
+|Status
+|The current review status of the app version.
+
+* **Audit**: The app version has been submitted by a workspace member, but has not yet been reviewed by the App Store administrator.
+
+* **Published**: The App Store administrator has approved the app version.
+
+* **Rejected**: The App Store administrator has rejected the app version.
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-versionUpdateTime.adoc[]
+|===
+--
+
+* Click the search box at the top of the list to search for app versions by name.
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

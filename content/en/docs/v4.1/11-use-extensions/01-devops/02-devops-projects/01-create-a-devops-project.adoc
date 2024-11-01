@@ -1,0 +1,50 @@
+---
+title: "Create DevOps Projects"
+keywords: "Kubernetes, {ks_product-en}, Workspace, DevOps Projects, Create DevOps Projects"
+description: "Learn how to create DevOps projects."
+weight: 01
+---
+
+:ks_permission:  **DevOps Project Creation**
+:ks_navigation:  **DevOps Projects**
+
+
+This section explains how to create DevOps projects.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+* **DevOps** must have been installed and enabled.
+
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
+. On the **DevOps Projects** page, click **Create**.
+
+. In the **Create DevOps Project** dialog, configure the parameters for the DevOps project and then click **OK**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name of the DevOps project. Names can only contain lowercase letters, numbers, and hyphens (-), must start with a lowercase letter, end with a lowercase letter or number, and can be up to 63 characters long.
+
+include::../../../../_custom-en/workspaceManagement/devopsProjects/devopsProject-para-aliasAndDescription.adoc[]
+
+|Cluster Settings
+|The cluster can be used by the DevOps project. Resources in the DevOps project run on the cluster selected here.
+|===
+
+After creating the DevOps project, you can invite users to join the project and deploy business within the DevOps project.
+--

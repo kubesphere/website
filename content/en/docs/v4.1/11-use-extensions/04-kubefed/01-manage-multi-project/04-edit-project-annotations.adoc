@@ -1,0 +1,42 @@
+---
+title: "Edit Multi-cluster Project Annotations"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects, edit project annotations"
+description: "Learn how to edit project annotations."
+weight: 04
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Projects > Multi-cluster Projects**
+
+
+This section describes how to edit project annotations.
+
+Project annotations are key-value pairs that add additional metadata or descriptive information to a project.
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the project you want to edit, then select **Edit Annotations** from the dropdown list.
+
+. In the **Edit Annotations** dialog, set the key-value pairs, then click **OK**.
++
+--
+* Click **Add** to set multiple annotations.
+
+* Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of a created annotation to delete it.
+--

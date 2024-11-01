@@ -1,0 +1,706 @@
+---
+title: "离线安装 KubeSphere"
+linkTitle: "离线安装 KubeSphere"
+keywords: "Kubernetes, KubeSphere, 安装, 离线包, 离线安装, 离线部署"
+description: "了解如何在离线环境下安装 KubeSphere 和 Kubernetes。"
+weight:  04
+---
+
+
+本节介绍如何使用 KubeKey 在联网状态下制作离线包，并在离线环境中部署 Kubernetes 和 KubeSphere。
+
+== 前提条件
+
+* 参考如下示例准备至少三台主机。
++
+[%header,cols="1a,1a, 4a"]
+|===
+|主机 IP	|主机名称	|角色
+
+|192.168.0.2 |node1 |联网主机，用于制作离线包
+|192.168.0.3 |master |离线环境的主节点
+|192.168.0.4 |node2 |离线环境的镜像仓库节点（若已有镜像仓库，可忽略）
+|===
+
+* master 和 node2 上需安装 socat 和 conntrack。
++
+--
+[,bash]
+----
+apt install socat conntrack -y
+----
+
+如果集群节点使用其他操作系统，请将 **apt** 替换为操作系统对应的软件包管理工具。
+--
+
+== 获取版本信息及镜像列表
+
+. 访问 https://get-images.kubesphere.io/。
+
+. 选择需要部署的扩展组件。
+
+. 填入邮箱地址。
+
+. 点击**获取镜像列表**。
+
+. 查看填写的邮箱，获取 KubeSphere 最新的版本信息以及镜像列表文件。
++
+--
+镜像列表文件如下：
+
+[%header,cols="1a,3a"]
+|===
+|文件名 |描述
+
+| `kubesphere-images.txt`
+|包含 KubeSphere 及扩展组件涉及的所有镜像，以及在华为云的镜像地址，可根据该文件中的列表将镜像同步至离线仓库中。
+
+| `kk-manifest.yaml`
+|包含 KubeSphere 及扩展组件涉及的所有镜像，可使用 kk 快速构建离线包。
+
+| `kk-manifest-mirror.yaml`
+|包含华为云镜像仓库中 KubeSphere 及扩展组件涉及的所有镜像。访问 DockerHub 受限时可使用该 manifest 文件构建离线包。
+|===
+--
+
+== 构建离线安装包
+
+登录可访问互联网的节点 node1，参照以下步骤构建 KubeSphere 离线安装包。
+
+=== 1. 安装 KubeKey
+
+执行以下命令安装⼯具 KubeKey。
+
+下载完成后当前目录下将生成 KubeKey 二进制文件 **kk**。
+
+[source,bash]
+----
+curl -sSL https://get-kk.kubesphere.io | sh -
+----
+
+
+=== 2. 创建 manifests 文件
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+若只需要使用 kk 打包 KubeSphere 镜像至离线环境中，可直接使用邮件中收到的 manifest 文件link:#_4_构建离线包[构建离线包]。无需另外创建或编辑 manifest 文件。
+|===
+
+若需要使用 kk 部署 Kubernetes 以及镜像仓库，可参考以下步骤：
+
+. 如果您访问 DockerHub 受限，执行以下命令将 Kubernetes 镜像地址替换为阿里云仓库。
++
+[,bash]
+----
+export KKZONE=cn
+----
+
+. 创建 manifests 文件。
++
+--
+[source,bash]
+----
+# 如需使用 kk 离线部署镜像仓库，添加 --with-registry 打包镜像仓库的安装文件
+./kk create manifest --with-kubernetes v1.26.12 --with-registry
+----
+
+该命令将创建一个 `manifest-sample.yaml` 文件。
+--
+
+=== 3. 编辑 manifest 文件
+
+若需要使用 kk 部署 Kubernetes 以及镜像仓库，将从邮件获取到的 KubeSphere 镜像列表添加到新创建的 manifest 文件中即可。
+
+. 打开 manifest 文件。
++
+[source,bash]
+----
+vi manifest-sample.yaml
+----
+
+. 复制 `kk-manifest.yaml` 或 `kk-manifest-mirror.yaml`（若访问 DockerHub 受限） 中的镜像列表，添加到新创建的 `manifest-sample.yaml` 文件中。
++
+--
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|以下 manifest 文件中的镜像列表仅为示例，建议通过 https://get-images.kubesphere.io/ 获取最新的镜像列表。
+
+|===
+
+
+[source,yaml]
+----
+apiVersion: kubekey.kubesphere.io/v1alpha2
+kind: Manifest
+metadata:
+  name: sample
+spec:
+  arches:
+  - amd64
+  operatingSystems: []
+  kubernetesDistributions:
+  - type: kubernetes
+    version: v1.26.12
+  components:
+    helm:
+      version: v3.14.3
+    cni:
+      version: v1.2.0
+    etcd:
+      version: v3.5.13
+    containerRuntimes:
+    - type: docker
+      version: 24.0.9
+    - type: containerd
+      version: 1.7.13
+    calicoctl:
+      version: v3.27.4
+    crictl:
+      version: v1.29.0
+    docker-registry:
+      version: "2"
+    harbor:
+      version: v2.10.1
+    docker-compose:
+      version: v2.26.1
+  images:
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/pause:3.9
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-apiserver:v1.26.12
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controller-manager:v1.26.12
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-scheduler:v1.26.12
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-proxy:v1.26.12
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/coredns:1.9.3
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/k8s-dns-node-cache:1.22.20
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-controllers:v3.27.4
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/cni:v3.27.4
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/node:v3.27.4
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/pod2daemon-flexvol:v3.27.4
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/typha:v3.27.4
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/provisioner-localpv:3.3.0
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/linux-utils:3.3.0
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/haproxy:2.9.6-alpine
+  - registry.cn-beijing.aliyuncs.com/kubesphereio/kube-vip:v0.7.2
+  ## ks-core
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-apiserver:v4.1.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-console:v4.1.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-controller-manager:v4.1.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.16
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/redis:7.2.4-alpine
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/haproxy:2.9.6-alpine
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-extensions-museum:v1.1.2
+  ## devops
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-apiserver:v4.1.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-controller:v4.1.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-tools:v4.1.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-jenkins:v4.1.2-2.346.3
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jenkins/inbound-agent:4.10-2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-base:v3.2.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-nodejs:v3.2.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.1-jdk11
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-python:v3.2.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.16
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.17
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.18
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-base:v3.2.2-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-nodejs:v3.2.0-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.0-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.1-jdk11-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-python:v3.2.0-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.0-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.16-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.17-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.18-podman
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/argoproj/argocd:v2.3.3
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/argoproj/argocd-applicationset:v0.4.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/dexidp/dex:v2.30.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/library/redis:6.2.6-alpine
+  ## gatekeeper
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/gatekeeper-extension-apiserver:v1.0.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/openpolicyagent/gatekeeper:v3.14.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/openpolicyagent/gatekeeper-crds:v3.14.0
+  ## gateway
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/nginx-ingress-controller:v1.4.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/gateway-apiserver:v1.0.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/gateway-controller-manager:v1.0.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.16
+  ## grafana
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/curlimages/curl:7.85.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/grafana:10.4.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/library/busybox:1.31.1
+  ## kubeedge
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubeedge/iptables-manager:v1.13.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubeedge/cloudcore:v1.13.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubeedge/controller-manager:v1.13.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubeedge-proxy:v0.4.1
+  ## kubefed
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubefed-extension:v1.0.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubefed:v0.8.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.4
+  ## loki
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/loki:3.0.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/loki-helm-test:ewelch-distributed-helm-chart-17db5ee
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/loki-canary:3.0.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/nginxinc/nginx-unprivileged:1.24-alpine
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/library/memcached:1.6.23-alpine
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prom/memcached-exporter:v0.14.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kiwigrid/k8s-sidecar:1.24.3
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/minio/minio:RELEASE.2022-09-17T00-09-45Z
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/minio/mc:RELEASE.2022-09-16T09-16-47Z
+  ## metrics-server
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/metrics-server:v0.7.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/addon-resizer:1.8.20
+  ## network
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/network-extension-apiserver:v1.1.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/network-extension-controller:v1.1.0
+  ## openpitrix
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/apps-manage:v2.0.1
+  ## opensearch
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch:2.8.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/library/busybox:1.35.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/opensearch-curator:v0.0.5
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch-dashboards:2.8.0
+  ## servicemesh
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/istio/pilot:1.16.5
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/istio/proxyv2:1.16.5
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/istio/istioctl:1.16.5
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.4
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kiali-operator:v1.59.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kiali:v1.59
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-operator:1.35.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-agent:1.35
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-collector:1.35
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-query:1.35
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-es-index-cleaner:1.35
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/servicemesh-apiserver:v0.1.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/servicemesh-controller-manager:v0.1.0
+  ## storage-utils
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/storageclass-accessor:v0.2.5
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/snapshot-controller:v4.2.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/snapshotclass-controller:v0.0.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/pvc-autoresizer:v0.3.1
+  ## tower
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/tower:v0.2.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/tower-extension:v1.0.0
+  ## vector
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/timberio/vector:0.39.0-debian
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/vector-config:v0.2.1
+  ## whizard-alerting
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-alerting-apiserver:v1.0.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-alerting-controller-manager:v1.0.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/thanosio/thanos:v0.36.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/cortex-tenant:v1.12.5
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-config-reloader:v0.75.1
+  ## whizard-events
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kube-events-exporter:v0.8.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jimmidyson/configmap-reload:v0.9.0
+  ## whizard-logging
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/log-sidecar-injector:v1.3.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/jimmidyson/configmap-reload:v0.9.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/elastic/filebeat:6.7.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/timberio/vector:0.39.0-debian
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/library/alpine:3.14
+  ## whizard-monitoring
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kube-state-metrics:v2.12.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubespheredev/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/thanosio/thanos:v0.36.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/brancz/kube-rbac-proxy:v0.18.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-config-reloader:v0.75.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-operator:v0.75.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus/node-exporter:v1.8.1
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus/prometheus:v2.51.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/dcgm-exporter:3.3.5-3.4.0-ubuntu22.04
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/process-exporter:0.5.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/nginxinc/nginx-unprivileged:1.24
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/calico-exporter:v0.3.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-monitoring-helm-init:v0.1.0
+  ## whizard-notification
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kube-rbac-proxy:v0.11.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/alertmanager-proxy:v0.2.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/notification-manager-operator:v2.5.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/notification-manager:v2.5.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/notification-tenant-sidecar:v4.0.2
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus/alertmanager:v0.27.0
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-config-reloader:v0.75.1
+  ## whizard-telemetry
+  - swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-telemetry-apiserver:v1.2.2
+
+  registry:
+    auths: {}
+----
+--
+
+=== 4. 构建离线包
+
+执行以下命令构建包含 ks-core 及各扩展组件镜像的离线安装包。
+
+[source,bash]
+----
+./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
+----
+
+执行成功后，将显示如下信息：
+
+[source,bash]
+----
+Pipeline[ArtifactExportPipeline] execute successfully
+----
+
+=== 5. 下载 KubeSphere Core Helm Chart 
+
+. 安装 helm。
++
+[source,bash]
+----
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+----
+
+. 下载 KubeSphere Core Helm Chart。
++
+--
+[source,bash]
+----
+VERSION=1.1.3     # Chart 版本
+helm fetch https://charts.kubesphere.io/main/ks-core-${VERSION}.tgz
+----
+
+此处为示例版本，请访问 link:https://get-images.kubesphere.io[] 或 link:https://github.com/kubesphere/kubesphere/releases[KubeSphere GitHub 仓库]查看最新 chart 版本。
+--
+
+== 离线部署
+
+=== 1. 准备工作
+
+将联网主机 node1 上的三个文件同步至离线环境的 master 节点。
+
+* `kk`
+* `kubesphere.tar.gz`
+* `ks-core-1.1.3.tgz`
+
+=== 2. 创建配置文件
+
+. 创建离线集群配置文件。
++
+[source,bash]
+----
+./kk create config --with-kubernetes v1.26.12
+----
+
+. 修改配置文件。
++
+--
+[source,bash]
+----
+vi config-sample.yaml
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+* 按照离线环境的实际配置修改节点信息。
+* 指定 `registry` 仓库的部署节点，用于 KubeKey 部署自建 Harbor 仓库。
+* `registry` 里可以指定 `type` 类型为 `harbor`，否则默认安装 docker registry。
+* 对于 Kubernetes v1.24+，建议将 `containerManager` 设置为 `containerd`。
+|===
+
+以下为示例配置文件。如需了解各参数的配置方法，请参阅link:../02-install-kubernetes-and-kubesphere/[此文档]。
+
+[source,yaml]
+----
+apiVersion: kubekey.kubesphere.io/v1alpha2
+kind: Cluster
+metadata:
+  name: sample
+spec:
+  hosts:
+  - {name: master, address: 192.168.0.3, internalAddress: 192.168.0.3, user: root, password: "<REPLACE_WITH_YOUR_ACTUAL_PASSWORD>"}
+  - {name: node2, address: 192.168.0.4, internalAddress: 192.168.0.4, user: root, password: "<REPLACE_WITH_YOUR_ACTUAL_PASSWORD>"}
+  roleGroups:
+    etcd:
+    - master
+    control-plane:
+    - master
+    worker:
+    - node2
+    # 如需使用 kk 自动部署镜像仓库，请设置该主机组 （建议仓库与集群分离部署，减少相互影响）
+    # 如果需要部署 harbor 并且 containerManager 为 containerd 时，由于部署 harbor 依赖 docker，建议单独节点部署 harbor 
+    registry:
+    - node2
+  controlPlaneEndpoint:
+    ## Internal loadbalancer for apiservers
+    # internalLoadbalancer: haproxy
+
+    domain: lb.kubesphere.local
+    address: ""
+    port: 6443
+  kubernetes:
+    version: v1.26.12
+    containerManager: containerd
+  network:
+    plugin: calico
+    kubePodsCIDR: 10.233.64.0/18
+    kubeServiceCIDR: 10.233.0.0/18
+    ## multus support. https://github.com/k8snetworkplumbingwg/multus-cni
+    multusCNI:
+      enabled: false
+  registry:
+    # 如需使用 kk 部署 harbor, 可将该参数设置为 harbor，不设置该参数且需使用 kk 创建容器镜像仓库，将默认使用 docker registry。
+    # type: harbor
+    # 如使用 kk 部署的 harbor 或其他需要登录的仓库，需设置对应仓库的 auths，如使用 kk 创建默认的 docker registry 仓库，则无需配置 auths 参数。
+    auths:
+      "dockerhub.kubekey.local":
+        # 部署 harbor 时需指定 harbor 帐号密码
+        # username: admin
+        # password: Harbor12345
+        skipTLSVerify: true
+    # 设置集群部署时使用的私有仓库地址。如果您已有可用的镜像仓库，请替换为您的实际镜像仓库地址。
+    # 如果离线包中为原始 dockerhub 镜像（即 manifest 文件中的镜像地址为 docker.io/***），可以将该参数设置为 dockerhub.kubekey.local/ks, 表示将镜像全部推送至名为 ks 的 harbor 项目中。
+    privateRegistry: "dockerhub.kubekey.local" 
+    # 如果构建离线包时 Kubernetes 镜像使用的是阿里云仓库镜像，需配置该参数。如果使用 dockerhub 镜像，则无需配置此参数。
+    namespaceOverride: "kubesphereio"
+    registryMirrors: []
+    insecureRegistries: []
+  addons: []
+----
+--
+
+=== 3. 创建镜像仓库
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果您已有可用的镜像仓库，可跳过此步骤。
+|===
+
+执行以下命令创建镜像仓库。
+
+[source,bash]
+----
+./kk init registry -f config-sample.yaml -a kubesphere.tar.gz
+----
+
+* `config-sample.yaml` 为离线集群的配置文件。
+
+* `kubesphere.tar.gz` 为包含 ks-core 及各扩展组件镜像的离线安装包。
+
+如果显示如下信息，则表明镜像仓库创建成功。
+
+[source,bash]
+----
+Pipeline[InitRegistryPipeline] execute successfully
+----
+
+=== 4. 创建 harbor 项目（若镜像仓库为 Harbor）
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+由于 Harbor 项目存在访问控制（RBAC）的限制，即只有指定角色的用户才能执行某些操作。如果您未创建项目，则镜像不能被推送到 Harbor。Harbor 中有两种类型的项目：
+
+* 公共项目（Public）：任何用户都可以从这个项目中拉取镜像。
+* 私有项目（Private）：只有作为项目成员的用户可以拉取镜像。
+
+Harbor 管理员账号：**admin**，密码：**Harbor12345**。
+
+harbor 安装文件在 `/opt/harbor` 目录下，可在该目录下对 harbor 进行运维。
+|===
+
+执行以下命令创建 harbor 项目。
+
+. 创建脚本配置文件。
++
+--
+[source,bash]
+----
+vi create_project_harbor.sh
+----
+
+[source,bash]
+----
+#!/usr/bin/env bash
+
+# Copyright 2018 The KubeSphere Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+url="https://dockerhub.kubekey.local"  # 或修改为实际镜像仓库地址
+user="admin"
+passwd="Harbor12345"
+
+harbor_projects=(
+        ks
+        kubesphere
+        kubesphereio
+        coredns
+        calico
+        flannel
+        cilium
+        hybridnetdev
+        kubeovn
+        openebs
+        library
+        plndr
+        jenkins
+        argoproj
+        dexidp
+        openpolicyagent
+        curlimages
+        grafana
+        kubeedge
+        nginxinc
+        prom
+        kiwigrid
+        minio
+        opensearchproject
+        istio
+        jaegertracing
+        timberio
+        prometheus-operator
+        jimmidyson
+        elastic
+        thanosio
+        brancz
+        prometheus
+)
+
+for project in "${harbor_projects[@]}"; do
+    echo "creating $project"
+    curl -u "${user}:${passwd}" -X POST -H "Content-Type: application/json" "${url}/api/v2.0/projects" -d "{ \"project_name\": \"${project}\", \"public\": true}" -k  # 注意在 curl 命令末尾加上 -k
+done
+----
+--
+
+. 创建 Harbor 项目。
++
+--
+[source,bash]
+----
+chmod +x create_project_harbor.sh
+----
+
+[source,bash]
+----
+./create_project_harbor.sh
+----
+--
+
+
+=== 5. 安装 Kubernetes
+
+执行以下命令创建 Kubernetes 集群：
+
+[source,bash]
+----
+./kk create cluster -f config-sample.yaml -a kubesphere.tar.gz --with-local-storage
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+指定 --with-local-storage 参数会默认部署 openebs localpv，如需对接其他存储，可在 Kubernetes 集群部署完成后自行安装。
+|===
+
+如果显示如下信息，则表明 Kubernetes 集群创建成功。
+
+[source,bash]
+----
+Pipeline[CreateclusterPipeline] execute successfully
+Installation is complete.
+----
+
+=== 6. 安装 KubeSphere
+
+. 安装 KubeSphere。
++
+--
+[source,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core ks-core-1.1.3.tgz \
+     --set global.imageRegistry=dockerhub.kubekey.local/ks \
+     --set extension.imageRegistry=dockerhub.kubekey.local/ks \
+     --set ksExtensionRepository.image.tag=v1.1.2 \
+     --debug \
+     --wait
+----
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+* `ksExtensionRepository.image.tag` 为之前获取到的 Extensions Museum 版本（即 https://get-images.kubesphere.io/ 上展示的最新扩展组件仓库版本）。
+
+* 如需高可用部署 KubeSphere，可在命令中添加 `--set ha.enabled=true,redisHA.enabled=true`。
+|===
+
+如果显示如下信息，则表明 KubeSphere 安装成功：
+
+[source,bash]
+----
+NOTES:
+Thank you for choosing KubeSphere Helm Chart.
+
+Please be patient and wait for several seconds for the KubeSphere deployment to complete.
+
+1. Wait for Deployment Completion
+
+    Confirm that all KubeSphere components are running by executing the following command:
+
+    kubectl get pods -n kubesphere-system
+2. Access the KubeSphere Console
+
+    Once the deployment is complete, you can access the KubeSphere console using the following URL:
+
+    http://192.168.6.6:30880
+
+3. Login to KubeSphere Console
+
+    Use the following credentials to log in:
+
+    Account: admin
+    Password: P@88w0rd
+
+NOTE: It is highly recommended to change the default password immediately after the first login.
+For additional information and details, please visit https://kubesphere.io.
+----
+--
+
+
+. 从成功信息中的 **Console**、**Account** 和 **Password** 参数分别获取{ks_product_left} Web 控制台的 IP 地址、管理员用户名和管理员密码，并使用网页浏览器登录{ks_product_left} Web 控制台。
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|取决于您的硬件和网络环境，您可能需要配置流量转发规则并在防火墙中放行 30880 端口。
+|===

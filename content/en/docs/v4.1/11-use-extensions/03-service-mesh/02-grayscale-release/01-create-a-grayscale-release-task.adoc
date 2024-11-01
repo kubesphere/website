@@ -1,0 +1,198 @@
+---
+title: "Create Grayscale Release Tasks"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, create grayscale release task"
+description: "Learn how to create a grayscale release task."
+weight: 01
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Grayscale Release**
+
+
+This section describes how to create a grayscale release task.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* **KubeSphere Service Mesh** should have been installed and enabled.
+
+* Prepare the new version container image in advance and upload it to the container image service, ensuring that the container image service has normal network connectivity with KubeSphere.
+
+
+== Steps
+
+Refer to link:#_parameter_description[Parameter Description] to set the parameters for the grayscale release task.
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. Select a type for the grayscale release task as needed by hovering over the **Blue-Green Deployment**, **Canary Release**, or **Traffic Mirroring** area, then click **Create**.
+
+. On the **Basic Information** tab, set the name of the grayscale release task, then click **Next**.
+
+. On the **Service Settings** tab, select the app and service to be grayscale released, then click **Next**.
+
+. On the **New Version Settings** tab, set the service version number, number of pod replicas, and containers for the new version, then click **Next**.
+
+. On the **Strategy Settings** tab, set the traffic distribution strategy for the grayscale release task, then click **Create**.
++
+--
+After the grayscale release task is created, it will be displayed in the **Release Tasks** tab on the **Grayscale Release** page.
+--
+
+
+== Parameter Description
+
+The following describes how to set the parameters for the grayscale release task.
+
+* Basic Information
++
+--
+Set the name of the task. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 253 characters long.
+--
+
+* Service Settings
++
+--
+Select the composed app and service to be grayscale released.
+
+* Click the dropdown list to select a composed app.
+
+* Click **Select** on the right side of the service to be grayscale released.
+
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+Grayscale release only supports composed apps, not apps based on templates.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+* New Version Settings
++
+--
+Set the service version number, number of pod replicas, and containers for the new version.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|New Version Number
+|The version number of the new version. The new version number can only contain lowercase letters and numbers, and can be up to 16 characters long.
+
+|Replica
+|
+The number of pod replicas for the new version. Click image:/images/ks-qkcp/zh/icons/chevron-up.svg[chevron-up,18,18]/image:/images/ks-qkcp/zh/icons/chevron-down.svg[chevron-down,18,18] to increase/decrease the number of pod replicas.
+
+|Add Container
+|
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addContainer.adoc[]
+
+* Directly enter the URL of the container image in the text box to replace the container image of the old version while keeping other container settings unchanged.
+|===
+--
+
+* New Version Settings > Add Container > Container Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-setImageNameTypeResource.adoc[]
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerImage.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerName.adoc[]
+
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerType.adoc[]
+
+|CPU Request
+|The CPU resources reserved for the container, in cores.
+
+|CPU Limit
+|The upper limit of CPU resources allowed for the container, in cores.
+
+|Memory Request
+|The memory resources reserved for the container, in MiB.
+
+|Memory Limit
+|The upper limit of memory resources allowed for the container, in MiB.
+|===
+--
+
+* New Version Settings > Add Container > Port Settings
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Port.adoc[]
+--
+
+* New Version Settings > Add Container > Image Pull Policy
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
+--
+
+* New Version Settings > Add Container > Health Check
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
+--
+
+* New Version Settings > Add Container > Health Check > Add Probe
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addProbe.adoc[]
+--
+
+* New Version Settings > Add Container > Lifecycle Management
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
+--
+
+* New Version Settings > Add Container > Lifecycle Management > Add Action
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addAction.adoc[]
+--
+
+* New Version Settings > Add Container > Start Command
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
+--
+
+* New Version Settings > Add Container > Environment Variables
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
+--
+
+* New Version Settings > Add Container > Container Security Context
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerSecurityContext.adoc[]
+--
+
+* New Version Settings > Add Container > Sync Host Timezone
++
+--
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
+--
+
+* Strategy Settings
++
+====
+Set the traffic distribution strategy for the grayscale release task.
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-para-strategySettings.adoc[]
+====

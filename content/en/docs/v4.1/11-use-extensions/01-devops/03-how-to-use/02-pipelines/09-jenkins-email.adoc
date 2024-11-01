@@ -1,0 +1,58 @@
+---
+title: "Set an Email Server for Pipelines"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Introduces how to set an email server for pipelines."
+weight: 09
+---
+
+The built-in Jenkins cannot share the same email configuration with the notification system of KubeSphere Therefore, you need to configure an email server separately for DevOps pipelines.
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* You should have the **Cluster Management** permission on the {ks_product-en} platform.
+
+== Steps
+
+. Log in to the {ks_product-en} web console with an account that has the **Cluster Management** permission.
+
+. Click **Cluster Management** and enter a cluster.
+
+. In the left navigation pane, select **Application Workloads** > **Workloads**, and choose the **kubesphere-devops-system** project from the dropdown list. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of **devops-jenkins** and select **Edit YAML**.
+
+. Edit the fields in the YAML file as shown below. After making the changes, click **OK**.
++
+--
+//warning
+[.admon.warning,cols="a"]
+|===
+|Warning
+
+|
+After modifying the email server configuration, the **devops-jenkins** deployment will restart. Therefore, the DevOps system will be unavailable for a few minutes. Please modify these configurations at an appropriate time.
+
+|===
+
+[%header,cols="1a,3a"]
+|===
+|Environment Variable Name |Description
+|EMAIL_SMTP_HOST
+|SMTP server address.
+
+|EMAIL_SMTP_PORT
+|SMTP server port (e.g., 25).
+
+|EMAIL_FROM_ADDR
+|Email sender address.
+
+|EMAIL_FROM_NAME
+|Email sender name.
+
+|EMAIL_FROM_PASS
+|Email sender password.
+
+|EMAIL_USE_SSL
+|Whether to enable SSL configuration.
+|===
+--

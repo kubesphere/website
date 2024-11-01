@@ -1,0 +1,86 @@
+---
+title: "查看多集群监控数据"
+keywords: "Kubernetes, {ks_product}, 平台管理, Whizard 可观测中心, 查看多集群监控数据"
+description: "介绍如何查看多集群监控数据。"
+weight: 01
+---
+
+
+本节介绍如何查看多集群的监控数据。
+
+
+== Prerequisites
+
+* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../../05-users-and-roles/01-users/[用户]和link:../../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+
+* host 集群和需要监控的成员集群需要启用 Whizard 可观测中心。
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+如果成员集群未启用 Whizard 可观测中心，Whizard 可观测中心将无法获取成员集群的数据。
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+
+== Steps
+
+include::../../../../../_custom-en/platformManagement/extensionManagement/extensionManagement-oper-logInAsPlatformAdmin.adoc[]
+
++
+
+. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择 **Whizard 可观测中心**。
+
++
+--
+Whizard 可观测中心的**概览**页面显示所有集群的监控信息。
+
+[%header,cols="1a,4a"]
+|===
+|功能区 |描述
+
+|已创建资源数量
+|显示被监控的所有集群、节点、项目、容器组、部署、有状态副本集、守护进程集、任务、定时任务、卷、服务、应用路由的数量。
+
+|资源使用情况
+|显示被监控的所有集群的所有节点的 CPU、内存、磁盘使用情况，以及可已创建容器组数量占可创建容器组最大数量的百分比。默认情况下每个节点最多可以创建 110 个容器组。
+
+对于 CPU 和内存，将光标悬停在image:/images/ks-qkcp/zh/icons/eye.svg[eye,18,18]可查看已分配给容器和项目的资源预留和上限数量。
+
+// |集群成员和集群角色
+// |显示被监控的所有集群的集群成员和集群角色数量。
+
+|全局告警
+|显示全局告警规则组产生的告警数量及最近的告警消息。此处显示的告警不包括集群和项目告警规则组产生的告警。全局告警规则组由平台管理员在 Whizard 可观测中心管理。
+
+告警级别的类型包括**提醒、警告、重要和紧急**。
+
+告警状态的类型包括：
+
+include::../../../../../_custom-en/clusterManagement/alerts/alerts-para-alertingStatus.adoc[]
+
+|容器组
+|显示被监控的所有集群的各种类型容器组的数量。
+
+容器组状态类型包括：
+
+include::../../../../../_custom-en/clusterManagement/pods/pods-para-podStatus_overview.adoc[]
+
+容器组 QoS（服务质量）类型包括：
+
+include::../../../../../_custom-en/clusterManagement/pods/pods-para-qosTypes.adoc[]
+|===
+--
+
+. 在页面右上角，点击**选择集群**，选择需要监控的集群。概览页面将展示选中集群的监控信息。
+
+. 点击**收起集群列表/展开集群列表**，隐藏或展示右侧的集群列表。
++
+--
+* 点击集群列表中的集群名称，进入该集群的概览页面。
+
+* 点击image:/images/ks-qkcp/zh/icons/row.svg[row,18,18]和image:/images/ks-qkcp/zh/icons/list_view.svg[list_view,18,18]以列表或缩略图形式查看集群信息。
+--
+

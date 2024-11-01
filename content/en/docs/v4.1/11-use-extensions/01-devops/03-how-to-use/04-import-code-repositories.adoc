@@ -1,0 +1,96 @@
+---
+title: "Import Code Repositories"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps"
+description: "Introduces how to import code repositories."
+weight: 04
+---
+
+KubeSphere supports importing GitHub, GitLab, Bitbucket, or other Git-based code repositories, such as Gitee. Below is an example of how to import a GitHub repository.
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. See link:../05-devops-settings/02-role-and-member-management[Role and Member Management].
+
+== Steps
+
+. Log in to the {ks_product-en} web console as the **project-regular** user.
+
+. Click **Workspace Management** and enter your DevOps project.
+
+. In the left navigation pane, click **Code Repositories**.
+
+. On the right side of the page, click **Add**.
+
+. In the **Import Code Repository** dialog, enter a code repository name, and click **Select a code repository**. You can also set an alias and add a description for the code repository.
++
+--
+The table below lists the supported code repositories and parameter settings. The following steps use GitHub as an example.
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|GitHub
+|**Credential**: Select the credential for accessing the code repository.
+
+|GitLab
+|
+* **GitLab Server Address**: Select the GitLab server address, the default value is link:https://gitlab.com[].
+* **Project Group/Owner**: Enter the GitLab account.
+* **Credential**: Select the credential for accessing the code repository.
+* **Code Repository**: Select the code repository.
+
+|Bitbucket
+|
+* **Bitbucket Server Address**: Set the Bitbucket server address.
+* **Credential**: Select the credential for accessing the code repository.
+
+|Git
+|
+* **Code Repository URL**: Enter the code repository address, such as link:https://gitee.com[].
+* **Credential**: Select the credential for accessing the code repository.
+|===
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+For using GitLab private repositories, see link:../02-pipelines/04-gitlab-multibranch-pipeline/[Create a Multi-branch Pipeline with GitLab].
+
+|===
+--
+
+. In the **Credential** area, click **Create Credential**. In the **Create Credential** dialog that appears, set the following parameters and click **OK**.
++
+--
+* **Name**: Enter a credential name, such as **github-id**.
+* **Type**: The values include **Username and password**, **SSH key**, **Access token**, and **kubeconfig**. In DevOps projects, it is recommended to use **Username and password**.
+* **Username**: The default username here is **admin**.
+* **Password/Token**: Enter your GitHub token.
+* **Description**: Add a description.
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+
+For more information on how to add credentials, see link:../05-devops-settings/01-credential-management/[Credential Management].
+|===
+--
+
+. In the **Credential** dropdown list, select the created credential and click **OK**.
+. In the pop-up GitHub repository, select the code repository and click **OK**.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the code repository, and you can perform the following operations:
++
+--
+* **Edit**: Modify the alias and description of the code repository, and reselect the code repository.
+* **Edit YAML**: Edit the YAML file of the code repository.
+* **Delete**: Delete the code repository.
+--

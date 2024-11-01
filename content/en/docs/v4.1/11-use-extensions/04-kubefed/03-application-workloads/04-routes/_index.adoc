@@ -1,0 +1,12 @@
+---
+title: "Ingresses"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, ingresses"
+description: "Learn how to manage ingresses in multi-cluster projects."
+weight: 04
+layout: "second"
+---
+
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-desc-routes.adoc[]
+
+For more information about cluster gateways and project gateways, see link:../../../12-gateway/[KubeSphere Gateways].

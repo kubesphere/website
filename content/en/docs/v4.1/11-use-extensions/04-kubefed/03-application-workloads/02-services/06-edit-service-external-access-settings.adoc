@@ -1,0 +1,41 @@
+---
+title: "Edit Service External Access Settings"
+keywords: "Kubernetes, {ks_product-en}, project management, workloads, services, edit service external access settings"
+description: "Learn how to edit external access settings for services."
+weight: 06
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Services**
+
+
+include::../../../../../_custom-en/clusterManagement/services/services-desc-editServiceExternalAccessSettings.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-openServiceExternalAccessSettings.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-editServiceExternalAccessSettings.adoc[]

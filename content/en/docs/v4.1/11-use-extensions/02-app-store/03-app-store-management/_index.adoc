@@ -1,0 +1,15 @@
+---
+title: "App Store Management"
+keywords: "Kubernetes, {ks_product-en}, platform management, app store management"
+description: "Describes how to manage the App Store."
+weight: 03
+layout: "second"
+---
+
+This section describes how to manage the App Store.
+
+The App Store provides application templates based on Helm Chart, and all project members of the {ks_product-en} platform can access the App Store.
+
+The App Store administrator can categorize, review, list, and delist application templates in the App Store, manage the platform's application repositories and all deployed application instances, and directly deploy applications to projects.
+
+After installing the "KubeSphere App Store Management" extension, click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the top-right corner of the page, click **App Store Management**, and enter the App Store management page.

@@ -1,0 +1,15 @@
+---
+title: "KubeSphere App Store Management"
+weight: 02
+layout: "second"
+---
+
+This section introduces how to use the "KubeSphere App Store Management" extension.
+
+After installing the "KubeSphere App Store Management" extension, **App Templates** will appear under the **App Management** menu in the left navigation pane of the workspace, and **App Store Management** will appear in the extension access entry in the upper right corner of the page.
+
+By using this extension:
+
+- Workspace administrators can manage application templates, submit applications defined in the application templates to the App Store. After the App Store administrator approves and lists the application, it can be published to the App Store for all projects in KubeSphere to deploy the application.
+
+- App Store administrators can categorize, review, list, delist application templates in the App Store, manage the platform's application repositories and all deployed application instances, and directly deploy applications to projects.

@@ -1,0 +1,11 @@
+---
+title: "Persistent Volume Claims"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, storage, persistent volume claims"
+description: "Learn how to manage persistent volume claims in multi-cluster projects."
+weight: 04
+layout: "second"
+---
+
+This section describes how to manage persistent volume claims.
+
+The system creates storage areas for containers in the backend storage system based on the parameters in the persistent volume claim, with each storage area corresponding to a persistent volume on the {ks_product-en} platform.

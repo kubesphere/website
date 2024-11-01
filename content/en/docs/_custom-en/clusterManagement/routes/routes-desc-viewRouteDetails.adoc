@@ -1,2 +1,2 @@
 // :ks_include_id: c74f0c52dbf440a98ed71f677036f155
-本节介绍如何查看应用路由详情。
+This section describes how to view Ingress details.

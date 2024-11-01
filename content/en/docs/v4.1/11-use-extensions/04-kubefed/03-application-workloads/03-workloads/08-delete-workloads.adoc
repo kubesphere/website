@@ -1,0 +1,58 @@
+---
+title: "Delete Workloads"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, workloads, delete workload"
+description: "Learn how to delete a workload."
+weight: 08
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-desc-deleteWorkloads.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Delete a Single Workload
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-multi-project-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-oper-deleteASingleWorkload.adoc[]
+
++
+
+. In the **Delete Workload** dialog, select the related resources to be deleted simultaneously, then click **OK**.
+
+
+== Delete Multiple Workloads
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-multi-project-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-oper-deleteMultipleWorkloads.adoc[]

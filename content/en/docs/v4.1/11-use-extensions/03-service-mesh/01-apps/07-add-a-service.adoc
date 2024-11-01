@@ -1,0 +1,65 @@
+---
+title: "Add Services to Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, application, edit app settings"
+description: "Learn how to add services to a composed app."
+weight: 07
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Composed Apps**
+
+
+This section describes how to add stateful or stateless services to a composed app.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Composed Apps** page, click the name of an app to open its details page.
+
+. On the app details page, select **More > Add Service** in the top-left corner.
+
+. In the **Create Service** dialog, select **Stateful Service** or **Stateless Service** as needed.
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+include::../../../../_custom-en/clusterManagement/services/services-para-statelessStatefulExternal.adoc[]
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
++
+
+include::../../../../_custom-en/projectManagement/services/services-oper-setBasicInformation.adoc[]
+
++
+
+. On the **Pod Settings** tab, set the number of replicas, containers, update strategy, security context, scheduling rules, and metadata for the pods managed by the service backend workload, then click **Next**.
+
++
+
+include::../../../../_custom-en/projectManagement/services/services-oper-setStorageAdvanced.adoc[]
++
+--
+ifeval::["{file_output_type}" == "html"]
+For parameter settings of **Stateful Service** and **Stateless Service**, see link:../../../../09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/#_parameter_description[Create a Stateful or Stateless Service].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+For parameter settings of **Stateful Service** and **Stateless Service**, see the "Create a Stateful or Stateless Service" section in the {ks_product-en} Project Management Guide.
+endif::[]
+--

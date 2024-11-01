@@ -114,7 +114,7 @@ include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 ----
  ./kk add nodes -f config-sample.yaml
 ----
-// include::../../../_custom/installationAndUpgrade/installationAndUpgrade-code-addNodes.adoc[]
+// include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-code-addNodes.adoc[]
 --
 
 . Execute the following command to view the nodes of the current cluster:

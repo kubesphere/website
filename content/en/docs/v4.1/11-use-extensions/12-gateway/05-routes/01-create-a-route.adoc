@@ -1,0 +1,41 @@
+---
+title: "创建应用路由"
+keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 应用路由, 创建应用路由"
+description: "介绍如何创建应用路由。"
+weight: 01
+---
+
+:ks_permission: **应用负载管理**
+:ks_navigation: **应用负载 > 应用路由**
+
+
+include::../../../../_custom-en/clusterManagement/routes/routes-desc-createARoute.adoc[]
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+
+
+
+* 如需创建支持 HTTPS 协议的应用路由，您需要创建 **TLS 信息**类型的保密字典，保密字典中必须包含 Base64 编码的证书和私钥。
+
+* 应用路由所属的项目中存在至少一个服务。
+
+
+== Steps
+
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-createARoute_v4.adoc[]

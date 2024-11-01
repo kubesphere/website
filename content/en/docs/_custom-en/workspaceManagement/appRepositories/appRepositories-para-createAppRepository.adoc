@@ -1,17 +1,17 @@
 // :ks_include_id: 9dce53f38c804429a1d874c4d0f635a3
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|应用仓库的名称。
+|Name
+|The name of the app repository.
 
 |URL
-|Helm Chart 仓库的 URL。点击**验证**可测试 Helm Chart 仓库是否可用。
+|The URL of the Helm Chart repository. Click **Validate** to test if the Helm Chart repository is available.
 
-|同步周期
-|应用仓库与 Helm Chart 仓库的自动同步周期。取值范围为 3 分钟到 24 小时。默认值 **0** 表示不自动同步。
+|Sync Interval
+|The automatic sync interval between the app repository and the Helm Chart repository. The value range is from 3 minutes to 24 hours. The default value **0** means no automatic sync.
 
-|描述
-|应用仓库的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the app repository. The description can contain any characters, with a maximum length of 256 characters.
 |===

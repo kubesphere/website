@@ -2,6 +2,6 @@
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-{ks_product-en}的集群网关和项目网关底层基于 Nginx Ingress Controller 实现。您可以在应用路由上设置注解控制网关的行为。有关更多信息，请参阅 link:https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/[Nginx Ingress Controller 官方文档]。
+The cluster gateway and project gateway in KubeSphere are implemented based on Nginx Ingress Controller. You can set annotations on the Ingress to control the behavior of the gateway. For more information, see link:https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/[Nginx Ingress Controller Documentation].
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

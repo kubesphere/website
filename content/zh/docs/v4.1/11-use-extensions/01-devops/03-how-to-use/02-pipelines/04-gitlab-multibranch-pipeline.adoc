@@ -124,7 +124,7 @@ link:https://gitlab.com/users/sign_in[GitLab] 是一款基于 web 的 Git 仓库
 
 .. 在**导入代码仓库**对话框，输入代码仓库名称（自定义），点击选择代码仓库。
 
-.. 在 **GitLab** 页签下的 **GitLab 服务器地址**中选择默认选项 link:https://gitlab.com[]，在**项目组/所有者**中输入该 GitLab 项目所属组的名称，然后从**代码仓库**的下拉菜单中选择 **devops-maven-sample** 仓库。点击右下角的image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]，然后点击**下一步**。
+.. 在 **GitLab** 页签下的 **GitLab 服务器地址**中选择默认选项 link:https://gitlab.com[]，在**项目组/所有者**中输入该 GitLab 项目所属组的名称，然后从**代码仓库**的下拉菜单中选择 **devops-maven-sample** 仓库。点击右下角的image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]，然后点击**确定**。
 +
 --
 //note
@@ -137,7 +137,7 @@ link:https://gitlab.com/users/sign_in[GitLab] 是一款基于 web 的 Git 仓库
 
 * 在 GitLab 上前往**用户设置 > 访问令牌**，创建拥有 API 和 read_repository 权限的个人访问令牌。
 
-* link:../../../04-how-to-integrate/01-sonarqube/[登录 Jenkins 面板]，前往**系统管理 > Manage Credentials**，使用您的 GitLab 令牌创建 Jenkins 凭证，用于访问 GitLab。然后前往**系统管理 > 系统配置**，在 **GitLab 服务**中添加该凭证。
+* link:../07-access-jenkins-console[登录 Jenkins 仪表板]，前往**系统管理 > Manage Credentials**，使用您的 GitLab 令牌创建 Jenkins 凭证，用于访问 GitLab。然后前往**系统管理 > 系统配置**，在 **GitLab 服务**中添加该凭证。
 
 * 在 DevOps 项目中，选择 **DevOps 项目设置 > 凭证**，使用您的 GitLab 令牌创建一个凭证。创建流水线时，在 **GitLab** 页签的**凭证**中指定该凭证，以便流水线能够从您的 GitLab 私有仓库中拉取代码。
 

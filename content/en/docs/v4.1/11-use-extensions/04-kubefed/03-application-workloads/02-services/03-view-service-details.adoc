@@ -1,0 +1,37 @@
+---
+title: "View Service Details"
+keywords: "Kubernetes, {ks_product-en}, project management, workloads, services, view service details"
+description: "Learn how to view service details."
+weight: 03
+---
+
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Application Workloads > Services**
+
+
+include::../../../../../_custom-en/clusterManagement/services/services-desc-viewServiceDetails.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/services/services-oper-viewServiceDetails-for-kubefed.adoc[]

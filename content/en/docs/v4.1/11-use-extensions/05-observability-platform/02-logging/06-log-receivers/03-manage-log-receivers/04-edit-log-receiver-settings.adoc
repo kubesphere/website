@@ -1,0 +1,55 @@
+---
+title: "编辑日志接收器设置"
+keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 日志接收器, 编辑日志接收器设置"
+description: "介绍如何编辑日志接收器设置。"
+weight: 04
+---
+
+:ks_permission: **集群设置管理**
+:ks_navigation: **集群设置 > 日志接收器**
+
+
+本节介绍如何编辑日志接收器设置。
+
+
+== Prerequisites
+
+
+* {empty}
+include::../../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* 已添加一个日志接收器。
+
+
+== Steps
+
+include::../../../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**日志接收器**页面，点击**容器日志**、**资源事件**、**审计日志**或**通知历史**，然后在列表中点击一个日志接收器的名称打开其详情页面。
+
++
+
+. 在日志接收器详情页面左上角点击**编辑**。
+
+. 在弹出的对话框修改日志接收器的设置，然后点击**确定**。
++
+--
+include::../../../../../../_custom-en/clusterManagement/logReceivers/logReceivers-para-addLogReceiver.adoc[]
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|
+修改完成后，需确保 **WhizardTelemetry 平台服务**的扩展组件配置中，各组件配置下的 `endpoints` 与修改的服务地址一致，以便{ks_product_both}平台能够正确查询日志数据。有关更多信息，请参阅扩展中心“WhizardTelemetry 平台服务”扩展组件的详情页说明。
+
+|===
+--

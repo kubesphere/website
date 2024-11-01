@@ -1,0 +1,13 @@
+---
+title: "DevOps"
+keywords: "Kubernetes, {ks_product-en}, DevOps"
+description: "Managing and operating in DevOps projects, including running pipelines, creating credentials, and integrating tools."
+weight: 01
+layout: "second"
+---
+
+DevOps supports deploying and managing CI/CD tasks and related workloads on Kubernetes clusters. When installing DevOps, Jenkins will be automatically deployed to support pipeline building through Jenkinsfile. Additionally, DevOps provides a graphical editing panel to visualize the entire process, presenting the running status of the pipeline at each stage intuitively.
+
+After installing DevOps, **DevOps Projects** will appear in the left navigation pane of the workspace.
+
+This section explains how to manage DevOps projects and operate within DevOps projects, including running pipelines, creating credentials, and integrating tools.

@@ -1,0 +1,41 @@
+---
+title: "View Workload Details"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, workloads, view workload details"
+description: "Learn how to view workload details."
+weight: 03
+---
+
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-desc-viewWorkloadDetails.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-multi-project-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/workloads/workloads-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/workloads/workloads-oper-viewWorkloadDetails_v4.adoc[]

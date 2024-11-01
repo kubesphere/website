@@ -1,0 +1,9 @@
+---
+title: "Deployment Management"
+keywords: "Kubernetes, {ks_product-en}, Platform Management, Apps, App Management, App Deployment"
+description: "Describes how to manage all deployed app instances and how to directly deploy apps to projects."
+weight: 05
+layout: "second"
+---
+
+This section describes how to manage all deployed app instances on the {ks_product-en} platform and how to directly deploy apps to projects.

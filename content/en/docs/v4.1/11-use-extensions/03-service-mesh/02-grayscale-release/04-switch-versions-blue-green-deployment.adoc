@@ -1,0 +1,35 @@
+---
+title: "Switch Online Version (Blue-Green Deployment)"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, switch online version (blue-green deployment)"
+description: "Learn how to switch the online version for a blue-green deployment task."
+weight: 04
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Grayscale Release**
+
+This section describes how to switch the online version for a blue-green deployment task.
+
+Based on business needs, you can set the new or old version in a blue-green deployment task to immediately take over all business traffic with one click.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* **KubeSphere Service Mesh** should have been installed and enabled.
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Grayscale Release** page, click **Release Tasks**, then click the name of a blue-green deployment task to open its details page.
+
+. In the **Versions** area, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] in the top-right corner of a version, then select **Take Over** from the dropdown list to set that version to immediately take over all business traffic.

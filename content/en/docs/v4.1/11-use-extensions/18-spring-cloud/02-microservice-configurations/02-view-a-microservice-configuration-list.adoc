@@ -1,0 +1,64 @@
+---
+title: "查看微服务配置列表"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 查看微服务配置列表"
+description: "介绍如何查看微服务配置列表。"
+weight: 02
+---
+
+:ks_permission: ** Spring Cloud 微服务查看**
+:ks_navigation:  **Spring Cloud > 微服务配置**
+
+
+本节介绍如何查看微服务配置列表。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* 微服务配置列表提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|名称
+|微服务配置的名称。
+
+|状态
+|微服务配置的状态。
+
+* **已发布**：微服务配置创建成功并且可供微服务使用。
+
+* **失败**：微服务配置创建过程中出现系统错误导致创建失败。
+
+|数据 ID
+|微服务配置的全局唯一标识符，由 <微服务配置名称>.<格式> 组成。
+
+|创建时间
+|微服务配置的创建时间。
+|===
+--
+
+* 在列表上方点击搜索框并输入关键字，可按名称和状态搜索微服务配置。
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

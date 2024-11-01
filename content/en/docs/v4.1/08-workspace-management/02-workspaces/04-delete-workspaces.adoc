@@ -46,10 +46,7 @@ include::../../../_custom-en/platformManagement/platformManagement-oper-logIn.ad
 
 . In the **Delete Multiple Workspaces** dialog, enter the name of the workspaces, then click **OK**.
 +
-[.admon.note,cols="a"]
-|===
-|Note
+--
+include::../../../_custom-en/note-separateNamesByComma.adoc[]
+--
 
-|Please separate multiple names using a comma (,) and a space.
-
-|===

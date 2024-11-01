@@ -1,69 +1,70 @@
 // :ks_include_id: 02ac1cebc06f4893a036c2e77c21d999
-. 在应用路由详情页面左侧的**属性**区域查看应用路由的详细信息。
+. On the Ingress details page, view the detailed information of the Ingress in the **Attributes** area on the left.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-// |集群
-// |应用路由的所属集群。
+// |Cluster
+// |The cluster to which the Ingress belongs.
 
-|项目
-|应用路由的所属项目。
+|Project
+|The project to which the Ingress belongs.
 
-|应用
-|应用路由对应的应用。
+|App
+|The app corresponding to the Ingress.
 
-// |网关地址
+// |Gateway Address
 // |
 // include::../gatewaySettings/gatewaySettings-para-address.adoc[]
 
-|创建时间
-|应用路由的创建时间。
+|Creation Time
+|The creation time of the Ingress.
 
-|创建者
-|创建应用路由的用户。
+|Creator
+|The user who created the Ingress.
 |===
 --
 
-. 在应用路由详情页面右侧的**资源状态**页签查看应用路由的路由规则。
+. On the Ingress details page, view the routing rules of the Ingress in the **Resource Status** tab on the right.
 +
 --
-**资源状态**页签显示当前应用路由的所有路由规则。
+The **Resource Status** tab displays all routing rules of the current Ingress.
+
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|域名和端口
-|应用路由的域名和节点端口号。节点端口号仅在集群网关或项目网关的外部访问为 NodePort 时显示。
+|Domain and Port
+|The domain name and node port number of the Ingress. The node port number is only displayed when the external access mode of the cluster gateway or project gateway is NodePort.
 
-* 如果集群网关或项目网关的外部访问模式为 NodePort，客户端需要通过 DNS 服务或本地 **hosts** 文件将域名解析为集群中任意节点的 IP 地址，并通过域名、路径和端口号（例如 **example.com/test:30240**）访问应用路由。
+* If the external access mode of the cluster gateway or project gateway is NodePort, clients need to resolve the domain name to the IP address of any node in the cluster through DNS service or local **hosts** file, and access the Ingress through the domain name, path, and port number (e.g., **example.com/test:30240**).
 
-* 如果集群网关或项目网关的外部访问模式为 LoadBalancer，客户端需要通过 DNS 服务或本地 **hosts** 文件将域名解析为项目网关负载均衡器的 IP 地址，并通过域名和路径（例如 **example.com/test**）访问应用路由。
+* If the external access mode of the cluster gateway or project gateway is LoadBalancer, clients need to resolve the domain name to the IP address of the project gateway load balancer through DNS service or local **hosts** file, and access the Ingress through the domain name and path (e.g., **example.com/test**).
 
-|协议
-|应用路由支持的协议，取值为**HTTP** 或 **HTTPS**。
+|Protocol
+|The protocol supported by the Ingress, with values of **HTTP** or **HTTPS**.
 
-|证书
-|应用路由协议为 HTTPS 时，所使用的包含证书和私钥的保密字典的名称。仅在应用路由协议为 HTTPS 时显示。
+|Certificate
+|The name of the secret containing the certificate and private key used when the Ingress protocol is HTTPS. Only displayed when the Ingress protocol is HTTPS.
 
-|路径
-|域名的路径，每条路径对应一个服务。
+|Path
+|The path of the domain name, with each path corresponding to a service.
 
-|服务
-|域名路径所对应的服务的名称。
+|Service
+|The name of the service corresponding to the domain name path.
 
-|端口
-|域名路径所对应的服务的端口号。
+|Port
+|The port number of the service corresponding to the domain name path.
 |===
 
-在路由规则右侧点击**访问服务**可访问应用路由的后端服务。
+Click **Access Service** on the right side of the routing rule to access the backend service of the Ingress.
 --
 
-. 在应用路由详情页面右侧点击**元数据**页签查看应用路由的**标签**和**注解**。
+. On the Ingress details page, click the **Metadata** tab on the right to view the **Labels** and **Annotations** of the Ingress.
 
-. 在应用路由详情页面右侧点击**事件**页签查看应用路由的事件。
+. On the Ingress details page, click the **Events** tab on the right to view events related to the Ingress.
 +
 --
 include::../clusterManagement-para-eventsTab.adoc[]

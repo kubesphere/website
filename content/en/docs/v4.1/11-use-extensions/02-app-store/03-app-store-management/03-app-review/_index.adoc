@@ -1,0 +1,11 @@
+---
+title: "App Review"
+keywords: "Kubernetes, {ks_product-en}, Platform Management, App Store Management, App Review"
+description: "Describes how to review app versions submitted to the App Store."
+weight: 03
+layout: "second"
+---
+
+This section describes how to review app templates submitted by workspace members.
+
+Workspace members can submit app templates to the App Store after creating them. Users with the **App Store Management** permission can review these app templates. Approved app templates can be listed in the App Store.

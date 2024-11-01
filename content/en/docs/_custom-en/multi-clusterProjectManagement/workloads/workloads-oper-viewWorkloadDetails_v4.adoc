@@ -1,64 +1,64 @@
 // :ks_include_id: 53806508deb8493a8bded94825780b98
-. 在工作负载详情页面左侧的**属性**区域查看工作负载的资源属性。
+. On the workload details page, view the workload's resource attributes in the **Attributes** area on the left.
 +
 --
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|项目
-|工作负载所属的项目。
+|Project
+|The project to which the workload belongs.
 
-|应用
-|工作负载所属的应用名称。您可以创建一个包含多个服务的应用，每个服务都对应一个工作负载。
+|App
+|The name of the app to which the workload belongs. You can create an app that includes multiple services, each corresponding to a workload.
 
-|创建时间
-|工作负载的创建时间。
+|Creation Time
+|The creation time of the workload.
 
-|更新时间
-|工作负载的更新时间。
+|Update Time
+|The update time of the workload.
 
-|创建者
-|创建工作负载的用户。
+|Creator
+|The user who created the workload.
 |===
 --
 
-. 在工作负载详情页面右侧的**资源状态**页签查看工作负载的容器组副本数量、容器端口和容器组。
+. On the workload details page, view the number of pod replicas, container ports, and pods for the workload in the **Resource Status** tab on the right.
 +
 --
 include::para-replicasPortsPods.adoc[]
 --
 
-. 在工作负载详情页面右侧点击**元数据**页签查看工作负载的标签和注解。
+. On the workload details page, click the **Metadata** tab on the right to view the workload's labels and annotations.
 
-// . 在工作负载详情页面右侧点击**监控**页签查看工作负载的实时资源使用情况。
+// . On the workload details page, click the **Monitoring** tab on the right to view the workload's real-time resource usage.
 // +
 // --
 // [%header,cols="1a,4a"]
 // |===
-// |参数 |描述
+// |Parameter |Description
 
-// |CPU 用量
-// |工作负载管理的所有容器组的实时 CPU 用量。
+// |CPU Usage
+// |The real-time CPU usage of all pods managed by the workload.
 
-// |内存用量
-// |工作负载管理的所有容器组的实时内存用量。
+// |Memory Usage
+// |The real-time memory usage of all pods managed by the workload.
 
-// |出站流量
-// |工作负载管理的所有容器组的出站流量。
+// |Outbound Traffic
+// |The outbound traffic of all pods managed by the workload.
 
-// |入站流量
-// |工作负载管理的所有容器组的入站流量。
+// |Inbound Traffic
+// |The inbound traffic of all pods managed by the workload.
 // |===
 
-// * 在**监控**右侧的第一个下拉框可以选择查看指定集群的资源监控信息。
+// * In the first dropdown on the right of **Monitoring**, you can select to view resource monitoring information for a specified cluster.
 // include::../../../../_ks_components-en/oper-selectTimeRange.adoc[]
 // include::../../../../_ks_components-en/oper-Autorefresh.adoc[]
 // include::../../../../_ks_components-en/oper-refreshData.adoc[]
 // --
 
-. 在工作负载详情页面右侧点击**事件**页签查看工作负载相关的事件。
+. On the workload details page, click the **Events** tab on the right to view events related to the workload.
 +
 --
 include::../../clusterManagement/clusterManagement-para-eventsTab.adoc[]

@@ -1,7 +1,7 @@
 ---
 title: "删除应用版本"
 description: "介绍如何删除应用版本。"
-weight: 08
+weight: 09
 ---
 
 :ks_permission: **应用商店管理**

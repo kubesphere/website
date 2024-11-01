@@ -1,0 +1,70 @@
+---
+title: "设置存储卷自动扩展"
+keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 持久卷声明, 持久卷,自动扩展"
+description: "介绍如何设置存储卷自动扩展。"
+weight: 02
+---
+
+:ks_permission: **存储类管理**
+:ks_navigation: **存储 > 存储类**
+
+
+本节介绍如何设置存储卷自动扩展。
+
+卷容量自动扩展指系统在卷剩余空间低于阈值时自动扩展卷容量。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+// include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-persistentVolumeCreated.adoc[]
+
+ifeval::["{file_output_type}" == "html"]
+* 请确保后端存储系统支持卷扩展功能，且存储类已启用卷扩展功能。有关更多信息，请参阅link:../../../../07-cluster-management/08-storage/02-storage-classes/05-enable-and-disable-volume-operations[启用和禁用卷操作]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+* 请确保后端存储系统支持卷扩展功能，且存储类已启用卷扩展功能。有关更多信息，请参阅《{ks_product_right}集群管理指南》的“存储类 > 启用和禁用卷操作”章节。
+endif::[]
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-oper-openDetailsPage.adoc[]
+
++
+
+. 在存储类详情页面的左上角，选择**更多操作 > 设置自动扩展**。
+
+. 在**设置自动扩展**对话框，点击页面右侧的**已禁用**按钮启用自动扩展功能。
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+如果您需要禁用自动扩展功能，在页面右侧点击**已启用**。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. 在**自动扩展**设置区域，设置扩展的最大容量、阈值、以及增量。
++
+image:/images/ks-qkcp/zh/v4.1/storage2.png[ scale,100%]
+
+. （可选）如果您需要系统自动检查卷状态并重启工作负载，请勾选**自动重启工作负载**。
+
+. 设置完成后，点击**确定**。

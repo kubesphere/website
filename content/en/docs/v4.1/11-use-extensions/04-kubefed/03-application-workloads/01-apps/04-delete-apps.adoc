@@ -1,0 +1,44 @@
+---
+title: "Delete Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, applications, delete application"
+description: "Learn how to delete an application from a multi-cluster project."
+weight: 04
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Composed Apps**
+
+
+This section describes how to delete an application from a multi-cluster project.
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Apps** page, find the app you want to delete, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right, then select **Delete** from the dropdown list.
+
+. In the **Delete App** dialog, enter the name of the app, then click **OK**.
++
+--
+// Warning
+include::../../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+The app cannot be recovered after deletion, so proceed with caution.
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--

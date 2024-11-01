@@ -1,0 +1,81 @@
+---
+title: "Customize Jenkins Agent"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Introduces how to customize Jenkins Agent."
+weight: 11
+---
+
+To use a Jenkins Agent that runs a specific environment (e.g., JDK 11), you can customize the Jenkins Agent on KubeSphere.
+
+This document describes how to customize the Jenkins Agent on KubeSphere.
+
+== Prerequisites
+
+**DevOps** must have been installed and enabled.
+
+== Customize Jenkins Agent
+
+. Log in to the {ks_product-en} web console as the **admin** user.
+
+. Click **Cluster Management** and enter a cluster.
+
+. In the left navigation pane, select **Configuration** > **ConfigMaps**.
+
+. On the **ConfigMaps** page, enter **jenkins-casc-config** in the search box and press **Enter**.
+
+. Click **jenkins-casc-config** to enter its detail page, click **More**, and select **Edit YAML**.
+
+. In the dialog that appears, search for **data:jenkins_user.yaml:jenkins:clouds:kubernetes:templates** and enter the following code below it, then click **OK**.
++
+--
+[,yaml]
+----
+
+- name: "maven-jdk11" # Customize the name of the Jenkins Agent.
+  label: "maven jdk11" # Customize the label of the Jenkins Agent. If you want to specify multiple labels, separate them with spaces.
+  inheritFrom: "maven" # The name of the existing Pod template from which the custom Jenkins Agent inherits.
+  containers:
+  - name: "maven" # The container name specified in the existing Pod template from which the custom Jenkins Agent inherits.
+    image: "kubespheredev/builder-maven:v3.2.0jdk11" # This image is for testing purposes only. Please use your own image.
+----
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+Ensure that the indentation in the YAML file is correct.
+
+|===
+--
+
+. Wait for 1 to 2 minutes for the new configuration to reload automatically.
+
+. To use the customized Jenkins Agent, refer to the example Jenkinsfile below, specifying the label and container name corresponding to the customized Jenkins Agent when creating the pipeline.
++
+--
+
+[,json]
+----
+pipeline {
+  agent {
+    node {
+      label 'maven && jdk11'
+    }
+  }
+  stages {
+    stage('Print Maven and JDK version') {
+      steps {
+        container('maven') {
+          sh '''
+          mvn -v
+          java -version
+          '''
+        }
+      }
+    }
+  }
+}
+----
+--

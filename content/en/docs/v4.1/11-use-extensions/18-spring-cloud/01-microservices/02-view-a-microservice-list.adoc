@@ -1,0 +1,61 @@
+---
+title: "查看微服务列表"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 查看微服务列表"
+description: "介绍如何查看微服务列表。"
+weight: 02
+---
+
+
+:ks_permission: ** Spring Cloud 微服务查看**
+:ks_navigation:  **Spring Cloud > 微服务**
+
+
+本节介绍如何查看微服务列表。
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* 服务注册中心显示服务注册中心的地址、微服务的数量、微服务实例的数量和健康实例的数量。
+
+* 微服务列表显示每个微服务的实例数量、健康实例数量和当前微服务是否已触发健康保护机制。
++
+--
+// Note
+include::../../../../../_ks_components-en/admonitions/note.adoc[]
+
+* 为了防止因过多实例不健康导致流量全部流向健康实例，继而造成流量压力把健康实例压垮并形成雪崩效应，Nacos 支持设置健康保护阈值。当健康实例数量占微服务总实例数的比例小于该值时，无论实例是否健康，都会将这个实例返回给客户端。
+
+* {ks_product_right}的默认健康保护阈值为 0，即默认不使用健康保护机制。您可以参阅 link:https://nacos.io[Nacos 官方文档]设置 Nacos 的健康保护阈值。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+* 在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的微服务。
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====
+
+. 在微服务右侧点击image:/images/ks-qkcp/zh/icons/plus-square.svg[plus-square,18,18]查看微服务的所有实例。
++
+--
+include::../../../../_custom-en/projectManagement/microservices/microservices-para-instances.adoc[]
+--

@@ -1,0 +1,40 @@
+---
+title: "Adjust Number of Pod Replicas"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, workloads, adjust number of pod replicas"
+description: "Learn how to adjust the number of pod replicas."
+weight: 05
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-desc-adjustTheNumberOfPodReplicas.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-multi-project-oper-openListPage.adoc[]
+
++
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/workloads/workloads-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/workloads/workloads-oper-adjustTheNumberOfPodReplicas.adoc[]

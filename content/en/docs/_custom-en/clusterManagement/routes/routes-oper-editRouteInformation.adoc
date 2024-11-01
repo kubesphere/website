@@ -1,17 +1,17 @@
 // :ks_include_id: 9f1f9315fbc0466396a168bfa897683f
-. 在需要操作的应用路由右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑信息**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the Ingress you want to edit, then select **Edit Information** from the dropdown list.
 
-. 在**编辑信息**对话框，设置应用路由的别名和描述，然后点击**确定**。
+. In the **Edit Information** dialog, set the alias and description of the ingress, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|别名
-|应用路由的别名。不同应用路由的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the ingress. Different ingresses can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-), with a maximum length of 63 characters.
 
-|描述
-|应用路由的描述信息。描述可包含任意字符，最多包含 256 个字符。
+|Description
+|The description information of the ingress. The description can contain any characters, with a maximum of 256 characters.
 |===
 --

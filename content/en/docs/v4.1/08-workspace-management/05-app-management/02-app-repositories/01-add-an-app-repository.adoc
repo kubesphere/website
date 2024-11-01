@@ -17,7 +17,7 @@ This section introduces how to add an application repository in the workspace.
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
-* The Helm Chart repository has been created in advance. For information on how to create a Helm Chart repository, please refer to the link:https://helm.sh/zh/docs/topics/chart_repository/[Helm Documentation].
+* The Helm Chart repository has been created in advance. For information on how to create a Helm Chart repository, please refer to the link:https://helm.sh/docs/topics/chart_repository/[Helm Documentation].
 
 
 == Steps

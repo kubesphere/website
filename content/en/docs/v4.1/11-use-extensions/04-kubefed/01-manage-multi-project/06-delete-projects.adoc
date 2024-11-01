@@ -1,0 +1,46 @@
+---
+title: "Delete Multi-cluster Projects"
+keywords: "Kuberentes, {ks_product-en}, workspace management, multi-cluster projects, delete projects"
+description: "Learn how to delete projects."
+weight: 06
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Projects > Multi-cluster Projects**
+
+
+include::../../../../_custom-en/clusterManagement/projects/projects-desc-deleteProjects.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Delete a Single Project
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/projects/projects-oper-deleteASingleProject.adoc[]
+
+
+== Batch Delete Projects
+
+include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/projects/projects-oper-deleteMultipleProjects.adoc[]

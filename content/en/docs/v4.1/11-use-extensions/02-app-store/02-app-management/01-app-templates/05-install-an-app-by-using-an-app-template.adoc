@@ -1,0 +1,72 @@
+---
+title: "Install Applications Using Application Templates"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, install application using application template"
+description: "Describes how to install an application using an application template in a workspace."
+weight: 05
+---
+
+:ks_permission: **Application/Application Version/Application Instance Management**
+:ks_navigation: **App Management > App Templates**
+
+This section describes how to install an application using an application template in a workspace.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+
+== Steps
+
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-openDetailsPage.adoc[]
+
++
+
+. In the **Versions** tab on the right side of the details page, click the desired application version, then click **Deployment**.
+
+. In the pop-up **Location** dialog, select the installation location for the application, then click **OK**.
+
+. In the **Basic Information** tab, set the basic information for the application, then click **Next**.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The user-defined name of the application. The name can only contain lowercase letters, numbers, and hyphens (-), must start with a lowercase letter and end with a lowercase letter or number, and can be up to 32 characters long.
+
+|Version
+|The version of the application to be installed.
+
+|Description
+|The description of the application. The description can contain any characters, with a maximum length of 256 characters.
+
+|Location
+|The cluster and project to which the application belongs. The workspace to which the application belongs is the workspace to which the application template belongs by default.
+|===
+--
+
+. In the **App Settings** tab, modify the application's parameter settings as needed, then click **Install**.
++
+--
+// Note
+include::../../../../../../_ks_components-en/admonitions/note.adoc[]
+
+The application template functionality is based on Helm Chart. The parameter settings in the **App Settings** tab should comply with the Values file specification of Helm Chart . For more information, see link:https://helm.sh/docs/chart_template_guide/values_files/[Helm Documentation].
+
+include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+After the application is installed, you can view the installed application in the target project.
+--

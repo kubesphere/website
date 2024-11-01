@@ -1,0 +1,9 @@
+---
+title: "Applications"
+keywords: "Kubernetes, {ks_product-en}, platform management, app store management, applications"
+description: "Describes how to manage applications in the App Store."
+weight: 01
+layout: "second"
+---
+
+This section describes how to manage application templates in the App Store. You can view and edit application information, and list or delist applications.

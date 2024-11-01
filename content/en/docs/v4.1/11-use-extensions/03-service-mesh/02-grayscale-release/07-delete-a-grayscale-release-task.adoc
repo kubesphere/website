@@ -1,0 +1,49 @@
+---
+title: "Delete Grayscale Release Tasks"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, delete grayscale release task"
+description: "Learn how to delete a grayscale release task."
+weight: 07
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Grayscale Release**
+
+
+This section describes how to delete a grayscale release task.
+
+// Warning
+include::../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+A grayscale release task can only be deleted when one of the new or old versions has taken over all business traffic. After the grayscale release task is deleted, the version (includes services, workloads, and pods) that has not taken over the business traffic will also be deleted.
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* **KubeSphere Service Mesh** should have been installed and enabled.
+
+* One of the new or old versions has taken over all business traffic. For more information, see link:../04-switch-versions-blue-green-deployment/[Switch Online Version (Blue-Green Deployment)] and link:../05-adjust-traffic-distribution-ratio-canary-release/[Adjust Traffic Distribution Ratio (Canary Release)].
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-oper-openDetailsPage.adoc[]
+
++
+
+. In the top-right corner of the grayscale release details page, click **Delete**.
++
+--
+The system will delete the grayscale release task and also delete the version that has not taken over the business traffic.
+--

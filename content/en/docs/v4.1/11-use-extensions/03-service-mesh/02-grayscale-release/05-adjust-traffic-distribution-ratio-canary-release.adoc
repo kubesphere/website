@@ -1,0 +1,37 @@
+---
+title: "Adjust Traffic Distribution Ratio (Canary Release)"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, adjust traffic distribution ratio (canary release)"
+description: "Learn how to adjust the traffic distribution ratio for a canary release task."
+weight: 05
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Grayscale Release**
+
+This section describes how to adjust the traffic distribution ratio for a canary release task.
+
+Based on business needs, you can manually adjust the traffic distribution ratio between the new and old versions in a canary release task.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* **KubeSphere Service Mesh** should have been installed and enabled.
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Grayscale Release** page, click **Release Tasks**, then click the name of a canary release task to open its details page.
+
+. In the **Traffic Distribution** area, drag the slider to adjust the traffic distribution ratio between the new and old versions, then click **OK** in the pop-up dialog. The system will distribute business traffic between the new and old versions according to the ratio.
+
+. (Optional) In the **Versions** area, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] in the top-right corner of a version, then select **Take Over** from the dropdown list to set that version to immediately take over all business traffic.

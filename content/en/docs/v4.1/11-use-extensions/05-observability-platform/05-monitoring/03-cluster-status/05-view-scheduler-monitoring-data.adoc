@@ -1,0 +1,62 @@
+---
+title: "查看调度器状态"
+keywords: "Kubernetes, {ks_product}, 监控告警, 集群状态，调度器状态"
+description: "介绍如何查看调度器状态。"
+weight: 05
+---
+
+:ks_permission: **监控查看**
+:ks_navigation: **监控告警 > 集群状态**
+
+
+本节介绍如何查看调度器状态。调度器根据容器组的资源需求、节点可用资源和其他约束条件决定容器组运行在哪些节点上。
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+
+
+
+== Steps
+
+include::../../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在**集群状态**页面，点击**调度器监控**页签查看调度器的运行状态。
++
+====
+* **调度器监控**页签提供以下信息：
++
+--
+[%header,cols="1a,4a"]
+|===
+|指标 |描述
+
+|调度次数
+|指定时间范围内的容器组调度成功、错误和失败累计次数。
+
+|调度速率
+|指定时间范围内的容器组每秒调度成功、错误和失败次数。
+
+|调度延迟
+|指定时间范围内容器组调度延迟的 99% 分位数、90% 分位数、中位数和平均值。
+|===
+--
+
+include::../../../../../../_ks_components-en/oper-selectTimeRange.adoc[]
+
+include::../../../../../../_ks_components-en/oper-Autorefresh.adoc[]
+
+include::../../../../../../_ks_components-en/oper-refreshData.adoc[]
+====

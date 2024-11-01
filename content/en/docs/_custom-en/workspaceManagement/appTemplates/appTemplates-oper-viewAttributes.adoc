@@ -1,2 +1,2 @@
 // :ks_include_id: 97cb07634c9f4b08ab3ebea9f440d8e8
-. 在应用模板详情页面左侧的**属性**区域，查看应用模板的资源属性。
+. In the **Attributes** area on the left side of the details page, view the resource attributes of the application template.

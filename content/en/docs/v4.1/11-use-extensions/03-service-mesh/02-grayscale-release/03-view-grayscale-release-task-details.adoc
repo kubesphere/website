@@ -1,0 +1,57 @@
+---
+title: "View Grayscale Release Task Details"
+keywords: "Kubernetes, {ks_product-en}, project management, grayscale release, view grayscale release task details"
+description: "Learn how to view the grayscale release task details."
+weight: 03
+---
+
+:ks_permission: ** Service Mesh View**
+:ks_navigation: **Service Mesh > Grayscale Release**
+
+
+This section describes how to view the grayscale release task details.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+* **KubeSphere Service Mesh** should have been installed and enabled.
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-oper-openDetailsPage.adoc[]
++
+--
+The task details page provides the following information:
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name and release mode of the grayscale release task.
+
+|Version
+|The number of pod replicas, pod name, CPU usage, and memory usage for the new and old versions.
+
+|Traffic Distribution
+|
+* For Blue-Green Deployment, shows the service version currently receiving all traffic.
+
+* For Canary Release, shows the traffic distribution ratio between the new and old versions.
+
+* For Traffic Mirroring, shows the same copy of traffic received by the old version for the new version.
+
+include::../../../../_custom-en/projectManagement/grayscaleRelease/grayscaleRelease-para-trafficSuccessLatency.adoc[]
+|===
+--

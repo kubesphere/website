@@ -1,2 +1,2 @@
 // :ks_include_id: 74e87c7e7c4a42b59f6c9013b617a2f7
-本节介绍如何查看应用路由列表。
+This section describes how to view the Ingress list.

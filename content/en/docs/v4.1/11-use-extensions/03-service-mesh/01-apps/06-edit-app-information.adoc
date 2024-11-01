@@ -1,0 +1,32 @@
+---
+title: "Edit Composed App Information"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, application, edit app information"
+description: "Learn how to edit app information."
+weight: 06
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Composed Apps**
+
+
+This section describes how to edit composed app information.
+
+You can edit the alias and description of an app. KubeSphere does not support editing the name of an already created app.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/projectManagement/apps/apps-oper-editAppInformation.adoc[]

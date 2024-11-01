@@ -1,0 +1,16 @@
+---
+title: "Application Management for Cluster Federation"
+keywords: "Kubernetes, {ks_product-en}, federated project"
+description: "Learn how to manage federated projects and how to manage application workloads, volumes, configuration resources, and project settings in federated projects."
+weight: 04
+layout: "second"
+---
+
+
+This section describes how to use the "Application Management for Cluster Federation" extension to manage federated projects, and how to manage application workloads, persistent volume claims, configuration resources, and project settings in federated projects.
+
+A federated project is a project created based on multiple clusters. Resources in a federated project can run on different clusters.
+
+Application Management for Cluster Federation is an extension designed to simplify the management of applications across multiple federated Kubernetes clusters. Users can easily deploy, update, and manage applications across multiple federated clusters, while providing flexible configuration options to meet different needs.
+
+After installing the "Application Management for Cluster Federation" extension, **Multi-cluster Projects** will be displayed under the **Projects** menu in the left navigation pane of the workspace.

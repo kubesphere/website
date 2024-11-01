@@ -1,0 +1,58 @@
+---
+title: "Grafana for WhizardTelemetry"
+keywords: "Kubernetes, {ks_product}, Grafana, 监控, dashboard, 可观测"
+description: "介绍如何使用 Grafana for WhizardTelemetry 扩展组件。"
+weight: 16
+layout: "second"
+---
+
+本节介绍如何使用 Grafana for WhizardTelemetry 扩展组件。
+
+该扩展组件提供一个开放且可组合的数据可视化和监控分析平台，内置众多仪表盘（Dashboard）来增强 WhizardTelemetry 可观测平台的可视化能力。它提供了丰富的数据展示和分析功能，使用户能够以直观和交互式的方式探索、查询和可视化各种数据源（如 Prometheus、Loki、Elasticsearch、InfluxDB、PostgreSQL 等）的指标、日志和跟踪数据。
+
+**配置说明：**
+
+安装 Grafana for WhizardTelemetry 扩展组件后，需修改扩展组件配置以暴露 Grafana 服务，才能访问 Grafana 控制台。
+
+[,yaml]
+----
+  service:
+    enabled: true
+    type: ClusterIP
+    loadBalancerIP: ""
+    loadBalancerClass: ""
+    loadBalancerSourceRanges: []
+    port: 80
+    targetPort: 3000
+    # nodePort: 32000
+----
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+|type: ClusterIP  |默认安装方式，只能在集群内部通过虚拟 IP 地址访问 Grafana 服务。
+
+|type: NodePort  |使用 NodePort 方式暴露服务，可通过 `nodePort` 参数指定端口。如未指定，则在 30000 到 32767 的空闲端口中随机选择一个端口来使用。
+
+配置后，可通过 <NodeIP>:<nodePort> 访问 Grafana 控制台。
+
+|type: LoadBalancer |使用云服务商提供的负载均衡器向外部暴露 Grafana 服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。
+|===
+
+// include::../../../../_custom-en/clusterManagement/services/services-oper-editServiceExternalAccessSettings.adoc[]
+
+// [.admon.note,cols="a"]
+// |===
+// |说明
+
+// |
+// 有关各种服务类型的配置方法，请参阅link:https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#publishing-services-service-types[服务类型]。
+// |===
+
+[.admon.tip,cols="a"]
+|===
+|提示
+
+|
+成功访问 Grafana 控制台后，可使用默认帐户和密码 (**admin/admin**) 登录。
+|===

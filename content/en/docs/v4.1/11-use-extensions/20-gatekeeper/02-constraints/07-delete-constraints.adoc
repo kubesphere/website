@@ -1,0 +1,44 @@
+---
+title: "删除约束"
+description: "介绍如何删除约束。"
+weight: 07
+---
+
+:ks_permission: ** cluster-admin **
+:ks_navigation: ** Gatekeeper > 约束**
+
+
+本节介绍如何删除约束。
+
+// Warning
+include::../../../../../_ks_components-en/admonitions/warning.adoc[]
+
+约束删除后不能恢复，请谨慎执行此操作。
+
+include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+
+
+* {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. 在需要删除的约束右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+
+. 在**删除约束**对话框，输入约束的名称，然后点击**确定**。
+

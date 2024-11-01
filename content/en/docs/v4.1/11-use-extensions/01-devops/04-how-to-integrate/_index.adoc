@@ -1,0 +1,9 @@
+---
+title: "Tool Integration"
+keywords: "Kubernetes, {ks_product-en}, DevOps project"
+description: "Introduction on how to integrate third-party tools with pipelines."
+weight: 04
+layout: "second"
+---
+
+This section introduces how to integrate third-party tools with pipelines.

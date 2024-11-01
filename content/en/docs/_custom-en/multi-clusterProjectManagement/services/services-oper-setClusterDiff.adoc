@@ -1,14 +1,14 @@
 // :ks_include_id: 1c90e483af564b3eb017afec1b5da0c8
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|容器设置
-|在不同的集群中使用不同的容器设置。在多集群环境下，您可以为指定集群中的服务设置不同的容器镜像、容器类型和资源配置等。
+|Container Settings
+|Use different container settings in different clusters. In a multi-cluster environment, you can set different container images, container types, and resource configurations for the service in specified clusters.
 
-|端口设置
-|为不同集群中的容器设置不同的端口。在多集群环境下，您可以为指定集群中的服务设置不同的访问协议、容器端口和服务端口等。
+|Port Settings
+|Set different ports for containers in different clusters. In a multi-cluster environment, you can set different access protocols, container ports, and service ports for the service in specified clusters.
 
-|环境变量
-|为不同集群中的容器设置不同的环境变量。在多集群环境下，您可以为指定集群中的服务设置不同的环境变量。
+|Environment Variables
+|Set different environment variables for containers in different clusters. In a multi-cluster environment, you can set different environment variables for the service in specified clusters.
 |===

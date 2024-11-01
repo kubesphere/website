@@ -1,0 +1,9 @@
+---
+title: "Application Workloads"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads"
+description: "Learn how to manage application workloads in multi-cluster projects."
+weight: 03
+layout: "second"
+---
+
+This section describes how to manage applications, services, workloads, and ingresses in multi-cluster projects.

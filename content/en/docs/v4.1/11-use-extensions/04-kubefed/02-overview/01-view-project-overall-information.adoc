@@ -1,0 +1,54 @@
+---
+title: "Multi-cluster Project Overview"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, overview, view multi-cluster project overview information"
+description: "Learn how to view the overview information of multi-cluster projects."
+weight: 01
+---
+
+:ks_permission: **Federated Project Viewing**
+:ks_navigation: **Overview**
+
+
+This section describes how to view the overview information of multi-cluster projects.
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+--
+The **Overview** page provides the following information:
+
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Workspace
+|The workspace to which the multi-cluster project belongs.
+
+|Creator
+|The user who created the multi-cluster project.
+
+|Resource Status
+|The application resources created and physical resources used in the multi-cluster project. Click the dropdown list in the top-right corner to select a cluster and a time range for the data.
+
+* **Application Resources**: The number of deployments, statefulsets, persistent volume claims, services, and ingresses created in the multi-cluster project.
+
+* **Physical Resources**: The CPU and memory usage of the multi-cluster project.
+
+|Top 5 for Resource Usage
+|The top 5 workloads in the multi-cluster project with the highest usage of specific resources. Click the dropdown list to select a cluster and sort by CPU, memory, outbound traffic, or inbound traffic.
+|===
+--

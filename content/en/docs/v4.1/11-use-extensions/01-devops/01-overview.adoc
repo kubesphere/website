@@ -1,0 +1,42 @@
+---
+title: "Overview"
+keywords: "Kubernetes, {ks_product-en}, DevOps, Overview"
+description: "Introduces the basic principles of DevOps."
+weight: 01
+---
+
+DevOps provides a series of Continuous Integration (CI) and Continuous Delivery (CD) tools that automate processes between IT and software development teams. In CI/CD workflows, each integration is verified through automated builds, including coding, releasing, and testing, helping developers catch integration errors early and enabling teams to deliver internal software to production environments quickly, securely, and reliably.
+
+However, the traditional Jenkins Controller-Agent architecture (where multiple Agents work for one Controller) has the following shortcomings:
+
+- If the Controller crashes, the entire CI/CD pipeline collapses.
+- Resource allocation is uneven, with some Agents' pipeline jobs queuing while others remain idle.
+- Different Agents may have different configurations and require the use of different coding languages, bringing inconvenience for management and maintenance.
+
+KubeSphere DevOps projects support source code management tools such as GitHub, Git, and Bitbucket, enabling the building of CI/CD pipelines through a graphical editing panel (Jenkinsfile out of SCM) or creating Jenkinsfile-based pipelines from code repositories (Jenkinsfile in SCM).
+
+== Features
+
+DevOps offers the following features:
+
+- Independent DevOps projects for CI/CD pipelines with access control.
+- Out-of-the-box DevOps functionality without complex Jenkins configurations.
+// - Source-to-image (S2I) and Binary-to-image (B2I) for rapid delivery of images.
+- link:../03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/[Jenkinsfile-based Pipelines] for a consistent user experience supporting multiple code repositories.
+- link:../03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel/[Graphical Editing Panel] to create pipelines with a low learning curve.
+- Robust tool integration mechanisms, such as link:../04-how-to-integrate/01-sonarqube/[SonarQube], for code quality checks.
+- Continuous delivery capabilities based on ArgoCD for automated deployment to multi-cluster environments.
+
+== DevOps Pipeline Workflows
+
+The DevOps CI/CD pipeline runs on underlying Kubernetes Jenkins Agents. These Jenkins Agents can dynamically scale up or down based on job statuses. The Jenkins Controller and Agents run as Pods on KubeSphere nodes. The Controller runs on one of the nodes, with its configuration data stored in a persistent volume claim. Agents run on various nodes but may not always be active, as they are dynamically created and automatically removed based on demand.
+
+When the Jenkins Controller receives a build request, it dynamically creates a Jenkins Agent running in a Pod based on labels and registers it with the Controller. After the Agent completes its job, it is released, and the related Pods are deleted.
+
+== Dynamic Provisioning of Jenkins Agents
+
+Dynamic provisioning of Jenkins Agents has the following advantages:
+
+- **Reasonable resource allocation**: Agents are dynamically allocated to idle nodes to prevent job queues due to high resource utilization on a single node.
+- **High scalability**: Supports adding nodes to the cluster when jobs queue for extended periods due to insufficient resources.
+- **High availability**: In case of a Jenkins Controller failure, DevOps automatically creates a new Jenkins Controller container, mounts the persistent volume to the newly created container to ensure data integrity, achieving cluster high availability.

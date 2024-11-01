@@ -32,9 +32,6 @@ You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} 
 . Check the boxes next to the users you want to delete, then click **Delete** above the list.
 . In the **Delete Multiple Users** dialog, enter the names of the users, then click **OK**.
 +
-include::../../../../_ks_components-en/admonitions/note.adoc[]
-
-Please use a comma (,) or space to separate multiple names.
-
-include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
-
+--
+include::../../../_custom-en/note-separateNamesByComma.adoc[]
+--

@@ -1,0 +1,98 @@
+---
+title: "创建规则组"
+keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 规则组, 创建规则组"
+description: "介绍如何创建告警规则组。"
+weight: 01
+---
+
+
+:ks_permission: **规则组管理**
+:ks_navigation: **监控告警 > 规则组**
+
+
+include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-createAnAlertingPolicy.adoc[]
+
+
+== Prerequisites
+
+* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 告警**扩展组件。
+
+
+* {empty}
+include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+
+
+
+// 
+// include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-prer-exposeMetrics.adoc[]
+
+// 
+
+
+== Steps
+
+. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
++
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-openListPage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-setBasicInfo.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-addAlertRule.adoc[]
++
+====
+include::../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-commonParameters_new.adoc[]
+
+* 规则模板
++
+--
+通过下拉列表选择监控目标和触发条件。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+|资源类型
+|需要监控的工作负载的类型，如部署、有状态副本集、守护进程集。仅显示在项目的告警规则设置中。
+
+|监控目标
+|需要监控的目标，如集群节点、工作负载等。
+
+include::../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-triggerCondition.adoc[]
+|===
+--
+
+* 自定义规则
++
+--
+通过 PromQL 表达式指定监控目标和触发条件。
+
+[%header,cols="1a,4a"]
+|===
+|参数 |描述
+
+include::../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-duration.adoc[]
+
+|告警级别
+|
+include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-para-alertLevel.adoc[]
+
+include::../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-ruleExpression.adoc[]
+|===
+--
+====
+
++
+
+include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-clickOK.adoc[]

@@ -1,0 +1,146 @@
+---
+title: "Use Jenkins Shared Libraries in a Pipeline"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, pipeline"
+description: "Learn how to use Jenkins shared libraries in a pipeline."
+weight: 08
+---
+
+For Jenkins pipelines that contain the same stages or steps, you can use Jenkins shared libraries in the Jenkinsfile to avoid pipeline code duplication.
+
+This document demonstrates how to use Jenkins shared libraries in a DevOps pipeline.
+
+== Prerequisites
+
+* **DevOps** must have been installed and enabled.
+
+* A workspace, a DevOps project, and a user (e.g. **project-regular**) have been created, and the user has been invited to the DevOps project with the **operator** role. See link:../../05-devops-settings/02-role-and-member-management[Role and Member Management].
+
+* You have a usable Jenkins shared library. This tutorial uses the Jenkins shared library in the link:https://github.com/devops-ws/jenkins-shared-library[GitHub repository] as an example.
+
+
+== Step 1: Configure Shared Libraries in the Jenkins Dashboard
+
+. link:../07-access-jenkins-console[Log in to the Jenkins dashboard] and click **Manage Jenkins** in the left navigation pane.
+
+. Scroll down and click **Configure System**.
+
+. Scroll down to **Global Pipeline Libraries** and click **Add**.
+
+. Configure the fields as follows.
+
+* **Name:** Set a name for the shared library (e.g., `demo-shared-library`) so that you can import the shared library by referring to this name in a Jenkinsfile.
+
+* **Default version:** Set a branch name of the repository where the shared library is located as the default branch to import the shared library. Enter `master` for this tutorial.
+
+* Under **Retrieval method**, select **Modern SCM**.
+
+* Under **Source Code Management**, select **Git** and enter the URL of the example repository for **Project Repository**. If you use your own repository and access to this repository requires credentials, you also need to configure **Credentials**.
+
+. After editing, click **Apply**.
++
+--
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+You can also configure link:https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries[folder-level shared libraries].
+
+|===
+--
+
+== Step 2: Use Shared Libraries in a Pipeline
+
+=== Create a Pipeline
+
+. Log in to the {ks_product-en} web console as the **project-regular** user.
+
+. Click **Workspace Management** and enter your DevOps project, then click **Create** on the **Pipelines** page.
+
+. In the dialog that appears, name it **demo-shared-library** and click **Next**.
+
+. In **Advanced Settings**, click **Create** directly to create the pipeline with the default settings.
+
+=== Edit the Pipeline
+
+. On the pipeline list page, click the pipeline name to enter its detail page, then click **Edit Jenkinsfile**.
+
+. In the dialog that appears, add the following example Jenkinsfile. After editing, click **OK**.
++
+--
+[,json]
+----
+
+library identifier: 'devops-ws-demo@master', retriever: modernSCM([
+  $class: 'GitSCMSource',
+  remote: 'https://github.com/devops-ws/jenkins-shared-library',
+  traits: [[$class: 'jenkins.plugins.git.traits.BranchDiscoveryTrait']]
+])
+
+pipeline {
+  agent any
+
+  stages {
+    stage('Demo') {
+      steps {
+        script {
+          mvn.fake()
+        }
+      }
+    }
+  }
+}
+----
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+Specify a **label** for **agent** as needed.
+
+|===
+--
+
++
+Alternatively, use a Jenkinsfile that starts with **@Library('<the configured shared library name>') _**. If you use this type of Jenkinsfile, you need to configure the shared library on the Jenkins dashboard in advance. In this tutorial, you can use the following example Jenkinsfile.
++
+--
+[,json]
+----
+
+@Library('demo-shared-library') _
+
+pipeline {
+  agent any
+
+  stages {
+    stage('Demo') {
+      steps {
+        script {
+          mvn.fake()
+        }
+      }
+    }
+  }
+}
+----
+
+//note
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+Use **@Library('demo-shared-library@<branch name>') _** to specify a specific branch.
+
+|===
+--
+
+== Step 3: Run the Pipeline
+
+. On the pipeline detail page, click **Run** to run the pipeline.
+
+. Click the record under the **Run Records** tab to view the pipeline run details. Click **Run Logs** to view the log details.

@@ -1,0 +1,36 @@
+---
+title: "Add Ingresses to Composed Apps"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, application, edit app settings"
+description: "Learn how to add an Ingress to a composed app."
+weight: 07
+---
+
+:ks_permission: ** Service Mesh Management**
+:ks_navigation: **Service Mesh > Composed Apps**
+
+
+This section describes how to add an Ingress to a composed app.
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Composed Apps** page, click the name of an app to open its details page.
+
+. On the app details page, select **More > Add Ingress** in the top-left corner.
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-createARoute.adoc[]

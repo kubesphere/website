@@ -1,0 +1,60 @@
+---
+title: "View Application Template List"
+keywords: "Kubernetes, {ks_product-en}, workspace, application template, view application template list"
+description: "Describes how to view the application template list."
+weight: 02
+---
+
+:ks_permission: **Application/Application Version/Application Instance View**
+:ks_navigation: **App Management > App Templates**
+
+This section describes how to view the application template list.
+
+
+== Prerequisites
+
+* {empty}
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
+
+* **KubeSphere App Store Management** should have been installed and enabled.
+
+
+== Steps
+
+include::../../../../../_custom-en/workspaceManagement/workspaceManagement-oper-openWorkspacePage.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+* The application template list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-appTemplateName.adoc[]
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-status_v4.adoc[]
+
+|Workspace
+|The workspace to which the application template belongs.
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-para-latestVersion_v4.adoc[]
+
+|Application Template
+|The type of the application template, such as **helm application** or **yaml application**.
+
+|Update Time
+|The update time of the application template.
+|===
+--
+
+include::../../../../../_custom-en/workspaceManagement/appTemplates/appTemplates-oper-searchForAppTemplates.adoc[]
+
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

@@ -1,0 +1,32 @@
+---
+title: "Edit Routing Rules"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, application workloads, ingresses, edit routing rules"
+description: "Learn how to edit routing rules."
+weight: 05
+---
+
+:ks_permission: **Federated Project Management**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-desc-editingRutingRules.adoc[]
+
+
+== Prerequisites
+
+* **Application Management for Cluster Federation** should have been installed and enabled.
+
+* {empty}
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-prer-requiredPermission_v4.adoc[]
+
+== Steps
+
+include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagement-oper-openProjectPage_v4.adoc[]
+
++
+
+include::../../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../../_custom-en/clusterManagement/routes/routes-oper-editRoutingRules.adoc[]

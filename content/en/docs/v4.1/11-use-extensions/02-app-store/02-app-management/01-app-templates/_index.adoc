@@ -1,0 +1,11 @@
+---
+title: "App Templates"
+keywords: "Kubernetes, {ks_product-en}, workspace, application management, application template"
+description: "Introduces how to manage application templates."
+weight: 01
+layout: "second"
+---
+
+This section introduces how to manage application templates in a workspace.
+
+Each application template can contain one or more application versions defined by Helm Charts. You can upload Helm Charts as application templates to the workspace, thereby installing applications using the application template in all projects of the workspace. You can also further upload the application template to the App Store, thereby installing applications in all projects of KubeSphere.

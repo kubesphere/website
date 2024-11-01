@@ -1,3 +1,2 @@
 // :ks_include_id: 282a1d4ff17c46e19164103e677b6b0d
-
-您可以自定义应用的服务、工作负载和路由创建自制应用。相比基于模板的应用，自制应用支持应用治理，您可以为自制应用启用应用治理从而使用流量监控、灰度发布和链路追踪功能。
+You can customize the services, workloads, and routes of an app to create a composed app. Compared to template-based apps, composed apps support app governance. You can enable app governance for a composed app to use traffic monitoring, grayscale release, and link tracing features.
