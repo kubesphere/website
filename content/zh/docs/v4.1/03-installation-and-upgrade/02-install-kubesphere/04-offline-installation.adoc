@@ -35,7 +35,7 @@ apt install socat conntrack -y
 
 == 获取版本信息及镜像列表
 
-. 访问 https://get-images.kubesphere.io/。
+. 访问 https://get-images.kubesphere.io/
 
 . 选择需要部署的扩展组件。
 
