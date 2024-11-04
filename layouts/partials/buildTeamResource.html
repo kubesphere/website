@@ -1,0 +1,77 @@
+{{- if .IsHome -}}
+{{ $url := "https://api.github.com/orgs/kubesphere/members?per_page=100&page=2" }}
+{{ $token := getenv "HUGO_GITHUB_TOKEN" }}
+
+{{ $memberList := slice }}
+
+{{ $opts := dict
+"method" "get"
+"headers" (dict
+"Authorization" (printf "Bearer %s" $token)
+"Accept" "application/vnd.github+json"
+"X-GitHub-Api-Version" "2022-11-28")
+}}
+
+{{ $limit := 10}}
+
+<!-- todo maybe we can remove errorf and use default json data -->
+{{ range seq 1 $limit }}
+	{{ $get_page_url := (printf "https://api.github.com/orgs/kubesphere/members?per_page=100&page=%d" .)}}
+
+	{{ with resources.GetRemote $get_page_url $opts}}
+		{{ with .Err }}
+			{{ errorf "%s" . }}
+		{{ else }}
+			<!-- get member list -->
+			{{ with .}}
+				{{ $member_page_data := . | transform.Unmarshal }}
+				{{ $l := len $member_page_data}}
+				{{ if lt $l 1}}
+					{{ break }}
+				{{ end }}
+				
+				<!-- range get member info -->
+				{{ range $member_page_data }}				
+					{{ $member_url := .url}}		
+					{{ with resources.GetRemote $member_url $opts }}	
+						{{ with .Err }}
+							{{ errorf "%s" . }}
+						{{ else }}
+							{{ with .}}
+								{{ $member_data := . | transform.Unmarshal }}
+								<!-- append member list -->
+								{{ $name := "" }}
+								{{ if $member_data.name }}
+    								{{ $name = $member_data.name }}
+								{{ else }}
+    								{{ $name = $member_data.login }}
+								{{ end }}
+								{{ $member_info := dict 
+									"name" $name 
+									"nickname" $member_data.login 
+									"avater" $member_data.avatar_url
+									"link" $member_data.html_url
+								}}	
+								{{ $memberList = $memberList | append $member_info }}
+							{{ end }}
+						{{ end }}
+					{{ else }}
+						{{ errorf "Unable to get remote resource %q" $url }}
+					{{ end }}
+				{{ end }}
+				<!-- range get member info -->
+
+			{{ end }}
+			<!-- get member list -->
+		{{ end }}
+	{{ else }}
+		{{ errorf "Unable to get remote resource %q" $url }}
+	{{ end }}
+
+{{ end }}
+
+{{ $json := jsonify $memberList}}
+{{ $r := resources.FromString "/json/members.json" $json }}
+{{ $r.Publish }}
+
+{{ end }}

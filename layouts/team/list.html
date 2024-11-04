@@ -1,0 +1,166 @@
+{{ define "main" }}
+
+{{ $memberList := getJSON "public/json/members.json" }}
+
+{{/* todo !!! currently only support 5 colmuns */}}
+{{ $l := len $memberList }}
+{{ $addNum := sub 5 (mod $l 5) }}
+
+{{ with .Params.section1 }}
+<section class="section-1 bg-cover" style='background-image: url("{{ .topImage }}");'>
+	<div class="title-div common-layout">
+		<h1 class="title-center-h1">{{ .title }}</h1>
+		<p class="common-p">{{ .content }}</p>
+	</div>
+</section>
+{{ end }}
+
+
+{{ with .Params.section2 }}
+<section class="section-2">
+	<div class="common-layout">
+		<h2 class="title-black-h2">{{ .title }}</h2>
+		<div class="scroll-container">
+			<div class="member-grid scroll">
+				{{ range $memberList }}
+				{{ partial "memberList" .}}
+				{{ end }}
+				{{ range seq $addNum}}
+				{{ partial "memberList" ""}}
+				{{ end }}
+			</div>
+		</div>
+
+</section>
+{{ end }}
+
+<script>
+
+	function loaded() {
+		// get member grid with scroll
+		const scrollContext = document.querySelector(".member-grid");
+		const memberList = document.querySelectorAll(".member-grid-item")
+		const l = scrollContext.children.length;
+
+		if (l <= 20) return;
+
+		const placeholderHeight = 216 * 4 + 60 + 10;
+		for (let i = 0; i < 20; ++i) {
+			const child = scrollContext.children[i].cloneNode(true);
+			scrollContext.append(child);
+		}
+
+		let disableScroll = false;
+
+		const scrollHeight = scrollContext.scrollHeight;
+		const clientHeight = scrollContext.clientHeight;
+
+		function setScrollPos(pos) {
+			scrollContext.scrollTop = pos;
+		}
+
+		function getScrollPos() {
+			return scrollContext.scrollTop;
+		}
+
+		scrollContext.addEventListener('scroll', function () {
+			window.requestAnimationFrame(scrollUpdate);
+		}, false);
+
+
+		function scrollUpdate() {
+			let curHeight = getScrollPos();
+			if (!disableScroll) {
+				{{/*  console.log(curHeight + clientHeight + 1);  */}}
+				if (curHeight + clientHeight + 1 >= scrollHeight) {
+					setScrollPos(1);
+					disableScroll = true;
+				} else if (curHeight <= 0) {
+					setScrollPos(scrollHeight - clientHeight);
+					disableScroll = true;
+				}
+			}
+			if (disableScroll) {
+				window.setTimeout(function () {
+					disableScroll = false;
+				}, 40);
+			}
+		}
+
+		var fps, fpsInterval, startTime, now, then, elapsed;
+		function autoScroll() {
+			requestAnimationFrame(autoScroll);
+			now = Date.now();
+			elapsed = now - then;
+			if (elapsed > fpsInterval) {
+				then = now - (elapsed % fpsInterval);
+				setScrollPos(getScrollPos() + 1); // 减少滚动增量
+				scrollUpdate();
+			}
+		}
+
+		function startAnimating(fps) {
+			fpsInterval = 1000 / fps;
+			then = Date.now();
+			startTime = then;
+			{ {/*  console.log(startTime);  */ } }
+			autoScroll();
+		}
+
+		startAnimating(30);
+		{ {/*  requestAnimationFrame(autoScroll);  */ } }
+	};
+
+	document.addEventListener("DOMContentLoaded", loaded)
+
+</script>
+
+{{ with .Params.section3 }}
+<section class="section-3">
+	<div class="common-layout">
+		<div class="section-title">
+			<h2 class="title-black-h2">{{ .title }}</h2>
+			<div class="section-description">
+				{{ .description }}
+			</div>
+		</div>
+		<div class="contributor-list">
+			{{ range .contributors }}
+
+			<div class="contributor-list-item">
+				<a class="contributor-link" href="{{ .link }}" target="_blank">
+					<div>
+						<img src="{{ $.Params.section3.icon }}">
+					</div>
+					<span>kubesphere/{{ .name }}</span>
+				</a>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>
+{{ end }}
+
+{{ with .Params.section4 }}
+<section class="section-4">
+	<div class="common-layout">
+		<div class="section-title">
+			<h2 class="title-black-h2">{{ .title }}</h2>
+			<div class="section-description">
+				{{ .description }}
+			</div>
+		</div>
+		<div class="member-grid noscroll">
+			{{ range .ambassadors }}
+			{{ partial "memberList" .}}
+			{{ end }}
+		</div>
+</section>
+{{ end }}
+
+{{/*  <section class="section-5">
+	<div class="common-layout">
+	</div>
+</section>  */}}
+
+{{ end }}

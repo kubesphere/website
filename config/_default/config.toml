@@ -186,33 +186,39 @@ name = "Community"
 
     [[languages.en.menu.main]]
     parent = "Community"
+    name = "Team"
+    URL = "team/"
+    weight = 2
+
+    [[languages.en.menu.main]]
+    parent = "Community"
     name = "Case Studies"
     URL = "case/"
-    weight = 2
+    weight = 3
 
     [[languages.en.menu.main]]
     parent = "Community"
     name = "Partner"
     URL = "partner/"
-    weight = 3
+    weight = 4
 
     [[languages.en.menu.main]]
     parent = "Community"
     name = "News"
     URL = "news/"
-    weight = 4
+    weight = 5
 
     [[languages.en.menu.main]]
     parent = "Community"
     name = "RoadMap"
     URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
-    weight = 5
+    weight = 6
 
     [[languages.en.menu.main]]
     parent = "Community"
     name = "OSPP 2024"
     URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2024"
-    weight = 6
+    weight = 7
 
 
 [languages.zh]
@@ -323,51 +329,57 @@ name = "开源社区"
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
+    name = "团队"
+    URL = "team/"
+    weight = 2
+
+    [[languages.zh.menu.main]]
+    parent = "开源社区"
     name = "社区活动"
     URL = "live/"
-    weight = 2
+    weight = 3
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "案例学习"
     URL = "case/"
-    weight = 3
+    weight = 4
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "合作伙伴"
     URL = "partner/"
-    weight = 4
+    weight = 5
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "用户委员会"
     URL = "user-group/"
-    weight = 5
+    weight = 6
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "动态"
     URL = "news/"
-    weight = 6
+    weight = 7
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "版本计划"
     URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
-    weight = 7
+    weight = 8
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "中国站"
     URL = "https://www.kubesphere.io/zh/"
-    weight = 8
+    weight = 9
 
     [[languages.zh.menu.main]]
     parent = "开源社区"
     name = "开源之夏 2024"
     URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2024"
-    weight = 9
+    weight = 10
 
 [[languages.zh.menu.main]]
 weight = 6
