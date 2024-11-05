@@ -1,6 +1,9 @@
+{{ if eq . ""}}
+<div class="member-grid-item placeholder">
+
+</div>
+{{ else }}
 <div class="member-grid-item">
-	{{ if eq . ""}}
-	{{ else }}
 	<a class="member-profile-link" href="{{ .link }}" target="_blank">
 		<div class="member-info-ctn">
 			<div class="member-avater-ctn">
@@ -26,5 +29,5 @@
 			<div></div>
 		</div>
 	</a>
-	{{ end }}
 </div>
+{{ end }}

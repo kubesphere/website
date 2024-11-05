@@ -37,21 +37,45 @@
 <script>
 
 	function loaded() {
-		// get member grid with scroll
-		const scrollContext = document.querySelector(".member-grid");
-		const memberList = document.querySelectorAll(".member-grid-item")
-		const l = scrollContext.children.length;
 
-		if (l <= 20) return;
+		const mediaQuery = window.matchMedia("(max-width: 768px)")
 
-		const placeholderHeight = 216 * 4 + 60 + 10;
-		for (let i = 0; i < 20; ++i) {
-			const child = scrollContext.children[i].cloneNode(true);
-			scrollContext.append(child);
+		const scrollContext = document.querySelector(".member-grid.scroll");
+		if (!scrollContext) return;
+		if (mediaQuery.matches) {
+
+			const children = Array.from(scrollContext.children);
+			children.forEach(child => {
+				if (child.classList.contains('placeholder')) {
+					scrollContext.removeChild(child);
+				}
+			});
+
+			const l = scrollContext.children.length;
+			if (l <= 4) return;
+
+			for (let i = 0; i < 4; ++i) {
+				const child = scrollContext.children[i].cloneNode(true);
+				scrollContext.append(child);
+			}
+		} else {
+			const l = scrollContext.children.length;
+			if (l <= 20) return;
+
+			for (let i = 0; i < 20; ++i) {
+				const child = scrollContext.children[i].cloneNode(true);
+				scrollContext.append(child);
+			}
 		}
 
-		let disableScroll = false;
+		{ {/*  return  */ } }
 
+		{{/*  get member grid with scroll  */}}
+
+		let disableScroll = false;
+		const dpr = window.devicePixelRatio;
+		const step = 1 / dpr;
+		const placeholderHeight = scrollContext.children[0].offsetHeight * 4 + 60;
 		const scrollHeight = scrollContext.scrollHeight;
 		const clientHeight = scrollContext.clientHeight;
 
@@ -68,15 +92,21 @@
 		}, false);
 
 
+		setScrollPos(step);
+		
+		{{/*  todo scroll loop has problem   */}}
+		{{/*  console.log(window.devicePixelRatio);
+		console.log("client:", clientHeight, " scrollHeight", scrollHeight, "placeholder:", placeholderHeight);  */}}
+
 		function scrollUpdate() {
 			let curHeight = getScrollPos();
 			if (!disableScroll) {
-				{{/*  console.log(curHeight + clientHeight + 1);  */}}
-				if (curHeight + clientHeight + 1 >= scrollHeight) {
-					setScrollPos(1);
+				{ {/*  console.log("cur: ",curHeight);  */ } }
+				if (curHeight + placeholderHeight + 1 >= scrollHeight) {
+					setScrollPos(step);
 					disableScroll = true;
 				} else if (curHeight <= 0) {
-					setScrollPos(scrollHeight - clientHeight);
+					setScrollPos(scrollHeight - placeholderHeight);
 					disableScroll = true;
 				}
 			}
@@ -94,7 +124,8 @@
 			elapsed = now - then;
 			if (elapsed > fpsInterval) {
 				then = now - (elapsed % fpsInterval);
-				setScrollPos(getScrollPos() + 1); // 减少滚动增量
+				// todo !!! here we need change scroll step when screen resize
+				setScrollPos(getScrollPos() + step + 1);
 				scrollUpdate();
 			}
 		}
@@ -103,12 +134,10 @@
 			fpsInterval = 1000 / fps;
 			then = Date.now();
 			startTime = then;
-			{ {/*  console.log(startTime);  */ } }
 			autoScroll();
 		}
 
 		startAnimating(30);
-		{ {/*  requestAnimationFrame(autoScroll);  */ } }
 	};
 
 	document.addEventListener("DOMContentLoaded", loaded)
@@ -150,17 +179,19 @@
 				{{ .description }}
 			</div>
 		</div>
-		<div class="member-grid noscroll">
-			{{ range .ambassadors }}
-			{{ partial "memberList" .}}
-			{{ end }}
+		<div class="grid-wrapper">
+			<div class="member-grid noscroll">
+				{{ range .ambassadors }}
+				{{ partial "memberList" .}}
+				{{ end }}
+			</div>
 		</div>
 </section>
 {{ end }}
 
-{{/*  <section class="section-5">
+{{/* <section class="section-5">
 	<div class="common-layout">
 	</div>
-</section>  */}}
+</section> */}}
 
 {{ end }}
