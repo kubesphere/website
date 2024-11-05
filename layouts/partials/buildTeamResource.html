@@ -14,13 +14,19 @@
 
 {{ $limit := 10}}
 
+{{ $error := false }}
+
 <!-- todo maybe we can remove errorf and use default json data -->
 {{ range seq 1 $limit }}
 	{{ $get_page_url := (printf "https://api.github.com/orgs/kubesphere/members?per_page=100&page=%d" .)}}
 
 	{{ with resources.GetRemote $get_page_url $opts}}
 		{{ with .Err }}
-			{{ errorf "%s" . }}
+			{{/*  {{ errorf "%s" . }}  */}}
+			{{ warnf "%s" . }}
+			{{ $error = true }}
+			{{ break }}
+
 		{{ else }}
 			<!-- get member list -->
 			{{ with .}}
@@ -35,7 +41,10 @@
 					{{ $member_url := .url}}		
 					{{ with resources.GetRemote $member_url $opts }}	
 						{{ with .Err }}
-							{{ errorf "%s" . }}
+							{{/*  {{ errorf "%s" . }}  */}}
+							{{ warnf "%s" . }}
+							{{ $error = true }}
+							{{ break }}
 						{{ else }}
 							{{ with .}}
 								{{ $member_data := . | transform.Unmarshal }}
@@ -56,7 +65,10 @@
 							{{ end }}
 						{{ end }}
 					{{ else }}
-						{{ errorf "Unable to get remote resource %q" $url }}
+						{{/*  {{ errorf "Unable to get remote resource %q" $url }}  */}}
+						{{ warnf "%s" . }}
+						{{ $error = true }}
+						{{ break }}
 					{{ end }}
 				{{ end }}
 				<!-- range get member info -->
@@ -65,13 +77,25 @@
 			<!-- get member list -->
 		{{ end }}
 	{{ else }}
-		{{ errorf "Unable to get remote resource %q" $url }}
+		{{/*  {{ errorf "Unable to get remote resource %q" $url }}  */}}
+		{{ warnf "%s" . }}
+		{{ $error = true }}
+		{{ break }}
 	{{ end }}
 
 {{ end }}
 
-{{ $json := jsonify $memberList}}
-{{ $r := resources.FromString "/json/members.json" $json }}
-{{ $r.Publish }}
+{{ if not $error}}
+	{{ $json := jsonify $memberList}}
+	{{ $r := resources.FromString "/json/members.json" $json }}
+	{{ $r.Publish }}
+{{ else }}
+	{{ warnf "get from github api error,try to use default member data"}}
+
+	{{ if not (fileExists "static/json/default_members.json") }}
+		{{ errorf "get memeber data error" }}
+	{{ end }}
+
+{{ end }}
 
 {{ end }}

@@ -1,6 +1,25 @@
 {{ define "main" }}
 
-{{ $memberList := getJSON "public/json/members.json" }}
+{{ $memberList := "" }}
+
+{{/*  if exists member.json but does not contain data  */}}
+{{ if fileExists "public/json/members.json"}}
+	{{ $memberList = getJSON "public/json/members.json"}}
+
+	{{ if eq (len $memberList) 0 }}
+		{{ if fileExists "public/json/default_members.json"}}
+			{{ $memberList = getJSON "public/json/default_members.json"}}
+		{{ else }}
+			{{ errorf "cannot get member data" }}
+		{{end}}
+	{{ end }}		
+{{ else }}
+	{{ if fileExists "public/json/default_members.json"}}
+		{{ $memberList = getJSON "public/json/default_members.json"}}
+	{{ else }}
+		{{ errorf "cannot get member data" }}
+	{{end}}
+{{ end }}
 
 {{/* todo !!! currently only support 5 colmuns */}}
 {{ $l := len $memberList }}
