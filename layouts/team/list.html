@@ -2,7 +2,6 @@
 
 {{ $memberList := "" }}
 
-{{/*  if exists member.json but does not contain data  */}}
 {{ if fileExists "public/json/members.json"}}
 	{{ $memberList = getJSON "public/json/members.json"}}
 
@@ -33,7 +32,6 @@
 	</div>
 </section>
 {{ end }}
-
 
 {{ with .Params.section2 }}
 <section class="section-2">
@@ -87,10 +85,6 @@
 			}
 		}
 
-		{ {/*  return  */ } }
-
-		{{/*  get member grid with scroll  */}}
-
 		let disableScroll = false;
 		const dpr = window.devicePixelRatio;
 		const step = 1 / dpr;
@@ -113,14 +107,12 @@
 
 		setScrollPos(step);
 		
-		{{/*  todo scroll loop has problem   */}}
 		{{/*  console.log(window.devicePixelRatio);
 		console.log("client:", clientHeight, " scrollHeight", scrollHeight, "placeholder:", placeholderHeight);  */}}
 
 		function scrollUpdate() {
 			let curHeight = getScrollPos();
 			if (!disableScroll) {
-				{ {/*  console.log("cur: ",curHeight);  */ } }
 				if (curHeight + placeholderHeight + 1 >= scrollHeight) {
 					setScrollPos(step);
 					disableScroll = true;
@@ -143,8 +135,9 @@
 			elapsed = now - then;
 			if (elapsed > fpsInterval) {
 				then = now - (elapsed % fpsInterval);
-				// todo !!! here we need change scroll step when screen resize
-				setScrollPos(getScrollPos() + step + 1);
+				// todo !!! here we need change scroll step when screen resize 
+				// still don't know the propriate step
+				setScrollPos(getScrollPos() + dpr + step + 1);
 				scrollUpdate();
 			}
 		}
