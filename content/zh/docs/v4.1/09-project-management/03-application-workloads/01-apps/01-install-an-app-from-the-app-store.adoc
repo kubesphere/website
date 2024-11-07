@@ -16,8 +16,10 @@ weight: 01
 
 == 前提条件
 
+// * {empty}
 include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
+// * 应用商店需已上架应用模板。有关更多信息，请参阅link:../../../../11-use-extensions/02-app-store/03-app-store-management/01-apps/06-publish-an-app-template/[上架应用模板]。
 
 == 操作步骤
 

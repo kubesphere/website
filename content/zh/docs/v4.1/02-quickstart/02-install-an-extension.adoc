@@ -1,0 +1,42 @@
+---
+title: "安装并使用扩展组件"
+keywords: "Kubernetes, KubeSphere, 快速入门, 安装组件, 示例, DevOps, 扩展组件功能"
+description: "介绍所有扩展组件，并演示如何安装扩展组件。"
+weight: 02
+---
+
+
+自 v4.1 开始，KubeSphere 解耦了一些核心功能组件，它们以扩展组件的方式无缝融入到 KubeSphere 控制台中，并独立维护版本，真正实现即插即用的应用级云原生操作系统。
+
+原有的功能模块，如 DevOps，服务网格，可观测（包括监控、告警、日志、事件、通知），应用商店，边缘计算，网络与存储管理等，现由扩展组件提供。因此，为了充分利用这些功能，建议您根据实际需求选择要安装的扩展组件，定制您专属的 KubeSphere 容器管理平台。
+
+
+== 了解扩展组件
+
+请参照下表了解扩展组件的功能，以便选择合适的扩展组件进行安装。
+
+include::../../_custom/extension-intro-ks.adoc[]
+
+== 安装扩展组件
+
+include::../../_custom/install-all-extensions.adoc[]
+
+== 管理扩展组件
+
+ifeval::["{file_output_type}" == "html"]
+您可以在扩展中心link:../../06-extension-user-guide/03-manage-components[配置、升级、禁用、卸载扩展组件]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+您可以在扩展中心配置、升级、禁用、卸载扩展组件，请参阅《{ks_product_right}扩展组件管理指南》。
+endif::[]
+
+== 使用扩展组件
+
+ifeval::["{file_output_type}" == "html"]
+扩展组件的使用方法各不相同，请参阅link:../../11-use-extensions/[扩展组件使用指南]，了解各个扩展组件的功能入口、配置及使用方法。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+扩展组件的使用方法各不相同，请参阅《{ks_product_right}扩展组件使用指南》，了解各个扩展组件的功能入口、配置及使用方法。
+endif::[]
