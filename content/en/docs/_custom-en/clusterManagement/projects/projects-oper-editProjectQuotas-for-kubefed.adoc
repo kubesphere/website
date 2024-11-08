@@ -1,38 +1,38 @@
 // :ks_include_id: 5e0c07e44f1440999412a1ec7581f173
-. 在**编辑项目配额**对话框，设置项目资源预留和资源上限。
+. In the **Edit Project Quotas** dialog, set the resource requests and resource limits.
 +
 --
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|CPU 预留
-|项目中所有容器 CPU 预留总和的最大值，单位为核。
+|CPU Requests
+|The maximum sum of CPU reservations for all containers in the project, in cores.
 
-|CPU 上限
-|项目中所有容器 CPU 上限总和的最大值，单位为核。
+|CPU Limit
+|The maximum sum of CPU limits for all containers in the project, in cores.
 
-|内存预留
-|项目中所有容器内存预留总和的最大值，单位为 GiB。
+|Memory Requests
+|The maximum sum of memory reservations for all containers in the project, in GiB.
 
-|内存上限
-|项目中所有容器内存上限总和的最大值，单位为 GiB。
+|Memory Limit
+|The maximum sum of memory limits for all containers in the project, in GiB.
 
-|GPU 类型
-|项目中容器所能使用的 GPU 类型。目前仅支持设置 NVIDIA GPU。
+|GPU Type
+|The type of GPU that containers in the project can use. Currently, only NVIDIA GPU is supported.
 
-|GPU 上限
-|项目中所有容器可以使用的 GPU 数量上限，单位为 GPU。
+|GPU Limit
+|The maximum number of GPUs that all containers in the project can use, in GPUs.
 |===
 --
 
-. 在**编辑项目配额**对话框的**存储资源配额**区域，设置存储资源总量和存储类关联资源。
+. In the **Edit Project Quotas** dialog, set the total storage resources and storage class-related resources in the **Storage Resource Quotas** area.
 
-. 在**编辑项目配额**对话框的**应用资源配额**区域，设置项目的应用资源数量上限，然后点击**确定**。
+. In the **Edit Project Quotas** dialog, set the maximum number of application resources for the project in the **Application Resource Quotas** area, then click **OK**.
 +
 --
-* 您可以设置项目中容器组、部署、有状态副本集、持久卷声明、服务、应用路由、保密字典和配置字典的数量上限。
+* You can set the maximum number of pods, deployments, statefulsets, persistent volume claims, services, ingresses, secrets, and configmaps in the project.
 
-* 点击**添加**可以设置多种应用资源的数量上限。
+* Click **Add** to set the maximum number for multiple application resources.
 --

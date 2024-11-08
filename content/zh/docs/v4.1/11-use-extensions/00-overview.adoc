@@ -1,0 +1,19 @@
+---
+title: "概述"
+keywords: "Kubernetes, {ks_product}, 扩展组件, 功能入口, 配置, 使用方法"
+description: "介绍 KubeSphere 扩展组件。"
+weight: 01
+---
+
+KubeSphere 扩展组件，是构建在 KubeSphere LuBan 之上，用来扩展并增强 KubeSphere 产品能力，以进一步满足企业各类型的业务需求。{ks_product_right}安装完成后，仅包含系统运行的必备基础功能，建议您安装扩展组件以充分利用{ks_product_both}的功能特性。
+
+了解并安装扩展组件后，请参阅本章节中的扩展组件教程了解如何访问、配置及使用各个扩展组件。
+
+
+== 扩展组件介绍
+
+include::../../_custom/extension-intro-ks.adoc[]
+
+== 安装扩展组件
+
+include::../../_custom/install-all-extensions.adoc[]

@@ -1,0 +1,106 @@
+[.admon.note,cols="a"]
+|===
+|说明
+
+|可在{ks_product_left} Web 控制台的扩展市场中查看各个扩展组件的更多信息。
+|===
+
+[%header,cols="1a,1a,3a"]
+|===
+|类别 |名称 |功能
+
+.10+|WhizardTelemetry 可观测平台
+|WhizardTelemetry 平台服务
+|它是 WhizardTelemetry 可观测平台各扩展组件的公共服务。是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。
+
+|WhizardTelemetry 数据流水线
+|提供可观测性数据的收集、转换和路由能力。
+
+|OpenSearch 分布式检索与分析引擎
+|KubeSphere 内置的日志存储扩展组件，用于存储日志、审计、事件、通知历史等可观测数据。
+
+|WhizardTelemetry 日志
+|提供多租户视角的云原生应用实时及历史日志收集、查询、导出、存储等功能，可对接如 ElasticSearch、OpenSearch、Kafka 等日志接收器。
+
+|WhizardTelemetry 事件
+|可长期保存 Kubernetes 相关对象产生的事件，并提供多租户视角的事件检索和查看功能。
+
+// |WhizardTelemetry 审计
+// |实时记录{ks_product_both}平台上的用户相关操作行为，并提供多租户视角的审计历史的检索及查看功能，可快速回溯相关用户的操作行为。
+
+|WhizardTelemetry 监控
+|提供多租户视角的云原生资源监控能力，包括针对集群，节点，工作负载、GPU、K8s 控制面等对象的核心监控指标进行实时和历史数据展示等功能。其中包含了 Whizard 可观测中心。
+
+|WhizardTelemetry 告警
+|基于 KubeSphere 采集的监控数据，可针对不同资源类型和监控指标，提供平台及租户视角的告警及告警规则管理功能。
+
+// |WhizardTelemetry 事件告警
+// |为 Kubernetes/KubeSphere 审计事件、Kubernetes 原生事件、以及 Kubernetes 日志定义告警规则，对传入的事件数据和日志数据进行评估，并将告警发送到指定的接收器如 HTTP 端点等。
+
+|WhizardTelemetry 通知
+|管理多租户 Kubernetes 环境中的通知。它能够接收来自不同发送者的告警、云事件以及其他类型的事件（例如审计和 Kubernetes 事件），并根据租户标签（如命名空间或用户）将通知发送给相应的租户接收器。
+
+|Grafana for WhizardTelemetry
+|一个开放且可组合的数据可视化和监控分析平台，内置众多仪表盘（Dashboard）来增强 WhizardTelemetry 可观测平台的可视化能力。
+
+|Grafana Loki for WhizardTelemetry
+|支持在 Grafana 控制台查看存储到 Loki 的 KubeSphere 日志、审计、事件及通知历史数据。
+
+.6+|平台管理
+|KubeSphere 应用商店管理
+|基于 OpenPitrix 的多云应用管理平台，用于上传、审核并管理多云环境中不同类型的应用。它可作为企业不同团队间数据、中间件和办公应用的共享与分发管理工具。
+
+|KubeSphere 服务网格
+|一款强大的微服务治理与微服务可视化管理工具。它提供包括蓝绿部署、金丝雀发布与流量镜像三种灰度发布策略，与流量监控、链路追踪两项可观测能力。
+
+|KubeSphere 多集群代理连接
+|它是一种通过代理在集群间建立网络连接的工具。如果主集群无法直接访问成员集群，您可以暴露主集群的代理服务地址，这样可以让成员集群通过代理连接到主集群。
+
+|联邦集群应用管理
+|一个旨在简化跨多个联邦 Kubernetes 集群管理应用程序的扩展组件，用户可以轻松地在多个联邦集群中部署、更新和管理应用程序。
+
+|KubeEdge 边缘计算框架
+|为集群添加边缘节点并在这些节点上运行工作负载，以便将本机容器化应用编排和管理扩展到边缘端设备。
+
+|Metrics Server
+|根据设定指标对 Pod 数量进行动态伸缩，使运行在上面的服务对指标的变化有一定的自适应能力。
+
+// |Spring Cloud
+// |提供微服务、微服务配置和微服务网关功能。
+
+// |数据库与中间件
+// |RadonDB DMP
+// |一款面向 Kubernetes 多云场景的企业级云原生数据库管理平台。能轻松实现多类型主流数据库的跨云部署、多云管理、智能观测与统一运维等，并完整构建围绕高性能、高可用、业务追踪、数据流转等场景下的生态闭环，助力客户真正实现数据库即服务。
+
+|CI/CD
+|DevOps
+|基于 Jenkins 提供开箱即用的 CI/CD 功能，提供一站式 DevOps 方案、支持使用图形编辑面板或 Jenkinsfile 创建流水线。
+
+.2+|网络
+|KubeSphere 网关
+|KubeSphere 网关是聚合服务、管理 KubeSphere 平台外部访问的扩展组件，现已形成“集群、项目、企业空间”三类资源管理维度的网关体系，支持管理集群网关、企业空间网关与项目网关。
+
+|KubeSphere 网络
+|管理集群的网络策略和容器组 IP 池。控制集群和项目中容器组的访问和被访问权限；创建容器组 IP 池并从 IP 池中分配 IP 地址到 Pod。
+
+// |应用路由工具
+// |为应用路由提供多项实用扩展能力，如域名重用校验，添加后，租户侧在创建应用路由无法将同一个域名应用在不同的项目中。
+
+|安全
+|Gatekeeper
+|Gatekeeper 是一个用于 Kubernetes 可灵活配置策略的准入控制器，利用 link:https://www.openpolicyagent.org/[Open Policy Agent (OPA)] 验证在 Kubernetes 集群上创建和更新资源的请求。
+
+// |OAuth2-Proxy
+// |提供统一认证接口确保所有应用通过相同流程保护，简化多应用环境下的身份验证管理，提高安全性和用户体验，适用于需要对多个后端应用进行统一认证管理的企业环境，以及需要通过第三方认证服务进行用户身份验证的应用。
+
+// |证书管理
+// |为 Kubernetes 中的工作负载创建 TLS 证书，并在证书过期前续订。
+
+|存储
+|KubeSphere 存储
+|管理卷快照、卷快照类、为存储类设置授权规则、设置存储卷自动扩展。
+
+// |人工智能
+// |NVIDIA GPU Operator
+// |基于 link:https://github.com/NVIDIA/gpu-operator[GPU Operator] 改造的扩展组件，支持在 Kubernetes 上创建、配置和管理 GPU。
+|===

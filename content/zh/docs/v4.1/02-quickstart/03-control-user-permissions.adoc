@@ -1,6 +1,6 @@
 ---
 title: "控制用户权限"
-linkTitle: "创建企业空间、项目、用户和平台角色"
+linkTitle: "创建企业空间、项目、用户和角色"
 keywords: "Kubernetes, KubeSphere, 快速入门, 用户, 权限"
 description: "介绍如何创建用户，并使用企业空间、项目和角色控制用户的访问权限。"
 weight: 03

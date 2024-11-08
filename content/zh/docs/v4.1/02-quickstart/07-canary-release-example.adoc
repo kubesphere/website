@@ -1,0 +1,156 @@
+---
+title: "金丝雀发布实践"
+keywords: "KubeSphere, Kubernetes, Bookinfo, Istio, 金丝雀发布, 服务网格"
+description: "了解如何在 KubeSphere 中部署金丝雀服务。"
+weight: 07
+---
+
+在金丝雀发布中，您可以引入应用的新版本，并向其发送一小部分流量来进行测试。同时，旧版本负责处理其余的流量。如果一切顺利，您就可以逐渐增加向新版本发送的流量，同时逐步停用旧版本。如果出现任何问题，您可以更改流量比例，回滚至先前版本。
+
+该方法能够高效地测试服务性能和可靠性，有助于在实际环境中发现潜在问题，同时不影响系统整体稳定性。
+
+== 前提条件
+
+* 准备一个项目（例如 **demo-project**）和一个已邀请到该项目的用户（例如 **project-regular**）。该用户在项目中应具有 **operator** 角色。有关更多信息，请参阅link:../03-control-user-permissions/[控制用户权限]。
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**和 **KubeSphere 网关**扩展组件。
+
+ifeval::["{file_output_type}" == "html"]
+* 启用项目网关，并为项目网关启用**链路追踪**功能。有关更多信息，请参阅link:../../11-use-extensions/12-gateway/01-project-gateway/01-enable-a-project-gateway[启用项目网关]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+* 启用项目网关，并为项目网关启用**链路追踪**功能。有关更多信息，请参阅《{ks_product_right}扩展组件使用指南》的“启用项目网关”章节。
+endif::[]
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果启用链路追踪后无法访问路由(Ingress)，请在路由中添加注解 `nginx.ingress.kubernetes.io/service-upstream: true`。
+|===
+
+
+* 已创建一个可用的自制应用，并且在创建时开启了**应用治理**，以便实现该应用的金丝雀发布。本教程中使用的示例应用是 Bookinfo。有关更多信息，请参见link:../06-deploy-bookinfo/[部署并访问 Bookinfo]。
+
+== 操作步骤
+
+=== 1. 创建金丝雀发布任务
+
+. 使用 **project-regular** 用户登录{ks_product_left} Web 控制台，点击**企业空间管理**并进入项目所在的企业空间，在项目列表中点击 **demo-project**。
+
+. 在左侧导航栏，选择**服务网格** > **灰度发布**，在**发布模式**页签下，点击**金丝雀发布**右侧的**创建**。
+
+. 设置任务名称，点击**下一步**。
+
+. 在**服务设置**页签，从下拉列表中选择您的应用和要实现金丝雀发布的服务。如果您同样使用示例应用 Bookinfo，请选择 **reviews** 并点击**下一步**。
+
+. 在**新版本设置**页签，设置新版本号 `v2`，并修改 `reviews` 的容器镜像地址（例如 `kubesphere/examples-bookinfo-reviews-v2:1.16.2`；将 `v1` 改为 `v2`），点击**下一步**。
+
+. 您可以使用具体比例或者使用请求内容（例如 `Http Header`、`Cookie` 和 `URI`）分别向这两个版本（`v1` 和 `v2`）发送流量。选择**指定流量分配**，并拖动中间的滑块来更改向这两个版本分别发送的流量比例（例如设置为各 50%）。操作完成后，点击**创建**。
++
+该发布任务也会同时创建新的部署，可在**应用负载 > 工作负载**页面查看新版本对应的部署。
+
+=== 2. 验证金丝雀发布
+
+现在您有两个可用的应用版本，请访问该应用以验证金丝雀发布。
+
+. link:../06-deploy-bookinfo//#_3_通过_nodeport_访问_bookinfo[访问 Bookinfo 网站]，重复刷新浏览器。您会看到 **Book Reviews** 板块以 50% 的比例在 v1 版本和 v2 版本之间切换，即不展示或展示 5 个黑色星标的评级。
+
+. 金丝雀发布任务创建后会显示在**发布任务**页签下。点击该任务查看详情。
+
+. 您可以看到每个版本分别收到一半流量。
+
+. 也可以在运行 KubeSphere 的机器上执行以下命令，直接获取虚拟服务来识别权重：
+
++
+--
+[source,bash]
+----
+kubectl -n demo-project get virtualservice -o yaml
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+- 当您执行上述命令时，请将 `demo-project` 替换为您自己的项目名称。
+- 如果您想在{ks_product_left} Web 控制台使用 kubectl 工具执行命令，则需要使用 `admin` 帐户登录。
+|===
+
+预期输出：
+
+[source,bash]
+----
+   ...
+   spec:
+     hosts:
+     - reviews
+     http:
+     - route:
+       - destination:
+           host: reviews
+           port:
+             number: 9080
+           subset: v1
+         weight: 50
+       - destination:
+           host: reviews
+           port:
+             number: 9080
+           subset: v2
+         weight: 50
+    ...
+----
+--
+
+=== 3. 查看网络拓扑
+
+. 在运行 KubeSphere 的机器上执行以下命令引入真实流量，模拟每 0.5 秒访问一次 Bookinfo。
++
+--
+[source,bash]
+----
+watch -n 0.5 "curl http://productpage.demo-project.192.168.0.2.nip.io:32277/productpage?u=normal"
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+请确保将 `demo-project`、`192.168.0.2` 和  `32277` 替换为您自己环境的实际值。
+|===
+--
+
+. 在**自制应用**页面，点击 **Bookinfo** 进入详情页，点击**流量监控**页签，您可以看到不同服务之间的通信、依赖关系、运行状态及性能。
+
+. 点击组件（例如 **reviews**），在右侧可以看到流量监控信息，显示**流量**、**成功率**和**持续时间**的实时数据。
+
+=== 4. 查看链路追踪详情
+
+KubeSphere 提供基于 link:https://www.jaegertracing.io/[Jaeger] 的分布式追踪功能，用来对基于微服务的分布式应用程序进行监控及故障排查。
+
+. 在**链路追踪**页签，可以清楚地看到请求的所有阶段及内部调用，以及每个阶段的调用耗时。
+
+. 点击任意条目，可以深入查看请求的详细信息及该请求被处理的位置（在哪个机器或者容器）。
+
+=== 5. 接管所有流量
+
+如果一切运行顺利，则可以将所有流量引入新版本。
+
+. 回到**灰度发布**页面，在**发布任务**页签，点击金丝雀发布任务。
+
+. 在弹出的对话框中，点击 **reviews v2** 右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**接管**。这代表 100% 的流量将会被发送到新版本 (v2)。
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果新版本出现任何问题，选择 v1 版本接管，即可回滚到之前的 v1 版本。
+|===
+
+. 再次访问 Bookinfo，多刷新几次浏览器，您会发现页面只显示 **reviews v2** 的结果（即带有黑色星标的评级）。

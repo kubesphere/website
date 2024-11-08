@@ -1,15 +1,15 @@
 ---
-title: "查看项目配额"
-keywords: "Kubernetes, {ks_product}, 联邦项目, 项目设置, 项目配额, 查看项目配额"
-description: "介绍如何查看项目配额。"
+title: "View Project Quotas"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster projects, project settings, project quotas, view project quotas"
+description: "Learn how to view project quotas."
 weight: 01
 ---
 
 :ks_permission: **Federated Project Viewing**
-:ks_navigation: **项目设置 > 项目配额**
+:ks_navigation: **Project Settings > Project Quotas**
 
 
-本节介绍如何查看项目配额。
+This section describes how to view project quotas.
 
 
 == Prerequisites
@@ -29,7 +29,7 @@ include::../../../../../_custom-en/multi-clusterProjectManagement/projectManagem
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 --
-**项目配额**页面提供以下资源信息：
+The **Project Quotas** page provides the following resource information:
 
 include::../../../../../_custom-en/multi-clusterProjectManagement/project-config/project-quota-para_v4.adoc[]
 --

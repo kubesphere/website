@@ -1,0 +1,190 @@
+---
+title: "创建并部署 WordPress"
+keywords: "Kubernetes, {ks_product}, 快速入门, 安装, 示例, 应用"
+description: "以安装 WordPress 为例，演示如何在 KubeSphere Web 控制台部署应用程序。"
+weight: 05
+---
+
+ifeval::["{file_output_type}" == "html"]
+本节以安装 WordPress 为例，演示如何在{ks_product_left} Web 控制台部署应用程序，并在集群外进行访问。有关应用资源管理的更多信息，请参阅link:../../09-project-management/[项目管理]。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+本节以安装 WordPress 为例，演示如何在{ks_product_left} Web 控制台部署应用程序，并在集群外进行访问。有关应用资源管理的更多信息，请参阅《{ks_product_right}项目管理指南》。
+endif::[]
+
+== WordPress 简介
+
+WordPress 是一款基于 PHP 的免费、开源内容管理系统，您可以使用 WordPress 搭建自己的网站。完整的 WordPress 应用程序包括以下 Kubernetes 对象，由 MySQL 作为后端数据库。
+
+image:/images/ks-qkcp/en/v4.1/WordPress.png[]
+
+
+== 前提条件
+
+* 准备一个项目（例如 **demo-project**）和一个已邀请到该项目的用户（例如 **project-regular**）。该用户在项目中应具有 **operator** 角色。有关更多信息，请参阅link:../03-control-user-permissions/[控制用户权限]。
+
+* {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**扩展组件。
+
+== 操作步骤
+
+=== 1. 创建保密字典
+
+创建两个保密字典，分别用于设置 MySQL 和 WordPress 的 root 密码。
+
+. 使用 **project-regular** 用户登录{ks_product_left} Web 控制台，点击**企业空间管理**并进入项目所在的企业空间，在项目列表中点击 **demo-project**。
+
+. 在左侧导航栏，选择**配置** > **保密字典**，在页面右侧点击**创建**。
+
+. 在**基本信息**页签，输入保密字典的基本信息（例如，将**名称**设置为 **mysql-secret**），点击**下一步**。
+
+. 在**数据配置**页签，点击**添加数据**添加键值对。
+
+. 将**键**和**值**分别设置为 **MYSQL_ROOT_PASSWORD** 和 **123456**，在页面右下角点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]保存设置。
+
+. 点击**创建**以创建保密字典，用于为 MySQL 提供 root 密码。
+
+. 重复以上步骤创建一个名为 **wordpress-secret** 的保密字典，将**键**和**值**分别设置为 **WORDPRESS_DB_PASSWORD** 和 **123456**，用于为 WordPress 提供 root 密码。
+
+
+=== 2. 创建持久卷声明
+
+创建持久卷声明用于存储 WordPress 应用数据。
+
+. 在左侧导航栏，选择**存储** > **持久卷声明**，在页面右侧点击**创建**。
+
+. 在**基本信息**页签，输入持久卷声明的基本信息（例如，将**名称**设置为 **wordpress-pvc**），点击**下一步**。
+
+. 在**存储设置**页签，点击**下一步**。
+
+. 在**高级设置**页签，点击**创建**即可。
+
+
+=== 3. 创建 MySQL 应用
+
+创建 MySQL 应用为 WordPress 提供数据库服务。
+
+. 在左侧导航栏，选择**服务网格** > **自制应用**，在页面右侧点击**创建**。
+
+. 在**基本信息**页面，输入应用基本信息（例如，将**名称**设置为 **wordpress**），点击**下一步**。
+
+. 在**服务设置**页面，点击**创建服务**为自制应用创建一个服务。
+
+. 在**创建服务**对话框，点击**有状态服务**。
+
+. 在弹出的**创建有状态服务**对话框，输入有状态服务的名称（例如 **mysql**）并点击**下一步**。
+
+. 在**容器组设置**页签，点击**添加容器**。
+
+. 在搜索框中输入 **mysql:5.6**，按下回车键，向下滚动鼠标，点击**使用默认镜像端口**。
++
+--
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+此时配置还未完成，请不要在页面右下角点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--
++
+. 在**容器组设置**页签的**高级设置**区域，将内存上限设置为 1000 Mi 或以上，否则 MySQL 可能因内存不足而无法启动。
+
+. 向下滚动鼠标到**环境变量**区域，选择**环境变量**，在下拉框中选择**来自保密字典**。参数设置如下：
+
+** **键**：设置为 **MYSQL_ROOT_PASSWORD**。
+
+** **资源**：设置为 **mysql-secret**。
+
+** **资源中的键**：设置为 **MYSQL_ROOT_PASSWORD**。
+
+. 点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]保存配置，然后点击**下一步**。
+
+. 在**存储设置**页签，点击**添加持久卷声明模板**。
+
+. 输入 PVC 名称前缀（例如，**mysql**），并指定挂载路径（模式：**读写**，路径：**/var/lib/mysql**）。
+
+. 点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]保存配置，然后点击**下一步**。
+
+. 在**高级设置**页签，点击**创建**以创建 MySQL 应用。
+
+
+=== 4. 创建 WordPress 应用
+
+. 再次点击**创建服务**。在弹出的**创建服务**对话框，点击**无状态服务**。
+
+. 在弹出的**创建无状态服务**对话框，输入无状态服务的名称（例如，**wordpress**）并点击**下一步**。
+
+. 在**容器组设置**页签，点击**添加容器**。
+
+. 在搜索框中输入 **wordpress:4.8-apache**，按下回车键，向下滚动鼠标，点击**使用默认镜像端口**。
++
+--
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+此时配置还未完成，请不要在页面右下角点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+. 向下滚动鼠标到**环境变量**区域，选择**环境变量**。此处需要添加两个环境变量，请按如下信息设置：
+
+** 在下拉框中选择**来自保密字典**，输入键名称 **WORDPRESS_DB_PASSWORD**，选择资源 **wordpress-secret** 和资源值 **WORDPRESS_DB_PASSWORD**。
+
+**  点击**添加环境变量**，分别输入键名称 **WORDPRESS_DB_HOST** 和值 **mysql**。
++
+--
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+**WORDPRESS_DB_HOST** 环境变量的值必须与link:#_3_创建_mysql_应用[创建 MySQL 应用]中创建的 MySQL 有状态服务的名称完全相同。否则，WordPress 将无法连接到 MySQL 数据库。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+. 点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]保存配置，然后点击**下一步**。
+
+. 在**存储设置**页签，点击**挂载卷**。
+
+. 在**持久卷**页签，点击**选择持久卷声明**。
+
+. 选择已创建的 **wordpress-pvc**，将模式设置为**读写**，并输入挂载路径 **/var/www/html**。
+
+. 点击image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18]保存配置，再点击**下一步**。
+
+. 在**高级设置**页签，点击**创建**。
+
+. 在**服务**页面，点击**下一步**。
+
+. 在**路由设置**页面，点击**创建**以创建 WordPress。您可以在**自制应用**页面查看已创建的应用。
+
+
+=== 5. 验证 WordPress 是否创建成功
+
+. 在左侧导航栏，选择**应用负载** > **工作负载**。
+
+. 分别检查**部署**页签和**有状态副本集**页签 **wordpress-v1** 和 **mysql-v1** 的运行状态，若两者状态都为**运行中**，则表明 WordPress 创建成功。
+
+
+=== 6. 通过 NodePort 访问 WordPress
+
+. 在左侧导航栏，选择**应用负载** > **服务**。
+
+. 点击 `wordpress` 右侧的 image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**编辑外部访问**。
+
+. 在**访问模式**中选择 **NodePort**，点击**确定**。
+
+. 点击 **wordpress** 进入详情页，在**资源状态**页签下的**端口**区域，您可以查看暴露的节点端口。
+
+. 在浏览器中输入 `<节点 IP>:<节点端口>`，即可从集群的外部访问 WordPress，如下图所示。
++
+--
+image::/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
+
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+取决于您的 Kubernetes 集群的部署环境，您可能需要在安全组中放行端口并配置相关的端口转发规则。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--

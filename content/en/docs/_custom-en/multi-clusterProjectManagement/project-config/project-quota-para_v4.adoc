@@ -2,44 +2,44 @@
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|CPU 上限
-|项目中所有容器 CPU 上限总和的最大值，单位为核。
+|CPU Limit
+|The maximum sum of CPU limits for all containers in the project, in cores.
 
-// |CPU 预留
-// |项目中所有容器 CPU 预留总和的最大值，单位为核。
+// |CPU Reservation
+// |The maximum sum of CPU reservations for all containers in the project, in cores.
 
-|内存上限
-|项目中所有容器内存上限总和的最大值，单位为 MiB。
+|Memory Limit
+|The maximum sum of memory limits for all containers in the project, in MiB.
 
-// |内存预留
-// |项目中所有容器内存预留总和的最大值，单位为 MiB。
+// |Memory Reservation
+// |The maximum sum of memory reservations for all containers in the project, in MiB.
 
-|容器组
-|项目中当前已创建的容器组数量，以及可以创建的容器组数量上限。
+|Pods
+|The current number of pods created in the project, and the maximum number of pods that can be created.
 
-|持久卷声明限制
-|项目中当前已创建的持久卷声明容量，以及可以创建的持久卷声明的容量上限。
+|PVC Limit
+|The current capacity of persistent volume claims created in the project, and the maximum capacity of persistent volume claims that can be created.
 
-|持久卷声明
-|项目中当前已创建的持久卷声明数量，以及可以创建的持久卷声明的数量上限。
+|PVC
+|The current number of persistent volume claims created in the project, and the maximum number of persistent volume claims that can be created.
 
-// |部署
-// |项目中当前已创建的部署数量，以及可以创建的部署数量上限。
+|Deployments
+|The current number of deployments created in the project, and the maximum number of deployments that can be created.
 
-// |有状态副本集
-// |项目中当前已创建的有状态副本集数量，以及可以创建的有状态副本集数量上限。
+|StatefulSets
+|The current number of stateful sets created in the project, and the maximum number of stateful sets that can be created.
 
-// |卷
-// |项目中当前已创建的卷数量，以及可以创建的卷数量上限。
+|Volumes
+|The current number of volumes created in the project, and the maximum number of volumes that can be created.
 
-// |服务
-// |项目中当前已创建的服务数量，以及可以创建的服务数量上限。
+|Services
+|The current number of services created in the project, and the maximum number of services that can be created.
 
-// |应用路由
-// |项目中当前已创建的应用路由数量，以及可以创建的应用路由数量上限。
+|Ingresses
+|The current number of ingresses created in the project, and the maximum number of ingresses that can be created.
 
-// |GPU 上限
-// |项目中当前已使用的 GPU 数量，以及可以使用的 GPU 数量上限，单位为 GPU。
+// |GPU Limit
+// |The current number of GPUs used in the project, and the maximum number of GPUs that can be used, in GPUs.
 |===

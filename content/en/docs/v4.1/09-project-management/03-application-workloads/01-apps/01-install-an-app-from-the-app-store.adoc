@@ -15,7 +15,10 @@ This section explains how to install applications from the App Store.
 
 == Prerequisites
 
+// * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+// * At least one application have been listed in the App Store. For more information, please refer to link:../../../../11-use-extensions/02-app-store/03-app-store-management/01-apps/06-publish-an-app-template/[Publish Application Templates].
 
 == Steps
 
