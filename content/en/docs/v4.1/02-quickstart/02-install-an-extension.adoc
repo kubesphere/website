@@ -1,0 +1,42 @@
+---
+title: "Install and Use Extensions"
+keywords: "Kubernetes, KubeSphere, quick start, install extensions, example, DevOps, extension features"
+description: "Introduce all extensions and demonstrate how to install them."
+weight: 02
+---
+
+
+Starting from v4.1, KubeSphere decouples some functional components, which are seamlessly integrated into the KubeSphere web console as extensions and maintained independently, truly achieving a plug-and-play cloud-native operating system.
+
+The original functional modules, such as DevOps, service mesh, observability (including monitoring, alerting, logging, events, notification), App Store, edge computing, network and storage management, are now provided by extensions. Therefore, to fully utilize these features, it is recommended that you select and install the extensions based on your actual needs, customizing your exclusive KubeSphere container management platform.
+
+
+== Extensions Overview
+
+Refer to the table below to understand the functions of extensions, so as to choose the appropriate extensions for installation.
+
+include::../../_custom-en/extension-intro-ks.adoc[]
+
+== Install Extensions
+
+include::../../_custom-en/install-all-extensions.adoc[]
+
+== Manage Extensions
+
+ifeval::["{file_output_type}" == "html"]
+You can link:../../06-extension-user-guide/03-manage-components[configure, update, disable, and uninstall extensions] in the Extensions Center.
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+You can configure, update, disable, and uninstall extensions in the Extensions Center. Please refer to the {ks_product-en} Extension Management Guide.
+endif::[]
+
+== Use Extensions
+
+ifeval::["{file_output_type}" == "html"]
+The usage methods of extensions vary. Please refer to the link:../../11-use-extensions/[Extension User Guide] to understand the entry, configuration, and usage methods of each extension.
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+The usage methods of extensions vary. Please refer to the {ks_product-en} Extension User Guide to get the entry, configuration, and usage methods of each extension.
+endif::[]

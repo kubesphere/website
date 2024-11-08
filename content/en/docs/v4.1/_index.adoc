@@ -18,11 +18,13 @@ sectionLink:
       - /docs/v4.1/02-quickstart/01-install-kubesphere.adoc
       - /docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere.adoc
       - /docs/v4.1/02-quickstart/03-control-user-permissions.adoc
+      - docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/04-offline-installation.adoc
       - /docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes.adoc
       - /docs/v4.1/07-cluster-management/10-multi-cluster-management
-      - /docs/v4.1/09-project-management/06-project-settings/02-project-roles/01-create-a-project-role.adoc
-      - /docs/v4.1/06-extension-user-guide/01-install-components-pdf.adoc
+      - /docs/v4.1/02-quickstart/02-install-an-extension.adoc
       - /docs/v4.1/10-toolbox/01-use-kubectl-tool.adoc
+      - docs/v4.1/09-project-management/03-application-workloads/01-apps/01-install-an-app-from-the-app-store.adoc
+      - docs/v4.1/09-project-management/03-application-workloads/01-apps/02-install-an-app-using-an-app-template.adoc
 
 section3:
   title: Run KubeSphere and Kubernetes Stack from the Cloud Service

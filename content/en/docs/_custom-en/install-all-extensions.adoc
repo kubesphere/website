@@ -1,0 +1,38 @@
+. Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
+
+. Click **Extensions Center** and search for you desired extension.
+
+. Click the extension name and click **Install** to enter the installation process.
+
+. On the **Version Selection** tab of the installation dialog, select the version number of the extension and install all required dependencies (if any). Then click **Next**.
++
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+During the installation, it detects whether the extension has dependencies. Dependencies are categorized as required and optional.
+
+If a required dependency is **Not Ready**, you need to install the required version first to ensure the normal use of the extension. Optional dependencies do not affect the installation of the extension.
+|===
+
+. On the **Extensions Installation** tab, make modifications to the configuration (if needed), and then click **Start Installation**.
++
+image:/images/ks-qkcp/en/v4.0/install-extensions.png[,100%]
+
+. After the installation is complete, click **Next** to configure the cluster agent.
+
+. On the **Cluster Selection** tab, select clusters (multiple clusters can be selected) by name and identifier to enable extensions in the target clusters.
+
+. On the **Diff Config** tab, edit the YAML configuration for the selected clusters separately, or leave it unchanged to use the default configuration. Click **OK** to start installing the cluster agent, and wait for it to complete.
++
+--
+After the installation is complete, extensions are enabled by default.
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|Some extensions do not require installing a cluster agent (i.e., there are no **Cluster Selection** and **Diff Config** tabs), so please refer to the actual page.
+|===
+--

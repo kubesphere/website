@@ -3,7 +3,7 @@ title: "Change Display Language"
 linkTitle: "Change Display Language"
 keywords: "Kubernetes, KubeSphere, cluster management, web console, change language"
 description: "This guide explains how to change the display language of the web console."
-weight: 04
+weight: 10
 ---
 
 This section explains how to change the display language of the {ks_product-en} web console.

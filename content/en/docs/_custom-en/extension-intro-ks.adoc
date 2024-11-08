@@ -1,0 +1,106 @@
+[.admon.note,cols="a"]
+|===
+|Note
+
+|You can get more information about each extension in the KubeSphere Marketplace on the {ks_product-en} web console.
+|===
+
+[%header,cols="1a,1a,3a"]
+|===
+|Category |Name |Function
+
+.10+|WhizardTelemetry Observability Platform
+|WhizardTelemetry Platform Service
+|It is the common service for all observability extensions of WhizardTelemetry Observability Platform. It is a common APIServer that providing backend platform services for all observability extensions.
+
+|WhizardTelemetry Data Pipeline
+|Provides the ability to collect, transform, and route observability data.
+
+|OpenSearch Distributed Search and Analytics Engine
+|KubeSphere's built-in log storage extension, used to store, search and analyze observability data including logs, auditing events, K8s events, and notification history etc.
+
+|WhizardTelemetry Logging
+|Provides multi-tenant real-time and historical log collection, query, export, storage, etc., for cloud-native applications, and can connect to log receivers such as ElasticSearch, OpenSearch, Kafka, etc.
+
+|WhizardTelemetry Events
+|Stores events of Kubernetes resources and provides multi-tenant event query and viewing functions.
+
+// |WhizardTelemetry Auditing
+// |It provides auditing management for Kubernetes and KubeSphere: records user behaviors on the {ks_product-en} platform in real-time, and provides audit history query and viewing functions, which can quickly trace back the behaviors of users.
+
+|WhizardTelemetry Monitoring
+|Provides multi-tenant monitoring capabilities for cloud-native resources, including real-time and historical data display of core monitoring indicators for objects such as clusters, nodes, workloads, GPU, K8s control plane, etc. It includes the Whizard Observability Center.
+
+|WhizardTelemetry Alerting
+|Based on the monitoring data collected by KubeSphere, it manages alerting and alerting rules for different resource types and metrics data.
+
+// |WhizardTelemetry Events Alerting
+// |Define alerting rules for Kubernetes/KubeSphere auditing events, Kubernetes native events, and Kubernetes logs, evaluate incoming event data and log data, and send alerts to specified receivers such as HTTP endpoints.
+
+|WhizardTelemetry Notification
+|Manages notifications in multi-tenant Kubernetes environments. It receives alerts, cloud events, and other types of events (such as audits and Kubernetes events) from different senders, and send notifications to corresponding tenant receivers based on tenant labels (such as namespaces or users).
+
+|Grafana for WhizardTelemetry
+|An open and composable observability and data visualization platform, with many built-in dashboards to enhance the visualization capabilities of the WhizardTelemetry Observability Platform.
+
+|Grafana Loki for WhizardTelemetry
+|Supports viewing KubeSphere logs, audits, events, and notification history data stored in Loki on the Grafana console.
+
+.6+|Platform Management
+|KubeSphere App Store Management
+|A multi-cloud application management platform based on OpenPitrix, used to upload, review, and manage different types of applications in multi-cloud environments. It can be used as a tool for sharing and distributing data, middleware, and office applications among different teams in the enterprise.
+
+|KubeSphere Service Mesh
+|A powerful microservice governance and microservice visualization management tool. It provides three grayscale release strategies including blue-green deployment, canary release, and traffic mirroring, and two observability capabilities including traffic monitoring and link tracing.
+
+|KubeSphere Multi-Cluster Agent Connection
+|It is a tool to establish network connections between clusters through the agent. If the host cluster cannot directly access the member clusters, you can expose the proxy service address of the host cluster, so that the member clusters can connect to the host cluster through the agent.
+
+|Application Management for Cluster Federation
+|An extension aimed at simplifying the management of applications across federated Kubernetes clusters. Users can easily deploy, update, and manage applications across multiple federated clusters.
+
+|KubeEdge Edge Computing Framework
+|Add edge nodes to the cluster and run workloads on these nodes to extend native containerized application orchestration and management to hosts at the Edge.
+
+|Metrics Server
+|Dynamically scale the number of pods based on metrics, allowing the services running on them to have a certain degree of self-adaptation to changes in metrics.
+
+// |Spring Cloud
+// |Provides microservices, microservice configuration, and microservice gateway functions.
+
+// |Database and Middleware
+// |RadonDB DMP
+// |An enterprise-grade cloud-native database management platform for Kubernetes multi-cloud environments. It can easily achieve cross-cloud deployment, multi-cloud management, intelligent observation, and unified operation and maintenance of mainstream databases, and fully build an ecological closed loop around high performance, high availability, business tracking, data circulation, etc., helping customers truly realize database as a service.
+
+|CI/CD
+|DevOps
+|Provides out-of-the-box CI/CD functions based on Jenkins, a one-stop DevOps solution, and supports creating pipelines using the graphical editing panel or Jenkinsfile.
+
+.2+|Networking
+|KubeSphere Gateway
+|KubeSphere Gateway is an extension that aggregates services and manages external access to the KubeSphere platform. It has now formed a gateway system with three resource management dimensions: cluster, project, and workspace, supporting the management of cluster gateways, workspace gateways, and project gateways.
+
+|KubeSphere Network
+|Manages network policies and pod IP pools for the cluster. Controls access to and from pods in the cluster and projects; creates pod IP pools and allocates IP addresses to pods from the IP pool.
+
+// |KubeSphere Ingress Utils
+// |Provides multiple practical extension capabilities for ingress, such as Domain Reuse Validation. Once added, tenants cannot apply the same domain name to different projects when creating ingresses.
+
+|Security
+|Gatekeeper
+|Gatekeeper is an admission controller for Kubernetes that allows flexible configuration of policies, using link:https://www.openpolicyagent.org/[Open Policy Agent (OPA)] to validate requests to create and update resources on Kubernetes clusters.
+
+// |OAuth2-Proxy
+// |Provides a unified authentication interface to ensure that all applications are protected through the same process, simplifying identity management in multi-application environments, enhancing application security and ease of access. It is suitable for enterprise environments that require unified authentication management for multiple backend applications, and applications that require user identity verification through third-party authentication services.
+
+// |Cert Manager
+// |Creates TLS certificates for workloads in Kubernetes and renews them before they expire.
+
+|Storage
+|KubeSphere Storage
+|Manages volume snapshots, volume snapshot classes, sets authorization rules for storage classes, and sets automatic scaling of storage volumes.
+
+// |AI
+// |NVIDIA GPU Operator
+// |An extension based on link:https://github.com/NVIDIA/gpu-operator[GPU Operator], supporting the creation, configuration, and management of GPUs on Kubernetes.
+|===

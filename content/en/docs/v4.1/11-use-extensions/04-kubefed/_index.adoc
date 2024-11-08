@@ -2,7 +2,7 @@
 title: "Application Management for Cluster Federation"
 keywords: "Kubernetes, {ks_product-en}, federated project"
 description: "Learn how to manage federated projects and how to manage application workloads, volumes, configuration resources, and project settings in federated projects."
-weight: 04
+weight: 05
 layout: "second"
 ---
 

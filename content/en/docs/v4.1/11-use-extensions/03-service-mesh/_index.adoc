@@ -2,7 +2,7 @@
 title: "KubeSphere Service Mesh"
 keywords: "Kubernetes, {ks_product-en}, Service Mesh"
 description: "Describes how to use the KubeSphere Service Mesh extension."
-weight: 03
+weight: 04
 layout: "second"
 ---
 
