@@ -1,0 +1,115 @@
+---
+title: "Deploy and Access Bookinfo"
+keywords: "KubeSphere, Kubernetes, Bookinfo, Istio"
+description: "Explore the functions of KubeSphere service mesh by deploying the sample application Bookinfo."
+weight: 06
+---
+
+As an open-source service mesh solution, link:https://istio.io/[Istio] provides powerful traffic management capabilities for microservices. The **KubeSphere Service Mesh** extension integrates Istio, providing users with a consistent microservice management experience.
+
+This section demonstrates how to deploy the sample application `Bookinfo`, which consists of four independent microservices, and how to access the application via NodePort.
+
+
+== Bookinfo Introduction
+
+The application displays information about a book, similar to a single catalog entry of an online book store. Displayed on the page is a description of the book, book details (ISBN, number of pages, and so on), and a few book reviews.
+
+The Bookinfo application is broken into four separate microservices:
+
+- **productpage**. The `productpage` microservice calls the `details` and `reviews` microservices to populate the page.
+- **details**. The `details` microservice contains book information.
+- **reviews**. The `reviews` microservice contains book reviews. It also calls the `ratings` microservice.
+- **ratings**. The `ratings` microservice contains book ranking information that accompanies a book review.
+
+There are 3 versions of the **reviews** microservice:
+
+- Version v1 doesn’t call the `ratings` service.
+- Version v2 calls the `ratings` service, and displays each rating as 1 to 5 black stars.
+- Version v3 calls the `ratings` service, and displays each rating as 1 to 5 red stars.
+
+The end-to-end architecture of the application is shown below. For more details, please refer to link:https://istio.io/latest/zh/docs/examples/bookinfo/[Bookinfo Application].
+
+image:/images/ks-qkcp/zh/v4.1/bookinfo.png[]
+
+== Prerequisites
+
+* Prepare a project (e.g., **demo-project**) and a user (e.g., **project-regular**). The user should have been invited to the project and has the **operator** role in it. For more information, please refer to link:../03-control-user-permissions/[Control User Permissions].
+
+* **KubeSphere Service Mesh** and **KubeSphere Gateway** should have been installed and enabled.
+
+ifeval::["{file_output_type}" == "html"]
+* Enable the project gateway and enable the **Tracing** function for the project gateway. For more information, please refer to link:../../11-use-extensions/12-gateway/01-project-gateway/01-enable-a-project-gateway[Enable Project Gateway].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+* Enable the project gateway and enable the **Tracing** function for the project gateway. For more information, please refer to the "Enable Project Gateway" section in the {ks_product-en} Extension User Guide.
+endif::[]
++
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+If you cannot access the Ingress after enabling tracing, please add the annotation `nginx.ingress.kubernetes.io/service-upstream: true` to the Ingress.
+|===
+
+== Steps
+
+=== 1. Deploy Bookinfo
+
+. Log in to the {ks_product-en} web console as the **project-regular** user, click **Workspace Management**, enter the workspace where the project is located, and click **demo-project** in the project list.
+
+. In the left navigation pane, select **Service Mesh** > **Composed AppS**, and click **Deploy Sample App** on the right side.
+
+. Click **Next** in the dialog box that appears. The **Service Settings** tab is pre-filled with the required fields for the four deployments (productpage, reviews, details, ratings), and you do not need to modify the settings. Just click **Create** on the **Ingress Settings** tab.
+
+=== 2. Verify if Bookinfo is Deployed Successfully
+
+In the left navigation pane, select **Application Workloads** > **Workloads**, and check the running status of these four deployments on the **Deployments** tab. If the status is **Running**, it indicates that the Bookinfo application has been deployed successfully.
+
+=== 3. Access Bookinfo via NodePort
+
+. In the left navigation pane, select **Application Workloads** > **Services**.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of `productpage`, and select **Edit External Access**.
+
+. Select **NodePort** in **Access Mode**, and click **OK**.
+
+. Click **productpage** to enter the details page, and you can view the exposed node port in the **Ports** area under the **Resource Status** tab.
+
+. Enter `<Node IP>:<Node Port>` in the browser to access Bookinfo from outside the cluster, as shown below.
++
+--
+image:/images/ks-qkcp/zh/v4.1/bookinfo-display.png[]
+
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+Depending on the deployment environment of your Kubernetes cluster, you may need to open the port in the security group and configure port forwarding rules.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Click **Normal user** at the bottom left of the page to view the complete Bookinfo page.
++
+--
+The left Book Details is provided by the `details` microservice, and the right Book Reviews is provided by the `reviews` microservice. Only Reviewer1 and Reviewer2 appear, and there is no rating (`ratings`) because the v1 version of the `reviews` microservice does not call the `ratings` service.
+
+If you want to call the `ratings` service and explore more traffic management functions, you can perform a link:../07-canary-release-example/[Canary Release] for this application.
+
+image:/images/ks-qkcp/zh/v4.1/ratings-page.png[]
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+ifeval::["{file_output_type}" == "html"]
+KubeSphere provides three grayscale strategies based on Istio, including blue-green deployment, canary release, and traffic mirroring. For more information, please refer to link:../../11-use-extensions/03-service-mesh/02-grayscale-release/[Grayscale Release].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+KubeSphere provides three grayscale strategies based on Istio, including blue-green deployment, canary release, and traffic mirroring. For more information, please refer to the "Grayscale Release" section in the {ks_product-en} Extension User Guide.
+endif::[]
+|===
+--

@@ -1,0 +1,19 @@
+---
+title: "Overview"
+keywords: "Kubernetes, {ks_product-en}, extensions, entry, configuration, how to use"
+description: "Introduces KubeSphere extensions."
+weight: 01
+---
+
+KubeSphere extensions are built on top of KubeSphere LuBan to extend and enhance KubeSphere's product capabilities, further meeting the various business needs. After {ks_product-en} is installed, it only includes the essential basic functions. It is recommended that you install extensions to fully utilize the features of {ks_product-en}.
+
+After understanding and installing extensions, please refer to the extension tutorials in this guide to learn how to access, configure, and use each extension.
+
+
+== KubeSphere Extensions
+
+include::../../_custom-en/extension-intro-ks.adoc[]
+
+== Install Extensions
+
+include::../../_custom-en/install-all-extensions.adoc[]

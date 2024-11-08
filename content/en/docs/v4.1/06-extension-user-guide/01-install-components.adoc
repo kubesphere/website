@@ -1,0 +1,30 @@
+---
+title: "Install Extensions"
+keywords: "Kubernetes, KubeSphere, Installation, Extensions, Multi-cluster"
+description: "Instructions on how to install extensions."
+weight: 01
+---
+
+This section explains how to install extensions.
+
+ifeval::["{file_output_type}" == "html"]
+For information on how to access, configure, and use each extension, please refer to link:../../11-use-extensions/[Extension User Guide].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+For information on how to access, configure, and use each extension, please refer to the {ks_product-en} Extension User Guide.
+endif::[]
+
+== Prerequisites
+
+ifeval::["{file_output_type}" == "html"]
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, please refer to link:../../05-users-and-roles/01-users/[Users] and link:../../05-users-and-roles/02-platform-roles/[Platform Roles].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, please refer to the {ks_product-en} User and Role Management Guide.
+endif::[]
+
+== Installation Steps
+
+include::../../_custom-en/install-all-extensions.adoc[]

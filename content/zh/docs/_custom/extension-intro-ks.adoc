@@ -23,7 +23,7 @@
 |提供多租户视角的云原生应用实时及历史日志收集、查询、导出、存储等功能，可对接如 ElasticSearch、OpenSearch、Kafka 等日志接收器。
 
 |WhizardTelemetry 事件
-|可长期保存 Kubernetes 相关对象产生的事件，并提供多租户视角的事件检索和查看功能。
+|可长期保存 Kubernetes 相关资源产生的事件，并提供多租户视角的事件检索和查看功能。
 
 // |WhizardTelemetry 审计
 // |实时记录{ks_product_both}平台上的用户相关操作行为，并提供多租户视角的审计历史的检索及查看功能，可快速回溯相关用户的操作行为。

@@ -1,0 +1,190 @@
+---
+title: "Compose and Deploy WordPress"
+keywords: "Kubernetes, {ks_product-en}, quick start, installation, example, application"
+description: "Take installing WordPress as an example to demonstrate how to deploy applications in KubeSphere."
+weight: 05
+---
+
+ifeval::["{file_output_type}" == "html"]
+This section takes installing WordPress as an example to demonstrate how to deploy applications on the {ks_product-en} web console and access them outside the cluster. For more information about application resource management, please refer to link:../../09-project-management/[Project Management].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+This section takes installing WordPress as an example to demonstrate how to deploy applications on the {ks_product-en} web console and access them outside the cluster. For more information about application resource management, please refer to the {ks_product-en} Project Management Guide.
+endif::[]
+
+== WordPress Introduction
+
+WordPress is a free, open-source content management system based on PHP. You can use WordPress to build your own website. The complete WordPress application includes the following Kubernetes objects, with MySQL as the backend database.
+
+image:/images/ks-qkcp/zh/v4.1/WordPress.png[]
+
+
+== Prerequisites
+
+* Prepare a project (e.g., **demo-project**) and a user (e.g., **project-regular**). The user should have been invited to the project and has the **operator** role in it. For more information, please refer to link:../03-control-user-permissions/[Control User Permissions].
+
+* **KubeSphere Service Mesh** should have been installed and enabled.
+
+== Steps
+
+=== 1. Create Secrets
+
+Create two Secrets to set the root passwords for MySQL and WordPress.
+
+. Log in to the {ks_product-en} web console as the **project-regular** user, click **Workspace Management**, enter the workspace where the project is located, and click **demo-project** in the project list.
+
+. In the left navigation pane, select **Configuration** > **Secrets**, and click **Create** on the right side of the page.
+
+. On the **Basic Information** tab, enter the basic information for the Secret (e.g., set the **Name** to **mysql-secret**), and click **Next**.
+
+. On the **Data Settings** tab, click **Add Data** to add key-value pairs.
+
+. Set the **Key** and **Value** to **MYSQL_ROOT_PASSWORD** and **123456**, respectively, and click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] at the bottom right of the page to save the settings.
+
+. Click **Create** to create the Secret for providing the root password for MySQL.
+
+. Repeat the above steps to create a Secret named **wordpress-secret**, set the **Key** and **Value** to **WORDPRESS_DB_PASSWORD** and **123456**, respectively, for providing the root password for WordPress.
+
+
+=== 2. Create Persistent Volume Claim
+
+Create persistent volume claims to store WordPress data.
+
+. In the left navigation pane, select **Storage** > **Persistent Volume Claims**, and click **Create** on the right side of the page.
+
+. On the **Basic Information** tab, enter the basic information for the Persistent Volume Claim (e.g., set the **Name** to **wordpress-pvc**), and click **Next**.
+
+. On the **Storage Settings** tab, click **Next**.
+
+. On the **Advanced Settings** tab, click **Create**.
+
+
+=== 3. Create MySQL Application
+
+Create a MySQL application to provide database services for WordPress.
+
+. In the left navigation pane, select **Service Mesh** > **Composed Apps**, and click **Create** on the right side of the page.
+
+. On the **Basic Information** page, enter the basic information for the application (e.g., set the **Name** to **wordpress**), and click **Next**.
+
+. On the **Service Settings** page, click **Create Service** to create a service for the composed app.
+
+. In the **Create Service** dialog box, click **Stateful Service**.
+
+. In the pop-up **Create Stateful Service** dialog box, enter the name of the stateful service (e.g., **mysql**) and click **Next**.
+
+. On the **Pod Settings** tab, click **Add Container**.
+
+. Enter **mysql:5.6** in the search box, press Enter, scroll down, and click **Use Default Port of Images**.
++
+--
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+The configuration is not complete at this time, so do not click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] at the bottom right of the page.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
++
+. In the **Advanced Settings** area on the **Pod Settings** tab, set the memory limit to 1000 Mi or higher, otherwise MySQL may fail to start due to insufficient memory.
+
+. Scroll down to the **Environment Variables** area, select **Environment Variables**, and set the parameters as follows:
+
+** **Key**: Set to **MYSQL_ROOT_PASSWORD**.
+
+** **Resource**: Set to **mysql-secret**.
+
+** **Key in Resource**: Set to **MYSQL_ROOT_PASSWORD**.
+
+. Click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] to save the configuration, then click **Next**.
+
+. On the **Storage Settings** tab, click **Add Persistent Volume Claim Template**.
+
+. Enter the PVC name prefix (e.g., **mysql**) and specify the mount path (Mode: **ReadWriteOnce**, Path: **/var/lib/mysql**).
+
+. Click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] to save the configuration, then click **Next**.
+
+. On the **Advanced Settings** tab, click **Create** to create the MySQL application.
+
+
+=== 4. Create WordPress Application
+
+. Click **Create Service** again. In the pop-up **Create Service** dialog box, click **Stateless Service**.
+
+. In the pop-up **Create Stateless Service** dialog box, enter the name of the stateless service (e.g., **wordpress**) and click **Next**.
+
+. On the **Pod Settings** tab, click **Add Container**.
+
+. Enter **wordpress:4.8-apache** in the search box, press Enter, scroll down, and click **Use Default Port of Images**.
++
+--
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+The configuration is not complete at this time, so do not click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] at the bottom right of the page.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Scroll down to the **Environment Variables** area, select **Environment Variables**. Here you need to add two environment variables, set them as follows:
+
+** Select **From secret** in the dropdown, enter the key name **WORDPRESS_DB_PASSWORD**, select the resource **wordpress-secret** and the resource value **WORDPRESS_DB_PASSWORD**.
+
+** Click **Add Environment Variable**, enter the key name **WORDPRESS_DB_HOST** and the value **mysql**.
++
+--
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+The value of the **WORDPRESS_DB_HOST** environment variable must be exactly the same as the name of the MySQL stateful service created in link:#_3_create_mysql_application[Create MySQL Application]. Otherwise, WordPress will not be able to connect to the MySQL database.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+. Click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] to save the configuration, then click **Next**.
+
+. On the **Storage Settings** tab, click **Mount Volume**.
+
+. On the **Persistent Volume** tab, click **Select Persistent Volume Claim**.
+
+. Select the created **wordpress-pvc**, set the mode to **ReadWriteOnce**, and enter the mount path **/var/www/html**.
+
+. Click image:/images/ks-qkcp/zh/icons/check-dark.svg[check,18,18] to save the configuration, then click **Next**.
+
+. On the **Advanced Settings** tab, click **Create**.
+
+. On the **Service** page, click **Next**.
+
+. On the **Ingress Settings** page, click **Create** to create WordPress. You can view the created application on the **Composed Apps** page.
+
+
+=== 5. Verify if WordPress is Deployed Successfully
+
+. In the left navigation pane, select **Application Workloads** > **Workloads**.
+
+. Check the running status of **wordpress-v1** and **mysql-v1** on the **Deployments** tab and **StatefulSets** tab, respectively. If both are in the **Running** state, it indicates that WordPress has been created successfully.
+
+
+=== 6. Access WordPress via NodePort
+
+. In the left navigation pane, select **Application Workloads** > **Services**.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of `wordpress`, and select **Edit External Access**.
+
+. Select **NodePort** in **Access Mode**, and click **OK**.
+
+. Click **wordpress** to enter the details page, and you can view the exposed node port in the **Ports** area under the **Resource Status** tab.
+
+. Enter `<Node IP>:<Node Port>` in the browser to access WordPress from outside the cluster, as shown below.
++
+--
+image::/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
+
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+Depending on the deployment environment of your Kubernetes cluster, you may need to open the port in the security group and configure port forwarding rules.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
