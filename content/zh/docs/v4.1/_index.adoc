@@ -21,7 +21,7 @@ sectionLink:
       - docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/04-offline-installation.adoc
       - /docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes.adoc
       - /docs/v4.1/07-cluster-management/10-multi-cluster-management
-      - /docs/v4.1/06-extension-user-guide/01-install-components.adoc
+      - /docs/v4.1/02-quickstart/02-install-an-extension.adoc
       - /docs/v4.1/10-toolbox/01-use-kubectl-tool.adoc
       - docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel.adoc
       - docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile.adoc

@@ -1,28 +1,26 @@
 ---
-title: "离线安装 KubeSphere"
-linkTitle: "离线安装 KubeSphere"
-keywords: "Kubernetes, KubeSphere, 安装, 离线包, 离线安装, 离线部署"
-description: "了解如何在离线环境下安装 KubeSphere 和 Kubernetes。"
-weight:  04
+title: "Air-gapped Installation"
+keywords: “Kubernetes, KubeSphere, installation, air-gapped”
+description: “Learn how to install KubeSphere and Kubernetes in the air-gapped environment.”
+weight: 04
 ---
 
+This section explains how to use KubeKey to create an image package in a connected environment and deploy Kubernetes and KubeSphere in an air-gapped environment.
 
-本节介绍如何使用 KubeKey 在联网状态下制作离线包，并在离线环境中部署 Kubernetes 和 KubeSphere。
+== Prerequisites
 
-== 前提条件
-
-* 参考如下示例准备至少三台主机。
+* Prepare at least three hosts as shown below.
 +
 [%header,cols="1a,1a, 4a"]
 |===
-|主机 IP	|主机名称	|角色
+|Host IP |Host Name |Role
 
-|192.168.0.2 |node1 |联网主机，用于制作离线包
-|192.168.0.3 |master |离线环境的主节点
-|192.168.0.4 |node2 |离线环境的镜像仓库节点（若已有镜像仓库，可忽略）
+|192.168.0.2 |node1 |Internet-connected host, used to create image packages
+|192.168.0.3 |master |Control plane node of the air-gapped environment
+|192.168.0.4 |node2 |Image registry node of the air-gapped environment (can be ignored if you already have an image registry)
 |===
 
-* master 和 node2 上需安装 socat 和 conntrack。
+* Install `socat` and `conntrack` on master and node2.
 +
 --
 [,bash]
@@ -30,108 +28,106 @@ weight:  04
 apt install socat conntrack -y
 ----
 
-如果集群节点使用其他操作系统，请将 **apt** 替换为操作系统对应的软件包管理工具。
+If the cluster nodes use other operating systems, replace **apt** with the corresponding package manager for the operating system.
 --
 
-== 获取版本信息及镜像列表
+== Get Version Information and Image List
 
-. 访问 https://get-images.kubesphere.io/
+. Visit https://get-images.kubesphere.io/
 
-. 选择需要部署的扩展组件。
+. Select the extensions you want to deploy.
 
-. 填入邮箱地址。
+. Enter your email address.
 
-. 点击**获取镜像列表**。
+. Click **Get Image List**.
 
-. 查看填写的邮箱，获取 KubeSphere 最新的版本信息以及镜像列表文件。
+. Check your email to get the latest version information of KubeSphere and the image list files.
 +
 --
-镜像列表文件如下：
+Image list files are as follows:
 
 [%header,cols="1a,3a"]
 |===
-|文件名 |描述
+|File Name |Description
 
 | `kubesphere-images.txt`
-|包含 KubeSphere 及扩展组件涉及的所有镜像，以及在华为云的镜像地址，可根据该文件中的列表将镜像同步至离线仓库中。
+|Contains all images related to KubeSphere and extensions, as well as their image addresses on Huawei Cloud. You can use the list in this file to synchronize images to your offline registry.
 
 | `kk-manifest.yaml`
-|包含 KubeSphere 及扩展组件涉及的所有镜像，可使用 kk 快速构建离线包。
+|Contains all images related to KubeSphere and extensions, which can be used to quickly build image packages with `kk`.
 
 | `kk-manifest-mirror.yaml`
-|包含华为云镜像仓库中 KubeSphere 及扩展组件涉及的所有镜像。访问 DockerHub 受限时可使用该 manifest 文件构建离线包。
+|Contains all images related to KubeSphere and extensions on Huawei Cloud's image registry. You can use this manifest file to build image packages when DockerHub access is restricted.
 |===
 --
 
-== 构建离线安装包
+== Build Image Package
 
-登录可访问互联网的节点 node1，参照以下步骤构建 KubeSphere 离线安装包。
+Log in to the internet-connected node `node1` and follow the steps below to build the KubeSphere image package.
 
-=== 1. 安装 KubeKey
+=== 1. Install KubeKey
 
-执行以下命令安装⼯具 KubeKey。
+Run the following command to install KubeKey.
 
-下载完成后当前目录下将生成 KubeKey 二进制文件 **kk**。
+After the download is complete, the KubeKey binary file **kk** will be generated in the current directory.
 
 [source,bash]
 ----
 curl -sSL https://get-kk.kubesphere.io | sh -
 ----
 
-
-=== 2. 创建 manifest 文件
+=== 2. Create Manifest File
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Note
 
 |
-若只需要使用 kk 打包 KubeSphere 镜像至离线环境中，可直接使用邮件中收到的 manifest 文件link:#_4_构建离线包[构建离线包]。无需另外创建或编辑 manifest 文件。
+If you only want to use `kk` to package KubeSphere images into the air-gapped environment, you can directly use the manifest file received in the email to link:#_4_build_image_package[Build Image Package]. No need to create or edit the manifest file.
 |===
 
-若需要使用 kk 部署 Kubernetes 以及镜像仓库，可参考以下步骤：
+If you want to use `kk` to deploy Kubernetes and the image registry, follow the steps below:
 
-. 如果您访问 DockerHub 受限，执行以下命令将 Kubernetes 镜像地址替换为阿里云仓库。
+. If you have restricted access to DockerHub, run the following command to replace the Kubernetes image address with the Alibaba Cloud registry.
 +
 [,bash]
 ----
 export KKZONE=cn
 ----
 
-. 创建 manifest 文件。
+. Create the manifests file.
 +
 --
 [source,bash]
 ----
-# 如需使用 kk 离线部署镜像仓库，添加 --with-registry 打包镜像仓库的安装文件
+# If you need to use kk to deploy the image registry offline, add --with-registry to package the installation files for the image registry
 ./kk create manifest --with-kubernetes v1.26.12 --with-registry
 ----
 
-该命令将创建一个 `manifest-sample.yaml` 文件。
+This command will create a `manifest-sample.yaml` file.
 --
 
-=== 3. 编辑 manifest 文件
+=== 3. Edit Manifest File
 
-若需要使用 kk 部署 Kubernetes 以及镜像仓库，将从邮件获取到的 KubeSphere 镜像列表添加到新创建的 manifest 文件中即可。
+If you want to use `kk` to deploy Kubernetes and the image registry, add the KubeSphere image list obtained from the email to the newly created manifest file.
 
-. 打开 manifest 文件。
+. Open the manifest file.
 +
 [source,bash]
 ----
 vi manifest-sample.yaml
 ----
 
-. 复制 `kk-manifest.yaml` 或 `kk-manifest-mirror.yaml`（若访问 DockerHub 受限） 中的镜像列表，添加到新创建的 `manifest-sample.yaml` 文件中。
+. Copy the image list from `kk-manifest.yaml` or `kk-manifest-mirror.yaml` (if DockerHub access is restricted) and add it to the newly created `manifest-sample.yaml` file.
 +
 --
 [.admon.attention,cols="a"]
 |===
-|注意
+|Note
 
-|以下 manifest 文件中的镜像列表仅为示例，建议通过 https://get-images.kubesphere.io/ 获取最新的镜像列表。
+|The image list in the following manifest file is for example only. Please get the latest image list through https://get-images.kubesphere.io/.
 
 |===
-
 
 [source,yaml]
 ----
@@ -343,63 +339,63 @@ spec:
 ----
 --
 
-=== 4. 构建离线包
+=== 4. Build Image Package
 
-执行以下命令构建包含 ks-core 及各扩展组件镜像的离线安装包。
+Run the following command to build an image package containing the images of ks-core and all extensions.
 
 [source,bash]
 ----
 ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
 ----
 
-执行成功后，将显示如下信息：
+After successful execution, the following message will be displayed:
 
 [source,bash]
 ----
 Pipeline[ArtifactExportPipeline] execute successfully
 ----
 
-=== 5. 下载 KubeSphere Core Helm Chart 
+=== 5. Download Helm Chart of KubeSphere Core
 
-. 安装 helm。
+. Install helm.
 +
 [source,bash]
 ----
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ----
 
-. 下载 KubeSphere Core Helm Chart。
+. Download the Helm Chart package of KubeSphere Core.
 +
 --
 [source,bash]
 ----
-VERSION=1.1.3     # Chart 版本
+VERSION=1.1.3     # Chart version
 helm fetch https://charts.kubesphere.io/main/ks-core-${VERSION}.tgz
 ----
 
-此处为示例版本，请访问 link:https://get-images.kubesphere.io[] 或 link:https://github.com/kubesphere/kubesphere/releases[KubeSphere GitHub 仓库]查看最新 chart 版本。
+This is an example version. Please visit link:https://get-images.kubesphere.io[] or link:https://github.com/kubesphere/kubesphere/releases[KubeSphere GitHub repository] to check the latest chart version.
 --
 
-== 离线部署
+== Air-gapped Deployment
 
-=== 1. 准备工作
+=== 1. Preparations
 
-将联网主机 node1 上的三个文件同步至离线环境的 master 节点。
+Sync the three files from the internet-connected host `node1` to the master node in the air-gapped environment.
 
 * `kk`
 * `kubesphere.tar.gz`
 * `ks-core-1.1.3.tgz`
 
-=== 2. 创建配置文件
+=== 2. Create Configuration File
 
-. 创建离线集群配置文件。
+. Create a configuration file for the air-gapped cluster.
 +
 [source,bash]
 ----
 ./kk create config --with-kubernetes v1.26.12
 ----
 
-. 修改配置文件。
+. Modify the configuration file.
 +
 --
 [source,bash]
@@ -409,16 +405,16 @@ vi config-sample.yaml
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-* 按照离线环境的实际配置修改节点信息。
-* 指定 `registry` 仓库的部署节点，用于 KubeKey 部署自建 Harbor 仓库。
-* `registry` 里可以指定 `type` 类型为 `harbor`，否则默认安装 docker registry。
-* 对于 Kubernetes v1.24+，建议将 `containerManager` 设置为 `containerd`。
+* Modify the node information according to the actual configuration of the air-gapped environment.
+* Specify the node where the `registry` to deploy, used for KubeKey to deploy the Harbor registry.
+* In `registry`, the value of `type` can be specified as `harbor`. Otherwise, the docker registry is installed by default.
+* For Kubernetes v1.24+, it is recommended to set `containerManager` to `containerd`.
 |===
 
-以下为示例配置文件。如需了解各参数的配置方法，请参阅link:../02-install-kubernetes-and-kubesphere/[此文档]。
+Below is an example configuration file. For more information on how to configure each parameter, please refer to link:../02-install-kubernetes-and-kubesphere/[this document].
 
 [source,yaml]
 ----
@@ -437,8 +433,8 @@ spec:
     - master
     worker:
     - node2
-    # 如需使用 kk 自动部署镜像仓库，请设置该主机组 （建议仓库与集群分离部署，减少相互影响）
-    # 如果需要部署 harbor 并且 containerManager 为 containerd 时，由于部署 harbor 依赖 docker，建议单独节点部署 harbor 
+    # If you want to use kk to automatically deploy the image registry, set this host group (it is recommended to deploy the registry separately from the cluster to reduce mutual influence)
+    # If you want to deploy harbor and the containerManager is containerd, since deploying harbor depends on docker, it is recommended to deploy harbor on a separate node
     registry:
     - node2
   controlPlaneEndpoint:
@@ -459,19 +455,19 @@ spec:
     multusCNI:
       enabled: false
   registry:
-    # 如需使用 kk 部署 harbor, 可将该参数设置为 harbor，不设置该参数且需使用 kk 创建容器镜像仓库，将默认使用 docker registry。
+    # If you want to use kk to deploy harbor, you can set this parameter to harbor; if this parameter is not set and you need to use kk to create an image registry, it will default to using the docker registry.
     # type: harbor
-    # 如使用 kk 部署的 harbor 或其他需要登录的仓库，需设置对应仓库的 auths，如使用 kk 创建默认的 docker registry 仓库，则无需配置 auths 参数。
+    # If you use the harbor deployed by kk or other registries that require login, you should configure the auths parameter for the corresponding registry; if you use the default docker registry created by kk, you do not need to configure the auths parameter.
     auths:
       "dockerhub.kubekey.local":
-        # 部署 harbor 时需指定 harbor 帐号密码
+        # Specify the harbor username and password when deploying harbor
         # username: admin
         # password: Harbor12345
         skipTLSVerify: true
-    # 设置集群部署时使用的私有仓库地址。如果您已有可用的镜像仓库，请替换为您的实际镜像仓库地址。
-    # 如果离线包中为原始 dockerhub 镜像（即 manifest 文件中的镜像地址为 docker.io/***），可以将该参数设置为 dockerhub.kubekey.local/ks, 表示将镜像全部推送至名为 ks 的 harbor 项目中。
+    # Set the private registry address used for cluster deployment. If you already have an image registry, replace it with your actual image registry address.
+    # If the image package contains the original dockerhub images (i.e., the image addresses in the manifest file are docker.io/***), you can set this parameter to dockerhub.kubekey.local/ks, indicating that all images will be pushed to the harbor project named ks.
     privateRegistry: "dockerhub.kubekey.local" 
-    # 如果构建离线包时 Kubernetes 镜像使用的是阿里云仓库镜像，需配置该参数。如果使用 dockerhub 镜像，则无需配置此参数。
+    # If the Kubernetes images used when building the image package are from the Alibaba Cloud registry, configure this parameter. If dockerhub images are used, you do not need to configure this parameter.
     namespaceOverride: "kubesphereio"
     registryMirrors: []
     insecureRegistries: []
@@ -479,54 +475,54 @@ spec:
 ----
 --
 
-=== 3. 创建镜像仓库
+=== 3. Create Image Registry
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如果您已有可用的镜像仓库，可跳过此步骤。
+If you already have an image registry, you can skip this step.
 |===
 
-执行以下命令创建镜像仓库。
+Run the following command to create the image registry.
 
 [source,bash]
 ----
 ./kk init registry -f config-sample.yaml -a kubesphere.tar.gz
 ----
 
-* `config-sample.yaml` 为离线集群的配置文件。
+* `config-sample.yaml` is the configuration file for the air-gapped cluster.
 
-* `kubesphere.tar.gz` 为包含 ks-core 及各扩展组件镜像的离线安装包。
+* `kubesphere.tar.gz` is the installation package containing the images of ks-core and all extensions.
 
-如果显示如下信息，则表明镜像仓库创建成功。
+If the following message is displayed, the image registry has been created successfully.
 
 [source,bash]
 ----
 Pipeline[InitRegistryPipeline] execute successfully
 ----
 
-=== 4. 创建 harbor 项目（若镜像仓库为 Harbor）
+=== 4. Create Harbor Projects (if the Image Registry is Harbor)
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-由于 Harbor 项目存在访问控制（RBAC）的限制，即只有指定角色的用户才能执行某些操作。如果您未创建项目，则镜像不能被推送到 Harbor。Harbor 中有两种类型的项目：
+As Harbor adopts the Role-based Access Control (RBAC) mechanism, which means that only specified users can perform certain operations. Therefore, you must create a project before pushing images to Harbor. Harbor supports two types of projects:
 
-* 公共项目（Public）：任何用户都可以从这个项目中拉取镜像。
-* 私有项目（Private）：只有作为项目成员的用户可以拉取镜像。
+* Public Project: Any user can pull images from the project.
+* Private Project: Only project members can pull images from the project.
 
-Harbor 管理员账号：**admin**，密码：**Harbor12345**。
+Harbor admin account: **admin**, password: **Harbor12345**.
 
-harbor 安装文件在 `/opt/harbor` 目录下，可在该目录下对 harbor 进行运维。
+The harbor installation files are in the `/opt/harbor` directory, where you can perform maintenance on harbor.
 |===
 
-执行以下命令创建 harbor 项目。
+Run the following command to create Harbor projects.
 
-. 创建脚本配置文件。
+. Create the configuration script.
 +
 --
 [source,bash]
@@ -552,7 +548,7 @@ vi create_project_harbor.sh
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-url="https://dockerhub.kubekey.local"  # 或修改为实际镜像仓库地址
+url="https://dockerhub.kubekey.local"  # or modify to the actual image registry address
 user="admin"
 passwd="Harbor12345"
 
@@ -594,12 +590,12 @@ harbor_projects=(
 
 for project in "${harbor_projects[@]}"; do
     echo "creating $project"
-    curl -u "${user}:${passwd}" -X POST -H "Content-Type: application/json" "${url}/api/v2.0/projects" -d "{ \"project_name\": \"${project}\", \"public\": true}" -k  # 注意在 curl 命令末尾加上 -k
+    curl -u "${user}:${passwd}" -X POST -H "Content-Type: application/json" "${url}/api/v2.0/projects" -d "{ \"project_name\": \"${project}\", \"public\": true}" -k  # Note to add -k at the end of the curl command
 done
 ----
 --
 
-. 创建 Harbor 项目。
+. Create Harbor projects.
 +
 --
 [source,bash]
@@ -613,10 +609,9 @@ chmod +x create_project_harbor.sh
 ----
 --
 
+=== 5. Install Kubernetes
 
-=== 5. 安装 Kubernetes
-
-执行以下命令创建 Kubernetes 集群：
+Run the following command to create the Kubernetes cluster:
 
 [source,bash]
 ----
@@ -625,13 +620,13 @@ chmod +x create_project_harbor.sh
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-指定 --with-local-storage 参数会默认部署 openebs localpv，如需对接其他存储，可在 Kubernetes 集群部署完成后自行安装。
+Specifying the --with-local-storage parameter will default to deploying `openebs localpv`. If you need to connect to other storage, you can install it later after the Kubernetes cluster is deployed.
 |===
 
-如果显示如下信息，则表明 Kubernetes 集群创建成功。
+If the following message is displayed, the Kubernetes cluster has been created successfully.
 
 [source,bash]
 ----
@@ -639,9 +634,9 @@ Pipeline[CreateclusterPipeline] execute successfully
 Installation is complete.
 ----
 
-=== 6. 安装 KubeSphere
+=== 6. Install KubeSphere
 
-. 安装 KubeSphere。
+. Install KubeSphere.
 +
 --
 [source,bash]
@@ -655,15 +650,15 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core ks-core-1
 ----
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-* `ksExtensionRepository.image.tag` 为之前获取到的 Extensions Museum 版本（即 https://get-images.kubesphere.io/ 上展示的最新扩展组件仓库版本）。
+* `ksExtensionRepository.image.tag` is the Extensions Museum version obtained earlier (i.e., the latest extension repository version displayed on https://get-images.kubesphere.io/).
 
-* 如需高可用部署 KubeSphere，可在命令中添加 `--set ha.enabled=true,redisHA.enabled=true`。
+* If you need to deploy high availability in KubeSphere, add `--set ha.enabled=true,redisHA.enabled=true` to the command.
 |===
 
-如果显示如下信息，则表明 KubeSphere 安装成功：
+If the following message is displayed, KubeSphere has been installed successfully:
 
 [source,bash]
 ----
@@ -695,12 +690,12 @@ For additional information and details, please visit https://kubesphere.io.
 ----
 --
 
-
-. 从成功信息中的 **Console**、**Account** 和 **Password** 参数分别获取{ks_product_left} Web 控制台的 IP 地址、管理员用户名和管理员密码，并使用网页浏览器登录{ks_product_left} Web 控制台。
+. From the successful information, retrieve the **Console**, **Account**, and **Password** parameters to obtain the IP address of the {ks_product-en} web console, the admin username, and the admin password. Use a web browser to log in to the {ks_product-en} web console.
 +
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
-|取决于您的硬件和网络环境，您可能需要配置流量转发规则并在防火墙中放行 30880 端口。
+|
+Depending on your hardware and network environment, you may need to configure traffic forwarding rules and open port 30880 in the firewall. 
 |===

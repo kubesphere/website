@@ -1,6 +1,6 @@
 ---
 title: "KubeSphere App Store Management"
-weight: 02
+weight: 03
 layout: "second"
 ---
 

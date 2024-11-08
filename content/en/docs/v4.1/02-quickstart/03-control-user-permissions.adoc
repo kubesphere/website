@@ -1,6 +1,6 @@
 ---
-title: "Create Workspaces, Projects, Users, and Platform Roles"
-linkTitle: "Control User Permissions"
+title: "Control User Permissions"
+linkTitle: "Create Workspaces, Projects, Users, and Roles"
 keywords: "Kubernetes, KubeSphere, Quick Start, User Permissions"
 description: "Learn how to create users and control their permissions by roles in workspaces and projects."
 weight: 03
