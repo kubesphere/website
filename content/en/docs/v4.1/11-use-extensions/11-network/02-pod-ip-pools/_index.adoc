@@ -1,12 +1,12 @@
 ---
-title: "容器组 IP 池"
-keywords: "Kubernetes, {ks_product}, 集群管理, 容器组 IP 池"
-description: "介绍如何管理集群容器组 IP 池。"
+title: "Pod IP Pool"
+keywords: "Kubernetes, {ks_product-en}, cluster management, pod IP pool"
+description: "Introduce how to manage cluster pod IP pools."
 weight: 02
 layout: "second"
 ---
 
 
-本节介绍如何管理集群的容器组 IP 池。
+This section introduces how to manage cluster pod IP pools.
 
-容器组 IP 池用于为容器组分配 IP 地址。每个容器组 IP 池包含一个可在集群内部访问的私网 IP 网段，您可以在创建工作负载或任务时指定容器组 IP 池。
+Pod IP pools are used to allocate IP addresses to pods. Each pod IP pool contains a private IP network segment that can be accessed within the cluster. You can specify a pod IP pool when creating workloads or jobs.

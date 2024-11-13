@@ -22,8 +22,6 @@ include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
 
 == Steps

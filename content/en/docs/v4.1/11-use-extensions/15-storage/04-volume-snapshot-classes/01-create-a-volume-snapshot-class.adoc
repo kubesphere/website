@@ -1,29 +1,26 @@
-
 ---
-title: "创建卷快照类"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照, 创建卷快照类"
-description: "介绍如何创建卷快照。"
+title: "Create Volume Snapshot Classes"
+keywords: "Kubernetes, {ks_product-en}, cluster management, storage, volume snapshots, create volume snapshot class"
+description: "Learn how to create a volume snapshot class."
 weight: 01
 ---
 
 
-:ks_permission: **卷快照类管理**
-:ks_navigation: **存储 > 卷快照类**
+:ks_permission: **Volume Snapshot Classes Management**
+:ks_navigation: **Storage > Volume Snapshot Classes**
 
 
-本节介绍如何创建卷快照类。
+This section describes how to create a volume snapshot class.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* 为使卷快照类可以正常提供存储资源，您需要提前配置存储系统并安装与存储系统对应的存储插件。有关更多信息，请联系您的存储系统提供商。
+* To ensure that the volume snapshot class can provide storage resources normally, you need to configure the storage system in advance and install the storage plugin corresponding to the storage system. For more information, contact your storage system provider.
 
 
 == Steps
@@ -40,41 +37,41 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**基本信息**页签，设置卷快照类的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the volume snapshot class, then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|卷快照类的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+|Name
+|The name of the volume snapshot class. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
-|存储类型
-|块存储、对象存储或文件存储。
+|Storage Type
+|Block storage, object storage, or file storage.
 
-|别名
-|卷快照类的别名。不同卷快照类的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the volume snapshot class. Different volume snapshot classes can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), must not start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|卷快照类的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the volume snapshot class. The description can contain any characters and can be up to 256 characters long.
 |===
 --
 
-. 在**卷快照类设置**页签，设置卷快照类的供应者和删除策略，然后点击**创建**。
+. On the **Volume Snapshot Class Settings** tab, set the Provisioner and deletion policy for the volume snapshot class, then click **Create**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|供应者
-|卷快照类使用的存储插件。
+|Provisioner
+|The storage plugin used by the volume snapshot class.
 
-|删除策略
+|Deletion Policy
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-deletionPolicy.adoc[]
 |===
 
-卷快照类创建完成后将显示在卷快照类列表中。
+After the volume snapshot class is created, it will be displayed in the volume snapshot class list.
 --

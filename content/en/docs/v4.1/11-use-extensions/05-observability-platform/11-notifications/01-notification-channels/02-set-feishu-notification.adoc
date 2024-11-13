@@ -24,8 +24,6 @@ weight: 02
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
 
 * 您需要提前从飞书平台获取应用或群机器人的访问参数。有关更多信息，请参阅link:https://open.feishu.cn/document/ukTMukTMukTM/uITNz4iM1MjLyUzM[飞书开发者文档]。

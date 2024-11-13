@@ -1,34 +1,31 @@
 ---
-title: "查看企业空间网关信息"
-keywords: "Kubernetes, {ks_product}, 企业空间管理, 企业空间设置, 网关设置, 查看企业空间网关信息"
-description: "介绍如何查看企业空间网关信息。"
+title: "View Workspace Gateway Information"
+keywords: "Kubernetes, {ks_product-en}, workspace management, workspace settings, gateway settings, view workspace gateway information"
+description: "Introduce how to view workspace gateway information."
 weight: 02
 ---
 
 
-:ks_permission: **企业空间网关查看**
-:ks_navigation: **企业空间设置 > 网关设置**
+:ks_permission: **Workspace Gateway Viewing**
+:ks_navigation: **Workspace Settings > Gateway Settings**
 
 
-本节介绍如何查看企业空间网关信息。
+This section introduces how to view workspace gateway information.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如果已启用集群网关，在企业空间的网关设置页面也可以查看集群网关的信息。
+If the cluster gateway has been enabled, you can also view the cluster gateway information on the workspace's gateway settings page.
 |===
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网关**扩展组件。
+* **KubeSphere Gateway** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
-
 
 
 == Steps
@@ -40,7 +37,7 @@ include::../../../../_custom-en/workspaceManagement/workspaceManagement-oper-ope
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 --
-**网关设置**页面提供以下信息：
+The **Gateway Settings** page provides the following information:
 
 include::../../../../_custom-en/clusterManagement/gatewaySettings/gatewaySettings-para-gatewayCard.adoc[]
 --

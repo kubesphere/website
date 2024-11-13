@@ -21,8 +21,6 @@ weight: 01
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
 * 您需要提前准备 Spring Cloud Gateway 容器镜像。有关更多信息，请参阅 link:https://spring.io/projects/spring-cloud-gateway#overview[Spring Cloud Gateway] 官方文档。本节使用 registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest 容器镜像作为示例，您也可以根据需要自行构建容器镜像。
 
 

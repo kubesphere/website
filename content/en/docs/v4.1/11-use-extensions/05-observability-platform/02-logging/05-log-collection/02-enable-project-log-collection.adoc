@@ -23,11 +23,8 @@ weight: 02
 
 == Prerequisites
 
-
 * {empty}
 include::../../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-
 
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志**扩展组件，并已link:../01-enable-logsidecar/[启用日志收集]。
 

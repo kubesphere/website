@@ -1,32 +1,29 @@
 ---
-title: "将容器组 IP 池分配到项目"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 禁止自动分配"
-description: "介绍如何将容器组 IP 池分配到项目。"
+title: "Assign Pod IP Pools to Projects"
+keywords: "Kubernetes, {ks_product-en}, cluster management, network, pod IP pool, prohibit automatic allocation"
+description: "Introduce how to assign pod IP pools to projects."
 weight: 04
 ---
 
-:ks_permission: **集群网络资源管理**
-:ks_navigation: **网络 > 容器组 IP 池**
+:ks_permission: **Cluster Network Resource Management**
+:ks_navigation: **Network > Pod IP Pools**
 
 
-本节介绍如何将容器组 IP 池分配到项目。
+This section introduces how to assign pod IP pools to projects.
 
-若项目被分配到容器组 IP 池，在该项目中创建工作负载和任务时，若不指定容器组 IP 池，项目中的容器组会默认分配到该容器组 IP 池。
+If a project is assigned to a pod IP pool, when creating workloads and jobs in the project, if a pod IP pool is not specified, the pods in the project will be assigned to the default pod IP pool.
 
-若项目未分配到容器组 IP 池，即项目未与任何容器组 IP 池绑定，在该项目中创建工作负载和任务时，若不指定容器组 IP 池，项目中的容器组将被分配到任一可用的容器组 IP 池。
+If a project is not assigned to any pod IP pool, i.e., the project is not bound to any pod IP pool, when creating workloads and jobs in the project, if a pod IP pool is not specified, the pods in the project will be assigned to any available pod IP pool.
 
-一个 IP 池可以分配给多个项目，一个项目可以绑定多个 IP 池。
+One IP pool can be assigned to multiple projects, and one project can be bound to multiple IP pools.
 
 
 == Prerequisites
 
-
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
+* **KubeSphere Network** should have been installed and enabled.
 
 
 == Steps
@@ -37,10 +34,10 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClu
 
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
-. 在容器组 IP 池列表中点击一个容器组 IP 池的名称打开其详情页面。
+. Click the name of a pod IP pool in the pod IP pool list to open its details page.
 
-. 在**项目**页签下点击**新增项目**，在下拉列表中选择一个项目，然后点击**确定**。
+. Click **Add Project** under the **Projects** tab, select a project from the dropdown list, and then click **OK**.
 
-. 点击项目右侧的image:/images/ks-qkcp/zh/icons/trash-light.svg[trash,18,18]，解除容器组 IP 池和该项目的绑定。点击右上角的**移除全部**，解除容器组 IP 池和所有已分配项目的绑定。
+. Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash,18,18] on the right side of the project to unbind the pod IP pool from the project. Click **Remove All** in the upper right corner to unbind the pod IP pool from all assigned projects.
 +
-移除项目后，项目将不再受该 IP 池的资源分配限制，已经分配 IP 地址的项目容器组不受影响。
+After removing a project, the project will no longer be subject to the resource allocation restrictions of the IP pool, and the pods in the project that have already been assigned IP addresses will not be affected.

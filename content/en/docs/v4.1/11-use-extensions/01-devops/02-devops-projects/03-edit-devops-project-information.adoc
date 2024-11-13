@@ -18,8 +18,6 @@ You can edit the alias and description of a DevOps project. KubeSphere does not 
 
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
 * **DevOps** must be installed and enabled.
 
 

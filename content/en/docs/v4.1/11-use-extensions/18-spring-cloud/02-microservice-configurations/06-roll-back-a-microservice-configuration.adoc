@@ -22,8 +22,6 @@ weight: 06
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
 
-
-
 == Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]

@@ -1,2 +1,2 @@
 // :ks_include_id: a2112616394340108e2af64c91d2c33d
-卷快照内容对应的持久卷的容量。
+The capacity of the persistent volume corresponding to the volume snapshot content.

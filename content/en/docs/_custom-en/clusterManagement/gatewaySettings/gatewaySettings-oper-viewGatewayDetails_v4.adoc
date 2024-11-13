@@ -1,91 +1,90 @@
-// :ks_include_id: 2603654cc618449f9ae430c3041a361f
-. 在页面右侧选择**管理 > 查看详情**打开网关详情页面。
+. On the right side of the page, select **Manage > View Details** to open the gateway details page.
 
-. 在网关详情页面左侧的**属性**区域查看网关的资源属性。
+. On the gateway details page, view the resource attributes of the gateway in the **Attributes** area on the left.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|集群
-|网关所属的集群。
+|Cluster
+|The cluster to which the gateway belongs.
 
-|创建时间
-|网关的创建时间。
+|Creation Time
+|The creation time of the gateway.
 
-|更新时间
-|网关的更新时间
+|Update Time
+|The update time of the gateway.
 
-|创建者
-|启用网关的用户。
+|Creator
+|The user who enabled the gateway.
 |===
 --
 
-. 在网关详情页面右侧点击**配置选项**查看网关的配置选项。KubeSphere 的网关功能底层基于 Nginx Ingress Controller 实现，有关网关配置选项的更多信息，请参阅 link:https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/[Nginx Ingress Controller 官方文档]。
+. On the gateway details page, click the **Configuration Options** tab to view the configuration options of the gateway. The gateway functionality of KubeSphere is based on Nginx Ingress Controller. For more information about gateway configuration options, please refer to the link:https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/[Nginx Ingress Controller Documentation].
 
-. 在页面右侧的**监控**页签查看网关的请求数据。
+. On the right side of the page, click the **Monitoring** tab to view the request data of the gateway.
 +
 ====
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如需使用网关监控功能，KubeSphere 平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+To use the gateway monitoring function, the **WhizardTelemetry Monitoring** extension should be installed and enabled.
 |===
 
-* **概览**区域提供以下信息：
+* The **Overview** area provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|总请求数量
-|指定时间范围内网关接收的请求总数。
+|Total Requests
+|The total number of requests received by the gateway within the specified time range.
 
-|请求数量
-|指定时间范围内响应状态码为 4XX 或 5XX 的请求数量。点击下拉列表可分别查看 4XX 请求和 5XX 请求的数量。
+|Request Count
+|The number of requests with response status codes of 4XX or 5XX within the specified time range. Click the dropdown list to view the number of 4XX requests and 5XX requests separately.
 
-|成功请求
-|指定时间范围内成功请求的百分比。
+|Successful Requests
+|The percentage of successful requests within the specified time range.
 
-|平均延迟
-|指定时间范围内所有请求的平均延迟。
+|Average Latency
+|The average latency of all requests within the specified time range.
 
-|P50 延迟
-|指定时间范围内所有请求延迟的中位数。
+|P50 Latency
+|The median latency of all requests within the specified time range.
 
-|P95 延迟
-|指定时间范围内所有请求的 95% 分位延迟，即 95% 的请求的延迟小于或等于该数值。
+|P95 Latency
+|The 95th percentile latency of all requests within the specified time range, i.e., 95% of the requests have a latency less than or equal to this value.
 
-|P99 延迟
-|指定时间范围内所有请求的 99% 分位延迟，即 99% 的请求的延迟小于或等于该数量。
+|P99 Latency
+|The 99th percentile latency of all requests within the specified time range, i.e., 99% of the requests have a latency less than or equal to this value.
 |===
 --
 
-* 页面下方以折线图显示动态的请求数据。
+* The line charts at the bottom of the page display dynamic request data.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|请求数量
-|指定时间范围内网关接收的每秒请求数量。
+|Request Count
+|The number of requests per second received by the gateway within the specified time range.
 
-|连接数量
-|指定时间范围内网关接收的每秒连接数量。
+|Connection Count
+|The number of connections per second received by the gateway within the specified time range.
 
-|请求延迟
-|指定时间范围内所有请求的延迟中位数、95% 分位延迟、99% 分位延迟和平均延迟。
+|Request Latency
+|The median latency, 95th percentile latency, 99th percentile latency, and average latency of all requests within the specified time range.
 
-|失败请求数量
-|指定时间范围内网关接收的失败请求的数量。
+|Failed Request Count
+|The number of failed requests received by the gateway within the specified time range.
 
-|网络流量
-|指定时间范围内网关的每秒入站流量。
+|Network Traffic
+|The inbound traffic per second of the gateway within the specified time range.
 |===
 --
 
@@ -96,30 +95,30 @@ include::../../../../_ks_components-en/oper-Autorefresh.adoc[]
 include::../../../../_ks_components-en/oper-refreshData.adoc[]
 ====
 
-. 在网关详情页面右侧点击**网关日志**查看网关的日志。
+. On the gateway details page, click the **Gateway Logs** tab to view the logs of the gateway.
 +
 --
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如需使用网关日志搜索功能，KubeSphere 平台需要安装并启用 **WhizardTelemetry 日志管理**扩展组件。
+To use the gateway log search function, the **WhizardTelemetry Logging** extension should be installed and enabled.
 |===
 
-* 在**网关日志**页签上方点击搜索框并设置搜索条件，可按关键字、容器组或时间范围搜索日志数据。
+* Click the search box at the top of the **Gateway Logs** tab and set the search conditions to search for log data by keywords, pods, or time range.
 
-* 在**网关日志**页签上方点击image:/images/ks-qkcp/zh/icons/start-dark.svg[start-dark,18,18]/image:/images/ks-qkcp/zh/icons/stop-dark-white.svg[stop-dark-white,18,18]可开启/停止实时数据刷新。
+* Click image:/images/ks-qkcp/zh/icons/start-dark.svg[start-dark,18,18]/image:/images/ks-qkcp/zh/icons/stop-dark-white.svg[stop-dark-white,18,18] to start/stop real-time data refresh.
 
-* 在**网关日志**页签上方点击**刷新间隔**可设置数据刷新间隔为 5s、10s 或 20s。
+* Click **Refresh Interval** to set the data refresh interval to 5s, 10s, or 20s.
 
-* 在**网关日志**页签上方点击image:/images/ks-qkcp/zh/icons/export.svg[export,18,18]可将日志文件下载到本地。
+* Click image:/images/ks-qkcp/zh/icons/export.svg[export,18,18] to download the log file to your local machine.
 --
 
-. 在网关详情页面右侧点击**资源状态**页签查看网关工作负载的容器组副本数、容器端口和容器组。
+. On the gateway details page, click the **Resource Status** tab to view the number of pod replicas, container ports, and pods of the gateway workload.
 +
 --
 include::../../para-replicasPortsPods.adoc[]
 --
 
-. 在网关详情页面右侧点击**元数据**页签查看网关服务的注解。
+. On the gateway details page, click the **Metadata** tab to view the annotations of the gateway service.

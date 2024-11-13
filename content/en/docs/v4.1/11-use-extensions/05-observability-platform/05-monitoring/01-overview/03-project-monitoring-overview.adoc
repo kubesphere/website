@@ -17,14 +17,10 @@ ifeval::["{file_output_type}" == "pdf"]
 有关项目概览页面的其他信息，请参阅《{ks_product_right}项目管理指南》的“概览”章节。
 endif::[]
 
-
-
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
-
-
 
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
 

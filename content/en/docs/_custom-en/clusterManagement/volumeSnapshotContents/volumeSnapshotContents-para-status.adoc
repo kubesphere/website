@@ -1,6 +1,6 @@
 // :ks_include_id: 6967c031afb24424b3fdd01250460660
-卷快照内容的状态。
+The status of the volume snapshot content.
 
-* **就绪**：卷快照内容已创建成功，并且快照数据已保存到后端存储系统。
+* **Ready**: The volume snapshot content has been successfully created, and the snapshot data has been saved to the backend storage system.
 
-* **未就绪**：卷快照内容正在创建或正在删除中。
+* **Not Ready**: The volume snapshot content is being created or is being deleted.

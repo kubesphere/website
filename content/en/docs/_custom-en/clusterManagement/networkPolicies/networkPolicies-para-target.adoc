@@ -1,6 +1,5 @@
-// :ks_include_id: ff94c103e4f841cfa4bed82610aac7a6
-规则适用的容器组的信息。
+Information about the pods to which the rule applies.
 
-* **项目**：规则所属的项目。网络策略中的规则仅适用于网络策略所属项目中的容器组。
+* **Project**: The project to which the rule belongs. Rules in a network policy only apply to pods in the project to which the network policy belongs.
 
-* **标签**：规则适用的容器组所具有的标签。如果未设置标签，则规则适用于网络策略所属的项目中的所有容器组。
+* **Labels**: The labels of the pods to which the rule applies. If no labels are set, the rule applies to all pods in the project to which the network policy belongs.

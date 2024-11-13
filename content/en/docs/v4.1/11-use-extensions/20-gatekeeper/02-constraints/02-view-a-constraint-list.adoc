@@ -17,8 +17,6 @@ weight: 02
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
 
 

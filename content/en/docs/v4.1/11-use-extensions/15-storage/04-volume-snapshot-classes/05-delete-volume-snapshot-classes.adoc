@@ -1,36 +1,32 @@
 ---
-title: "删除卷快照类"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照类, 删除卷快照类"
-description: "介绍如何删除卷快照类。"
+title: "Delete Volume Snapshot Classes"
+keywords: "Kubernetes, {ks_product-en}, cluster management, storage, volume snapshot classes, delete volume snapshot class"
+description: "Learn how to delete a volume snapshot class."
 weight: 05
 ---
 
-:ks_permission: **卷快照类管理**
-:ks_navigation: **存储 > 卷快照类**
+:ks_permission: **Volume Snapshot Classes Management**
+:ks_navigation: **Storage > Volume Snapshot Classes**
 
-
-本节介绍如何删除卷快照类。
+This section describes how to delete a volume snapshot class.
 
 // Warning
 include::../../../../../_ks_components-en/admonitions/warning.adoc[]
 
-卷快照类删除后，基于卷快照类创建的卷快照和卷快照内容不会被删除，但用户将无法再通过该卷快照类将快照数据保存到后端存储系统。
+After a volume snapshot class is deleted, the volume snapshots and volume snapshot contents created based on the volume snapshot class will not be deleted, but users will no longer be able to save snapshot data to the backend storage system through this volume snapshot class.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
 
-
-
-
-== 删除单个卷快照类
+== Delete a Single Volume Snapshot Class
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -40,12 +36,12 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要删除的卷快照类右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the volume snapshot class you want to delete, then select **Delete** from the dropdown list.
 
-. 在**删除卷快照类**对话框，输入卷快照类的名称，然后点击**确定**。
+. In the **Delete Volume Snapshot Class** dialog, enter the name of the volume snapshot class, then click **OK**.
 
 
-== 批量删除卷快照类
+== Delete Multiple Volume Snapshot Classes
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -55,9 +51,9 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 选择需要删除的卷快照类左侧的复选框，然后在列表上方点击**删除**。
+. Select the checkbox on the left side of the volume snapshot classes you want to delete, then click **Delete** above the list.
 
-. 在**批量删除卷快照类**对话框，输入卷快照的名称，然后点击**确定**。
+. In the **Delete Multiple Volume Snapshot Classes** dialog, enter the name of the volume snapshot, then click **OK**.
 +
 --
 include::../../../../_custom-en/note-separateNamesByComma.adoc[]

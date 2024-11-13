@@ -1,13 +1,11 @@
 ---
-title: "卷快照类"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照类"
-description: "介绍如何管理卷快照类。"
+title: "Volume Snapshot Classes"
+keywords: "Kubernetes, {ks_product-en}, cluster management, storage, volume snapshot classes"
+description: "Learn how to manage volume snapshot classes."
 weight: 04
 layout: "second"
 ---
 
+This section describes how to manage volume snapshot classes.
 
-
-本节介绍如何管理卷快照类。
-
-卷快照类定义了可供容器使用的一类卷快照。创建卷快照类前，请为{ks_product_both}集群安装存储插件，并确保后端存储系统支持卷快照功能。有关更多信息，请联系您的存储系统提供商。
+A volume snapshot class defines a class of volume snapshots that can be used by containers. Before creating a volume snapshot class, please install a storage plugin for the KubeSphere cluster and ensure that the backend storage system supports volume snapshot functionality. For more information, contact your storage system provider.

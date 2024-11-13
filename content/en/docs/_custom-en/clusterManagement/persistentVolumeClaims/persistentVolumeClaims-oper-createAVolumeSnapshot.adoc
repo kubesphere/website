@@ -1,20 +1,20 @@
 // :ks_include_id: f523ebef727d479488a3ad33a373f462
-. 在持久卷声明详情页面的左上角，选择**更多操作 > 创建快照**。
+. In the upper-left corner of the details page, select **More > Create Snapshot**.
 
-. 在**创建快照**对话框，设置卷快照的名称和卷快照类，然后点击**确定**。
+. In the **Create Snapshot** dialog, set the name of the volume snapshot and the volume snapshot class, then click **OK**.
 +
 --
 [%header,cols="1,4"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|卷快照的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。
+|Name
+|The name of the volume snapshot. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 253 characters long.
 
-|卷快照类
+|Volume Snapshot Class
 |
 include::persistentVolumeClaims-para-volumeSnapshotClass.adoc[]
 |===
 
-卷快照创建后将显示在**卷快照**页面的卷快照列表中。
+After the volume snapshot is created, it will be displayed in the volume snapshot list on the **Volume Snapshots** page.
 --

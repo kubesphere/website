@@ -29,8 +29,6 @@ weight: 08
 |===
 
 
-
-
 == Prerequisites
 
 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../../../05-users-and-roles/01-users/[用户]和link:../../../../../../05-users-and-roles/02-platform-roles/[平台角色]。

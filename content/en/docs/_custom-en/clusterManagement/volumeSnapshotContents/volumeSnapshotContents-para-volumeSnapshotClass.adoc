@@ -1,2 +1,2 @@
 // :ks_include_id: fc3e0f0606144b55b1662409e2c4b5cb
-创建卷快照所使用的卷快照类。
+The volume snapshot class used to create the volume snapshot.

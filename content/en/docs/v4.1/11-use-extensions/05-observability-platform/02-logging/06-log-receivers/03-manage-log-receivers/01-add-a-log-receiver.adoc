@@ -26,8 +26,6 @@ weight: 01
 * {empty}
 include::../../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志**、**WhizardTelemetry 事件**、**WhizardTelemetry 审计**、或 **WhizardTelemetry 通知**扩展组件。
 
 

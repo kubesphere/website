@@ -20,8 +20,6 @@ weight: 07
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
 
-
-
 == 删除单个微服务配置
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]

@@ -6,6 +6,4 @@ weight: 04
 layout: "second"
 ---
 
-
-
 本节介绍如何查看应用资源数据。

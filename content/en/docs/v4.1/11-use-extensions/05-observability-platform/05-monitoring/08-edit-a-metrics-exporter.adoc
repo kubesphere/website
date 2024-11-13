@@ -23,8 +23,6 @@ include::../../../../_custom-en/clusterManagement/services/services-oper-exposeM
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
-
-
 include::../../../../_custom-en/clusterManagement/services/services-prer-exposeMetrics.adoc[]
 
 

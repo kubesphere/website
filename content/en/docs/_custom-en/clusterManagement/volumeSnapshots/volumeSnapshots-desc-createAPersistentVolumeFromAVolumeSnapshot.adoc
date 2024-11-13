@@ -1,4 +1,4 @@
 // :ks_include_id: e8fdffd5e61b45e99c5afd2ae8efb5ec
-本节介绍如何使用卷快照创建持久卷。
+This section describes how to create a persistent volume using a volume snapshot.
 
-卷快照创建后，您可以使用卷快照创建持久卷声明和持久卷。
+After a volume snapshot is created, you can use it to create a persistent volume claim and a persistent volume.

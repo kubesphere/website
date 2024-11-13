@@ -1,6 +1,6 @@
 ---
 title: "RadonDB DMP"
-description: "介绍 RadonDB DMP 数据库管理平台。"
+description: "Learn about the RadonDB DMP database management platform."
 weight: 16
 layout: "second"
 draft: true

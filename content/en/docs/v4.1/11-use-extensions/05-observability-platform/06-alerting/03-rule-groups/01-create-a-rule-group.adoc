@@ -21,8 +21,6 @@ include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
-
-
 // 
 // include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-prer-exposeMetrics.adoc[]
 

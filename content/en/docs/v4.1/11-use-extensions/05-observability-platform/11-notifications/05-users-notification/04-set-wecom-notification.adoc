@@ -12,8 +12,6 @@ weight: 04
 
 本节介绍如何设置企业微信通知。配置后，可通过企业微信会话或群机器人接收通知消息。
 
-
-
 == Prerequisites
 
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。

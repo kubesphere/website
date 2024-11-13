@@ -1,43 +1,43 @@
 // :ks_include_id: b8f433f8547944029075f5bec8d36efe
-. 在卷快照详情页面左侧的**属性**区域查看卷快照的资源属性。
+. View the resource attributes of the volume snapshot in the **Attributes** area on the left side of the details page.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|项目
-|卷快照的所属项目。
+|Project
+|The project to which the volume snapshot belongs.
 
-|状态
+|Status
 |
 include::volumeSnapshots-para-volumeSnapshotStatus_v4.adoc[]
 
-|容量
+|Capacity
 |
 include::volumeSnapshots-para-capacity.adoc[]
 
-|快照类
-|用于保存快照数据的存储系统对应的卷快照类。
+|Snapshot Class
+|The volume snapshot class corresponding to the storage system used to save snapshot data.
 
-|卷快照内容
-|卷快照内容的名称。
+|Volume Snapshot Content
+|The name of the volume snapshot content.
 
-|创建时间
-|卷快照的创建时间。
+|Creation Time
+|The creation time of the volume snapshot.
 
-|创建者
-|创建卷快照的用户。
+|Creator
+|The user who created the volume snapshot.
 |===
 --
 
-. 在卷快照详情页面右侧的**数据源**页签查看用于创建快照的持久卷声明的信息。
+. View the information of the persistent volume claim used to create the snapshot in the **Data Source** tab on the right side of the details page.
 +
 --
 include::../persistentVolumes/persistentVolumes-para-pvcInformation.adoc[]
 --
 
-. 在卷快照详情页面右侧点击**事件**页签查看卷快照的事件。
+. Click the **Events** tab on the right side of the details page to view the events of the volume snapshot.
 +
 --
 include::../clusterManagement-para-eventsTab.adoc[]

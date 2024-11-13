@@ -1,10 +1,8 @@
-// :ks_include_id: 09fe14af1fd747b8aad60c34a228e54e
-集群网关或项目网关的 IP 地址。
+The IP address of the cluster gateway or project gateway.
 
 // tag::bullets[]
-* 如果网关的外部访问模式为 NodePort，**网关地址**为某一个集群节点的 IP 地址。客户端可以通过任意集群节点的 IP 地址和端口访问应用路由的后端服务。
+* If the external access mode of the gateway is NodePort, the **Gateway Address** is the IP address of one of the cluster nodes. Clients can access the backend services of the Ingresses through the IP address and port of any cluster node.
 
-* 如果网关的外部访问模式为 LoadBalancer，**网关地址**为负载均衡器的地址。
+* If the external access mode of the gateway is LoadBalancer, the **Gateway Address** is the address of the load balancer.
 
-// * 如果网关地址未显示，可能是因为集群节点缺少 **node-role.kubernetes.io/master** 标签。点击**集群节点**页面，点击控制平面节点，选择**更多操作 > 编辑标签**添加 **node-role.kubernetes.io/master** 标签。v4.1 删除该行
 // end::bullets[]

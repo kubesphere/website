@@ -1,2 +1,2 @@
 // :ks_include_id: 10cd1bc2be6f48dd994fe2be6c747e10
-本节介绍如何创建卷快照。
+This section describes how to create a volume snapshot.

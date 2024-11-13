@@ -17,13 +17,9 @@ weight: 01
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
 
 * 已创建一个约束模板。
-
-
 
 == Steps
 

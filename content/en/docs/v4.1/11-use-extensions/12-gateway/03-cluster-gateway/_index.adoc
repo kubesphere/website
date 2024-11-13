@@ -1,21 +1,19 @@
 ---
-title: "集群网关"
-keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 网关设置"
-description: "介绍如何管理集群网关。"
+title: "Cluster Gateway"
+keywords: "Kubernetes, {ks_product-en}, cluster management, cluster settings, gateway settings"
+description: "Introduce how to manage cluster gateways."
 weight: 03
 layout: "second"
 ---
 
 
-
-本节介绍如何管理集群网关。
+This section introduces how to manage cluster gateways.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-若已启用企业空间网关或项目网关，可在集群的网关设置页面查看、编辑和禁用企业空间网关或项目网关。
+If a workspace gateway or project gateway has been enabled, you can view, edit, and disable the workspace gateway or project gateway on the cluster's gateway settings page.
 |===
-

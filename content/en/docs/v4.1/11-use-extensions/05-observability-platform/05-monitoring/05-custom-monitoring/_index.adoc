@@ -6,8 +6,6 @@ weight: 05
 layout: "second"
 ---
 
-
-
 include::../../../../../_custom-en/clusterManagement/customMonitoringDashboards/customMonitoringDashboards-desc-customMonitoringDashboards.adoc[]
 
 include::../../../../../_custom-en/clusterManagement/customMonitoringDashboards/customMonitoringDashboards-desc-howToUse.adoc[]

@@ -18,8 +18,6 @@ weight: 06
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
 
 * 您需要提前获取 Webhook 的访问参数。有关更多信息，请联系您的 Webhook 管理员。

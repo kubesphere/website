@@ -73,11 +73,11 @@ include::../../../../_custom/clusterManagement/volumeSnapshotContents/volumeSnap
 |===
 --
 
-. 在持久卷详情页面右侧的**资源状态**页签查看卷快照内容对应的卷快照名称和卷快照类。
+. 在详情页面右侧的**资源状态**页签查看卷快照内容对应的卷快照名称和卷快照类。
 
-. 在持久卷详情页面右侧点击**元数据**页签查看卷快照内容的标签和注解。
+. 在详情页面右侧点击**元数据**页签查看卷快照内容的标签和注解。
 
-. 在持久卷详情页面右侧点击**事件**页签查看卷快照内容的事件。
+. 在详情页面右侧点击**事件**页签查看卷快照内容的事件。
 +
 --
 include::../../../../_custom/clusterManagement/clusterManagement-para-eventsTab.adoc[]

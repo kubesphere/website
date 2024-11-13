@@ -20,8 +20,6 @@ include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
-
-
 == 禁用和启用单个规则组
 
 . 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。

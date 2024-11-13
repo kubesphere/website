@@ -1,2 +1,2 @@
 // :ks_include_id: 7d428de9ff3a4f0fbd1cd48e49749f27
-卷快照保存了存储卷的当前数据，可用于创建持久卷声明以及对应的持久卷。
+A volume snapshot saves the current data of a storage volume, which can be used to create a persistent volume claim and the corresponding persistent volume.

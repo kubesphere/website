@@ -1,46 +1,46 @@
 // :ks_include_id: 866a7f0d7d8549c595c932a0e15d5cba
-. 在卷快照详情页面左上角选择**更多操作 > 创建卷**。
+. In the upper-left corner of the volume snapshot details page, select **More > Create Volume**.
 
-. 在**基本信息**页签，设置持久卷声明的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the persistent volume claim, then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|持久卷声明的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。
+|Name
+|The name of the persistent volume claim. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 253 characters long.
 
-|别名
-|持久卷声明的别名。不同持久卷声明的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the persistent volume claim. Different persistent volume claims can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), must not start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|持久卷声明的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the persistent volume claim. The description can contain any characters and can be up to 256 characters long.
 |===
 --
 
-. 在**存储设置**页签，选择后端存储区域的访问模式，然后点击**下一步**。
+. On the **Storage Settings** tab, select the access mode for the backend storage region, then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 |ReadWriteOnce
-|允许单个节点读取后端存储区域中的数据并向其中写入数据。
+|Allows a single node to read data from and write data to the backend storage region.
 
 |ReadOnlyMany
-|允许多个节点读取后端存储区域中的数据。
+|Allows multiple nodes to read data from the backend storage region.
 
 |ReadWriteMany
-|允许多个节点读取后端存储区域中的数据并向其中写入数据。
+|Allows multiple nodes to read data from and write data to the backend storage region.
 |===
 --
 
-. 在**高级设置**页签，设置持久卷声明的标签和注解，然后点击**创建**。
+. On the **Advanced Settings** tab, set the labels and annotations for the persistent volume claim, then click **Create**.
 +
 --
 include::../workloads/createWorkload/workloads-para-Metadata.adoc[]
 
-系统将根据以上步骤设置的参数创建持久卷声明，并且还将根据快照数据创建持久卷声明对应的持久卷。
+The system will create a persistent volume claim based on the parameters set in the above steps, and will also create a corresponding persistent volume based on the snapshot data.
 --

@@ -1,10 +1,10 @@
 // :ks_include_id: 5bc648d25864430e9749aa0c567555f3
-本节介绍如何访问应用路由的后端服务。
+This section describes how to access the backend service of an Ingress.
 
-应用路由创建完成后，您可通过任意 HTTP 或 HTTPS 客户端访问应用路由的后端服务。取决于集群网关或项目网关的外部访问模式，您可以使用以下访问方式：
+After the Ingress is created, you can access the backend service of the Ingress through any HTTP or HTTPS client. Depending on the external access mode of the cluster gateway or project gateway, you can use the following access methods:
 
-* 如果集群网关或项目网关的外部访问模式为 NodePort，您可以通过域名、路径和端口号（例如 **example.com/test:30240**）访问应用路由的后端服务。
+* If the external access mode of the cluster gateway or project gateway is NodePort, you can access the backend service of the Ingress through the domain name, path, and port number (e.g., **example.com/test:30240**).
 
-* 如果集群网关或项目网关的外部访问模式为 LoadBalancer，您可以通过域名和路径（例如 **example.com/test**）访问应用路由的后端服务。
+* If the external access mode of the cluster gateway or project gateway is LoadBalancer, you can access the backend service of the Ingress through the domain name and path (e.g., **example.com/test**).
 
-以下仅演示如何在{ks_product-en} Web 控制台测试应用路由是否设置正确。
+The following only demonstrates how to test whether the Ingress is set correctly in the {ks_product-en} web console.

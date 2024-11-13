@@ -1,37 +1,34 @@
 ---
-title: "禁用和启用容器组 IP 池"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 禁用和启用容器组 IP 池"
-description: "介绍如何禁用和启用容器组 IP 池。"
+title: "Disable and Enable Pod IP Pools"
+keywords: "Kubernetes, {ks_product-en}, cluster management, network, pod IP pool, disable and enable pod IP pool"
+description: "Introduce how to disable and enable pod IP pools."
 weight: 08
 ---
 
-:ks_permission: **集群网络资源管理**
-:ks_navigation: **网络 > 容器组 IP 池**
+:ks_permission: **Cluster Network Resource Management**
+:ks_navigation: **Network > Pod IP Pools**
 
 
-本节介绍如何禁用和启用容器组 IP 池。
+This section introduces how to disable and enable pod IP pools.
 
-容器组 IP 池禁用后将不会继续 IP 地址的分配，也不会影响已经分配 IP 地址的容器组的网络，但禁用容器组 IP 池会自动解除其绑定的项目。迁移容器组 IP 池时，新 IP 池可用地址数量不能少于当前 IP 池使用的 IP 地址。
+After a pod IP pool is disabled, it will not continue to allocate IP addresses and will not affect the network of pods that have already been allocated IP addresses. However, disabling a pod IP pool will automatically unbind its associated projects. When migrating a pod IP pool, the number of available addresses in the new IP pool must not be less than the number of IP addresses used in the current IP pool.
 
 //warning
 [.admon.warning,cols="a"]
 |===
-|警告
+|Warning
 
 |
-迁移完成后，将重启工作负载。请谨慎执行此操作。
+After migration, workloads will be restarted. Please proceed with caution.
 
 |===
 
 == Prerequisites
 
-
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
-
+* **KubeSphere Network** should have been installed and enabled.
 
 
 == Steps
@@ -43,13 +40,13 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClu
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
-. 在需要操作的容器组 IP 池右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**禁用**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the pod IP pool you want to operate, and then select **Disable** from the dropdown list.
 
-. 在**禁用容器组 IP 池**对话框，点击**确定**。
+. In the **Disable Pod IP Pool** dialog box, click **OK**.
 
-. 在已禁用的容器组 IP 池右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**启用**可启用容器组 IP 池。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the disabled pod IP pool, and then select **Enable** from the dropdown list to enable the pod IP pool.
 
 +
 --
-若被禁用的容器组 IP 池中有已分配的 IP，勾选**迁移容器组 IP 池**，可将已经分配 IP 地址的容器组迁移至新的容器组 IP 池。
+If there are allocated IPs in the disabled pod IP pool, check **Migrate Pod IP Pool** to migrate the pods with allocated IP addresses to a new pod IP pool.
 --

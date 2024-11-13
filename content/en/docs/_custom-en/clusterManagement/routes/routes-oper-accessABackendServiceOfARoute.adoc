@@ -1,6 +1,6 @@
 // :ks_include_id: f51f45c2029a4242ad04da5a1fe817c7
-. 在**资源状态**页签，在需要访问的路由规则右侧点击**访问服务**。
+. In the **Resource Status** tab, click **Access Service** on the right side of the routing rule you want to access.
 +
 --
-如果应用路由设置正确，浏览器将显示后端服务的响应信息。
+If the Ingress is set correctly, the browser will display the response information from the backend service.
 --

@@ -1,14 +1,15 @@
 ---
-title: "存储类"
-description: "介绍如何如何为存储类设置授权规则和自动扩展。"
+title: "Storage Classes"
+description: "Learn how to set authorization rules and auto-expansion for storage classes."
 weight: 05
 layout: "second"
 ---
 
 
-本节介绍如何为存储类设置授权规则和自动扩展。
+This section describes how to set authorization rules and auto-expansion for storage classes.
 
-安装“KubeSphere 存储”扩展组件后，集群左侧导航栏的**存储**菜单下的**存储类**会显示**设置授权规则**和**设置自动扩展**操作项。
+After installing the "KubeSphere Storage" extension, the **Storage Classes** in the cluster will support **Set Authorization Rules** and **Set Auto Expansion**.
 
-* 设置授权规则：用户只能在特定项目和企业空间使用存储类。
-* 设置自动扩展：系统在卷剩余空间低于阈值时自动扩展卷容量。
+* Set Authorization Rules: Users can only use the storage class in specific projects and workspaces.
+
+* Set Auto Expansion: The system automatically expands the volume capacity when the remaining space is below a threshold.

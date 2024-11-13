@@ -1,12 +1,12 @@
 ---
-title: "创建卷快照"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照, 创建卷快照"
-description: "介绍如何创建卷快照。"
+title: "Create Volume Snapshots"
+keywords: "Kubernetes, {ks_product-en}, cluster management, storage, volume snapshots, create volume snapshot"
+description: "Learn how to create a volume snapshot."
 weight: 01
 ---
 
-:ks_permission: **卷快照管理**
-:ks_navigation: **存储 > 卷快照**
+:ks_permission: **Volume Snapshots Management**
+:ks_navigation: **Storage > Volume Snapshots**
 
 
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-desc-createAVolumeSnapshot.adoc[]
@@ -16,26 +16,18 @@ include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persist
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
-
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
-
-
-
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-prer-persistentVolumeCreated.adoc[]
 
-// // * 请确保后端存储系统支持卷快照功能，并已在持久卷声明对应的存储类上启用卷快照功能。有关更多信息，请参阅xref:07-cluster-management/08-storage/02-storage-classes/05-enable-and-disable-volume-operations.adoc[启用和禁用卷操作]。
+* Ensure that the backend storage system supports volume snapshot functionality and that volume snapshot creation is enabled on the storage class corresponding to the persistent volume claim. Operation method: **Storage Class > More > Set Volume Operations** > Enable **Volume Snapshot Creation**.
 
-// 
+== Method 1: Volume Snapshots > Create Volume Snapshot
 
-* 请确保后端存储系统支持卷快照功能，并已在持久卷声明对应的存储类上启用卷快照功能。操作方法：存储类 > 更多操作 > 设置卷操作 > 启用卷快照创建。
-
-== 方法 1：卷快照 > 创建卷快照
-
-在集群中，可在**卷快照**菜单下直接为持久卷声明创建卷快照。
+In the cluster, you can directly create a volume snapshot for a persistent volume claim under the **Volume Snapshots** menu.
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -51,14 +43,14 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 include::../../../../_custom-en/clusterManagement/volumeSnapshots/volumeSnapshots-oper-createAVolumeSnapshot.adoc[]
 
-== 方法 2：持久卷声明 > 创建卷快照
+== Method 2: Persistent Volume Claims > Create Volume Snapshot
 
-在集群或项目中，可在**持久卷声明**菜单下为持久卷声明创建卷快照。
+In the cluster or project, you can create a volume snapshot for a persistent volume claim under the **Persistent Volume Claims** menu.
 
-. 以具有**持久卷声明管理**权限以及pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en}  web console with a user who has the **Persistent Volume Claim Management** permission and the pass:a,q[{ks_permission}] permission, and enter your cluster or project.
 
-. 在左侧导航栏选择**存储 > 持久卷声明**。
+. Select **Storage > Persistent Volume Claims** in the left navigation pane.
 
-. 在持久卷声明列表中点击一个持久卷声明的名称打开其详情页面。
+. Click the name of a persistent volume claim in the persistent volume claim list to open its details page.
 +
 include::../../../../_custom-en/clusterManagement/persistentVolumeClaims/persistentVolumeClaims-oper-createAVolumeSnapshot.adoc[]

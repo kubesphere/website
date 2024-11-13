@@ -34,4 +34,4 @@ include::../../../../../_ks_components/oper-navigate.adoc[]
 
 +
 
-include::../../../../_custom/clusterManagement/gatewaySettings/gatewaySettings-oper-viewGatewayDetails.adoc[]
+include::../../../../_custom/clusterManagement/gatewaySettings/gatewaySettings-oper-viewGatewayDetails_v4.adoc[]

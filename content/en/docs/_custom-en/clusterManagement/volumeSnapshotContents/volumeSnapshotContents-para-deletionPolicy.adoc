@@ -1,6 +1,6 @@
 // :ks_include_id: a1caf9b38b4a4e0ab7bd462783b840a5
-删除卷快照时对卷快照内容采取的策略。删除策略在对应的卷快照类中设置。
+The policy for handling the volume snapshot content when the volume snapshot is deleted. The deletion policy is set in the corresponding volume snapshot class.
 
-* **Delete**：卷快照被删除后，系统自动删除卷快照内容。
+* **Delete**: The volume snapshot content is automatically deleted by the system after the volume snapshot is deleted.
 
-* **Retain**：卷快照被删除后，系统不自动删除卷快照内容。
+* **Retain**: The volume snapshot content is not deleted by the system after the volume snapshot is deleted.

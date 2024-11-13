@@ -16,8 +16,6 @@ weight: 01
 * {empty}
 include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **KubeEdge** 扩展组件。
 
 * 待添加的边缘节点需要能够访问{ks_product_both}集群主节点的 **30000**、**30001**、**30002**、**30004** 端口。

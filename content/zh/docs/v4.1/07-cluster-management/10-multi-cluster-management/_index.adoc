@@ -10,3 +10,11 @@ weight: 10
 
 
 本节介绍如何使用主集群的 Web 控制台管理多个集群和集群标签。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+成员集群仅需安装 Kubernetes，无需安装{ks_product_left}。
+|===

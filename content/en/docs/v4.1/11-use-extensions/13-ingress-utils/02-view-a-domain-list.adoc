@@ -48,5 +48,3 @@ include::../../../../_ks_components-en/oper-refreshListData.adoc[]
 include::../../../../_ks_components-en/oper-customizeColumns.adoc[]
 ====
 
-
-

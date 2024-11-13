@@ -1,2 +1,2 @@
 // :ks_include_id: 447a321161844ddba2a4dc1e7677dd14
-本节介绍如何查看卷快照的详情。
+This section describes how to view the details of a volume snapshot.

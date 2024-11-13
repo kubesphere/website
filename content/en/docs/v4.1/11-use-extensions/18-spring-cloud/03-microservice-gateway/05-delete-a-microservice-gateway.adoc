@@ -27,8 +27,6 @@ include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
 
-
-
 == Steps
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]

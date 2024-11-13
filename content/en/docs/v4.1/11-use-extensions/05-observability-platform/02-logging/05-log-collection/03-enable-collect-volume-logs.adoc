@@ -16,14 +16,10 @@ ifeval::["{file_output_type}" == "pdf"]
 本节介绍如何在创建工作负载、服务或任务时启用收集卷上的日志。有关更多信息，请参阅《{ks_product_right}项目管理指南》的“应用负载”章节，创建工作负载或创建任务。
 endif::[]
 
-
-
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-
 
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志**扩展组件，并已link:../02-enable-project-log-collection/[在项目中启用日志收集]。
 

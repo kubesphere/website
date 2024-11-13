@@ -1,13 +1,13 @@
 ---
-title: "使用卷快照创建持久卷"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照, 创建持久卷声明"
-description: "介绍如何使用卷快照创建持久卷。"
+title: "Create Persistent Volume Using Volume Snapshot"
+keywords: "Kubernetes, {ks_product-en}, cluster management, storage, volume snapshots, create persistent volume claim"
+description: "Learn how to create a persistent volume using a volume snapshot."
 weight: 04
 ---
 
 
-:ks_permission: **卷快照管理**
-:ks_navigation: **存储 > 卷快照**
+:ks_permission: **Volume Snapshots Management**
+:ks_navigation: **Storage > Volume Snapshots**
 
 
 include::../../../../_custom-en/clusterManagement/volumeSnapshots/volumeSnapshots-desc-createAPersistentVolumeFromAVolumeSnapshot.adoc[]
@@ -15,17 +15,15 @@ include::../../../../_custom-en/clusterManagement/volumeSnapshots/volumeSnapshot
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
 
-
-
 == Steps
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en}  web console with a user who has the pass:a,q[{ks_permission}] permission, and enter your cluster or project.
 
 +
 

@@ -1,20 +1,19 @@
 ---
-title: "企业空间网关"
-keywords: "Kubernetes, {ks_product}, 网关设置, 企业空间，网关设置"
-description: "介绍本节介绍如何设置企业空间网关。"
+title: "Workspace Gateway"
+keywords: "Kubernetes, {ks_product-en}, gateway settings, workspace, gateway settings"
+description: "Introduce how to manage workspace gateways."
 weight: 02
 layout: "second"
 ---
 
 
-
-本节介绍如何管理企业空间网关。
+This section introduces how to manage workspace gateways.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-企业空间网关启用后，除了在企业空间网关设置页面对其进行管理，还可以在集群网关设置页面查看、编辑和禁用企业空间网关。
+After enabling the workspace gateway, in addition to managing it on the workspace gateway settings page, you can also view, edit, and disable the workspace gateway on the cluster gateway settings page.
 |===

@@ -22,8 +22,6 @@ Spring Cloud 微服务实例通过 Kubernetes 部署管理，部署的容器组�
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
 * 创建部署所使用的容器镜像中的应用程序需要符合 Nacos 规范。有关更多信息，请参阅 link:https://nacos.io[Nacos 官方文档]。
 
 

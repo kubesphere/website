@@ -14,5 +14,3 @@ OAuth2-Proxy 提供统一认证接口确保所有应用通过相同流程保护�
 
 // 扩展组件配置后，可通过{ks_product_both}平台鉴权后访问多种服务，如 AlertManager、Prometheus、Whizard 等。
 
-
-

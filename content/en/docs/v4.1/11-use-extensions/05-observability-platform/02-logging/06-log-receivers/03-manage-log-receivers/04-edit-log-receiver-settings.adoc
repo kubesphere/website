@@ -18,8 +18,6 @@ weight: 04
 * {empty}
 include::../../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
 * 已添加一个日志接收器。
 
 

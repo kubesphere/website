@@ -19,8 +19,6 @@ weight: 05
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-
-
 * {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
 
 * 您需要提前从 Slack 平台获取应用访问参数。有关更多信息，请参阅 link:https://api.slack.com/messaging/webhooks#create_a_webhook[Slack 开发者文档]。

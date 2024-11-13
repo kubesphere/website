@@ -1,27 +1,23 @@
 ---
-title: "创建容器组 IP 池"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 创建容器组 IP 池"
-description: "介绍如何创建容器组 IP 池。"
+title: "Create Pod IP Pools"
+keywords: "Kubernetes, {ks_product-en}, cluster management, network, pod IP pool, create pod IP pool"
+description: "Introduce how to create pod IP pools."
 weight: 01
 ---
 
-:ks_permission: **集群网络资源管理**
-:ks_navigation: **网络 > 容器组 IP 池**
+:ks_permission: **Cluster Network Resource Management**
+:ks_navigation: **Network > Pod IP Pools**
 
 
-本节介绍如何创建容器组 IP 池。
+This section introduces how to create pod IP pools.
 
 
 == Prerequisites
 
-
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
-
+* **KubeSphere Network** should have been installed and enabled.
 
 
 == Steps
@@ -38,115 +34,114 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**创建容器组 IP 池**对话框，设置容器组 IP 池的参数，然后点击**下一步**。
+. In the **Create Pod IP Pool** dialog box, set the parameters for the pod IP pool, and then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|IP 地址
-|容器组 IP 池对应网段的网络地址。
+|IP Address
+|The network address of the network segment corresponding to the pod IP pool.
 
-|掩码
-|容器组 IP 池对应网段的掩码位数。
+|Mask
+|The mask bits of the network segment corresponding to the pod IP pool.
 
-|数量
-|创建容器组 IP 池的数量。最多可同时创建 10 个容器组 IP 池。如果创建数量大于或等于 2，系统将根据自动填充其他 IP 池的网络地址。您也可以根据需要自定义其他 IP 池的网络地址。
+|Quantity
+|The number of pod IP pools to create. A maximum of 10 pod IP pools can be created at the same time. If the quantity is greater than or equal to 2, the system will automatically fill in the network addresses for the other IP pools. You can also customize the network addresses for the other IP pools as needed.
 |===
 --
 
-. 在**容器组 IP 池**对话框，点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18]，在弹出的**编辑容器组 IP 池**区域，设置以下参数，然后点击**创建**。
+. In the **Pod IP Pool** dialog box, click image:/images/ks-qkcp/zh/icons/pen-light.svg[pen,18,18], and in the pop-up **Edit Pod IP Pool** area, set the following parameters, and then click **Create**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|网段
-|容器组 IP 池的 IP 范围。
+|Network Segment
+|The IP range of the pod IP pool.
 
-|名称
-|容器组 IP 池名称。您可以修改系统默认生成的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头或结尾，最长 63 个字符。
+|Name
+|The name of the pod IP pool. You can modify the system-generated default name. The name can only contain lowercase letters, numbers, and hyphens (-), must start or end with a lowercase letter or number, and can be up to 63 characters long.
 
-|IP 池块大小
-|IP 池用于分配 IP 的 block 的 CIDR 大小。
+|IP Pool Block Size
+|The CIDR size of the block used by the IP pool to allocate IPs.
 
-|NAT outgoing
-|是否允许通过 NAT 方式跨 IP 池通信。
+|NAT Outgoing
+|Whether to allow communication across IP pools via NAT.
 
-启用此功能后，来自此 IP 池中的 Calico 网络容器发送到任何 Calico IP 池之外的目的地的数据包将被伪装。
+When enabled, packets sent from Calico networked containers in this pool to destinations outside of any Calico IP pools will be masqueraded.
 
-若启用 IPIP 或 VXLAN 模式，建议开启 NAT outgoing，否则运行 Calico 的工作负载和主机之间的路由是非对称的，并且可能由于 RPF 检查失败而导致流量被过滤。
+If IPIP or VXLAN mode is enabled, it is recommended to enable NAT outgoing, otherwise the routing between Workloads and Hosts running Calico is asymmetric and may cause traffic to be filtered due to RPF checks failing.
 
-|别名
-|容器组 IP 池的别名。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the pod IP pool. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|容器组 IP 池的描述信息。描述可包含任意字符，最多包含 256 个字符。
+|Description
+|The description of the pod IP pool. The description can contain any characters and can be up to 256 characters long.
 
-|选择节点
-|使用标签选择器为 IP 池匹配合适的节点。
+|Select Nodes
+|Use label selectors to match appropriate nodes for the IP pool.
 
-* **节点范围**
+* **Node Range**
 
-** 全部：匹配标签选择范围内的所有节点。
-** 全部禁止：禁止自动分配 IP 池的 IP 地址到任一节点的容器组。
+** All: Match all nodes within the label selection range.
+** Disable All: Prevent automatic allocation of IP pool IP addresses to any node's pods.
 
-* **标签选择**
+* **Label Select**
 
 ifeval::["{file_output_type}" == "html"]
-** 键：节点标签的键。点击输入自定义的键。有关节点标签的更多信息，请参阅link:../../../../07-cluster-management/03-nodes/06-edit-node-labels.adoc[编辑节点标签]。
+** Key: The key of the node label. Click to enter a custom key. For more information about node labels, please refer to link:../../../../07-cluster-management/03-nodes/06-edit-node-labels.adoc[Edit Node Labels].
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-** 键：节点标签的键。点击输入自定义的键。有关节点标签的更多信息，请参阅《{ks_product_right}集群管理指南》的“节点”章节。
+** Key: The key of the node label. Click to enter a custom key. For more information about node labels, please refer to the "Nodes" section in the {ks_product-en} Cluster Management Guide.
 endif::[]
 
-** 操作符：筛选条件的操作符。
+** Operator: The operator for the filtering condition.
 
-*** 包含：键对应的值包含特定的字符串。
+*** Contains: The value corresponding to the key contains a specific string.
 
-*** 不包含：键对应的值不包含特定的字符串。
+*** Does Not Contain: The value corresponding to the key does not contain a specific string.
 
-*** 存在：节点标签中存在特定的键。
+*** Exists: The node label contains a specific key.
 
-*** 不存在：节点标签中不存在特定的键。
+*** Does Not Exist: The node label does not contain a specific key.
 
-** 值: 键对应的值必须包含的字符串。按 **Enter** 可设置多个字符串，键对应的值包含其中一个字条串即满足条件。
+** Value: The string that the value corresponding to the key must contain. Press **Enter** to set multiple strings, and if the value corresponding to the key contains any one of the strings, it meets the condition.
 
-** 点击**添加**可同时创建多个标签。
+** Click **Add** to create multiple labels at the same time.
 
-** 在已添加的标签右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] 可删除标签。
+** Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of an added label to delete the label.
 
-* **自定义**
+* **Custom**
 
-通过自定义表达式来筛选符合条件的节点。有关表达式的更多信息，请参阅link:https://docs.tigera.io/calico/latest/reference/resources/ippool#node-selector[节点选择器]。
+Filter nodes that meet the conditions through custom expressions. For more information about expressions, please refer to link:https://docs.tigera.io/calico/latest/reference/resources/ippool#node-selector[Node Selector].
 
-|IPIP 模式
+|IPIP Mode
 
-|IPIP 模式属于 Overlay 模式之一，不能与 VXLAN 模式同时设置。若两者都设置为 Never，则使用 BGP 模式。
+|IPIP mode is one of the Overlay modes and cannot be set simultaneously with VXLAN mode. If both are set to Never, BGP mode is used.
 
-IPIP 模式: 在每个节点上创建一个 IP in IP 隧道来实现容器之间的通信。取值如下:
+IPIP mode: Create an IP in IP tunnel on each node to achieve communication between containers. The values are as follows:
 
-** Always: 永远进行 IPIP 封装（默认）。
+** Always: Always perform IPIP encapsulation (default).
 
-** CrossSubnet: 只在跨网段时才进行 IPIP 封装。
+** CrossSubnet: Perform IPIP encapsulation only when crossing network segments.
 
-** Never: 从不进行 IPIP 封装。
+** Never: Never perform IPIP encapsulation.
 
 
-|VXLAN 模式
+|VXLAN Mode
 
-|VXLAN 模式属于 Overlay 模式之一，不能与 IPIP 模式同时设置。若两者都设置为 Never，则使用 BGP 模式。
+|VXLAN mode is one of the Overlay modes and cannot be set simultaneously with IPIP mode. If both are set to Never, BGP mode is used.
 
-VXLAN 模式：在每个节点上创建一个 VXLAN 隧道来实现容器之间的通信。取值如下:
+VXLAN mode: Create a VXLAN tunnel on each node to achieve communication between containers. The values are as follows:
 
-** Always: 永远进行 VXLAN 封装。
+** Always: Always perform VXLAN encapsulation.
 
-** CrossSubnet: 只在跨网段时才进行 VXLAN 封装。
+** CrossSubnet: Perform VXLAN encapsulation only when crossing network segments.
 
-** Never: 从不进行 VXLAN 封装。
+** Never: Never perform VXLAN encapsulation.
 |===
-
 --
