@@ -24,5 +24,5 @@ Some operations for edge nodes and cluster nodes are the same, such as viewing n
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-Some operations for edge nodes and cluster nodes are the same, such as viewing node details, preventing and allowing pod scheduling, editing node taints and labels. For more information, see the "Nodes" section in the {ks_product_right} Cluster Management Guide.
+Some operations for edge nodes and cluster nodes are the same, such as viewing node details, preventing and allowing pod scheduling, editing node taints and labels. For more information, see the "Nodes" section in the {ks_product-en} Cluster Management Guide.
 endif::[]

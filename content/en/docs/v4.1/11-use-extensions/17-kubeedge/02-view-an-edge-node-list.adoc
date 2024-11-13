@@ -1,14 +1,14 @@
 ---
-title: "查看边缘节点列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 边缘节点, 查看边缘节点列表"
-description: "介绍如何查看边缘节点列表。"
+title: "View Edge Node List"
+keywords: "Kubernetes, {ks_product-en}, cluster management, edge nodes, view edge node list"
+description: "Learn how to view the edge node list."
 weight: 02
 ---
 
-:ks_permission: **节点查看**
+:ks_permission: **Node Viewing**
 
 
-本节介绍如何查看边缘节点列表。
+This section describes how to view the edge node list.
 
 
 == Prerequisites
@@ -16,48 +16,46 @@ weight: 02
 * {empty}
 include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **KubeEdge** 扩展组件。
+* **KubeEdge** should have been installed and enabled.
 
 == Steps
 
 include::../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
-. 在左侧导航栏选择**节点 > 边缘节点**打开节点列表。
+. Select **Nodes > Edge Nodes** in the left navigation pane to open the node list.
 
 +
 
 ====
-* 节点列表提供以下信息：
+* The node list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|各节点的主机名称和在子网内部的 IP 地址。
-// 各节点的主机名称由用户安装集群时在安装配置文件 **config-sample.yaml** 中设置。
+|Name
+|The host name and internal IP address of each node in the subnet.
 
-|状态
+|Status
 |
 include::../../../_custom-en/clusterManagement/nodes/nodes-para-nodeStatus_new.adoc[]
 
 ifeval::["{file_output_type}" == "html"]
-如果节点上存在污点，**状态**列还将显示节点上污点的数量。将光标悬停在污点数字上查看污点的具体信息。有关更多信息，请参阅link:../../../07-cluster-management/03-nodes/05-edit-node-taints/[设置节点污点]。
+If there are taints on the node, the **Status** column will also display the number of taints on the node. Hover the cursor over the taint number to view the specific information of the taint. For more information, see link:../../../07-cluster-management/03-nodes/05-edit-node-taints/[Set Node Taints].
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-如果节点上存在污点，**状态**列还将显示节点上污点的数量。将光标悬停在污点数字上查看污点的具体信息。有关更多信息，请参阅《{ks_product_right}集群管理指南》的“节点”章节。
+If there are taints on the node, the **Status** column will also display the number of taints on the node. Hover the cursor over the taint number to view the specific information of the taint. For more information, see the "Nodes" section in the {ks_product-en} Cluster Management Guide.
 endif::[]
 
-|角色
+|Role
 |
-各节点在集群中的角色，取值为**代理/边缘节点**。
-
+The role of each node in the cluster, which can be **Agent/Edge Node**.
 |===
 --
 
-* 在列表上方点击搜索框并设置搜索条件，可按名称、状态或角色搜索节点。
+* Click the search box above the list to search for nodes by name, status, or role.
 
 include::../../../../_ks_components-en/oper-refreshListData.adoc[]
 
