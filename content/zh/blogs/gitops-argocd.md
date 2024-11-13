@@ -106,7 +106,7 @@ GitOps 设计理念有很多，我们挑选其中四个。
 
    这正是 Gitlab 的强项。
 
-看到这些，你是否觉得似曾相识。Nice，kubenates 正是这么设计的。此时我们研究 GitOps 算是放心了，至少趋于主流，大方向没错。
+看到这些，你是否觉得似曾相识。Nice，Kubernetes 正是这么设计的。此时我们研究 GitOps 算是放心了，至少趋于主流，大方向没错。
 
 ## Gitlab CI 案例解读
 
@@ -114,7 +114,7 @@ GitOps 设计理念有很多，我们挑选其中四个。
 
 此案例是官网的 quick-start。Gitlab CI 就是用声明式的思路编排构建流程。执行构建的工具就是 Gitlab Runner。
 
-Gitlab Runner 支持部署在 Kubenates 中，非常容易实现动态扩缩容。
+Gitlab Runner 支持部署在 Kubernetes 中，非常容易实现动态扩缩容。
 
 对比前面 S2I 的过程，我们不难发现，Gitlab CI 就是 S2I 的 Assemble 过程。他们都依赖 Docker In Docker 技术。
 
