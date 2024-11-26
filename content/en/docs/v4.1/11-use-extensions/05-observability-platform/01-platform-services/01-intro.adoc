@@ -1,17 +1,16 @@
 ---
-title: "配置 WhizardTelemetry 平台服务"
-description: "介绍如何配置 WhizardTelemetry 平台服务。"
+title: "Configure WhizardTelemetry Platform Service"
+description: "Learn how to configure the WhizardTelemetry Platform Service."
 weight: 01
 ---
 
-WhizardTelemetry 平台服务是 WhizardTelemetry 可观测平台中各扩展组件的公共服务。它是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。
+The WhizardTelemetry Platform Service is the common service for all extensions of WhizardTelemetry Observability Platform. It is a common APIServer that providing backend platform services for all observability extensions.
 
-**配置说明：**
+**Configuration:**
 
-* 修改 WhizardTelemetry 平台服务的扩展组件配置，可配合 WhizardTelemetry 监控扩展组件，启用 Whizard 可观测中心。有关更多信息，请参阅 link:../../07-whizard/01-enable-whizard/[Whizard 可观测中心]。
+* Modify the extension configuration of WhizardTelemetry Platform Service in conjunction with WhizardTelemetry Monitoring to enable the Whizard Observability Center. For more information, see link:../../07-whizard/01-enable-whizard/[Whizard Observability Center].
 
-* 为 WhizardTelemetry 日志、WhizardTelemetry 审计、WhizardTelemetry 事件、以及通知历史配置 OpenSearch 日志接收器时，如果需要使用多个 OpenSearch 数据库，可以按如下配置。
-// 有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 平台服务”扩展组件的详情页说明。
+* When configuring the OpenSearch log receivers for WhizardTelemetry Logging, WhizardTelemetry Auditing, WhizardTelemetry Events, and notification history, if you need to use multiple OpenSearch databases, configure them as follows.
 +
 [,yaml]
 ----

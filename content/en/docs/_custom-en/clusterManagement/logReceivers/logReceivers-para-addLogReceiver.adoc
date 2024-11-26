@@ -1,15 +1,15 @@
 // :ks_include_id: 66ed1f4913ff42b5b26a407b2ce28c78
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|服务地址
+|Address
 |
 include::logReceivers-para-address.adoc[]
 
-|索引前缀
-|日志数据的索引前缀，用于区分不同类型的日志。仅对 Elasticsearch 和 OpenSearch 可用。
+|Index Prefix
+|The index prefix of log data, used to distinguish different types of logs. Only available for Elasticsearch and OpenSearch.
 
-|主题
-|日志数据的主题，用于区分不同类型的日志。仅对 Kafka 可用。
+|Topic
+|The topic of log data, used to distinguish different types of logs. Only available for Kafka.
 |===

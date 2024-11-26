@@ -1,4 +1,4 @@
 // :ks_include_id: 91f54871ad6f447eaca67f6b1853872e
-. 在需要删除的自定义监控面板右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the custom monitoring dashboard you want to delete, then select **Delete** from the dropdown list.
 
-. 在**删除自定义监控面板**对话框，输入自定义监控面板的名称，然后点击**确定**。
+. In the **Delete Custom Monitoring Dashboard** dialog, enter the name of the custom monitoring dashboard, then click **OK**.

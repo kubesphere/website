@@ -1,24 +1,22 @@
 ---
-title: "查看域名列表"
-description: "介绍如何查看域名列表。"
+title: "View Domain List"
+description: "Learn how to view the domain list."
 weight: 02
 ---
 
-:ks_navigation: **应用负载 > 应用路由工具**
+:ks_navigation: **Application Workloads > Ingress Utils**
 
-
-本节介绍如何查看已启用“域名重用校验”的域名列表。
-
+This section describes how to view the list of domains that have "Domain Reuse Validation" enabled.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 应用路由工具**扩展组件。
+* **KubeSphere Ingress Utils** should have been installed and enabled.
 
-* 您需要在{ks_product_both}平台具有 **cluster-viewer** 角色。
+* You should have the **cluster-viewer** role on the {ks_product-en} platform.
 
 == Steps
 
-. 登录{ks_product_left} Web 控制台并进入您的集群。
+. Log in to the {ks_product-en} web console and enter your cluster.
 
 +
 
@@ -26,25 +24,24 @@ include::../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 ====
-* 域名列表提供以下信息：
+* The domain list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|域名的名称和描述。
+|Name
+|The name and description of the domain.
 
-|域名
-|域名地址，支持使用通配符进行匹配。
+|Domain
+|The domain address, supports wildcard matching.
 |===
 --
 
-* 在列表上方点击搜索框并设置搜索条件，可按名称或域名搜索。名称支持模糊查询，域名仅支持等值查询，不支持模糊查询。
+* Click the search box at the top of the list to search by name or domain. The name supports fuzzy queries, while the domain only supports equal queries and does not support fuzzy queries.
 
 include::../../../../_ks_components-en/oper-refreshListData.adoc[]
 
 include::../../../../_ks_components-en/oper-customizeColumns.adoc[]
 ====
-

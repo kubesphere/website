@@ -1,19 +1,19 @@
 ---
-title: "设置组件"
-keywords: "Kubernetes, {ks_product}, 平台管理, Whizard 可观测中心, 设置组件"
-description: "介绍如何设置 Whizard 组件。"
+title: "Component Settings"
+keywords: "Kubernetes, {ks_product-en}, platform management, Whizard Observability Center, set components"
+description: "Describes how to set Whizard components."
 weight: 11
 ---
 
-:ks_menu: **平台管理 > Whizard 可观测中心**
+// :ks_menu: **Platform Management > Whizard Observability Center**
 
 
-本节介绍如何设置 Whizard 可观测中心的组件。
+This section describes how to set components in the Whizard Observability Center.
 
 
 == Prerequisites
 
-您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../05-users-and-roles/01-users/[用户]和link:../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, see link:../../../../05-users-and-roles/01-users/[Users] and link:../../../../05-users-and-roles/02-platform-roles/[Platform Roles].
 
 
 == Steps
@@ -22,127 +22,125 @@ include::../../../../_custom-en/platformManagement/extensionManagement/extension
 
 +
 
-. 在页面右上角点击image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，选择 **Whizard 可观测中心**。
+. Click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] in the upper-right corner of the page and click **Whizard Observability Center**.
 
 +
 
-. 在**多集群监控**页面右侧，点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**组件设置**页面。
+. On the **Multi-cluster Monitoring** page, click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] on the right to enter the **Component Settings** page.
 
 
-. 在**数据接入**页签，设置以下参数。
-+
---
-[%header,cols="1a,4a"]
-|===
-|参数 |描述
-
-|网关设置
-|
-
-* 组件副本数量: 设置存储网关组件的副本数量，默认值为 2。
-
-* 容器配额: 设置 CPU 预留和限制以及内存预留和上限。
-
-|数据路由
-|
-
-* 数据保留副本数量: 设置数据保留组件的副本数量，默认值为 1。
-
-* 组件副本数量: 设置数据路由组件的副本数量，默认值为 2。
-
-* 容器配额: 设置 CPU 预留和限制以及内存预留和上限。
-
-|本地存储
-|
-
-* 本地数据存储时间: 设置本地数据的存储时间，最小时间至少 3 天，默认为 7 天。
-
-* 组件副本数量: 设置本地存储组件的副本数量，默认值为 2。
-
-* 容器配额: 设置 CPU 预留和限制以及内存预留和上限。
-|===
---
-
-. 在**数据查询**页签，设置以下参数。
+. On the **Data Access** tab, set the following parameters.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|基础设置
+|Gateway Settings
 |
 
-* 组件副本数量: 设置 Query 组件的副本数量，默认值为 2。
+* Component Replicas: Set the number of replicas for the storage gateway component, default is 2.
 
-* 容器配额: 设置 CPU 预留和限制以及内存预留和上限。
+* Container Quotas: Set CPU request and limit, and memory request and limit.
 
-|缓存设置
+|Router
 |
+* Data Retention Replicas: Set the number of replicas for the data retention component, default is 1.
 
-* 组件副本数量: 设置 Cache 组件的副本数量，默认值为 2。
+* Component Replicas: Set the number of replicas for the data router component, default is 2.
 
-* 容器配额: 设置 CPU 预留和限制以及内存预留和上限。
+* Container Quotas: Set CPU request and limit, and memory request and limit.
 
+|Local Storage
+|
+* Local Data Storage Duration: Set the storage duration of local data. The value at least 3, and the default value is 7.
+
+* Component Replicas: Set the number of replicas for the local storage component, default is 2.
+
+* Container Quotas: Set CPU request and limit, and memory request and limit.
 |===
 --
 
-. 在**长期存储**页签，点击**启用**启用长期存储组件。启用后，您可以配置对象存储、网关、保留周期与降采样的组件参数。
+. On the **Data Query** tab, set the following parameters.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|对象存储
+|Basic Settings
 |
 
-* Bucket 名称：S3 对象存储桶的名称。
+* Component Replicas: Set the number of replicas for the Query component, default is 2.
 
-* 区域：您创建 Bucket 的地理区域。
+* Container Quotas: Set CPU request and limit, and memory request and limit.
 
-* 端点：要连接的 AWS S3 对象存储地址。
-
-* Access Key：与 AWS 访问密钥 ID 相关联的密钥。
-
-* Secret Key：与 AWS Access Key ID 关联的密钥。
-
-**高级设置**
-
-* HTTP 协议：决定是否开启不安全的 HTTP 协议。
-
-* 添加存储类：为对象存储添加用户元数据。开启后需要为对象存储参数添加键值。
-
-* HTTP 配置：配置接收方用于与基于 HTTP 的 API 服务通信的 HTTP 客户端。
-
-** TLS 证书：开启是否通过提交数字证书证明您的身份或表明您有权访问在线服务。
-
-** TLS 连接
-
-*** CA 证书：用于验证服务器证书的 CA 文件。
-
-*** Cert 文件：用于向服务器进行客户端证书身份验证的证书文件。
-
-*** 密钥：用于向服务器进行客户端证书身份验证的密钥文件。
-
-*** 服务器名称：ServerName 扩展以指示服务器的名称。
-
-*** 服务器证书验证：是否通过提交数字证书证明您的身份或表明您有权访问在线服务。
-
-|存储网关
-|设置 CPU 预留和限制以及内存预留和上限。
-
-|压缩及降采样
+|Cache Settings
 |
 
-* 原始数据存储时间：原始数据存储时间，超过此时间将删除原始数据。
+* Component Replicas: Set the number of replicas for the Cache component, default is 2.
 
-* 5m 降采样数据存储时间：指定降采样到数据点 5 分钟间隔的数据存储时间。
+* Container Quota: Set CPU request and limit, and memory request and limit.
 
-* 1h 降采样数据存储时间：指定降采样到数据点 5 分钟间隔的数据存储时间。
-
-* 容器配额：设置 CPU 预留和限制以及内存预留和上限。
 |===
 --
 
-. 在**规则计算**页签，设置容器配额。设置完成后，点击**确定**。
+. On the **Long-term Storage** tab, click **On** to enable the long-term storage component. After enabling, you can configure the component parameters for object storage, gateway, retention period, and downsampling.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Object Storage
+|
+
+* Bucket: The name of the S3 object storage bucket.
+
+* Region: The geographic region where the bucket is created.
+
+* Endpoint: The AWS S3 object storage address to connect to.
+
+* Access Key: AWS account access key ID.
+
+* Secret Key: The secret associated with the AWS Access Key ID.
+
+**Advanced Settings**
+
+* HTTP Protocol: Decide whether to enable the insecure HTTP protocol.
+
+* Add Storage Class: Add user metadata for the object storage. After enabling, you need to add key-value pairs for the object storage parameters.
+
+* HTTP Configuration: Configure the HTTP client used by the receiver to communicate with HTTP-based API services.
+
+** TLS Certificate: Whether to prove your identity or indicate your access rights to online services by submitting a digital certificate.
+
+** TLS Connection
+
+*** CA Certificate: The CA file used to verify the server certificate.
+
+*** Cert File: The certificate file used for client certificate authentication to the server.
+
+*** Key: The key file used for client certificate authentication to the server.
+
+*** Server Name: The ServerName extension to indicate the server's name.
+
+*** Server Certificate Verification: Whether to prove your identity or indicate your access rights to online services by submitting a digital certificate.
+
+|Storage Gateway
+|Set CPU request and limit, and memory request and limit.
+
+|Compression and Downsampling
+|
+
+* Raw Data Storage Duration: Raw data storage duration. The raw data will be deleted after the duration expires.
+
+* 5m Downsampled Data Storage Duration: Specify the data storage duration for downsampling to 5-minute intervals of data points.
+
+* 1h Downsampled Data Storage Duration: Specify the data storage duration for downsampling to 1-hour intervals of data points.
+
+* Container Quotas: Set CPU request and limit, and memory request and limit.
+|===
+--
+
+. On the **Ruler** tab, set the container quota. After setting, click **OK**.

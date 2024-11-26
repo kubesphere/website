@@ -1,8 +1,8 @@
 The IP address of the cluster gateway or project gateway.
 
 // tag::bullets[]
-* If the external access mode of the gateway is NodePort, the **Gateway Address** is the IP address of one of the cluster nodes. Clients can access the backend services of the Ingresses through the IP address and port of any cluster node.
+* If the external access mode of the gateway is **NodePort**, the **Gateway Address** is the IP address of one of the cluster nodes. Clients can access the backend services of the Ingresses through the IP address and port of any cluster node.
 
-* If the external access mode of the gateway is LoadBalancer, the **Gateway Address** is the address of the load balancer.
+* If the external access mode of the gateway is **LoadBalancer**, the **Gateway Address** is the address of the load balancer.
 
 // end::bullets[]

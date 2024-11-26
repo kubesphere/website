@@ -91,7 +91,7 @@ include::../../clusterManagement/workloads/createWorkload/workloads-para-environ
 include::../../clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
 --
 
-* 外部访问
+* 高级设置 > 外部访问
 +
 --
 设置是否允许从 KubeSphere 集群外部访问微服务网关。如果启用外部访问，您需要选择外部访问模式。

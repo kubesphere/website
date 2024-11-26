@@ -1,7 +1,7 @@
 ---
-title: "资源监控"
-keywords: "Kubernetes, {ks_product}, 多集群, Whizard 可观测中心, 资源监控"
-description: "介绍如何查看多集群的资源监控数据。"
+title: "Resource Monitoring"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster, Whizard Observability Center, resource monitoring"
+description: "Describes how to view resource monitoring data across multiple clusters."
 weight: 03
 layout: "second"
 ---

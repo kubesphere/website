@@ -1,10 +1,10 @@
 // :ks_include_id: 76fde78ac7ba4fef9a7a125fa849713d
-. 勾选需要禁用的规则组左侧的复选框，然后在规则组列表上方点击**禁用**。
+. Select the checkbox on the left side of the rule groups you need to disable, and then click **Disable** above the rule group list.
 
-. 在**批量禁用规则组**对话框，输入规则组的名称，然后点击**确定**。
+. In the **Disable Multiple Rule Groups** dialog, enter the names of the rule groups, and then click **OK**.
 +
 --
 include::../../note-separateNamesByComma.adoc[]
 --
 
-. 勾选已禁用的规则组左侧的复选框，然后在规则组列表上方点击**启用**可批量启用规则组。
+. Select the checkbox on the left side of the disabled rule groups, and then click **Enable** above the rule group list to batch enable the rule groups.

@@ -1,11 +1,11 @@
 // :ks_include_id: 154069b262b94648a55d983b0875f8c6
-|别名
-|规则组的别名。不同规则组的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the rule group. Different rule groups can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-), with a maximum of 63 characters.
 
-|检查间隔
-|指标检查之间的时间间隔。默认值为 1 分钟。
+|Check Interval
+|The time interval between metric checks. The default value is 1 minute.
 
-|描述
-|规则组的描述信息。
+|Description
+|The description of the rule group.
 
-描述可包含任意字符，最长 256 个字符。
+The description can contain any characters, with a maximum of 256 characters.

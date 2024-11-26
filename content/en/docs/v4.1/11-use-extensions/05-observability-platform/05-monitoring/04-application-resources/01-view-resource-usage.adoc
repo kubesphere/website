@@ -1,23 +1,21 @@
 ---
-title: "查看应用资源用量"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 资源用量"
-description: "介绍如何查看应用资源用量的监控数据。"
+title: "View Application Resource Usage"
+keywords: "Kubernetes, {ks_product-en}, cluster management, monitoring & alerting, resource usage"
+description: "This section introduces how to view application resource usage."
 weight: 01
 ---
 
-:ks_permission: **监控查看**
-:ks_navigation: **监控告警 > 应用资源**
+:ks_permission: **Monitoring Viewing**
+:ks_navigation: **Monitoring & Alerting > Application Resources**
 
-
-本节介绍如何查看应用资源用量。
-
+This section introduces how to view application resource usage.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+* **WhizardTelemetry Monitoring** should have been installed and enabled.
 
 == Steps
 
@@ -29,25 +27,25 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**应用资源**页面，点击**资源用量**页签查看集群资源用量、应用资源用量和项目数量。
+. On the **Application Resources** page, click the **Resource Usage** tab to view cluster resource usage, application resource usage, and the number of projects.
 +
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|集群资源用量
-|当前集群已使用的 CPU 和内存资源数量。
+|Cluster Resource Usage
+|The amount of CPU and memory resources used in the current cluster.
 
-|应用资源用量
-|当前集群中已创建的部署、有状态副本集、守护进程集、任务、定时任务、持久卷声明、服务、应用路由、容器组的数量。
+|Application Resource Usage
+|The number of deployments, StatefulSets, DaemonSets, Jobs, CronJobs, persistent volume claims, services, Ingresses, and pods created in the current cluster.
 
-|项目数量
-|当前集群中的项目数量。
+|Number of Projects
+|The number of projects in the current cluster.
 |===
 
 +
 --
-* 点击**集群资源用量**和**应用资源用量**中的折线图，查看资源用量随时间变化的详细信息。
+* Click the line charts in **Cluster Resource Usage** and **Application Resource Usage** to view detailed information about resource usage over time.
 
 include::../../../../../../_ks_components-en/oper-selectTimeRange.adoc[]
 

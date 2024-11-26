@@ -1,35 +1,25 @@
 ---
-title: "创建规则组"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 规则组, 创建规则组"
-description: "介绍如何创建告警规则组。"
+title: "Create a Rule Group"
+keywords: "Kubernetes, {ks_product-en}, cluster management, monitoring & alerting, rule groups, create a rule group"
+description: "This section introduces how to create an alert rule group."
 weight: 01
 ---
 
-
-:ks_permission: **规则组管理**
-:ks_navigation: **监控告警 > 规则组**
-
+:ks_permission: **Rule Group Management**
+:ks_navigation: **Monitoring & Alerting > Rule Groups**
 
 include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-createAnAlertingPolicy.adoc[]
 
-
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 告警**扩展组件。
-
+* The **WhizardTelemetry Alerting** extension must be installed and enabled on the {ks_product-en} platform.
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
-// 
-// include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-prer-exposeMetrics.adoc[]
-
-// 
-
-
 == Steps
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
 +
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
@@ -52,37 +42,37 @@ include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-
 ====
 include::../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-commonParameters_new.adoc[]
 
-* 规则模板
+* Rule Template
 +
 --
-通过下拉列表选择监控目标和触发条件。
+Select the monitoring target and trigger condition from the dropdown list.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|资源类型
-|需要监控的工作负载的类型，如部署、有状态副本集、守护进程集。仅显示在项目的告警规则设置中。
+|Resource Type
+|The type of workload to be monitored, such as Deployments, StatefulSets, DaemonSets. Only displayed in the alert rule settings for projects.
 
-|监控目标
-|需要监控的目标，如集群节点、工作负载等。
+|Monitoring Target
+|The target to be monitored, such as cluster nodes, workloads, etc.
 
 include::../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-triggerCondition.adoc[]
 |===
 --
 
-* 自定义规则
+* Custom Rule
 +
 --
-通过 PromQL 表达式指定监控目标和触发条件。
+Specify the monitoring target and trigger condition through a PromQL expression.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 include::../../../../../_custom-en/platformManagement/observabilityCenter/ruleGroups/ruleGroups-para-duration.adoc[]
 
-|告警级别
+|Severity
 |
 include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-para-alertLevel.adoc[]
 

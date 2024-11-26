@@ -9,7 +9,7 @@ layout: "second"
 
 本节介绍如何使用 Whizard 可观测中心。
 
-Whizard 可观测中心功能提供了跨集群的资源监控和告警信息。您可以在 Whizard 可观测中心查看所有集群的汇总监控数据和每个集群的具体监控数据，同时可以在平台层级创建全局告警规则组并查看系统生成的全局告警。
+Whizard 可观测中心提供了跨集群的资源监控和告警信息。您可以在 Whizard 可观测中心查看所有集群的汇总监控数据和每个集群的具体监控数据，同时可以在平台层级创建全局告警规则组并查看系统生成的全局告警。
 
 link:01-enable-whizard/[启用 Whizard 可观测中心]后，点击{ks_product_both}平台顶部导航栏上的image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，点击 **Whizard 可观测中心**，进入该组件的概览页面。
 

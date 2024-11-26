@@ -1,24 +1,22 @@
 ---
-title: "规则组"
-keywords: "Kubernetes, {ks_product}, 集群管理, 规则组"
-description: "介绍如何创建、编辑和查看告警规则组。"
+title: "Rule Groups"
+keywords: "Kubernetes, {ks_product-en}, cluster management, rule groups"
+description: "This section introduces how to create, edit, and view alert rule groups."
 weight: 03
 layout: "second"
 ---
 
-本节介绍如何在集群和项目中创建、编辑、启用、禁用和查看告警规则组。
+This section introduces how to create, edit, enable, disable, and view alert rule groups in clusters and projects.
 
-创建规则组后，系统可在特定监控指标满足预设条件和持续时间时生成告警。
+After creating a rule group, the system can generate alerts when specific monitoring metrics meet preset conditions and durations.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-- {ks_product_right}为集群提供了内置规则组，同时也支持自定义规则组。若已启用 Whizard 可观测中心，内置规则组只能在 Whizard 可观测中心中进行管理。有关更多信息，请参阅 link:../../07-whizard/05-alert-management/01-rule-groups/[Whizard 规则组]。
+- {ks_product-en} provides built-in rule groups for clusters, and also supports custom rule groups. If the Whizard Observability Center is enabled, built-in rule groups can only be managed in the Whizard Observability Center. For more information, see link:../../07-whizard/05-alert-management/01-rule-groups/[Whizard Rule Groups].
 
-- 在项目中，只支持自定义规则组。
+- In projects, only custom rule groups are supported.
 |===
-
-

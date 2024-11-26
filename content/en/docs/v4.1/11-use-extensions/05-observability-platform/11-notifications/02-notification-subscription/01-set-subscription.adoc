@@ -1,19 +1,18 @@
 ---
-title: "创建通知订阅"
-description: "介绍如何创建通知订阅。"
+title: "Create Notification Subscription"
+description: "Describes how to create a notification subscription."
 weight: 01
 ---
 
-:ks_menu: **平台管理 > 平台设置**
-:ks_navigation: **通知管理 > 通知订阅**
-:ks_permission: **平台设置管理**
+:ks_navigation: **Notification Management > Notification Subscription**
+:ks_permission: **Platform Settings Management**
 
 
-本节介绍如何创建通知订阅。
+This section describes how to create a notification subscription.
 
 include::../../../../../../_ks_components-en/admonitions/note.adoc[]
 
-目前仅支持为邮箱配置多个通知订阅。
+Currently, only email notification subscriptions are supported.
 
 include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
@@ -22,47 +21,47 @@ include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
+* **WhizardTelemetry Notification** should have been installed and enabled.
 
 == Steps
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台。
-. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
-. 在左侧导航栏选择pass:a,q[{ks_navigation}]。
-. 在**通知订阅**页面的**邮箱**页签，点击**创建**。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper-right corner of the {ks_product-en} web console to enter the **Platform Settings** page.
+. Select pass:a,q[{ks_navigation}] in the left navigation pane.
+. On the **Notification Subscription** page, click **Create** under the **Email** tab.
 +
 ====
-* 基本信息
+* Basic Information
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|通知订阅的名称。
+|Name
+|The name of the notification subscription.
 
-名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
-|别名
-|通知订阅的别名。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the notification subscription. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), cannot start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|通知订阅的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description of the notification subscription. The description can contain any characters and can be up to 256 characters long.
 
 |===
 --
 
-* 接收设置
+* Recipient Settings
 +
 --
-设置接收通知的邮箱地址。点击**添加**可设置多个地址。
+Set the email addresses that will receive notifications. Click **Add** to set multiple addresses.
 --
 
-* 通知接收
+* Notification Receipt
 +
 --
-点击切换开关，将通知功能设置为**已启用**。
+Click the toggle switch to set the notification function to **Enabled**.
 --
 
 include::../../../../../_custom-en/platformManagement/platformSettings/notificationChannels/notificationChannels-para-notificationConditions_new.adoc[]

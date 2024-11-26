@@ -1,52 +1,51 @@
 ---
-title: "设置飞书通知"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 设置飞书通知"
-description: "介绍如何设置飞书通知。"
+title: "Set Up Feishu Notification"
+keywords: "Kubernetes, {ks_product-en}, platform settings, notification management, notification settings, set up Feishu notification"
+description: "Describes how to set up Feishu notification."
 weight: 02
 ---
 
-// :ks_menu: **平台管理 > 平台设置**
-// :ks_navigation: **通知管理 > 通知渠道**
+// :ks_navigation: **Notification Management > Notification Channels**
 
 
-本节介绍如何设置飞书通知。
+This section describes how to set up Feishu notification.
 
-飞书通知功能支持通过以下两种方式向用户发送通知：
+Feishu notification functionality supports sending notifications to users through the following two methods:
 
-* **会话设置**：使用飞书应用向特定用户或部门发送通知。
+* **Chat Settings**: Use a Feishu application to send notifications to specific users or departments.
 
-* **群机器人设置**：使用飞书机器人向特定群聊发送通知。
+* **Chatbot Settings**: Use a Feishu chatbot to send notifications to specific group chats.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
+* **WhizardTelemetry Notification** should have been installed and enabled.
 
-* 您需要提前从飞书平台获取应用或群机器人的访问参数。有关更多信息，请参阅link:https://open.feishu.cn/document/ukTMukTMukTM/uITNz4iM1MjLyUzM[飞书开发者文档]。
+* You should get the access parameters for the application or chatbot from Feishu in advance. For more information, see link:https://open.feishu.cn/document/ukTMukTMukTM/uITNz4iM1MjLyUzM[Feishu Developer Documentation].
 
 
 == Steps
 
-. 登录{ks_product_left} Web 控制台。
+. Log in to the {ks_product-en} web console.
 
-. 在页面右上角点击当前用户名，然后在下拉列表中选择**通知设置**。
+. Click the current username in the upper-right corner of the page, and then select **Notification Settings** from the dropdown list.
 
-. 在**通知设置**页面的**飞书**页签，设置飞书通知参数，然后点击**确定**。
+. On the **Notification Settings** page, under the **Feishu** tab, set the Feishu notification parameters, and then click **OK**.
 
 +
 ====
-* 会话设置
+* Chat Settings
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 // |App ID
-// |飞书应用的 App ID。
+// |The App ID of the Feishu application.
 
 // |App Secret
-// |飞书应用的 App Secret。
+// |The App Secret of the Feishu application.
 
 include::../../../../../_custom-en/platformManagement/platformSettings/notificationChannels/notificationChannels-para-sessionId.adoc[]
 |===
@@ -59,4 +58,4 @@ include::../../../../../_custom-en/platformManagement/platformSettings/notificat
 include::../../../../../_custom-en/platformManagement/platformSettings/notificationChannels/notificationChannels-para-sendTestInformation.adoc[]
 ====
 
-. 点击上方的**通知已禁用**开关，启用飞书通知。
+. Click the **Notification Disabled** switch above to enable Feishu notifications.

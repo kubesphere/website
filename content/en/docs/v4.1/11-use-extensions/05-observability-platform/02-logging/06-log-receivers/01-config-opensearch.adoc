@@ -1,33 +1,32 @@
 ---
-title: "配置 OpenSearch 日志接收器"
-description: "介绍如何配置 OpenSearch 日志接收器。"
+title: "Configure OpenSearch Log Receiver"
+description: "This section introduces how to configure the OpenSearch log receiver."
 weight: 01
 ---
 
-本节介绍如何配置 OpenSearch 日志接收器，以便将日志数据发送到指定的 OpenSearch 数据库。
+This section introduces how to configure the OpenSearch log receiver to send log data to the specified OpenSearch database.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-在扩展组件安装时或安装完成后均可以修改扩展组件配置，以配置日志接收器。下文仅介绍扩展组件已安装的情况下，如何配置 OpenSearch 日志接收器。
+You can modify the extension configuration to configure the log receiver either during or after the extension installation. The following only introduces how to configure the OpenSearch log receiver when the extension is already installed.
 |===
-
 
 == Prerequisites
 
-* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。
-* 已获取 OpenSearch 的服务地址和服务端口。
+* You should have the **platform-admin** role on the {ks_product-en} platform.
+* You have obtained the service address and port of OpenSearch.
 
-== 配置步骤
+== Configuration Steps
 
-. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
-. 点击**扩展中心**。
-. 点击扩展组件的名称，进入组件详情页。
-. 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**扩展组件配置**。
+. Log in to the {ks_product-en} web console with a user who has the **platform-admin** role.
+. Click **Extensions Center**.
+. Click the name of the extension to enter the details page.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] under the icon, and select **Extension Config**.
 
-. 编辑 **WhizardTelemetry 日志**的扩展组件配置，修改 `vector-logging` 下 opensearch 的相关配置。
+. Edit the configuration of **WhizardTelemetry Logging** and modify the configuration of opensearch under `vector-logging`.
 +
 [,yaml]
 ----
@@ -54,15 +53,15 @@ vector-logging:
           verify_certificate: false
 ----
 
-. 编辑 **WhizardTelemetry 审计**的扩展组件配置，修改 `kube-auditing` 下 opensearch 的相关配置。
+. Edit the configuration of **WhizardTelemetry Auditing** and modify the configuration of opensearch under `kube-auditing`.
 +
 --
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-另外，还需要启用 KubeSphere 和 Kubernetes 审计。有关更多信息，请参阅扩展中心“WhizardTelemetry 审计”扩展组件的详情页说明。
+Additionally, you need to enable KubeSphere and Kubernetes auditing. For more information, see the details page of the "WhizardTelemetry Auditing" extension in the Extensions Center.
 |===
 
 [,yaml]
@@ -89,10 +88,9 @@ kube-auditing:
   #      tls:
   #        verify_certificate: false
 ----
-
 --
 
-. 编辑 **WhizardTelemetry 事件**的扩展组件配置，修改 `kube-events-exporter` 下 opensearch 的相关配置。
+. Edit the configuration of **WhizardTelemetry Events** and modify the configuration of opensearch under `kube-events-exporter`.
 +
 [,yaml]
 ----
@@ -119,7 +117,7 @@ kube-events-exporter:
   #        verify_certificate: false
 ----
 
-. 编辑 **WhizardTelemetry 通知**的扩展组件配置，修改 `notification-history` 下 opensearch 的相关配置。
+. Edit the configuration of **WhizardTelemetry Notification** and modify the configuration of opensearch under `notification-history`.
 +
 [,yaml]
 ----
@@ -146,6 +144,6 @@ notification-history:
   #        verify_certificate: false
 ----
 
-. 编辑 **WhizardTelemetry 平台服务**的扩展组件配置，确保其中各组件配置下的 `endpoints` 与以上各个扩展组件的 `endpoints` 配置一致，以便{ks_product_both}平台能够正确查询日志数据。有关更多信息，请参阅扩展中心“WhizardTelemetry 平台服务”扩展组件的详情页说明。
+. Edit the configuration of **WhizardTelemetry Platform Service** and ensure that the `endpoints` under each extension is consistent with the `endpoints` configuration of the above extensions, so that the {ks_product-en} platform can correctly query the log data. For more information, see the details page of the "WhizardTelemetry Platform Service" extension in the Extensions Center.
 +
-至此，OpenSearch 日志接收器配置完成。在**集群设置 > 日志接收器**页面，可以看到 OpenSearch 已被配置为容器日志、资源事件、审计日志和通知历史的日志接收器。
+At this point, the OpenSearch log receiver configuration is complete. On the **Cluster Settings > Log Receivers** page, you can see that OpenSearch has been configured as the log receiver for container logs, resource events, audit logs, and notification history.

@@ -5,7 +5,6 @@ description: "本节介绍如何创建静默策略。"
 weight: 01
 ---
 
-:ks_menu: **平台管理 > 平台设置**
 :ks_navigation: **通知管理 > 通知设置**
 :ks_permission: **平台设置管理**
 
@@ -64,4 +63,6 @@ include::../../../../../_custom/platformManagement/platformSettings/platformSett
 +
 --
 include::../../../../../_custom/platformManagement/platformSettings/platformSettings/platformSettings-para-silenceTime.adoc[]
+
+静默策略创建完成后将显示在静默策略列表中。
 --

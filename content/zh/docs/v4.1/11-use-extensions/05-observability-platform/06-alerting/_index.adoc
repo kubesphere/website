@@ -30,12 +30,12 @@ WhizardTelemetry 告警基于 KubeSphere 采集的监控数据，可针对不同
 |注意
 
 |
-如果在安装 WhizardTelemetry 告警之后，对 WhizardTelemetry 监控是否启用 Whizard 可观测中心进行了变更，请按以下说明更新WhizardTelemetry 告警的配置。
+如果在安装 WhizardTelemetry 告警之后，对 WhizardTelemetry 监控是否启用 Whizard 可观测中心进行了变更，请按以下说明更新 WhizardTelemetry 告警的配置。
 |===
 
 * 当 **WhizardTelemetry 监控**扩展组件未启用 Whizard 可观测中心时：
 
-. 安装 **WhizardTelemetry 告警**扩展组件时，设置 `global.rules.distributionMode` 为 Member。
+. 安装 **WhizardTelemetry 告警**扩展组件时，设置 `global.rules.distributionMode` 为 `Member`。
 
 . 配置 `agent.ruler.alertmanagersUrl` 为 alertmanager-proxy 服务地址（该服务由 WhizardTelemetry 通知提供，安装在 host 集群，默认可在 http://<host-node-ip>:31093 访问）。
 +
@@ -64,7 +64,7 @@ agent:
 * 当 **WhizardTelemetry 监控**扩展组件已启用 Whizard 可观测中心时：
 +
 ====
-安装 **WhizardTelemetry 告警**扩展组件时，保持 `global.rules.distributionMode` 为 None。
+安装 **WhizardTelemetry 告警**扩展组件时，保持 `global.rules.distributionMode` 为 `None`。
 
 [,yaml]
 ----

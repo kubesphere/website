@@ -1,24 +1,21 @@
 ---
-title: "查看微服务配置列表"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 查看微服务配置列表"
-description: "介绍如何查看微服务配置列表。"
+title: "View Microservice Configuration List"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, view microservice configuration list"
+description: "Learn how to view the microservice configuration list."
 weight: 02
 ---
 
-:ks_permission: ** Spring Cloud 微服务查看**
-:ks_navigation:  **Spring Cloud > 微服务配置**
+:ks_permission: **Spring Cloud Microservices Viewing**
+:ks_navigation: **Spring Cloud > Microservice Configurations**
 
-
-本节介绍如何查看微服务配置列表。
-
+This section describes how to view the microservice configuration list.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
 
 == Steps
 
@@ -29,32 +26,32 @@ include::../../../../_custom-en/projectManagement/projectManagement-oper-openPro
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 ====
-* 微服务配置列表提供以下信息：
+* The microservice configuration list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|微服务配置的名称。
+|Name
+|The name of the microservice configuration.
 
-|状态
-|微服务配置的状态。
+|Status
+|The status of the microservice configuration.
 
-* **已发布**：微服务配置创建成功并且可供微服务使用。
+* **Published**: The microservice configuration was created successfully and is available for microservices.
 
-* **失败**：微服务配置创建过程中出现系统错误导致创建失败。
+* **Failed**: The microservice configuration failed to be created due to a system error during the creation process.
 
-|数据 ID
-|微服务配置的全局唯一标识符，由 <微服务配置名称>.<格式> 组成。
+|Data ID
+|The globally unique identifier of the microservice configuration, composed of <microservice configuration name>.<format>.
 
-|创建时间
-|微服务配置的创建时间。
+|Creation Time
+|The creation time of the microservice configuration.
 |===
 --
 
-* 在列表上方点击搜索框并输入关键字，可按名称和状态搜索微服务配置。
+* Click the search box at the top of the list to search for microservice configurations by name and status.
 
 include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

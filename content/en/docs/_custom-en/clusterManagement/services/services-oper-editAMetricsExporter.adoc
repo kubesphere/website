@@ -1,47 +1,48 @@
 // :ks_include_id: f0e2bbaddcbd4d3db4ce4f3625f57ca1
-. 在服务详情页面左上角选择**更多操作 > 编辑监控导出器**。
+. Select **More > Edit Metrics Exporter** in the upper left corner of the service details page.
 
-. 在**编辑监控导出器**页面，设置监控指标的收集路径、收集间隔和超时时间，然后点击**确定**。
+. On the **Edit Metrics Exporter** page, set the collection path, collection interval, and timeout for the monitoring metrics, then click **OK**.
 +
 --
-{ks_product-en}的监控告警模块将根据此处设置的参数访问服务并收集应用程序的监控指标。
+The monitoring and alerting module of KubeSphere will access the service and collect the application's monitoring metrics based on the parameters set here.
+
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|协议
-|用于通信的协议，取值可以为 **HTTP** 或 **HTTPS**。
+|Protocol
+|The protocol used for communication, which can be **HTTP** or **HTTPS**.
 
-|端口
-|用于通信的服务端口。
+|Port
+|The service port used for communication.
 
-|路径
-|暴露应用程序监控指标的路径。
+|Path
+|The path exposing the application's monitoring metrics.
 
-|认证方式
-|收集应用程序监控指标过程的通信认证方式。
+|Authentication Method
+|The communication authentication method for the process of collecting application monitoring metrics.
 
-* **无需认证**：不采用任何认证手段。此方式可能存在信息安全隐患。
+* **No Authentication**: No authentication method is used. This method may have information security risks.
 
-* **TLS**：收集应用程序监控指标的过程通过 TLS 协议进程认证。
+* **TLS**: The process of collecting application monitoring metrics is authenticated through the TLS protocol.
 
-* **Bear 令牌**：通过令牌进行认证。
+* **Bearer Token**: Authentication is performed through a token.
 
-* **基础认证**：通过用户名和密码认证。
+* **Basic Authentication**: Authentication is performed through a username and password.
 
-除**无需认证**外，其他认证方式都需要在应用程序中配置对应的认证逻辑，并提前创建包含认证信息的保密字典。
+Except for **No Authentication**, other authentication methods require corresponding authentication logic to be configured in the application and a Secret containing the authentication information to be created in advance.
 
-|收集间隔
-|应用程序监控指标的收集间隔，单位为分钟。
+|Collection Interval
+|The collection interval for application monitoring metrics, in minutes.
 
-|超时时间
-|每次收集应用程序监控指标的超时时间，单位为秒。
+|Timeout
+|The timeout for each collection of application monitoring metrics, in seconds.
 |===
 --
 
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-监控导出器创建完成后，您还需要在{ks_product-en} Web 控制台使用监控指标进一步创建规则组或自定义监控面板，以对应用程序的运行状态进行监控。
+After the metrics exporter is created, you also need to use the monitoring metrics to further create rule groups or custom monitoring dashboards in the {ks_product-en} web console to monitor the running status of the application.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

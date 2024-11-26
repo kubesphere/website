@@ -1,16 +1,14 @@
 // :ks_include_id: 4cae0895d3854461b646043abc44ff2b
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|持续静默
-|满足静默条件的通知在所有时间静默。
+|Silence Continuously
+|Notifications that meet the silence conditions are silenced at all times.
 
-|在特定时间范围内静默
-|满足静默条件的通知在指定的时间范围内静默。您需要选择静默的开始时间和结束时间。
+|Silence During Time Range
+|Notifications that meet the silence conditions are silenced during the specified time range. You need to select the start and end times for the silence.
 
-|周期性静默
-|满足静默条件的通知每日、每周或每月在指定的时间范围内静默。您需要选择静默的日期、开始时间和结束时间。
+|Silence Periodically
+|Notifications that meet the silence conditions are silenced daily, weekly, or monthly during the specified time range. You need to select the date, start time, and end time for the silence.
 |===
-
-静默策略创建完成后将显示在静默策略列表中。

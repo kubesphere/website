@@ -1,47 +1,46 @@
 ---
-title: "WhizardTelemetry 监控"
-keywords: "Kubernetes, {ks_product}, 平台管理, Whizard 可观测中心"
-description: "介绍如何使用“WhizardTelemetry 监控”扩展组件。"
-weight: 05
+title: "WhizardTelemetry Monitoring"
+keywords: "Kubernetes, {ks_product-en}, platform management, Whizard Observability Center"
+description: "This section introduces how to use the 'WhizardTelemetry Monitoring' extension."
+weight: 06
 layout: "second"
 ---
 
+This section introduces how to use the "WhizardTelemetry Monitoring" extension.
 
-本节介绍如何使用“WhizardTelemetry 监控”扩展组件。
+WhizardTelemetry Monitoring is an extension that provides monitoring functions in the WhizardTelemetry Observability Platform, including the Whizard Observability Center. It provides multi-tenant perspective cloud-native resource monitoring capabilities, including real-time and historical data display of core monitoring metrics for objects such as multiple clusters, nodes, workloads, GPU, and K8s control planes.
 
-WhizardTelemetry 监控是 WhizardTelemetry 可观测平台中提供监控功能的扩展组件，其中包含了 Whizard 可观测中心。可提供多租户视角的云原生资源监控能力, 包括针对多集群、节点、工作负载、GPU、K8s 控制面等对象的核心监控指标实时和历史数据展示等功能。
+This section only introduces the monitoring functions in a single-cluster environment. For alerting functions in a single-cluster environment, see link:../06-alerting[WhizardTelemetry Alerting]. For monitoring and alerting functions in a multi-cluster environment, see link:../07-whizard[Whizard Observability Center].
 
-本节仅介绍单集群环境下的监控功能。有关单集群的告警功能，请参阅 link:../06-alerting[WhizardTelemetry 告警]。有关多集群的监控和告警功能，请参阅 link:../07-whizard[Whizard 可观测中心]。
-
-安装“WhizardTelemetry 监控”扩展组件后，集群和项目的左侧导航栏将显示**监控告警**选项，集群和项目中应用负载下的服务将支持**编辑监控导出器**，以下页面也将显示相关监控指标的数据：
+After installing the "WhizardTelemetry Monitoring" extension, the **Monitoring & Alerting** option will be displayed in the left navigation pane of the cluster and project, and services under application workloads in the cluster and project will support **Edit Monitoring Exporter**. The following pages will also display relevant monitoring metrics data:
 
 [%header,cols="1a,3a"]
 |===
-|模块
-|页面
+|Module
+|Pages
 
-|集群管理
+|Cluster Management
 |
-* 概览页面；
-* 集群节点、项目的列表和详情页；
-* 工作负载、任务、容器组、服务、容器组 IP 池、持久卷声明的详情页；
-* 集群设置的基本信息页面。
+* Overview page;
+* List and details pages of cluster nodes and projects;
+* Details pages of workloads, Jobs, pods, services, pod IP pools, and persistent volume claims;
+* Basic information page of cluster settings.
 
-|企业空间管理
+|Workspace Management
 |
-* 概览页面；
-* 项目列表。
+* Overview page;
+* Project list.
 
-|项目管理
+|Project Management
 |
-* 概览页面；
-* 工作负载、任务、容器组、服务、持久卷声明的详情页。
+* Overview page;
+* Details pages of workloads, Jobs, pods, services, and persistent volume claims.
 |===
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 监控”扩展组件的详情页说明。
+For more information about extension configuration, see the details page of the "WhizardTelemetry Monitoring" extension in the Extensions Center.
 |===

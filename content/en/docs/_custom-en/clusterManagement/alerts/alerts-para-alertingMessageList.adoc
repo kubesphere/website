@@ -1,35 +1,35 @@
 // :ks_include_id: 9bb30ff8148c403aa266fbe96dcaa2a8
-* 告警列表提供以下信息：
+* The alert list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|消息
+|Message
 |
 include::../ruleGroups/ruleGroups-para-message.adoc[]
 
-|状态
+|Status
 |
-告警当前的状态。
+The current status of the alert.
 
 include::alerts-para-alertingStatus.adoc[]
 
-|告警级别
+|Severity
 |
 include::../ruleGroups/ruleGroups-para-alertLevel.adoc[]
 
-|规则名称
-|告警规则的名称。
+|Alerting Name
+|The name of the alert rule.
 
-|规则组
-|告警规则组的名称。
+|Rule Group
+|The name of the alerting rule group.
 
-|监控目标
-|生成告警的监控目标的类型和名称。
+|Monitored Target
+|The type and name of the monitored target that generated the alert.
 
-|触发时间
+|Trigger Time
 |
 include::../ruleGroups/ruleGroups-para-activationTime.adoc[]
 |===

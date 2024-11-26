@@ -26,7 +26,7 @@ weight: 01
 --
 **WhizardTelemetry 平台服务**
 
-将配置文件中的 `whizard-telemetry.config.observability.enabled` 参数设置为 true，然后点击**确定**。
+将配置文件中的 `whizard-telemetry.config.observability.enabled` 参数设置为 `true`，然后点击**确定**。
 
 [,yaml]
 ----
@@ -36,6 +36,7 @@ whizard-telemetry:
       enabled: true
       endpoint: "http://query-frontend-whizard-operated.kubesphere-monitoring-system.svc:10902"
 ----
+
 **WhizardTelemetry 监控**
 
 修改配置文件的以下部分，然后点击**确定**。
@@ -66,7 +67,7 @@ kube-prometheus-stack:
 
 **WhizardTelemetry 告警**
 
-确保 `global.rules.distributionMode` 为 None。
+确保 `global.rules.distributionMode` 为 `None`。
 
 [,yaml]
 ----
@@ -74,8 +75,8 @@ global:
   rules:
     distributionMode: None
 ----
-
 --
+
 . 编辑完成后，点击顶部导航栏上的image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，即可发现 **Whizard 可观测中心**图标。
 +
 --

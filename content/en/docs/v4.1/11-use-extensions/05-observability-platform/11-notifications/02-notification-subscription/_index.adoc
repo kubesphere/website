@@ -1,13 +1,11 @@
 ---
-title: "通知订阅"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知订阅"
-description: "介绍如何管理通知订阅。"
+title: "Notification Subscriptions"
+keywords: "Kubernetes, {ks_product-en}, platform settings, notification subscriptions"
+description: "Describes how to manage notification subscriptions."
 weight: 02
 layout: "second"
 ---
 
-本节介绍如何管理通知订阅。
+This section describes how to manage notification subscriptions.
 
-通过通知订阅，您可以在同一通知渠道下，配置多个不同的过滤条件以发送通知给相应的接收者。
-
-
+Through notification subscriptions, you can configure multiple different filter conditions under the same notification channel to send notifications to corresponding recipients.

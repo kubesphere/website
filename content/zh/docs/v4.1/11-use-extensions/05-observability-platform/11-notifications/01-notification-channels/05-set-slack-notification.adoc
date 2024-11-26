@@ -6,7 +6,6 @@ weight: 05
 ---
 
 
-// :ks_menu: **平台管理 > 平台设置**
 :ks_navigation: **通知管理 > 通知渠道**
 :ks_permission: **平台设置管理**
 

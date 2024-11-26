@@ -1,33 +1,29 @@
 ---
-title: "添加日志接收器"
-keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 日志接收器, 添加日志接收器"
-description: "介绍如何添加日志接收器。"
+title: "Add Log Receivers"
+keywords: "Kubernetes, {ks_product-en}, cluster management, cluster settings, log receivers, add log receiver"
+description: "This section introduces how to add log receivers."
 weight: 01
 ---
 
-:ks_permission: **集群设置管理**
-:ks_navigation: **集群设置 > 日志接收器**
+:ks_permission: **Cluster Settings Management**
+:ks_navigation: **Cluster Settings > Log Receivers**
 
+This section introduces how to add log receivers.
 
-本节介绍如何添加日志接收器。
+{ks_product-en} supports using Elasticsearch, OpenSearch, and Kafka as log receivers.
 
-{ks_product_right}支持使用 Elasticsearch、OpenSearch 和 Kafka 作为日志接收器。
+* Only one log receiver of each type can be added.
 
-* 每种类型的日志接收器只能添加一个。
+* {ks_product-en} defaults to using OpenSearch and provides log analysis tools, which you can use in the toolbox of the {ks_product-en} web console to query logs collected by OpenSearch.
 
-* {ks_product_right}默认使用 OpenSearch 并提供日志分析工具，您可以在{ks_product_left} Web 控制台的工具箱中使用日志分析工具查询 OpenSearch 收集的日志。
-
-* {ks_product_right}默认未安装 Kafka，并且目前未提供针对 Kafka 的日志分析工具。{ks_product_right}仅提供与 Kafka 对接的功能。如需使用 Kafka 作为日志接收器，您需要参阅 link:https://kafka.apache.org/documentation/[Kafka 官方文档]安装 Kafka。
-
+* {ks_product-en} does not install Kafka by default and currently does not provide log analysis tools for Kafka. {ks_product-en} only provides the function of connecting with Kafka. If you need to use Kafka as a log receiver, you need to refer to the link:https://kafka.apache.org/documentation/[Kafka Documentation] to install Kafka.
 
 == Prerequisites
-
 
 * {empty}
 include::../../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志**、**WhizardTelemetry 事件**、**WhizardTelemetry 审计**、或 **WhizardTelemetry 通知**扩展组件。
-
+* **WhizardTelemetry Logging**, **WhizardTelemetry Events**, **WhizardTelemetry Auditing**, or **WhizardTelemetry Notification** should have been installed and enabled.
 
 == Steps
 
@@ -38,13 +34,13 @@ include::../../../../../../_custom-en/clusterManagement/clusterManagement-oper-o
 include::../../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
-. 在**日志接收器**页面，点击**容器日志**、**资源事件**、**审计日志**或**通知历史**打开日志接收器列表。
+. On the **Log Receivers** page, click **Container Logs**, **Resource Events**, **Audit Logs**, or **Notification History** to open the log receiver list.
 
-. 在页面右侧点击**添加日志接收器**。
+. Click **Add Log Receiver** on the right side of the page.
 
-. 在**添加日志接收器**对话框，选择 **Elasticsearch**、 **OpenSearch** 或 **Kafka**。
+. In the **Add Log Receiver** dialog, select **Elasticsearch**, **OpenSearch**, or **Kafka**.
 
-. 设置日志接收器的参数，然后点击**确定**。
+. Set the parameters of the log receiver, then click **OK**.
 +
 --
 include::../../../../../../_custom-en/clusterManagement/logReceivers/logReceivers-para-addLogReceiver.adoc[]

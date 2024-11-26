@@ -27,6 +27,8 @@ include::customMonitoringDashboards-para-monitoringChart.adoc[]
 * 将光标悬停在监控图名称上，然后点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除监控图。
 
 * 将光标悬停在监控图名称上，然后点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen-light,18,18]可编辑监控图。
+
+* 拖动监控图名称右侧的image:/images/ks-qkcp/zh/icons/drag-handle.svg[drag-handle,18,18]可调整监控图的排序。
 ====
 
 . 在页面右上角点击**保存模板**完成编辑。

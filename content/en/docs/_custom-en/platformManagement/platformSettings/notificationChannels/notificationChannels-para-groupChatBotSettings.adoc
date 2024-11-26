@@ -1,18 +1,18 @@
 // :ks_include_id: 9f95c83dc7754be49bf6b78b7587d110
-* 群机器人设置
+* Chatbot Settings
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 |Webhook URL
-|群机器人的 Webhook URL。{ks_product-en}将向该 URL 发送通知。
+|The Webhook URL of the chatbot. {ks_product-en} will send notifications to this URL.
 
 |Secret
-|群机器人的访问密钥。
+|The access key of the chatbot.
 
-|关键词
-|群机器人接受的关键词。点击**添加**可设置多个关键词。
+|Keywords
+|The keywords accepted by the chatbot. Click **Add** to set multiple keywords.
 |===
 --

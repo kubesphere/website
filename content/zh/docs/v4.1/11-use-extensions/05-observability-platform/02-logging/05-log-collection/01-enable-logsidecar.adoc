@@ -25,7 +25,7 @@ weight: 01
 
 . 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
 . 点击**扩展中心**。
-. 点击已安装的 **WhizardTelemetry 日志**扩展组件，进入组件详情页，点击**管理**。
+. 点击已安装的 **WhizardTelemetry 日志**扩展组件，进入组件详情页。
 . 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**扩展组件配置**。
 . 在扩展组件配置文件中，将 **logsidecar-injector.enabled** 参数设置为 **true**，然后保存文件。
 +

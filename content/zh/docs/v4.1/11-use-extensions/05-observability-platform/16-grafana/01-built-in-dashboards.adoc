@@ -5,14 +5,14 @@ description: "介绍如何查看扩展组件提供的内置 Dashboard。"
 weight:  01
 ---
 
-Grafana for WhizardTelemetry 扩展组件内置了多个 Grafana Dashboard 模板，可供直接查询 Kubernetes 和{ks_product_both}的监控数据，而无需自行配置 Grafana Dashboard。
+Grafana for WhizardTelemetry 扩展组件内置了多个 Grafana Dashboard 模板，可供直接查询 Kubernetes 和 KubeSphere 的监控数据，而无需自行配置 Grafana Dashboard。
 
 == 操作步骤
 
 . 登录 Grafana 控制台后，点击左侧导航栏的 **Dashboards**，查看所有内置的 Dashboard 模板。包含 aicp, kube-prometheus-stack, whizard-loki, whizard-monitoring 4 个目录。
 +
 --
-image:/images/ks-qkcp/zh/v4.1.2/grafana/dashboard-list.png[dashboard-list]
+image:/images/ks-qkcp/zh/v4.1/grafana/dashboard-list.png[dashboard-list]
 
 [%header,cols="1a,3a"]
 |===
@@ -25,7 +25,7 @@ image:/images/ks-qkcp/zh/v4.1.2/grafana/dashboard-list.png[dashboard-list]
 |可视化 Kubernetes 的监控数据。
 
 |whizard-loki
-|可视化存储到 Loki 的{ks_product_both}的日志、审计、事件及通知历史。
+|可视化存储到 Loki 的 KubeSphere 日志、审计、事件及通知历史。
 
 |whizard-monitoring
 |适配 Whizard 与 KubeSphere 后的多集群监控。

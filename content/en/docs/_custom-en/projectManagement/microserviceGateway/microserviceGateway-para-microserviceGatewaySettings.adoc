@@ -1,109 +1,109 @@
 // :ks_include_id: 2da62725a68a446abf46e55566d6ae11
-以下介绍如何设置微服务网关的参数。
+The following describes how to set the parameters for the microservice gateway.
 
-* 基本信息
+* Basic Information
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|微服务网关的名称，同时也是对应的部署的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+|Name
+|The name of the microservice gateway, which is also the name of the corresponding deployment. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
-|镜像
-|用于创建微服务网关的容器镜像。例如 **registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest**。
+|Image
+|The container image used to create the microservice gateway. For example, `registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest`.
 
-|副本数量
-|微服务网关部署的容器组副本数量。
+|Number of Replicas
+|The number of pod replicas for the microservice gateway deployment.
 |===
 --
 
-* 资源配额
+* Resource Quotas
 +
 --
-设置为微服务网关每个容器的资源预留和资源上限。
+Set the resource request and resource limit for each container in the microservice gateway.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|CPU 预留
-|为容器预留的 CPU 资源，单位为核。
+|CPU Request
+|The CPU resources reserved for the container, in cores.
 
-|CPU 上限
-|允许容器使用的 CPU 资源上限，单位为核。
+|CPU Limit
+|The upper limit of CPU resources allowed for the container, in cores.
 
-|内存预留
-|为容器预留的内存资源，单位为 MiB。
+|Memory Request
+|The memory resources reserved for the container, in MiB.
 
-|内存上限
-|允许容器使用的内存资源上限，单位为 MiB。
+|Memory Limit
+|The upper limit of memory resources allowed for the container, in MiB.
 |===
 --
 
-* 端口设置
+* Port Settings
 +
 --
-设置用于暴露微服务网关的服务的端口。
+Set the ports for the service exposing the microservice gateway.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|协议
-|目标容器中的应用程序实际监听的协议。
+|Protocol
+|The protocol that the application in the target container actually listens on.
 
-|名称
-|服务端口的名称。
+|Name
+|The name of the service port.
 
-|容器端口
-|目标容器中的应用程序实际监听的端口号。如果使用示例容器镜像 **registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest**，请将容器端口号设置为 **8080**。
+|Container Port
+|The port number that the application in the target container actually listens on. If using the example container image `registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest`, set the container port number to **8080**.
 
-|服务端口
-|服务的端口号。
+|Service Port
+|The port number of the service.
 |===
 
-点击**添加**可设置多个服务端口。在已创建的服务端口右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除服务端口。
+Click **Add** to set multiple service ports. Click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] on the right side of the created service port to delete it.
 --
 
-* 镜像拉取策略
+* Image Pull Policy
 +
 --
 include::../../clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
 --
 
-* 健康检查
+* Health Check
 +
 --
 include::../../clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
 --
 
-* 环境变量
+* Environment Variables
 +
 --
 include::../../clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
 --
 
-* 启动命令
+* Start Command
 +
 --
 include::../../clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
 --
 
-* 外部访问
+* Advanced Settings > External Access
 +
 --
-设置是否允许从 KubeSphere 集群外部访问微服务网关。如果启用外部访问，您需要选择外部访问模式。
+Set whether to allow the microservice gateway to be accessed from outside the KubeSphere cluster. If external access is enabled, you need to select the external access mode.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 |NodePort
-|系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。
+|The system maps the node's port to the service port, and the service can be accessed via the node's IP address and node port.
 
 |LoadBalancer
-|系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。
+|The system allocates an external IP address to the service on top of the NodePort service and binds the external IP address to an external load balancer. The external load balancer listens on the node port corresponding to the service, so the service can be accessed via the external IP address. To achieve this functionality, the service in the LoadBalancer type requires load balancer plugins and infrastructure environment support, and relevant annotations need to be set. For more information, contact your infrastructure environment provider.
 |===
 --

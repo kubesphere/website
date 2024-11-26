@@ -1,23 +1,21 @@
 ---
-title: "查看调度器状态"
-keywords: "Kubernetes, {ks_product}, 监控告警, 集群状态，调度器状态"
-description: "介绍如何查看调度器状态。"
+title: "View Scheduler Status"
+keywords: "Kubernetes, {ks_product-en}, monitoring & alerting, cluster status, scheduler status"
+description: "This section introduces how to view scheduler status."
 weight: 05
 ---
 
-:ks_permission: **监控查看**
-:ks_navigation: **监控告警 > 集群状态**
+:ks_permission: **Monitoring Viewing**
+:ks_navigation: **Monitoring & Alerting > Cluster Status**
 
-
-本节介绍如何查看调度器状态。调度器根据容器组的资源需求、节点可用资源和其他约束条件决定容器组运行在哪些节点上。
-
+This section introduces how to view scheduler status. The scheduler determines which nodes pods run on based on pod resource requirements, node available resources, and other constraints.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+* **WhizardTelemetry Monitoring** should have been installed and enabled.
 
 == Steps
 
@@ -29,24 +27,24 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**集群状态**页面，点击**调度器监控**页签查看调度器的运行状态。
+. On the **Cluster Status** page, click the **Scheduler Monitoring** tab to view the running status of the scheduler.
 +
 ====
-* **调度器监控**页签提供以下信息：
+* The **Scheduler Monitoring** tab provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|指标 |描述
+|Metric |Description
 
-|调度次数
-|指定时间范围内的容器组调度成功、错误和失败累计次数。
+|Scheduling Attempts
+|The cumulative number of successful, error, and failed pod scheduling over the specified time range.
 
-|调度速率
-|指定时间范围内的容器组每秒调度成功、错误和失败次数。
+|Scheduling Rates
+|The number of successful, error, and failed pod scheduling per second over the specified time range.
 
-|调度延迟
-|指定时间范围内容器组调度延迟的 99% 分位数、90% 分位数、中位数和平均值。
+|Scheduling Latency
+|The 99th percentile, 90th percentile, median, and average pod scheduling latency over the specified time range.
 |===
 --
 

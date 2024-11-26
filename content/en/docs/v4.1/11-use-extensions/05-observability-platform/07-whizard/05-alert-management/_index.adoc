@@ -1,10 +1,10 @@
 ---
-title: "全局告警"
-keywords: "Kubernetes, {ks_product}, 平台管理, Whizard 可观测中心, 全局告警"
-description: "介绍如何在 Whizard 可观测中心管理全局告警和全局规则组。"
+title: "Global Alerts"
+keywords: "Kubernetes, {ks_product-en}, platform management, Whizard Observability Center, global alerts"
+description: "Describes how to manage global alerts and global rule groups in the Whizard Observability Center."
 weight: 05
 layout: "second"
 ---
 
 
-本节介绍如何在 Whizard 可观测中心管理全局告警和全局规则组。
+This section describes how to manage global alerts and global rule groups in the Whizard Observability Center.

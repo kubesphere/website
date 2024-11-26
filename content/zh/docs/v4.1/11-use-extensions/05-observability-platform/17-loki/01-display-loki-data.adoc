@@ -6,7 +6,7 @@ weight: 01
 ---
 
 
-本节介绍如何在 Grafana 控制台可视化存储到 Loki 的{ks_product_both}的日志、审计、事件及通知历史数据。
+本节介绍如何在 Grafana 控制台可视化存储到 Loki 的 KubeSphere 日志、审计、事件及通知历史数据。
 
 == 前提条件
 
@@ -67,6 +67,6 @@ weight: 01
 * 若 Grafana 控制台使用其他方法部署，您需要在 Grafana 控制台手动添加 loki 数据源。更多信息，请参阅扩展中心 Grafana Loki for WhizardTelemetry 扩展组件的详情页说明。
 --
 
-. 访问 Grafana 控制台，即可在 Dashboards 下查看{ks_product_both}日志、审计、事件、通知历史的数据面板。
+. 访问 Grafana 控制台，即可在 Dashboards 下查看 KubeSphere 日志、审计、事件、通知历史的数据面板。
 +
 image:/images/ks-qkcp/zh/v4.1.2/loki-data.png[]

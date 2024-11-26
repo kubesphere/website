@@ -1,24 +1,21 @@
 ---
-title: "创建微服务配置"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 创建微服务路由"
-description: "介绍如何创建微服务路由。"
+title: "Create Microservice Configuration"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, create microservice configuration"
+description: "Learn how to create a microservice configuration."
 weight: 01
 ---
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务配置**
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservice Configurations**
 
-
-本节介绍如何创建微服务配置。
-
+This section describes how to create a microservice configuration.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
 
 == Steps
 
@@ -34,17 +31,17 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**创建微服务配置**对话框，设置微服务配置的参数，然后点击**创建**。
+. In the **Create Microservice Configuration** dialog, set the parameters for the microservice configuration, and then click **Create**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|微服务配置的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
+|Name
+|The name of the microservice configuration. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
 
-|数据
-|微服务配置数据。点击下拉列表可选择数据的格式。有关微服务配置数据的更多信息，请参阅 link:https://nacos.io[Nacos 官方文档]。
+|Data
+|The microservice configuration data. Click the dropdown list to select the format of the data. For more information on microservice configuration data, see the link:https://nacos.io[Nacos Documentation].
 |===
 --

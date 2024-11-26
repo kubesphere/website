@@ -1,14 +1,14 @@
 ---
-title: "查看约束模板详情"
-description: "介绍如何查看约束模板详情。"
+title: "View Constraint Template Details"
+description: "Learn how to view constraint template details."
 weight: 03
 ---
 
 :ks_permission: ** cluster-admin **
-:ks_navigation: ** Gatekeeper > 约束模板**
+:ks_navigation: ** Gatekeeper > Constraint Templates**
 
 
-本节介绍如何查看约束模板详情。
+This section describes how to view constraint template details.
 
 
 == Prerequisites
@@ -17,7 +17,7 @@ weight: 03
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
+* **Gatekeeper** should have been installed and enabled.
 
 == Steps
 
@@ -29,29 +29,29 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在约束模板列表中点击一个约束模板的名称打开其详情页面。
+. Click the name of a constraint template in the constraint template list to open its details page.
 
-. 在约束模板详情页面左侧的**属性**区域，查看约束模板的基本信息。
+. In the **Attributes** area on the left side of the details page, view the basic information of the constraint template.
 +
 --
 
 [%header,cols="2,5"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|集群
-|约束模板所属的集群。
+|Cluster
+|The cluster to which the constraint template belongs.
 
-|创建时间
-|约束模板的创建时间。
+|Creation Time
+|The creation time of the constraint template.
 
 |CRD
-|约束模板对应的 CRD 名称。
+|The CRD name corresponding to the constraint template.
 |===
 --
 
-. 在约束模板详情页面右侧的**目标**页签，查看约束模板的约束对象。
+. In the **Targets** tab on the right side of the details page, view the constraint objects of the constraint template.
 
-. 在约束模板详情页面右侧点击**状态**页签，查看约束模板的标签和注解。
+. Click the **Status** tab on the right side of the details page to view the labels and annotations of the constraint template.
 
-. 在约束模板详情页面右侧点击**约束**页签，查看使用约束模板创建的约束条件。
+. Click the **Constraints** tab on the right side of the details page to view the constraints created using the constraint template.

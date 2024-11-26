@@ -1,23 +1,22 @@
 ---
-title: "查看节点资源用量排行"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 集群状态, 资源用量"
-description: "介绍如何按照特定资源的用量对节点进行排序。"
+title: "View Node Resource Usage Ranking"
+keywords: "Kubernetes, {ks_product-en}, cluster management, monitoring & alerting, cluster status, resource usage"
+description: "This section introduces how to sort nodes by the usage of specific resources."
 weight: 06
 ---
 
-:ks_permission: **监控查看**
-:ks_navigation: **监控告警 > 集群状态**
+:ks_permission: **Monitoring Viewing**
+:ks_navigation: **Monitoring & Alerting > Cluster Status**
 
-
-本节介绍如何按照特定资源的用量对节点进行排序。
-
+This section introduces how to sort nodes by the usage of specific resources.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+* **WhizardTelemetry Monitoring** should have been installed and enabled.
+
 
 == Steps
 
@@ -29,10 +28,10 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**集群状态**页面，点击**资源用量排行**页签查看各节点的资源使用情况。
+. On the **Cluster Status** page, click the **Resource Usage Ranking** tab to view the resource usage of each node.
 +
 --
-* 在左上角点击下拉列表可选择按照 CPU 用量、CPU 平均负载、内存用量、磁盘用量、Inode 用量或容器组用量对节点进行排序。
+* Click the dropdown list in the upper left corner to select sorting by CPU usage, CPU average load, memory usage, disk usage, Inode usage, or pod usage.
 
 include::../../../../../_custom-en/clusterManagement/clusterStatus/clusterStatus-oper-sortAscendingDescending.adoc[]
 

@@ -1,16 +1,15 @@
 ---
-title: "创建静默策略"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 静默策略, 创建静默策略"
-description: "本节介绍如何创建静默策略。"
+title: "Create Silence Policies"
+keywords: "Kubernetes, {ks_product-en}, platform settings, notification management, notification settings, silence policy, create silence policy"
+description: "This section describes how to create a silence policy."
 weight: 01
 ---
 
-:ks_menu: **平台管理 > 平台设置**
-:ks_navigation: **通知管理 > 通知设置**
-:ks_permission: **平台设置管理**
+:ks_navigation: **Notification Management > Notification Settings**
+:ks_permission: **Platform Settings Management**
 
 
-本节介绍如何创建静默策略。
+This section describes how to create a silence policy.
 
 
 == Prerequisites
@@ -18,14 +17,14 @@ weight: 01
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
+* **WhizardTelemetry Notification** should have been installed and enabled.
 
 
 == Steps
 
 include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
 
-. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
+. Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper-right corner of the {ks_product-en} web console to enter the **Platform Settings** page.
 
 +
 
@@ -37,28 +36,30 @@ include::../../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**基本信息**页签，设置静默策略的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the silence policy, and then click **Next**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|静默策略的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 63 个字符。
+|Name
+|The name of the silence policy. The name can only contain lowercase letters, numbers, and hyphens (-), must start with a lowercase letter and end with a lowercase letter or number, and can be up to 63 characters long.
 
 include::../../../../../_custom-en/platformManagement/platformSettings/platformSettings/platformSettings-para-aliasDescription.adoc[]
 |===
 --
 
-. 在**静默条件**页签，根据需要选择**对所有通知静默**或**自定义静默条件**并设置相关参数，然后点击**下一步**。
+. On the **Silence Conditions** tab, select **Silent for All Notifications** or **Custom Silence Conditions** as needed and set the relevant parameters, and then click **Next**.
 +
 ====
 include::../../../../../_custom-en/platformManagement/platformSettings/platformSettings/platformSettings-para-silenceConditions_new.adoc[]
 ====
 
-. 在**静默时间**页签，选择静默时间类型并设置相关参数，然后点击**创建**。
+. On the **Silence Time** tab, select the silence time type and set the relevant parameters, and then click **Create**.
 +
 --
 include::../../../../../_custom-en/platformManagement/platformSettings/platformSettings/platformSettings-para-silenceTime.adoc[]
+
+After the silence policy is created, it will be displayed in the silence policy list.
 --

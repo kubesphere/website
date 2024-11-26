@@ -1,25 +1,21 @@
 ---
-title: "下线和上线微服务实例"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 下线微服务实例"
-description: "介绍如何下线和上线微服务实例。"
+title: "Take Microservice Instances Offline and Online"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, take offline microservice instance"
+description: "Learn how to take microservice instances offline and online."
 weight: 04
 ---
 
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservices**
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务**
-
-
-本节介绍如何下线和上线微服务实例。微服务实例下线后将不再接收业务流量。
-
+This section describes how to take microservice instances offline and online. After a microservice instance is offline, it will no longer receive business traffic.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
 
 == Steps
 
@@ -35,6 +31,6 @@ include::../../../../_custom-en/projectManagement/microservices/microservices-op
 
 +
 
-. 在需要操作的微服务实例右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**下线**可下线微服务。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the microservice instance you want to operate, and then select **Take Offline** from the drop-down list.
 
-. 在已下线的微服务实例右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**上线**可重新上线微服务。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the offline microservice instance, and then select **Take Online** from the drop-down list to bring the microservice back online.

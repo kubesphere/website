@@ -1,26 +1,23 @@
 ---
-title: "复制微服务配置"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 复制微服务配置"
-description: "介绍如何复制微服务配置。"
+title: "Replicate Microservice Configuration"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, Replicate microservice configuration"
+description: "Learn how to replicate a microservice configuration."
 weight: 05
 ---
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务配置**
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservice Configurations**
 
+This section describes how to replicate a microservice configuration.
 
-本节介绍如何复制微服务配置。
-
-您可以使用已有的微服务配置创建一个名称不同但数据完全相同的微服务配置。
-
+You can use an existing microservice configuration to create a new microservice configuration with a different name but identical data.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
 
 == Steps
 
@@ -32,17 +29,17 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要操作的微服务配置右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**复制**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the microservice configuration you want to operate, and then select **Replicate** from the drop-down list.
 
-. 在**复制微服务配置**对话框，设置新微服务配置的名称，然后点击**确定**。
+. In the **Replicate Microservice Configuration** dialog, set the name of the new microservice configuration, and then click **OK**.
 +
 --
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-根据需要，您也可以修改配置数据。
+You can also modify the configuration data as needed.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
-复制完成后，复制生成的微服务配置将显示在列表中。
+After replication, the newly generated microservice configuration will be displayed in the list.
 --

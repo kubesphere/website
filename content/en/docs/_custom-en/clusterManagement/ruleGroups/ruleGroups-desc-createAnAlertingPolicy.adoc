@@ -1,4 +1,4 @@
 // :ks_include_id: e19cfac61c85491d9f631ba61f012c62
-本节介绍如何创建告警规则组。
+This section introduces how to create an alert rule group.
 
-{ks_product-en}的监控告警功能底层基于 Promtheus 实现，每个规则组可包含多条告警规则。您可以使用系统提供的规则模板创建告警规则，也可手动输入 PromQL 表达式创建告警规则。有关更多信息，请参阅 link:https://prometheus.io/docs/prometheus/latest/querying/basics/[Prometheus 官方文档]。
+The monitoring and alerting functions of {ks_product-en} are implemented based on Prometheus. Each rule group can contain multiple alert rules. You can create alert rules using the rule templates provided by the system or manually enter PromQL expressions to create alert rules. For more information, see the link:https://prometheus.io/docs/prometheus/latest/querying/basics/[Prometheus Documentation].

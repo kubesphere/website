@@ -1,14 +1,14 @@
 ---
-title: "创建约束模板"
-description: "介绍如何创建约束模板。"
+title: "Create Constraint Templates"
+description: "Learn how to create a constraint template."
 weight: 01
 ---
 
 :ks_permission: ** cluster-admin **
-:ks_navigation: ** Gatekeeper > 约束模板**
+:ks_navigation: ** Gatekeeper > Constraint Templates**
 
 
-本节介绍如何创建约束模板。
+This section describes how to create a constraint template.
 
 
 == Prerequisites
@@ -17,7 +17,7 @@ weight: 01
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
+* **Gatekeeper** should have been installed and enabled.
 
 == Steps
 
@@ -33,20 +33,19 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**创建约束模板**对话框，设置约束模板的名称和目标（Targets），然后点击**确定**。
+. In the **Create Constraint Template** dialog, set the name and targets of the constraint template, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-| CRD 名称
-|约束模板对应的 CRD 名称。
+| CRD Name
+|The CRD name corresponding to the constraint template.
 
 |Targets
-|Targets 是约束的目标对象，即需要应用约束规则的资源对象。Targets 可以是 Kubernetes 集群中的各种资源，如 Pod、Deployment、Namespace 等。约束将被应用于这些目标对象，以确保它们满足约束规则的要求。
-
+|Targets are the target objects of the constraint, i.e., the resource objects that need to apply the constraint rules. Targets can be various resources in the Kubernetes cluster, such as Pod, Deployment, Namespace, etc. Constraints will be applied to these target objects to ensure they meet the requirements of the constraint rules.
 |===
 
-您将在**约束模板**页面查看已创建的约束模板。
+You will view the created constraint template on the **Constraint Templates** page.
 --

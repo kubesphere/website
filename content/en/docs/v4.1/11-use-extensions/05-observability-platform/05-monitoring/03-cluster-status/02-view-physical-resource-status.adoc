@@ -1,23 +1,21 @@
 ---
-title: "查看物理资源状态"
-keywords: "Kubernetes, {ks_product}, 监控告警, 集群状态，物理资源状态"
-description: "介绍如何查看物理资源状态。"
+title: "View Physical Resource Status"
+keywords: "Kubernetes, {ks_product-en}, monitoring & alerting, cluster status, physical resource status"
+description: "This section introduces how to view physical resource status."
 weight: 02
 ---
 
-:ks_permission: **监控查看**
-:ks_navigation: **监控告警 > 集群状态**
+:ks_permission: **Monitoring Viewing**
+:ks_navigation: **Monitoring & Alerting > Cluster Status**
 
-
-本节介绍如何查看物理资源状态。
-
+This section introduces how to view physical resource status.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+* **WhizardTelemetry Monitoring** should have been installed and enabled.
 
 == Steps
 
@@ -29,42 +27,42 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**集群状态**页面，点击**物理资源监控**查看集群物理资源的使用情况。
+. On the **Cluster Status** page, click **Physical Resource Monitoring** to view the usage of cluster physical resources.
 +
 ====
-* **物理资源监控**页签提供以下信息：
+* The **Physical Resource Monitoring** tab provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|CPU 用量
-|显示指定时间范围内的集群 CPU 使用量百分比。
+|CPU Usage
+|Displays the cluster CPU usage percentage over the specified time range.
 
-|CPU 平均负载
-|显示指定时间范围内的集群 CPU 平均负载。CPU 平均负载是一个无量纲值，表示单位时间内 CPU 的平均活跃进程数。
+|Average CPU Load
+|Displays the cluster CPU average load over the specified time range. CPU average load is a dimensionless value representing the average number of active processes on the CPU per unit time.
 
-|内存用量
-|显示指定时间范围内的集群内存使用量百分比。
+|Memory Usage
+|Displays the cluster memory usage percentage over the specified time range.
 
-|磁盘用量
-|显示指定时间范围的内集群磁盘使用量。
+|Disk Usage
+|Displays the cluster disk usage over the specified time range.
 
-|Inode 用量
-|显示指定时间范围内的集群 Inode 使用量百分比。
+|Inode Usage
+|Displays the cluster Inode usage percentage over the specified time range.
 
-|磁盘吞吐
-|显示指定时间范围内的集群磁盘读写速率。
+|Disk Throughput
+|Displays the cluster disk read and write rates over the specified time range.
 
 |IOPS
-|显示指定时间范围内的集群磁盘每秒读写操作数。
+|Displays the cluster disk read and write operations per second over the specified time range.
 
-|网络流量
-|显示指定时间范围内集群网络出入速率。
+|Network Traffic
+|Displays the cluster network inbound and outbound rates over the specified time range.
 
-|容器组状态
-|显示指定时间范围内集群运行中、已完成和异常容器组的数。
+|Pod Status
+|Displays the number of running, completed, and failed pods in the cluster over the specified time range.
 |===
 --
 

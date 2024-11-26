@@ -1,9 +1,9 @@
 ---
-title: "微服务"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 微服务"
-description: "介绍如何管理微服务。"
+title: "Microservices"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, microservices"
+description: "Learn how to manage microservices."
 weight: 01
 layout: "second"
 ---
 
-本节介绍如何管理微服务。
+This section describes how to manage microservices.

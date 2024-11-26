@@ -1,19 +1,18 @@
 ---
-title: "KubeSphere 应用路由工具"
-keywords: "Kubernetes, {ks_product}, 应用路由"
-description: "介绍如何使用 KubeSphere 应用路由工具。"
+title: "KubeSphere Ingress Utils"
+keywords: "Kubernetes, {ks_product-en}, application routing"
+description: "Learn how to use the KubeSphere Ingress Utils extension."
 weight: 13
 layout: "second"
 draft: true
 ---
 
+This section describes how to use the "KubeSphere Ingress Utils" extension. After installation, only {ks_product-en} platform administrators and cluster administrators who have installed the extension can use this extension.
 
-本节介绍如何使用“KubeSphere 应用路由工具”扩展组件。安装后，仅{ks_product_both}平台管理员和已安装该组件的集群的管理员可以使用该扩展组件。
+The "KubeSphere Ingress Utils" provides several practical extended capabilities for Ingresses, such as domain reuse validation, aimed at enhancing the global management of Ingresses.
 
-“KubeSphere 应用路由工具”为应用路由提供多项实用扩展能力，如域名重用校验，旨在增强企业对应用路由的全局管理能力。
+After adding the domain names that need to be restricted for reuse, workspace users will not be able to use the same domain name to create Ingresses in different projects, to avoid mutual influence between Ingresses, thereby preventing business errors.
 
-添加需要被限制重用的域名后，企业空间用户将无法在不同项目中使用相同的域名来创建应用路由，以避免应用路由间的相互影响，从而防止生产业务出现错误。
+Before installing the "KubeSphere Ingress Utils" extension, the "KubeSphere Gateway" extension must be installed first.
 
-安装“KubeSphere  应用路由工具”扩展组件前，必须先安装"KubeSphere 网关"扩展组件。
-
-安装“KubeSphere  应用路由工具”扩展组件后，集群左侧导航栏的**应用负载**菜单下将显⽰**应用路由工具**选项。
+After installing the "KubeSphere Ingress Utils" extension, the **Ingress Utils** option will be displayed under the **Application Workloads** menu in the left navigation pane of the cluster.

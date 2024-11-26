@@ -1,6 +1,6 @@
 ---
-title: "WhizardTelemetry 平台服务"
-description: "介绍 WhizardTelemetry 平台服务。"
+title: "WhizardTelemetry Platform Service"
+description: "Learn about the WhizardTelemetry Platform Service."
 weight: 01
 layout: "second"
 ---

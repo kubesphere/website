@@ -26,7 +26,7 @@
 |Stores events of Kubernetes resources and provides multi-tenant event query and viewing functions.
 
 // |WhizardTelemetry Auditing
-// |It provides auditing management for Kubernetes and KubeSphere: records user behaviors on the {ks_product-en} platform in real-time, and provides audit history query and viewing functions, which can quickly trace back the behaviors of users.
+// |Provides auditing management for Kubernetes and KubeSphere: records user behaviors on the {ks_product-en} platform in real-time, and provides audit history query and viewing functions, which can quickly trace back the behaviors of users.
 
 |WhizardTelemetry Monitoring
 |Provides multi-tenant monitoring capabilities for cloud-native resources, including real-time and historical data display of core monitoring indicators for objects such as clusters, nodes, workloads, GPU, K8s control plane, etc. It includes the Whizard Observability Center.
@@ -35,7 +35,7 @@
 |Based on the monitoring data collected by KubeSphere, it manages alerting and alerting rules for different resource types and metrics data.
 
 // |WhizardTelemetry Events Alerting
-// |Define alerting rules for Kubernetes/KubeSphere auditing events, Kubernetes native events, and Kubernetes logs, evaluate incoming event data and log data, and send alerts to specified receivers such as HTTP endpoints.
+// |Defines alerting rules for Kubernetes/KubeSphere auditing events, Kubernetes native events, and Kubernetes logs, evaluate incoming event data and log data, and send alerts to specified receivers such as HTTP endpoints.
 
 |WhizardTelemetry Notification
 |Manages notifications in multi-tenant Kubernetes environments. It receives alerts, cloud events, and other types of events (such as audits and Kubernetes events) from different senders, and send notifications to corresponding tenant receivers based on tenant labels (such as namespaces or users).

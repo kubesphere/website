@@ -1,14 +1,14 @@
 // :ks_include_id: 4886da3f3a094de187d396ed1236141b
-* 对所有通知静默
+* Silent for All Notifications
 +
 --
-设置静默策略适用于所有通知。
+Set the silence policy to apply to all notifications.
 --
 
-* 自定义静默条件
+* Custom Silence Conditions
 +
 --
-设置静默策略仅适用于满足指定条件的通知。点击**添加**可设置通知需要满足的条件。
+Set the silence policy to apply only to notifications that meet the specified conditions. Click **Add** to set the conditions that the notification needs to meet.
 
 include::../notificationChannels/notificationChannels-para-filterRule_new.adoc[]
 --

@@ -1,4 +1,4 @@
 // :ks_include_id: 6aade36eb695477ab6e8a0eda652c52e
-本节介绍如何编辑监控导出器。
+This section introduces how to edit a metrics exporter.
 
-监控导出器用于对应用程序进行监控。{ks_product-en}平台的监控告警功能底层通过 Prometheus 实现。为监控应用程序的运行状况，您需要进行以下操作：
+A metrics exporter is used to monitor applications. The monitoring and alerting functions of KubeSphere are implemented through Prometheus at the bottom layer. To monitor the running status of applications, you need to perform the following operations:

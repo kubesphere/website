@@ -1,24 +1,21 @@
 ---
-title: "查看微服务配置详情"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 查看微服务配置详情"
-description: "介绍如何查看微服务配置详情。"
+title: "View Microservice Configuration Details"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, view microservice configuration details"
+description: "Learn how to view the microservice configuration details."
 weight: 03
 ---
 
-:ks_permission: ** Spring Cloud 微服务查看**
-:ks_navigation:  **Spring Cloud > 微服务配置**
+:ks_permission: **Spring Cloud Microservices Viewing**
+:ks_navigation: **Spring Cloud > Microservice Configurations**
 
-
-本节介绍如何查看微服务配置详情。
-
+This section describes how to view the microservice configuration details.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
 
 == Steps
 
@@ -33,20 +30,20 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 include::../../../../_custom-en/projectManagement/microserviceConfiguration/microserviceConfiguration-oper-openDetailsPage.adoc[]
 +
 --
-* 微服务配置详情页面左侧的**属性**区域显示微服务配置所属的项目、集群和创建时间。
+* The **Attributes** area on the left side of the details page displays the project, cluster, and creation time of the microservice configuration.
 
-* 微服务配置详情页面右侧的**数据**页签显示微服务配置所包含的数据。
+* The **Data** tab on the right side of the details page displays the data contained in the microservice configuration.
 --
 
-. 在微服务详情页面右侧点击**历史版本**页签查看微服务配置的修改记录。
+. Click the **Historical Versions** tab on the right side of the details page to view the revision records of the microservice configuration.
 +
 --
-* 每次编辑微服务配置都会生成修改记录，可用于回退微服务配置。
+* Each edit of the microservice configuration generates a revision record, which can be used to roll back the microservice configuration.
 
-* 点击修改记录可查看微服务配置的数据内容。
+* Click on a revision record to view the data of the microservice configuration.
 --
 
-. 在微服务配置详情页面右侧点击**事件**页签查看微服务配置的事件。
+. Click the **Events** tab on the right side of the details page to view the events of the microservice configuration.
 +
 --
 include::../../../../_custom-en/clusterManagement/clusterManagement-para-eventsTab.adoc[]

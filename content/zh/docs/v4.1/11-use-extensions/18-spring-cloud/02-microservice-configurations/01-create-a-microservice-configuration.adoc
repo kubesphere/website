@@ -1,7 +1,7 @@
 ---
 title: "创建微服务配置"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 创建微服务路由"
-description: "介绍如何创建微服务路由。"
+keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 创建微服务配置"
+description: "介绍如何创建微服务配置。"
 weight: 01
 ---
 

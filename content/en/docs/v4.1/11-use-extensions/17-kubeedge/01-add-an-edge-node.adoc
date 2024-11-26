@@ -124,7 +124,7 @@ include::../../../../_ks_components-en/admonitions/note.adoc[]
 
 * Ensure that the edge node can access the ports of KubeSphere cluster master node - **30000**, **30001**, **30002**, **30004** respectively via the port numbers specified by the **--cloudcore-ipport**, **--quicport**, **--certport**, and **--tunnelport** parameters.
 
-* Depending on your network environment, you may need to set firewall and traffic forwarding rules.
+* Depending on your network environment, you may need to configure firewall and traffic forwarding rules.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --

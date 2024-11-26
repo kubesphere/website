@@ -1,18 +1,18 @@
 // :ks_include_id: 9e29dba51eed467195d8b4402adcee08
-* 规则组列表提供以下信息：
+* The rule group list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|规则组的名称。
+|Name
+|The name of the rule group.
 
 include::ruleGroups-para-ruleGroupStatus.adoc[]
 
-|规则状态
-|规则组中包含的告警规则的状态。
+|Rule Status
+|The status of the alert rules contained in the rule group.
 
 include::ruleGroups-para-alertingStatusInactive.adoc[]
 
@@ -22,10 +22,10 @@ include::ruleGroups-para-alertingStatusDisabled.adoc[]
 
 // include::ruleGroups-para-timeSpent.adoc[]
 
-|集群
-|使用该规则组进行资源监控的集群。
+|Cluster
+|The clusters using this rule group for resource monitoring.
 
-|最近检查
-|最近一次指标检查的执行时间。
+|Last Check
+|The execution time of the most recent metric check.
 |===
 --

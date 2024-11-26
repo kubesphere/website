@@ -1,2 +1,2 @@
 // :ks_include_id: 459d38d3365247858833ed44c54b075d
-本节介绍如何查看自定义监控面板。
+This section introduces how to view a custom monitoring dashboard.

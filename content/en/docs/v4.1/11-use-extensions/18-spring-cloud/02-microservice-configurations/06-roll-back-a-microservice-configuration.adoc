@@ -1,26 +1,23 @@
 ---
-title: "回退微服务配置"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 回退微服务配置"
-description: "介绍如何回退微服务配置。"
+title: "Roll Back Microservice Configuration"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, roll back microservice configuration"
+description: "Learn how to roll back a microservice configuration."
 weight: 06
 ---
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务配置**
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservice Configurations**
 
+This section describes how to roll back a microservice configuration.
 
-本节介绍如何回退微服务配置。
-
-每次编辑微服务配置都会生成修改记录，您可以使用修改记录将微服务配置回退到历史版本。
-
+Each edit of the microservice configuration generates a revision record, which you can use to roll back the microservice configuration to a historical version.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
 
 == Steps
 
@@ -36,6 +33,6 @@ include::../../../../_custom-en/projectManagement/microserviceConfiguration/micr
 
 +
 
-. 在微服务配置详情页面左上角，选择**更多操作 > 回退**。
+. In the upper-left corner of the microservice configuration details page, select **More > Roll Back**.
 
-. 在**回退**对话框，选择目标修改记录，然后点击**确定**。
+. In the **Roll Back** dialog, select the target revision record, and then click **OK**.
