@@ -5,7 +5,7 @@ description: "介绍如何在生产环境中为 KubeSphere 集群配置开源存
 weight: 07
 ---
 
-KubeSphere 支持众多第三方开源存储系统，包括但不限于：
+KubeSphere 支持众多第三方开源存储系统，**包括但不限于**：
 
 * link:https://github.com/ceph/ceph-csi[Ceph CSI]
 
@@ -15,6 +15,4 @@ KubeSphere 支持众多第三方开源存储系统，包括但不限于：
 
 * link:https://longhorn.io/[Longhorn]
 
-等
-
-{ks_product_both} 不提供第三方开源存储系统的安装包，请到存储系统的官方网站下载安装。
+{ks_product_right}不提供第三方开源存储系统的安装包，请到存储系统的官方网站下载安装。
