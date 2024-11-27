@@ -15,6 +15,6 @@ KubeSphere 支持众多第三方开源存储系统，包括但不限于：
 
 * link:https://longhorn.io/[Longhorn]
 
-* ... 等等
+等
 
 若要在{ks_product_both}平台安装第三方开源存储系统，请到存储系统的官方网站进行下载安装。
