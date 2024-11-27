@@ -19,7 +19,7 @@ include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 == 如何安装存储系统
 
-创建 KubeSphere 集群时，可以安装不同的存储系统作为插件。KubeKey 会为集群创建一个配置文件（默认为 `config-sample.yaml`），其中包含定义不同资源（包括存储插件）的全部必要参数。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
+link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装{ks_product_both}]时，可以安装不同的存储系统作为插件。KubeKey 会为集群创建一个配置文件（默认为 `config-sample.yaml`），其中包含定义不同资源（包括存储插件）的全部必要参数。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
 
 通常，有两种方法能使 KubeKey 应用即将安装的存储系统的配置。
 
