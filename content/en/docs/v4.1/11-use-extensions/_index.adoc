@@ -5,5 +5,4 @@ description: "Learn how to use various extensions."
 weight: 11
 layout: "second"
 icon: "/images/docs/common/docs.svg"
-draft: true
 ---
