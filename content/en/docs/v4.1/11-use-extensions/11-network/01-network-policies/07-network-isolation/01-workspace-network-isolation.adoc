@@ -1,26 +1,24 @@
 ---
-title: "启用企业空间网络隔离"
-keywords: "Kubernetes, {ks_product}, 企业空间, 企业空间设置, 基本信息, 启用和禁用网络隔离"
-description: "介绍如何启用和禁用企业空间网络隔离。"
+title: "Enable Workspace Network Isolation"
+keywords: "Kubernetes, {ks_product-en}, workspace, workspace settings, basic information, enable and disable network isolation"
+description: "Introduce how to enable and disable workspace network isolation."
 weight: 01
 ---
 
-:ks_permission: **企业空间网络隔离管理**
-:ks_navigation: **企业空间设置 > 基本信息**
+:ks_permission: **Workspace NetworkPolicy Management**
+:ks_navigation: **Workspace Settings > Basic Info**
 
 
-本节介绍如何为授权给企业空间的集群启用和禁用网络隔离。
+This section introduces how to enable and disable network isolation for clusters authorized to a workspace.
 
-当授权给企业空间的集群启用网络隔离后，属于该企业空间且运行在该集群中的容器组将不能被企业空间外部的客户端访问，也不能被集群外部的客户端访问。属于该企业空间且运行在该集群中的容器组的出站流量不受限制。
+When network isolation is enabled for a cluster authorized to a workspace, pods belonging to the workspace and running in the cluster cannot be accessed by clients outside the workspace or outside the cluster. The egress traffic of pods belonging to the workspace and running in the cluster is not restricted.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
+* **KubeSphere Network** should have been installed and enabled.
 
 == Steps
 
@@ -32,4 +30,4 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**网络隔离**区域，点击集群右侧的开关为集群启用或禁用网络隔离。
+. In the **Network Isolation** area, click the switch on the right side of the cluster to enable or disable network isolation for the cluster.

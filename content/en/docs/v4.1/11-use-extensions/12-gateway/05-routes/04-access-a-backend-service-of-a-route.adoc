@@ -1,32 +1,29 @@
 ---
-title: "访问应用路由的后端服务"
-keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 应用路由, 访问应用路由的后端服务"
-description: "介绍如何访问应用路由的后端服务。"
+title: "Access the Backend Service of an Ingress"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress, access the backend service of an Ingress"
+description: "Learn how to access the backend service of an Ingress."
 weight: 04
 ---
 
-:ks_permission: **应用负载查看**
-:ks_navigation: **应用负载 > 应用路由**
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Ingresses**
 
 
 include::../../../../_custom-en/clusterManagement/routes/routes-desc-accessABackendServiceOfARoute.adoc[]
-
 
 == Prerequisites
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网关**扩展组件，然后启用集群网关或项目网关。有关更多信息，请参阅 link:../../../../11-use-extensions/12-gateway[KubeSphere 网关]。
+* You should install the **KubeSphere Gateway** extension and enable the cluster gateway or project gateway. For more information, see link:../../../../11-use-extensions/12-gateway[KubeSphere Gateway].
 
 include::../../../../_custom-en/clusterManagement/routes/routes-prer-accessABackendServiceOfARoute.adoc[]
 
 
 == Steps
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
 
 +
 

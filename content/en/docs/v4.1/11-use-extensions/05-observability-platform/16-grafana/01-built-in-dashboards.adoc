@@ -1,67 +1,63 @@
 ---
-title: "查看内置 Dashboard"
-keywords: "Kubernetes, {ks_product}, Grafana, 监控, 内置 dashboard, 可观测"
-description: "介绍如何查看扩展组件提供的内置 Dashboard。"
-weight:  01
+title: "View Built-in Dashboards"
+keywords: "Kubernetes, {ks_product-en}, Grafana, monitoring, built-in dashboard, observability"
+description: "Learn how to view the built-in Dashboards provided by the extension."
+weight: 01
 ---
 
-Grafana for WhizardTelemetry 扩展组件内置了多个 Grafana Dashboard 模板，可供直接查询 Kubernetes 和{ks_product_both}的监控数据，而无需自行配置 Grafana Dashboard。
+The Grafana for WhizardTelemetry extension comes with multiple Grafana Dashboards that allow direct querying of monitoring data for Kubernetes and KubeSphere without the need for manual configuration of Grafana Dashboards.
 
 == Steps
 
-. 登录 Grafana 控制台后，点击左侧导航栏的 **Dashboards**，查看所有内置的 Dashboard 模板。包含 aicp, kube-prometheus-stack, whizard-loki, whizard-monitoring 4 个目录。
+. After logging into the Grafana console, click **Dashboards** in the left navigation pane to view all built-in Dashboard templates, which are in four directories: `aicp`, `kube-prometheus-stack`, `whizard-loki`, and `whizard-monitoring`.
 +
 --
 image:/images/ks-qkcp/zh/v4.1.2/grafana/dashboard-list.png[dashboard-list]
 
 [%header,cols="1a,3a"]
 |===
-|目录 |模板介绍
+|Directory |Description
 
 |aicp
-|用于青云 AI 智算运维管理端，需在“AI 智算管理”平台中查看监控面板。
+|Used for QingCloud AI Computing Platform, please view monitoring panels in the "AI Computing Management" platform.
 
 |kube-prometheus-stack
-|可视化 Kubernetes 的监控数据。
+|Visualizes monitoring data for Kubernetes.
 
 |whizard-loki
-|可视化存储到 Loki 的{ks_product_both}的日志、审计、事件及通知历史。
+|Visualizes logs, audits, events, and notification history of KubeSphere stored in Loki.
 
 |whizard-monitoring
-|适配 Whizard 与 KubeSphere 后的多集群监控。
+|Multi-cluster monitoring adapted for Whizard and KubeSphere.
 |===
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Note
 
 |
-* 安装 **WhizardTelemetry 监控**扩展组件后，**kube-prometheus-stack** 和 **whizard-monitoring** 中的 Dashboard 才会显示监控数据。
-* 若要 **whizard-loki** 中的 Dashboard 显示监控数据，请参阅link:../../17-loki/01-display-loki-data[
-Grafana Loki for WhizardTelemetry]。
+* After installing the **WhizardTelemetry Monitoring** extension, the Dashboards in **kube-prometheus-stack** and **whizard-monitoring** will display monitoring data.
+* To display monitoring data in the Dashboards of **whizard-loki**, see link:../../17-loki/01-display-loki-data[Grafana Loki for WhizardTelemetry].
 |===
 --
 
-. 点击目录中的 Dashboard 模板，查看对应指标的监控数据。
+. Click on a Dashboard template in the directory to view the corresponding monitoring data.
 +
-下面以 **whizard-monitoring** 中的 **KubeSphere Nodes** 模板为例，介绍 Dashboard 页面。
+Below is an example using the **KubeSphere Nodes** template from the **whizard-monitoring** directory to introduce the Dashboard page.
 
-
-. **KubeSphere Nodes** 看板展示了每个节点的 CPU、内存、磁盘和 pod 的资源利用率、磁盘 IOPS、磁盘吞吐量、网络带宽等监控信息。
+. The **KubeSphere Nodes** dashboard displays monitoring information for each node, including resource utilization of CPU, memory, disk, and pods, disk IOPS, disk throughput, network bandwidth, etc.
 +
 image:/images/ks-qkcp/zh/v4.1.2/grafana/node-dashboard.png[node-dashboard]
 
-. 点击上方的 **data source**、**cluster**、**node**，可选择查看指定数据源、集群和节点的相关数据。
-. 点击右上角的image:/images/ks-qkcp/zh/icons/time-light.png[time-light,18,18]，设置数据展示的时间范围，支持自定义时间段。
-. 点击右上角的image:/images/ks-qkcp/zh/icons/refresh-light.png[refresh-light,18,18]，刷新看板上的数据。点击image:/images/ks-qkcp/zh/icons/chevron-down.svg[chevron-down,18,18]设置数据自动刷新的时间间隔。
-. 点击每个 Panel 右上角的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，可对指定 Panel 进行独立查看、编辑、分享、检查、删除等操作。
+. Click **data source**, **cluster**, and **node** at the top to select data from specified sources, clusters, and nodes.
+. Click image:/images/ks-qkcp/zh/icons/time-light.png[time-light,18,18] in the upper-right corner to set the time range for data display, supporting custom time periods.
+. Click image:/images/ks-qkcp/zh/icons/refresh-light.png[refresh-light,18,18] in the upper-right corner to refresh the data on the dashboard. Click image:/images/ks-qkcp/zh/icons/chevron-down.svg[chevron-down,18,18] to set the interval for automatic data refresh.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] in the upper-right corner of each panel to independently view, edit, share, inspect, delete, etc., the specified panel.
 +
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
-|有关 Dashboard 的更多信息，请参阅 link:https://grafana.com/docs/grafana/latest/dashboards/[Grafana 官方文档]。
+|For more information on Dashboards, see link:https://grafana.com/docs/grafana/latest/dashboards/[Grafana Documentation].
 
 |===
-
-

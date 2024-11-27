@@ -1,37 +1,33 @@
 ---
-title: "删除网络策略"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 网络策略, 删除网络策略"
-description: "介绍如何删除网络策略。"
+title: "Delete Network Policies"
+keywords: "Kubernetes, {ks_product-en}, cluster management, network, network policy, delete network policy"
+description: "Introduce how to delete network policies."
 weight: 06
 ---
 
-:ks_permission: **集群网络资源管理**
-:ks_navigation: **网络 > 网络策略**
+:ks_permission: **Cluster Network Resource Management**
+:ks_navigation: **Network > Network Policies**
 
 
-本节介绍如何删除网络策略。
+This section introduces how to delete network policies.
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-网络策略删除后无法恢复，请谨慎执行此操作。
+Network policies cannot be recovered after deletion, so please proceed with caution.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 
 == Prerequisites
 
-
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
+* **KubeSphere Network** should have been installed and enabled.
 
 
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
-
-
-== 删除单个网络策略
+== Delete a Single Network Policy
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -39,12 +35,12 @@ include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClu
 
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
-. 在需要删除的网络策略右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the network policy you want to delete, and then select **Delete** from the dropdown list.
 
-. 在**删除网络策略**对话框，输入网络策略的名称，然后点击**确定**。
+. In the **Delete Network Policy** dialog box, enter the name of the network policy, and then click **OK**.
 
 
-== 批量删除网络策略
+== Delete Multiple Network Policies
 
 include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
@@ -54,9 +50,9 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 选择需要删除的网络策略左侧的复选框，然后在网络策略列表上方点击**删除**。
+. Select the checkboxes on the left side of the network policies you want to delete, and then click **Delete** above the network policy list.
 
-. 在**批量删除网络策略**对话框，输入网络策略的名称，然后点击**确定**。
+. In the **Delete Multiple Network Policies** dialog box, enter the names of the network policies, and then click **OK**.
 +
 --
 include::../../../../_custom-en/note-separateNamesByComma.adoc[]

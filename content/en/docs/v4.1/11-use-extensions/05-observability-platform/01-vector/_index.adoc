@@ -1,30 +1,30 @@
 ---
-title: "WhizardTelemetry 数据流水线"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理"
-description: "介绍如何使用 WhizardTelemetry 数据流水线。"
-weight: 1.5
+title: "WhizardTelemetry Data Pipeline"
+keywords: "Kubernetes, {ks_product-en}, platform settings, notification management"
+description: "Learn how to use the WhizardTelemetry Data Pipeline."
+weight: 02
 layout: "second"
 ---
 
 
-WhizardTelemetry 数据流水线是 WhizardTelemetry 可观测平台中提供可观测性数据的收集、转换和路由能力的扩展组件。
+The WhizardTelemetry Data Pipeline is an extension that provides capabilities to collect, transform, and route observability data.
 
 
 //attention
 [.admon.attention,cols="a"]
 |===
-| 注意
+| Note
 
 |
-* WhizardTelemetry 数据流水线是 WhizardTelemetry 日志、WhizardTelemetry 事件、WhizardTelemetry 审计、WhizardTelemetry 通知等共同依赖的扩展组件，因此在安装上述几个扩展组件之前必须先安装 WhizardTelemetry 数据流水线扩展组件，否则日志、通知、审计、事件等功能无法正常使用！
+* The WhizardTelemetry Data Pipeline is a common dependency for WhizardTelemetry Logging, WhizardTelemetry Events, WhizardTelemetry Auditing, WhizardTelemetry Notification, etc., so it must be installed before the above extensions, otherwise, the logging, notification, auditing, and event functions will not work properly!
 
-* WhizardTelemetry 可观测平台支持从 OpenSearch 查询日志、审计、事件、通知历史等数据，因此需要在 WhizardTelemetry 数据流水线扩展组件里统一配置接收日志、审计、事件、通知历史等数据的 OpenSearch 服务的信息，可以是用户自行搭建的 OpenSearch 服务，也可以是通过 OpenSearch 分布式检索与分析引擎这个扩展组件安装的 OpenSearch 服务。
+* The WhizardTelemetry Observability Platform supports querying logs, audits, events, notification history, etc., from OpenSearch, so you need to configure the OpenSearch service information for receiving logs, audits, events, notification history, etc., in the WhizardTelemetry Data Pipeline. It can be a user-built OpenSearch service or an OpenSearch service installed by the “OpenSearch Distributed Search and Analytics Engine” extension.
 |===
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 数据流水线”扩展组件的详情页说明。
+For more information about extension configuration, see the details page of the "WhizardTelemetry Data Pipeline" extension in the Extensions Center.
 |===

@@ -1,11 +1,9 @@
 ---
-title: "应用路由"
-keywords: "Kubernetes, {ks_product}, 项目管理, 应用负载, 应用路由"
-description: "介绍如何管理应用路由。"
+title: "Ingresses"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress"
+description: "Learn how to manage Ingresses."
 weight: 05
 layout: "second"
 ---
-
-
 
 include::../../../../_custom-en/clusterManagement/routes/routes-desc-routes.adoc[]

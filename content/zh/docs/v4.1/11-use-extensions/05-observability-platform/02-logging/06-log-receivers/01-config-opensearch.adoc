@@ -89,7 +89,6 @@ kube-auditing:
   #      tls:
   #        verify_certificate: false
 ----
-
 --
 
 . 编辑 **WhizardTelemetry 事件**的扩展组件配置，修改 `kube-events-exporter` 下 opensearch 的相关配置。

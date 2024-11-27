@@ -43,7 +43,7 @@ include::../../../../../_ks_components/admonitions/note.adoc[]
 
 * 为了防止因过多实例不健康导致流量全部流向健康实例，继而造成流量压力把健康实例压垮并形成雪崩效应，Nacos 支持设置健康保护阈值。当健康实例数量占微服务总实例数的比例小于该值时，无论实例是否健康，都会将这个实例返回给客户端。
 
-* {ks_product_right}的默认健康保护阈值为 0，即默认不使用健康保护机制。您可以参阅 link:https://nacos.io[Nacos 官方文档]设置 Nacos 的健康保护阈值。
+* KubeSphere 的默认健康保护阈值为 0，即默认不使用健康保护机制。您可以参阅 link:https://nacos.io[Nacos 官方文档]设置 Nacos 的健康保护阈值。
 
 include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
 --

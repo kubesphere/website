@@ -1,4 +1,4 @@
 // :ks_include_id: c69900173bca4b109a4b8a178ce15e64
-This section describes how to manage ingresses.
+This section describes how to manage Ingresses.
 
-Ingresses are used to aggregate services and provide external access. Each ingress contains a domain name and its sub-paths mapped to different services. Business traffic from clients is first sent to the cluster gateway or project gateway, which then forwards the traffic to different services based on the rules defined in the ingress, thereby achieving reverse proxy for multiple services.
+Ingresses are used to aggregate services and provide external access. Each Ingress contains a domain name and its sub-paths mapped to different services. Business traffic from clients is first sent to the cluster gateway or project gateway, which then forwards the traffic to different services based on the rules defined in the Ingress, thereby achieving reverse proxy for multiple services.

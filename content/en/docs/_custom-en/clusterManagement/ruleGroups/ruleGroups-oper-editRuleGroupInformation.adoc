@@ -1,10 +1,10 @@
 // :ks_include_id: 33d094f3069e40519db31aec587457b4
-. 在**编辑信息**对话框，设置规则组的基本信息，然后点击**确定**。
+. In the **Edit Information** dialog, set the basic information for the rule group, and then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 include::ruleGroups-para-aliasCheckIntervalDescription.adoc[]
 |===

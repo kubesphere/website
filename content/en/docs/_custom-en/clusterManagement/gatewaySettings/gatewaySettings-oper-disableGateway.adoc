@@ -1,4 +1,4 @@
 // :ks_include_id: 7ea2a84e80b6439cb0d2da5db17f8e35
-. 在页面右侧选择**管理 > 禁用**。
+. On the right side of the page, select **Manage > Disable**.
 
-. 在弹出的对话框点击**确定**。
+. In the pop-up dialog box, click **OK**.

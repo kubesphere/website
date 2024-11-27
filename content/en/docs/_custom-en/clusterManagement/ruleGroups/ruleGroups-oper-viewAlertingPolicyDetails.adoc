@@ -1,55 +1,55 @@
 // :ks_include_id: 539c72cb8f884103bce5d979f3b31d09
-. 在规则组详情页面左侧的**属性**区域查看规则组的资源属性。
+. View the resource attributes of the rule group in the **Attributes** area on the left side of the details page.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 include::ruleGroups-para-ruleGroupStatus.adoc[]
 
-|检查间隔
-|指标检查之间的时间间隔。
+|Check Interval
+|The time interval between metric checks.
 
 include::ruleGroups-para-timeSpent.adoc[]
 
-|创建时间
-|规则组的创建时间。
+|Creation Time
+|The creation time of the rule group.
 
-|创建者
-|规则组的创建者。
+|Creator
+|The creator of the rule group.
 |===
 --
 
-. 在规则组详情页面右侧的**告警规则**页签查看规则组中设置的告警规则。
+. View the alert rules set in the rule group in the **Alert Rules** tab on the right side of the rule group details page.
 +
 --
-**告警规则**页签显示告警规则的名称、告警级别、触发状态、监控目标和最近检查时间。
+The **Alert Rules** tab displays the name, severity, trigger status, monitoring target, and last check time of the alert rules.
 
-* 在告警规则名称右侧点击image:/images/ks-qkcp/zh/icons/monitor.svg[monitor,18,18]可查看监控指标数据。
+* Click image:/images/ks-qkcp/zh/icons/monitor.svg[monitor,18,18] on the right side of the alert rule name to view the metric data.
 
-* 在告警规则右侧点击image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18]可查看告警规则的触发条件、PromSQL 表达式和告警消息内容。
+* Click image:/images/ks-qkcp/zh/icons/chevron-down.svg["chevron-down",18,18] on the right side of the alert rule to view the trigger condition, PromSQL expression, and alert message content of the alert rule.
 --
 
-. 在规则组详情页面右侧点击**告警**页签查看当前生成的告警。
+. Click the **Alerts** tab on the right side of the details page to view the currently generated alerts.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|消息
+|Message
 |
 include::ruleGroups-para-message.adoc[]
 
-|告警级别
+|Severity
 |
 include::ruleGroups-para-alertLevel.adoc[]
 
-|监控目标
-|规则组的监控目标。
+|Monitoring Target
+|The monitoring target of the rule group.
 
-|触发时间
+|Trigger Time
 |
 include::ruleGroups-para-activationTime.adoc[]
 |===

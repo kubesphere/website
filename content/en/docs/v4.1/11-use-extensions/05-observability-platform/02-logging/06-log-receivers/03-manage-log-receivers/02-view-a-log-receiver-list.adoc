@@ -1,27 +1,21 @@
 ---
-title: "查看日志接收器列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 集群设置, 日志接收器, 查看日志接收器列表"
-description: "介绍如何查看日志接收器列表。"
+title: "View Log Receiver List"
+keywords: "Kubernetes, {ks_product-en}, cluster management, cluster settings, log receivers, view log receiver list"
+description: "This section introduces how to view the log receiver list."
 weight: 02
 ---
 
-:ks_permission: **集群设置查看**
-:ks_navigation: **集群设置 > 日志接收器**
+:ks_permission: **Cluster Settings Viewing**
+:ks_navigation: **Cluster Settings > Log Receivers**
 
-
-本节介绍如何查看日志接收器列表。
-
+This section introduces how to view the log receiver list.
 
 == Prerequisites
-
 
 * {empty}
 include::../../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* 已添加一个日志接收器。
-
+* A log receiver has been added.
 
 == Steps
 
@@ -33,32 +27,32 @@ include::../../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**日志接收器**页面，点击**容器日志**、**资源事件**、**审计日志**或**通知历史**打开日志接收器列表。
+. On the **Log Receivers** page, click **Container Logs**, **Resource Events**, **Audit Logs**, or **Notification History** to open the log receiver list.
 
 +
 ====
-* 日志接收器列表提供以下信息：
+* The log receiver list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|日志接收器的名称。{ks_product_right}支持 Elasticsearch、 OpenSearch、Kafka 日志接收器。
+|Name
+|The name of the log receiver. {ks_product-en} supports Elasticsearch, OpenSearch, and Kafka log receivers.
 
-|地址
+|Address
 |
 include::../../../../../../_custom-en/clusterManagement/logReceivers/logReceivers-para-address.adoc[]
 
-|状态
-|日志接收器是否已启用，取值为**已启用**或**已禁用**。
+|Status
+|Whether the log receiver is enabled, with values of **Enabled** or **Disabled**.
 
-|类型
-|日志接收器的类型，可以为**日志**、**事件**、**审计日志**或**通知历史**。
+|Type
+|The type of the log receiver, which can be **Logging**, **Events**, **Audit Logs**, or **Notification History**.
 
-|创建时间
-|日志接收器的创建时间。
+|Creation Time
+|The creation time of the log receiver.
 |===
 --
 

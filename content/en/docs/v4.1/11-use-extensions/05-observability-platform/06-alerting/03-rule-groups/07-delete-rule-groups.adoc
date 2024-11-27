@@ -1,12 +1,12 @@
 ---
-title: "删除规则组"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 规则组, 编辑规则组"
-description: "介绍如何删除规则组。"
+title: "Delete Rule Groups"
+keywords: "Kubernetes, {ks_product-en}, cluster management, monitoring alerting, rule groups, delete rule groups"
+description: "Describes how to delete rule groups."
 weight: 07
 ---
 
-:ks_permission: **规则组管理**
-:ks_navigation: **监控告警 > 规则组**
+:ks_permission: **Rule Group Management**
+:ks_navigation: **Monitoring Alerting > Rule Groups**
 
 
 include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-deleteAlertingPolicies.adoc[]
@@ -14,17 +14,15 @@ include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 告警**扩展组件。
+* **WhizardTelemetry Alerting** should have been installed and enabled.
 
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
+== Delete a Single Rule Group
 
-
-== 删除单个规则组
-
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
 +
 
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
@@ -34,9 +32,9 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-deleteASingleAlertingPolicy.adoc[]
 
 
-== 批量删除规则组
+== Delete Multiple Rule Groups
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
 +
 
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]

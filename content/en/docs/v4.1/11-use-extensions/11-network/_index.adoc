@@ -1,19 +1,19 @@
 ---
-title: "KubeSphere 网络"
-keywords: "Kubernetes, {ks_product}, 集群管理, 项目管理, 网络, 网络策略, 容器组 IP 池, 网络隔离"
-description: "介绍如何管理网络策略和容器组 IP 池。"
+title: "KubeSphere Network"
+keywords: "Kubernetes, {ks_product-en}, cluster management, project management, network, network policy, pod IP pool, network isolation"
+description: "Introduce how to manage network policies and pod IP pools."
 weight: 11
 layout: "second"
 ---
 
 
-本节介绍如何使用“KubeSphere 网络”扩展组件来管理集群的网络策略和容器组 IP 池，以及企业空间和项目的网络隔离配置。
+This section introduces how to use the "KubeSphere Network" extension to manage network policies and pod IP pools for a cluster, as well as network isolation configurations for workspaces and projects.
 
-“KubeSphere 网络”扩展组件包含网络策略和容器组 IP 池两个组件。使用该扩展组件，您可以控制集群和项目中容器组的访问和被访问权限；当创建工作负载或任务时，通过选择**容器组 IP 池**，为容器组分配 IP 地址，确保每个容器组都有一个唯一的 IP 地址。
+The "KubeSphere Network" extension includes two components: network policy and pod IP pool. Using this extension, you can control access to and from pods in the cluster and projects; when creating workloads or jobs, by selecting a **Pod IP Pool**, you can allocate IP addresses to pods, ensuring that each pod has a unique IP address.
 
-安装“KubeSphere 网络”扩展组件后，
+After installing the "KubeSphere Network" extension,
 
-- 集群左侧导航栏的**网络**菜单下将显⽰**网络策略**和**容器组 IP 池**选项；
-- 企业空间左侧导航栏的**基本信息**页面将支持启用企业空间网络隔离；
-- 项目左侧导航栏的**项目设置**菜单下将显⽰**网络隔离**选项；
-- 创建工作负载或任务时，**高级设置**页签将显示**容器组 IP 池**选项。
+- The **Network** menu in the left navigation pane of the cluster will display **Network Policies** and **Pod IP Pools** options;
+- The **Basic Info** page in the left navigation pane of the workspace will support enabling workspace network isolation;
+- The **Project Settings** menu in the left navigation pane of the project will display the **Network Isolation** option;
+- When creating workloads or jobs, the **Advanced Settings** tab will display the **Pod IP Pool** option.

@@ -1,26 +1,23 @@
 ---
-title: "查看卷快照内容详情"
-keywords: "Kubernetes, {ks_product}, 集群管理, 卷快照内容, 查看卷快照内容详情"
-description: "介绍如何查看卷快照内容详情。"
+title: "View Volume Snapshot Content Details"
+keywords: "Kubernetes, {ks_product-en}, cluster management, volume snapshot content, view volume snapshot content details"
+description: "Learn how to view the details of a volume snapshot content."
 weight: 07
 ---
 
-:ks_permission: **卷快照内容查看**
-:ks_navigation: **存储 > 卷快照**
+:ks_permission: **Volume Snapshot Contents Viewing**
+:ks_navigation: **Storage > Volume Snapshots**
 
 
-本节介绍如何查看卷快照内容详情。
+This section describes how to view the details of a volume snapshot content.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-
-
 
 == Steps
 
@@ -32,51 +29,51 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**卷快照**页面点击**卷快照内容**，然后点击一个卷快照内容的名称打开其详情页面。
+. Click **Volume Snapshot Content** on the **Volume Snapshots** page, then click the name of a volume snapshot content to open its details page.
 
-. 在卷快照内容详情页面左侧的**属性**区域查看卷快照的资源属性。
+. View the resource attributes of the volume snapshot content in the **Attributes** area on the left side of the details page.
 +
 --
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|状态
+|Status
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-status.adoc[]
 
-|容量
+|Capacity
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-capacity.adoc[]
 
-|卷快照类
+|Volume Snapshot Class
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-volumeSnapshotClass.adoc[]
 
-|快照句柄
-|卷快照内容在后端存储系统的唯一标识符。
+|Snapshot Handle
+|The unique identifier of the volume snapshot content in the backend storage system.
 
-|供应者
-|卷快照类对应的存储插件。
+|Provisioner
+|The storage plugin corresponding to the volume snapshot class.
 
-|删除策略
+|Deletion Policy
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-deletionPolicy.adoc[]
 
-|创建时间
-|卷快照内容的创建时间。
+|Creation Time
+|The creation time of the volume snapshot content.
 
-|创建者
-|创建卷快照内容的用户。
+|Creator
+|The user who created the volume snapshot content.
 |===
 --
 
-. 在持久卷详情页面右侧的**资源状态**页签查看卷快照内容对应的卷快照名称和卷快照类。
+. View the volume snapshot name and volume snapshot class of the volume snapshot content in the **Resource Status** tab on the right side of the details page.
 
-. 在持久卷详情页面右侧点击**元数据**页签查看卷快照内容的标签和注解。
+. Click the **Metadata** tab on the right side of the details page to view the labels and annotations of the volume snapshot content.
 
-. 在持久卷详情页面右侧点击**事件**页签查看卷快照内容的事件。
+. Click the **Events** tab on the right side of the details page to view the events of the volume snapshot content.
 +
 --
 include::../../../../_custom-en/clusterManagement/clusterManagement-para-eventsTab.adoc[]

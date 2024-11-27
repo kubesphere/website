@@ -1,37 +1,36 @@
-// :ks_include_id: 6fca3db90bdf4fd8bb61eb771c1a7308
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|类型
-|网关的类型。
+|Type
+|The type of the gateway.
 
-|创建者
-|启用网关的用户。
+|Creator
+|The user who enabled the gateway.
 
-|创建时间
-|网关的启用时间。
+|Creation Time
+|The time when the gateway was enabled.
 
-|访问模式
-|网关服务的外部访问模式。
+|Access Mode
+|The external access mode of the gateway service.
 
 include::../services/services-para-externalAccess.adoc[tag=bullets]
 
-|网关地址
+|Gateway Address
 |
-网关的外部访问地址。
+The external access address of the gateway.
 
 include::gatewaySettings-para-address.adoc[tag=bullets]
 
-|节点端口
-|网关服务的 HTTP 和 HTTPS 节点端口。仅在网关的外部访问模式为 NodePort 时显示。
+|Node Ports
+|The HTTP and HTTPS node ports of the gateway service. Only displayed when the external access mode of the gateway is NodePort.
 
-|副本
-|网关工作负载的副本数。
+|Replicas
+|The number of replicas of the gateway workload.
 
-|链路追踪
-|网关是否已启用链路追踪功能。
+|Tracing
+|Whether the gateway has tracing enabled.
 
-|注解
-|网关服务的注解。网关的外部访问模式为 LoadBalancer 时，您需要根据负载均衡器插件和基础设施环境设置网关服务的注解以创建所需的负载均衡器。有关更多信息，请联系您的基础设施环境提供商。仅在网关的外部访问模式为 LoadBalancer 时显示。
+|Annotations
+|The annotations of the gateway service. When the external access mode of the gateway is LoadBalancer, you need to set the annotations of the gateway service according to the load balancer plugin and infrastructure environment to create the required load balancer. For more information, please contact your infrastructure environment provider. Only displayed when the external access mode of the gateway is LoadBalancer.
 |===

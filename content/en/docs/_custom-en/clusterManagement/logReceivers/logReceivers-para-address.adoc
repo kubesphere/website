@@ -1,2 +1,2 @@
 // :ks_include_id: 52e9e8100b4444ebb9fbb42175d917f3
-日志接收器的服务地址和服务端口。{ks_product-en}会将日志发送给该地址和端口。{ks_product-en}默认使用的 OpenSearch 的服务地址和服务端口为 **opensearch-cluster-data.kubesphere-logging-system.svc:9200**。
+The service address and port of the log receiver. {ks_product-en} will send logs to this address and port. The default service address and port of OpenSearch used by {ks_product-en} is **opensearch-cluster-data.kubesphere-logging-system.svc:9200**.

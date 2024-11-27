@@ -1,2 +1,2 @@
 // :ks_include_id: a1f60dfd532d4f18b2f626e9ce81ea4e
-本节介绍如何查看卷快照列表。
+This section describes how to view the volume snapshot list.

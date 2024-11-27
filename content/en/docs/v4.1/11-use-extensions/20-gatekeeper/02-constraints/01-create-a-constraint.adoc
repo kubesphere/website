@@ -1,14 +1,14 @@
 ---
-title: "创建约束"
-description: "介绍如何创建约束。"
+title: "Create Constraints"
+description: "Learn how to create a constraint."
 weight: 01
 ---
 
 :ks_permission: ** cluster-admin **
-:ks_navigation: ** Gatekeeper > 约束**
+:ks_navigation: ** Gatekeeper > Constraints**
 
 
-本节介绍如何创建约束。
+This section describes how to create a constraint.
 
 
 == Prerequisites
@@ -17,13 +17,9 @@ weight: 01
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
+* **Gatekeeper** should have been installed and enabled.
 
-
-* {ks_product_right}平台需要安装并启用 **Gatekeeper** 扩展组件。
-
-* 已创建一个约束模板。
-
-
+* A constraint template has been created.
 
 == Steps
 
@@ -39,33 +35,33 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**创建约束条件**对话框，设置以下参数，然后点击**确定**。
+. In the **Create Constraint** dialog, set the following parameters, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|约束条件名称
-|约束条件的名称。
+|Constraint Name
+|The name of the constraint.
 
-|约束条件类型
-|约束条件使用的约束模板。
+|Constraint Kind
+|The constraint template used by the constraint.
 
-|enforcementAction
-|`enforcementAction` 字段定义了处理约束违规的操作。默认设置为 `deny`，即默认拒绝任何违规的准入请求。有关更多信息，请参阅link:https://open-policy-agent.github.io/gatekeeper/website/docs/violations/[约束违规处理]。
+|Enforcement Action
+|The `enforcementAction` field defines the action for handling Constraint violations. The default setting is `deny`, which means that by default, any admission request that violates the constraint will be denied. For more information, see link:https://open-policy-agent.github.io/gatekeeper/website/docs/violations/[Handling Constraint Violations].
 
 |Match Kinds
-|`match` 字段定义了约束适用的资源。有关更多信息，请参阅 link:https://open-policy-agent.github.io/gatekeeper/website/docs/howto/#the-match-field[match]。
+|The `match` field defines the resources to which the constraint applies. For more information, see link:https://open-policy-agent.github.io/gatekeeper/website/docs/howto/#the-match-field[match].
 
-`kinds` 接受包含 `apiGroups` 和 `kinds` 字段的对象列表，这些字段列出了约束适用对象的 groups/kinds。如果指定了多个 groups/kinds 对象，只需匹配其中一个对象，资源就会在约束的适用范围内。
+`kinds` accepts a list of objects with `apiGroups` and `kinds` fields that list the groups/kinds of objects to which the constraint will apply. If multiple groups/kinds objects are specified, only one match is needed for the resource to be in scope.
 
-|命名空间标签
-|针对对象所在的命名空间或对象本身（如果对象是一个命名空间）设置的可标识的键值对。
+|Namespace Selector
+|It is a label selector against an object's containing namespace or the object itself, if the object is a namespace.
 
-|参数
-|用于描述约束的意图。有关更多信息，请参阅 link:https://open-policy-agent.github.io/gatekeeper/website/docs/howto/#the-parameters-field[parameters]。
+|Parameters
+|It describes the intent of a constraint. For more information, see link:https://open-policy-agent.github.io/gatekeeper/website/docs/howto/#the-parameters-field[parameters].
 |===
 
-您将在**约束**页面查看已创建的约束。
+You will view the created constraint on the **Constraints** page.
 --

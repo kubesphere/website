@@ -50,7 +50,7 @@ You should have the pass:a,q[{ks_permission}] permission on the {ks_product-en} 
 
 |===
 
-* Click the search box above the list and enter keywords to search for users whose usernames contain specific keywords.
+* Click the search box above the list to search for users by name.
 
 * Click image:/images/ks-qkcp/zh/icons/refresh-light.svg[refresh,18,18] in the upper right corner of the list to refresh the list information.
 

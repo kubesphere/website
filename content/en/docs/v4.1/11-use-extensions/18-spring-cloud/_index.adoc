@@ -1,15 +1,14 @@
 ---
 title: "KubeSphere Spring Cloud"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud"
-description: "介绍如何使用 Spring Cloud 功能。"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud"
+description: "Learn how to use the Spring Cloud feature."
 weight: 18
 layout: "second"
 draft: true
 ---
 
+This section describes how to use the KubeSphere Spring Cloud extension.
 
-本节介绍如何使用 KubeSphere Spring Cloud 扩展组件。
+The KubeSphere Spring Cloud extension provides microservices, microservice configuration, and microservice gateway features. The microservice registration and configuration functions are implemented based on link:https://nacos.io[Nacos], and the microservice gateway is implemented based on Spring Cloud Gateway. If your existing application conforms to the Nacos specification, KubeSphere Spring Cloud can help you get the operation and maintenance efficiency of containerized applications while keeping the original framework unchanged.
 
-KubeSphere Spring Cloud 扩展组件提供了微服务、微服务配置和微服务网关功能。微服务注册和配置功能基于 link:https://nacos.io[Nacos] 实现，微服务网关基于 Spring Cloud Gateway 实现。如果您原有的应用程序符合 Nacos 规范，KubeSphere Spring Cloud 功能可以帮助您在保持原有框架不变的同时获得容器化应用的运维效率。
-
-安装 KubeSphere Spring Cloud 扩展组件后，项⽬左侧导航栏将显⽰ **Spring Cloud** 选项。
+After installing the KubeSphere Spring Cloud extension, the **Spring Cloud** option will be displayed in the left navigation pane of the project.

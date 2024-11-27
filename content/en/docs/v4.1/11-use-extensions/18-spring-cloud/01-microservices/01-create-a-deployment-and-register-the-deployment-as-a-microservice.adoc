@@ -1,35 +1,29 @@
 ---
-title: "创建部署并注册为微服务"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 创建部署并注册为微服务"
-description: "介绍如何创建部署并将部署注册为微服务。"
+title: "Create Deployments and Register as Microservices"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, create deployment and register as microservice"
+description: "Learn how to create a deployment and register it as a microservice."
 weight: 01
 ---
 
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservices**
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务**
+This section describes how to create a deployment and register it as a microservice.
 
-
-本节介绍如何创建部署并将部署注册为微服务。
-
-Spring Cloud 微服务实例通过 Kubernetes 部署管理，部署的容器组副本即微服务的实例。
-
+Spring Cloud microservice instances are managed through Kubernetes deployments, with the pod replicas of the deployment being the instances of the microservice.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* 创建部署所使用的容器镜像中的应用程序需要符合 Nacos 规范。有关更多信息，请参阅 link:https://nacos.io[Nacos 官方文档]。
-
+* The application in the container image used to create the deployment must conform to the Nacos specification. For more information, see the link:https://nacos.io[Nacos Documentation].
 
 == Steps
 
-请参阅link:#_参数描述[参数描述]设置部署的参数。
+Refer to the link:#_parameter_description[Parameter Description] to set the parameters for the deployment.
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -39,7 +33,7 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 点击**启用 Spring Cloud**。
+. Click **Enable Spring Cloud**.
 
 +
 
@@ -47,64 +41,63 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**基本信息**页签，设置**部署**的基本信息，然后点击**下一步**。
+. On the **Basic Information** tab, set the basic information for the **Deployment**, then click **Next**.
 
-. 在**容器组设置**页签，为**部署**管理的容器组设置副本数量、容器、更新策略、安全上下文、调度规则和元数据，然后点击**下一步**。
+. On the **Pod Settings** tab, set the number of replicas, containers, update strategy, security context, scheduling rules, and metadata for the pods managed by the **Deployment**, then click **Next**.
 
-. 在**存储设置**页签，为部署管理的容器挂载卷，然后点击**下一步**。
+. On the **Storage Settings** tab, mount volumes for the containers managed by the deployment, then click **Next**.
 
-. 在**高级设置**页签，为部署管理的容器组指定节点，并设置部署的元数据，然后点击**创建**。
+. On the **Advanced Settings** tab, specify the node for the pods managed by the deployment and set the metadata for the deployment, then click **Create**.
 +
 --
-部署创建完成后将被注册为微服务，并显示在微服务列表中。
+After the deployment is created, it will be registered as a microservice and displayed in the microservice list.
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-在 **Spring Cloud > 微服务**页面创建的部署将被自动注册为微服务。如需对微服务实例进行操作（例如调整实例数量），您需要前往**工作负载 > 部署**页面对微服务对应的部署进行操作。
+Deployments created on the **Spring Cloud > Microservices** page will be automatically registered as microservices. To perform operations on microservice instances (such as adjusting the number of instances), you need to go to the **Workloads > Deployments** page to perform operations on the deployment corresponding to the microservice.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --
 
+== Parameter Description
 
-== 参数描述
-
-* 基本信息
+* Basic Information
 +
 --
-设置部署的基本信息。
+Set the basic information for the deployment.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|部署的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。
+|Name
+|The name of the deployment. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 253 characters long.
 
-|别名
-|部署的别名。不同部署的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the deployment. Different deployments can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), cannot start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|部署的描述信息。描述可包含任意字符，最长 256 个字符。
+|Description
+|The description for the deployment. The description can contain any characters and can be up to 256 characters long.
 |===
 --
 
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podReplicas.adoc[]
 
-* 容器组设置 > 添加容器
+* Pod Settings > Add Container
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addContainer.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 容器设置
+* Pod Settings > Add Container > Container Settings
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-setImageNameTypeResource.adoc[]
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerImage.adoc[]
 
@@ -116,184 +109,178 @@ include::../../../../_custom-en/clusterManagement/projects/projects-para-contain
 |===
 --
 
-* 容器组设置 > 添加容器 > 端口设置
+* Pod Settings > Add Container > Port Settings
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Port.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 镜像拉取策略
+* Pod Settings > Add Container > Image Pull Policy
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-imagePullPolicy.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 健康检查
+* Pod Settings > Add Container > Health Check
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-healthCheck.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 健康检查 > 添加探针
+* Pod Settings > Add Container > Health Check > Add Probe
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addProbe.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 生命周期管理
+* Pod Settings > Add Container > Lifecycle Management
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-lifecycleManagement.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 生命周期管理 > 添加动作
+* Pod Settings > Add Container > Lifecycle Management > Add Action
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addAction.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 启动命令
+* Pod Settings > Add Container > Start Command
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-startCommand.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 环境变量
+* Pod Settings > Add Container > Environment Variables
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-environmentVariables.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 容器组安全上下文
+* Pod Settings > Add Container > Container Security Context
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-containerSecurityContext.adoc[]
 --
 
-* 容器组设置 > 添加容器 > 同步主机时区
+* Pod Settings > Add Container > Sync Host Timezone
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-syncTimeZone.adoc[]
 --
 
-* 容器组设置 > 更新策略
+* Pod Settings > Update Strategy
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-updatePolicy.adoc[]
 --
 
-* 容器组设置 > 更新策略 > 滚动更新设置
+* Pod Settings > Update Strategy > Rolling Update Settings
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-rollingUpdate.adoc[]
 --
 
-* 容器组设置 > 容器组安全上下文
+* Pod Settings > Pod Security Context
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podSecurityContext.adoc[]
 --
 
-* 容器组设置 > 容器组调度规则
+* Pod Settings > Pod Scheduling Rules
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-podSchedulingRules.adoc[]
 --
 
-* 容器组设置 > 容器组调度规则 > 自定义规则
+* Pod Settings > Pod Scheduling Rules > Custom Rules
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-customRules.adoc[]
 --
 
-* 容器组设置 > 容器组优雅终止
+* Pod Settings > Pod Graceful Period
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-PodGracePeriod.adoc[]
 --
 
-* 容器组设置 > 添加元数据
+* Pod Settings > Add Metadata
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-PodMetadata.adoc[]
 --
 
-* 存储设置
+* Storage Settings
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-mountVolume.adoc[]
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
 // include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-collectLogsOnVolume.adoc[]
 
 // include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-desc-enableLogCollectionCluster.adoc[]
 
-include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
+// include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-addPVCTemplate.adoc[]
 
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountVolume.adoc[]
 
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountSecretOrConfigmap.adoc[]
 |===
 
-include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume.adoc[]
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-oper-editDeleteVolume_new.adoc[]
 --
 
-* 存储设置 > 添加持久卷声明模板
-+
---
-include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
---
+// * Storage Settings > Add Persistent Volume Claim Template
+// +
+// --
+// include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-volumeTemplate.adoc[]
+// --
 
-* 存储设置 > 挂载卷 > 持久卷
+* Storage Settings > Mount Volume > Persistent Volume
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-persistentVolume.adoc[]
 --
 
-* 存储设置 > 挂载卷 > 临时卷
+* Storage Settings > Mount Volume > Temporary Volume
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-temporaryVolume.adoc[]
 --
 
-* 存储设置 > 挂载卷 > HostPath 卷
+* Storage Settings > Mount Volume > HostPath Volume
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-hostpathVolume.adoc[]
 --
 
-* 存储设置 > 挂载配置字典或保密字典
+* Storage Settings > Mount ConfigMap or Secret
 +
 --
 include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-mountConfigmapSecret.adoc[]
 --
 
-* 高级设置
+* Advanced Settings
 +
 --
-为部署管理的容器组指定节点，并设置部署的元数据。
+Specify the node for the pods managed by the deployment and set the metadata for the deployment.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-// |容器组 IP 池
-// |选择用于为容器组副本分配虚拟 IP 地址的 IP 池。
+// |Pod IP Pool
+// |Select the IP pool used to allocate virtual IP addresses for pod replicas.
 
-|选择节点
-|将容器组副本调度到具有指定标签的节点上。
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-selectNode.adoc[]
 
-* 您可以手动输入目标节点的标签键值对，也可以点击**指定节点**选择一个节点。
-* 点击**添加节点选择器**可设置多个标签，容器组副本将被调度具有所有指定标签的节点上。
-* 在已创建的标签右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除标签。
+|Add Metadata
+|Set the labels and annotations for the deployment.
 
-|添加元数据
-|设置部署的标签和注解。
-
-* 点击添加可设置多条标签或注解。
-* 在已创建的标签或注解右侧点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除标签或注解。
+include::../../../../_custom-en/clusterManagement/workloads/createWorkload/workloads-para-Metadata.adoc[]
 |===
 --

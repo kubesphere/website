@@ -1,29 +1,25 @@
 ---
-title: "编辑容器组 IP 池信息"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 编辑容器组 IP 池信息"
-description: "介绍如何编辑容器组 IP 池信息。"
+title: "Edit Pod IP Pool Information"
+keywords: "Kubernetes, {ks_product-en}, cluster management, network, pod IP pool, edit pod IP pool information"
+description: "Introduce how to edit pod IP pool information."
 weight: 05
 ---
 
-:ks_permission: **集群网络资源管理**
-:ks_navigation: **网络 > 容器组 IP 池**
+:ks_permission: **Cluster Network Resource Management**
+:ks_navigation: **Network > Pod IP Pools**
 
 
-本节介绍如何编辑容器组 IP 池信息。
+This section introduces how to edit pod IP pool information.
 
-您可以编辑容器组 IP 池的别名和描述。{ks_product_right}不支持编辑容器组 IP 池的名称。
+You can edit the alias and description of a pod IP pool. KubeSphere does not support editing the name of a pod IP pool.
 
 
 == Prerequisites
 
-
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
-
+* **KubeSphere Network** should have been installed and enabled.
 
 
 == Steps
@@ -36,19 +32,19 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要操作的容器组 IP 池右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑信息**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the pod IP pool you want to edit, and then select **Edit Information** from the dropdown list.
 
-. 在**编辑信息**对话框，设置容器组 IP 池的别名和描述，然后点击**确定**。
+. In the **Edit Information** dialog box, set the alias and description of the pod IP pool, and then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|别名
-|容器组 IP 池的别名。不同容器组 IP 池的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the pod IP pool. Different pod IP pools can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-), with a maximum length of 63 characters.
 
-|描述
-|容器组 IP 池的描述信息。描述可包含任意字符，最多包含 256 个字符。
+|Description
+|The description of the pod IP pool. The description can contain any characters, with a maximum of 256 characters.
 |===
 --

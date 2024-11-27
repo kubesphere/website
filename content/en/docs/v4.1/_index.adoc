@@ -23,6 +23,8 @@ sectionLink:
       - /docs/v4.1/07-cluster-management/10-multi-cluster-management
       - /docs/v4.1/02-quickstart/02-install-an-extension.adoc
       - /docs/v4.1/10-toolbox/01-use-kubectl-tool.adoc
+      - docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel.adoc
+      - docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile.adoc
       - docs/v4.1/09-project-management/03-application-workloads/01-apps/01-install-an-app-from-the-app-store.adoc
       - docs/v4.1/09-project-management/03-application-workloads/01-apps/02-install-an-app-using-an-app-template.adoc
 

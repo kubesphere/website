@@ -1,18 +1,18 @@
 // :ks_include_id: d52d25b1598e4adb94ab8b79c98a1e00
-. 在列表中点击一个自定义监控面板的名称打开监控面板。
+. Click the name of a custom monitoring dashboard in the list to open the dashboard.
 +
 --
-* 在页面左侧区域可查看以文本显示的监控指标。
+* View text-displayed monitoring metrics in the left area of the page.
 
-* 在页面中间区域可查看监控指标折线图或柱状图。
+* View line charts or bar charts of monitoring metrics in the middle area of the page.
 
-* 在页面右侧点击image:/images/ks-qkcp/zh/icons/chevron-right.svg[chevron-right,18,18]可查看每个监控指标的子指标及其在指定时间范围内的最大值、最小值、平均值和最后采样值。
+* Click image:/images/ks-qkcp/zh/icons/chevron-right.svg[chevron-right,18,18] on the right side of the page to view sub-metrics of each monitoring metric and their maximum, minimum, average, and last sampled values within the specified time range.
 
-* 在页面上方点击image:/images/ks-qkcp/zh/icons/theme.svg[theme,18,18]可切换浅色和深色主题。
+* Click image:/images/ks-qkcp/zh/icons/theme.svg[theme,18,18] at the top of the page to switch between light and dark themes.
 
-* 在页面上方点击image:/images/ks-qkcp/zh/icons/calendar-dark.svg[calendar-dark,18,18]可设置数据的时间范围。
+* Click image:/images/ks-qkcp/zh/icons/calendar-dark.svg[calendar-dark,18,18] at the top of the page to set the time range of the data.
 
-* 在页面上方点击image:/images/ks-qkcp/zh/icons/refresh-dark.svg[refresh-dark,18,18]可设置数据的刷新间隔。
+* Click image:/images/ks-qkcp/zh/icons/refresh-dark.svg[refresh-dark,18,18] at the top of the page to set the refresh interval of the data.
 
-* 在页面右上角点击image:/images/ks-qkcp/zh/icons/close-dark.svg[close,18,18]可返回自定义监控面板列表。
+* Click image:/images/ks-qkcp/zh/icons/close-dark.svg[close,18,18] in the upper right corner of the page to return to the custom monitoring dashboard list.
 --

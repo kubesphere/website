@@ -303,7 +303,7 @@ input(id: 'release-image-with-tag', message: 'release image with tag?', submitte
 ----
 --
 
-. Log in to the {ks_product-en} web console as a user with pipeline approval permissions. Click **Workspace Management** and navigate to your DevOps project. Click the pipeline name to access its details page. Under the **Run Records** tab, click the record you want to review, then click **Proceed** to approve the pipeline.
+. Log in to the {ks_product-en} web console with a user with pipeline approval permissions. Click **Workspace Management** and navigate to your DevOps project. Click the pipeline name to access its details page. Under the **Run Records** tab, click the record you want to review, then click **Proceed** to approve the pipeline.
 +
 [.admon.note,cols="a"]
 |===

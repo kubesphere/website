@@ -1,28 +1,24 @@
 ---
-title: "查看卷快照内容列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 存储, 卷快照, 查看卷快照列表"
-description: "介绍如何查看卷快照内容列表。"
+title: "View Volume Snapshot Content List"
+keywords: "Kubernetes, {ks_product-en}, cluster management, storage, volume snapshots, view volume snapshot list"
+description: "Learn how to view the volume snapshot content list."
 weight: 06
 ---
 
 
-:ks_permission: **卷快照内容查看**
-:ks_navigation: **存储 > 卷快照**
+:ks_permission: **Volume Snapshot Contents Viewing**
+:ks_navigation: **Storage > Volume Snapshots**
 
 
-本节介绍如何查看卷快照内容列表。
+This section describes how to view the volume snapshot content list.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-
-
-
 
 == Steps
 
@@ -38,40 +34,40 @@ include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeS
 
 +
 ====
-* 卷快照列表提供以下信息：
+* The volume snapshot content list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|卷快照内容的名称。
+|Name
+|The name of the volume snapshot content.
 
-|状态
+|Status
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-status.adoc[]
 
-|容量
+|Capacity
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-capacity.adoc[]
 
-|卷快照类
+|Volume Snapshot Class
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-volumeSnapshotClass.adoc[]
 
-|删除策略
+|Deletion Policy
 |
 include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeSnapshotContents-para-deletionPolicy.adoc[]
 
-|创建时间
-|卷快照内容的创建时间。
+|Creation Time
+|The creation time of the volume snapshot content.
 |===
 --
 
-* 在列表左上角的下拉列表中选择一个项目，可查看特定项目中的卷快照。
+* Select a project from the dropdown list at the top left of the list to view volume snapshot contents in a specific project.
 
-* 在列表上方点击搜索框并设置搜索条件，可按名称或状态搜索卷快照内容。
+* Click the search box above the list to search for volume snapshot contents by name or status.
 
 include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
 

@@ -1,12 +1,12 @@
 ---
-title: "查看告警列表"
-keywords: "Kubernetes, {ks_product}, 集群管理, 告警, 查看告警列表"
-description: "介绍如何查看告警列表。"
+title: "View Alert List"
+keywords: "Kubernetes, {ks_product-en}, cluster management, alerts, view alert list"
+description: "Describes how to view the alert list."
 weight: 01
 ---
 
-:ks_permission: **告警查看**
-:ks_navigation: **监控告警 > 告警**
+:ks_permission: **Alert Viewing**
+:ks_navigation: **Monitoring Alerting > Alerts**
 
 
 include::../../../../../_custom-en/clusterManagement/alerts/alerts-desc-viewAnAlertingMessageList.adoc[]
@@ -14,17 +14,15 @@ include::../../../../../_custom-en/clusterManagement/alerts/alerts-desc-viewAnAl
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 告警**扩展组件。
+* **WhizardTelemetry Alerting** should have been installed and enabled.
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
 
-
-
 == Steps
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
 +
 
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]

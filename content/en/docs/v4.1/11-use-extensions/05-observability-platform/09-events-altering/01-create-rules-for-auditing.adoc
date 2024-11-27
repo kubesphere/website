@@ -1,27 +1,27 @@
 ---
-title: "创建事件/审计的告警规则"
-description: "介绍如何为事件和审计创建告警规则。"
+title: "Create Alert Rules for Events/Auditing"
+description: "Describes how to create alert rules for events and auditing."
 weight: 01
 ---
 
-本节介绍如何为 Kubernetes 原生事件和 Kubernetes/KubeSphere 审计事件定义告警规则。
+This section describes how to define alert rules for Kubernetes native events and Kubernetes/KubeSphere audit events.
 
 
 == Prerequisites
 
-* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。
+* You should have the **platform-admin** role on the {ks_product-en} platform.
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 事件告警**扩展组件。
+* **WhizardTelemetry Events Alerting** should have been extension installed and enabled.
 
 
 == Steps
 
-.  在任意集群节点上，创建一个 yaml 文件，为该集群定义事件和审计的告警规则。
+. On any cluster node, create a yaml file to define alert rules for events and auditing in that cluster.
 +
 --
-点击link:../02-example-rules-for-auditing[此处]查看完整的告警规则示例。请参阅link:../02-example-rules-for-auditing/#_告警规则参数描述[参数描述]设置告警规则的参数。
+Click link:../02-example-rules-for-auditing[here] to view a complete example of alert rules. Refer to link:../02-example-rules-for-auditing/#_parameter_description[Parameter Description] to set the parameters for the alert rules.
 
-简单示例如下：
+A simple example is as follows:
 
 [,yaml]
 ----
@@ -68,13 +68,13 @@ spec:
 ----
 --
 
-. 执行以下命令，创建 CRD（定制资源定义）。
+. Run the following command to create the CRD (Custom Resource Definition).
 +
 [,bash]
 ----
-kubectl apply -f xxx.yaml  # 注意替换 yaml 文件的名称
+kubectl apply -f xxx.yaml  # Replace with the name of the yaml file
 ----
 
-. 运行成功后，在**集群管理 > 定制资源定义**页面搜索 **ClusterRuleGroup**。
+. After successful execution, search for **ClusterRuleGroup** on the Cluster **CRDs** page.
 
-. 点击 **ClusterRuleGroup** 进入详情页，在右侧页面查看、编辑或删除告警规则。
+. Click **ClusterRuleGroup** to enter the details page and view, edit, or delete the alert rules on the right side of the page.

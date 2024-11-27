@@ -1,4 +1,4 @@
 // :ks_include_id: d62dbb9307bf4f21a25a732737dbe531
-本节介绍如何编辑告警规则组信息。
+This section introduces how to edit the information of an alert rule group.
 
-您可以编辑告警规则组的别名、检查周期和描述。{ks_product-en}不支持编辑规则组的名称。
+You can edit the alias, check interval, and description of the alert rule group. KubeSphere does not support editing the name of a rule group.

@@ -1,7 +1,7 @@
 ---
-title: "证书管理"
-keywords: "Kubernetes, {ks_product}, 证书管理, 更新证书"
-description: "介绍证书管理扩展组件。"
+title: "Cert Manager"
+keywords: "Kubernetes, {ks_product-en}, certificate management, update certificates"
+description: "Learn about the Cert Manager extension."
 weight: 23
 layout: "second"
 draft: true

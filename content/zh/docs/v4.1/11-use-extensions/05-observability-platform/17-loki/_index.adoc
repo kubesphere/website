@@ -11,7 +11,7 @@ Loki 是一个受 Prometheus 启发的水平可扩展、高可用、多租户日
 
 // Loki 不索引日志的内容，而是为每个日志流建立一组标签。这些标签由键值对组成，对于高效组织、过滤和搜索日志数据至关重要。
 
-Grafana Loki for WhizardTelemetry 扩展组件支持在 Grafana 控制台查看存储到 Loki 的{ks_product_both}的日志、审计、事件及通知历史数据。
+Grafana Loki for WhizardTelemetry 扩展组件支持在 Grafana 控制台查看存储到 Loki 的 KubeSphere 日志、审计、事件及通知历史数据。
 
 [.admon.note,cols="a"]
 |===

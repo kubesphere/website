@@ -1,35 +1,30 @@
 ---
-title: "查看项目监控概览"
-description: "介绍如何查看项目概览页面的监控信息。"
+title: "Project Monitoring Overview"
+description: "This section introduces how to view monitoring information on the project overview page."
 weight: 03
 ---
 
-:ks_permission: **监控查看**
-:ks_navigation: **概览**
+:ks_permission: **Monitoring Viewing**
+:ks_navigation: **Overview**
 
-本节介绍如何查看项目概览页面的监控信息。
+This section introduces how to view monitoring information on the project overview page.
 
 ifeval::["{file_output_type}" == "html"]
-有关项目概览页面的其他信息，请参阅link:../../../../../09-project-management/02-overview/01-view-project-overall-information/[查看项目概览信息]。
+For other information on the project overview page, see link:../../../../../09-project-management/02-overview/01-view-project-overall-information/[Project Overview].
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-有关项目概览页面的其他信息，请参阅《{ks_product_right}项目管理指南》的“概览”章节。
+For other information on the project overview page, see the “Overview” chapter of the {ks_product-en} Project Management Guide.
 endif::[]
-
-
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+* **WhizardTelemetry Monitoring** should have been installed and enabled.
 
 == Steps
-
 
 include::../../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -38,31 +33,31 @@ include::../../../../../_custom-en/projectManagement/projectManagement-oper-open
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 --
-**概览**页面提供以下监控信息：
+The **Overview** page provides the following monitoring information:
 
 [%header,cols="1a,4a"]
 |===
-|功能区 |描述
+|Area |Description
 
-|资源用量
-|当前项目的CPU、内存、磁盘的总量和实时用量。
+|Resource Usage
+|The total and real-time usage of CPU, memory, and disk for the current project.
 
-|容器组
-|当前项目的各种类型容器组的数量。
+|Pods
+|The number of various types of pods in the current project.
 
-容器组状态类型包括：
+Pod status includes:
 
 include::../../../../../_custom-en/clusterManagement/pods/pods-para-podStatus_overview.adoc[]
 
-容器组 QoS（服务质量）类型包括：
+Pod QoS (Quality of Service) types include:
 
 include::../../../../../_custom-en/clusterManagement/pods/pods-para-qosTypes.adoc[]
 
-|资源用量排行
-|当前项目中特定资源用量最高的 5 个工作负载。点击下拉列表可选择按 CPU、内存、出站流量或入站流量排序。
+|Resource Usage Ranking
+|The top 5 workloads with the highest resource usage in the current project. Click the dropdown list to select sorting by CPU, memory, outbound traffic, or inbound traffic.
 
-* 在列表上方点击image:/images/ks-qkcp/zh/icons/sort-ascending.svg[sort-ascending,18,18]/image:/images/ks-qkcp/zh/icons/sort-descending.svg[sort-descending,18,18] 可按升序/降序排序。
+* Click image:/images/ks-qkcp/zh/icons/sort-ascending.svg[sort-ascending,18,18]/image:/images/ks-qkcp/zh/icons/sort-descending.svg[sort-descending,18,18] above the list to sort in ascending/descending order.
 
-* 点击下方的**查看更多**，查看工作负载的资源用量详情。
+* Click **View More** below to view the resource usage details of workloads.
 |===
 --

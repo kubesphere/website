@@ -1,28 +1,25 @@
 ---
-title: "编辑卷快照内容信息"
-keywords: "Kubernetes, {ks_product}, 集群管理, 卷快照内容"
-description: "介绍如何编辑卷快照内容的信息。"
+title: "Edit Volume Snapshot Content Information"
+keywords: "Kubernetes, {ks_product-en}, cluster management, volume snapshot content"
+description: "Learn how to edit the information of a volume snapshot content."
 weight: 08
 ---
 
-:ks_permission: **卷快照内容管理**
-:ks_navigation: **存储 > 卷快照**
+:ks_permission: **Volume Snapshot Contents Management**
+:ks_navigation: **Storage > Volume Snapshots**
 
 
-本节介绍如何编辑卷快照内容的信息。
+This section describes how to edit the information of a volume snapshot content.
 
-您可以编辑卷快照内容的别名和描述。{ks_product_right}不支持编辑卷快照内容的名称。
+You can edit the alias and description of a volume snapshot content. KubeSphere does not support editing the name of a volume snapshot content.
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-
-
 
 == Steps
 
@@ -38,19 +35,19 @@ include::../../../../_custom-en/clusterManagement/volumeSnapshotContents/volumeS
 
 +
 
-. 在需要操作的卷快照内容右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑信息**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the volume snapshot content you want to operate, then select **Edit Information** from the dropdown list.
 
-. 在**编辑信息**对话框，设置卷快照内容的别名和描述，然后点击**确定**。
+. In the **Edit Information** dialog, set the alias and description of the volume snapshot content, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|别名
-|卷快照内容的别名。不同卷快照内容的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the volume snapshot content. Different volume snapshot contents can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), must not start or end with a hyphen (-), and can be up to 63 characters long.
 
-|描述
-|卷快照内容的描述信息。描述可包含任意字符，最多包含 256 个字符。
+|Description
+|The description of the volume snapshot content. The description can contain any characters and can be up to 256 characters long.
 |===
 --

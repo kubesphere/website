@@ -1,6 +1,6 @@
 // :ks_include_id: d7d51560e0e64d3a927f19e81658358b
-卷快照当前的状态。
+The current status of the volume snapshot.
 
-* **就绪**：卷快照和对应的卷快照内容创建成功。
+* **Ready**: The volume snapshot and the corresponding volume snapshot content have been successfully created.
 
-* **未就绪**：卷快照和对应的卷快照内容正在创建、创建失败或卷快照正在删除中。
+* **Not Ready**: The volume snapshot and the corresponding volume snapshot content are being created, failed to create, or the volume snapshot is being deleted.

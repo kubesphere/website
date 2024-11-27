@@ -75,6 +75,6 @@ spec:
 kubectl apply -f xxx.yaml  # 注意替换 yaml 文件的名称
 ----
 
-. 运行成功后，在**集群管理 > 定制资源定义**页面搜索 **ClusterRuleGroup**。
+. 运行成功后，在集群的**定制资源定义**页面搜索 **ClusterRuleGroup**。
 
 . 点击 **ClusterRuleGroup** 进入详情页，在右侧页面查看、编辑或删除告警规则。

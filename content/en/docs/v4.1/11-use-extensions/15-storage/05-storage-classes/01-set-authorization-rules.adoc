@@ -1,26 +1,23 @@
 ---
-title: "设置授权规则"
-description: "介绍如何如何为存储类设置授权规则。"
+title: "Set Authorization Rules"
+description: "Learn how to set authorization rules for storage classes."
 weight: 01
 ---
 
-:ks_permission: **存储类访问规则管理**
-:ks_navigation: **存储 > 存储类**
+:ks_permission: **Storage Class Accessors Management**
+:ks_navigation: **Storage > Storage Classes**
 
 
-本节介绍如何为存储类设置授权规则。
+This section describes how to set authorization rules for storage classes.
 
-设置并启用授权规则后，用户只能在特定项目和企业空间使用存储类。
+After setting and enabling the authorization rules, users can only use the storage class in specific projects and workspaces.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere 存储**扩展组件。
+* **KubeSphere Storage** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
-
-
-
 
 == Steps
 
@@ -36,21 +33,19 @@ include::../../../../_custom-en/clusterManagement/storageClasses/systemClasses-o
 
 +
 
-. 在存储类详情页面的左上角，选择**更多操作 > 设置授权规则**。
+. In the upper-left corner of the details page, select **More > Set Authorization Rules**.
 
-. 在**设置授权规则**对话框，点击页面右侧的**已禁用**按钮启用授权规则。
+. In the **Set Authorization Rules** dialog, click the **Disabled** button on the right side of the page to enable the authorization rules.
 +
 --
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-若要禁用授权规则，在页面右侧点击**已启用**。
+To disable the authorization rules, click **Enabled** on the right side of the page.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 --
 
-. 在**授权规则**设置区域，设置在特定的项目和企业空间使用该存储类。
-+
-image:/images/ks-qkcp/zh/v4.1/storage1.png[ rule,100%]
+. In the **Authorization Rules** setting area, set the specific projects and workspaces where the storage class can be used.
 
-. 设置完成后，点击**确定**。
+. After setting, click **OK**.

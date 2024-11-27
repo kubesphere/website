@@ -1,23 +1,23 @@
 ---
-title: "日志收集"
-keywords: "Kubernetes, {ks_product}, 项目管理, 项目设置, 日志收集"
-description: "介绍如何启用和禁用日志收集功能。"
+title: "Log Collection"
+keywords: "Kubernetes, {ks_product-en}, project management, project settings, log collection"
+description: "This section introduces how to enable and disable the log collection feature."
 weight: 02
 layout: "second"
 ---
 
-本节介绍如何使用日志收集功能。
+This section introduces how to use the log collection feature.
 
-日志收集功能启用后，{ks_product_right}将读取容器保存在卷上的日志文件，然后将日志文件的内容打印到容器的标准输出。使用日志收集功能需要进行以下步骤：
+After enabling the log collection feature, {ks_product-en} will read the log files saved on the volumes by the containers and then print the contents of the log files to the standard output of the containers. The following steps are required to use the log collection feature:
 
-. 安装并启用“WhizardTelemetry 日志”扩展组件。
+. Install and enable the "WhizardTelemetry Logging" extension.
 
-. 在“WhizardTelemetry 日志”扩展组件的配置中启用 `logsidecar-injector`。有关更多信息，请参阅link:01-enable-logsidecar/[启用日志收集]。
+. Enable `logsidecar-injector` in the configuration of the "WhizardTelemetry Logging" extension. For more information, see link:01-enable-logsidecar/[Enable Log Collection].
 
-. 在项目中启用日志收集。
+. Enable log collection in the project.
 
-. 设置容器，将运行日志文件输出到容器中的路径下。有关更多信息，请联系容器镜像的开发者。
+. Set the container to output the log files to a path inside the container. For more information, contact the developer of the image in the container.
 
-. 创建工作负载、服务或任务时启用**收集卷上的日志**，为容器挂载一个可读写的卷，并设置日志文件的路径。
+. Enable **Collect Logs on Volumes** when creating workloads, services, or Jobs, mount a read-write volume for the container, and set the path of the log files.
 
-. 使用{ks_product_both}提供的工具箱对容器日志进行查询。有关更多信息，请参阅link:../03-use-log-query-tools/[使用容器日志查询工具]。
+. Use the toolbox to query container logs. For more information, see link:../03-use-log-query-tools/[Use the Container Log Query Tool].

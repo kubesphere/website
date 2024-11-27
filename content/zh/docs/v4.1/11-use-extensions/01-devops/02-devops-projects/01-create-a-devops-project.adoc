@@ -14,6 +14,8 @@ weight: 01
 
 == 前提条件
 
+* 已有一个可用的企业空间（非 `system-workspace`）。
+
 :relfileprefix: ../../../../
 * {empty}
 include::../../../../_custom/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]

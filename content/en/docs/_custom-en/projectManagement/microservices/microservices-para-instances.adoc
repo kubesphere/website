@@ -1,20 +1,20 @@
 // :ks_include_id: 63f2cf5af75e41deb6a5d5c45da3d5b3
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|微服务实例的名称。
+|Name
+|The name of the microservice instance.
 
-|权重
-|微服务实例在微服务中的权重。发送给微服务的流量将根据微服务实例的权重分配给微服务实例。
+|Weight
+|The weight of the microservice instance within the microservice. Traffic sent to the microservice will be distributed to microservice instances based on their weights.
 
-|IP 地址
-|微服务实例的在{ks_product-en}集群内部的访问地址。
+|IP Address
+|The internal access address of the microservice instance in the KubeSphere cluster.
 
-|端口
-|微服务实例的访问端口号。
+|Port
+|The access port number of the microservice instance.
 
-|创建时间
-|微服务实例的创建时间。
+|Creation Time
+|The creation time of the microservice instance.
 |===

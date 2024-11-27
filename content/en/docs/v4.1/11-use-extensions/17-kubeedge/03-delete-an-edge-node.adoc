@@ -1,14 +1,14 @@
 ---
-title: "删除边缘节点"
-keywords: "Kubernetes, {ks_product}, 集群管理, 节点, 删除边缘节点"
-description: "介绍如何删除边缘节点。"
+title: "Delete Edge Nodes"
+keywords: "Kubernetes, {ks_product-en}, cluster management, nodes, delete edge node"
+description: "Learn how to delete an edge node."
 weight: 03
 ---
 
-:ks_permission: **节点管理**
-:ks_menu: **节点 > 边缘节点**
+:ks_permission: **Node Management**
+:ks_menu: **Nodes > Edge Nodes**
 
-本节介绍如何删除边缘节点。
+This section describes how to delete an edge node.
 
 
 == Prerequisites
@@ -16,22 +16,20 @@ weight: 03
 * {empty}
 include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
+* **KubeEdge** should have been installed and enabled.
 
-
-* {ks_product_right}平台需要安装并启用 **KubeEdge** 扩展组件。
-
-* 已获取{ks_product_both}集群主节点和边缘节点的 SSH 登录信息。
+* The SSH login information for the KubeSphere cluster master node and the edge node has been obtained.
 
 
 == Steps
 
-. 登录边缘节点并执行以下命令删除边缘节点中的配置：
+. Log in to the edge node and run the following commands to remove the configuration in the edge node:
 +
 --
 // Bash
 [,bash]
 ----
- ./keadm reset
+ ./keadm reset
 ----
 
 // Bash
@@ -47,7 +45,7 @@ rm -rf /var/lib/kubeedge /var/lib/edged /etc/kubeedge/ca /etc/kubeedge/certs
 ----
 --
 
-. 登录{ks_product_both}集群主节点并执行以下命令删除边缘节点。
+. Log in to the cluster master node and run the following command to delete the edge node.
 +
 --
 // Bash
@@ -57,7 +55,7 @@ kubectl delete node <edgenode-name>
 ----
 --
 
-. 在{ks_product_both}集群主节点执行以下命令检查当前的节点：
+. Run the following command on the cluster master node to check the current nodes:
 +
 --
 // Bash
@@ -66,5 +64,5 @@ kubectl delete node <edgenode-name>
 kubectl get node
 ----
 
-如果命令回显中没有显示需要删除的边缘节点，则表明边缘节点删除成功。
+If the command output does not show the edge node, the edge node has been successfully deleted.
 --

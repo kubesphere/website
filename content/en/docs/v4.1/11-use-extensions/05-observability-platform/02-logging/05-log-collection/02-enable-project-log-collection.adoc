@@ -1,35 +1,29 @@
 ---
-title: "在项目中启用日志收集"
-keywords: "Kubernetes, {ks_product}, 项目管理, 项目设置, 日志收集, 启用日志收集"
-description: "介绍如何启用日志收集。"
+title: "Enable Log Collection in a Project"
+keywords: "Kubernetes, {ks_product-en}, project management, project settings, log collection, enable log collection"
+description: "This section introduces how to enable log collection."
 weight: 02
 ---
 
+:ks_permission: **Project Settings Management**
+:ks_navigation: **Project Settings > Log Collection**
 
-:ks_permission: **项目设置管理**
-:ks_navigation: **项目设置 > 日志收集**
-
-
-本节介绍如何在项目中启用日志收集。
+This section introduces how to enable log collection in a project.
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-启用后，在项目中创建工作负载和任务时，**存储设置**页签的**收集卷上日志**功能将可用。
+After enabling, the **Collect Logs on Volumes** feature will be available on the **Storage Settings** tab when creating workloads and Jobs in the project.
 |===
 
-
 == Prerequisites
-
 
 * {empty}
 include::../../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志**扩展组件，并已link:../01-enable-logsidecar/[启用日志收集]。
+* **WhizardTelemetry Logging** should have been installed and enabled, and link:../01-enable-logsidecar/[the log collection feature have been enabled].
 
 == Steps
 
@@ -41,17 +35,17 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**收集卷上日志**区域，点击切换开关将功能状态设置为**已启用**。
+. In the **Collect Logs on Volumes** area, click the switch to set the status to **Enabled**.
 
 // Note
 include::../../../../../../_ks_components-en/admonitions/note.adoc[]
 
 ifeval::["{file_output_type}" == "html"]
-启用日志收集后，您需要重启容器组才能对现有的容器组生效。有关更多信息，请参阅link:../../../../../09-project-management/03-application-workloads/03-workloads/05-re-create-a-workload/[重新创建工作负载]、link:../../../../../09-project-management/03-application-workloads/04-jobs/05-rerun-a-job/[重新运行任务]或link:../../../../../09-project-management/03-application-workloads/06-pods/05-delete-pods/[删除容器组]。
+After enabling log collection, you need to restart the existing pods to make the change take effect. For more information, see link:../../../../../09-project-management/03-application-workloads/03-workloads/05-re-create-a-workload/[Recreate Workloads], link:../../../../../09-project-management/03-application-workloads/04-jobs/05-rerun-a-job/[Re-run Jobs], or link:../../../../../09-project-management/03-application-workloads/06-pods/05-delete-pods/[Delete Pods].
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-启用日志收集后，您需要重启容器组才能对现有的容器组生效。有关更多信息，请参阅《{ks_product_right}项目管理指南》的“应用负载”章节，重新创建工作负载、重新运行任务或删除容器组。
+After enabling log collection, you need to restart the existing pods to make the change take effect. For more information, see the “Application Workloads” chapter of the {ks_product-en} Project Management Guide to recreate a workload, re-run a job, or delete pods.
 endif::[]
 
 include::../../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

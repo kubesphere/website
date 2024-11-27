@@ -1,17 +1,16 @@
 ---
-title: "编辑静默时间"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 静默策略, 编辑静默时间"
-description: "本节介绍如何编辑通知静默时间。"
+title: "Edit Silence Time"
+keywords: "Kubernetes, {ks_product-en}, platform settings, notification management, notification settings, silence policy, edit silence time"
+description: "This section describes how to edit notification silence time."
 weight: 04
 ---
 
 
-:ks_menu: **平台管理 > 平台设置**
-:ks_navigation: **通知管理 > 通知设置**
-:ks_permission: **平台设置管理**
+:ks_navigation: **Notification Management > Notification Settings**
+:ks_permission: **Platform Settings Management**
 
 
-本节介绍如何编辑通知静默时间。
+This section describes how to edit notification silence time.
 
 
 == Prerequisites
@@ -19,17 +18,13 @@ weight: 04
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
-
-
+* **WhizardTelemetry Notification** should have been installed and enabled.
 
 == Steps
 
 include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
 
-. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
+. Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper-right corner of the {ks_product-en} web console to enter the **Platform Settings** page.
 
 +
 
@@ -37,22 +32,10 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要操作的静默策略右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑静默时间**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the silence policy you need to edit, and then select **Edit Silence Time** from the dropdown list.
 
-. 在**编辑静默时间**对话框，选择静默时间类型并设置相关参数，然后点击**确定**。
+. In the **Edit Silence Time** dialog, select the silence time type and set the relevant parameters, and then click **OK**.
 +
 --
-[%header,cols="1a,4a"]
-|===
-|参数 |描述
-
-|持续静默
-|满足静默条件的通知在所有时间静默。
-
-|在特定时间范围内静默
-|满足静默条件的通知在指定的时间范围内静默。您需要选择静默的开始时间和结束时间。
-
-|周期性静默
-|满足静默条件的通知每日、每周或每月在指定的时间范围内静默。您需要选择静默的日期、开始时间和结束时间。
-|===
+include::../../../../../_custom-en/platformManagement/platformSettings/platformSettings/platformSettings-para-silenceTime.adoc[]
 --

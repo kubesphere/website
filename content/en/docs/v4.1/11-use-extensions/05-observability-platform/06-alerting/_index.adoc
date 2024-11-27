@@ -1,43 +1,43 @@
 ---
-title: "WhizardTelemetry 告警"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警"
-description: "介绍如何使用“WhizardTelemetry 告警”扩展组件。"
-weight: 06
+title: "WhizardTelemetry Alerting"
+keywords: "Kubernetes, {ks_product-en}, cluster management, monitoring & alerting"
+description: "This section introduces how to use the 'WhizardTelemetry Alerting' extension."
+weight: 07
 layout: "second"
 ---
 
-本节介绍如何使用“WhizardTelemetry 告警”扩展组件。
+This section introduces how to use the "WhizardTelemetry Alerting" extension.
 
-WhizardTelemetry 告警基于 KubeSphere 采集的监控数据，可针对不同资源类型和监控指标，提供平台、集群及项目视角的告警及告警规则管理功能。
+WhizardTelemetry Alerting is based on the monitoring data collected by KubeSphere and provides alerting and alert rule management functions for different resource types and monitoring metrics from the platform, cluster, and project perspectives.
 
-安装“WhizardTelemetry 告警”扩展组件后，集群和项目左侧导航栏的**监控告警**菜单下将显⽰**告警**和**规则组**选项。
+After installing the "WhizardTelemetry Alerting" extension, the **Alerts** and **Rule Groups** options will be displayed under the **Monitoring & Alerting** menu in the left navigation pane of the cluster and project.
 
 //attention
 [.admon.attention,cols="a"]
 |===
-| 注意
+| Note
 
 |
-- WhizardTelemetry 告警依赖 WhizardTelemetry 平台服务和 WhizardTelemetry 监控，因此在安装 WhizardTelemetry 告警之前必须先安装 WhizardTelemetry 平台服务和 WhizardTelemetry 监控两个扩展组件，否则告警相关功能无法正常使用！
+- WhizardTelemetry Alerting depends on WhizardTelemetry Platform Service and WhizardTelemetry Monitoring. Therefore, before installing WhizardTelemetry Alerting, you must first install the WhizardTelemetry Platform Service and WhizardTelemetry Monitoring extensions, otherwise, the alerting-related functions will not work properly!
 
-- 为了及时收到系统告警消息，建议同时安装 WhizardTelemetry 通知扩展组件。
+- To receive alert messages in a timely manner, it is recommended to install the WhizardTelemetry Notification extension simultaneously.
 |===
 
-**配置说明：**
+**Configuration Instructions:**
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Note
 
 |
-如果在安装 WhizardTelemetry 告警之后，对 WhizardTelemetry 监控是否启用 Whizard 可观测中心进行了变更，请按以下说明更新WhizardTelemetry 告警的配置。
+After installing WhizardTelemetry Alerting, if you enabled or disabled Whizard Observability Center in the WhizardTelemetry Monitoring extension, please update the configuration of WhizardTelemetry Alerting as follows.
 |===
 
-* 当 **WhizardTelemetry 监控**扩展组件未启用 Whizard 可观测中心时：
+* When the **WhizardTelemetry Monitoring** extension does not enable the Whizard Observability Center:
 
-. 安装 **WhizardTelemetry 告警**扩展组件时，设置 `global.rules.distributionMode` 为 Member。
+. When installing the **WhizardTelemetry Alerting** extension, set `global.rules.distributionMode` to `Member`.
 
-. 配置 `agent.ruler.alertmanagersUrl` 为 alertmanager-proxy 服务地址（该服务由 WhizardTelemetry 通知提供，安装在 host 集群，默认可在 http://<host-node-ip>:31093 访问）。
+. Configure `agent.ruler.alertmanagersUrl` to the alertmanager-proxy service address (provided by WhizardTelemetry Notification, installed on the host cluster, and can be accessed by default at http://<host-node-ip>:31093).
 +
 --
 [,yaml]
@@ -54,17 +54,17 @@ agent:
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如果未启用 WhizardTelemetry 通知，希望将告警发送到外部 alertmanager 时，请将 `agent.ruler.alertmanagersUrl` 配置为外部服务地址。
+If WhizardTelemetry Notification is not enabled and you want to send alerts to an external alertmanager, configure `agent.ruler.alertmanagersUrl` to the external service address.
 |===
 --
 
-* 当 **WhizardTelemetry 监控**扩展组件已启用 Whizard 可观测中心时：
+* When the **WhizardTelemetry Monitoring** extension has enabled the Whizard Observability Center:
 +
 ====
-安装 **WhizardTelemetry 告警**扩展组件时，保持 `global.rules.distributionMode` 为 None。
+When installing the **WhizardTelemetry Alerting** extension, keep `global.rules.distributionMode` as `None`.
 
 [,yaml]
 ----
@@ -73,7 +73,7 @@ global:
     distributionMode: None
 ----
 
-在该场景下，告警默认直接推送到 alertmanager 服务（该服务由 WhizardTelemetry 通知提供，安装在 host 集群）。保持如下默认配置即可。
+In this scenario, alerts are sent directly to the alertmanager service (provided by WhizardTelemetry Notification, installed on the host cluster). Keep the following default configuration.
 
 [,yaml]
 ----
@@ -85,9 +85,9 @@ extension:
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-如果未启用 WhizardTelemetry 通知，希望将告警发送到外部 alertmanager 时，请将 `extension.ruler.alertmanagersUrl` 配置为外部服务地址。
+If WhizardTelemetry Notification is not enabled and you want to send alerts to an external alertmanager, configure `extension.ruler.alertmanagersUrl` to the external service address.
 |===
 ====

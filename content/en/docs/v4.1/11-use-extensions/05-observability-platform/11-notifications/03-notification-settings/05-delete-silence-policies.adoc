@@ -1,16 +1,15 @@
 ---
-title: "删除静默策略"
-keywords: "Kubernetes, {ks_product}, 平台设置, 通知管理, 通知设置, 静默策略, 删除静默策略"
-description: "本节介绍如何删除静默策略。"
+title: "Delete Silence Policies"
+keywords: "Kubernetes, {ks_product-en}, platform settings, notification management, notification settings, silence policy, delete silence policy"
+description: "This section describes how to delete a silence policy."
 weight: 05
 ---
 
-:ks_menu: **平台管理 > 平台设置**
-:ks_navigation: **通知管理 > 通知设置**
-:ks_permission: **平台设置管理**
+:ks_navigation: **Notification Management > Notification Settings**
+:ks_permission: **Platform Settings Management**
 
 
-本节介绍如何删除静默策略。
+This section describes how to delete a silence policy.
 
 
 == Prerequisites
@@ -18,17 +17,13 @@ weight: 05
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
+* **WhizardTelemetry Notification** should have been installed and enabled.
 
-
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
-
-
-
-== 删除单个静默策略
+== Delete a Single Silence Policy
 
 include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
 
-. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
+. Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper-right corner of the {ks_product-en} web console to enter the **Platform Settings** page.
 
 +
 
@@ -36,16 +31,16 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要删除的静默策略右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the silence policy you need to delete, and then select **Delete** from the dropdown list.
 
-. 在**删除静默策略**对话框，输入静默策略的名称，然后点击**确定**。
+. In the **Delete Silence Policy** dialog, enter the name of the silence policy, and then click **OK**.
 
 
-== 批量删除静默策略
+== Delete Multiple Silence Policies
 
 include::../../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
 
-. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
+. Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper-right corner of the {ks_product-en} web console to enter the **Platform Settings** page.
 
 +
 
@@ -53,9 +48,9 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 选择需要删除的静默策略左侧的复选框，然后在列表上方点击**删除**。
+. Select the checkbox on the left side of the silence policies you need to delete, and then click **Delete** above the list.
 
-. 在**批量删除静默策略**对话框，输入静默策略的名称，然后点击**确定**。
+. In the **Delete Multiple Silence Policies** dialog, enter the names of the silence policies, and then click **OK**.
 +
 --
 include::../../../../../_custom-en/note-separateNamesByComma.adoc[]

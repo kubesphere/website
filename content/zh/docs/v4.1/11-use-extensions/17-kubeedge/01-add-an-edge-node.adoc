@@ -23,7 +23,7 @@ include::../../../_custom/clusterManagement/clusterManagement-prer-requiredPermi
 
 * 待添加的边缘节点需要能够访问{ks_product_both}集群主节点的 **30000**、**30001**、**30002**、**30004** 端口。
 
-* 待添加的边缘节点已安装 Docker、containerd、CRI-O 或 Virtlet 作为容器运行时。KubeEdge 边缘节点默认使用 containerd 作为运行时。有关更多信息，请参阅 link:https://docs.kubeedge.io/zh/docs/advanced/cri/[KubeEdge 官方文档]。
+* 待添加的边缘节点已安装 Docker、containerd、CRI-O 或 Virtlet 作为容器运行时。KubeEdge 边缘节点默认使用 containerd 作为运行时。有关更多信息，请参阅 link:https://docs.kubeedge.io/zh/docs/[KubeEdge 官方文档]。
 
 * 已获取待添加的边缘节点的 SSH 登录信息。
 

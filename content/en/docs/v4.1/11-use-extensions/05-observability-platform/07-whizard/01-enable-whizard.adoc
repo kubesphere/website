@@ -1,32 +1,32 @@
 ---
-title: "启用 Whizard 可观测中心"
-description: "介绍如何启用 Whizard 可观测中心。"
+title: "Enable Whizard Observability Center"
+description: "Describes how to enable the Whizard Observability Center."
 weight: 01
 ---
 
-本节介绍如何配置相关扩展组件，以启用 Whizard 可观测中心。
+This section describes how to configure the relevant extensions to enable the Whizard Observability Center.
 
-为了使用 Whizard 可观测中心的完整功能，您需要安装并启用 WhizardTelemetry 平台服务、 WhizardTelemetry 监控以及 WhizardTelemetry 告警扩展组件，并进行以下配置。
+To use the full functionality of the Whizard Observability Center, you need to install and enable the WhizardTelemetry Platform Service, WhizardTelemetry Monitoring, and WhizardTelemetry Alerting extensions, and perform the following configurations.
 
 == Prerequisites
 
-* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../05-users-and-roles/01-users/[用户]和link:../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+* You should have the **platform-admin** role on the {ks_product-en} platform. For more information, see link:../../../../05-users-and-roles/01-users/[Users] and link:../../../../05-users-and-roles/02-platform-roles/[Platform Roles].
 
-* 已安装 **WhizardTelemetry 平台服务**、 **WhizardTelemetry 监控**以及 **WhizardTelemetry 告警**扩展组件。
+* The **WhizardTelemetry Platform Service**, **WhizardTelemetry Monitoring**, and **WhizardTelemetry Alerting** extensions are installed.
 
-// * 已在**平台设置 > 许可证**页面导入分布式云可观测中心的 license，否则，无法看到 Whizard 可观测中心的入口。
+// * The license for the Distributed Cloud Observability Center has been imported on the **Platform Settings > License** page. Otherwise, the entry for the Whizard Observability Center will not be visible.
 
 == Steps
 
-. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
-. 点击**扩展中心**。
-. 点击已安装的组件名称，进入组件详情页。
-. 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**扩展组件配置**。
+. Log in to the {ks_product-en} web console with a user who has the **platform-admin** role.
+. Click **Extensions Center**.
+. Click the name of the installed extension to enter the details page.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] below the icon and select **Extension Config**.
 +
 --
-**WhizardTelemetry 平台服务**
+**WhizardTelemetry Platform Service**
 
-将配置文件中的 `whizard-telemetry.config.observability.enabled` 参数设置为 true，然后点击**确定**。
+Set the `whizard-telemetry.config.observability.enabled` parameter in the configuration file to `true`, and then click **OK**.
 
 [,yaml]
 ----
@@ -36,9 +36,10 @@ whizard-telemetry:
       enabled: true
       endpoint: "http://query-frontend-whizard-operated.kubesphere-monitoring-system.svc:10902"
 ----
-**WhizardTelemetry 监控**
 
-修改配置文件的以下部分，然后点击**确定**。
+**WhizardTelemetry Monitoring**
+
+Modify the following part of the configuration file, and then click **OK**.
 
 [,yaml]
 ----
@@ -64,9 +65,9 @@ kube-prometheus-stack:
     agentMode: true    # agentMode need to be set to true when enable whizard
 ----
 
-**WhizardTelemetry 告警**
+**WhizardTelemetry Alerting**
 
-确保 `global.rules.distributionMode` 为 None。
+Ensure that `global.rules.distributionMode` is set to `None`.
 
 [,yaml]
 ----
@@ -74,16 +75,16 @@ global:
   rules:
     distributionMode: None
 ----
-
 --
-. 编辑完成后，点击顶部导航栏上的image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，即可发现 **Whizard 可观测中心**图标。
+
+. After editing, click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] on the top navigation bar to find the **Whizard Observability Center** icon.
 +
 --
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-启用过程可能需要一定时间，请等待启用完成。
+The enabling process may take some time, please wait for it to complete.
 |===
 --

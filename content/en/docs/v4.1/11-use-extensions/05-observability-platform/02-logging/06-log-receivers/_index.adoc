@@ -1,19 +1,18 @@
 ---
-title: "日志接收器"
-description: "介绍如何配置或添加日志接收器。"
+title: "Log Receivers"
+description: "This section introduces how to configure or add log receivers."
 weight: 03
 layout: "second"
 ---
 
+Log receivers are used to collect various types of system logs. Configure or add log receivers to send log data from WhizardTelemetry Logging, WhizardTelemetry Auditing, WhizardTelemetry Events, and notification history to external log receivers.
 
-日志接收器用于收集系统的各类日志，配置或添加日志接收器，以便将 WhizardTelemetry 日志、WhizardTelemetry 审计、WhizardTelemetry 事件、以及通知历史的日志数据发送到外部日志接收器中。
+{ks_product-en} supports collecting the following types of logs:
 
-{ks_product_right}支持收集以下类型的日志：
+* Container logs: Logs obtained from the container's standard output. The content of container logs is determined by the application running in the container.
 
-* 容器日志：从容器标准输出获取的日志。容器日志的内容由容器中运行的应用程序决定。
+* Resource events: Events of various resources such as workloads, Jobs, pods, services, and Ingresses.
 
-* 资源事件：工作负载、任务、容器组、服务、应用路由等各类资源的事件。
+* Audit logs: Records of requests received by the KubeSphere API server.
 
-* 审计日志：{ks_product} API 服务器接收请求的记录。
-
-* 通知历史：{ks_product_right}平台向用户发送的告警通知的记录。
+* Notification history: Records of notifications sent by the {ks_product-en} platform to users.

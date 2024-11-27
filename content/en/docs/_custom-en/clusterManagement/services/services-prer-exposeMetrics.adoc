@@ -1,4 +1,4 @@
 // :ks_include_id: f845b7136ccc47a59ea94257751c74cc
-* 您需要配置目标应用程序将符合 Prometheus 规范的监控指标暴露在某个服务端路径下。有关更多信息，请参阅 link:https://prometheus.io/docs/instrumenting/clientlibs/[Prometheus 官方文档]。
+* You should configure the application to expose monitoring metrics that conform to the Prometheus specification at a certain service endpoint. For more information, see the link:https://prometheus.io/docs/instrumenting/clientlibs/[Prometheus Documentation].
 
-* 如果监控指标采集过程需要认证，您还需要在目标应用程序中配置相关认证逻辑，并在{ks_product-en}平台提前创建包含认证信息的保密字典。
+* If the monitoring metric collection process requires authentication, you also need to configure the relevant authentication logic in the target application and create a Secret containing the authentication information in the {ks_product-en} platform in advance.

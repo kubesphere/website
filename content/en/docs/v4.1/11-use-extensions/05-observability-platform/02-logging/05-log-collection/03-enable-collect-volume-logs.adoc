@@ -1,31 +1,26 @@
 ---
-title: "启用收集卷上日志"
-keywords: "Kubernetes, {ks_product}, 项目管理, 项目设置, 日志收集, 收集卷上的日志"
-description: "介绍如何启用收集卷上日志。"
+title: "Enable Collect Logs on Volumes"
+keywords: "Kubernetes, {ks_product-en}, project management, project settings, log collection, collect logs on volume"
+description: "This section introduces how to enable collect logs on volumes."
 weight: 03
 ---
 
-
-:ks_permission: **应用负载管理**
+:ks_permission: **Application Workload Management**
 
 ifeval::["{file_output_type}" == "html"]
-本节介绍如何在创建工作负载、服务或任务时启用收集卷上的日志。有关更多信息，请参阅link:../../../../../09-project-management/03-application-workloads/03-workloads/01-create-a-workload/[创建工作负载]或link:../../../../../09-project-management/03-application-workloads/04-jobs/01-create-a-job/[创建任务]。
+This section introduces how to enable collect logs on volumes when creating workloads, services, or Jobs. For more information, see link:../../../../../09-project-management/03-application-workloads/03-workloads/01-create-a-workload/[Create a Workload] or link:../../../../../09-project-management/03-application-workloads/04-jobs/01-create-a-job/[Create a Job].
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]
-本节介绍如何在创建工作负载、服务或任务时启用收集卷上的日志。有关更多信息，请参阅《{ks_product_right}项目管理指南》的“应用负载”章节，创建工作负载或创建任务。
+This section introduces how to enable collect logs on volumes when creating workloads, services, or Jobs. For more information, see the “Application Workloads” chapter of the {ks_product-en} Project Management Guide to create a workload or create a Job.
 endif::[]
-
-
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志**扩展组件，并已link:../02-enable-project-log-collection/[在项目中启用日志收集]。
+* **WhizardTelemetry Logging** should have been installed and enabled, and link:../02-enable-project-log-collection/[the log collection feature must be enabled in the project].
 
 == Steps
 
@@ -33,16 +28,16 @@ include::../../../../../_custom-en/projectManagement/projectManagement-oper-open
 
 +
 
-. 在左侧导航栏选择**应用负载 > 工作负载**或**应用负载 > 任务**。
+. In the left navigation pane, select **Application Workloads > Workloads** or **Application Workloads > Jobs**.
 
-. 在工作负载页面，点击**部署**、**有状态副本集**或**守护进程集**打开工作负载列表，或在任务页面，点击**任务**或**定时任务**打开任务列表。
+. On the workloads page, click **Deploy**, **StatefulSet**, or **DaemonSet** to open the workload list, or on the Jobs page, click **Job** or **CronJob** to open the Job list.
 
-. 在页面点击**创建**。
+. Click **Create** on the page.
 
-. 在**存储设置**页签，点击**收集卷上日志**开关启用该功能。
+. On the **Storage Settings** tab, click the **Collect Logs on Volumes** switch to enable the feature.
 
-. 点击**挂载卷**，为容器挂载**读写**模式的持久卷或临时卷，并设置**容器日志路径**。
+. Click **Mount Volume** to mount a persistent volume or temporary volume in **ReadWrite** mode for the container, and set the **Container Log Path**.
 
-. 设置容器中的应用程序，将日志导出到卷挂载目录下的容器日志路径。
+. Set the application in the container to export logs to the container log path under the volume mount directory.
 +
-日志收集完成后将打印到容器的标准输出，您可以在{ks_product_both}提供的工具箱对容器日志进行查询。有关更多信息，请参阅link:../../03-use-log-query-tools/[使用容器日志查询工具]。
+After the log collection is completed, it will be printed to the standard output of the container, and you can query the container logs using the toolbox provided by {ks_product-en}. For more information, see link:../../03-use-log-query-tools/[Use the Container Log Query Tool].

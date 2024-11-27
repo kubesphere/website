@@ -1,26 +1,21 @@
 ---
-title: "编辑微服务网关"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 编辑微服务网关"
-description: "介绍如何编辑微服务网关。"
+title: "Edit Microservice Gateway"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, edit microservice gateway"
+description: "Learn how to edit a microservice gateway."
 weight: 04
 ---
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务网关**
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservice Gateways**
 
-
-本节介绍如何编辑微服务网关。
-
+This section describes how to edit a microservice gateway.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
-
-
-
 
 == Steps
 
@@ -32,15 +27,14 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在页面右侧选择**管理 > 编辑**。
+. On the right side of the page, select **Manage > Edit**.
 
-. 在**编辑微服务网关**对话框，修改微服务网关的参数，然后点击**确定**。
+. In the **Edit Microservice Gateway** dialog, modify the parameters of the microservice gateway, and then click **OK**.
 +
 --
-有关微服务网关参数的更多信息，请参阅link:#_参数描述[参数描述]。
+For more information on microservice gateway parameters, see the link:#_parameter_description[Parameter Description].
 --
 
-
-== 参数描述
+== Parameter Description
 
 include::../../../../_custom-en/projectManagement/microserviceGateway/microserviceGateway-para-microserviceGatewaySettings.adoc[]

@@ -1,11 +1,11 @@
 ---
-title: "简介"
-description: "介绍 RadonDB DMP 数据库管理平台。"
+title: "Introduction"
+description: "Learn about the RadonDB DMP database management platform."
 weight: 01
 ---
 
-RadonDB DMP 是青云科技全新发布的企业级云原生数据库管理平台。在 KubeSphere LuBan 云原生可扩展开放架构之上，RadonDB DMP 能轻松实现多类型主流数据库的跨云部署、多云管理、智能观测与统一运维等，并完整构建围绕高性能、高可用、业务追踪、数据流转等场景下的生态闭环，助力客户真正实现数据库即服务。
+RadonDB DMP is QingCloud's enterprise-grade cloud-native database management platform. Built on the KubeSphere LuBan cloud-native scalable and open architecture, RadonDB DMP can easily achieve cross-cloud deployment, multi-cloud management, intelligent observation, and unified operation and maintenance of multiple types of mainstream databases. It also fully constructs an ecosystem closed loop around high performance, high availability, business tracking, data flow, and other scenarios, helping customers truly achieve database-as-a-service.
 
-安装 RadonDB DMP 扩展组件后，点击顶部导航栏上的image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18]图标，点击 RadonDB DMP，进入数据库管理平台。
+After installing the RadonDB DMP extension, click image:/images/ks-qkcp/zh/icons/grid.svg[grid,18,18] on the top bar, then click RadonDB DMP to enter the database management platform.
 
-有关如何使用 RadonDB DMP 数据库管理平台，请参阅 link:https://radondb-docs.kubesphere.com.cn/[RadonDB DMP 使用指南]。
+For how to use the RadonDB DMP database management platform, please refer to link:https://radondb-docs.kubesphere.com.cn/[RadonDB DMP User Guide].

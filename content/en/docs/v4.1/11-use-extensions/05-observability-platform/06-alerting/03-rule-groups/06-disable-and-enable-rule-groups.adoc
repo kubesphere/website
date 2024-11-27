@@ -1,12 +1,12 @@
 ---
-title: "禁用和启用规则组"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 规则组, 禁用和启用规则组"
-description: "介绍如何禁用和启用告警规则组。"
+title: "Disable and Enable Rule Groups"
+keywords: "Kubernetes, {ks_product-en}, cluster management, monitoring alerting, rule groups, disable and enable rule groups"
+description: "Describes how to disable and enable alert rule groups."
 weight: 06
 ---
 
-:ks_permission: **规则组管理**
-:ks_navigation: **监控告警 > 规则组**
+:ks_permission: **Rule Group Management**
+:ks_navigation: **Monitoring Alerting > Rule Groups**
 
 
 include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-disableAndEnablerRuleGroups.adoc[]
@@ -14,17 +14,15 @@ include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-desc-
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 告警**扩展组件。
+* **WhizardTelemetry Alerting** should have been installed and enabled.
 
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
 
+== Disable and Enable a Single Rule Group
 
-
-== 禁用和启用单个规则组
-
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
 +
 
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]
@@ -38,9 +36,9 @@ include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-
 include::../../../../../_custom-en/clusterManagement/ruleGroups/ruleGroups-oper-disableAndEnableASingleRuleGroup.adoc[]
 
 
-== 批量禁用和启用规则组
+== Disable and Enable Multiple Rule Groups
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
 +
 
 include::../../../../../../_ks_components-en/oper-navigate.adoc[]

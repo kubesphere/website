@@ -14,6 +14,8 @@ This section explains how to create DevOps projects.
 
 == Prerequisites
 
+* A workspace (not `system-workspace`) has been created.
+
 * {empty}
 include::../../../../_custom-en/workspaceManagement/workspaceManagement-prer-requiredPermission_v4.adoc[]
 

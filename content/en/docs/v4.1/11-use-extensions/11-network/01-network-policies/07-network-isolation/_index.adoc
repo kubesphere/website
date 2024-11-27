@@ -1,27 +1,27 @@
 ---
-title: "网络隔离"
-keywords: "Kubernetes, {ks_product}, 企业空间, 网络策略, 项目设置, 网络隔离"
-description: "介绍如何为企业空间和项目启用网络隔离。"
+title: "Network Isolation"
+keywords: "Kubernetes, {ks_product-en}, workspace, network policy, project settings, network isolation"
+description: "Introduce how to enable network isolation for workspaces and projects."
 weight: 07
 layout: "second"
 ---
 
 
-本节介绍如何为企业空间和项目启用网络隔离。
+This section introduces how to enable network isolation for workspaces and projects.
 
-网络隔离功能用于控制企业空间和项目中容器组的出站和入站流量。您可以使用网络隔离功能实现以下目的：
+The network isolation feature is used to control the egress and ingress traffic of pods in a workspace and project. You can use the network isolation feature to achieve the following:
 
-* 只允许当前企业空间和项目的容器组访问特定的其他容器组或网段。
+* Allow pods in the current workspace and project to access only specific other pods or network segments.
 
-* 只允许当前企业空间和项目的容器组被特定的其他容器组或网段访问。
+* Allow pods in the current workspace and project to be accessed only by specific other pods or network segments.
 
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-启用企业空间网络隔离会自动在相应集群中为该企业空间下的所有项目创建网络策略。若企业空间有新增项目，会自动为该项目创建网络策略。若从企业空间移除项目，该项目的网络策略也会自动移除。
+Enabling workspace network isolation will automatically create network policies for all projects under the workspace in the corresponding cluster. If a new project is added to the workspace, a network policy will be automatically created for the project. If a project is removed from the workspace, the network policy for the project will also be automatically removed.
 
-启用项目网络隔离会自动在相应集群中为该项目创建网络策略。
+Enabling project network isolation will automatically create a network policy for the project in the corresponding cluster.
 |===

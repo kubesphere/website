@@ -4,7 +4,6 @@ description: "介绍如何编辑通知订阅。"
 weight: 03
 ---
 
-:ks_menu: **平台管理 > 平台设置**
 :ks_navigation: **通知管理 > 通知订阅**
 :ks_permission: **平台设置管理**
 

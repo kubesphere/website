@@ -1,27 +1,24 @@
 ---
-title: "编辑 Overlay 模式"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 容器组 IP 池, 编辑 Overlay 模式"
-description: "介绍如何编辑 Overlay 模式。"
+title: "Edit Overlay Mode"
+keywords: "Kubernetes, {ks_product-en}, cluster management, network, pod IP pool, edit overlay mode"
+description: "Introduce how to edit overlay mode."
 weight: 06
 ---
 
-:ks_permission: **集群网络资源管理**
-:ks_navigation: **网络 > 容器组 IP 池**
+:ks_permission: **Cluster Network Resource Management**
+:ks_navigation: **Network > Pod IP Pools**
 
 
-本节介绍如何编辑 Overlay 模式。
+This section introduces how to edit overlay mode.
 
-Overlay 模式可以实现容器的跨主机互相通信，而无需对宿主机的物理网络进行改动。
+Overlay mode can achieve cross-host container communication without modifying the physical network of the host machines.
 
 == Prerequisites
-
 
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
-
+* **KubeSphere Network** should have been installed and enabled.
 
 
 == Steps
@@ -34,38 +31,38 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要操作的容器组 IP 池右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑 Overlay 模式**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the pod IP pool you want to edit, and then select **Edit Overlay Mode** from the dropdown list.
 
-. 在**编辑 Overlay 模式**对话框，选择 IPIP 模式或 VXLAN 模式，然后点击**确定**。
+. In the **Edit Overlay Mode** dialog box, select IPIP mode or VXLAN mode, and then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|模式 |描述
+|Mode |Description
 
-|IPIP 模式
-|在每个节点上创建一个 IP in IP 隧道来实现容器之间的通信。取值如下：
+|IPIP Mode
+|Create an IP in IP tunnel on each node to achieve communication between containers. The values are as follows:
 
-** **Always**: 永远进行 IPIP 封装(默认)。
+** **Always**: Always perform IPIP encapsulation (default).
 
-** **CrossSubnet**: 只在跨网段时才进行 IPIP 封装。
+** **CrossSubnet**: Perform IPIP encapsulation only when crossing network segments.
 
-** **Never**: 从不进行 IPIP 封装。
+** **Never**: Never perform IPIP encapsulation.
 
-|VXLAN 模式
-|在每个节点上创建一个 VXLAN 隧道来实现容器之间的通信。取值如下：
+|VXLAN Mode
+|Create a VXLAN tunnel on each node to achieve communication between containers. The values are as follows:
 
-** **Always**: 永远进行 VXLAN 封装。
+** **Always**: Always perform VXLAN encapsulation.
 
-** **CrossSubnet**: 只在跨网段时才进行 VXLAN 封装。
+** **CrossSubnet**: Perform VXLAN encapsulation only when crossing network segments.
 
-** **Never**: 从不进行 VXLAN 封装。
+** **Never**: Never perform VXLAN encapsulation.
 |===
 --
 
 // Note
 include::../../../../../_ks_components-en/admonitions/note.adoc[]
 
-若两者都设置为 Never，则使用 BGP 模式。
+If both are set to Never, BGP mode is used.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]

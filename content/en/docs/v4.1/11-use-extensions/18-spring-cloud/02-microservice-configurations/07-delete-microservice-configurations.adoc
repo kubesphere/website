@@ -1,28 +1,23 @@
 ---
-title: "删除微服务配置"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 删除微服务配置"
-description: "介绍如何删除微服务配置。"
+title: "Delete Microservice Configuration"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, delete microservice configuration"
+description: "Learn how to delete a microservice configuration."
 weight: 07
 ---
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务配置**
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservice Configurations**
 
-
-本节介绍如何删除微服务配置。
-
+This section describes how to delete a microservice configuration.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
-
-== 删除单个微服务配置
+== Delete a Single Microservice Configuration
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -32,12 +27,11 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在需要删除的微服务配置右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**删除**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the microservice configuration you want to delete, and then select **Delete** from the drop-down list.
 
-. 在**删除微服务配置**对话框，输入微服务配置的名称，然后点击**确定**。
+. In the **Delete Microservice Configuration** dialog, enter the name of the microservice configuration, and then click **OK**.
 
-
-== 批量删除微服务配置
+== Delete Multiple Microservice Configurations
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -47,9 +41,9 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 选择需要删除的微服务配置左侧的复选框，然后在列表上方点击**删除**。
+. Select the checkboxes on the left side of the microservice configurations you want to delete, and then click **Delete** at the top of the list.
 
-. 在**批量删除微服务配置**对话框，输入微服务配置的名称，然后点击**确定**。
+. In the **Delete Multiple Microservice Configurations** dialog, enter the names of the microservice configurations, and then click **OK**.
 +
 --
 include::../../../../_custom-en/note-separateNamesByComma.adoc[]

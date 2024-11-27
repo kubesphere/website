@@ -1,10 +1,9 @@
 ---
-title: "集群状态"
-keywords: "Kubernetes, {ks_product}, 监控告警, 集群状态"
-description: "介绍如何查看集群状态。"
+title: "Cluster Status"
+keywords: "Kubernetes, {ks_product-en}, monitoring & alerting, cluster status"
+description: "This section introduces how to view the cluster status."
 weight: 03
 layout: "second"
 ---
 
-
-本节介绍如何查看集群状态。集群状态展示集群资源的监控数据和用量排行情况。
+This section introduces how to view the cluster status. The cluster status displays monitoring data and usage rankings of cluster resources.

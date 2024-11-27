@@ -1,34 +1,29 @@
 ---
-title: "创建微服务网关"
-keywords: "Kubernetes, {ks_product}, 项目管理, Spring Cloud, 创建微服务网关"
-description: "介绍如何创建微服务网关。"
+title: "Create Microservice Gateway"
+keywords: "Kubernetes, {ks_product-en}, project management, Spring Cloud, create microservice gateway"
+description: "Learn how to create a microservice gateway."
 weight: 01
 ---
 
-:ks_permission: ** Spring Cloud 微服务管理**
-:ks_navigation:  **Spring Cloud > 微服务网关**
+:ks_permission: **Spring Cloud Microservices Management**
+:ks_navigation: **Spring Cloud > Microservice Gateways**
 
+This section describes how to create a microservice gateway.
 
-本节介绍如何创建微服务网关。
-
-创建微服务网关过程中实际上创建了一个运行 Spring Cloud Gateway 的部署。
-
+During the creation of a microservice gateway, a deployment running Spring Cloud Gateway is actually created.
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **KubeSphere Spring Cloud** 扩展组件。
+* **KubeSphere Spring Cloud** should have been installed and enabled.
 
 * {empty}
 include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* 您需要提前准备 Spring Cloud Gateway 容器镜像。有关更多信息，请参阅 link:https://spring.io/projects/spring-cloud-gateway#overview[Spring Cloud Gateway] 官方文档。本节使用 registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest 容器镜像作为示例，您也可以根据需要自行构建容器镜像。
-
+* You should prepare the Spring Cloud Gateway container image in advance. For more information, see the link:https://spring.io/projects/spring-cloud-gateway#overview[Spring Cloud Gateway] documentation. This section uses the `registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest` container image as an example. You can also build your own container image as needed.
 
 == Steps
 
-请参阅link:#_参数描述[参数描述]设置微服务网关的参数。
+Refer to the link:#_parameter_description[Parameter Description] to set the parameters for the microservice gateway.
 
 include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
@@ -42,11 +37,10 @@ include::../../../../../_ks_components-en/oper-clickCreate.adoc[]
 
 +
 
-. 在**网关设置**页签，设置微服务网关的参数，然后点击**下一步**。
+. On the **Gateway Settings** tab, set the parameters for the microservice gateway, and then click **Next**.
 
-. 在**高级设置**页签，选择是否启用外部访问和外部访问模式，然后点击**创建**。
+. On the **Advanced Settings** tab, select whether to enable external access and the external access mode, and then click **Create**.
 
-
-== 参数描述
+== Parameter Description
 
 include::../../../../_custom-en/projectManagement/microserviceGateway/microserviceGateway-para-microserviceGatewaySettings.adoc[]

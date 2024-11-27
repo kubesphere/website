@@ -1,12 +1,12 @@
 ---
-title: "规则组"
-keywords: "Kubernetes, {ks_product}, 平台管理, Whizard 可观测中心, 告警管理, 规则组"
-description: "介绍如何在 Whizard 可观测中心使用告警规则组功能。"
+title: "Rule Groups"
+keywords: "Kubernetes, {ks_product-en}, platform management, Whizard Observability Center, alert management, rule groups"
+description: "Describes how to use the alerting rule groups feature in the Whizard Observability Center."
 weight: 01
 layout: "second"
 ---
 
 
-本节介绍如何在 Whizard 可观测中心创建、编辑、启用、禁用和查看全局告警规则组。
+This section describes how to create, edit, enable, disable, and view global alerting rule groups in the Whizard Observability Center.
 
-您可以在 Whizard 可观测中心的规则组页面创建全局告警规则组。区别于用户在集群和项目中创建的规则组，全局规则可用于监控平台管理的所有集群的资源。Whizard 可观测中心的**内置规则组**页面提供内置的规则组，**自定义规则组**页面支持创建规则组。通过规则组使系统在特定监控指标满足预设条件和持续时间时生成告警。
+You can create global alerting rule groups on the rule groups page of the Whizard Observability Center. Unlike rule groups created by users in clusters and projects, global rules can be used to monitor resources across all clusters managed by the platform. The **Built-in Rule Groups** page of the Whizard Observability Center provides built-in rule groups, and the **Custom Rule Groups** page supports creating rule groups. Rule groups allow the system to generate alerts when specific monitoring metrics meet preset conditions and duration.

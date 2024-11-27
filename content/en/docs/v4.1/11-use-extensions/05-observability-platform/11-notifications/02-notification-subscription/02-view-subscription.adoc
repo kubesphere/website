@@ -1,57 +1,54 @@
 ---
-title: "查看通知订阅"
-description: "介绍如何查看通知订阅。"
+title: "View Notification Subscription"
+description: "Describes how to view notification subscriptions."
 weight: 02
 ---
 
-:ks_menu: **平台管理 > 平台设置**
-:ks_navigation: **通知管理 > 通知订阅**
-:ks_permission: **平台设置管理**
+:ks_navigation: **Notification Management > Notification Subscription**
+:ks_permission: **Platform Settings Management**
 
-
-
-本节介绍如何查看通知订阅。
+This section describes how to view notification subscriptions.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/platformManagement/platformManagement-prer-requiredPermission_v4.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 通知**扩展组件。
+* **WhizardTelemetry Notification** should have been installed and enabled.
 
 
 == Steps
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台。
-. 在{ks_product_left} Web 控制台右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]进入**平台设置**页面。
-. 在左侧导航栏选择pass:a,q[{ks_navigation}]。
-. 在**通知订阅**页面的**邮箱**页签，查看已创建的通知订阅列表。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission.
+. Click image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18] in the upper-right corner of the {ks_product-en} web console to enter the **Platform Settings** page.
+. Select pass:a,q[{ks_navigation}] in the left navigation pane.
+. On the **Notification Subscription** page, under the **Email** tab, view the list of created notification subscriptions.
 +
 --
-通知订阅列表提供以下信息：
+The notification subscription list provides the following information:
+
 [%header,cols="1a,4a"]
 |===
-|参数|描述
+|Parameter|Description
 
-|名称
-|通知订阅的名称。
+|Name
+|The name of the notification subscription.
 
-|通知接收状态
-|通知订阅是否被启用。
+|Notification Reception Status
+|Whether the notification subscription is enabled.
 
-|通知订阅账号数量
-|接收通知的账号数量。
+|Number of Subscription Accounts
+|The number of accounts that will receive notifications.
 
-|创建时间
-|通知订阅的创建时间。
+|Creation Time
+|The creation time of the notification subscription.
 |===
 
-* 在列表上方点击搜索框并设置搜索条件，可按名称搜索通知订阅。
+* Click the search box above the list to search for notification subscriptions by name.
 
-* 在列表右上角点击image:/images/ks-qkcp/zh/icons/refresh-light.svg[refresh,18,18]可刷新列表信息。
+include::../../../../../../_ks_components-en/oper-refreshListData.adoc[]
 
-* 在列表右上角点击image:/images/ks-qkcp/zh/icons/cogwheel.svg[cogwheel,18,18]可定制列表中显示的信息。
+include::../../../../../../_ks_components-en/oper-customizeColumns.adoc[]
 --
-. 点击通知订阅的名称，可查看详细信息，如订阅账号、过滤条件等。
+
+. Click the name of a notification subscription to view detailed information, such as subscription accounts and filter conditions.

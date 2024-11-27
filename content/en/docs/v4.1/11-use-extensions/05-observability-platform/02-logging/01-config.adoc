@@ -1,25 +1,25 @@
 ---
-title: "配置日志管理"
-keywords: "Kubernetes, {ks_product}, 日志"
-description: "介绍如何配置“WhizardTelemetry 日志”扩展组件。"
+title: "Configure Log Management"
+keywords: "Kubernetes, {ks_product-en}, logging"
+description: "This section introduces how to configure the 'WhizardTelemetry Logging' extension."
 weight: 01
 ---
 
-WhizardTelemetry 日志支持通过配置扩展组件实现收集指定日志、按项目创建日志索引等功能。
+WhizardTelemetry Logging supports configuring extensions to collect specified logs and create log indices by project.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-更多配置信息，请参阅扩展中心 “WhizardTelemetry 日志”扩展组件的详情页说明。
+For more configuration information, see the details page of the "WhizardTelemetry Logging" extension in the Extensions Center.
 |===
 
-== 收集指定日志
+== Collect Specified Logs
 
-WhizardTelemetry 日志支持设置过滤条件，以收集包含或排除指定 namespace 的日志，可减少日志数量。
+WhizardTelemetry Logging supports setting filter conditions to collect logs that include or exclude specified namespaces, which can reduce the number of logs.
 
-在 WhizardTelemetry 日志的扩展组件配置中，编辑如下参数：
+Edit the following parameters in the configuration of the WhizardTelemetry Logging extension:
 
 [,yaml]
 ----
@@ -32,22 +32,23 @@ vector-logging:
     excludeNamespaces: []
 ----
 
-* extraLabelSelector：只收集带此标签的 pod 的日志。
-* extraNamespaceLabelSelector：只收集带此标签的 namespace 下的 pod 日志。
-* includeNamespaces：只收集指定 namespace 下的 pod 日志。
-* excludeNamespaces：不收集指定 namespace 下的 pod 日志。
+* extraLabelSelector: Only collect logs from pods with this label.
+* extraNamespaceLabelSelector: Only collect logs from pods in namespaces with this label.
+* includeNamespaces: Only collect logs from pods in the specified namespaces.
+* excludeNamespaces: Do not collect logs from pods in the specified namespaces.
 
-== 按照 namespace 创建日志索引
+== Create Log Indices by Namespace
 
-WhizardTelemetry 日志支持为每个项目（namespace）创建一个索引，既可确定某个 namespace 的日志占用空间，方便整改业务，又便于进行日志分析。
+WhizardTelemetry Logging supports creating an index for each project (namespace), which can determine the log space occupied by a namespace, facilitate business rectification, and facilitate log analysis.
 
 === Prerequisites
 
-版本要求：WhizardTelemetry 日志 >= 1.2.0，WhizardTelemetry 平台服务 >= 1.1.0。
+Version requirements: 
+WhizardTelemetry Logging >= 1.2.0, WhizardTelemetry Platform Service >= 1.1.0.
 
 === Steps
 
-. 修改 WhizardTelemetry 日志扩展组件配置。无需修改 prefix 中的参数。
+. Modify the configuration of the WhizardTelemetry Logging extension. No need to modify the parameters in prefix.
 +
 [,yaml]
 ----
@@ -59,7 +60,7 @@ vector-logging:
         timestring: "%Y.%m.%d"
 ----
 
-. 修改 WhizardTelemetry 平台服务扩展组件配置。无需修改 indexPrefix 中的参数。
+. Modify the configuration of the WhizardTelemetry Platform Service extension. No need to modify the parameters in indexPrefix.
 +
 [,yaml]
 ----

@@ -1,25 +1,21 @@
 ---
-title: "查看集群状态概览"
-keywords: "Kubernetes, {ks_product}, 监控告警, 集群状态，概览"
-description: "介绍如何查看集群状态概览。"
+title: "Cluster Status Overview"
+keywords: "Kubernetes, {ks_product-en}, monitoring & alerting, cluster status, overview"
+description: "This section introduces how to view the cluster status."
 weight: 01
 ---
 
-:ks_permission: **监控查看**
-:ks_navigation: **监控告警 > 集群状态**
+:ks_permission: **Monitoring Viewing**
+:ks_navigation: **Monitoring & Alerting > Cluster Status**
 
-
-本节介绍如何查看集群状态概览。
-
+This section introduces how to view the cluster status.
 
 == Prerequisites
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 监控**扩展组件。
+* **WhizardTelemetry Monitoring** should have been installed and enabled.
 
 == Steps
 
@@ -31,33 +27,33 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**集群状态**页面的**概览**区域查看集群节点、集群资源、etcd 和服务组件的状态。
+. View the status of cluster nodes, cluster resources, etcd, and service components under the **Overview** tab of the **Cluster Status** page.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|集群节点状态
-|集群的节点总数和正常节点数量。
+|Cluster Node Status
+|The total number of nodes in the cluster and the number of normal nodes.
 
-|集群资源用量
-|集群的 CPU、内存、磁盘资源的总数和已使用量，以及集群可创建容器组总数和已创建容器组数量。默认情况下每个正常集群节点最多可创建 110 个容器组。
+|Cluster Resource Usage
+|The total and used amounts of CPU, memory, and disk resources in the cluster, as well as the total number of pods that can be created in the cluster and the number of pods already created. By default, each normal cluster node can create a maximum of 110 pods.
 
-|etcd 监控
-|etcd 数据库的服务状态、Raft 提议数量、数据库大小和客户端流量。
+|etcd Monitoring
+|The service status, Raft proposal, database size, and client traffic of the etcd database.
 
-* **服务状态**：显示 etcd 集群的 Leader 节点、每个节点的 IP 地址和 1 小时内 Leader 变更次数。
+* **Service Status**: Displays the Leader node of the etcd cluster, the IP address of each node, and the number of Leader changes in the last hour.
 
-* **Raft 提议**：显示 Raft 提议的每秒提交次数、应用次数、失败次数和排队提议数量。
+* **Raft Proposal**: Displays the number of committed, applied, failed, and pending Raft proposals per second.
 
-* **数据库大小**：etcd 数据库大小随时间的变化。
+* **DB Size**: The change in the size of the etcd database over time.
 
-* **客户端流量**：发送给 gRPC 客户端和从 gRPC 客户端接收的数据流量。
+* **Client Traffic**: The data traffic sent to and received from gRPC clients.
 
-查看 etcd 监控信息需要提前启用 etcd 监控。有关更多信息，请参阅扩展中心 **WhizardTelemetry 监控**扩展组件的详情页说明。
+Viewing etcd monitoring information requires enabling etcd monitoring in advance. For more information, see the details page of the **WhizardTelemetry Monitoring** extension in the Extensions Center.
 
-|服务组件监控
-|Kubernetes API 服务器的请求延迟和每秒请求次数，以及调度器的累计调度次数和每秒调度次数。
+|Service Component Monitoring
+|The request latency and requests per second of the Kubernetes API server, as well as the cumulative scheduling attempts and scheduling times per second of the scheduler.
 |===
 --

@@ -1,33 +1,32 @@
 ---
-title: "启用日志收集"
-description: "介绍如何修改扩展组件的配置，以启用日志收集功能。"
+title: "Enable Log Collection"
+description: "This section introduces how to modify the configuration of the extension to enable the log collection feature."
 weight: 01
 ---
 
-本节介绍如何修改“WhizardTelemetry 日志”扩展组件的配置，以启用日志收集功能。
+This section introduces how to modify the configuration of the "WhizardTelemetry Logging" extension to enable the log collection feature.
 //note
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-启用后，项目左侧导航栏的**项目设置**菜单下将显⽰**日志收集**选项。
+After enabling, the **Log Collection** option will be displayed under the **Project Settings** menu in the left navigation pane.
 |===
-
 
 == Prerequisites
 
-* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。有关更多信息，请参阅link:../../../../../05-users-and-roles/01-users/[用户]和link:../../../../../05-users-and-roles/02-platform-roles/[平台角色]。
+* You should have the **platform-admin** role on the {ks_product-en}  platform. For more information, see link:../../../../../05-users-and-roles/01-users/[Users] and link:../../../../../05-users-and-roles/02-platform-roles/[Platform Roles].
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 日志**扩展组件。
+* **WhizardTelemetry Logging** should have been installed and enabled.
 
 == Steps
 
-. 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
-. 点击**扩展中心**。
-. 点击已安装的 **WhizardTelemetry 日志**扩展组件，进入组件详情页，点击**管理**。
-. 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**扩展组件配置**。
-. 在扩展组件配置文件中，将 **logsidecar-injector.enabled** 参数设置为 **true**，然后保存文件。
+. Log in to the {ks_product-en} web console with a user who has the **platform-admin** role.
+. Click **Extensions Center**.
+. Click the installed **WhizardTelemetry Logging** extension to enter the details page.
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] under the icon, and select **Extension Config**.
+. In the extension configuration file, set the `logsidecar-injector.enabled` parameter to `true`, then save the file.
 +
 --
 [,yaml]
@@ -38,11 +37,11 @@ logsidecar-injector:
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-由于控制此参数更新的 job 只会在 host 集群运行，因此如果想仅开启或关闭某些 member 集群的落盘日志收集功能，只设置 member 集群的 logsidecar-injector.enabled 不会生效。每次修改此参数都需要同时修改 host 集群的参数，以此来触发参数更新。
+Since the job that updates this parameter only runs on the host cluster, setting `logsidecar-injector.enabled` in member clusters will not take effect if you only want to enable or disable the log collection feature for certain member clusters. Each time you modify this parameter, you need to modify the parameter in the host cluster at the same time to trigger the parameter update.
 
-例如，当需要将某个 member 集群的日志收集功能关闭，只需要在该 member 集群的配置中设置 logsidecar-injector.enabled: false，然后在 host 集群的配置中设置 logsidecar-injector.updateVersion: 1。后续再进行同样操作只需要更新 logsidecar-injector.updateVersion，即可触发更新。
+For example, when you need to turn off the log collection feature of a certain member cluster, just set `logsidecar-injector.enabled: false` in the configuration of that member cluster, and then add `logsidecar-injector.updateVersion: 1` in the configuration of the host cluster. For subsequent operations, you only need to update `logsidecar-injector.updateVersion` to trigger the update.
 |===
 --

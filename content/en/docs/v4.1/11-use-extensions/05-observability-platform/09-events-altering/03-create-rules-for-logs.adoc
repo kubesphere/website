@@ -1,38 +1,38 @@
 ---
-title: "创建日志告警规则"
-description: "介绍如何为 Kubernetes 日志定义告警规则。"
+title: "Create Alert Rules for Logs"
+description: "Describes how to define alert rules for Kubernetes logs."
 weight: 03
 ---
 
-本节介绍如何为 Kubernetes 日志定义告警规则。
+This section describes how to define alert rules for Kubernetes logs.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-WhizardTelemetry 事件告警默认接收 Kubernetes 集群的日志。如果想要接收其他日志，需要修改 WhizardTelemetry 数据流水线的配置，或新建保密字典进行配置，请参阅 link:https://vector.dev/docs/reference/configuration/[Vector 官方文档]进行配置。
+WhizardTelemetry Events Alerting by default receives logs from Kubernetes clusters. If you want to receive other logs, you need to modify the configuration of the WhizardTelemetry Data Pipeline, or create a new Secret for configuration. Refer to the link:https://vector.dev/docs/reference/configuration/[Vector Documentation] for configuration.
 |===
 
 == Prerequisites
 
-* 您需要在{ks_product_both}平台具有 **platform-admin** 角色。
+* You should have the **platform-admin** role on the {ks_product-en} platform.
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 事件告警**扩展组件。
+* **WhizardTelemetry Events Alerting** should have been extension installed and enabled.
 
-* 已在 WhizardTelemetry 事件告警的扩展组件配置中，启用日志告警，即设置 `loggingAlerting.enabled` 为 true。
+* Log alerting has been enabled in the extension configuration of WhizardTelemetry Events Alerting, i.e., set `loggingAlerting.enabled` to `true`.
 
 
 == Steps
 
-. 在任意集群节点上，创建一个 yaml 文件，为该集群定义日志的告警规则。有关参数配置的更多信息，请参阅link:../02-example-rules-for-auditing/#_告警规则参数描述[参数描述]。
+. On any cluster node, create a yaml file to define alert rules for logs in that cluster. For more information about parameter configuration, please refer to link:../02-example-rules-for-auditing/#_parameter_description[Parameter Description].
 +
 ====
 
-* 基于关键字的告警
+* Keyword-based alerting
 +
 --
-例如，下面的配置表示，在测试日志中包含 [ERROR] 并且 pod 名称包含 pod_name 时触发告警。
+For example, the following configuration indicates that an alert will be triggered when [ERROR] is included in the test log and the pod name contains `pod_name`.
 
 [,yaml]
 ----
@@ -55,12 +55,12 @@ spec:
 --
 
 
-* 滑动窗口告警
+* Sliding window alerting
 +
 --
-和基于关键字告警的配置基本相同，唯一不同的是需要增加 slidingWindow 的配置。 
+The configuration is basically the same as keyword-based alerting, the only difference is that you should add the `slidingWindow` configuration.
 
-例如，下面的配置表示，一个 20s 的窗口，每 10s 触发一次，当窗口中的日志存在 [INFO] 并且 cluster 中包含 gcp-prod-cluster 并且数量大于等于 20 条时触发告警。
+For example, the following configuration indicates that in a 20s window sliding every 10s, an alert will be triggered when the logs in the window contain [INFO], the cluster contains `gcp-prod-cluster`, and the number is greater than or equal to 20.
 
 [,yaml]
 ----
@@ -92,14 +92,13 @@ spec:
 
 ====
 
-. 执行以下命令，创建 CRD（定制资源定义）。
+. Run the following command to create the CRD (Custom Resource Definition).
 +
 [,bash]
 ----
-kubectl apply -f xxx.yaml  # 注意替换 yaml 文件的名称
+kubectl apply -f xxx.yaml  # Replace with the name of the yaml file
 ----
 
-. 运行成功后，在**集群管理 > 定制资源定义**页面搜索 **ClusterRuleGroup**。
+. After successful execution, search for **ClusterRuleGroup** on the Cluster **CRDs** page.
 
-. 点击 **ClusterRuleGroup** 进入详情页，在右侧页面查看、编辑或删除告警规则。
-
+. Click **ClusterRuleGroup** to enter the details page and view, edit, or delete the alert rules on the right side of the page.

@@ -1,23 +1,23 @@
 ---
-title: "概述"
-keywords: "Kubernetes, {ks_product}, opensearch, 日志, 可观测"
-description: "介绍 “OpenSearch 分布式检索与分析引擎”扩展组件。"
+title: "Overview"
+keywords: "Kubernetes, {ks_product-en}, opensearch, logs, observability"
+description: "Learn about the 'OpenSearch Distributed Search and Analytics Engine' extension."
 weight: 01
+layout: "second"
 ---
 
-“OpenSearch 分布式检索与分析引擎”扩展组件是 KubeSphere 内置的日志存储扩展组件，用于存储日志、审计、事件、通知历史等可观测数据。
+The "OpenSearch Distributed Search and Analytics Engine" extension is a built-in log storage extension for KubeSphere, used to store observability data such as logs, audits, events, and notification history.
 
-除支持部署 OpenSearch 外，该扩展组件还支持部署 OpenSearch Dashboard 和 OpenSearch Curator。
+In addition to supporting the deployment of OpenSearch, this extension also supports the deployment of OpenSearch Dashboard and OpenSearch Curator.
 
-* **OpenSearch Dashboard** 用于可视化 OpenSearch 数据以及管理 OpenSearch 集群的用户界面。部署后默认禁用，若要启用，将 `opensearch-dashboards.enabled` 字段设置为 true。
+* **OpenSearch Dashboard** is used for visualizing OpenSearch data and managing the OpenSearch cluster's user interface. It is disabled by default after deployment. To enable it, set the `opensearch-dashboards.enabled` field to `true`.
 
-* **OpenSearch Curator** 是一个定时任务，定期清理超过配置日期（默认为 7 天）的 Kubernetes 事件日志、Kubernetes 审计日志、Kubernetes 应用程序日志以及通知历史日志。部署后默认启用，若要禁用，将 `opensearch-curator.enabled` 字段设置为 false。
-
+* **OpenSearch Curator** is a CronJob that periodically cleans up Kubernetes event logs, Kubernetes audit logs, Kubernetes application logs, and notification history logs that exceed the configured date (default is 7 days). It is enabled by default after deployment. To disable it, set the `opensearch-curator.enabled` field to `false`.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 数据流水线”和“OpenSearch 分布式检索与分析引擎”扩展组件的详情页说明。
+For more information on extension configuration, see the details page of the "WhizardTelemetry Data Pipeline" and "OpenSearch Distributed Search and Analytics Engine" extensions in the Extensions Center.
 |===

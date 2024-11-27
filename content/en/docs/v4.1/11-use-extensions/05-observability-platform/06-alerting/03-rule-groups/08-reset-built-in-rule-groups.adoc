@@ -1,50 +1,45 @@
 ---
-title: "重置内置规则组"
-keywords: "Kubernetes, {ks_product}, 集群管理, 监控告警, 告警管理, 规则组, 删除规则组"
-description: "介绍如何重置内置规则组。"
+title: "Reset Built-in Rule Groups"
+keywords: "Kubernetes, {ks_product-en}, cluster management, monitoring alerting, alert management, rule groups, delete rule groups"
+description: "Describes how to reset built-in rule groups."
 weight: 08
 ---
 
-:ks_permission: **规则组管理**
-:ks_navigation: **监控告警 > 规则组**
+:ks_permission: **Rule Group Management**
+:ks_navigation: **Monitoring Alerting > Rule Groups**
 
 
-本节介绍如何重置内置规则组。
+This section describes how to reset built-in rule groups.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-* {ks_product_right}仅支持重置内置规则组，不支持重置自定义规则组。
-* 项目中没有内置规则组。
+* {ks_product-en} only supports resetting built-in rule groups, not custom rule groups.
+* There are no built-in rule groups in projects.
 |===
 
 [.admon.warning,cols="a"]
 |===
-|警告
+|Warning
 
 |
-规则组重置后不能恢复，请谨慎执行此操作。
+Rule groups cannot be recovered after resetting, so please proceed with caution.
 |===
-
-
 
 
 == Prerequisites
 
-* {ks_product_right}平台需要安装并启用 **WhizardTelemetry 告警**扩展组件。
-
+* **WhizardTelemetry Alerting** should have been installed and enabled.
 
 * {empty}
 include::../../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
 
-
-
 == Steps
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群。
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster.
 
 +
 
@@ -52,9 +47,8 @@ include::../../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在**规则组**页面，点击**内置规则组**打开规则组列表。
+. On the **Rule Groups** page, click **Built-in Rule Groups** to open the rule group list.
 
-. 在需要重置的规则组右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**重置**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the rule group you need to reset, and then select **Reset** from the dropdown list.
 
-. 在**重置规则组**对话框，点击**确定**。
-
+. In the **Reset Rule Group** dialog, click **OK**.

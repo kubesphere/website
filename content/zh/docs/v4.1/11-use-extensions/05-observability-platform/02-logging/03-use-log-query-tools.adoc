@@ -44,9 +44,9 @@ weight: 01
 . 在弹出的对话框，设置搜索条件查询 Calico 日志。
 +
 --
-namespace: kube-system
+namespace: `kube-system`
 
-pod: <node name>
+pod: `<node name>`
 
-container: calico-cni
+container: `calico-cni`
 --

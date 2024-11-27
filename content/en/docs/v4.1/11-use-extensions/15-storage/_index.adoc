@@ -1,35 +1,32 @@
 ---
-title: "KubeSphere 存储"
-keywords: "Kubernetes, {ks_product}, 存储, 卷快照"
-description: "介绍如何使用“KubeSphere 存储”扩展组件。"
+title: "KubeSphere Storage"
+keywords: "Kubernetes, {ks_product-en}, storage, volume snapshots"
+description: "Learn how to use the KubeSphere Storage extension."
 weight: 15
 layout: "second"
 ---
 
 
-本节介绍如何使用“KubeSphere 存储”扩展组件。
+This section describes how to use the "KubeSphere Storage" extension.
 
-该扩展组件包含多个存储相关的实用工具：
+This extension includes multiple storage-related utilities:
 
-* snapshot-controller: 用于为 PVC 创建快照。
-* snapshotclass-controller: 用于为快照计数。
-* pvc-auto-resizer: 用于为 PVC 在容量不足的情况下实现自动扩容。
-* storageclass-accessor: 提供准入控制器，用来验证是否准许在某个命名空间或企业空间创建 PVC。
+* snapshot-controller: Used to create snapshots for PVCs.
+* snapshotclass-controller: Used to count snapshots.
+* pvc-auto-resizer: Used to automatically expand PVCs when they are running out of capacity.
+* storageclass-accessor: Provides an admission controller to verify whether it is allowed to create PVCs in a specific namespace or workspace.
 
 
-安装“KubeSphere 存储”扩展组件后，
+After installing the "KubeSphere Storage" extension,
 
-* 集群左侧导航栏的**存储**菜单下将显⽰**卷快照**和**卷快照类**选项，**存储**菜单下的**存储类**将显示**设置授权规则**和**设置自动扩展**操作项。
-* 项目左侧导航栏的**存储**菜单下将显⽰**卷快照**选项。
+* The **Storage** menu in the left navigation pane of the cluster will display **Volume Snapshots** and **Volume Snapshot Classes** options, and **Storage Classes** will support **Set Authorization Rules** and **Set Auto Expansion**.
+* The **Storage** menu in the left navigation pane of the project will display the **Volume Snapshots** option.
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-* 存储类的自动扩展功能支持在 PVC 容量不足的情况下实现自动扩容。仅控制是否允许用户在{ks_product_left} Web 控制台使用相关操作，存储类是否实际支持这些操作取决于后端存储系统。
-* 设置自动扩展需要连接 prometheus 服务才能工作。有关更多信息，请参阅扩展中心“KubeSphere 存储”扩展组件的详情页说明。
+* The auto-expansion feature of storage classes supports automatically expanding PVCs when they are running out of capacity. It only controls whether users are allowed to use the related operations in the {ks_product-en} web console. Whether the storage class actually supports these operations depends on the backend storage system.
+* Setting auto-expansion requires connecting to the prometheus service. For more information, see the details page of the "KubeSphere Storage" extension in the Extensions Center.
 |===
-
-
-

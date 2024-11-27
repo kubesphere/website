@@ -1,22 +1,22 @@
 // :ks_include_id: ae74df332c484c09b5ea8272c0d8193c
-* 应用路由列表提供以下信息：
+* The Ingress list provides the following information:
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|名称
-|应用路由的名称和描述。
+|Name
+|The name and description of the Ingress.
 
-|网关地址
+|Gateway Address
 |
 include::../gatewaySettings/gatewaySettings-para-address.adoc[]
 
-|应用
-|应用路由所对应的应用名称。
+|Application
+|The name of the application corresponding to the Ingress.
 
-|创建时间
-|应用路由的创建时间。
+|Creation Time
+|The creation time of the Ingress.
 |===
 --

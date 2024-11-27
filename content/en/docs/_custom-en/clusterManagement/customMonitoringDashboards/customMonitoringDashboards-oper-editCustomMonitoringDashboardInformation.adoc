@@ -1,17 +1,17 @@
 // :ks_include_id: f41b68cc492640acadc07b371d665ebb
-. 在需要操作的自定义监控面板右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**编辑信息**。
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the custom monitoring dashboard you want to edit, then select **Edit Information** from the dropdown list.
 
-. 在**编辑信息**对话框，设置自定义监控面板的别名和描述，然后点击**确定**。
+. In the **Edit Information** dialog, set the alias and description of the custom monitoring dashboard, then click **OK**.
 +
 --
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|别名
-|自定义监控面板的别名。不同自定义监控面板的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。
+|Alias
+|The alias of the custom monitoring dashboard. Different custom monitoring dashboards can have the same alias. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), and cannot start or end with a hyphen (-), with a maximum of 63 characters.
 
-|描述
-|自定义监控面板的描述信息。描述可包含任意字符，最多包含 256 个字符。
+|Description
+|The description of the custom monitoring dashboard. The description can contain any characters, with a maximum of 256 characters.
 |===
 --

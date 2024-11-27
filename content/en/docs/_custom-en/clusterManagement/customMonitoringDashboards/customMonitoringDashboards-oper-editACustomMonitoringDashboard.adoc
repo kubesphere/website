@@ -1,32 +1,34 @@
 // :ks_include_id: 1762c0ce44e445d89cd9f2e5b34055fa
-. 在列表中点击一个自定义监控面板的名称打开自定义监控面板，然后在页面右上角点击**编辑模板**。
+. Click the name of a custom monitoring dashboard in the list to open the custom monitoring dashboard, then click **Edit Template** in the upper right corner of the page.
 
-. 在页面左侧设置以文本显示的监控指标。
+. Set the text-displayed monitoring metrics on the left side of the page.
 +
 ====
-* 点击image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18]可添加监控指标。
+* Click image:/images/ks-qkcp/zh/icons/add-dark.svg[add-dark,18,18] to add monitoring metrics.
 +
 --
 include::customMonitoringDashboards-para-textMetric.adoc[]
 --
 
-* 将光标悬停在监控指标上，然后点击image:/images/ks-qkcp/zh/icons/trash-dark.svg[trash-dark,18,18]可删除监控指标。
+* Hover the cursor over a monitoring metric, then click image:/images/ks-qkcp/zh/icons/trash-dark.svg[trash-dark,18,18] to delete the monitoring metric.
 
-* 将光标悬停在监控指标上，然后点击image:/images/ks-qkcp/zh/icons/pen-dark.svg[pen-dark,18,18]可编辑监控指标。
+* Hover the cursor over a monitoring metric, then click image:/images/ks-qkcp/zh/icons/pen-dark.svg[pen-dark,18,18] to edit the monitoring metric.
 ====
 
-. 在页面右侧的监控图列表设置监控图。
+. Set the monitoring charts in the monitoring chart list on the right side of the page.
 +
 ====
-* 点击**添加监控项**可添加监控图。
+* Click **Add Monitoring Item** to add monitoring charts.
 +
 --
 include::customMonitoringDashboards-para-monitoringChart.adoc[]
 --
 
-* 将光标悬停在监控图名称上，然后点击image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18]可删除监控图。
+* Hover the cursor over the monitoring chart name, then click image:/images/ks-qkcp/zh/icons/trash-light.svg[trash-light,18,18] to delete the monitoring chart.
 
-* 将光标悬停在监控图名称上，然后点击image:/images/ks-qkcp/zh/icons/pen-light.svg[pen-light,18,18]可编辑监控图。
+* Hover the cursor over the monitoring chart name, then click image:/images/ks-qkcp/zh/icons/pen-light.svg[pen-light,18,18] to edit the monitoring chart.
+
+* Drag image:/images/ks-qkcp/zh/icons/drag-handle.svg[drag-handle,18,18] on the right side to adjust the sorting of the monitoring charts.
 ====
 
-. 在页面右上角点击**保存模板**完成编辑。
+. Click **Save Template** in the upper right corner of the page to complete the editing.

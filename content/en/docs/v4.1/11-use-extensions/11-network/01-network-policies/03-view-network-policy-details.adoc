@@ -1,27 +1,23 @@
 ---
-title: "查看网络策略详情"
-keywords: "Kubernetes, {ks_product}, 集群管理, 网络, 网络策略, 查看网络策略详情"
-description: "介绍如何查看网络策略详情。"
+title: "View Network Policy Details"
+keywords: "Kubernetes, {ks_product-en}, cluster management, network, network policy, view network policy details"
+description: "Introduce how to view network policy details."
 weight: 03
 ---
 
-:ks_permission: **集群网络资源查看**
-:ks_navigation: **网络 > 网络策略**
+:ks_permission: **Cluster Network Resource Viewing**
+:ks_navigation: **Network > Network Policies**
 
 
-本节介绍如何查看网络策略详情。
+This section introduces how to view network policy details.
 
 
 == Prerequisites
 
-
 * {empty}
 include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
-
-
-
-* {ks_product_right}平台需要安装并启用 **KubeSphere 网络**扩展组件。
+* **KubeSphere Network** should have been installed and enabled.
 
 
 == Steps
@@ -34,77 +30,76 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 +
 
-. 在网络策略列表中点击一个网络策略的名称打开其详情页面。
+. Click the name of a network policy in the network policy list to open its details page.
 
-. 在网络策略详情页面左侧的**属性**区域查看网络策略的资源属性。
+. On the network policy details page, view the resource attributes of the network policy in the **Attributes** area on the left.
 +
 --
 [options="header",cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|集群
-|网络策略所属的集群。
+|Cluster
+|The cluster to which the network policy belongs.
 
-|项目
-|网络策略所属的项目。
+|Project
+|The project to which the network policy belongs.
 
-|创建时间
-|网络策略的创建时间。
+|Creation Time
+|The creation time of the network policy.
 
-|创建者
-|创建网络策略的用户。
+|Creator
+|The user who created the network policy.
 |===
 --
 
-. 在网络策略详情页面右侧点击**出站规则**页签查看网络策略的出站规则。
+. On the network policy details page, click the **Egress Rules** tab on the right to view the egress rules of the network policy.
 +
 --
-出站规则用于限制容器组只能访问特定的其他容器组或网段。
+Egress rules are used to restrict pods to access only specific pods or network segments.
 
 [%header,cols="1a,4a"]
 |===
 
-|参数
-|描述
+|Parameter |Description
 
-|目标
-|规则适用的容器组的信息。
+|Target
+|Information about the pods to which the rule applies.
 
-* **项目**：规则所属的项目。网络策略中的规则仅适用于网络策略所属项目中的容器组。
+* **Project**: The project to which the rule belongs. Rules in a network policy only apply to pods in the project to which the network policy belongs.
 
-* **标签**：规则适用的容器组所具有的标签。如果未设置标签，则规则适用于网络策略所属的项目中的所有容器组。
+* **Labels**: The labels of the pods to which the rule applies. If no labels are set, the rule applies to all pods in the project to which the network policy belongs.
 
 
-|目的地
-|目标容器组可以访问的其他容器组或网段的信息。
+|Destination
+|Information about other pods or network segments that the target pods can access.
 
-* **项目**：目标容器组可以访问的其他容器组所属的项目。
-* **标签**：目标容器组可以访问的其他容器组所具有的标签。如果未设置标签，则目标容器组可以访问项目中的所有容器组。
-* **CIDR**：目标容器组可以访问的网段。
-* **端口**：目标容器组可以访问的其他容器组或网段的端口。如果未设置端口，则目标容器组可以访问其他容器组或网段的所有端口。
+* **Project**: The project to which the other pods belong that the target pods can access.
+* **Labels**: The labels of the other pods that the target pods can access. If no labels are set, the target pods can access all pods in the project.
+* **CIDR**: The network segment that the target pods can access.
+* **Ports**: The ports of the other pods or network segments that the target pods can access. If no ports are set, the target pods can access all ports of the other pods or network segments.
 |===
 --
 
-. 在网络策略详情页面右侧点击**入站规则**页签查看网络策略的入站规则。
+. On the network policy details page, click the **Ingress Rules** tab on the right to view the ingress rules of the network policy.
 +
 --
-入站规则用于限制容器组只能被特定的其他容器组或网段访问。
+Ingress rules are used to restrict pods to be accessed only by specific pods or network segments.
 
 [%header,cols="1a,4a"]
 |===
-|参数 |描述
+|Parameter |Description
 
-|目标
+|Target
 |
 include::../../../../_custom-en/clusterManagement/networkPolicies/networkPolicies-para-target.adoc[]
 
-|目的地
-|可以访问目标容器组的其他容器组或网段的信息。
+|Destination
+|Information about other pods or network segments that can access the target pods.
 
-* **项目**：可以访问目标容器组的其他容器组所属的项目。
-* **标签**：可以访问目标容器组的其他容器组所具有的标签。如果未设置标签，则项目中的所有容器组都可访问目标容器组。
-* **CIDR**：可以访问目标容器组的网段。
-* **端口**：其他容器组或网段可以访问的目标容器组的端口。如果未设置端口，则其他容器组或网段可以访问的目标容器组的所有端口。
+* **Project**: The project to which the other pods belong that can access the target pods.
+* **Labels**: The labels of the other pods that can access the target pods. If no labels are set, all pods in the project can access the target pods.
+* **CIDR**: The network segment that can access the target pods.
+* **Ports**: The ports of the target pods that can be accessed by other pods or network segments. If no ports are set, all ports of the target pods can be accessed by other pods or network segments.
 |===
 --

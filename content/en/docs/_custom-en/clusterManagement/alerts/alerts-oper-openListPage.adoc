@@ -1,2 +1,2 @@
 // :ks_include_id: a11cb13f4c4d44e59332bb4fe44859c0
-. 在**告警**页面点击**来源于自定义规则**或**来源于内置规则**打开告警列表。
+. On the **Alerts** page, click **From Custom Rules** or **From Built-in Rules** to open the alert list.
