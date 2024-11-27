@@ -1,0 +1,28 @@
+---
+title: "配置开源存储系统"
+keywords: "Kubernetes, KubeSphere, 安装, 准备, 持久化存储, 开源存储, Ceph, GlusterFS, OpenEBS, Longhorn"
+description: "介绍如何在生产环境中为 KubeSphere 集群配置开源存储系统。"
+weight: 07
+---
+
+KubeSphere 支持众多第三方开源存储系统，包括：
+
+* link:https://github.com/ceph/ceph-csi[Ceph CSI]
+
+* link:https://docs.gluster.org/en/latest/[GlusterFS]
+
+* link:https://openebs.io/[OpenEBS]
+
+* link:https://longhorn.io/[Longhorn]
+
+* ... 等等
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+Kubernetes 此前已宣布将在 1.21 版本中移除树内 (in-tree) 存储插件。有关更多信息，请参见 link:https://kubernetes.io/blog/2019/12/09/kubernetes-1-17-feature-csi-migration-beta/[Kubernetes In-Tree to CSI Volume Migration Moves to Beta]。因此，建议您安装 CSI 插件。
+|===
+
+若要在{ks_product_both}平台安装第三方开源存储系统，请到存储系统的官方网站进行下载安装。
