@@ -9,23 +9,58 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20240720.png
-  url: ./meetup-shanghai-20240720/
+  image: /images/live/cloudnative-live-20241123.png
+  url: ./meetup-chengdu-20241123/
 
   notice:
-    title: KubeSphere Meetup 成都站——2024
+    title: KubeSphere Meetup 广州站——2024
     tag: 预告
-    time: 2024 年 11 月 23 日
-    base: 北京
-    url: ./meetup-chengdu-20241123/
+    time: 2024 年 12 月 28 日
+    base: 广州
+    url: ./meetup-guangzhou-20241228/
 
   over:
-    title: KubeSphere Meetup 深圳站——2024
+    title: KubeSphere Meetup 上海站——2024
     tag: 结束
-    url: ./meetup-shenzhen-20240420/
+    url: ./meetup-shanghai-20240720/
 
 section3:
   videos:
+    - title: Spring AI Alibaba -- 帮助 Java 开发者更方便的构建云原生 AI 智能体应用
+      link: ./chengdu1123-spring/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-1.png
+      type: iframe
+      createTime: 2024.11.23
+      group: Meetup
+
+    - title: 使用可插拔架构集成多个多集群解决方案
+      link: ./chengdu1123-kubesphere1/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-2.png
+      type: iframe
+      createTime: 2024.11.23
+      group: Meetup
+      
+    - title: AI 时代的 API 网关选型
+      link: ./chengdu1123-higress/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-3.png
+      type: iframe
+      createTime: 2024.11.23
+      group: Meetup
+
+    - title: 深度解析 Kubernetes API 扩展：从 CRD 到独立 API Server 的最佳实践
+      link: ./chengdu1123-kubesphere2/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-4.png
+      type: iframe
+      createTime: 2024.11.23
+      group: Meetup
+
+    - title: IOMesh 携手 KubeSphere：加速企业云原生数据工作负载落地
+      link: ./chengdu1123-iomesh/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-5.png
+      type: iframe
+      createTime: 2024.11.23
+      group: Meetup
+      
     - title: LangChain 与 MinIO：AI 数据管理的可能性探索
       link: ./shanghai0720-langchain/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover-5.png
@@ -1363,10 +1398,14 @@ section4:
   list:
     - year: 2024
       meetup: 
+        - place: 成都站（11.23）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-chengdu-20241123/
+      
         - place: 上海站（07.20）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-shanghai-20240720-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-shanghai-20240720/
-
+ 
         - place: 北京站（05.25）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-beijing-20240525-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-beijing-20240525/
