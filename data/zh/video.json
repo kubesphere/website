@@ -1,4 +1,43 @@
-[
+[ {
+    "title": "Spring AI Alibaba -- 帮助 Java 开发者更方便的构建云原生 AI 智能体应用",
+    "link": " //player.bilibili.com/player.html?aid=113547828789728&bvid=BV1rvzgYTEnt&cid=27036025947&page=1&high_quality=1",
+    "createTime": "2024.11.23",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-1.png",
+    "group": "Meetup",
+    "tag": "AI"
+  },
+  {
+    "title": "使用可插拔架构集成多个多集群解决方案",
+    "link": "//player.bilibili.com/player.html?aid=113547862345184&bvid=BV11xzgYVEny&cid=27036289251&page=1&high_quality=1",
+    "createTime": "2024.11.23",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-2.png",
+    "group": "Meetup",
+    "tag": "KubeSphere"
+  },
+  {
+    "title": "AI 时代的 API 网关选型",
+    "link": "//player.bilibili.com/player.html?aid=113547895899746&bvid=BV1ybzgY3Ewc&cid=27036420688&page=1&high_quality=1",
+    "createTime": "2024.11.23",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-3.png",
+    "group": "Meetup",
+    "tag": "AI"
+  },
+  {
+    "title": "深度解析 Kubernetes API 扩展：从 CRD 到独立 API Server 的最佳实践",
+    "link": " //player.bilibili.com/player.html?aid=113547929456296&bvid=BV1FRzuYvE3R&cid=27036549732&page=1&high_quality=1",
+    "createTime": "2024.11.23",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-4.png",
+    "group": "Meetup",
+    "tag": "KubeSphere,API"
+  },
+  {
+    "title": "IOMesh 携手 KubeSphere：加速企业云原生数据工作负载落地",
+    "link": " //player.bilibili.com/player.html?aid=113548919440197&bvid=BV1v3zGYaE5v&cid=27041398987&page=1&high_quality=1",
+    "createTime": "2024.11.23",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-5.png",
+    "group": "Meetup",
+    "tag": "IOMesh,AI"
+  },
   {
     "title": "LangChain 与 MinIO——AI 数据管理的可能性探索",
     "link": "//player.bilibili.com/player.html?aid=1906261916&bvid=BV1BS411w7ZJ&cid=1623666689&page=1&high_quality=1",
