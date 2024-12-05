@@ -1,0 +1,18 @@
+---
+title: "Configure Open-Source Storage Systems"
+keywords: "Kubernetes, KubeSphere, installation, preparation, persistent storage, open-source storage, Ceph, GlusterFS, OpenEBS, Longhorn"
+description: "Learn how to configure open-source storage systems for KubeSphere clusters in production environments."
+weight: 07
+---
+
+KubeSphere supports many third-party open-source storage systems, **including but not limited to**:
+
+* link:https://github.com/ceph/ceph-csi[Ceph CSI]
+
+* link:https://docs.gluster.org/en/latest/[GlusterFS]
+
+* link:https://openebs.io/[OpenEBS]
+
+* link:https://longhorn.io/[Longhorn]
+
+{ks_product-en} does not provide installation packages for third-party open-source storage systems. Please download and install them from the official websites of the storage systems.

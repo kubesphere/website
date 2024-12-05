@@ -36,6 +36,16 @@ This section introduces the environment requirements for {ks_product-en}.
 |CPU: 8 cores, Memory: 16 GB, Disk: 200 GB
 |===
 
+== Storage Requirements
+
+* A default storage class must be available in the cluster.
++
+--
+Storage classes define a class of storage volumes that containers can use. If you did not set up an external persistent storage system during the installation of {ks_product-en}, {ks_product-en} will use the local storage system of the cluster nodes as the persistent storage system and automatically create the corresponding **local** storage class. If you are using an external persistent storage system, you need to install a storage plugin for the KubeSphere cluster and create storage classes to define the classes of storage volumes that can be used. For information on how to install storage plugins, please contact your storage system provider. For information on how to install the storage plugin, contact your storage system provider or refer to link:../04-configure-external-persistent-storage[Configure External Persistent Storage].
+--
+
+* The various components of {ks_product-en} only require the storage system to support creating and deleting persistent volume claims (PVCs) and do not rely on advanced capabilities such as expansion, cloning, and snapshots.
+
 == Dependency Requirements
 
 [%header,cols="1a,4a,4a"]
