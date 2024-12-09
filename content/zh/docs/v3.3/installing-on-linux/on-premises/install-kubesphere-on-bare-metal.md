@@ -1,7 +1,7 @@
 ---
 title: "在裸机上安装 KubeSphere"
 keywords: 'Kubernetes, KubeSphere, 裸机'
-description: '了解如何在裸机上部署一个单 master 的多节点 KubeSohere 集群。'
+description: '了解如何在裸机上部署一个单 master 的多节点 KubeSphere 集群。'
 linkTitle: "在裸机上安装 KubeSphere"
 weight: 3520
 ---
