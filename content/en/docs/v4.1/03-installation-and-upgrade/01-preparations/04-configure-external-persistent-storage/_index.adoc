@@ -15,3 +15,20 @@ include::../../../../../_ks_components-en/admonitions/note.adoc[]
 The configuration of external persistent storage for KubeSphere is only supported in scenarios where Kubernetes and KubeSphere are installed together. If you install KubeSphere on an existing Kubernetes cluster, KubeSphere will use the existing persistent storage configuration of the Kubernetes cluster.
 
 include::../../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+== How to Install Storage Systems
+
+When link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[installing {ks_product-en}], different storage systems can be installed as plugins. KubeKey will create a configuration file (default is `config-sample.yaml`) that contains all the necessary parameters to define different resources, including storage plugins. To have KubeKey install these storage systems as expected, you must provide the necessary configurations for these storage systems to KubeKey.
+
+Generally, there are two ways to have KubeKey apply the configuration of the storage systems.
+
+. Directly input the necessary parameters under the `addons` field in `config-sample.yaml`.
+. Create a separate configuration file for the plugin, listing all necessary parameters, and configure the file path in `config-sample.yaml` so that KubeKey can reference the path during the installation process.
+
+For more information, see link:https://github.com/kubesphere/kubekey/blob/master/docs/addons.md[Plugins].
+
+== Default Storage Class
+
+* KubeKey supports installing different storage plugins and storage classes. Regardless of which storage system you install, you can specify whether it should be set as the default storage class in its configuration file.
+
+* If you install multiple storage plugins, only one of them can be set as the default storage class. Otherwise, KubeKey will not be able to identify which storage class to use.

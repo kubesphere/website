@@ -16,3 +16,20 @@ include::../../../../../_ks_components/admonitions/note.adoc[]
 {ks_product_right}外部持久化存储配置仅支持同时安装 Kubernetes 和{ks_product_both}的场景。如果您在现有的 Kubernetes 集群上安装{ks_product_left}，{ks_product_right}安装完成后将使用 Kubernetes 集群现有的持久化存储配置。
 
 include::../../../../../_ks_components/admonitions/admonEnd.adoc[]
+
+== 如何安装存储系统
+
+link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装{ks_product_both}]时，可以安装不同的存储系统作为插件。KubeKey 会为集群创建一个配置文件（默认为 `config-sample.yaml`），其中包含定义不同资源（包括存储插件）的全部必要参数。若要让 KubeKey 以预期的方式来安装这些存储系统，就必须为 KubeKey 提供这些存储系统的必要配置。
+
+通常，有两种方法能使 KubeKey 应用即将安装的存储系统的配置。
+
+. 直接在 `config-sample.yaml` 中的 `addons` 字段下输入必要的参数。
+. 为插件创建一个单独的配置文件，列出所有必要的参数，并在 `config-sample.yaml` 中提供文件的路径，以便 KubeKey 在安装过程中引用该路径。
+
+有关更多信息，请参见link:https://github.com/kubesphere/kubekey/blob/master/docs/addons.md[插件]。
+
+== 默认存储类
+
+* KubeKey 支持安装不同的存储插件和存储类型。无论您要安装哪种存储系统，都可以在其配置文件中指定是否设为默认存储类。
+
+* 如果打算安装多个存储插件，那么只能将其中一个设置为默认存储类。否则，KubeKey 将无法识别使用哪种存储类型。
