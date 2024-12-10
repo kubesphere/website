@@ -16,7 +16,7 @@ After configuring external identity providers, users can log in to the {ks_produ
 
 . Log in to the {ks_product-en} web console with a user having the **platform-admin** role.
 
-. Navigate to the project **kubesphere-system** under the workspace **system-workspace**.
+. Click **Cluster Management** and then enter the **host** cluster.
 
 +
 

@@ -210,53 +210,53 @@ Kind: Cluster
 metadata:
  name: sample
 spec:
- hosts:
- - {name: controlplane1, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 23, user: ubuntu, password: Testing123, arch: arm64} # For arm64 nodes, please add the parameter arch: arm64
- - {name: controlplane2, address: 192.168.0.3, internalAddress: 192.168.0.3, user: ubuntu, privateKeyPath: "~/.ssh/id_rsa"}
- - {name: worker1, address: 192.168.0.4, internalAddress: 192.168.0.4, user: ubuntu, password: Testing123}
- - {name: worker2, address: 192.168.0.5, internalAddress: 192.168.0.5, user: ubuntu, password: Testing123}
- - {name: registry, address: 192.168.0.6, internalAddress: 192.168.0.6, user: ubuntu, password: Testing123}
- roleGroups:
- etcd:
- - controlplane1
- - controlplane2
- control-plane:
- - controlplane1
- - controlplane2
- worker:
- - worker1
- - worker2
- # If you want to use kk to automatically deploy the image registry, please set up the registry (it is recommended that the image registry and cluster nodes be deployed separately to reduce mutual influence)
- registry:
- -registry
- controlPlaneEndpoint:
- internalLoadbalancer: haproxy # If you need to deploy a high availability cluster and no load balancer is available, you can enable this parameter to perform load balancing within the cluster.
- domain: lb.kubesphere.local
- address: ""
- port: 6443
- kubernetes:
- version: v1.23.15
- clusterName: cluster.local
- network:
- plugin: calico
- kubePodsCIDR: 10.233.64.0/18
- kubeServiceCIDR: 10.233.0.0/18
- ## multus support. https://github.com/k8snetworkplumbingwg/multus-cni
- enableMultusCNI: false
- registry:
- # If you want to use kk to deploy harbor, you can set this parameter to harbor. If you do not set this parameter and you need to use kk to deploy the image registry, docker registry will be deployed by default.
- # Harbor does not support arm64. This parameter does not need to be configured when deploying in an arm64 environment.
- type: harbor
- # If you use kk to deploy harbor or other registries that require authentication, you need to set the auths of the corresponding registries. If you use kk to deploy the default docker registry, you do not need to configure the auths parameter.
- auths:
- "dockerhub.kubekey.local":
- username: admin # harbor default username
- password: Harbor12345 # harbor default password
- plainHTTP: false # If the registry uses http, please set this parameter to true
- privateRegistry: "dockerhub.kubekey.local/kse" #Set the private registry address used during cluster deployment
- registryMirrors: []
- insecureRegistries: []
- addons: []
+  hosts:
+    - {name: controlplane1, address: 192.168.0.2, internalAddress: 192.168.0.2, port: 23, user: ubuntu, password: Testing123, arch: arm64} # For arm64 nodes, please add the parameter arch: arm64
+    - {name: controlplane2, address: 192.168.0.3, internalAddress: 192.168.0.3, user: ubuntu, privateKeyPath: "~/.ssh/id_rsa"}
+    - {name: worker1, address: 192.168.0.4, internalAddress: 192.168.0.4, user: ubuntu, password: Testing123}
+    - {name: worker2, address: 192.168.0.5, internalAddress: 192.168.0.5, user: ubuntu, password: Testing123}
+    - {name: registry, address: 192.168.0.6, internalAddress: 192.168.0.6, user: ubuntu, password: Testing123}
+  roleGroups:
+    etcd:
+    - controlplane1
+    - controlplane2
+    control-plane:
+    - controlplane1
+    - controlplane2
+    worker:
+    - worker1
+    - worker2
+    # If you want to use kk to automatically deploy the image registry, please set up the registry (it is recommended that the image registry and cluster nodes be deployed separately to reduce mutual influence)
+    registry:
+    -registry
+  controlPlaneEndpoint:
+    internalLoadbalancer: haproxy # If you need to deploy a high availability cluster and no load balancer is available, you can enable this parameter to perform load balancing within the cluster.
+    domain: lb.kubesphere.local
+    address: ""
+    port: 6443
+  kubernetes:
+    version: v1.23.15
+    clusterName: cluster.local
+  network:
+    plugin: calico
+    kubePodsCIDR: 10.233.64.0/18
+    kubeServiceCIDR: 10.233.0.0/18
+    ## multus support. https://github.com/k8snetworkplumbingwg/multus-cni
+    enableMultusCNI: false
+  registry:
+    # If you want to use kk to deploy harbor, you can set this parameter to harbor. If you do not set this parameter and you need to use kk to deploy the image registry, docker registry will be deployed by default.
+    # Harbor does not support arm64. This parameter does not need to be configured when deploying in an arm64 environment.
+    type: harbor
+    # If you use kk to deploy harbor or other registries that require authentication, you need to set the auths of the corresponding registries. If you use kk to deploy the default docker registry, you do not need to configure the auths parameter.
+    auths:
+      "dockerhub.kubekey.local":
+            username: admin # harbor default username
+            password: Harbor12345 # harbor default password
+            plainHTTP: false # If the registry uses http, please set this parameter to true
+    privateRegistry: "dockerhub.kubekey.local/kse" #Set the private registry address used during cluster deployment
+    registryMirrors: []
+    insecureRegistries: []
+  addons: []
 ----
 --
 

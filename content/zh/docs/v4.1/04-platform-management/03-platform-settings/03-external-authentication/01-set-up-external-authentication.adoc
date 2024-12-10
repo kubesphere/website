@@ -16,7 +16,7 @@ weight: 01
 
 . 以具有 **platform-admin** 角色的用户登录{ks_product_left} Web 控制台。
 
-. 进入企业空间 **system-workspace** 下的项目 **kubesphere-system**。
+. 点击**集群管理**，并进入 host 集群。
 
 +
 

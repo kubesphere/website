@@ -40,7 +40,7 @@ include::../../../../../../_custom-en/clusterManagement/logReceivers/logReceiver
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
 After modification, ensure that the `endpoints` of each extension under the configuration of **WhizardTelemetry Platform Service** is consistent with the modified service address, so that the {ks_product-en} platform can correctly query the log data. For more information, see the details page of the "WhizardTelemetry Platform Service" extension in the Extensions Center.

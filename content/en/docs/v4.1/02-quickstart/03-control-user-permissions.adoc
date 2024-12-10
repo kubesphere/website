@@ -6,8 +6,15 @@ description: "Learn how to create users and control their permissions by roles i
 weight: 03
 ---
 
+ifeval::["{file_output_type}" == "html"]
 This section explains how to create users and control their permissions by roles in workspaces and projects. 
 For more information on permission control, please refer to link:../../05-users-and-roles/[Users and Roles].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+This section explains how to create users and control their permissions by roles in workspaces and projects. 
+For more information on permission control, please refer to {ks_product-en} Users and Roles.
+endif::[]
 
 As a multi-tenant system, KubeSphere supports controlling user permissions based on roles at the platform, cluster, workspace, and project levels, achieving logical resource isolation.
 

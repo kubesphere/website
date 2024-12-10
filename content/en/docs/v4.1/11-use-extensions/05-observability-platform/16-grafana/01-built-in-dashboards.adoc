@@ -5,47 +5,32 @@ description: "Learn how to view the built-in Dashboards provided by the extensio
 weight: 01
 ---
 
-The Grafana for WhizardTelemetry extension comes with multiple Grafana Dashboards that allow direct querying of monitoring data for Kubernetes and KubeSphere without the need for manual configuration of Grafana Dashboards.
+The Grafana for WhizardTelemetry extension comes with multiple Grafana Dashboards that allow direct querying of monitoring data for Kubernetes without the need for manual configuration of Grafana Dashboards.
 
 == Steps
 
-. After logging into the Grafana console, click **Dashboards** in the left navigation pane to view all built-in Dashboard templates, which are in four directories: `aicp`, `kube-prometheus-stack`, `whizard-loki`, and `whizard-monitoring`.
+. After logging into the Grafana console, click **Dashboards** in the left navigation pane to view all built-in Dashboard templates.
 +
 --
-image:/images/ks-qkcp/zh/v4.1.2/grafana/dashboard-list.png[dashboard-list]
 
 [%header,cols="1a,3a"]
 |===
 |Directory |Description
 
-|aicp
-|Used for QingCloud AI Computing Platform, please view monitoring panels in the "AI Computing Management" platform.
-
 |kube-prometheus-stack
 |Visualizes monitoring data for Kubernetes.
-
-|whizard-loki
-|Visualizes logs, audits, events, and notification history of KubeSphere stored in Loki.
-
-|whizard-monitoring
-|Multi-cluster monitoring adapted for Whizard and KubeSphere.
 |===
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
-* After installing the **WhizardTelemetry Monitoring** extension, the Dashboards in **kube-prometheus-stack** and **whizard-monitoring** will display monitoring data.
-* To display monitoring data in the Dashboards of **whizard-loki**, see link:../../17-loki/01-display-loki-data[Grafana Loki for WhizardTelemetry].
+After installing the **WhizardTelemetry Monitoring** extension, the Dashboards in **kube-prometheus-stack** will display monitoring data.
 |===
 --
 
 . Click on a Dashboard template in the directory to view the corresponding monitoring data.
-+
-Below is an example using the **KubeSphere Nodes** template from the **whizard-monitoring** directory to introduce the Dashboard page.
-
-. The **KubeSphere Nodes** dashboard displays monitoring information for each node, including resource utilization of CPU, memory, disk, and pods, disk IOPS, disk throughput, network bandwidth, etc.
 +
 image:/images/ks-qkcp/zh/v4.1.2/grafana/node-dashboard.png[node-dashboard]
 

@@ -14,7 +14,7 @@ After installing the "KubeSphere Service Mesh" extension, **Service Mesh** will 
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
 Before installing KubeSphere Service Mesh, you need to set up available Prometheus and OpenSearch services in the extension configuration. For more information about the extension configuration, see the details page of the "KubeSphere Service Mesh" extension in the Extensions Center.

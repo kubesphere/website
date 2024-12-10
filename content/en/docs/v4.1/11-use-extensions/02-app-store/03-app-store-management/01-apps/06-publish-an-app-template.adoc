@@ -11,7 +11,7 @@ This section describes how to publish an application template.
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
 Before listing the application template, at least one of its application versions must be in the **Published** status.

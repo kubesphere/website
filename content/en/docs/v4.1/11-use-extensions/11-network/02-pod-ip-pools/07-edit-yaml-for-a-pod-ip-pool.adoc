@@ -39,7 +39,7 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
 * The CIDR of the pod IP pool must not overlap with the CIDR of the nodes and the CIDR of the services.
