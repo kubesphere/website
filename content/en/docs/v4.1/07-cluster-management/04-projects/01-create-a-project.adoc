@@ -47,8 +47,12 @@ include::../../../_custom-en/clusterManagement/projects/projects-para-aliasDescr
 // Note
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-* Once a project is assigned to a workspace, you are not allowed to change its workspace.
-
+ifeval::["{file_output_type}" == "html"]
 * Once the project is created, you can invite users to join the project and deploy services within it.
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+* Once the project is created, you can invite users to join the project and deploy services within it. For more information, please refer to the {ks_product-en} Project Management Guide.
+endif::[]
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

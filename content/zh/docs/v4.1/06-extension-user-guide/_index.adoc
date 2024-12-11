@@ -11,5 +11,3 @@ icon: "/images/docs/common/docs.svg"
 本节介绍如何安装和管理扩展组件。
 
 KubeSphere 扩展组件，是构建在 KubeSphere LuBan 之上、用以扩展并增强 KubeSphere 产品能力、进一步满足企业各类型业务需求的应用形态。{ks_product_right}安装完成后默认仅启用了核心组件。建议您在扩展中心安装扩展组件以充分利用{ks_product_both}的功能特性。
-
-// 有关如何使用各个扩展组件的更多信息，请参阅《{ks_product_right}扩展组件使用指南》。

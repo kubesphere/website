@@ -3,7 +3,7 @@ title: "Remove Member Clusters"
 linkTitle: "Remove Member Clusters"
 keywords: "Kubernetes, KubeSphere, Multi-Cluster Management, Cluster, Remove Member Clusters"
 description: "Learn how to remove member clusters."
-weight: 06
+weight: 09
 ---
 
 :ks_menu: **Cluster Management**

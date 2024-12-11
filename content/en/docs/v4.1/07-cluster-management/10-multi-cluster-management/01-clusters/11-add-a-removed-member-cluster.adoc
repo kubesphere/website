@@ -1,0 +1,30 @@
+---
+title: "Re-host a Member Cluster to Another Host Cluster"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster management, cluster, re-host member cluster"
+description: "How to re-host a removed member cluster to a new host cluster."
+weight: 11
+---
+
+This section introduces how to re-host a removed member cluster to another host cluster.
+
+== Unbinding a Cluster in Normal State
+
+If a member cluster is removed while in a normal state, no additional operations are required. The member cluster can be directly re-hosted by another host cluster. For detailed steps, please refer to link:../01-add-a-member-cluster[Add a Member Cluster].
+
+== Unbinding a Cluster in Abnormal State
+
+If a member cluster is removed while in an abnormal state, run the following command on the member cluster to clear the hosting information. After that, the cluster can be normally re-hosted by another host cluster.
+
+[,bash]
+----
+kubectl patch ns kubesphere-system --type merge -p '{"metadata":{"annotations": null}}'
+----
+
+== Clean Up Multi-Cluster Configuration Data
+
+After a cluster is unbound, the original resources and multi-cluster configuration data in the cluster will not be automatically cleared. If the unbound cluster has workspace-related configurations, run the following command to manually clean up the configuration data in the removed cluster before re-hosting.
+
+[,bash]
+----
+for ns in $(kubectl get ns --field-selector status.phase!=Terminating -o jsonpath='{.items[*].metadata.name}'); do kubectl label ns $ns kubesphere.io/workspace- && kubectl patch ns $ns --type merge -p '{"metadata":{"ownerReferences":[]}}'; done
+----

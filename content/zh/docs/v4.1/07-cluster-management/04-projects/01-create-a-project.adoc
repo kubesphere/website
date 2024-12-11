@@ -55,8 +55,14 @@ include::../../../_custom/clusterManagement/projects/projects-para-aliasDescript
 // Note
 include::../../../../_ks_components/admonitions/note.adoc[]
 
-* 项目被分配到企业空间后不允许变更项目所属的企业空间。
+// * 项目被分配到企业空间后不允许变更项目所属的企业空间。
 
+ifeval::["{file_output_type}" == "html"]
 * 项目创建完成后，您可以邀请用户加入项目并在项目中部署业务。
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+* 项目创建完成后，您可以邀请用户加入项目并在项目中部署业务。有关更多信息，请参阅 《{ks_product_right}项目管理指南》。
+endif::[]
 
 include::../../../../_ks_components/admonitions/admonEnd.adoc[]

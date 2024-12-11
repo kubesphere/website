@@ -1,0 +1,33 @@
+---
+title: "纳管成员集群到其他 host 集群"
+keywords: "Kubernetes, {ks_product}, 多集群管理, 集群, 重新纳管成员集群"
+description: "如何将被移除的成员集群重新纳管到新的 host 集群。。"
+weight: 11
+---
+
+本节介绍如何将被移除的成员集群重新纳管到其他 host 集群。
+
+
+== 集群正常状态解绑
+
+若成员集群在正常状态下被移除，无需额外操作，成员集群可以直接被其它 host 集群纳管，详细步骤请参阅link:../01-add-a-member-cluster[添加成员集群]。
+
+
+== 集群异常状态解绑
+
+若成员集群在异常状态下被移除，在成员集群上执行下面的命令来清除集群的纳管信息，之后集群可以正常被其它 host 集群纳管。
+
+[,bash]
+----
+kubectl patch ns kubesphere-system --type merge -p '{"metadata":{"annotations": null}}'
+----
+
+== 清理多集群配置数据
+
+集群被解绑后，集群中原有的资源和多集群配置数据不会被自动清除。如果被解绑集群存在企业空间相关配置，执行以下命令手动清理被移除集群中的配置数据后再进行纳管。
+
+[,bash]
+----
+for ns in $(kubectl get ns --field-selector status.phase!=Terminating -o jsonpath='{.items[*].metadata.name}'); do kubectl label ns $ns kubesphere.io/workspace- && kubectl patch ns $ns --type merge -p '{"metadata":{"ownerReferences":[]}}'; done
+----
+

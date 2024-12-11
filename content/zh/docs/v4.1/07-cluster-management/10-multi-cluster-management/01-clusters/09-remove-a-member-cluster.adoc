@@ -1,9 +1,8 @@
 ---
 title: "移除成员集群"
-linkTitle: "移除成员集群"
-keywords: "Kubernetes, KubeSphere, 多集群管理, 集群, 移除成员集群"
+keywords: "Kubernetes, {ks_product}, 多集群管理, 集群, 移除成员集群"
 description: "介绍如何移除成员集群。"
-weight: 06
+weight: 09
 ---
 
 :ks_menu: **集群管理**
@@ -70,10 +69,11 @@ include::../../../../_custom/platformManagement/extensionManagement/extensionMan
 +
 --
 // Bash
-[,bash]
-----
+include::../../../../../_ks_components/code/bash.adoc[]
+
 kubectl delete cluster <cluster name>
-----
+
+include::../../../../../_ks_components/code/codeEnd.adoc[]
 --
 
 

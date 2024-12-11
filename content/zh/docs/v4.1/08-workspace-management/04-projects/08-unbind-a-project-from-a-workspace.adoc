@@ -1,0 +1,53 @@
+---
+title: "将项目纳管到其他企业空间"
+keywords: "Kuberentes, {ks_product}, 企业空间管理, 项目, 解绑项目"
+description: "介绍如何解绑项目并纳管到其他企业空间。"
+weight: 08
+---
+
+:ks_permission: **项目管理**
+:ks_navigation: **项目**
+
+
+本节介绍如何将项目与当前企业空间解绑，并重新纳管到其他企业空间。
+
+
+== 1. 解绑项目
+
+在项目所在的集群中，执行以下命令，解除项目和所属企业空间的关系。
+
+[,bash]
+----
+kubectl label ns <namespace> kubesphere.io/workspace- && kubectl patch ns <namespace>   -p '{"metadata":{"ownerReferences":[]}}' --type=merge
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+以上命令会移除项目与企业空间关联的标签并移除 ownerReferences。
+|===
+
+== 2. 移除项目成员
+
+在项目所在的集群中，执行以下命令，移除项目下所有的成员。
+
+[,bash]
+----
+kubectl delete rolebindings.iam.kubesphere.io -n <namespace> --all
+----
+
+== 3. 纳管到新的企业空间
+
+include::../../../_custom/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../_ks_components/oper-navigate.adoc[]
+
+. 在项目列表中，在项目右侧点击image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，然后在下拉列表中选择**分配企业空间**。
+
+. 在**分配企业空间**对话框，设置项目所属的企业空间，并选择一个企业空间成员作为项目管理员，然后点击**确定**。
+
+. 进入选定的企业空间，即可在**项目**页面看到该项目。
