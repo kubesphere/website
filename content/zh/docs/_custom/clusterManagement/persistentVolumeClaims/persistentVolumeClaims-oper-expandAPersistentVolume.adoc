@@ -7,9 +7,7 @@
 // Note
 include::../../../../_ks_components/admonitions/warning.adoc[]
 
-* 如果持久卷已挂载到工作负载，容量扩展操作将导致工作负载重启，业务可能出现短暂中断。
-
-* 持久卷容量只能增加，不能减少。
+持久卷容量只能增加，不能减少。
 
 include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 --

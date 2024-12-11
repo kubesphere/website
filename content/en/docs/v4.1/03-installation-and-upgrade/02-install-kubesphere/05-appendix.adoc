@@ -11,7 +11,7 @@ weight: 05
 
 === Common Options
 
-[%header,cols="1,1,2"]
+[%header,cols="1,1,3a"]
 |===
 |Option | Default Value | Description
 |adminPassword | "" | string - Set a bootstrap password for the first admin user. Admins will need to reset the password upon login. If not set, the built-in default password **P@88w0rd** will be used.
@@ -25,7 +25,7 @@ weight: 05
 
 === Advanced Options
 
-[%header,cols="1,1,2"]
+[%header,cols="1,1,3a"]
 |===
 |Option | Default Value | Description
 
@@ -52,6 +52,25 @@ weight: 05
 |controller.image.registry | "" | string - Set ks-controller-manager image registry address.
 |controller.image.repository | "kse/ks-controller-manager" | string - Set ks-controller-manager image name.
 |controller.image.tag | "" | string - Set ks-controller-manager image tag.
+|composedApp.appSelector | "" | string - Specify the annotation or label to process and update the status of matching composed apps.
+
+If the `appSelector` value is empty, all composed apps will be processed. If the following content is added in the command or ConfigMap, only composed apps created and managed by KubeSphere will be processed.
+
+* When installing ks-core, add this in the installation command:
++
+--set composedApp.appSelector="kubesphere.io/creator"
+
+* When upgrading ks-core, add this in the upgrade command:
++
+--set composedApp.appSelector="kubesphere.io/creator"
+
+* After installation or upgrade, set in the `kubesphere-config` ConfigMap of the cluster:
++
+[,yaml]
+----
+composedApp:
+  appSelector: "kubesphere.io/creator"
+----
 |===
 
 == TLS Configuration

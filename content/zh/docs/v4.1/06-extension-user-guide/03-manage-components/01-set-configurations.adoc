@@ -26,8 +26,10 @@ weight: 01
 
 include::../../../../_ks_components/admonitions/note.adoc[]
 
-点击image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark,18,18]可将扩展组件的配置文件 **config.yaml** 从本地上传。
+* 点击**恢复推荐配置**，将当前配置恢复到默认推荐配置，点击**确定**。
 
-点击image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark,18,18]可将扩展组件的配置文件 **config.yaml** 下载到本地。
+* 点击image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark,18,18]可将扩展组件的配置文件 **config.yaml** 从本地上传。
+
+* 点击image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark,18,18]可将扩展组件的配置文件 **config.yaml** 下载到本地。
 
 include::../../../../_ks_components/admonitions/admonEnd.adoc[]

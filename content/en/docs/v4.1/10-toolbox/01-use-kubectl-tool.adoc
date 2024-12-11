@@ -14,7 +14,7 @@ This section demonstrates how to use the Web kubectl for cluster resource operat
 
 == Prerequisites
 
-You should have the **platform-admin** role on the {ks_product-en} platform. For more information, please refer to link:../../05-users-and-roles/01-users.adoc[Users] and link:../../05-users-and-roles/02-platform-roles.adoc[Platform Roles].
+You should have the **platform-admin** role on the {ks_product-en} platform. For more information, please refer to link:../../05-users-and-roles/01-users/[Users] and link:../../05-users-and-roles/02-platform-roles/[Platform Roles].
 
 == Using Web Kubectl
 

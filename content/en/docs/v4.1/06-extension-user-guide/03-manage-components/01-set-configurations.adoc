@@ -25,8 +25,10 @@ In addition to configuring extensions during installation, you can also modify t
 
 include::../../../../_ks_components-en/admonitions/note.adoc[]
 
-Click image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark,18,18] to upload the configuration file **config.yaml** of the extension from your local device.
+* Click **Reset Recommended Configuration** to revert the current configuration to the default configuration, and click **OK**.
 
-Click image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark,18,18] to download the configuration file **config.yaml** of the extension to your local device.
+* Click image:/images/ks-qkcp/zh/icons/upload-dark-white.svg[upload-dark,18,18] to upload the configuration file **config.yaml** of the extension from your local device.
+
+* Click image:/images/ks-qkcp/zh/icons/download-dark-white.svg[download-dark,18,18] to download the configuration file **config.yaml** of the extension to your local device.
 
 include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]

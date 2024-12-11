@@ -10,8 +10,6 @@
 | Warning
 
 |
-* If the Persistent Volume is already mounted to a workload, expanding the capacity will result in the restart of the workload, causing a interruption in the business.
-
-* Persistent volume capacity can only be increased and cannot be reduced.
+Persistent volume capacity can only be increased and cannot be reduced.
 |===
 --

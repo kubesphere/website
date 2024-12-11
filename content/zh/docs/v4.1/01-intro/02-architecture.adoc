@@ -41,5 +41,7 @@ KubeSphere 扩展组件是一个可以对 KubeSphere 功能进行扩展并借助
 
 如果您在扩展组件的开发过程中有疑问，请尝试在 link:https://github.com/kubesphere/kubesphere/issues/new/choose[GitHub Issue] 获得帮助。
 
+== 如何发布扩展组件？
 
+请参阅link:https://dev-guide.kubesphere.io/extension-dev-guide/zh/packaging-and-release/release/[发布扩展组件]，了解如何提交扩展组件到 KubeSphere Marketplace。
 
