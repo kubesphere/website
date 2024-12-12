@@ -17,7 +17,7 @@ endif::[]
 
 WordPress 是一款基于 PHP 的免费、开源内容管理系统，您可以使用 WordPress 搭建自己的网站。完整的 WordPress 应用程序包括以下 Kubernetes 对象，由 MySQL 作为后端数据库。
 
-image::/images/ks-qkcp/en/v4.1/WordPress.png[]
+image:/images/ks-qkcp/zh/v4.1/WordPress.png[]
 
 
 == 前提条件
@@ -179,7 +179,7 @@ include::../../../_ks_components/admonitions/admonEnd.adoc[]
 . 在浏览器中输入 `<节点 IP>:<节点端口>`，即可从集群的外部访问 WordPress，如下图所示。
 +
 --
-image::/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
+image:/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
 
 // Note
 include::../../../_ks_components/admonitions/note.adoc[]
