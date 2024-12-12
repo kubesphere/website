@@ -179,7 +179,7 @@ include::../../../_ks_components/admonitions/admonEnd.adoc[]
 . 在浏览器中输入 `<节点 IP>:<节点端口>`，即可从集群的外部访问 WordPress，如下图所示。
 +
 --
-image::/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
+image:/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
 
 // Note
 include::../../../_ks_components/admonitions/note.adoc[]
