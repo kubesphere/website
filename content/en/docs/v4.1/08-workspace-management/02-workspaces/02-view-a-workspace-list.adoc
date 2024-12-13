@@ -22,7 +22,7 @@ include::../../../_custom-en/platformManagement/platformManagement-oper-logIn.ad
 . Click **Workspace Management**.
 +
 --
-* The workspace list displays all workspaces on the KubeSphere platform.
+* The workspace list displays all workspaces on the {ks_product-en} platform.
 
 * In the workspace list, click the name of a workspace to view and manage resources within it.
 --

@@ -9,7 +9,7 @@
 |Parameter |Description
 
 |Name
-|The name of the member cluster. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.
+|The name of the member cluster. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 60 characters long.
 
 include::clusters-para-tagProviderDescription.adoc[]
 |===

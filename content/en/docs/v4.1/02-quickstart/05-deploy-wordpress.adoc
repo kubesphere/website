@@ -179,7 +179,7 @@ include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
 . Enter `<Node IP>:<Node Port>` in the browser to access WordPress from outside the cluster, as shown below.
 +
 --
-image::/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
+image:/images/ks-qkcp/zh/v4.1/wordpress-page.png[]
 
 // Note
 include::../../../_ks_components-en/admonitions/note.adoc[]

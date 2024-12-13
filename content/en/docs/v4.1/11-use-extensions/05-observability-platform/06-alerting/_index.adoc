@@ -27,7 +27,7 @@ After installing the "WhizardTelemetry Alerting" extension, the **Alerts** and *
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
 After installing WhizardTelemetry Alerting, if you enabled or disabled Whizard Observability Center in the WhizardTelemetry Monitoring extension, please update the configuration of WhizardTelemetry Alerting as follows.

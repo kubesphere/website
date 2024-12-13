@@ -13,7 +13,7 @@ This section introduces how to enable cluster gateways.
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
 If a workspace gateway or project gateway has not been enabled, after enabling the cluster gateway, you will no longer be able to enable the workspace gateway and project gateway.

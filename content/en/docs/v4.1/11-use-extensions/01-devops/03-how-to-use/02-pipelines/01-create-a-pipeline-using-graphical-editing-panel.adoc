@@ -281,7 +281,7 @@ mvn -Dmaven.test.skip=true clean package
 docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER .
 ----
 
-image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png[100%]
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/shell_command.png[100%]
 --
 
 . Once more, click **Add nesting steps**, select **WithCredential**. Fill in the following fields in the dialog that appears, and then click **OK**.
@@ -291,7 +291,7 @@ image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-g
 * **Username Variable**: Enter **DOCKER_USERNAME**.
 * **Password Variable**: Enter **DOCKER_PASSWORD**.
 
-image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png[100%]
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/docker_credential.png[100%]
 
 
 [.admon.note,cols="a"]
@@ -311,7 +311,7 @@ For security reasons, account information is displayed as variables in the scrip
 echo "$DOCKER_PASSWORD" | docker login $REGISTRY -u "$DOCKER_USERNAME" --password-stdin
 ----
 
-image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png[100%]
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/login_docker_command.png[100%]
 --
 
 . In the **WithCredential** step, click **Add nesting steps**. Select **shell** and enter the following command to push the SNAPSHOT image to Docker Hub. Click **OK** to complete the operation.
@@ -322,7 +322,7 @@ image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-g
 docker push $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
 ----
 
-image::/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png[100%]
+image:/images/ks-qkcp/en/devops-user-guide/use-devops/create-a-pipeline-using-graphical-editing-panel/push_to_docker.png[100%]
 --
 
 === Stage 5: Artifacts

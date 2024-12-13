@@ -5,30 +5,19 @@ description: "介绍如何查看扩展组件提供的内置 Dashboard。"
 weight:  01
 ---
 
-Grafana for WhizardTelemetry 扩展组件内置了多个 Grafana Dashboard 模板，可供直接查询 Kubernetes 和 KubeSphere 的监控数据，而无需自行配置 Grafana Dashboard。
+Grafana for WhizardTelemetry 扩展组件内置了多个 Grafana Dashboard 模板，可供直接查询 Kubernetes 的监控数据，而无需自行配置 Grafana Dashboard。
 
 == 操作步骤
 
-. 登录 Grafana 控制台后，点击左侧导航栏的 **Dashboards**，查看所有内置的 Dashboard 模板。包含 aicp, kube-prometheus-stack, whizard-loki, whizard-monitoring 4 个目录。
+. 登录 Grafana 控制台后，点击左侧导航栏的 **Dashboards**，查看所有内置的 Dashboard 模板。
 +
 --
-image:/images/ks-qkcp/zh/v4.1/grafana/dashboard-list.png[dashboard-list]
-
 [%header,cols="1a,3a"]
 |===
 |目录 |模板介绍
 
-|aicp
-|用于青云 AI 智算运维管理端，需在“AI 智算管理”平台中查看监控面板。
-
 |kube-prometheus-stack
 |可视化 Kubernetes 的监控数据。
-
-|whizard-loki
-|可视化存储到 Loki 的 KubeSphere 日志、审计、事件及通知历史。
-
-|whizard-monitoring
-|适配 Whizard 与 KubeSphere 后的多集群监控。
 |===
 
 [.admon.attention,cols="a"]
@@ -36,18 +25,11 @@ image:/images/ks-qkcp/zh/v4.1/grafana/dashboard-list.png[dashboard-list]
 |注意
 
 |
-* 安装 **WhizardTelemetry 监控**扩展组件后，**kube-prometheus-stack** 和 **whizard-monitoring** 中的 Dashboard 才会显示监控数据。
-* 若要 **whizard-loki** 中的 Dashboard 显示监控数据，请参阅link:../../17-loki/01-display-loki-data[
-Grafana Loki for WhizardTelemetry]。
+安装 **WhizardTelemetry 监控**扩展组件后，**kube-prometheus-stack** 中的 Dashboard 才会显示监控数据。
 |===
 --
 
 . 点击目录中的 Dashboard 模板，查看对应指标的监控数据。
-+
-下面以 **whizard-monitoring** 中的 **KubeSphere Nodes** 模板为例，介绍 Dashboard 页面。
-
-
-. **KubeSphere Nodes** 看板展示了每个节点的 CPU、内存、磁盘和 pod 的资源利用率、磁盘 IOPS、磁盘吞吐量、网络带宽等监控信息。
 +
 image:/images/ks-qkcp/zh/v4.1.2/grafana/node-dashboard.png[node-dashboard]
 

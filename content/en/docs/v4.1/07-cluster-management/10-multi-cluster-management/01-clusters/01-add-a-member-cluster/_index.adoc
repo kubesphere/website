@@ -20,8 +20,13 @@ Depending on your network environment, the host cluster and member clusters can 
 | Note
 
 |
-To use a agent connection, the **KubeSphere Multi-Cluster Agent Connection** extension needs to be installed and enabled on the KubeSphere platform.
-// For more information, refer to link:../../../../11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection[Add a Member Cluster via Agent Connection].
+ifeval::["{file_output_type}" == "html"]
+To use a agent connection, the **KubeSphere Multi-Cluster Agent Connection** extension needs to be installed and enabled on the {ks_product-en} platform. For more information, refer to link:../../../../11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection[Add a Member Cluster via Agent Connection].
+endif::[]
+
+ifeval::["{file_output_type}" == "pdf"]
+To use a agent connection, the **KubeSphere Multi-Cluster Agent Connection** extension needs to be installed and enabled on the {ks_product-en} platform. For more information, refer to "KubeSphere Multi-Cluster Agent Connection" section in the {ks_product-en} Extension User Guide.
+endif::[]
 |===
 
 Whether using a direct connection or a agent connection, at least one of the host cluster and the member cluster must be able to access the services exposed by the other side.

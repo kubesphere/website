@@ -80,7 +80,7 @@ curl -sSL https://get-kk.kubesphere.io | sh -
 
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |
 If you only want to use `kk` to package KubeSphere images into the air-gapped environment, you can directly use the manifest file received in the email to link:#_4_build_image_package[Build Image Package]. No need to create or edit the manifest file.
@@ -123,7 +123,7 @@ vi manifest-sample.yaml
 --
 [.admon.attention,cols="a"]
 |===
-|Note
+|Attention
 
 |The image list in the following manifest file is for example only. Please get the latest image list through https://get-images.kubesphere.io/.
 

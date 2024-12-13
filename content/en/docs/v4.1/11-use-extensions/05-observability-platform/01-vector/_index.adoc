@@ -1,30 +1,7 @@
 ---
 title: "WhizardTelemetry Data Pipeline"
-keywords: "Kubernetes, {ks_product-en}, platform settings, notification management"
 description: "Learn how to use the WhizardTelemetry Data Pipeline."
 weight: 02
 layout: "second"
 ---
 
-
-The WhizardTelemetry Data Pipeline is an extension that provides capabilities to collect, transform, and route observability data.
-
-
-//attention
-[.admon.attention,cols="a"]
-|===
-| Note
-
-|
-* The WhizardTelemetry Data Pipeline is a common dependency for WhizardTelemetry Logging, WhizardTelemetry Events, WhizardTelemetry Auditing, WhizardTelemetry Notification, etc., so it must be installed before the above extensions, otherwise, the logging, notification, auditing, and event functions will not work properly!
-
-* The WhizardTelemetry Observability Platform supports querying logs, audits, events, notification history, etc., from OpenSearch, so you need to configure the OpenSearch service information for receiving logs, audits, events, notification history, etc., in the WhizardTelemetry Data Pipeline. It can be a user-built OpenSearch service or an OpenSearch service installed by the “OpenSearch Distributed Search and Analytics Engine” extension.
-|===
-
-[.admon.note,cols="a"]
-|===
-|Note
-
-|
-For more information about extension configuration, see the details page of the "WhizardTelemetry Data Pipeline" extension in the Extensions Center.
-|===

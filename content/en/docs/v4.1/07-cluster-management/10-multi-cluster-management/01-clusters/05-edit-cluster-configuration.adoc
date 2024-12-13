@@ -1,0 +1,26 @@
+---
+title: "Edit Cluster Configuration"
+keywords: "Kubernetes, {ks_product-en}, multi-cluster management, cluster, edit cluster configuration"
+description: "Introduce how to edit cluster configuration."
+weight: 05
+---
+
+:ks_permission: **Cluster Management**
+
+This section introduces how to edit the cluster configuration of a member cluster, i.e., adjust the ks-agent configuration parameters.
+
+In addition to configuring the cluster when adding a member cluster, you can also edit the cluster configuration after the member cluster has been added.
+
+== Prerequisites
+
+You should have pass:a,q[{ks_permission}] permissions on the {ks_product-en} platform.
+
+== Steps
+
+include::../../../../_custom-en/platformManagement/platformManagement-oper-logIn.adoc[]
+
+. Click **Cluster Management**.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] on the right side of the cluster you want to edit, and then select **Edit Configuration** from the dropdown list.
+
+. Enter the ks-agent information in the **Edit Configuration** dialog box, and then click **OK**.
