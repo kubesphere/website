@@ -173,6 +173,18 @@ hasChildren = true
     name = "v3.3"
     URL = "/docs/v3.3"
     weight = 44
+   
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "Extension Development"
+    URL = "https://dev-guide.kubesphere.io/extension-dev-guide/en/ "
+    weight = 45
+
+    [[languages.en.menu.main]]
+    parent = "Documentation"
+    name = "Kube Design"
+    URL = "https://kube.design/"
+    weight = 46
 
 [[languages.en.menu.main]]
 weight = 5
@@ -310,6 +322,18 @@ name = "文档中心"
     name = "v3.3"
     URL = "/docs/v3.3"
     weight = 44
+
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "扩展组件开发"
+    URL = "https://dev-guide.kubesphere.io/extension-dev-guide/zh/"
+    weight = 45
+   
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "Kube Design"
+    URL = "https://kube.design/"
+    weight = 46
 
 [[languages.zh.menu.main]]
 weight = 5
