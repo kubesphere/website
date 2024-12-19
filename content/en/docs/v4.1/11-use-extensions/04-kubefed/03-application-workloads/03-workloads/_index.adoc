@@ -12,7 +12,7 @@ This section describes how to manage workloads.
 
 In KubeSphere, applications run in pods. To ensure business continuity when a single pod fails, it is usually necessary to create multiple pod replicas for an application. Workloads are resources used to manage pod replicas, responsible for managing multiple pod replicas of an application, and mainly provide the following functions:
 
-* Automatically scale the number of pod replicas based on user-defined conditions.
+// * Automatically scale the number of pod replicas based on user-defined conditions.
 
 * Automatically update pods based on the update strategy specified by the user.
 

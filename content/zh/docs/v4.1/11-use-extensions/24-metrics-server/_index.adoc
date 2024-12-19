@@ -1,0 +1,24 @@
+---
+title: "Metrics Server"
+keywords: "Kubernetes, {ks_product}, Metrics Server, 水平扩缩, 垂直扩缩"
+description: "介绍如何使用 Metrics Server 扩展组件。"
+weight: 24
+layout: "second"
+---
+
+
+Metrics Server 是一个可扩展、高效的容器资源度量源，为 Kubernetes 内置的自动扩展管道提供服务。
+
+Metrics Server 可实现如下功能：
+
+* 基于 CPU/内存的水平自动缩放（link:https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/[Horizontal Autoscaling]）
+* 自动调整/建议容器所需的资源（link:https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/[Vertical Autoscaling]）
+
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+有关组件的更多信息，请参阅扩展中心 Metrics Server 扩展组件的详情页说明。
+|===

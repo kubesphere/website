@@ -1,0 +1,45 @@
+---
+title: "Edit Autoscaling Settings"
+keywords: "Kubernetes, {ks_product-en}, Application Workloads, Workloads, Edit Autoscaling"
+description: "Learn how to edit autoscaling settings for workloads."
+weight: 01
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Workloads**
+
+
+include::../../../_custom-en/clusterManagement/workloads/workloads-desc-editAutoScaling.adoc[]
+
+
+== Prerequisites
+
+
+:relfileprefix: ../../../
+
+include::../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+
+:relfileprefix: ./
+
+
+== Steps
+
+. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission, and access your cluster or project.
+
++
+
+include::../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+. On the **Workloads** page, click **Deployments** or **StatefulSets** to open the list of workloads.
+
++
+
+include::../../../_custom-en/clusterManagement/workloads/workloads-oper-editAutoScalingSettings.adoc[]
+
++
+
+After the settings are complete, you can see image:/images/ks-qkcp/zh/icons/clock-2.svg[scaling,18,18] in the Status column on the Deployment or StatefulSet list page, indicating that the pod horizontal autoscaling policy has been set.
+
+. On the **Resource Status** tab of the workload details page, click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] > **Cancel** next to Autoscaling to delete the autoscaling settings.
