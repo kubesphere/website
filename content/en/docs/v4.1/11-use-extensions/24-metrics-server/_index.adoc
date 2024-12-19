@@ -9,13 +9,13 @@ layout: "second"
 
 Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.
 
-Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through [Metrics API](https://github.com/kubernetes/metrics)
-for use by [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) and [Vertical Pod Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/).
+Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through link:https://github.com/kubernetes/metrics[Metrics API]
+for use by link:https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/[Horizontal Pod Autoscaler] and link:https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/[Vertical Pod Autoscaler].
 
 You can use Metrics Server for:
 
-- CPU/Memory based horizontal autoscaling (learn more about [Horizontal Autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/))
-- Automatically adjusting/suggesting resources needed by containers (learn more about [Vertical Autoscaling](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/))
+- CPU/Memory based horizontal autoscaling (learn more about link:https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/[Horizontal Autoscaling])
+- Automatically adjusting/suggesting resources needed by containers (learn more about link:https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/[Vertical Autoscaling])
 
 [.admon.note,cols="a"]
 |===
