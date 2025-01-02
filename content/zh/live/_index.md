@@ -9,23 +9,58 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20241123.png
-  url: ./meetup-chengdu-20241123/
+  image: /images/live/cloudnative-live-20241228.png
+  url: ./meetup-guangzhou-20241228/
 
   notice:
-    title: KubeSphere Meetup 广州站——2024
+    title: KubeSphere Meetup 杭州站——2025
     tag: 预告
-    time: 2024 年 12 月 28 日
-    base: 广州
-    url: ./meetup-guangzhou-20241228/
+    time: 2025 年 4 月 19日
+    base: 杭州
+    url: ./meetup-hangzhou-20250419/
 
   over:
-    title: KubeSphere Meetup 上海站——2024
+    title: KubeSphere Meetup 成都站——2024
     tag: 结束
-    url: ./meetup-shanghai-20240720/
+    url: ./meetup-chengdu-20241123/
 
 section3:
   videos:
+    - title: Luban 青云智算平台 HAMi 的实践
+      link: ./guangzhou1228-luban/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20241228-cover-1.png
+      type: iframe
+      createTime: 2024.12.28
+      group: Meetup
+
+    - title: AI、GitOps 与程序员：关于未来的思考
+      link: ./guangzhou1228-ai/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20241228-cover-2.png
+      type: iframe
+      createTime: 2024.12.28
+      group: Meetup
+
+    - title: 从 LB Ingress 到 ZTM：集群服务暴露新思路
+      link: ./guangzhou1228-jiqun/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20241228-cover-3.png
+      type: iframe
+      createTime: 2024.12.28
+      group: Meetup
+
+    - title: 网关的演进历程以及在 AI 原生架构下的实践
+      link: ./guangzhou1228-wangguan/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-4.png
+      type: iframe
+      createTime: 2024.12.28
+      group: Meetup
+
+    - title: Build effective AI agents with Spring AI Alibaba
+      link: ./guangzhou1228-spring/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-5.png
+      type: iframe
+      createTime: 2024.12.28
+      group: Meetup
+
     - title: Spring AI Alibaba -- 帮助 Java 开发者更方便的构建云原生 AI 智能体应用
       link: ./chengdu1123-spring/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover-1.png
@@ -1398,6 +1433,10 @@ section4:
   list:
     - year: 2024
       meetup: 
+        - place: 广州站（12.28）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20241228-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-guangzhou-20241228/
+
         - place: 成都站（11.23）
           img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chengdu-20241123-cover.png
           meetupUrl: https://kubesphere.io/zh/live/meetup-chengdu-20241123/
