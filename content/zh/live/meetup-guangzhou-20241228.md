@@ -1,8 +1,10 @@
+---
 title: 云原生 AI Meetup广州站——2024
 description: 12 月28 日，KubeSphere 社区联合 Higress 社区在广州成功举办了一场云原生技术盛会。本次活动云集了云原生、AI 应用、多集群管理以及存储优化领域的资深专家，吸引了众多开发者、架构师和技术爱好者齐聚一堂，共同探讨前沿技术与实践经验。
 
 keywords: KubeSphere, Meetup, guangzhou, Kubernetes, 网关, 智算
 css: scss/live-detail.scss
+
 
 section1:
   snapshot: 
