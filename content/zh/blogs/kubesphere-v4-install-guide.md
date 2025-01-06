@@ -281,8 +281,9 @@ helm del -n kube-federation-system kubefed
 ### 升级 Crd
 
 ```
-# 下载 ks-core chart 包 
-helm fetch https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --untar
+# 下载 ks-core chart 包
+# 如果无法访问 charts.kubesphere.io, 可将 charts.kubesphere.io 替换为 charts.kubesphere.com.cn 
+helm fetch https://charts.kubesphere.io/main/ks-core-1.1.3.tgz --untar
 
 
 # 更新 crds 
@@ -298,9 +299,9 @@ kubectl apply -f ks-core/charts/ks-crds/crds/
 # 如果访问 dockerhub 受限，在以下命令中添加 
 # --set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks 
 # --set extension.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks 
+# 如果无法访问 charts.kubesphere.io, 可将 charts.kubesphere.io 替换为 charts.kubesphere.com.cn
 
-
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.2.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.3.tgz --debug --wait
 ```
 
 ### 添加 Member 集群
