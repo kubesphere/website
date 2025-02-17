@@ -185,7 +185,7 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-dow
 [source,bash]
 ----
 
- ./kk create config --with-kubernetes <Kubernetes version>
+./kk create config --with-kubernetes <Kubernetes version>
  
 ----
 
@@ -332,7 +332,7 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-para-con
 --
 [,bash]
 ----
- ./kk create cluster -f config-sample.yaml
+./kk create cluster -f config-sample.yaml
 ----
 
 // Note
