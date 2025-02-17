@@ -33,7 +33,7 @@ KubeSphere uses semantic versioning (Major, Minor, Patch.) to indicate release s
 |Patch Version|Addresses minor fixes or optimizations, such as **bug fixes**, **stability improvements**, or **product experience enhancements**. Patch Versions do not initiate a new product lifecycle and do not affect the Major or Minor Version.|Major and Minor versions remain unchanged.|v4.1.2 → v4.1.3|
 |HotFix|Provides **emergency fixes** for critical issues like **blocking bugs** or **severe security vulnerabilities** that disrupt customer operations without temporary solutions. It involves targeted fixes and testing, unlike full releases, and serves as a temporary measure—upgrading to a formal release remains the best practice. HotFixes typically don’t change the main version number, and may be formally included in the next Patch or Minor Version.|No version numbers altered. Incrementally appended to the existing version.|v3.5.0 → 3.5.0-hotfix-001|
 
-KubeSphere Product Version Definitions
+<center><span style="color: #00A971;">KubeSphere Product Version Definitions</span></center>
 
 ## Service & Support Tiers
 
@@ -52,7 +52,7 @@ KubeSphere cloud-native products and services offer two support tiers: **FS (Fu
 |Compatibility Support<sup>(6)</sup>|N<sup>(7)</sup> |N|
 |Migration Support    |N|N|
 
-KubeSphere Service and Support Tiers
+<center><span style="color: #00A971;">KubeSphere Service and Support Tiers</span></center>
 
 **Footnotes**
 
@@ -83,7 +83,7 @@ KubeSphere Service and Support Tiers
 |**EoES**|End of Extended Support|<p>(1) Termination of all support except migration guidance.</p><p>(2) No HotFixes for critical issues.</p><p>(3) Mandatory version upgrade is required.</p>|---|<p>(1) Immediate upgrade enforced.</p><p>(2) No SLA guarantees.</p><p>(3) Official documentation/artifacts (e.g., charts, images) will soon be deprecated.</p>|
 |**EoL**|End of Life|<p>(1) Complete termination of all activities: No sales, upgrades (including HotFixes), or support.</p><p>(2) QingCloud assumes no liability for post-EoL issues.</p>|---|<p>(1) Official documentation/artifacts become inaccessible.</p><p>(2) Maintain or migrate business environments on your own.</p><p>(3) Purchase new versions for continued service.</p>|
 
-KubeSphere Product Lifecycle Stages
+<center><span style="color: #00A971;">KubeSphere Product Lifecycle Stages</span></center>
 
 ### **Preview Products and Extensions Versions**
 In KubeSphere’s cloud-native products and services, **Preview** products and extensions versions are not for sale or commercial use. They are intended solely for lab, development, and testing purposes in non-production environments and do not come with SLA or EOS commercial guarantees. Typically, the lifecycle of Preview product versions and extension components is **6 months**.
@@ -101,7 +101,7 @@ In KubeSphere’s cloud-native products and services, **Preview** products and e
 |KSE v3.3|Standard|---|Mar 31, 2025|Sep 30, 2025|Oct 31, 2025|
 |QKCP v3.2 & earlier|Standard|---|---|---|Mar 31, 2025|
 
-KubeSphere Enterprise Edition Product Lifecycle Timeline
+<center><span style="color: #00A971;">KubeSphere Enterprise Edition Product Lifecycle Timeline</span></center>
 
 **Notes**:
 
@@ -117,7 +117,7 @@ KubeSphere Enterprise Edition Product Lifecycle Timeline
 |KubeSphere v3.4|Standard|---|Dec 25, 2025|
 |KubeSphere v3.3 & earlier|Standard|---|Oct 31, 2025|
 
-KubeSphere Community Edition Product Lifecycle Timeline
+<center><span style="color: #00A971;">KubeSphere Community Edition Product Lifecycle Timeline</span></center>
 
 ## Supplementary Notes
 - **Third-Party Extensions**: KubeSphere v4 may include third-party ecosystem extensions. For lifecycle policies, refer to the respective provider’s documentation.
