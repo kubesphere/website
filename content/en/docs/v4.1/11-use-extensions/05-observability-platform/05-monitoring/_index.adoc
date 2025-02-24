@@ -10,7 +10,8 @@ This section introduces how to use the "WhizardTelemetry Monitoring" extension.
 
 WhizardTelemetry Monitoring is an extension that provides monitoring functions in the WhizardTelemetry Observability Platform, including the Whizard Observability Center. It provides multi-tenant perspective cloud-native resource monitoring capabilities, including real-time and historical data display of core monitoring metrics for objects such as multiple clusters, nodes, workloads, GPU, and K8s control planes.
 
-This section only introduces the monitoring functions in a single-cluster environment. For alerting functions in a single-cluster environment, see link:../06-alerting[WhizardTelemetry Alerting]. For monitoring and alerting functions in a multi-cluster environment, see link:../07-whizard[Whizard Observability Center].
+This section only introduces the monitoring functions in a single-cluster environment. For alerting functions in a single-cluster environment, see link:../06-alerting[WhizardTelemetry Alerting]. 
+// For monitoring and alerting functions in a multi-cluster environment, see link:../07-whizard[Whizard Observability Center].
 
 After installing the "WhizardTelemetry Monitoring" extension, the **Monitoring & Alerting** option will be displayed in the left navigation pane of the cluster and project, and services under application workloads in the cluster and project will support **Edit Monitoring Exporter**. The following pages will also display relevant monitoring metrics data:
 

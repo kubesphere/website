@@ -8,7 +8,7 @@ The WhizardTelemetry Platform Service is the common service for all extensions o
 
 **Configuration:**
 
-* Modify the extension configuration of WhizardTelemetry Platform Service in conjunction with WhizardTelemetry Monitoring to enable the Whizard Observability Center. For more information, see link:../../07-whizard/01-enable-whizard/[Whizard Observability Center].
+// * Modify the extension configuration of WhizardTelemetry Platform Service in conjunction with WhizardTelemetry Monitoring to enable the Whizard Observability Center. For more information, see link:../../07-whizard/01-enable-whizard/[Whizard Observability Center].
 
 * When configuring the OpenSearch log receivers for WhizardTelemetry Logging, WhizardTelemetry Auditing, WhizardTelemetry Events, and notification history, if you need to use multiple OpenSearch databases, configure them as follows.
 +
@@ -112,13 +112,3 @@ whizard-telemetry:
             username: admin
             password: admin
 ----
-
-
-// //note
-// [.admon.note,cols="a"]
-// |===
-// |说明
-
-// |
-// 修改 WhizardTelemetry 平台服务的扩展组件配置，可配合 WhizardTelemetry 监控扩展组件，启用 Whizard 可观测中心。有关更多信息，请参阅 link:../../07-whizard/01-enable-whizard/[Whizard 可观测中心]。
-// |===

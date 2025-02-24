@@ -11,7 +11,8 @@ layout: "second"
 
 WhizardTelemetry 监控是 WhizardTelemetry 可观测平台中提供监控功能的扩展组件，其中包含了 Whizard 可观测中心。可提供多租户视角的云原生资源监控能力, 包括针对多集群、节点、工作负载、GPU、K8s 控制面等对象的核心监控指标实时和历史数据展示等功能。
 
-本节仅介绍单集群环境下的监控功能。有关单集群的告警功能，请参阅 link:../06-alerting[WhizardTelemetry 告警]。有关多集群的监控和告警功能，请参阅 link:../07-whizard[Whizard 可观测中心]。
+本节仅介绍单集群环境下的监控功能。有关单集群的告警功能，请参阅 link:../06-alerting[WhizardTelemetry 告警]。
+// 有关多集群的监控和告警功能，请参阅 link:../07-whizard[Whizard 可观测中心]。
 
 安装“WhizardTelemetry 监控”扩展组件后，集群和项目的左侧导航栏将显示**监控告警**选项，集群和项目中应用负载下的服务将支持**编辑监控导出器**，以下页面也将显示相关监控指标的数据：
 
