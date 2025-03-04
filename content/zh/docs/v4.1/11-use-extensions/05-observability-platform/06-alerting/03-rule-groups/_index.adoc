@@ -16,7 +16,8 @@ layout: "second"
 |说明
 
 |
-- {ks_product_right}为集群提供了内置规则组，同时也支持自定义规则组。若已启用 Whizard 可观测中心，内置规则组只能在 Whizard 可观测中心中进行管理。有关更多信息，请参阅 link:../../07-whizard/05-alert-management/01-rule-groups/[Whizard 规则组]。
+- {ks_product_right}为集群提供了内置规则组，同时也支持自定义规则组。
+// 若已启用 Whizard 可观测中心，内置规则组只能在 Whizard 可观测中心中进行管理。有关更多信息，请参阅 link:../../07-whizard/05-alert-management/01-rule-groups/[Whizard 规则组]。
 
 - 在项目中，只支持自定义规则组。
 |===

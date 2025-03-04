@@ -11,7 +11,7 @@ weight: 07
 
 == 前提条件
 
-* 准备一个项目（例如 **demo-project**）和一个已邀请到该项目的用户（例如 **project-regular**）。该用户在项目中应具有 **operator** 角色。有关更多信息，请参阅link:../03-control-user-permissions/[控制用户权限]。
+* 准备一个项目（例如 **demo-project**）和一个已邀请到该项目的用户（例如 **project-regular**）。该用户在项目中应具有 **operator** 角色。有关更多信息，请参阅link:../04-control-user-permissions/[控制用户权限]。
 
 * {ks_product_right}平台需要安装并启用 **KubeSphere 服务网格**和 **KubeSphere 网关**扩展组件。
 

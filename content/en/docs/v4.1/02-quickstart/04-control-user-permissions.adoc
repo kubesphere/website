@@ -3,7 +3,7 @@ title: "Control User Permissions"
 linkTitle: "Create Workspaces, Projects, Users, and Roles"
 keywords: "Kubernetes, KubeSphere, Quick Start, User Permissions"
 description: "Learn how to create users and control their permissions by roles in workspaces and projects."
-weight: 03
+weight: 04
 ---
 
 ifeval::["{file_output_type}" == "html"]

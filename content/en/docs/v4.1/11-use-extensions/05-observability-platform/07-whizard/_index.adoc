@@ -3,6 +3,7 @@ title: "Whizard Observability Center"
 keywords: "Kubernetes, {ks_product-en}, platform management, Whizard Observability Center"
 description: "Describes how to use the Whizard Observability Center."
 weight: 08
+draft: true
 layout: "second"
 ---
 

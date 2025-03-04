@@ -2,7 +2,7 @@
 title: "Install and Use Extensions"
 keywords: "Kubernetes, KubeSphere, quick start, install extensions, example, DevOps, extension features"
 description: "Introduce all extensions and demonstrate how to install them."
-weight: 02
+weight: 03
 ---
 
 

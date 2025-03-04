@@ -3,5 +3,6 @@ title: "Notification History"
 keywords: "Kubernetes, {ks_product-en}, platform settings, notification history"
 description: "Describes how to view notification history."
 weight: 04
+draft: true
 layout: "second"
 ---

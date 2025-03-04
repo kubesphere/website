@@ -10,7 +10,7 @@ weight: 01
 == 前提条件
 
 ifeval::["{file_output_type}" == "html"]
-* 已创建一个企业空间和一个用户 (**project-admin**)，需要邀请该用户至该企业空间并赋予 **workspace-self-provisioner** 角色。有关更多信息，请参阅link:../../../../02-quickstart/03-control-user-permissions[控制用户权限]。
+* 已创建一个企业空间和一个用户 (**project-admin**)，需要邀请该用户至该企业空间并赋予 **workspace-self-provisioner** 角色。有关更多信息，请参阅link:../../../../02-quickstart/04-control-user-permissions[控制用户权限]。
 endif::[]
 
 ifeval::["{file_output_type}" == "pdf"]

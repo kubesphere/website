@@ -11,7 +11,7 @@ This method allows for efficient testing of performance and reliability, helping
 
 == Prerequisites
 
-* Prepare a project (e.g., **demo-project**) and a user (e.g., **project-regular**). The user should have been invited to the project and has the **operator** role in it. For more information, please refer to link:../03-control-user-permissions/[Control User Permissions].
+* Prepare a project (e.g., **demo-project**) and a user (e.g., **project-regular**). The user should have been invited to the project and has the **operator** role in it. For more information, please refer to link:../04-control-user-permissions/[Control User Permissions].
 
 * **KubeSphere Service Mesh** and **KubeSphere Gateway** should have been installed and enabled.
 

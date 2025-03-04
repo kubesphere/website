@@ -16,7 +16,8 @@ After creating a rule group, the system can generate alerts when specific monito
 |Note
 
 |
-- {ks_product-en} provides built-in rule groups for clusters, and also supports custom rule groups. If the Whizard Observability Center is enabled, built-in rule groups can only be managed in the Whizard Observability Center. For more information, see link:../../07-whizard/05-alert-management/01-rule-groups/[Whizard Rule Groups].
+- {ks_product-en} provides built-in rule groups for clusters, and also supports custom rule groups. 
+// If the Whizard Observability Center is enabled, built-in rule groups can only be managed in the Whizard Observability Center. For more information, see link:../../07-whizard/05-alert-management/01-rule-groups/[Whizard Rule Groups].
 
 - In projects, only custom rule groups are supported.
 |===
