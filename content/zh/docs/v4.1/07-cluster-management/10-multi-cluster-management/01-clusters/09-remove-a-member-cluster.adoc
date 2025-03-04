@@ -69,11 +69,10 @@ include::../../../../_custom/platformManagement/extensionManagement/extensionMan
 +
 --
 // Bash
-include::../../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 kubectl delete cluster <cluster name>
-
-include::../../../../../_ks_components/code/codeEnd.adoc[]
+----
 --
 
 
