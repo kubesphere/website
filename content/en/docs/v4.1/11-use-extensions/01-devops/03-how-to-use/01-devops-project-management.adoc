@@ -9,7 +9,7 @@ This section demonstrates how to create and manage DevOps projects.
 
 == Prerequisites
 
-* A workspace and a user (**project-admin**) have been created. Invite this user to the workspace and assign them the **workspace-self-provisioner** role. For more information, see link:../../../../02-quickstart/03-control-user-permissions[Control User Permissions].
+* A workspace and a user (**project-admin**) have been created. Invite this user to the workspace and assign them the **workspace-self-provisioner** role. For more information, see link:../../../../02-quickstart/04-control-user-permissions[Control User Permissions].
 
 * **DevOps** must have been installed and enabled.
 

@@ -2,7 +2,7 @@
 title: "通过域名访问 KubeSphere 控制台"
 keywords: "Kubernetes, {ks_product}, 域名访问, TLS"
 description: "了解如何通过域名访问 KubeSphere 控制台。"
-weight: 01
+weight: 02
 ---
 
 本节介绍如何通过自定义域名访问{ks_product_left} Web 控制台。为实现此目的，您需要使用 cert-manager 配置 TLS 访问。

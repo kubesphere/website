@@ -2,7 +2,7 @@
 title: "安装并使用扩展组件"
 keywords: "Kubernetes, KubeSphere, 快速入门, 安装组件, 示例, DevOps, 扩展组件功能"
 description: "介绍所有扩展组件，并演示如何安装扩展组件。"
-weight: 02
+weight: 03
 ---
 
 
