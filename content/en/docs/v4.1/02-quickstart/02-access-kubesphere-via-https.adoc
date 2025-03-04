@@ -1,76 +1,76 @@
 ---
-title: "通过域名访问 KubeSphere 控制台"
-keywords: "Kubernetes, {ks_product}, 域名访问, TLS"
-description: "了解如何通过域名访问 KubeSphere 控制台。"
+title: "Access KubeSphere Console via Domain Name"
+keywords: "Kubernetes, {ks_product-en}, Domain Access, TLS"
+description: "Learn how to access KubeSphere console via custom domain name."
 weight: 02
 ---
 
-本节介绍如何通过自定义域名访问{ks_product_left} Web 控制台。为实现此目的，您需要使用 cert-manager 配置 TLS 访问。
+This section explains how to access the {ks_product-en} web console using a custom domain name. To achieve this, you need to configure TLS access using cert-manager.
 
-== 前提条件
+== Prerequisites
 
-- 已安装 Kubernetes 集群。
-- link:https://helm.sh/zh/docs/intro/install/[已安装 Helm]（用于安装 cert-manager 和 ingress-nginx）。
-- 已安装{ks_product_both}或准备安装{ks_product_left}。
+- Kubernetes is installed.
+- link:https://helm.sh/docs/intro/install/[Helm] is installed (for installing cert-manager and ingress-nginx).
+- {ks_product-en} is installed or ready to be installed.
 
-== 步骤 1：安装 NGINX Ingress Controller
+== Step 1: Install NGINX Ingress Controller
 
-如果您尚未安装 link:https://kubernetes.github.io/ingress-nginx/[NGINX Ingress Controller]，请按照以下步骤安装。
+If you haven't installed link:https://kubernetes.github.io/ingress-nginx/[NGINX Ingress Controller], follow these steps.
 
 [source,bash]
 ----
-# 添加 ingress-nginx 仓库
+# Add ingress-nginx repository
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
-# 更新仓库
+# Update repository
 helm repo update
 
-# 安装 ingress-nginx
+# Install ingress-nginx
 helm install ingress-nginx ingress-nginx/ingress-nginx \
   --namespace ingress-nginx \
   --create-namespace \
   --version 4.2.5
 
-# 验证安装结果
+# Verify installation
 kubectl -n ingress-nginx get svc ingress-nginx-controller
 
-# 检查 IngressClass
+# Check IngressClass
 kubectl get ingressclass
 ----
 
-== 步骤 2：安装 cert-manager
+== Step 2: Install cert-manager
 
-link:https://cert-manager.io/docs/[cert-manager] 是一个 Kubernetes 原生的证书管理控制器，可以帮助您自动化 TLS 证书的管理和签发。
+link:https://cert-manager.io/docs/[cert-manager] is a Kubernetes native certificate management controller that helps automate the management and issuance of TLS certificates.
 
 [source,bash]
 ----
-# 添加 cert-manager 仓库
+# Add cert-manager repository
 helm repo add jetstack https://charts.jetstack.io
 
-# 更新仓库
+# Update repository
 helm repo update
 
-# 安装 cert-manager
+# Install cert-manager
 helm install cert-manager jetstack/cert-manager \
   --namespace cert-manager \
   --create-namespace \
   --version v1.12.0 \
   --set installCRDs=true
 
-# 验证安装结果
+# Verify installation
 kubectl get pods -n cert-manager
 ----
 
-== 步骤 3：为 KubeSphere 配置 TLS
+== Step 3: Configure TLS for KubeSphere
 
-=== 方法 1：安装 KubeSphere 时，配置 TLS
+=== Method 1: Configure TLS during KubeSphere installation
 
-如果您尚未安装 KubeSphere，可以在安装时配置 TLS。以下命令采用 cert-manager 生成自签证书。
+If you haven't installed KubeSphere yet, you can configure TLS during installation. The following command uses cert-manager to generate a self-signed certificate.
 
 [source,bash]
 ----
 helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.3.tgz \
---set portal.hostname=kubesphere.my.org \   # 将 kubesphere.my.org 替换为您的自定义域名
+--set portal.hostname=kubesphere.my.org \   # Replace kubesphere.my.org with your custom domain
 --set portal.https.port=30880 \
 --set ingress.enabled=true \
 --set ingress.tls.source=generation \
@@ -79,19 +79,19 @@ helm upgrade --install -n kubesphere-system --create-namespace ks-core https://c
 
 [.admon.note,cols="a"]
 |===
-|说明
+|Note
 
 |
-以上参数的更多信息，请参阅 link:../../03-installation-and-upgrade/02-install-kubesphere/05-appendix/[KubeSphere Core 高级配置]。
+For more information about these parameters, please refer to link:../../03-installation-and-upgrade/02-install-kubesphere/05-appendix/[Advanced Configuration of KubeSphere Core].
 |===
 
-=== 方法 2：安装 KubeSphere 后，手动配置自签名TLS
+=== Method 2: Manually configure self-signed TLS after KubeSphere installation
 
-如果已安装 KubeSphere，需手动配置 TLS。
+If KubeSphere is already installed, you need to manually configure TLS.
 
 [source,bash]
 ----
-# 创建 Issuer
+# Create Issuer
 cat <<EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1
 kind: Issuer
@@ -105,7 +105,7 @@ EOF
 
 [source,bash]
 ----
-# 创建 Certificate
+# Create Certificate
 cat <<EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -113,11 +113,11 @@ metadata:
   name: kubesphere-tls-certs
   namespace: kubesphere-system
 spec:
-  duration: 2160h # 90天
-  # 设置在证书到期前15天开始更新
-  renewBefore: 360h # 15天 (15 * 24小时)
+  duration: 2160h # 90 days
+  # Start renewal 15 days before expiration
+  renewBefore: 360h # 15 days (15 * 24 hours)
   dnsNames:
-  - kubesphere.my.org # 替换为您的自定义域名
+  - kubesphere.my.org # Replace with your custom domain
   issuerRef:
     group: cert-manager.io
     kind: Issuer
@@ -131,7 +131,7 @@ EOF
 
 [source,bash]
 ----
-# 创建 Ingress
+# Create Ingress
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -144,7 +144,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: kubesphere.my.org # 替换为您的自定义域名
+  - host: kubesphere.my.org # Replace with your custom domain
     http:
       paths:
       - backend:
@@ -155,33 +155,33 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - kubesphere.my.org # 替换为您的自定义域名
+    - kubesphere.my.org # Replace with your custom domain
     secretName: kubesphere-tls-certs
 EOF
 ----
 
-=== 方法 3：安装 KubeSphere 后，手动配置 Let's Encrypt 签发证书
+=== Method 3: Manually configure Let's Encrypt certificate after KubeSphere installation
 
-如果已安装 KubeSphere，也可手动配置 Let's Encrypt 签发证书。
+If KubeSphere is already installed, you can also manually configure Let's Encrypt to issue certificates.
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Attention
 
 |
-. 域名要求：对于 HTTP-01 challenge，您的域名必须能够从公网访问，且 80 端口必须开放。
+. Domain requirements: For HTTP-01 challenge, your domain must be publicly accessible and port 80 must be open.
 
-. Let's Encrypt 限制：
-- 证书有效期固定为 90 天
-- 每个域名每周可以签发的证书有数量限制
-- 测试时建议使用 Let's Encrypt 的 staging 环境：
+. Let's Encrypt limitations:
+- Certificate validity is fixed at 90 days
+- There are limits on the number of certificates that can be issued per domain per week
+- For testing, it's recommended to use Let's Encrypt's staging environment:
 +
 https://acme-staging-v02.api.letsencrypt.org/directoryStaging
 |===
 
 [source,bash]
 ----
-#创建 Let's Encrypt Issuer (HTTP-01 challenge)
+# Create Let's Encrypt Issuer (HTTP-01 challenge)
 cat <<EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -189,9 +189,9 @@ metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    # Let's Encrypt 生产环境 API
+    # Let's Encrypt production API
     server: https://acme-v02.api.letsencrypt.org/directory
-    # 您的邮箱，用于接收证书过期通知
+    # Your email for receiving certificate expiration notices
     email: your-email@example.com
     privateKeySecretRef:
       name: letsencrypt-prod-account-key
@@ -204,7 +204,7 @@ EOF
 
 [source,bash]
 ----
-# 创建 Certificate 资源，使用 Let's Encrypt 签发证书：
+# Create certificate to issue certificate using Let's Encrypt:
 cat <<EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -212,14 +212,14 @@ metadata:
   name: kubesphere-tls-certs
   namespace: kubesphere-system
 spec:
-  # Let's Encrypt 证书有效期固定为90天，无法通过此字段修改
-  # 设置在证书到期前30天开始更新
-  renewBefore: 720h # 30天
+  # Let's Encrypt certificate validity is fixed at 90 days and cannot be modified through this field
+  # Start renewal 30 days before expiration
+  renewBefore: 720h # 30 days
   dnsNames:
-  - kubesphere.my.org  # 替换为您的自定义域名
+  - kubesphere.my.org  # Replace with your custom domain
   issuerRef:
     group: cert-manager.io
-    kind: ClusterIssuer  # 使用 ClusterIssuer
+    kind: ClusterIssuer  # Use ClusterIssuer
     name: letsencrypt-prod
   secretName: kubesphere-tls-certs
   usages:
@@ -230,7 +230,7 @@ EOF
 
 [source,bash]
 ----
-# 创建 Ingress
+# Create Ingress
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -243,7 +243,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: kubesphere.my.org  # 替换为您的自定义域名
+  - host: kubesphere.my.org  # Replace with your custom domain
     http:
       paths:
       - backend:
@@ -254,30 +254,30 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - kubesphere.my.org  # 替换为您的自定义域名
+    - kubesphere.my.org  # Replace with your custom domain
     secretName: kubesphere-tls-certs
 EOF
 ----
 
-**验证配置结果**
+**Verify Configuration**
 
-验证证书签发状态：
+Check certificate issuance status:
 
 [source,bash]
 ----
 kubectl describe certificate kubesphere-tls-certs -n kubesphere-system
 ----
 
-查看证书签发过程：
+View certificate issuance process:
 
 [source,bash]
 ----
 kubectl get challenges,orders,certificaterequests -n kubesphere-system
 ----
 
-== 步骤 4：验证 TLS 配置
+== Step 4: Verify TLS Configuration
 
-. 检查证书是否成功签发。
+. Check if certificate is successfully issued.
 +
 --
 [source,bash]
@@ -285,7 +285,7 @@ kubectl get challenges,orders,certificaterequests -n kubesphere-system
 kubectl get certificate -n kubesphere-system
 ----
 
-输出示例如下：
+Example output:
 
 [source,bash]
 ----
@@ -294,7 +294,7 @@ kubesphere-tls-certs   True    kubesphere-tls-certs   110s
 ----
 --
 
-. 检查 Ingress 配置。
+. Check Ingress configuration.
 +
 --
 [source,bash]
@@ -302,7 +302,7 @@ kubesphere-tls-certs   True    kubesphere-tls-certs   110s
 kubectl get ingress -n kubesphere-system
 ----
 
-输出示例如下：
+Example output:
 
 [source,bash]
 ----
@@ -311,7 +311,7 @@ ks-console   nginx   kubesphere.my.org             80, 443   1m30s
 ----
 --
 
-. 使用 curl 测试 HTTPS 访问。
+. Test HTTPS access using curl.
 +
 --
 [source,bash]
@@ -322,13 +322,13 @@ curl --resolve kubesphere.my.org:443:$INGRESS_IP https://kubesphere.my.org -k
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Attention
 
 |
-将 kubesphere.my.org 替换为您的自定义域名。
+Replace `kubesphere.my.org` with your custom domain.
 |===
 
-输出示例如下：
+Example output:
 
 [source,bash]
 ----
@@ -336,25 +336,25 @@ Redirecting to <a href="/login">/login</a>.
 ----
 --
 
-== 步骤 5：访问{ks_product_left} Web 控制台
+== Step 5: Access {ks_product-en} Web Console
 
-在使用自定义 DNS 的情况下，如果要在其他机器使用域名访问{ks_product_left} Web 控制台，还需要执行以下步骤。
+When using custom DNS, if you want to access the {ks_product-en} web console from other machines using the domain name, you need to perform the following additional steps.
 
-. 设置 Service 使用 NodePort 模式。
+. Set Service to use NodePort mode.
 +
 [source,bash]
 ----
 kubectl -n ingress-nginx patch svc ingress-nginx-controller -p '{"spec": {"type": "NodePort"}}'
 ----
 
-. 查询 Service 信息。
+. View Service information.
 +
 [source,bash]
 ----
 kubectl -n ingress-nginx get svc ingress-nginx-controller
 ----
 
-. 获取 https 访问地址。
+. Get HTTPS access address.
 +
 --
 [source,bash]
@@ -364,13 +364,13 @@ echo https://kubesphere.my.org:$(kubectl -n ingress-nginx get svc ingress-nginx-
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Attention
 
 |
-将 kubesphere.my.org 替换为您的自定义域名。
+Replace `kubesphere.my.org` with your custom domain.
 |===
 
-输出示例如下（您的访问地址可能不同）：
+Example output (your address may differ):
 
 [source,bash]
 ----
@@ -378,14 +378,14 @@ https://kubesphere.my.org:31655
 ----
 --
 
-. 获取节点 IP。
+. Get node IP.
 +
 [source,bash]
 ----
 kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}'
 ----
 
-. 在访问{ks_product_both}控制台的机器上添加节点 IP 的 DNS，以配置域名解析规则。
+. On the machine accessing the {ks_product-en} web console, add DNS for node IP.
 +
 --
 [source,bash]
@@ -393,7 +393,7 @@ kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP
 vim /etc/hosts
 ----
 
-添加节点 IP 和域名。
+Add node IP and domain.
 
 [source,bash]
 ----
@@ -402,54 +402,54 @@ vim /etc/hosts
 
 [.admon.attention,cols="a"]
 |===
-|注意
+|Attention
 
 |
-将 kubesphere.my.org 替换为您的自定义域名。
+Replace `kubesphere.my.org` with your custom domain.
 |===
 
 --
 
-. 如果一切配置正确，您将能够通过第 3 步获取的 https 访问地址，如 https://kubesphere.my.org:31655 访问{ks_product_left} Web 控制台。
+. If everything is configured correctly, you should be able to access the {ks_product-en} web console using the HTTPS address obtained above, such as https://kubesphere.my.org:31655.
 
 
-== 故障排除
+== Troubleshooting
 
-=== 证书未成功签发
+=== Certificate Not Issued Successfully
 
-检查证书状态：
+Check certificate status:
 
 [source,bash]
 ----
 kubectl describe certificate -n kubesphere-system
 ----
 
-检查 cert-manager 日志：
+Check cert-manager logs:
 
 [source,bash]
 ----
 kubectl logs -n cert-manager -l app=cert-manager
 ----
 
-=== Ingress 配置问题
+=== Ingress Configuration Issues
 
-检查 Ingress 配置：
+Check Ingress configuration:
 
 [source,bash]
 ----
 kubectl describe ingress -n kubesphere-system
 ----
 
-检查 Ingress 控制器日志：
+Check Ingress controller logs:
 
 [source,bash]
 ----
 kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
 ----
 
-== 卸载
+== Uninstallation
 
-卸载 cert-manager
+Uninstall cert-manager
 
 [source,bash]
 ----
@@ -458,7 +458,7 @@ helm uninstall cert-manager -n cert-manager
 kubectl delete crd certificaterequests.cert-manager.io certificates.cert-manager.io challenges.acme.cert-manager.io clusterissuers.cert-manager.io issuers.cert-manager.io orders.acme.cert-manager.io
 ----
 
-卸载 NGINX Ingress Controller
+Uninstall NGINX Ingress Controller
 
 [source,bash]
 ----
