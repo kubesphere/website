@@ -9,8 +9,8 @@ section1:
   image: /images/live/background.jpg
 
 section2:
-  image: /images/live/cloudnative-live-20241228.png
-  url: ./meetup-guangzhou-20241228/
+  image: /images/live/cloudnative-live-20250222.png
+  url: ./meetup-chongqing-20250222/
 
   notice:
     title: KubeSphere Meetup 杭州站——2025
@@ -20,12 +20,41 @@ section2:
     url: ./meetup-hangzhou-20250419/
 
   over:
-    title: KubeSphere Meetup 成都站——2024
+    title: KubeSphere Meetup 广州站——2024
     tag: 结束
-    url: ./meetup-chengdu-20241123/
+    url: ./meetup-guangzhou-20241228/
 
 section3:
   videos:
+
+    - title: 云原生+ AI 融合之路探索
+      link: ./chongqing0222-yunyuansheng/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chongqing-20250222-cover-1.png
+      type: iframe
+      createTime: 2025.02.22
+      group: Meetup
+
+    - title: 大模型驱动 Agent 法律与视频领域的应用探索
+      link: ./chongqing0222-flomesh/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chongqing-20250222-cover-2.png
+      type: iframe
+      createTime: 2025.02.22
+      group: Meetup
+
+    - title: 用 DeepSeek 和 CosyVoice2 来生成有声书
+      link: ./chongqing0222-youshengshu/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chongqing-20250222-cover-3.png
+      type: iframe
+      createTime: 2025.02.22
+      group: Meetup
+
+    - title: DeepSeek 漫谈
+      link: ./chongqing0222-deepseek/
+      snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chongqing-20250222-cover-4.png
+      type: iframe
+      createTime: 2025.02.22
+      group: Meetup
+
     - title: Luban 青云智算平台 HAMi 的实践
       link: ./guangzhou1228-luban/
       snapshot: https://pek3b.qingstor.com/kubesphere-community/images/meetup-guangzhou-20241228-cover-1.png
@@ -1431,6 +1460,12 @@ section4:
   noticeImg: /images/live/notice.svg
   title: Meetup 回顾
   list:
+    - year: 2025
+      meetup: 
+        - place: 重庆站（02.22）
+          img: https://pek3b.qingstor.com/kubesphere-community/images/meetup-chongqing-20250222-cover.png
+          meetupUrl: https://kubesphere.io/zh/live/meetup-chongqing-20250222/
+          
     - year: 2024
       meetup: 
         - place: 广州站（12.28）
