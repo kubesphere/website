@@ -50,17 +50,17 @@ If you find a vulnerability or encounter a security incident involving vulnerabi
 
 Please kindly help provide as much vulnerability information as possible in the following format:
 
-- Issue title(Please add 'Security' lable)+++<span style="color: red;">*</span>+++:
+- Issue title (Please add `Security` label) +++<span style="color: red;">*</span>+++:
 
-- Overview+++<span style="color: red;">*</span>+++:
+- Overview +++<span style="color: red;">*</span>+++:
 
-- Affected components and version number+++<span style="color: red;">*</span>+++:
+- Affected components and version number +++<span style="color: red;">*</span>+++:
 
 - CVE number (if any):
 
-- Vulnerability verification process+++<span style="color: red;">*</span>+++:
+- Vulnerability verification process +++<span style="color: red;">*</span>+++:
 
-- Contact information+++<span style="color: red;">*</span>+++:
+- Contact information +++<span style="color: red;">*</span>+++:
 
 The asterisk (*) indicates the required field.
 
