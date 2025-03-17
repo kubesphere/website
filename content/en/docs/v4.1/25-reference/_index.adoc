@@ -1,0 +1,11 @@
+---
+title: "Reference"
+linkTitle: "Reference"
+weight: 25
+keywords: 'Kubernetes, KubeSphere, Glossary, Vocabulary'
+description: 'Learn about the glossary in KubeSphere.'
+layout: "second"
+icon: "/images/docs/common/docs.svg"
+---
+
+This section introduces the glossary in {ks_product-en}.

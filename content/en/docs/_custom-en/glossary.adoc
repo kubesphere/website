@@ -1,299 +1,300 @@
-== 通用术语
+== General Terms
 
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|集群（Cluster）
-|集群是一组相互独立的计算机或服务器组成的一个较大的计算机服务系统。
+|Cluster
+|A cluster is a larger computer service system composed of a group of independent computers or servers.
 
-|节点（Node）
-|节点是组成集群的每一台工作机器，可以是虚拟机也可以是物理机。每个节点都可以独立运行和处理任务。
+|Node
+|A node is each machine that makes up a cluster, which can be either a virtual machine or a physical machine. Each node can operate and process tasks independently.
 
-|企业空间（Workspace）
-|企业空间是用来管理项目和组织成员的基本逻辑单元，是 KubeSphere 多租户系统的基础。
+|Workspace
+|A workspace is the basic logical unit for managing projects and members, serving as the foundation of the KubeSphere multi-tenant system.
 
-|企业空间成员
-|邀请至企业空间中工作的用户，拥有特定的权限。
+|Workspace Member
+|A user invited to work in a workspace with specific permissions.
 
-|项目
-|KubeSphere 中的项目对应 Kubernetes 中的命名空间。
+|Project
+|A project in KubeSphere corresponds to a namespace in Kubernetes.
 
-|多集群项目
-|工作负载部署在多个集群上的项目。
+|Multi-cluster Project
+|A project where workloads are deployed across multiple clusters.
 
-|项目成员
-|邀请至项目中工作的用户，拥有特定的权限。
+|Project Member
+|A user invited to work in a project with specific permissions.
 
-|控制台
-|用户的登录页面，会显示租户拥有访问权限的资源，例如企业空间和项目。
+|Console
+|The user login page, displaying resources such as workspaces and projects that the tenant has access to.
 
-|容器组（Pod）
-|Pod 是应⽤程序的最⼩管理单元，相当于应⽤程序的逻辑主机。每个容器组包含⼀个或多个容器，这些容器共享一些集群资源。每个容器组都旨在运行给定应用程序的单个实例。
+|Pod
+|A Pod is the smallest manageable unit of an application in Kubernetes, functioning as the logical host for the application. Each Pod contains one or more containers that share resources such as network and storage. Typically, a Pod is used to run a single instance of a given application.
 
-|容器（Container）
-|容器是可移植、可执行的轻量级的镜像，用于封装应用程序及其依赖项的独立运行环境。
+|Container
+|A container is a portable, executable lightweight image used to encapsulate an application and its dependencies in an independent runtime environment.
 
-|镜像（Image）
-|镜像是保存的容器实例，包含了应用程序的代码、运行时环境和依赖项。
+|Image
+|An image is a static template for a container, containing the application's code, runtime environment, and dependencies, and is used to create container instances.
 
 |Docker
-|一个开源的应用容器引擎，用于创建、部署和管理容器。
+|An open-source application container engine used to create, deploy, and manage containers.
 
 |Docker Hub
-|一个容器镜像存储库。
+|A container image repository.
 
 |KubeKey
-|一种全新的安装工具，提供灵活的安装选择，既可以仅安装 Kubernetes，也可以同时安装 Kubernetes 和 KubeSphere。KubeKey 还支持多种安装选项，例如 All-in-One、多节点安装以及离线安装，用户只需要先准备好配置文件再执行相关命令即可。
+|A new installation tool that offers flexible installation options, allowing users to install Kubernetes alone or Kubernetes and KubeSphere together. KubeKey also supports various installation methods, such as All-in-One, multi-node, and offline installation. Users only need to prepare the configuration file and execute the relevant commands.
 
-|ks-installer
-|在已有 Kubernetes 集群上部署 KubeSphere 的安装包。
+// |ks-installer
+// |An installation package for deploying KubeSphere on an existing Kubernetes cluster.
 
 |kube-proxy
-|kube-proxy 是集群中每个节点上所运行的网络代理。
+|kube-proxy is a network proxy running on each node in the cluster.
 
 |Kubectl
-|亦称作: kubectl，与集群的控制平面进行通信的命令行工具，用于集群管理、应用部署、资源状态 查询等操作。
+|kubectl is the command-line tool for Kubernetes, used to communicate with the control plane of a cluster. It supports operations such as cluster management, application deployment, and resource status queries.
 
 |Kubelet
-|kubelet 会在集群中每个节点上运行。它保证容器（containers）都运行在 Pod 中。
+|kubelet runs on each node in the cluster. It ensures that containers are running in Pods.
 |===
 
 
-== 集群
+== Cluster
 
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|集群节点
-|集群本地的节点，通常所有集群节点都属于同⼀个私有⽹络。包含控制平面节点和工作节点。
+|Cluster Node
+|A node local to the cluster, typically belonging to the same private network. Includes control plane nodes and worker nodes.
 
-|控制平面节点
-|也称为主节点，用来控制和管理整个集群。
+|Control Plane Node
+|Also known as the master node, it controls and manages the entire cluster.
 
-|工作节点
-|提供容器运行环境，用来运行实际部署的应用。
+|Worker Node
+|Provides the container running environment and runs the actual deployed applications.
 
-|边缘节点
-|部署在边缘环境中受 KubeSphere 管理的节点。
+|Edge Node
+|Nodes deployed in edge environments and managed by KubeSphere, typically used to process local data and provide low-latency services.
 
-|主集群
-|又称为 host 集群， host 集群管理成员集群，并提供统一的多集群中央控制平面。
+|Host Cluster
+|Also known as the host cluster, it manages member clusters and provides a unified multi-cluster central control plane.
 
-|成员集群
-|又称为 member 集群，member 集群在多集群架构中由主集群统一管理。
+|Member Cluster
+|Also known as a member cluster, it is managed by the host cluster in a multi-cluster architecture.
 
-|直接连接
-|当主集群的任意节点均可访问成员集群的 kube-apiserver 地址时可使用此方式直接连接主集群和成员集群。
+|Direct Connection
+|A connection method used when any node in the host cluster can access the kube-apiserver address of the member cluster.
 
-|代理连接
-|当主集群无法直接连接成员集群时可使用代理方式连接主集群和成员集群。
+|Proxy Connection
+|A connection method used when the host cluster cannot directly connect to the member cluster.
 
 |jwtSecret
-|主集群和成员集群中用于校验用户身份的密钥。
+|The key used in both the host cluster and member clusters to generate and validate user identity tokens (JWT).
 
 |Tower
-|多集群代理连接组件，包含 proxy 和 agent 两个部分，分别部署于主集群和成员集群。
+|A multi-cluster proxy connection extension, consisting of proxy and agent, deployed in the host cluster and member cluster, respectively.
 
-|代理服务地址
-|使用代理连接时，成员集群上的 Tower agent 需要获取的主集群的通信服务地址。
+|Proxy Service Address
+|The communication service address of the host cluster that the Tower agent on the member cluster needs to access when using a proxy connection.
 
-|集群可⻅性
-|控制集群授权给哪些企业空间，以便企业空间可以使用所授权的集群。
+|Cluster Visibility
+|Controls which workspaces are authorized to use the cluster, enabling the workspace to utilize the authorized cluster.
 |===
 
-== 应用程序和应用负载
+== Applications and Workloads
 
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
 |OpenPitrix
-|一个用于打包、部署和管理不同类型应用的开源系统。
+|An open-source system for packaging, deploying, and managing different types of applications.
 
-|应用模板
-|某个应用程序的模板，租户可使用应用模板部署新的应用程序实例。
+|Application Template
+|A template for an application, which tenants can use to deploy new application instances.
 
-|应用商店
-|应用商店包含内置应用，平台租户也可在应用商店中分享不同的应用程序。
+|App Store
+|The App Store contains built-in applications, and platform tenants can also share different applications in the App Store.
 
-|⼯作负载（Workload）
-|工作负载是在 Kubesphere 上运行的应用程序，负责管理⼀个应⽤程序的一个或多个容器组。
+|Workload
+|A workload is an application running on Kubesphere, responsible for managing one or more Pods of an application.
 
-|部署（Deployment）
-|一种工作负载类型，⽤于管理⽆状态应⽤。一个部署运行着应用程序的几个副本，它会自动替换宕机或故障的实例。有关更多信息，请参阅link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/[部署]。
+|Deployment
+|A type of workload used to manage stateless applications. A Deployment runs multiple replicas of an application and automatically replaces failed instances. For more information, see link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/deployment/[Deployment].
 
-|有状态副本集（StatefulSet）
-|有状态副本集是用于管理有状态应用程序的工作负载对象，例如 MySQL。有关更多信息，请参阅link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/statefulset/[有状态副本集]。
+|StatefulSet
+|A workload object used to manage stateful applications, such as MySQL. For more information, see link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/statefulset/[StatefulSet].
 
-|守护进程集（DaemonSet）
-|守护进程集管理多组容器组副本，确保 Pod 的副本在集群中的一组节点上运行。有关更多信息，请参阅link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/[守护进程集]。
+|DaemonSet
+|A DaemonSet manages multiple Pod replicas, ensuring that Pod replicas run on a set of nodes in the cluster. For more information, see link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/daemonset/[DaemonSet].
 
-|任务（Job）
-|Job 是需要运行完成的确定性的或批量的任务，⽤于管理仅运⾏⼀次或周期性运⾏的容器组。有关更多信息，请参阅link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/[任务]。
+|Job
+|A Job is a deterministic or batch task that needs to be completed, used to manage Pods that run once or periodically. For more information, see link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/job/[Job].
 
-|定时任务（CronJob）
-|定时任务是需要在特定的时间运行，或在指定的时间间隔内重复运行的批处理任务。有关更多信息，请参阅link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/cron-jobs/[定时任务]。
+|CronJob
+|A CronJob is a batch task that needs to run at a specific time or at specified intervals. For more information, see link:https://kubernetes.io/zh/docs/concepts/workloads/controllers/cron-jobs/[CronJob].
 
-|服务（Service）
-|将运行在容器组上的应用程序公开为网络服务，提供了固定的地址（域名或 IP 地址）供客⼾端访问。有关更多信息，请参阅link:https://kubernetes.io/zh/docs/concepts/services-networking/service/[服务]。
+|Service
+|Exposes applications running on Pods as network services, providing a fixed address (domain name or IP address) for client access. For more information, see link:https://kubernetes.io/zh/docs/concepts/services-networking/service/[Service].
 
 |NodePort
-|通过每个节点上的 IP 和静态端口（NodePort）暴露服务，可通过<节点 IP>:<NodePort>方式来访问服务。
+|Exposes a service through the IP and static port (NodePort) on each node, accessible via <Node IP>:<NodePort>.
 
 |LoadBalancer
-|使用云服务商提供的负载均衡器向外部暴露服务。
+|Exposes a service externally using a cloud provider's load balancer.
 
-|应⽤路由（Ingress）
-|应⽤路由⽤于对服务进⾏聚合并提供给集群外部访问。每个应⽤路由包含域名及其⼦路径到不同服务的映射规则。KubeSphere 应用路由对应 Kubernetes 中的 Ingress。
+|Ingress
+|Ingress is used to aggregate services within the cluster and provide external access. Each Ingress contains mapping rules from domain names and their subpaths to different services. In KubeSphere, Ingress corresponds to Kubernetes Ingress.
 |===
 
-== 存储
+== Storage
 
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|存储卷
-|一个基础资源对象，用于向容器提供存储。
+|Volume
+|A basic resource object used to provide storage for containers.
 
-|存储类（Storage Class）
-|定义可供容器使⽤的存储卷类型。
+|Storage Class
+|Defines the types of storage volumes available for containers.
 
-|持久卷声明（Persistent Volume Claim, PVC）
-|持久卷声明是用户对于存储需求的一种声明，它是命名空间里的资源，声明信息中可以指定存储大小、访问模式等。系统根据持久卷声明创建持久卷。
+|Persistent Volume Claim (PVC)
+|A Persistent Volume Claim (PVC) is a user's declaration of storage requirements, which is a namespaced resource. The declaration can specify storage size, access modes, and more. The system binds or creates a Persistent Volume (PV) based on the Persistent Volume Claim.
 
-|持久卷（Persistent Volume, PV）
-|根据持久卷声明中的参数，在后端存储系统中创建的可供容器使⽤的存储区域。它是通用的、可插拔的、并且不受单个 Pod 生命周期约束的持久化资源。
+|Persistent Volume (PV)
+|A storage area created in the backend storage system based on the parameters in the PVC, available for containers. It is a general-purpose, pluggable, and persistent resource not bound by the lifecycle of a single Pod.
 
-|卷快照类
-|定义可保存快照数据的⼀类卷快照。
+|Volume Snapshot Class
+|Defines a class of volume snapshots that can save snapshot data.
 
-|卷快照
-|卷的数据在某一个时刻的完整拷贝或镜像。可通过快照将数据完整地恢复到快照时间点。
+|Volume Snapshot
+|A complete copy or image of volume data at a specific point in time. Data can be fully restored to the snapshot point using the snapshot.
 
-|卷快照内容
-|根据卷快照中的参数，在后端存储系统中保存的快照数据。
+|Volume Snapshot Content
+|The snapshot data saved in the backend storage system based on the parameters in the volume snapshot.
 |===
 
 == DevOps
 
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|DevOps 项目
-|DevOps 项目用于创建和管理流水线和凭证。
+|DevOps Project
+|DevOps Project is used to create and manage pipelines, credentials, and CI/CD-related resources.
 
 |SCM (Source Control Management)
-|源控制管理，例如 GitHub 和 Gitlab。
+|Source control management, such as GitHub and GitLab.
 
 |In-SCM
-|通过 SCM 工具构建基于 Jenkinsfile 的流水线。
+|Building Jenkinsfile-based pipelines through SCM tools.
 
 |Out-of-SCM
-|通过图形编辑面板构建流水线，无需编写 Jenkinsfile。
+|Building pipelines through a graphical editing panel without writing Jenkinsfile.
 
-|CI 节点
-|流水线、S2I 和 B2I 任务的专用节点。一般来说，应用程序往往需要在构建过程中拉取多个依赖项，这可能会导致如拉取时间过长、网络不稳定等问题，从而使得构建失败。为了确保流水线正常运行并加快构建速度（通过缓存），您可以配置一个或一组 CI 节点以供 CI/CD 流水线和 S2I/B2I 任务专用。
+|CI Node
+|A dedicated node for pipelines, S2I, and B2I tasks. Applications often need to pull multiple dependencies during the build process, which can lead to issues such as long pull times, network instability, and build failures. To ensure pipeline stability and speed up builds (through caching), you can configure one or a group of CI nodes dedicated to CI/CD pipelines and S2I/B2I tasks.
 
 |B2I (Binary-to-Image)
-|B2I 是一套从二进制可执行文件（例如 Jar 和 War 等）构建可再现容器镜像的工具和工作流。开发者和运维团队在项目打包成 War 和 Jar 这一类的制品后，可快速将制品或二进制的 Package 打包成 Docker 镜像，并发布到 DockerHub 或 Harbor 等镜像仓库中。
+|B2I is a set of tools and workflows for building reproducible container images from binary executables (e.g., Jar and War). Developers and operations teams can quickly package artifacts or binary packages into Docker images and publish them to image repositories like DockerHub or Harbor.
 
 |S2I (Source-to-Image)
-|S2I 是一套从源代码构建可再现容器镜像的工具和工作流。通过将源代码注入容器镜像，自动将编译后的代码打包成镜像。在 KubeSphere 中支持 S2I 构建镜像，也支持以创建服务的形式，一键将源代码生成镜像推送到仓库，并创建其部署和服务最终自动发布到 Kubernetes 中。
+|S2I is a set of tools and workflows for building reproducible container images from source code. By injecting source code into container images, it automatically packages the compiled code into an image. KubeSphere supports S2I for building images and creating services to generate images from source code, push them to repositories, and deploy them to Kubernetes.
 |===
 
-== 日志、事件和审计
+== Logs, Events, and Auditing
 
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|日志
-|日志是集群或应用程序记录的事件列表。
+|Log
+|A list of events recorded by the cluster or applications.
 
-|⽇志接收器
-|收集系统的各类⽇志，包括：容器⽇志、资源事件、审计⽇志。
+|Log Receiver
+|Collects various system logs, including container logs, resource events, and audit logs.
 
-|审计策略
-|审计策略定义事件记录和所含数据的一系列规则。
+|Audit Policy
+|Defines a series of rules for event recording and the data included.
 
-|审计规则
-|审计规则定义如何处理审计日志。
+|Audit Rule
+|Defines how audit logs are processed.
 
-|审计 Webhook
-|Kubernetes 审计日志会发送至审计 Webhook。
+|Audit Webhook
+|Kubernetes audit logs are sent to the audit webhook.
 |===
 
-== 网络
+== Network
 
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|网关（Gateway）
-|为服务提供反向代理。⽹关根据应⽤路由中定义的规则将业务流量转发给不同的服务。
+|Gateway
+|Provides reverse proxy for services. The gateway forwards business traffic to different services based on the rules defined in the Ingress.
 
-|⽹络策略
-|⽤于控制集群中容器组的访问和被访问权限。可以只允许容器组访问特定的其他容器组或⽹段；只允许容器组被特定的其他容器组或⽹段访问。
+|Network Policy
+|Controls the access permissions of Pods in the cluster. It can restrict Pods to accessing only specific other Pods or network segments and being accessed only by specific other Pods or network segments.
 
-|容器组 IP 池
-|包含多个虚拟 IP 地址，⽤于为容器组分配虚拟 IP 地址。每个容器组 IP 池包含⼀个可在集群内部访问的私⽹ IP ⽹段。
+|Pod IP Pool
+|Contains multiple virtual IP addresses used to assign virtual IP addresses to Pods. Each Pod IP pool contains a private IP network segment accessible within the cluster.
 |===
 
-== 监控、告警和通知
+== Monitoring, Alerts, and Notifications
+
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|告警规则组
-|用于在特定监控指标满⾜预设条件和持续时间时⽣成告警。
+|Alert Rule Group
+|Used to generate alerts when specific monitoring metrics meet preset conditions and durations.
 
 |Prometheus
-|负责监控存储系统的各项数据，根据告警规则向告警管理器发送告警信息。
+|Responsible for storing monitoring system data and sending alert information to the alert manager based on alert rules.
 |===
 
-== 其他
+== Others
+
 [%header,cols="1a,4a"]
 |===
-|术语
-|说明
+|Term
+|Description
 
-|污点（Taint）
-|⽤⼾在节点上创建的标记，由键、值和效果三部分组成。与容器组上创建的容忍度配合使⽤，以确保不会将 Pod 调度到不适合的节点上。
+|Taint
+|A mark created by a user on a node, consisting of a key, value, and effect. Used in conjunction with tolerations on Pods to ensure Pods are not scheduled on inappropriate nodes.
 
-|容忍度（Toleration）
-|容忍度表示允许将 Pod 调度到具有对应污点的节点或节点组上。由键、值和效果三部分组成。容忍度和污点共同作用可以确保不会将 Pod 调度在不适合的节点上。
+|Toleration
+|Allows Pods to be scheduled on nodes or node groups with corresponding taints. Consists of a key, value, and effect. Tolerations and taints work together to ensure Pods are not scheduled on inappropriate nodes.
 
-|标签（Label）
-|标签是为对象设置的可标识的键值对，通常用来管理和选择对象子集。
+|Label
+|A key-value pair set on an object for identification, typically used to manage and select subsets of objects.
 
-|注解（Annotation）
-|注解是以键值对的形式给资源对象附加随机的无法标识的元数据。
+|Annotation
+|Key-value pairs attached to resource objects as random, non-identifiable metadata.
 
-|会话保持
-|将同⼀个会话中来⾃同⼀个客⼾端的请求全部转发给同⼀个容器组。
+|Session Affinity
+|Ensures all requests from the same client in the same session are forwarded to the same Pod.
 
-|保密字典（Secret）
-|包含 Base64 编码的键值对，⽤于存储密码、令牌、密钥等保密数据。
+|Secret
+|Contains Base64-encoded key-value pairs, used to store confidential data such as passwords, tokens, and keys.
 
-|配置字典（ConfigMap）
-|以键值对的形式存储环境变量、命令⾏参数和配置⽂件等⾮保密数据。
+|ConfigMap
+|Stores non-confidential data such as environment variables, command-line parameters, and configuration files in key-value pairs.
 
-|服务账户（ServiceAccount）
-|存储当前集群的访问信息，⽤于向集群内外的应⽤程序提供集群的访问权限。
+|ServiceAccount
+|Stores access information for the current cluster, used to provide cluster access permissions to applications inside and outside the cluster.
 
-|定制资源定义（CustomResourceDefinition）
-|使⽤定制资源定义创建定制资源。通过定制化的代码给 API 服务器增加资源对象，而无需编译完整的定制 API 服务器。
+|CustomResourceDefinition (CRD)
+|Used to create custom resources. Adds resource objects to the API server through custom code without compiling a complete custom API server.
 |===
-
