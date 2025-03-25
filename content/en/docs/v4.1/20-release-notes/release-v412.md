@@ -8,13 +8,6 @@ weight: 44
 
 ## KubeSphere
 
-### Installation/Upgrade Command
-
-```
-# If you are accessing charts.kubesphere.io from a restricted location, replace charts.kubesphere.io with charts.kubesphere.com.cn
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.3.tgz --debug --wait
-```
-
 ### Features
 
 - Support for OCI-based Helm Chart repositories.

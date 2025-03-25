@@ -184,7 +184,7 @@ include::../../../_custom-en/installationAndUpgrade/installationAndUpgrade-oper-
  ./kk create config --with-kubernetes <Kubernetes version>
 ----
 
-Replace `<Kubernetes version>` with the actual version needed, for example **v1.27.4**. {ks_product-en} by default supports Kubernetes v1.21~1.28.
+Replace `<Kubernetes version>` with the actual version needed, for example **v1.27.4**.
 
 After the command completes, the installation configuration file **config-sample.yaml** will be generated.
 

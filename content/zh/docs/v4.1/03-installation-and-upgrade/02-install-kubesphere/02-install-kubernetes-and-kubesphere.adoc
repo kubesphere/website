@@ -11,13 +11,6 @@ weight: 02
 
 安装过程中将用到开源工具 KubeKey。有关 KubeKey 的更多信息，请访问 link:https://github.com/kubesphere/kubekey[GitHub KubeKey 仓库]。
 
-[.admon.note,cols="a"]
-|===
-|说明
-
-|您也可以直接运行link:#_安装kubesphere[安装 KubeSphere] 的命令将 KubeSphere v4.1.1 升级到 v4.1.2。
-
-|===
 
 == 前提条件
 
@@ -189,7 +182,7 @@ include::../../../_custom/installationAndUpgrade/installationAndUpgrade-oper-dow
  
 ----
 
-将 <Kubernetes version> 替换为实际需要的版本，例如 **v1.28.12**。{ks_product_right}默认支持 Kubernetes v1.21~1.28。
+将 <Kubernetes version> 替换为实际需要的版本，例如 **v1.28.12**。
 
 命令执行完毕后将生成安装配置文件 **config-sample.yaml**。
 
@@ -368,7 +361,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 [,bash]
 ----
 # 如果无法访问 charts.kubesphere.io, 可将 charts.kubesphere.io 替换为 charts.kubesphere.com.cn
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.3.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz --debug --wait
 ----
 
 include::../../../../_ks_components/admonitions/note.adoc[]

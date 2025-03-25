@@ -278,7 +278,7 @@ helm del -n kube-federation-system kubefed
 
 ## 安装 KubeSphere 4.1.2
 
-### 升级 Crd
+### 升级 CRD
 
 ```
 # 下载 ks-core chart 包
