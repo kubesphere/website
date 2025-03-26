@@ -371,7 +371,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 [,bash]
 ----
 # If you are accessing charts.kubesphere.io from a restricted location, replace charts.kubesphere.io with charts.kubesphere.com.cn
-helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.3.tgz --debug --wait
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz --debug --wait
 ----
 
 include::../../../../_ks_components-en/admonitions/note.adoc[]
