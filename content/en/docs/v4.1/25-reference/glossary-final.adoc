@@ -1,0 +1,9 @@
+---
+title: "Glossary"
+linkTitle: "Glossary"
+weight: 01
+keywords: 'Kubernetes, KubeSphere, Glossary, Vocabulary'
+description: 'Glossary of terms used in KubeSphere.'
+---
+
+include::../../_custom-en/glossary.adoc[]
