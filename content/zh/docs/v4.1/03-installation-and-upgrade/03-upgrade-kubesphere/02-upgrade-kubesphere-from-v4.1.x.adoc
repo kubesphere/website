@@ -1,0 +1,170 @@
+---
+title: "从 v4.1.x 升级到 v4.1.3"
+keywords: "Kubernetes, {ks_product}, 安装, 升级{ks_product_left}"
+description: "介绍如何升级{ks_product_left}。"
+weight: 02
+---
+
+本节介绍如何在保持当前的 Kubernetes 版本不变的情况下从{ks_product_left} v4.1.x 升级到{ks_product_left} v4.1.3。
+
+
+== 前提条件
+
+* 请确保当前{ks_product_both}版本为 v4.1.x。
+
+* 请确保当前 Kubernetes 版本为 v1.21.x ~ v1.30.x。
+
+* 若扩展组件有特殊配置，需备份扩展组件配置。在“扩展组件配置”对话框中，下载文件备份。
+
+* 为避免数据丢失，请提前备份所有重要数据。
+
+
+== 升级{ks_product_left}
+
+{ks_product_right} v4.1 及后续版本采用 helm 升级 ks-core。
+
+=== 升级 host 集群
+
+. 确认当前集群为待升级集群。
++
+--
+[source,bash]
+----
+kubectl get node -o wide
+----
+--
+
+. 导出当前集群 ks-core 的配置。
++
+--
+[source,bash]
+----
+helm get values -n kubesphere-system ks-core -o yaml > host-cluster-custom-values.yaml
+----
+--
+
+. 修改配置文件
++
+--
+[source,yaml]
+----
+# 需要注意以下配置项，其他的配置字段请保留
+global:
+  imageRegistry: docker.io
+extension:
+  imageRegistry: docker.io
+
+# 注意集群角色参数由 role 变更为 multicluster.role
+multicluster:
+  role: host
+----
+--
+
+. 执行以下命令开始升级。
++
+--
+[source,bash]
+----
+helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f host-cluster-custom-values.yaml --wait --debug
+----
+--
+
+. 检查 host 集群是否升级成功
++
+--
+[source,bash]
+----
+helm -n kubesphere-system get metadata ks-core
+NAME: ks-core
+CHART: ks-core
+VERSION: 1.1.4
+APP_VERSION: v4.1.3
+NAMESPACE: kubesphere-system
+REVISION: 26
+STATUS: deployed
+DEPLOYED_AT: 2025-03-27T11:10:00+08:00
+----
+--
+
+=== 升级 member 集群
+
+升级 member 集群与升级 host 集群的步骤基本一致，但需注意 member 集群中的特殊参数配置。
+
+. 确认当前 member 集群为待升级集群。
++
+--
+[source,bash]
+----
+kubectl get node -o wide
+----
+--
+
+. 导出当前集群 ks-core 的配置。
++
+--
+[source,bash]
+----
+helm get values -n kubesphere-system ks-core -o yaml > member-cluster-custom-values.yaml
+----
+--
+
+. 修改修改配置文件
++
+--
+[source,bash]
+----
+# 需要注意以下配置项，其他的配置字段请保留
+global:
+  imageRegistry: docker.io
+authentication:
+  issuer:
+    jwtSecret: <REDACTED>
+
+# 注意集群角色参数由 role 变更为 multicluster.role
+multicluster:
+  role: member
+----
+--
+
+. 执行以下命令开始升级。
++
+--
+[source,bash]
+----
+helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f member-cluster-custom-values.yaml --wait --debug
+----
+--
+
+. 检查 member 集群是否升级成功
++
+--
+[source,bash]
+----
+helm -n kubesphere-system get metadata ks-core
+NAME: ks-core
+CHART: ks-core
+VERSION: 1.1.4
+APP_VERSION: v4.1.3
+NAMESPACE: kubesphere-system
+REVISION: 13
+STATUS: deployed
+DEPLOYED_AT: 2025-03-27T11:10:00+08:00
+----
+--
+
+=== 升级扩展组件
+
+在扩展中心升级所需的扩展组件。
+
+. 在扩展中心点击组件名称，进入组件详情页。
+
+. 点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**扩展组件配置**。
+
+. 在**扩展组件配置**对话框中，点击**恢复推荐配置**，然后在默认配置中手动修改为定制化的配置，点击**确定**。
+
+. 再次点击组件图标下的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**更新**。
+
+. 在**扩展组件更新**对话框中，点击**开始更新**等待升级完成。
+
+
+至此，{ks_product_right}完成全部升级。
