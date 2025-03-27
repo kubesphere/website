@@ -32,7 +32,7 @@ include::../../../../../_ks_components-en/oper-navigate.adoc[]
 |===
 |Parameter |Description
 
-|Username
+|Name
 |The username of the workspace member.
 
 |Status
