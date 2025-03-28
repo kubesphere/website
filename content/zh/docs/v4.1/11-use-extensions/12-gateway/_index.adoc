@@ -5,7 +5,7 @@ weight: 12
 layout: "second"
 ---
 
-本节介绍如何使用“KubeSphere 网关”扩展组件，启用和管理集群、企业空间和项目的网关，以及管理集群和项目的应用路由。
+本节介绍如何使用“KubeSphere 网关”扩展组件，启用和管理集群、企业空间和项目的网关。
 
 include::../../../_custom/clusterManagement/gatewaySettings/gatewaySettings-desc-gateway.adoc[]
 
@@ -16,7 +16,7 @@ include::../../../_custom/clusterManagement/gatewaySettings/gatewaySettings-desc
 * 集群左侧导航栏的**集群设置**菜单下将显⽰**网关设置**选项；
 * 企业空间左侧导航栏的**企业空间设置**菜单下将显⽰**网关设置**选项；
 * 项目左侧导航栏的**项目设置**菜单下将显⽰**网关设置**选项。
-* 集群和项目下才能创建和管理应用路由。
+
 
 [.admon.tip,cols="a"]
 |===

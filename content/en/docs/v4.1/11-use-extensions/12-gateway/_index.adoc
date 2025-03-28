@@ -5,7 +5,7 @@ weight: 12
 layout: "second"
 ---
 
-This section introduces how to use the "KubeSphere Gateway" extension to enable and manage gateways for clusters, workspaces, and projects, as well as manage application routes for clusters and projects.
+This section introduces how to use the "KubeSphere Gateway" extension to enable and manage gateways for clusters, workspaces, and projects.
 
 include::../../../_custom-en/clusterManagement/gatewaySettings/gatewaySettings-desc-gateway.adoc[]
 
@@ -16,7 +16,7 @@ After installing the "KubeSphere Gateway" extension,
 * The **Gateway Settings** option will be displayed under the **Cluster Settings** menu in the left navigation pane of the cluster;
 * The **Gateway Settings** option will be displayed under the **Workspace Settings** menu in the left navigation pane of the workspace;
 * The **Gateway Settings** option will be displayed under the **Project Settings** menu in the left navigation pane of the project.
-* Ingresses can be created and managed under clusters and projects.
+
 
 [.admon.tip,cols="a"]
 |===

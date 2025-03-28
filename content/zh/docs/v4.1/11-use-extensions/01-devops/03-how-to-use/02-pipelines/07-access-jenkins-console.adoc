@@ -6,7 +6,7 @@ weight: 07
 ---
 
 
-安装 DevOps 时，默认情况下也会安装 Jenkins 仪表板。但需按照以下步骤配置后，才能访问 Jenkins 仪表板。
+安装 DevOps 时，默认情况下也会安装 Jenkins 仪表板。
 
 == 前提条件
 
@@ -14,75 +14,41 @@ weight: 07
 
 == 操作步骤
 
-. 在集群节点上执行以下命令获取 Jenkins 的地址。
+. 查看 jenkins 仪表盘对应的服务，然后参阅link:../../../../../02-quickstart/08-access-a-service/[如何访问服务]，访问 Jenkins 仪表板。
 +
 --
-// Bash
-[,bash]
-----
-export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services devops-jenkins)
-export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonpath="{.items[0].status.addresses[0].address}")
-echo http://$NODE_IP:$NODE_PORT
-----
-
-您将获得如下输出：
-
-[,bash]
-----
-http://10.77.1.201:30180
-----
---
-
-. 检查 DevOps 扩展组件配置中的 `jenkins.securityRealm.openIdConnect.kubesphereCoreApi` 和 `jenkins.securityRealm.openIdConnect.jenkinsURL` ，确保已经分别修改为 kubesphere-console 和 devops-jenkins 服务实际可访问的地址。如果不是，请修改并等待组件更新完成。
-+
-[,yaml]
-----
-jenkins:
-    securityRealm:
-    openIdConnect:
-        # The kubesphere-core api used for jenkins OIDC
-        # If you want to access to jenkinsWebUI, the kubesphereCoreApi must be specified and browser-accessible
-        # Modifying this configuration will take effect only during installation
-        # If you wish for changes to take effect after installation, you need to update the jenkins-casc-config ConfigMap, copy the securityRealm configuration from jenkins.yaml to jenkins_user.yaml, save, and wait for approximately 70 seconds for the changes to take effect.
-        kubesphereCoreApi: "http://192.168.1.1:30880"
-        # The jenkins web URL used for OIDC redirect
-        jenkinsURL: "http://192.168.1.1:30180"
-----
-
-. 检查配置字典 `jenkins-casc-config` 中 `jenkins_user.yaml` 下 `securityRealm.oic` 的所有地址，确保与 `jenkins.yaml` 下 `securityRealm.oic` 中的一样，都改为 kubesphere-console 实际可访问的地址。如果不一样，请修改并等待其生效。
-+
-[,yaml]
-----
-        securityRealm:
-          oic:
-            clientId: "jenkins"
-            clientSecret: "jenkins"
-            tokenServerUrl: "http://192.168.1.1:30880/oauth/token"
-            authorizationServerUrl: "http://192.168.1.1:30880/oauth/authorize"
-            userInfoServerUrl: "http://192.168.1.1:30880/oauth/userinfo"
-            endSessionEndpoint: "http://192.168.1.1:30880/oauth/logout"
-            logoutFromOpenidProvider: true
-            scopes: openid profile email
-            fullNameFieldName: url
-            userNameField: preferred_username
-----
-
-. 检查配置字典 `kubesphere-config` 中的 `authentication.issuer.url`，确保已经修改为 kubesphere-console 实际可访问的地址。如果不是，请修改并重启 Deployment ks-apiserver 使其生效。
-+
---
-[,yaml]
-----
-    authentication:
-      issuer:
-        url: "http://192.168.1.1:30880"
-----
-
 [source,bash]
 ----
-kubectl -n kubesphere-system rollout restart deploy ks-apiserver
+kubectl -n kubesphere-devops-system get svc devops-jenkins
 ----
 --
 
-. 使用地址 http://NodeIP:30180 访问 Jenkins 仪表板。
+. 获取 jenkins 管理员的用户名和密码。
 +
-Jenkins 配置有{ks_product_left} LDAP，这意味着您可以直接使用{ks_product_both}账户（例如 `admin/P@88w0rd`）登录 Jenkins。
+--
+[source,bash]
+----
+kubectl -n kubesphere-devops-system get secret devops-jenkins -o yaml
+----
+
+输出示例：
+[source,yaml]
+----
+data:
+  jenkins-admin-password: aXMxZno1Z3lnQWFTaGRIU2EwUDZkbg==
+  jenkins-admin-token: MTE5NTQ4NDY3MTE4MDQ4ODAzMDI1MTc3MDk1OTUwNTM2MQ==
+  jenkins-admin-user: YWRtaW4=
+----
+
+将 `jenkins-admin-user` 和 `jenkins-admin-password` 对应的内容 base64 解码后，即得到 jenkins 管理员的用户名和密码。
+--
+
+. 使用获取的用户名和密码，登录 Jenkins 仪表板。
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+若想以 LDAP 或 OpenId Connect 的方式登录 jenkins 仪表板，请参阅扩展中心 DevOps 扩展组件的详情页说明。
+|===

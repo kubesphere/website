@@ -14,19 +14,21 @@ include::../../../../_custom-en/clusterManagement/routes/routes-desc-viewARouteL
 
 == Prerequisites
 
-include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
 
 
 == Steps
 
-. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
 
 +
 
 include::../../../../../_ks_components-en/oper-navigate.adoc[]
 +
 ====
-include::../../../../_custom-en/clusterManagement/routes/routes-para-routeList.adoc[]
+include::../../../../_custom-en/clusterManagement/routes/routes-para-routeList-cluster_v413.adoc[]
+
+* From the drop-down list in the upper left corner, select a project to view the Ingress in that specific project.
 
 include::../../../../_custom-en/clusterManagement/routes/routes-oper-searchForRoutes.adoc[]
 

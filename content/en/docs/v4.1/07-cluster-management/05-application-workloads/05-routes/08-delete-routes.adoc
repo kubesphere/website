@@ -1,0 +1,42 @@
+---
+title: "Delete Ingresses"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress, delete Ingress"
+description: "Learn how to delete an Ingress."
+weight: 08
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../_custom-en/clusterManagement/routes/routes-desc-deleteMultipleRoutes.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+== Delete a Single Ingress
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-deleteASingleRoute.adoc[]
+
+
+== Delete Multiple Ingresses
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-deleteRoutes.adoc[]

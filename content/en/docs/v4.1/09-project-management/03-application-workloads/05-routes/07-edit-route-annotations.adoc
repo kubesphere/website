@@ -1,0 +1,29 @@
+---
+title: "Edit Ingress Annotations"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress, edit Ingress annotations"
+description: "Learn how to edit Ingress annotations."
+weight: 07
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../_custom-en/clusterManagement/routes/routes-desc-editRouteAnnotations.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-editRouteAnnotations.adoc[]

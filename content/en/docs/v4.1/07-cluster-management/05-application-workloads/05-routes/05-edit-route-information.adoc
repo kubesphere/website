@@ -1,0 +1,29 @@
+---
+title: "Edit Ingress Information"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress, edit Ingress information"
+description: "Learn how to edit Ingress information."
+weight: 05
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../_custom-en/clusterManagement/routes/routes-desc-editRouteInformation.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-editRouteInformation.adoc[]

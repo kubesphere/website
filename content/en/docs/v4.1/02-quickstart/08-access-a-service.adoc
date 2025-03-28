@@ -1,0 +1,165 @@
+---
+title: "Access Services from Outside the Cluster"
+keywords: "Kubernetes, {ks_product-en}, Access Services, External Access, Application Access"
+description: "Introduces how to access services from outside the cluster."
+weight: 08
+---
+
+**Services** expose applications running on Pods as network services by providing stable endpoints (domain names or IP addresses) for client access. Accessing a Service means accessing applications deployed in the cluster.
+
+{ks_product-en} supports accessing services from outside the cluster through NodePort, LoadBalancer, Ingress, or port forwarding.
+
+This section uses the Bookinfo application as an example to demonstrate external service access. Before proceeding, please ensure you have deployed link:../06-deploy-bookinfo/[Bookinfo] or other applications in your project.
+
+== Access Services via NodePort
+
+**NodePort**: Maps a node's port to the service port, enabling access via the node's IP address and port.
+
+. In the cluster or project's left navigation bar, select **Application Workloads** > **Services**.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to your target service (e.g., `productpage`) and select **Edit External Access**.
+
+. Select **NodePort** under **Access Mode**, then click **OK**.
+
+. Check the exposed node port in the **External Access** column of the service list.
+
+. Access the service from outside the cluster by entering `<Node IP>:<Node Port>` in your browser.
++
+--
+// Note
+include::../../../_ks_components-en/admonitions/note.adoc[]
+
+You may need to configure port forwarding rules and allow the port in your security group before accessing the service.
+
+include::../../../_ks_components-en/admonitions/admonEnd.adoc[]
+--
+
+== Access Services via LoadBalancer
+
+**LoadBalancer**: The system assigns an external IP to the service (based on NodePort) and binds it to an external load balancer. The load balancer listens on the node port, enabling external access via the IP. This requires load balancer plugin support, infrastructure configuration, and proper annotations. For details, contact your infrastructure provider.
+
+=== Prerequisites
+
+* Prepare an external load balancer (cloud provider's solution or open-source like OpenELB).
+* Load balancer must be in the same private network as KubeSphere cluster with a bound public IP.
++
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+Consult your cloud provider's documentation for specific configurations.
+|===
+
+=== Steps
+
+. In the left navigation pane of the cluster or project, select **Application Workloads** > **Services**.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] next to the target service (e.g., `productpage`) and select **Edit External Access**.
+
+. In **Access Mode**, select **LoadBalancer**, choose **Load Balancer Provider** and add relevant **Annotations**, then click **OK**.
++
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+If a load balancer provider is selected, the system will display annotation suggestions in the dropdown when clicking the **Key** field.
+|===
+
+. Check the external IP address exposed by the load balancer in the **External Access** column of the service list.
+
+. Click the service name to view details, then navigate to the **Ports** section under the **Resource Status** tab to view service ports.
+
+. Enter `<External IP>:<Service Port>` in your browser to access the service from outside the cluster.
+
+== Access Services via Ingress
+
+**Ingress**: Ingress aggregates services and exposes them to external cluster access. Each Ingress contains mapping rules between domains (and their subpaths) to different services. Client traffic is first sent to either the cluster gateway or project gateway, which then forwards the traffic to different services based on the rules defined in the Ingress, thereby implementing reverse proxy for multiple services.
+
+=== Prerequisites
+
+* link:../../09-project-management/03-application-workloads/05-routes/01-create-a-route/[Create an Ingress]. The sample application `bookinfo` automatically creates an Ingress.
+
+* link:../../11-use-extensions/12-gateway/03-cluster-gateway/01-enable-a-cluster-gateway/[Enable cluster gateway] or link:../../11-use-extensions/12-gateway/01-project-gateway/01-enable-a-project-gateway/[Enable project gateway].
+
+
+=== Steps
+
+After creating an Ingress, you can access its backend services through any HTTP or HTTPS client.
+
+. In the left navigation pane of the cluster or project, select **Application Workloads** > **Ingress**.
+
+. Click an Ingress name from the Ingress list to open its details page.
+
+. Under the **Resource Status** tab, click **Access Service** next to the desired routing rule.
++
+--
+* If the external access mode of the cluster or project gateway is NodePort: Clients need to resolve the domain name to any node's IP address via DNS service or local **hosts** file, and access the Ingress using domain, path and NodePort (e.g., **example.com/test:30240**).
+
+* If the external access mode is LoadBalancer: Clients need to resolve the domain name to the project gateway's load balancer IP via DNS service or local **hosts** file, and access using domain and path (e.g., **example.com/test**).
+
+If the Ingress is configured correctly, the browser will display the backend service's response.
+--
+
+== Access Services via Port Forwarding
+
+Port forwarding establishes a connection between your local machine and services inside the cluster, typically used for local development and debugging. When executing port forwarding in the cluster, it usually maps a service's port to your local machine, allowing local access to cluster services.
+
+=== Prerequisites
+
+* At least one service exists in the project. The sample application `bookinfo` automatically creates multiple services.
+
+* The local machine must have kubectl installed and be able to communicate normally with the KubeSphere cluster.
+
+=== Steps
+
+. On a cluster node, run the following command to check existing services:
++
+--
+[source,bash]
+----
+kubectl get service <service-name> -n <project-name>
+----
+
+Example:
+[source,bash]
+----
+[root@node1 ~]# kubectl get service productpage -n demo-project
+NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+productpage   ClusterIP   10.233.22.245   <none>        9080/TCP   6d23h
+----
+--
+
+. On your local machine, use `kubectl port-forward` for port forwarding:
++
+--
+[source,bash]
+----
+kubectl port-forward service/<service-name> <local-port>:<service-port> -n <project-name>
+----
+
+Example:
+[source,bash]
+----
+[xxx@xxx ~]# kubectl port-forward service/productpage 34841:9080 -n demo-project
+Forwarding from 127.0.0.1:34841 -> 9080
+Forwarding from [::1]:34841 -> 9080
+----
+
+Alternatively, you can let kubectl automatically select and assign a local port to avoid port conflicts:
+
+[source,bash]
+----
+kubectl port-forward service/<service-name> :<service-port> -n <project-name>
+----
+
+[.admon.note,cols="a"]
+|===
+|Note
+|
+You can also perform port forwarding using other resource types like Deployment names or Pod names. For more information, see link:https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/#forward-a-local-port-to-a-port-on-the-pod[Kubernetes Documentation].
+|===
+--
+
+. In your local browser, enter `127.0.0.1:<local-port>` or `localhost:<local-port>` to access the cluster service.

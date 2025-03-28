@@ -1,0 +1,73 @@
+// :ks_include_id: 02ac1cebc06f4893a036c2e77c21d999
+. View the detailed information of the Ingress in the **Attributes** area on the left side of the Ingress details page.
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Cluster
+|The cluster to which the Ingress belongs.
+
+|Project
+|The project to which the Ingress belongs.
+
+|Application
+|The application corresponding to the Ingress.
+
+|Gateway Address
+|
+include::../gatewaySettings/gatewaySettings-para-address.adoc[]
+
+|Ingress Class
+|Ingress Controller that handles routing rules.
+
+|Creation Time
+|The creation time of the Ingress.
+
+|Creator
+|The user who created the Ingress.
+|===
+--
+
+. View the routing rules of the Ingress in the **Resource Status** tab on the right side of the Ingress details page.
++
+--
+The **Resource Status** tab displays all routing rules of the current Ingress.
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Domain and Port
+|The domain name and node port of the Ingress. The node port is only displayed when the external access of the cluster gateway or project gateway is NodePort.
+
+* If the external access mode of the cluster gateway or project gateway is NodePort, the client needs to resolve the domain name to the IP address of any node in the cluster through the DNS service or the local **hosts** file, and access the Ingress through the domain name, path, and port number (e.g., **example.com/test:30240**).
+
+* If the external access mode of the cluster gateway or project gateway is LoadBalancer, the client needs to resolve the domain name to the IP address of the project gateway load balancer through the DNS service or the local **hosts** file, and access the Ingress through the domain name and path (e.g., **example.com/test**).
+
+|Protocol
+|The protocol supported by the Ingress, which can be **HTTP** or **HTTPS**.
+
+|Certificate
+|The name of the Secret containing the certificate and private key used when the Ingress protocol is HTTPS. Only displayed when the Ingress protocol is HTTPS.
+
+|Path
+|The path of the domain name, each path corresponds to a service.
+
+|Service
+|The name of the service corresponding to the domain name path.
+
+|Port
+|The port number of the service corresponding to the domain name path.
+|===
+
+Click **Access Service** on the right side of the routing rule to access the backend service of the Ingress.
+--
+
+. Click the **Metadata** tab on the right side of the Ingress details page to view the **Labels** and **Annotations** of the Ingress.
+
+. Click the **Events** tab on the right side of the Ingress details page to view the events of the Ingress.
++
+--
+include::../clusterManagement-para-eventsTab.adoc[]
+--

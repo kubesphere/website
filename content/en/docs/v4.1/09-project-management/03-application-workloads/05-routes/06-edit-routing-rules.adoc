@@ -14,11 +14,11 @@ include::../../../../_custom-en/clusterManagement/routes/routes-desc-editingRuti
 
 == Prerequisites
 
-include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
 == Steps
 
-. Log in to the {ks_product-en} web console with a user who has the pass:a,q[{ks_permission}] permission and enter your cluster or project.
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
 +
 

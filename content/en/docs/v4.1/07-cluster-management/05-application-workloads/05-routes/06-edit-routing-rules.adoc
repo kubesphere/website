@@ -1,0 +1,29 @@
+---
+title: "Edit Routing Rules"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress, edit routing rules"
+description: "Learn how to edit routing rules."
+weight: 06
+---
+
+:ks_permission: **Application Workload Management**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../_custom-en/clusterManagement/routes/routes-desc-editingRutingRules.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-editRoutingRules.adoc[]
