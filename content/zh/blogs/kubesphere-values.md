@@ -31,7 +31,7 @@ KubeSphere 能够帮助企业快速构建一个功能丰富的容器云平台，
 
 ![对于开发者 KubeSphere 是什么](https://pek3b.qingstor.com/kubesphere-docs/png/20200410133832.png)
 
-KubeSphere 基于 OpenPitrix 和 Helm 提供了应用商店，对内可作为团队间共享企业内部的中间件、大数据、APM 和业务应用等，方便开发者一键部署应用至 Kubernetes 中；对外可作为根据行业特性构建行业交付标准、交付流程和应用生命周期管理的基础，作为行业通用的应用商店，可根据不同需求应对不同的业务场景。在 3.0 版本还将支持计量 (Metering)，方便企业对应用与集群资源消耗的成本进行管理。
+KubeSphere 基于 [OpenPitrix](https://github.com/openpitrix/openpitrix) 和 Helm 提供了应用商店，对内可作为团队间共享企业内部的中间件、大数据、APM 和业务应用等，方便开发者一键部署应用至 Kubernetes 中；对外可作为根据行业特性构建行业交付标准、交付流程和应用生命周期管理的基础，作为行业通用的应用商店，可根据不同需求应对不同的业务场景。在 3.0 版本还将支持计量 (Metering)，方便企业对应用与集群资源消耗的成本进行管理。
 
 ![KubeSphere 应用商店](https://pek3b.qingstor.com/kubesphere-docs/png/20200410133902.png)
 

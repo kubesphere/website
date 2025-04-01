@@ -23,7 +23,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191112093503.png'
 
 ## 应用商店
 
-KubeSphere 是一个 **以应用为中心** 的容器平台，基于自研的开源项目 OpenPitrix 构建了应用商店、内置应用仓库与应用生命周期管理，KubeSphere 应用商店 **对内可作为团队间共享企业内部的中间件、大数据、业务应用等**，以应用模板的形式方便用户快速地一键上传和部署应用到 Kubernetes 中；**对外可作为根据行业特性构建行业交付标准、交付流程和交付路径的基础，作为行业通用的应用商店**，可根据不同需求应对不同的业务场景。
+KubeSphere 是一个 **以应用为中心** 的容器平台，基于自研的开源项目 [OpenPitrix](https://github.com/openpitrix/openpitrix) 构建了应用商店、内置应用仓库与应用生命周期管理，KubeSphere 应用商店 **对内可作为团队间共享企业内部的中间件、大数据、业务应用等**，以应用模板的形式方便用户快速地一键上传和部署应用到 Kubernetes 中；**对外可作为根据行业特性构建行业交付标准、交付流程和交付路径的基础，作为行业通用的应用商店**，可根据不同需求应对不同的业务场景。
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191025011318.png)
 
