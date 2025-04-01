@@ -30,7 +30,7 @@ KubeSphere is commonly known as "A Cloud Native Melting Pot" to many users. This
 
 ![What does KubeSphere mean for developers](https://pek3b.qingstor.com/kubesphere-docs/png/20200410133832.png)
 
-KubeSphere offers an app store based on [OpenPitrix](https://openpitrix.io/) and Helm. Internally, it can be conducive to sharing middleware, big data, APM and business applications among teams within an enterprise, helping developers in rapid application deployment to Kubernetes. Externally, it can serve as a standard app store for the wider industry, underlying the delivery standard, delivery process and application life cycle management for different industry characteristics. It can meet the demand in various business scenarios. Metering will be supported in the 3.x version, enabling enterprises to manage the cost of applications and cluster resources.
+KubeSphere offers an app store based on OpenPitrix and Helm. Internally, it can be conducive to sharing middleware, big data, APM and business applications among teams within an enterprise, helping developers in rapid application deployment to Kubernetes. Externally, it can serve as a standard app store for the wider industry, underlying the delivery standard, delivery process and application life cycle management for different industry characteristics. It can meet the demand in various business scenarios. Metering will be supported in the 3.x version, enabling enterprises to manage the cost of applications and cluster resources.
 
 ![KubeSphere App Store](https://pek3b.qingstor.com/kubesphere-docs/png/20200410133902.png)
 
@@ -75,4 +75,3 @@ Three grayscale strategies are provided by KubeSphere based on Istio: blue-green
 ## KubeSphere Installation
 
 KubeSphere can be deployed and run on any infrastructure, including public clouds, private clouds, virtual machines, bare metals and Kubernetes. It can be installed either online or offline. For more information, refer to [Installing on Linux](https://kubesphere.io/docs/installing-on-linux/) and [Installing on Kubernetes](https://kubesphere.io/docs/installing-on-kubernetes/).
-
