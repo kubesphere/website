@@ -23,10 +23,9 @@ image: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191112093503.png'
 
 ## 应用商店
 
-KubeSphere 是一个 **以应用为中心** 的容器平台，基于自研的开源项目 OpenPitrix (openpitrix.io) 构建了应用商店、内置应用仓库与应用生命周期管理，KubeSphere 应用商店 **对内可作为团队间共享企业内部的中间件、大数据、业务应用等**，以应用模板的形式方便用户快速地一键上传和部署应用到 Kubernetes 中；**对外可作为根据行业特性构建行业交付标准、交付流程和交付路径的基础，作为行业通用的应用商店**，可根据不同需求应对不同的业务场景。
+KubeSphere 是一个 **以应用为中心** 的容器平台，基于自研的开源项目 [OpenPitrix](https://github.com/openpitrix/openpitrix) 构建了应用商店、内置应用仓库与应用生命周期管理，KubeSphere 应用商店 **对内可作为团队间共享企业内部的中间件、大数据、业务应用等**，以应用模板的形式方便用户快速地一键上传和部署应用到 Kubernetes 中；**对外可作为根据行业特性构建行业交付标准、交付流程和交付路径的基础，作为行业通用的应用商店**，可根据不同需求应对不同的业务场景。
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191025011318.png)
-
 
 在 2.1.0 版本中，KubeSphere 从业务视角实现了应用的生命周期管理，支持 Helm 应用的 **上传提交、应用审核、测试部署、应用上架、应用分类、应用升级、应用下架**，帮助开发者或 ISV 将应用共享和交付给普通用户。同时，应用商店内置了多个常用的 Helm 应用方便开发测试。未来将提供基于应⽤的监控指标、应⽤⽇志关键字段告警能⼒，以及计量计费等运营功能。
 
@@ -66,7 +65,6 @@ Kubernetes 无疑已经是容器编排的事实标准，但 Kubernetes 本身的
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191111171133.png)
 
-
 ## 未来计划
 
 **社区计划（Community Roadmap）**
@@ -80,7 +78,6 @@ Kubernetes 无疑已经是容器编排的事实标准，但 Kubernetes 本身的
 > - 12月中旬在北京举办线下 Meetup
 > - 持续完善中文文档，提供更多应用场景的示例教程
 > - 文档国际化
-
 
 **产品计划（Product Roadmap）**
 
@@ -100,4 +97,3 @@ Kubernetes 无疑已经是容器编排的事实标准，但 Kubernetes 本身的
 可参考官网 kubesphere.io，在文档的安装指南找到安装教程，**支持一键安装与升级，快速安装至 Linux 和 Kubernetes 仅需一行命令**。
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20191111175033.png)
-

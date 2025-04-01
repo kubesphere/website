@@ -14,7 +14,7 @@ KubeSphere 2.1.0 was released on Nov 11th, 2019, which fixes known bugs, adds so
 - Decouple some components and make components including DevOps, service mesh, app store, logging, alerting and notification optional and pluggable
 - Add Grafana (v5.2.4) as the optional component
 - Upgrade Kubernetes to 1.15.5. It is also compatible with 1.14.x and 1.13.x
-- Upgrade  [OpenPitrix](https://openpitrix.io/) to v0.4.5
+- Upgrade [OpenPitrix](https://github.com/openpitrix/openpitrix) to v0.4.5
 - Upgrade the log forwarder Fluent Bit to v1.3.2
 - Upgrade Jenkins to v2.176.2
 - Upgrade Istio to 1.3.3
