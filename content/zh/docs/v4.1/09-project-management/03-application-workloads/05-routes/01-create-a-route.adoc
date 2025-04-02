@@ -16,18 +16,18 @@ include::../../../../_custom/clusterManagement/routes/routes-desc-createARoute.a
 
 :relfileprefix: ../../../../
 * {empty}
-include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
 :relfileprefix: ./
 
-* 如需创建支持 HTTPS 协议的应用路由，您需要创建 **TLS 信息**类型的保密字典，保密字典中必须包含 Base64 编码的证书和私钥。
+* 如需创建支持 HTTPS 协议的应用路由，您需要创建 **TLS 信息**类型的保密字典，保密字典中必须包含 Base64 编码的证书和私钥。有关更多信息，请参阅link:../../../05-configuration/01-secrets/01-create-a-secret/[创建保密字典]。
 
-* 应用路由所属的项目中存在至少一个服务。
+* 应用路由所属的项目中存在至少一个服务。有关更多信息，请参阅link:../../02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/[创建服务]。
 
 
 == 操作步骤
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
 +
 

@@ -1,87 +1,53 @@
 ---
-title: "Access Jenkins Dashboard"
-keywords: "Kubernetes, {ks_product-en}, DevOps project, use DevOps, access Jenkins"
-description: "Learn how to access the Jenkins dashboard."
+title: "Log in to Jenkins Dashboard"
+keywords: "Kubernetes, {ks_product-en}, DevOps project, Using DevOps, Access Jenkins"
+description: "Introduces how to log in to the Jenkins dashboard."
 weight: 07
 ---
 
-When DevOps is installed, the Jenkins dashboard is also installed by default. However, you need to configure it according to the following steps before you can access the Jenkins dashboard.
+Jenkins dashboard is installed by default when you install DevOps.
 
 == Prerequisites
 
-**DevOps** must have been installed and enabled.
+{ks_product-en} platform needs to have the **DevOps** extension installed and enabled.
 
 == Steps
 
-. Run the following command on the cluster node to get the Jenkins address.
+. Check the service corresponding to the Jenkins dashboard, then refer to link:../../../../../02-quickstart/08-access-a-service/[Access a Service] to access Jenkins dashboard.
 +
 --
-// Bash
-[,bash]
-----
-export NODE_PORT=$(kubectl get --namespace kubesphere-devops-system -o jsonpath="{.spec.ports[0].nodePort}" services devops-jenkins)
-export NODE_IP=$(kubectl get nodes --namespace kubesphere-devops-system -o jsonpath="{.items[0].status.addresses[0].address}")
-echo http://$NODE_IP:$NODE_PORT
-----
-
-You will get output similar to the following:
-
-[,bash]
-----
-http://10.77.1.201:30180
-----
---
-
-. Check the `jenkins.securityRealm.openIdConnect.kubesphereCoreApi` and `jenkins.securityRealm.openIdConnect.jenkinsURL` in the DevOps configuration, ensuring they are modified to the actual accessible addresses of the kubesphere-console and devops-jenkins services, respectively. If not, modify them and wait for the extension to update.
-+
-[,yaml]
-----
-jenkins:
-    securityRealm:
-    openIdConnect:
-        # The kubesphere-core api used for jenkins OIDC
-        # If you want to access to jenkinsWebUI, the kubesphereCoreApi must be specified and browser-accessible
-        # Modifying this configuration will take effect only during installation
-        # If you wish for changes to take effect after installation, you need to update the jenkins-casc-config ConfigMap, copy the securityRealm configuration from jenkins.yaml to jenkins_user.yaml, save, and wait for approximately 70 seconds for the changes to take effect.
-        kubesphereCoreApi: "http://192.168.1.1:30880"
-        # The jenkins web URL used for OIDC redirect
-        jenkinsURL: "http://192.168.1.1:30180"
-----
-
-. Check all addresses under `securityRealm.oic` in the `jenkins_user.yaml` of the `jenkins-casc-config` ConfigMap, ensuring they are the same as those under `securityRealm.oic` in `jenkins.yaml`, and are modified to the actual accessible address of kubesphere-console. If they are not the same, modify them and wait for them to take effect.
-+
-[,yaml]
-----
-        securityRealm:
-          oic:
-            clientId: "jenkins"
-            clientSecret: "jenkins"
-            tokenServerUrl: "http://192.168.1.1:30880/oauth/token"
-            authorizationServerUrl: "http://192.168.1.1:30880/oauth/authorize"
-            userInfoServerUrl: "http://192.168.1.1:30880/oauth/userinfo"
-            endSessionEndpoint: "http://192.168.1.1:30880/oauth/logout"
-            logoutFromOpenidProvider: true
-            scopes: openid profile email
-            fullNameFieldName: url
-            userNameField: preferred_username
-----
-
-. Check the `authentication.issuer.url` in the `kubesphere-config` ConfigMap, ensuring it is modified to the actual accessible address of kubesphere-console. If not, modify it and restart the deployment `ks-apiserver` for it to take effect.
-+
---
-[,yaml]
-----
-    authentication:
-      issuer:
-        url: "http://192.168.1.1:30880"
-----
-
 [source,bash]
 ----
-kubectl -n kubesphere-system rollout restart deploy ks-apiserver
+kubectl -n kubesphere-devops-system get svc devops-jenkins
 ----
 --
 
-. Use the address http://NodeIP:30180 to access the Jenkins dashboard.
+. Get the username and password for Jenkins admin.
 +
-Jenkins is configured with KubeSphere LDAP, which means you can log in to Jenkins directly using your KubeSphere account (e.g., `admin/P@88w0rd`).
+--
+[source,bash]
+----
+kubectl -n kubesphere-devops-system get secret devops-jenkins -o yaml
+----
+
+Sample output:
+[source,yaml]
+----
+data:
+  jenkins-admin-password: aXMxZno1Z3lnQWFTaGRIU2EwUDZkbg==
+  jenkins-admin-token: MTE5NTQ4NDY3MTE4MDQ4ODAzMDI1MTc3MDk1OTUwNTM2MQ==
+  jenkins-admin-user: YWRtaW4=
+----
+
+Decode the base64 encoded `jenkins-admin-user` and `jenkins-admin-password` to get the username and password for Jenkins admin.
+--
+
+. Use the obtained username and password to log in to Jenkins dashboard.
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|
+To log in to Jenkins dashboard through LDAP or OpenID Connect, please refer to the instructions on the details page of DevOps extension in Extensions Center.
+|===

@@ -17,7 +17,7 @@ include::../../../../_custom/clusterManagement/routes/routes-desc-editRouteAnnot
 
 :relfileprefix: ../../../../
 
-include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPermission_clusterandproject.adoc[]
+include::../../../../_custom/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
 
 :relfileprefix: ./
 
@@ -25,7 +25,7 @@ include::../../../../_custom/clusterManagement/clusterManagement-prer-requiredPe
 
 == 操作步骤
 
-. 以具有pass:a,q[{ks_permission}]权限的用户登录{ks_product_left} Web 控制台并进入您的集群或项目。
+include::../../../../_custom/projectManagement/projectManagement-oper-openProjectPage.adoc[]
 
 +
 

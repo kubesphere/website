@@ -8,6 +8,6 @@ weight: 02
 icon: "/images/docs/common/docs.svg"
 ---
 
-本节简要介绍如何安装{ks_product_left}，以及如何控制用户权限，帮助您快速了解使用{ks_product_left}。
+本节简要介绍如何安装{ks_product_left}、控制用户权限、部署应用程序等，帮助您快速了解使用{ks_product_left}。
 
 有关{ks_product_both}安装和使用的更多信息，请参阅文档的其他章节。

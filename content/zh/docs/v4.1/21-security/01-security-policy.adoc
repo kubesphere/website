@@ -2,7 +2,7 @@
 title: "安全策略"
 keywords: "Kubernetes, KubeSphere, 安全策略"
 description: "介绍 KubeSphere 安全策略。"
-weight:  05
+weight:  01
 ---
 
 == 支持的版本

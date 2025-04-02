@@ -1,0 +1,38 @@
+---
+title: "Access the Backend Service of an Ingress"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress, access the backend service of an Ingress"
+description: "Learn how to access the backend service of an Ingress."
+weight: 04
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../_custom-en/clusterManagement/routes/routes-desc-accessABackendServiceOfARoute.adoc[]
+
+== Prerequisites
+
+* {empty}
+include::../../../../_custom-en/clusterManagement/clusterManagement-prer-requiredPermission_new.adoc[]
+
+* You should install the **KubeSphere Gateway** extension and enable the cluster gateway or project gateway. For more information, see link:../../../../11-use-extensions/12-gateway[KubeSphere Gateway].
+
+include::../../../../_custom-en/clusterManagement/routes/routes-prer-accessABackendServiceOfARoute.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/clusterManagement/clusterManagement-oper-openClusterPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-openDetailsPage.adoc[]
+
++
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-accessABackendServiceOfARoute.adoc[]

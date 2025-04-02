@@ -1,0 +1,28 @@
+// :ks_include_id: ae74df332c484c09b5ea8272c0d8193c
+* The Ingress list provides the following information:
++
+--
+[%header,cols="1a,4a"]
+|===
+|Parameter |Description
+
+|Name
+|The name and description of the Ingress.
+
+|Gateway Address
+|
+include::../gatewaySettings/gatewaySettings-para-address.adoc[]
+
+|Ingress Class
+|Ingress Controller that handles routing rules.
+
+// |Project
+// |The project to which Ingress belongs.
+
+|Application
+|The name of the application corresponding to the Ingress.
+
+|Creation Time
+|The creation time of the Ingress.
+|===
+--

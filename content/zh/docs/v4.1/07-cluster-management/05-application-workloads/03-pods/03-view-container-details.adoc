@@ -6,7 +6,7 @@ description: "介绍如何查看容器详情。"
 weight: 03
 ---
 
-:ks_permission: **应用负载管理**
+:ks_permission: **应用负载查看**
 :ks_navigation: **应用负载 > 容器组**
 
 

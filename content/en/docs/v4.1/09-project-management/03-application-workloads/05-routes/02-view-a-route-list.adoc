@@ -1,0 +1,36 @@
+---
+title: "View Ingress List"
+keywords: "Kubernetes, {ks_product-en}, project management, application workloads, Ingress, view Ingress list"
+description: "Learn how to view the Ingress list."
+weight: 02
+---
+
+:ks_permission: **Application Workload Viewing**
+:ks_navigation: **Application Workloads > Ingresses**
+
+
+include::../../../../_custom-en/clusterManagement/routes/routes-desc-viewARouteList.adoc[]
+
+
+== Prerequisites
+
+include::../../../../_custom-en/projectManagement/projectManagement-prer-requiredPermission_new.adoc[]
+
+
+== Steps
+
+include::../../../../_custom-en/projectManagement/projectManagement-oper-openProjectPage.adoc[]
+
++
+
+include::../../../../../_ks_components-en/oper-navigate.adoc[]
++
+====
+include::../../../../_custom-en/clusterManagement/routes/routes-para-routeList-project_v413.adoc[]
+
+include::../../../../_custom-en/clusterManagement/routes/routes-oper-searchForRoutes.adoc[]
+
+include::../../../../../_ks_components-en/oper-refreshListData.adoc[]
+
+include::../../../../../_ks_components-en/oper-customizeColumns.adoc[]
+====

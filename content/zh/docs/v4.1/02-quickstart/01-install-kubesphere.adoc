@@ -40,10 +40,20 @@ curl -sfL https://get-kk.kubesphere.io | sh -
 
 .. 执行以下命令安装依赖项。
 +
+--
 [,bash]
 ----
 apt install socat conntrack -y
 ----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+如果集群节点使用其他操作系统，请将 **apt** 替换为操作系统对应的软件包管理工具。
+|===
+--
 
 .. 执行以下命令快速创建一个 Kubernetes 集群。
 +

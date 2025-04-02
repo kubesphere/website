@@ -36,7 +36,7 @@ include::../../../../../_ks_components/oper-navigate.adoc[]
 |===
 |参数 |描述
 
-|用户名
+|名称
 |企业空间成员的用户名。
 
 |状态

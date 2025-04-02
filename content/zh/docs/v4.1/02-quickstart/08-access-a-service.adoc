@@ -1,0 +1,170 @@
+---
+title: "从集群外访问服务"
+keywords: "Kubernetes, {ks_product}, 访问服务, 集群外, 访问应用"
+description: "介绍如何从集群外访问服务。"
+weight: 08
+---
+
+**服务（Service）**将运行在容器组（pod）上的应用程序公开为网络服务，提供了固定的地址（域名或 IP 地址）供客⼾端访问。访问服务即可访问部署在集群中的应用程序。
+
+{ks_product_right}支持通过 NodePort、LoadBalancer、Ingress 或端口转发的方式，从集群外访问服务。
+
+本节以应用程序 Bookinfo 为例，介绍如何从集群外访问服务。在进行以下步骤之前，请先在项目中link:../06-deploy-bookinfo/[部署 Bookinfo] 或其他应用程序。
+
+
+== 通过 NodePort 访问服务
+
+**NodePort**：系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。
+
+. 在集群或项目的左侧导航栏，选择**应用负载** > **服务**。
+
+. 点击应用相应服务（如 `productpage`）右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**编辑外部访问**。
+
+. 在**访问模式**中选择 **NodePort**，点击**确定**。
+
+. 在服务列表的**外部访问**列，查看暴露的节点端口。
+
+. 在浏览器中输入 `<节点 IP>:<节点端口>`，即可从集群外访问服务。
++
+--
+// Note
+include::../../../_ks_components/admonitions/note.adoc[]
+
+访问服务前，您可能需要配置端口转发规则并在安全组中放行该端口。
+
+include::../../../_ks_components/admonitions/admonEnd.adoc[]
+--
+
+== 通过 LoadBalancer 访问服务
+
+**LoadBalancer**：系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。
+
+=== 前提条件
+
+* 请提前创建好用于绑定服务的外部负载均衡器。可使用云服务商提供的负载均衡器，或开源负载均衡方案，如 OpenELB。
+
+* 负载均衡器与 KubeSphere 集群在同一私有网络下，且负载均衡器已绑定公网 IP。
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+有关具体操作，请参阅云环境的用户指南或联系您的云服务提供商。
+|===
+
+
+=== 操作步骤
+
+. 在集群或项目的左侧导航栏，选择**应用负载** > **服务**。
+
+. 点击应用相应服务（如 `productpage`）右侧的image:/images/ks-qkcp/zh/icons/more.svg[more,18,18]，选择**编辑外部访问**。
+
+. 在**访问模式**中选择 **LoadBalancer**，选择**负载均衡器提供商**并添加相应**注解**，点击**确定**。
++
+[.admon.note,cols="a"]
+|===
+|说明
+
+|如果已选择负载均衡器提供商，点击**键**文本框时系统将在下拉列表中显示注解提示。
+|===
+
+. 在服务列表的**外部访问**列，查看通过负载均衡器暴露的外部 IP 地址。
+
+. 点击服务名称进入详情页，在**资源状态**页签下的**端口**区域，查看服务端口。
+
+. 在浏览器中输入 `<外部 IP 地址>:<服务端口>`，即可从集群外访问服务。
+
+
+== 通过 Ingress 访问服务
+
+**Ingress**：应⽤路由（Ingress）对服务进⾏聚合并提供给集群外部访问。每个应⽤路由包含域名及其⼦路径到不同服务的映射规则。来自客户端的业务流量先发送给集群网关或项目网关，集群网关或项目网关根据应用路由中定义的规则将业务流量转发给不同的服务，从而实现对多个服务的反向代理。
+
+=== 前提条件
+
+* link:../../09-project-management/03-application-workloads/05-routes/01-create-a-route/[创建应用路由]。示例应用 bookinfo 已自动创建应用路由。
+
+* link:../../11-use-extensions/12-gateway/03-cluster-gateway/01-enable-a-cluster-gateway/[启用集群网关]或link:../../11-use-extensions/12-gateway/01-project-gateway/01-enable-a-project-gateway/[启用项目网关]。
+
+
+=== 操作步骤
+
+应用路由创建完成后，您可通过任意 HTTP 或 HTTPS 客户端访问应用路由的后端服务。
+
+. 在集群或项目的左侧导航栏，选择**应用负载** > **应用路由**。
+
+. 在应用路由列表中点击一个应用路由的名称打开其详情页面。
+
+. 在**资源状态**页签，在需要访问的路由规则右侧点击**访问服务**。
++
+--
+* 如果集群网关或项目网关的外部访问模式为 NodePort，客户端需要通过 DNS 服务或本地 **hosts** 文件将域名解析为集群中任意节点的 IP 地址，并通过域名、路径和 NodePort 端口号（例如 **example.com/test:30240**）访问应用路由。
+
+* 如果集群网关或项目网关的外部访问模式为 LoadBalancer，客户端需要通过 DNS 服务或本地 **hosts** 文件将域名解析为项目网关负载均衡器的 IP 地址，并通过域名和路径（例如 **example.com/test**）访问应用路由。
+
+如果应用路由设置正确，浏览器将显示后端服务的响应信息。
+--
+
+== 通过端口转发访问服务
+
+端口转发是一种在本地计算机与集群内部服务之间建立连接的方法，通常用于本地开发和调试目的。当您在集群中执行端口转发时，它通常是将集群内部服务的端口映射到本地计算机上，以便您可以在本地计算机上访问这些服务。
+
+=== 前提条件
+
+* 集群的项目中存在至少一个服务。示例应用 bookinfo 已自动创建多个服务。
+
+* 本地计算机需要安装 kubectl 工具，并且能与 KubeSphere 集群正常通信。
+
+=== 操作步骤
+
+. 在集群节点上，执行以下命令，检查已创建的服务。
++
+--
+[source,bash]
+----
+kubectl get service <service-name> -n <project-name>
+----
+
+示例：
+[source,bash]
+----
+[root@node1 ~]# kubectl get service productpage -n demo-project
+NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+productpage   ClusterIP   10.233.22.245   <none>        9080/TCP   6d23h
+----
+--
+
+. 在本地计算机上使用 `kubectl port-forward` 进行端口转发。
++
+--
+[source,bash]
+----
+kubectl port-forward service/<service-name> <local-port>:<service-port> -n <project-name>
+----
+
+示例：
+[source,bash]
+----
+[xxx@xxx ~]# kubectl port-forward service/productpage 34841:9080 -n demo-project
+Forwarding from 127.0.0.1:34841 -> 9080
+Forwarding from [::1]:34841 -> 9080
+----
+
+
+也可以不指定本地端口，让 kubectl 来选择和分配本地端口，这样您就不需要管理本地端口冲突。命令如下：
+
+[source,bash]
+----
+kubectl port-forward service/<service-name> :<service-port> -n <project-name>
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+您还可以用其他资源名称，如 Deployment 名称、Pod 名称等来进行端口转发。有关更多信息，请参阅 link:https://kubernetes.io/zh-cn/docs/tasks/access-application-cluster/port-forward-access-application-cluster/#forward-a-local-port-to-a-port-on-the-pod[Kubernetes 官方文档]。
+|===
+--
+
+. 在本地计算机上的浏览器中输入 `127.0.0.1:<local-port>` 或者 `localhost:<local-port>` 来访问集群中的服务。

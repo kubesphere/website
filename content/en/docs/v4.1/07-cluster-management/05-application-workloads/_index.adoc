@@ -8,4 +8,4 @@ weight: 05
 ---
 
 
-This section explains how to manage workloads, jobs, pods, and services.
+This section explains how to manage workloads, jobs, pods, services and ingresses.
