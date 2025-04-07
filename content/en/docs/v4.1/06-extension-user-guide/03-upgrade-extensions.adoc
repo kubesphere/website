@@ -7,7 +7,12 @@ weight: 03
 
 This section explains how to upgrade extensions.
 
-When there is a new version of an extension, you can upgrade it in the extension details page.
+Before upgrading the extensions, make sure to update the extension repository to fetch the latest versions. You can update the ks-core extension repository using the following command:
+
+[source,bash]
+----
+helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-<VERSION>.tgz --set ksExtensionRepository.image=$(curl -s https://api.github.com/repos/kubesphere-extensions/ks-extensions/releases/latest | jq -r '.tag_name')
+----
 
 == Prerequisites
 
