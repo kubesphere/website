@@ -2,7 +2,7 @@
 title: "Disable Extensions"
 keywords: "Kubernetes, KubeSphere, Enable, Disable, Extensions"
 description: "Learn how to disable extensions."
-weight: 04
+weight: 03
 ---
 
 This section explains how to disable extensions.

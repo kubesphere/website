@@ -8,7 +8,12 @@ weight: 03
 
 本节介绍如何升级扩展组件。
 
-当组件有新版本时，您可以在扩展中心的组件详情页升级组件。
+在升级扩展组件之前，您需要先更新扩展组件仓库以获取最新扩展组件。可以通过以下命令更新 `ks-core` 的扩展组件仓库：
+
+[source,bash]
+----
+helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-<VERSION>.tgz --set ksExtensionRepository.image=$(curl -s https://api.github.com/repos/kubesphere-extensions/ks-extensions/releases/latest | jq -r '.tag_name')
+----
 
 == 前提条件
 

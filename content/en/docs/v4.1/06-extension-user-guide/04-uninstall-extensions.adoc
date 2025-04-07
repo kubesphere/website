@@ -2,7 +2,7 @@
 title: "Uninstall Extensions"
 keywords: "Kubernetes, KubeSphere, Uninstall, Force Uninstall, Extensions"
 description: "Learn how to uninstall extensions."
-weight: 05
+weight: 04
 ---
 
 This section explains how to uninstall extensions.
