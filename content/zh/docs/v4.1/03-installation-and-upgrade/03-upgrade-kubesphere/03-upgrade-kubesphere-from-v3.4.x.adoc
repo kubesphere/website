@@ -31,11 +31,12 @@ include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 ----
 curl -LO https://github.com/kubesphere/ks-installer/archive/refs/tags/v4.1.3.tar.gz
 tar -xzvf v4.1.3.tar.gz
+cd ks-installer-4.1.3/scripts
 ----
 
 === 修改升级配置文件
 
-在 host 和所有的 member 集群中调整升级配置文件，配置文件路径`scripts/ks-core-values.yaml`，其中`upgrade`部分为升级相关的配置项目，你需要在升级之前确认需要升级的组件和配置信息，通过`upgrade.jobs.config.<name>.enabled`控制是否需要升级该组件，以下为配置示例：
+在 host 和所有的 member 集群中调整升级配置文件 `ks-core-values.yaml`，其中 `upgrade` 部分为升级相关的配置项目，你需要在升级之前确认需要升级的组件和配置信息，通过 `upgrade.config.jobs.<name>.enabled` 控制是否需要升级该组件，以下为配置示例：
 
 [source,yaml]
 ----
@@ -86,7 +87,7 @@ upgrade:
 
 === 集群状态检查
 
-在升级集群之前，执行以下`scripts/pre-check.sh`脚本文件，检查集群状态及是否满足升级条件。
+在升级集群之前，执行以下 `scripts/pre-check.sh` 脚本文件，检查集群状态及是否满足升级条件。
 
 [source,bash]
 ----
@@ -106,7 +107,7 @@ bash pre-check.sh
 bash upgrade.sh host | tee host-upgrade.log
 ----
 
-执行升级命令后，可以在新的终端窗口中运行以下命令，实时观察`kubesphere-system`命名空间下 Pod 的状态变化：
+执行升级命令后，可以在新的终端窗口中运行以下命令，实时观察 `kubesphere-system` 命名空间下 Pod 的状态变化：
 
 [source,bash]
 ----
@@ -126,7 +127,7 @@ watch kubectl get pod -n kubesphere-system
 bash upgrade.sh member | tee member-upgrade.log
 ----
 
-执行升级命令后，可以在新的终端窗口中运行以下命令，实时观察`kubesphere-system`命名空间下 Pod 的状态变化：
+执行升级命令后，可以在新的终端窗口中运行以下命令，实时观察 `kubesphere-system` 命名空间下 Pod 的状态变化：
 
 [source,bash]
 ----
