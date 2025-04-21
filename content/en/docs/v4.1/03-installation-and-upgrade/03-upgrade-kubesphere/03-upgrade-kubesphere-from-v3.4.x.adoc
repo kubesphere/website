@@ -1,0 +1,190 @@
+---
+title: "Upgrade from v3.4.x to v4.1.3"
+keywords: "Kubernetes, KubeSphere, Installation, Upgrade"
+description: "Guide for upgrading KubeSphere from v3.4.x to v4.1.3."
+weight: 02
+---
+
+The following procedures outline the steps required to upgrade KubeSphere from v3.4.x to v4.1.3.
+
+// Note
+include::../../../../_ks_components-en/admonitions/note.adoc[]
+
+Prerequisite: Your KubeSphere must be v3.4.x before proceeding with this upgrade to v4.1.3.
+
+include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
+
+The upgrade process consists of three critical phases that must be executed in strict sequence:
+
+. Upgrade the host cluster and migrate extension data
+. Upgrade all member clusters and migrate extension data
+. Upgrade the gateway components
+
+== Download Upgrade Scripts
+
+Execute the following commands in both host and member clusters to get the necessary upgrade scripts:
+
+[source,bash]
+----
+curl -LO https://github.com/kubesphere/ks-installer/archive/refs/tags/v4.1.3.tar.gz
+tar -xzvf v4.1.3.tar.gz
+cd ks-installer-4.1.3/scripts
+----
+
+== Configure Upgrade Parameters
+
+Modify the upgrade configuration file `ks-core-values.yaml` in all clusters, specifically the `upgrade` section. Use the `upgrade.config.jobs.<name>.enabled` flag to selectively upgrade extensions, as shown in this example:
+
+[source,yaml]
+----
+upgrade:
+  enabled: true
+  image:
+    registry: ""
+    repository: kubesphere/ks-upgrade
+    tag: "v4.1.3"
+    pullPolicy: IfNotPresent
+  persistenceVolume:
+    name: ks-upgrade
+    storageClassName: ""
+    accessMode: ReadWriteOnce
+    size: 5Gi
+  config:
+    storage:
+      local:
+        path: /tmp/ks-upgrade
+    validator:
+      ksVersion:
+        enabled: true
+      extensionsMuseum:
+        enabled: true
+        namespace: kubesphere-system
+        name: extensions-museum
+        syncInterval: 0
+        watchTimeout: 30m
+    jobs:
+      network:            
+        enabled: true        # Enable extension upgrade (true/false)
+        priority: 100
+        extensionRef:        # The version configuration of the extension must match the information in extensions-museum.
+          name: "network"
+          version: "1.1.0" 
+        dynamicOptions: {
+          "rerun": "false"
+        }
+      gateway:
+        enabled: true
+        priority: 90
+        extensionRef:
+          name: "gateway"
+          version: "1.0.5"
+----
+
+More reference: link:https://github.com/kubesphere/ks-upgrade/tree/release-4.1/docs[Configuration Documentation for Extension Upgrade]
+
+== Pre-Upgrade Verification
+
+Before upgrading the cluster, execute the following `pre-check.sh` script to verify whether the cluster status meets the upgrade requirements.
+
+[source,bash]
+----
+bash pre-check.sh
+----
+
+Here's the strictly literal translation following the established terminology:
+
+== Upgrade host cluster
+
+Execute the following command to upgrade the host cluster, install extensions, and migrate data.
+
+[source,bash]
+----
+# Specify image registry
+# export IMAGE_REGISTRY=swr.cn-southwest-2.myhuaweicloud.com/ks 
+# Specify extension image registry
+# export EXTENSION_IMAGE_REGISTRY=swr.cn-southwest-2.myhuaweicloud.com/ks 
+bash upgrade.sh host | tee host-upgrade.log
+----
+
+After executing the upgrade command, you can run the following command in a new terminal window to monitor real-time status changes of Pods in the `kubesphere-system` namespace:
+
+[source,bash]
+----
+watch kubectl get pod -n kubesphere-system
+----
+
+== Upgrade member cluster
+
+Execute the following command to upgrade the member cluster, install extension agents, and migrate data.
+
+[source,bash]
+----
+# Specify image registry
+# export IMAGE_REGISTRY=swr.cn-southwest-2.myhuaweicloud.com/ks 
+# Specify extension image registry
+# export EXTENSION_IMAGE_REGISTRY=swr.cn-southwest-2.myhuaweicloud.com/ks 
+bash upgrade.sh member | tee member-upgrade.log
+----
+
+After executing the upgrade command, you can run the following command in a new terminal window to monitor real-time status changes of Pods in the `kubesphere-system` namespace:
+
+[source,bash]
+----
+watch kubectl get pod -n kubesphere-system
+----
+
+After successful upgrade of the member cluster, execute the following command on the host cluster to remove taints from the member cluster, enabling extension agents to be scheduled onto the member cluster.
+
+[source,bash]
+----
+kubectl get clusters.cluster.kubesphere.io <MEMBER_CLUSTER_NAME> -o json | jq 'del(.status.conditions[] | select(.type=="Schedulable"))' | kubectl apply -f -
+----
+
+== Upgrade gateway
+
+Gateway upgrade will cause Nginx Ingress Controller to restart, resulting in service interruption for gateway-dependent services. Please perform upgrades during off-peak business hours.
+
+Before starting the upgrade, check the gateway instances and their status in the cluster using:
+
+[source,bash]
+----
+helm -n kubesphere-controls-system list -a
+----
+
+Upgrade gateways individually using:
+
+[source,bash]
+----
+# Specify image registry
+# export IMAGE_REGISTRY=swr.cn-southwest-2.myhuaweicloud.com/ks 
+bash upgrade.sh gateway kubesphere-router-<NAMESPACE> | tee gateway-upgrade.log
+----
+
+Or upgrade all gateways simultaneously using:
+
+[source,bash]
+----
+# Specify image registry
+# export IMAGE_REGISTRY=swr.cn-southwest-2.myhuaweicloud.com/ks 
+bash upgrade.sh gateway all | tee gateway-upgrade.log
+----
+
+After gateway upgrade completes, verify deployment status with:
+
+[source,bash]
+----
+helm -n kubesphere-controls-system list -a
+----
+
+== Verify upgrade
+
+After upgrade completes, ensure all services are running normally and check system health status. Verify using:
+
+[source,bash]
+----
+for ns in $(kubectl get namespaces -l kubesphere.io/workspace=system-workspace -o jsonpath='{.items[*].metadata.name}'); do
+    kubectl get pods -n $ns --no-headers --ignore-not-found | grep -vE 'Running|Completed'
+done
+----
+
+Ensure all Pod statuses show `Running`. If issues occur, check relevant container logs for troubleshooting.

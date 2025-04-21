@@ -2,7 +2,7 @@
 title: "从 v4.1.x 升级到 v4.1.3"
 keywords: "Kubernetes, {ks_product}, 安装, 升级{ks_product_left}"
 description: "介绍如何升级{ks_product_left}。"
-weight: 02
+weight: 01
 ---
 
 本节介绍如何在保持当前的 Kubernetes 版本不变的情况下从{ks_product_left} v4.1.x 升级到{ks_product_left} v4.1.3。
@@ -43,7 +43,7 @@ helm get values -n kubesphere-system ks-core -o yaml > host-cluster-custom-value
 ----
 --
 
-. 修改配置文件
+. 修改配置文件。
 +
 --
 [source,yaml]
@@ -69,7 +69,7 @@ helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-c
 ----
 --
 
-. 检查 host 集群是否升级成功
+. 检查 host 集群是否升级成功。
 +
 --
 [source,bash]
@@ -108,7 +108,7 @@ helm get values -n kubesphere-system ks-core -o yaml > member-cluster-custom-val
 ----
 --
 
-. 修改修改配置文件
+. 修改配置文件。
 +
 --
 [source,bash]
@@ -135,7 +135,7 @@ helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-c
 ----
 --
 
-. 检查 member 集群是否升级成功
+. 检查 member 集群是否升级成功。
 +
 --
 [source,bash]
