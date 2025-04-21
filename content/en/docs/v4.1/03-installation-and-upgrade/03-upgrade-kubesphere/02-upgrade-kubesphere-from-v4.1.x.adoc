@@ -1,0 +1,167 @@
+---
+title: "Upgrade from v4.1.x to v4.1.3"
+keywords: "Kubernetes, {ks_product-en}, Installation, Upgrade KubeSphere"
+description: "Guide for upgrading KubeSphere from v4.1.x to v4.1.3."
+weight: 01
+---
+
+This section explains how to upgrade {ks_product-en}  from v4.1.x to v4.1.3 while maintaining your current Kubernetes version.
+
+== Prerequisites
+
+* Ensure your current {ks_product-en} version is v4.1.x.
+
+* Ensure your current Kubernetes version is v1.21.x ~ v1.30.x.
+
+* If extensions have custom configurations, back them up by downloading configuration files from the "Extension Config" dialog.
+
+* Back up all critical data to prevent data loss.
+
+== Upgrade {ks_product-en}
+
+{ks_product-en} v4.1+ uses Helm for upgrading ks-core.
+
+=== Upgrade Host Cluster
+
+. Verify the target cluster:
++
+--
+[source,bash]
+----
+kubectl get node -o wide
+----
+--
+
+. Export current ks-core configuration:
++
+--
+[source,bash]
+----
+helm get values -n kubesphere-system ks-core -o yaml > host-cluster-custom-values.yaml
+----
+--
+
+. Modify configuration file:
++
+--
+[source,yaml]
+----
+# Pay special attention to these fields while preserving others
+global:
+  imageRegistry: docker.io
+extension:
+  imageRegistry: docker.io
+
+# Note: Cluster role parameter changed from 'role' to 'multicluster.role'
+multicluster:
+  role: host
+----
+--
+
+. Run upgrade command:
++
+--
+[source,bash]
+----
+helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f host-cluster-custom-values.yaml --wait --debug
+----
+--
+
+. Verify successful upgrade:
++
+--
+[source,bash]
+----
+helm -n kubesphere-system get metadata ks-core
+NAME: ks-core
+CHART: ks-core
+VERSION: 1.1.4
+APP_VERSION: v4.1.3
+NAMESPACE: kubesphere-system
+REVISION: 26
+STATUS: deployed
+DEPLOYED_AT: 2025-03-27T11:10:00+08:00
+----
+--
+
+=== Upgrade Member Cluster
+
+The process is similar to host cluster upgrade but requires attention to member-specific parameters.
+
+. Verify target member cluster:
++
+--
+[source,bash]
+----
+kubectl get node -o wide
+----
+--
+
+. Export ks-core configuration:
++
+--
+[source,bash]
+----
+helm get values -n kubesphere-system ks-core -o yaml > member-cluster-custom-values.yaml
+----
+--
+
+. Modify configuration file:
++
+--
+[source,yaml]
+----
+# Pay special attention to these fields
+global:
+  imageRegistry: docker.io
+authentication:
+  issuer:
+    jwtSecret: <REDACTED>
+
+# Cluster role parameter changed from role to multicluster.role
+multicluster:
+  role: member
+----
+--
+
+. Run upgrade command:
++
+--
+[source,bash]
+----
+helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f member-cluster-custom-values.yaml --wait --debug
+----
+--
+
+. Verify successful upgrade:
++
+--
+[source,bash]
+----
+helm -n kubesphere-system get metadata ks-core
+NAME: ks-core
+CHART: ks-core
+VERSION: 1.1.4
+APP_VERSION: v4.1.3
+NAMESPACE: kubesphere-system
+REVISION: 13
+STATUS: deployed
+DEPLOYED_AT: 2025-03-27T11:10:00+08:00
+----
+--
+
+=== Upgrade Extensions
+
+Upgrade required extensions in Extensions Center.
+
+. Navigate to extension details page in Extensions Center.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] below the extension icon and select **Extension Config**.
+
+. In the dialog, click **Restore Recommended Configuration**, then manually modify with custom settings before confirming.
+
+. Click image:/images/ks-qkcp/zh/icons/more.svg[more,18,18] again and select **Update**.
+
+. In the update dialog, click **Start Update** and wait for completion.
+
+{ks_product-en} upgrade is now complete.

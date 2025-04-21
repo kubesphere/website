@@ -7,5 +7,3 @@ layout: "second"
 weight: 03
 ---
 
-
-本节仅介绍如何从{ks_product_left} v4.1.x 升级至 v4.1.3，暂不支持从 v3.x 直接升级。

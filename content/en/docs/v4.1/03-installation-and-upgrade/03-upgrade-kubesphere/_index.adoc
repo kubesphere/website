@@ -1,0 +1,9 @@
+---
+title: "Upgrade KubeSphere"
+linkTitle: "Upgrade KubeSphere"
+keywords: "Kubernetes, KubeSphere, Upgrade" 
+description: "Instructions for upgrading KubeSphere."
+layout: "second"
+weight: 03
+---
+
