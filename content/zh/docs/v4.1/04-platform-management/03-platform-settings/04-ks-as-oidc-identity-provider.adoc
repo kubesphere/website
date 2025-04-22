@@ -1,0 +1,109 @@
+---
+title: "作为 OIDC 身份提供者"
+keywords: "Kubernetes, KubeSphere, OIDC, 身份提供者"
+description: "了解如何配置 OIDC 身份提供者。"
+weight: 04
+---
+
+OpenID Connect 是一种基于 OAuth 2.0 规范框架（IETF RFC 6749 和 6750）的可互操作的身份验证协议。KubeSphere v4.1.3 实现了 link:https://openid.net/developers/how-connect-works/[OpenID Connect] 协议中的授权码认证流程  link:https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow]，用于扩展组件向上对接 KubeSphere 的账户系统。本教程使用 link:https://goharbor.io/[Harbor] 作为 OIDC 客户端，配置完成后将使用 KubeSphere 账户登录 Harbor。
+
+== 基于 OIDC 实现 SSO 的基本流程
+
+image:/images/ks-qkcp/zh/v4.1.3/oidc-flow.png[, 70%]
+
+. 终端用户通过浏览器访问网站或网络应用。
+. 终端用户点击登录并输入用户名和密码。
+. 依赖方（客户端）向 OpenID 提供商（OP）发送请求。
+. OpenID 提供商验证用户身份并获取授权。
+. OpenID 提供商返回身份令牌（Identity Token），通常会同时返回访问令牌（Access Token）。
+. 依赖方可使用该访问令牌向用户设备发送请求。
+. 用户信息端点（UserInfo Endpoint）将返回终端用户的相关身份声明信息（Claims）。
+
+== 部署 KubeSphere 4.1.3
+
+[source,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz --debug --wait \
+  --set portal.hostname=172.31.17.16.nip.io \
+  --set portal.https.port=30491 \
+  --set ingress.enabled=true \
+  --set ingress.tls.enabled=true \
+  --set ingress.ingressClassName=kubesphere-router-cluster
+
+----
+
+[.admon.note,cols="a"]
+|===
+|说明
+
+|
+应用配置前需要预先将 ks-console 以 https 方式暴露。此教程中，使用 ingress 方式暴露 ks-console。使用 KubeSphere 网关扩展组件创建集群网关，对应的 IngressClass 为 `kubesphere-router-cluster`。暴露 HTTPS 端口为 30491，将 `portal.https.port` 设置为 30491。
+|===
+
+[%header,cols="1a,4a"]
+|===
+| 参数 | 说明
+
+| `portal.hostname` | 用于访问 KubeSphere Console 的域名或 IP（需替换为实际的节点 IP 地址）
+
+| `portal.https.port`
+`portal.http.port` 
+| 用于访问 KubeSphere Console 的端口
+
+| `ingress.enabled`
+`ingress.tls.enabled` | Ingress、TLS 配置
+
+| `ingress.ingressClassName` | Ingress 对应的 IngressClass（需要使用已有的 IngressClass）
+|===
+
+== 新建 OAuth Client
+
+[source,bash]
+----
+cat << EOF | kubectl apply -f -
+apiVersion: v1
+stringData:
+  configuration.yaml: |
+    name: harbor
+    secret: password123
+    grantMethod: auto
+    scopeRestrictions:
+      - 'openid'
+      - 'email'
+      - 'profile'
+    redirectURIs:
+      - https://harbor.172.31.19.17.nip.io/c/oidc/callback
+kind: Secret
+metadata:
+  name: oauthclient-harbor
+  namespace: kubesphere-system
+  labels:
+    config.kubesphere.io/type: oauthclient
+type: config.kubesphere.io/oauthclient
+EOF
+----
+
+[%header,cols="1a,4a"]
+|===
+| 参数                                                       | 说明
+
+| `metadata.name`
+`stringData.configuration.yaml.name` | OAuth Client 的 ID
+
+| `stringData.configuration.yaml.secret`                  | OAuth Client 的 Secret
+| `stringData.configuration.yaml.redirectURIs`            | OAuth Client 支持的回调 URL 列表
+|===
+
+== OIDC 配置参考
+
+以 Harbor 对接 OIDC 为例
+image:/images/ks-qkcp/zh/v4.1.3/configure-harbor.png[]
+
+使用 OIDC 方式登录 Harbor
+image:/images/ks-qkcp/zh/v4.1.3/harbor-login.png[]
+
+登录 KubeSphere Console
+image:/images/ks-qkcp/zh/v4.1.3/ks-login.png[]
+
+首次登录，关联 Harbor 账号
+image:/images/ks-qkcp/zh/v4.1.3/first-login.png[]

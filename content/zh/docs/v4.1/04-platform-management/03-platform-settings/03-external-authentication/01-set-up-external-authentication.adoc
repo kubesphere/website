@@ -158,6 +158,6 @@ redirectURL: 'https://ks-console/oauth/redirect/github'
 
 阿里云 IDaaS 身份提供者的配置方法，请参阅link:https://www.alibabacloud.com/help/zh/idaas/[阿里云 IDaaS 文档]。
 
-使用开源 TOPIAM 集成标准OIDC身份提供商配置方法，请参阅link:https://topiam.cn/docs/use-cases/application/kubesphere-oidc/[TOPIAM 集成 KubeSphere 文档]。
+使用开源 TOPIAM 集成标准 OIDC 身份提供商配置方法，请参阅 link:https://topiam.cn/docs/use-cases/application/kubesphere-oidc/[TOPIAM 集成 KubeSphere 文档]。
 
 --
