@@ -141,6 +141,13 @@ kubectl get clusters.cluster.kubesphere.io <MEMBER_CLUSTER_NAME> -o json | jq 'd
 
 == 升级网关
 
+在升级网关之前，需要等待 Gateway 扩展组件成功调度到目标集群，在 host 集群执行以下命令检查 Gateway 扩展组件的调度状态。
+
+[source,bash]
+----
+kubectl get installplan gateway -o json | jq -r '["Cluster", "State"], (.status.clusterSchedulingStatuses | to_entries[] | [.key, .value.state]) | @tsv' | column -t
+----
+
 网关的升级会导致 Nginx Ingress Controller 重启，依赖网关提供的服务会产生中断，请在业务低峰期进行升级。
 
 在开始升级前，请通过以下命令检查集群中部署的网关实例及状态：
