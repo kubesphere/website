@@ -142,6 +142,13 @@ kubectl get clusters.cluster.kubesphere.io <MEMBER_CLUSTER_NAME> -o json | jq 'd
 
 == Upgrade gateway
 
+Before upgrading the Gateway, you need to wait for the Gateway extension to be successfully scheduled to the target cluster. Run the following command on the host cluster to check the scheduling status of the Gateway extension.
+
+[source,bash]
+----
+kubectl get installplan gateway -o json | jq -r '["Cluster", "State"], (.status.clusterSchedulingStatuses | to_entries[] | [.key, .value.state]) | @tsv' | column -t
+----
+
 Gateway upgrade will cause Nginx Ingress Controller to restart, resulting in service interruption for gateway-dependent services. Please perform upgrades during off-peak business hours.
 
 Before starting the upgrade, check the gateway instances and their status in the cluster using:
