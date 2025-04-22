@@ -1,0 +1,109 @@
+---
+title: "Configure KubeSphere as an OIDC Identity Provider"
+keywords: "Kubernetes, KubeSphere, OIDC, Identity Provider"
+description: "Learn how to configure KubeSphere as an OIDC Identity Provider."
+weight: 04
+---
+
+OpenID Connect is an interoperable authentication protocol based on the OAuth 2.0 framework (IETF RFC 6749 and 6750). KubeSphere v4.1.3 implements the link:https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth[Authorization Code Flow] of link:https://openid.net/developers/how-connect-works/[OpenID Connect] protocol for extensions to integrate with KubeSphere's account system. This tutorial uses link:https://goharbor.io/[Harbor] as an OIDC client - after configuration, you can use KubeSphere accounts to log in to Harbor.
+
+== SSO Implementation Flow via OIDC
+
+image:/images/ks-qkcp/zh/v4.1.3/oidc-flow.png[, 70%]
+
+1. End user **navigates to a website or web application** via a browser.
+2. End user **clicks sign-in** and types their username and password.
+3. The RP (Client) **sends a request** to the OpenID Provider (OP).
+4. The OP **authenticates the User** and obtains authorization.
+5. The OP **responds with an Identity Token** and usually an **Access Token**.
+6. The RP can **send a request** with the Access Token to the User device.
+7. The UserInfo Endpoint **returns Claims** about the End-User.
+
+== Deploy KubeSphere 4.1.3
+
+[source,bash]
+----
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz --debug --wait \
+  --set portal.hostname=172.31.17.16.nip.io \
+  --set portal.https.port=30491 \
+  --set ingress.enabled=true \
+  --set ingress.tls.enabled=true \
+  --set ingress.ingressClassName=kubesphere-router-cluster
+----
+
+[.admon.note,cols="a"]
+|===
+|Note
+
+|Before applying configurations, ks-console must be exposed via HTTPS. This tutorial uses Ingress to expose ks-console. The cluster gateway is created using the KubeSphere Gateway extension, with corresponding IngressClass as `kubesphere-router-cluster`. The exposed HTTPS port is 30491, so `portal.https.port` is set to 30491.
+|===
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| `portal.hostname` | Domain or IP for accessing KubeSphere Console (replace with actual node IP)
+
+| `portal.https.port`
+`portal.http.port`
+| Ports for accessing KubeSphere Console
+
+| `ingress.enabled`
+`ingress.tls.enabled` | Ingress and TLS configurations
+
+| `ingress.ingressClassName` | IngressClass for the Ingress (must reference a pre-existing IngressClass)
+|===
+
+== Create OAuth Client
+
+[source,bash]
+----
+cat << EOF | kubectl apply -f -
+apiVersion: v1
+stringData:
+  configuration.yaml: |
+    name: harbor
+    secret: password123
+    grantMethod: auto
+    scopeRestrictions:
+      - 'openid'
+      - 'email'
+      - 'profile'
+    redirectURIs:
+      - https://harbor.172.31.19.17.nip.io/c/oidc/callback
+kind: Secret
+metadata:
+  name: oauthclient-harbor
+  namespace: kubesphere-system
+  labels:
+    config.kubesphere.io/type: oauthclient
+type: config.kubesphere.io/oauthclient
+EOF
+----
+
+[%header,cols="1a,4a"]
+|===
+| Parameter | Description
+
+| `metadata.name`
+`stringData.configuration.yaml.name` | OAuth Client ID
+
+| `stringData.configuration.yaml.secret` | OAuth Client Secret
+
+| `stringData.configuration.yaml.redirectURIs` | List of callback URLs supported by OAuth Client
+|===
+
+== OIDC Configuration Reference
+
+Harbor OIDC Configuration
+image:/images/ks-qkcp/zh/v4.1.3/configure-harbor.png[]
+
+Log in to Harbor via OIDC
+image:/images/ks-qkcp/zh/v4.1.3/harbor-login.png[]
+
+Log in to KubeSphere Console
+image:/images/ks-qkcp/zh/v4.1.3/ks-login.png[]
+
+Associate Harbor account at the first-time login
+image:/images/ks-qkcp/zh/v4.1.3/first-login.png[]
+
