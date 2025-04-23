@@ -11,11 +11,3 @@ icon: "/images/docs/common/docs.svg"
 // 基于 v4.1.1 安装指南修改
 
 本节介绍如何安装和卸载{ks_product_left}，以及如何添加和删除{ks_product_both}集群节点。
-
-[.admon.note,cols="a"]
-|===
-|说明
-
-|
-暂不支持从{ks_product_left} v3.x 升级到 v4.1。
-|===
