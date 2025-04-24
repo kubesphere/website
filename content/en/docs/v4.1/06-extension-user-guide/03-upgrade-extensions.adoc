@@ -11,7 +11,39 @@ Before upgrading the extensions, make sure to update the extension repository to
 
 [source,bash]
 ----
-helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-<VERSION>.tgz --set ksExtensionRepository.image=$(curl -s https://api.github.com/repos/kubesphere-extensions/ks-extensions/releases/latest | jq -r '.tag_name')
+bash -c '#!/bin/bash
+set -e          # Exit immediately if a command exits with a non-zero status
+set -o pipefail # Fail the entire pipeline if any command fails
+
+# If CHART_VERSION is not set via environment variable, fetch it from the installed release
+if [ -z "$CHART_VERSION" ]; then
+  CHART_VERSION=$(helm -n kubesphere-system get metadata ks-core -o json | jq -r '.version')
+
+  if [[ -z "$CHART_VERSION" || "$CHART_VERSION" == "null" ]]; then
+    echo "❌ Failed to retrieve the Chart version of ks-core. Aborting."
+    exit 1
+  fi
+fi
+
+# Construct the Chart URL
+CHART_URL="https://charts.kubesphere.io/main/ks-core-$CHART_VERSION.tgz"
+
+# If EXTENSION_REPOSITORY_VERSION is not set via environment variable, fetch it from GitHub
+if [ -z "$EXTENSION_REPOSITORY_VERSION" ]; then
+  EXTENSION_REPOSITORY_VERSION=$(curl -s https://api.github.com/repos/kubesphere-extensions/ks-extensions/releases/latest | jq -r '.tag_name')
+
+  if [[ -z "$EXTENSION_REPOSITORY_VERSION" || "$EXTENSION_REPOSITORY_VERSION" == "null" ]]; then
+    echo "❌ Failed to retrieve the latest version of ks-extensions. Aborting."
+    echo "You can manually visit the GitHub releases page to find the latest version: https://github.com/kubesphere-extensions/ks-extensions/releases"
+    exit 1
+  fi
+fi
+
+# Upgrade ks-core using the retrieved or provided versions
+echo "✅ Preparing to upgrade ks-core to version $CHART_VERSION using extension repository version $EXTENSION_REPOSITORY_VERSION"
+helm -n kubesphere-system upgrade ks-core "$CHART_URL" \
+  --set ksExtensionRepository.image.tag="$EXTENSION_REPOSITORY_VERSION" \
+  --wait --debug'
 ----
 
 == Prerequisites
