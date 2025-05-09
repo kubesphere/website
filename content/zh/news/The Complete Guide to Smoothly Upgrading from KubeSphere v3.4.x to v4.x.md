@@ -3,7 +3,7 @@ title: '过渡无压力！KubeSphere v3.4.x 到 v4.x 平滑升级全攻略'
 tag: '产品动态'
 keyword: '社区, 开源, 升级, KubeSphere'
 description: '本文将为您提供从 KubeSphere v3.4.x 升级到 v4.x 的完整操作步骤，帮助您顺利完成升级过程。'
-createTime: '2025-4-19'
+createTime: '2025-04-19'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere%20v3.4.x%20to%20v4.xzh.png'
 ---

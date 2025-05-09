@@ -3,7 +3,7 @@ title: 'KubeSphere 4.1.3 开源版正式发布'
 tag: '产品动态'
 keyword: '社区, 开源, 贡献, KubeSphere, release, 权限控制'
 description: '本次发布的 KubeSphere 4.1.3 包含多项功能优化和缺陷修复，进一步提升安全性与易用性。'
-createTime: '2025-3-26'
+createTime: '2025-03-26'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-4.1.3-ga%20-%20zh.png'
 ---

@@ -3,7 +3,7 @@ title: 'KubeSphere v4.1.3 Open Source Edition Released'
 tag: 'Product News'
 keyword: 'open source, Kubernetes, KubeSphere, K8s, release, news, AI, GPU'
 description: 'KubeSphere 4.1.3 Open Source Edition is officially released.'
-createTime: '2025-3-26'
+createTime: '2025-03-26'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-4.1.3-ga.png'
 ---
