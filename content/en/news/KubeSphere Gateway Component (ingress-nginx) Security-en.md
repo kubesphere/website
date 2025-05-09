@@ -3,7 +3,7 @@ title: 'KubeSphere Gateway Component (ingress-nginx) Security Vulnerability Anno
 tag: 'Product News'
 keyword: 'open source, Kubernetes, KubeSphere,Ingress-Nginx Controller, Security Vulnerability'
 description: 'This article summarizes critical security vulnerabilities in the KubeSphere Gateway component (ingress-nginx) and provides remediation suggestions.'
-createTime: '2025-4-3'
+createTime: '2025-04-03'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/ingress-nginx-en-2025.png'
 ---
