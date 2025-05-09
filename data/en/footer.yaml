@@ -11,7 +11,6 @@ footer:
         - content: Cloud Native Observability
           link: observability/
 
-
         - content: Functions-as-a-Service Platform and Serverless
           link: 'https://github.com/OpenFunction/OpenFunction'
 
