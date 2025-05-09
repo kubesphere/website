@@ -3,7 +3,7 @@ title: 'KubeSphere MCP Server: 增强AI与KubeSphere的集成能力'
 tag: '产品动态'
 keyword: '社区, 开源, MCP, KubeSphere'
 description: 'KubeSphere MCP Server 实现了 AI 助手与 KubeSphere 的无缝集成，使用户能够通过自然语言交互管理云原生资源。'
-createTime: '2025-5-6'
+createTime: '2025-05-06'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KSMCPSERVER2025.png'
 ---

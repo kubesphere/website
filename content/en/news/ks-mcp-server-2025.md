@@ -3,7 +3,7 @@ title: 'KubeSphere MCP Server: Enhancing AI Integration with KubeSphere'
 tag: 'Product News'
 keyword: 'open source, KubeSphere, K8s, MCP'
 description: 'KubeSphere MCP Server enables seamless integration of AI assistants with KubeSphere, allowing users to manage cloud-native resources through natural language interactions.'
-createTime: '2025-5-6'
+createTime: '2025-05-06'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KSMCPSERVER2025.png'
 ---

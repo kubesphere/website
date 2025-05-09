@@ -3,7 +3,7 @@ title: 'KubeSphere 网关组件（ingress-nginx）安全漏洞公告'
 tag: '产品动态'
 keyword: '社区, 安全, KubeSphere, 网关, 权限控制'
 description: '近期，Kubernetes 官方维护的 Ingress-Nginx 控制器被发现存在多个高危漏洞，包括权限提升、信息泄露、安全绕过和目录遍历等问题。'
-createTime: '2025-4-3'
+createTime: '2025-04-03'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/ingress-nginx-zh-2025.png'
 ---

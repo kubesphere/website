@@ -3,7 +3,7 @@ title: 'Upgrading KubeSphere from v3.4.x to v4.1.3: Everything You Need to Know'
 tag: 'Product News'
 keyword: 'open source, Kubernetes, KubeSphere'
 description: 'This guide provides comprehensive steps for upgrading from KubeSphere v3.4.x to v4.x, helping you complete the upgrade process smoothly.'
-createTime: '2025-4-19'
+createTime: '2025-04-19'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/upgrade%20kubesphere%20from%203.4.x-4.1.3.png'
 ---

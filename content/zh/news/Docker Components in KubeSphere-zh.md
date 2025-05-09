@@ -3,7 +3,7 @@ title: '关于 KubeSphere 中 Docker 组件合规性的声明'
 tag: '产品动态'
 keywords: 'KubeSphere,  Docker'
 description: '青云科技发布《关于 KubeSphere 中 Docker 组件合规性的声明》，全方位保障您的数字化转型之旅安全可信。'
-createTime: '2025-3-01'
+createTime: '2025-03-01'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere%20Docker%20Compliance%20Statement%20zh.png'
 ---
