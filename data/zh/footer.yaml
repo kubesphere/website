@@ -11,9 +11,6 @@ footer:
         - content: 构建云原生可观测性
           link: observability/
 
-        - content: 物理机 K8s 暴露服务
-          link: 'https://openelb.github.io/'
-
         - content: K8s 一键部署与运维
           link: 'https://github.com/kubesphere/kubekey'
 
