@@ -3,4 +3,5 @@ title: "配置高可用性"
 keywords: "Kubernetes, {ks_product}, 安装, 准备, 高可用"
 description: "介绍如何为 KubeSphere 集群配置高可用性。"
 weight: 02
+layout: "second"
 ---
