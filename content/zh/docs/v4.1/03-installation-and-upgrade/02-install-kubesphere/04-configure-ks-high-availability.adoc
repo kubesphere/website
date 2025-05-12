@@ -2,7 +2,7 @@
 title: "配置 KubeSphere 高可用性"
 keywords: "Kubernetes, {ks_product}, 安装, 准备, 高可用"
 description: "介绍如何为 KubeSphere 配置高可用性。"
-weight: 03
+weight: 04
 ---
 
 
@@ -161,12 +161,14 @@ helm upgrade -n kubesphere-system ks-core https://charts.kubesphere.io/main/ks-c
 == 6. 配置说明
 
 === 6.1 Redis 单实例模式
+
 - 适用于小型集群
 - 使用单实例 Redis
 - 支持基本的故障转移
 - 配置简单，资源消耗较少
 
 === 6.2 Redis 高可用模式
+
 - 适用于生产环境
 - 使用 Redis 集群
 - 提供完整的高可用性
