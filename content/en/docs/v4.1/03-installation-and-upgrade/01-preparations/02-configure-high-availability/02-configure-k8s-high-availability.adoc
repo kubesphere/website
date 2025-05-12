@@ -32,7 +32,7 @@ spec:
 
 ----
 
-KubeKey will automatically install HAProxy on the worker nodes and complete the high availability configuration, requiring no additional actions. For more information, please refer to link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[Install Kubernetes and {ks_product-en}].
+KubeKey will automatically install HAProxy on the worker nodes and complete the high availability configuration, requiring no additional actions. For more information, please refer to link:../../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[Install Kubernetes and {ks_product-en}].
 
 == Dedicated Load Balancer
 

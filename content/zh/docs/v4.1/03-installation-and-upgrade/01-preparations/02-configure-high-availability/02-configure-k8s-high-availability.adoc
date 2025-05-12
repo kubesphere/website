@@ -1,7 +1,7 @@
 ---
 title: "配置 Kubernetes 高可用性"
 keywords: "Kubernetes, {ks_product}, 安装, 准备, 高可用"
-description: "介绍如何在生产环境中为{ks_product_both}集群配置多个控制平面节点，以防止单个控制平面节点故障时集群服务中断，从而实现高可用性。"
+description: "介绍如何在生产环境中为 KubeSphere 集群配置多个控制平面节点。"
 weight: 02
 ---
 
@@ -31,7 +31,7 @@ spec:
     port: 6443
 ----
 
-KubeKey 将自动在工作节点上安装 HAProxy 并完成高可用配置，您无需进行其他操作。有关更多信息请参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere 企业版]。
+KubeKey 将自动在工作节点上安装 HAProxy 并完成高可用配置，您无需进行其他操作。有关更多信息请参阅link:../../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和{ks_product_left}]。
 
 == 使用专用负载均衡器
 如需使用云环境提供的专用负载均衡器实现高可用性，您需要在云环境中进行以下操作：
