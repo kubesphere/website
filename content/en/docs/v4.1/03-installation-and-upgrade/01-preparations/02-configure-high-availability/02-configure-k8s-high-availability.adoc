@@ -1,20 +1,12 @@
 ---
-title: "Configure High Availability"
-linkTitle: "Configure High Availability"
+title: "Configure Kubernetes High Availability"
 keywords: "Kubernetes, KubeSphere, Installation, Preparation, High Availability"
 description: "Learn how to configure high availability in case of a single control plane node failure."
-weight: 03
+weight: 02
 ---
 
 
 This section explains how to configure multiple control plane nodes for high availability in a production environment for the KubeSphere cluster. This ensures that the cluster services remain operational even if a single control plane node fails. If your KubeSphere cluster does not require high availability, you can skip this section.
-
-// Note
-include::../../../../_ks_components-en/admonitions/note.adoc[]
-
-The high availability configuration for KubeSphere is only supported when installing Kubernetes and {ks_product-en} together. If you are installing {ks_product-en} on an existing Kubernetes cluster, {ks_product-en} will utilize the existing high availability configuration of the Kubernetes cluster.
-
-include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 This section explains the following methods for configuring high availability:
 

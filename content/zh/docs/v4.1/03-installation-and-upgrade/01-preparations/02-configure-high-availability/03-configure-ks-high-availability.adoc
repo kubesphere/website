@@ -1,0 +1,220 @@
+---
+title: "配置 KubeSphere 高可用性"
+keywords: "Kubernetes, {ks_product}, 安装, 准备, 高可用"
+description: "介绍如何为 KubeSphere 配置高可用性。"
+weight: 03
+---
+
+
+本节介绍如何配置 KubeSphere 的高可用性。
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|KubeSphere 的高可用性建立在 Kubernetes 控制平面节点高可用的基础上，因此需先确保 Kubernetes 为高可用部署。
+
+|===
+
+== 1. 高可用架构概述
+
+KubeSphere 支持高可用部署，可通过 `ha.enabled` 开启。
+
+在高可用模式下，Redis 支持两种部署方式：
+
+. Redis 单实例模式
+. Redis 高可用模式 (Redis HA)
+
+== 2. 版本兼容性
+
+KubeSphere 高可用配置适用于{ks_product_left} v4.1.2 及之后更新的版本。
+
+== 3. KubeSphere 高可用配置
+
+=== 3.1 启用高可用模式
+
+创建 `values.yaml` 文件，添加如下配置。
+
+[source,yaml]
+----
+ha:
+  enabled: true
+----
+
+== 4. Redis 配置
+
+根据需求选择 Redis 单实例模式或 Redis 高可用模式，在上一步创建的 `values.yaml` 文件中继续添加对应的配置。
+
+=== 4.1 Redis 单实例模式
+
+适用于小型集群，配置简单，资源消耗较少。
+
+[source,yaml]
+----
+redis:
+  port: 6379
+  replicaCount: 1
+  image:
+    repository: kubesphereio/redis
+    tag: 7.2.4-alpine
+    pullPolicy: IfNotPresent
+  persistentVolume:
+    enabled: true
+    size: 2Gi
+----
+
+=== 4.2 Redis 高可用模式
+
+适用于生产环境，提供完整的高可用性。
+
+[source,yaml]
+----
+redisHA:
+  enabled: true
+  redis:
+    port: 6379
+  image:
+    repository: kubesphereio/redis
+    tag: 7.2.4-alpine
+    pullPolicy: IfNotPresent
+  persistentVolume:
+    enabled: true
+    size: 2Gi
+----
+
+=== 4.3 Redis HA 高级配置
+
+[source,yaml]
+----
+redisHA:
+  enabled: true
+  # Redis 节点配置
+  redis:
+    port: 6379
+  # 持久化配置
+  persistentVolume:
+    enabled: true
+    size: 2Gi
+  # 节点亲和性配置
+  tolerations:
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
+    - key: node-role.kubernetes.io/control-plane
+      effect: NoSchedule
+    - key: CriticalAddonsOnly
+      operator: Exists
+  # 高可用配置
+  hardAntiAffinity: false
+  additionalAffinities:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          preference:
+            matchExpressions:
+              - key: node-role.kubernetes.io/control-plane
+                operator: In
+                values:
+                  - ""
+  # HAProxy 配置
+  haproxy:
+    servicePort: 6379
+    containerPort: 6379
+    image:
+      repository: kubesphereio/haproxy
+      tag: 2.9.6-alpine
+      pullPolicy: IfNotPresent
+----
+
+== 5. 高可用部署
+
+安装或升级{ks_product_both}时，请在安装或升级命令后添加 `-f values.yaml`。
+
+[.admon.attention,cols="a"]
+|===
+|注意
+
+|以下命令仅为示例。请在实际的安装或升级命令后添加 `-f values.yaml`。
+
+|===
+
+// KubeSphere
+[source,bash]
+----
+# 安装
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f values.yaml --debug --wait
+
+# 升级
+helm upgrade -n kubesphere-system ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f values.yaml --debug --wait
+----
+
+// kse
+// [source,bash]
+// ----
+// # 安装
+// helm install -n kubesphere-system --create-namespace ks-core oci://hub.kubesphere.com.cn/kse/ks-core --version 1.1.0 -f values.yaml
+
+// # 升级
+// helm upgrade -n kubesphere-system ks-core oci://hub.kubesphere.com.cn/kse/ks-core --version 1.1.0 -f values.yaml
+// ----
+
+
+== 6. 配置说明
+
+=== 6.1 Redis 单实例模式
+- 适用于小型集群
+- 使用单实例 Redis
+- 支持基本的故障转移
+- 配置简单，资源消耗较少
+
+=== 6.2 Redis 高可用模式
+- 适用于生产环境
+- 使用 Redis 集群
+- 提供完整的高可用性
+- 支持自动故障转移
+- 数据持久化
+- 负载均衡
+
+== 7. 可选配置
+
+=== JWT 签名密钥配置
+
+在高可用环境中，为了确保所有副本使用相同的 JWT 签名密钥，可以配置自定义的 SignKey。
+
+. 生成 RSA 私钥。
++
+[source,bash]
+----
+openssl genrsa -out private_key.pem 2048
+----
+
+. 查看 Base64 编码后的密钥内容。
++
+[source,bash]
+----
+cat private_key.pem | base64 -w 0
+----
+
+. 编辑 KubeSphere 配置。
++
+--
+[source,bash]
+----
+kubectl -n kubesphere-system edit cm kubesphere-config
+----
+
+在 `authentication.issuer` 下添加或替换如下字段：
+
+[source,yaml]
+----
+signKeyData: <Base64 编码的私钥内容>
+----
+--
+
+. 重启 KubeSphere 组件。
++
+[source,bash]
+----
+kubectl -n kubesphere-system rollout restart deploy ks-apiserver ks-controller-manager
+----
+
+. 验证配置。浏览器访问 `http://<ks-console-address>/oauth/keys`， 访问多次，检查每个副本数据是否一致。

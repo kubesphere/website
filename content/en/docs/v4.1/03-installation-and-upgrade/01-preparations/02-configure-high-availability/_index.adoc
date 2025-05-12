@@ -1,0 +1,6 @@
+---
+title: "Configure High Availability"
+keywords: "Kubernetes, KubeSphere, Installation, Preparation, High Availability"
+description: "Learn how to configure high availability for KubeSphere clusters."
+weight: 02
+---

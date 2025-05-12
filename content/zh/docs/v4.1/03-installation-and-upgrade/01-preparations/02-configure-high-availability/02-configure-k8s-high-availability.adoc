@@ -1,20 +1,12 @@
 ---
-title: "配置高可用性"
-linkTitle: "配置高可用性"
-keywords: "Kubernetes, KubeSphere, 安装, 准备, 高可用"
-description: "介绍如何在生产环境中为 KubeSphere 集群配置多个控制平面节点，以防止单个控制平面节点故障时集群服务中断，从而实现高可用性。"
-weight: 03
+title: "配置 Kubernetes 高可用性"
+keywords: "Kubernetes, {ks_product}, 安装, 准备, 高可用"
+description: "介绍如何在生产环境中为{ks_product_both}集群配置多个控制平面节点，以防止单个控制平面节点故障时集群服务中断，从而实现高可用性。"
+weight: 02
 ---
 
 
 本节介绍如何在生产环境中为{ks_product_both}集群配置多个控制平面节点，以防止单个控制平面节点故障时集群服务中断，从而实现高可用性。如果您的{ks_product_both}集群没有高可用性需求，您可以跳过本节。
-
-// Note
-include::../../../../_ks_components/admonitions/note.adoc[]
-
-{ks_product_right}高可用性配置仅支持同时安装 Kubernetes 和{ks_product_both}的场景。如果您在现有的 Kubernetes 集群上安装{ks_product_left}，{ks_product_right}安装完成后将使用 Kubernetes 集群现有的高可用性配置。
-
-include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 
 本节介绍以下高可用性配置方式：
 
@@ -29,18 +21,17 @@ include::../../../../_ks_components/admonitions/admonEnd.adoc[]
 如需使用 HAProxy 实现高可用性，只需要在安装{ks_product_both}时在安装配置文件 **config-sample.yaml** 中设置以下参数：
 
 // YAML
-include::../../../../_ks_components/code/yaml.adoc[]
-
+[source,yaml]
+----
 spec:
   controlPlaneEndpoint:
     internalLoadbalancer: haproxy
     domain: lb.kubesphere.local
     address: ""
     port: 6443
-
 ----
 
-KubeKey 将自动在工作节点上安装 HAProxy 并完成高可用配置，您无需进行其他操作。有关更多信息请参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere]。
+KubeKey 将自动在工作节点上安装 HAProxy 并完成高可用配置，您无需进行其他操作。有关更多信息请参阅link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[安装 Kubernetes 和 KubeSphere 企业版]。
 
 == 使用专用负载均衡器
 如需使用云环境提供的专用负载均衡器实现高可用性，您需要在云环境中进行以下操作：
@@ -69,11 +60,9 @@ KubeKey 将自动在工作节点上安装 HAProxy 并完成高可用配置，您
 . 登录用作负载均衡器的服务器，执行以下命令安装 HAProxy 和 Keepalived（以下以 Ubuntu 操作系统为例，在其他操作系统中请将 **apt** 替换为操作系统对应的软件包管理工具）：
 +
 --
-// Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 apt install keepalived haproxy psmisc -y
-
 ----
 --
 
@@ -81,10 +70,9 @@ apt install keepalived haproxy psmisc -y
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 vi /etc/haproxy/haproxy.cfg
-
 ----
 --
 
@@ -92,8 +80,8 @@ vi /etc/haproxy/haproxy.cfg
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 global
     log /dev/log  local0 warning
     chroot      /var/lib/haproxy
@@ -128,7 +116,6 @@ backend kube-apiserver
     server kube-apiserver-1 <IP address>:6443 check
     server kube-apiserver-2 <IP address>:6443 check
     server kube-apiserver-3 <IP address>:6443 check
-
 ----
 --
 
@@ -136,10 +123,9 @@ backend kube-apiserver
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 systemctl restart haproxy
-
 ----
 --
 
@@ -147,10 +133,9 @@ systemctl restart haproxy
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 systemctl enable haproxy
-
 ----
 --
 
@@ -158,10 +143,9 @@ systemctl enable haproxy
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 vi /etc/keepalived/keepalived.conf
-
 ----
 --
 
@@ -169,8 +153,8 @@ vi /etc/keepalived/keepalived.conf
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 global_defs {
   notification_email {
   }
@@ -209,7 +193,6 @@ vrrp_instance haproxy-vip {
     chk_haproxy
   }
 }
-
 ----
 
 将以下参数替换为实际值：
@@ -236,10 +219,9 @@ vrrp_instance haproxy-vip {
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 systemctl restart keepalived
-
 ----
 --
 
@@ -247,10 +229,9 @@ systemctl restart keepalived
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 systemctl enable keepalived
-
 ----
 --
 
@@ -265,17 +246,16 @@ systemctl enable keepalived
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 ip a s
-
 ----
 
 如果系统高可用性正常，命令回显中将显示已配置的浮动 IP 地址。例如，在以下命令回显中，**inet 172.16.0.10/24 scope global secondary eth0** 表明浮动 IP 地址已与 eth0 网卡绑定：
 
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -290,7 +270,6 @@ include::../../../../_ks_components/code/bash.adoc[]
        valid_lft forever preferred_lft forever
     inet6 fe80::510e:f96:98b2:af40/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
-
 ----
 --
 
@@ -298,10 +277,9 @@ include::../../../../_ks_components/code/bash.adoc[]
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 systemctl stop haproxy
-
 ----
 --
 
@@ -309,17 +287,16 @@ systemctl stop haproxy
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 ip a s
-
 ----
 
 如果系统高可用性正常，命令回显中将不再显示浮动 IP 地址，如以下命令回显所示：
 
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -332,7 +309,6 @@ include::../../../../_ks_components/code/bash.adoc[]
        valid_lft 72802sec preferred_lft 72802sec
     inet6 fe80::510e:f96:98b2:af40/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
-
 ----
 --
 
@@ -340,17 +316,16 @@ include::../../../../_ks_components/code/bash.adoc[]
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 ip a s
-
 ----
 
 如果系统高可用性正常，命令回显中将显示已配置的浮动 IP 地址。例如，在以下命令回显中，**inet 172.16.0.10/24 scope global secondary eth0** 表明浮动 IP 地址已与 eth0 网卡绑定：
 
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -365,7 +340,6 @@ include::../../../../_ks_components/code/bash.adoc[]
        valid_lft forever preferred_lft forever
     inet6 fe80::f67c:bd4f:d6d5:1d9b/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
-
 ----
 --
 
@@ -373,9 +347,8 @@ include::../../../../_ks_components/code/bash.adoc[]
 +
 --
 // Bash
-include::../../../../_ks_components/code/bash.adoc[]
-
+[source,bash]
+----
 systemctl start haproxy
-
 ----
 --

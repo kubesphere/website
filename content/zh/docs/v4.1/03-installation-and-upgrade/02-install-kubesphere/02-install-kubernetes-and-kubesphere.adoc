@@ -20,7 +20,7 @@ weight: 02
 
 * 在生产环境中，为确保集群具有足够的计算和存储资源，建议每台集群节点配置至少 8 个 CPU 核心、16 GB 内存和 200 GB 磁盘空间。除此之外，建议在每台集群节点的 **/var/lib/docker**（对于 Docker）或 **/var/lib/containerd**（对于 containerd） 目录额外挂载至少 200 GB 磁盘空间用于存储容器运行时数据。
 
-* 在生产环境中，建议提前为{ks_product_both}集群配置高可用性以避免单个控制平面节点出现故障时集群服务中断。有关更多信息，请参阅link:../../../03-installation-and-upgrade/01-preparations/03-configure-high-availability/[配置高可用性]。
+* 在生产环境中，建议提前为{ks_product_both}集群配置高可用性以避免单个控制平面节点出现故障时集群服务中断。有关更多信息，请参阅link:../../../03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/[配置高可用性]。
 +
 --
 // Note
