@@ -1,0 +1,221 @@
+---
+title: "Configure KubeSphere High Availability"
+keywords: "Kubernetes, {ks_product-en}, Installation, Preparation, High Availability"
+description: "Learn how to configure high availability for KubeSphere."
+weight: 04
+---
+
+This section describes how to configure high availability (HA) for KubeSphere.
+
+[.admon.attention,cols="a"]
+|===
+|Attention
+
+|KubeSphere high availability depends on Kubernetes high availability of control plane nodes. Ensure Kubernetes is deployed in high availability mode first.
+
+|===
+
+== 1. High Availability Architecture Overview
+
+KubeSphere supports high availability deployment through `ha.enabled` configuration.
+
+In HA mode, Redis supports two deployment modes:
+
+. Redis standalone mode
+. Redis high availability mode (Redis HA)
+
+== 2. Version Compatibility
+
+KubeSphere HA configuration applies to {ks_product-en} v4.1.2 and later versions.
+
+== 3. KubeSphere HA Configuration
+
+=== 3.1 Enabling HA Mode
+
+Create a `values.yaml` file with the following configuration:
+
+[source,yaml]
+----
+ha:
+  enabled: true
+----
+
+== 4. Redis Configuration
+
+Choose either Redis standalone mode or Redis HA mode and add corresponding configurations to `values.yaml`.
+
+=== 4.1 Redis Standalone Mode
+
+Suitable for small clusters with simple configuration and lower resource consumption.
+
+[source,yaml]
+----
+redis:
+  port: 6379
+  replicaCount: 1
+  image:
+    repository: kubesphereio/redis
+    tag: 7.2.4-alpine
+    pullPolicy: IfNotPresent
+  persistentVolume:
+    enabled: true
+    size: 2Gi
+----
+
+=== 4.2 Redis HA Mode
+
+Recommended for production environments, providing full high availability.
+
+[source,yaml]
+----
+redisHA:
+  enabled: true
+  redis:
+    port: 6379
+  image:
+    repository: kubesphereio/redis
+    tag: 7.2.4-alpine
+    pullPolicy: IfNotPresent
+  persistentVolume:
+    enabled: true
+    size: 2Gi
+----
+
+=== 4.3 Redis HA Advanced Configuration
+
+[source,yaml]
+----
+redisHA:
+  enabled: true
+  # Redis node configuration
+  redis:
+    port: 6379
+  # Persistence configuration
+  persistentVolume:
+    enabled: true
+    size: 2Gi
+  # Node affinity
+  tolerations:
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
+    - key: node-role.kubernetes.io/control-plane
+      effect: NoSchedule
+    - key: CriticalAddonsOnly
+      operator: Exists
+  # HA configuration
+  hardAntiAffinity: false
+  additionalAffinities:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          preference:
+            matchExpressions:
+              - key: node-role.kubernetes.io/control-plane
+                operator: In
+                values:
+                  - ""
+  # HAProxy configuration
+  haproxy:
+    servicePort: 6379
+    containerPort: 6379
+    image:
+      repository: kubesphereio/haproxy
+      tag: 2.9.6-alpine
+      pullPolicy: IfNotPresent
+----
+
+== 5. HA Deployment
+
+Add `-f values.yaml` when installing or upgrading {ks_product-en}.
+
+[.admon.attention,cols="a"]
+|===
+|Attention
+
+|The following commands are examples. Always append `-f values.yaml` to your actual installation/upgrade commands.
+
+|===
+
+// KubeSphere
+[source,bash]
+----
+# Installation
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f values.yaml --debug --wait
+
+# Upgrade
+helm upgrade -n kubesphere-system ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f values.yaml --debug --wait
+----
+
+// kse
+// [source,bash]
+// ----
+// # Installation
+// helm install -n kubesphere-system --create-namespace ks-core oci://hub.kubesphere.com.cn/kse/ks-core --version 1.1.0 -f values.yaml
+
+// # Upgrade
+// helm upgrade -n kubesphere-system ks-core oci://hub.kubesphere.com.cn/kse/ks-core --version 1.1.0 -f values.yaml
+// ----
+
+
+== 6. Configuration Reference
+
+=== 6.1 Redis Standalone Mode
+
+- Suitable for small clusters
+- Uses single Redis instance
+- Supports basic failover
+- Simple configuration with low resource consumption
+
+=== 6.2 Redis HA Mode
+
+- Recommended for production
+- Uses Redis cluster
+- Provides full high availability
+- Supports automatic failover
+- Data persistence
+- Load balancing
+
+== 7. Optional Configurations
+
+=== JWT Signing Key Configuration
+
+In high availability environments, configure a custom SignKey to ensure all replicas use the same JWT signing key.
+
+. Generate an RSA private key.
++
+[source,bash]
+----
+openssl genrsa -out private_key.pem 2048
+----
+
+. View the Base64-encoded key.
++
+[source,bash]
+----
+cat private_key.pem | base64 -w 0
+----
+
+. Edit KubeSphere configuration.
++
+--
+[source,bash]
+----
+kubectl -n kubesphere-system edit cm kubesphere-config
+----
+
+Add or replace the following field under `authentication.issuer`:
+
+[source,yaml]
+----
+signKeyData: <Base64-encoded private key>
+----
+--
+
+. Restart KubeSphere components.
++
+[source,bash]
+----
+kubectl -n kubesphere-system rollout restart deploy ks-apiserver ks-controller-manager
+----
+
+. Verify configuration. Access `http://<ks-console-address>/oauth/keys` multiple times in browser to check if responses from all replicas are consistent.

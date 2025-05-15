@@ -1,20 +1,12 @@
 ---
-title: "Configure High Availability"
-linkTitle: "Configure High Availability"
+title: "Configure Kubernetes High Availability"
 keywords: "Kubernetes, KubeSphere, Installation, Preparation, High Availability"
 description: "Learn how to configure high availability in case of a single control plane node failure."
-weight: 03
+weight: 02
 ---
 
 
 This section explains how to configure multiple control plane nodes for high availability in a production environment for the KubeSphere cluster. This ensures that the cluster services remain operational even if a single control plane node fails. If your KubeSphere cluster does not require high availability, you can skip this section.
-
-// Note
-include::../../../../_ks_components-en/admonitions/note.adoc[]
-
-The high availability configuration for KubeSphere is only supported when installing Kubernetes and {ks_product-en} together. If you are installing {ks_product-en} on an existing Kubernetes cluster, {ks_product-en} will utilize the existing high availability configuration of the Kubernetes cluster.
-
-include::../../../../_ks_components-en/admonitions/admonEnd.adoc[]
 
 This section explains the following methods for configuring high availability:
 
@@ -29,18 +21,17 @@ This section explains the following methods for configuring high availability:
 To use HAProxy for high availability, you need to configure the following parameters in the installation configuration file **config-sample.yaml** during the installation of {ks_product-en}:
 
 // YAML
-include::../../../../_ks_components-en/code/yaml.adoc[]
-
+[source,yaml]
+----
 spec:
   controlPlaneEndpoint:
     internalLoadbalancer: haproxy
     domain: lb.kubesphere.local
     address: ""
     port: 6443
-
 ----
 
-KubeKey will automatically install HAProxy on the worker nodes and complete the high availability configuration, requiring no additional actions. For more information, please refer to link:../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[Install Kubernetes and {ks_product-en}].
+KubeKey will automatically install HAProxy on the worker nodes and complete the high availability configuration, requiring no additional actions. For more information, please refer to link:../../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/[Install Kubernetes and {ks_product-en}].
 
 == Dedicated Load Balancer
 
@@ -70,9 +61,7 @@ The following describes how to configure a generic server as a load balancer usi
 // Bash
 [,bash]
 ----
-
 apt install keepalived haproxy psmisc -y
-
 ----
 --
 
@@ -82,9 +71,7 @@ apt install keepalived haproxy psmisc -y
 // Bash
 [,bash]
 ----
-
 vi /etc/haproxy/haproxy.cfg
-
 ----
 --
 
@@ -94,7 +81,6 @@ vi /etc/haproxy/haproxy.cfg
 // Bash
 [,bash]
 ----
-
 global
     log /dev/log  local0 warning
     chroot      /var/lib/haproxy
@@ -129,7 +115,6 @@ backend kube-apiserver
     server kube-apiserver-1 <IP address>:6443 check
     server kube-apiserver-2 <IP address>:6443 check
     server kube-apiserver-3 <IP address>:6443 check
-
 ----
 --
 
@@ -139,9 +124,7 @@ backend kube-apiserver
 // Bash
 [,bash]
 ----
-
 systemctl restart haproxy
-
 ----
 --
 
@@ -151,9 +134,7 @@ systemctl restart haproxy
 // Bash
 [,bash]
 ----
-
 systemctl enable haproxy
-
 ----
 --
 
@@ -163,9 +144,7 @@ systemctl enable haproxy
 // Bash
 [,bash]
 ----
-
 vi /etc/keepalived/keepalived.conf
-
 ----
 --
 
@@ -175,7 +154,6 @@ vi /etc/keepalived/keepalived.conf
 // Bash
 [,bash]
 ----
-
 global_defs {
   notification_email {
   }
@@ -214,7 +192,6 @@ vrrp_instance haproxy-vip {
     chk_haproxy
   }
 }
-
 ----
 
 Replace the following parameters with actual values:
@@ -243,9 +220,7 @@ Replace the following parameters with actual values:
 // Bash
 [,bash]
 ----
-
 systemctl restart keepalived
-
 ----
 --
 
@@ -255,9 +230,7 @@ systemctl restart keepalived
 // Bash
 [,bash]
 ----
-
 systemctl enable keepalived
-
 ----
 --
 
@@ -274,9 +247,7 @@ systemctl enable keepalived
 // Bash
 [,bash]
 ----
-
 ip a s
-
 ----
 
 If the system's high availability is functioning properly, the configured floating IP address will be displayed in the command output. For example, in the following command output, **inet 172.16.0.10/24 scope global secondary eth0** indicates that the floating IP address is bound to the eth0 network interface:
@@ -284,7 +255,6 @@ If the system's high availability is functioning properly, the configured floati
 // Bash
 [,bash]
 ----
-
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -308,9 +278,7 @@ If the system's high availability is functioning properly, the configured floati
 // Bash
 [,bash]
 ----
-
 systemctl stop haproxy
-
 ----
 --
 
@@ -320,9 +288,7 @@ systemctl stop haproxy
 // Bash
 [,bash]
 ----
-
 ip a s
-
 ----
 
 If the system's high availability is functioning properly, the command output will no longer display the floating IP address, as shown in the following command output:
@@ -330,7 +296,6 @@ If the system's high availability is functioning properly, the command output wi
 // Bash
 [,bash]
 ----
-
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -343,7 +308,6 @@ If the system's high availability is functioning properly, the command output wi
        valid_lft 72802sec preferred_lft 72802sec
     inet6 fe80::510e:f96:98b2:af40/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
-
 ----
 --
 
@@ -353,9 +317,7 @@ If the system's high availability is functioning properly, the command output wi
 // Bash
 [,bash]
 ----
-
 ip a s
-
 ----
 
 If the system's high availability is functioning properly, the configured floating IP address will be displayed in the command output. For example, in the following command output, **inet 172.16.0.10/24 scope global secondary eth0** indicates that the floating IP address is bound to the eth0 network interface:
@@ -363,7 +325,6 @@ If the system's high availability is functioning properly, the configured floati
 // Bash
 [,bash]
 ----
-
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -378,7 +339,6 @@ If the system's high availability is functioning properly, the configured floati
        valid_lft forever preferred_lft forever
     inet6 fe80::f67c:bd4f:d6d5:1d9b/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
-
 ----
 --
 
@@ -388,8 +348,6 @@ If the system's high availability is functioning properly, the configured floati
 // Bash
 [,bash]
 ----
-
 systemctl start haproxy
-
 ----
 --

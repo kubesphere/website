@@ -25,7 +25,7 @@ The installation process will use the open-source tool KubeKey. For more informa
 
 * In a production environment, to ensure the cluster has sufficient computing and storage resources, it is recommended that each cluster node be configured with at least 8 CPU cores, 16 GB of memory, and 200 GB of disk space. In addition, it is recommended to mount an additional 200 GB of disk space in the **/var/lib/docker** (for Docker) or **/var/lib/containerd** (for containerd) directory of each cluster node for storing container runtime data.
 
-* In a production environment, it is recommended to configure high availability for the KubeSphere cluster in advance to avoid service interruption in the event of a single control plane node failure. For more information, please refer to the link:../../../03-installation-and-upgrade/01-preparations/03-configure-high-availability/[Configure High Availability].
+* In a production environment, it is recommended to configure high availability for the KubeSphere cluster in advance to avoid service interruption in the event of a single control plane node failure. For more information, please refer to the link:../../../03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/[Configure High Availability].
 +
 --
 // Note
