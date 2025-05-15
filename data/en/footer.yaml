@@ -11,9 +11,6 @@ footer:
         - content: Cloud Native Observability
           link: observability/
 
-        - content: Bare Metal LoadBalancer
-          link: 'https://openelb.github.io/'
-
         - content: Functions-as-a-Service Platform and Serverless
           link: 'https://github.com/OpenFunction/OpenFunction'
 
