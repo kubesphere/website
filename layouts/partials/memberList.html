@@ -1,0 +1,33 @@
+{{ if eq . ""}}
+<div class="member-grid-item placeholder">
+
+</div>
+{{ else }}
+<div class="member-grid-item">
+	<a class="member-profile-link" href="{{ .link }}" target="_blank">
+		<div class="member-info-ctn">
+			<div class="member-avater-ctn">
+				<img src="{{ .avater }}" alt="{{ .nickname }}">
+			</div>
+			<div class="member-name-ctn">
+				<span class="member-name"> {{ .name }}</span>
+				<span class="member-nickname">@{{ .nickname }} </span>
+			</div>
+		</div>
+		<div class="member-bg-hover">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</a>
+</div>
+{{ end }}
