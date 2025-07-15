@@ -3,14 +3,14 @@ title: 'KubeSphere Product Lifecycle Policy'
 tag: 'Product News'
 keywords: 'KubeSphere, Lifecycle Policy'
 description: 'The KubeSphere community has released the Product Lifecycle Management Policy, detailing the lifecycle management of KubeSphere cloud-native products, including version definitions, support levels, and lifecycle stages.'
-createTime: '2025-02-14'
+createTime: '2025-07-15'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere%20Product%20Lifecycle%20Policy%20en.png'
 ---
 
 
 > Document Versio:  v1.0
-> Last Updated: February 14, 2025
+> Last Updated: July 15, 2025
 
 ## Overview
 
@@ -93,7 +93,7 @@ In KubeSphere’s cloud-native products and services, **Preview** products and e
 
 |**Version**|**Type**|**GA**|**EoFS**|**EoES**|**EoL**|
 | :-: | :-: | :-: | :-: | :-: | :-: |
-|KSE v4.2|Standard|---|---|---|---|
+|KSE v4.2|Standard|Jul 14, 2025|Jul 14, 2028|Jan 14, 2030|Mar 14, 2030|
 |KSE v4.1|Standard|Apr 16, 2024|Apr 16, 2027|Oct 16, 2028|Dec 16, 2028|
 |KSE v4.0|Preview|Aug 16, 2023|---|---|Jun 28, 2024|
 |KSE v3.5|Standard|Oct 13, 2023|Jul 13, 2025|Jan 13, 2026|Mar 13, 2026|
