@@ -3,14 +3,14 @@ title: 'KubeSphere 产品生命周期管理政策公告'
 tag: '产品动态'
 keywords: 'KubeSphere, Product Lifecycle Management, Lifecycle Policy'
 description: 'KubeSphere社区发布了产品生命周期管理政策公告，全面阐述了KubeSphere云原生产品的生命周期管理，包括产品版本定义、支持等级及其各个生命周期阶段（如GA、EoFS、EoES和EoL）。'
-createTime: '2025-02-14'
+createTime: '2025-07-15'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere%20Product%20Lifecycle%20Policy%20zh.png'
 ---
 
 
 > **文件版本**: v1.0 
-> **更新时间**: 2025.02.14
+> **更新时间**: 2025.07.15
 
 ## 概述
 
