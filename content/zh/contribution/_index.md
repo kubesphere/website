@@ -40,8 +40,8 @@ section2:
           link: 'https://join.slack.com/t/kubesphere/shared_invite/zt-1ilxbsp39-t4ES4xn5OI0eF5hvOoAhEw'
         - content: '加入邮件列表'
           link: 'https://groups.google.com/forum/#!forum/kubesphere'
-        - content: '关注 Twitter'
-          link: 'https://twitter.com/KubeSphere'
+        - content: '关注 X'
+          link: 'https://x.com/KubeSphere'
 
   organization:
     topic: '社区治理'

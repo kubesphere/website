@@ -57,7 +57,7 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/ospp-2022-selecte
 
 为了帮助开源爱好者成为开源社区的贡献者，LFX 提供了一个结构化的远程学习平台，使组织能够为这些有兴趣参与开源项目的开发人员提供带薪实习和指导。一般每年分为春季、夏季、秋季三个阶段。
 
-KubeSphere 社区已经参与了[夏季活动](https://github.com/cncf/mentoring/tree/main/lfx-mentorship/2022/02-Summer)，提交了 CNCF 沙箱项目 OpenELB 和 OpenFunction 的相关开发项目，[中选情况也已公布](https://twitter.com/KubeSphere/status/1536704693866405889)！
+KubeSphere 社区已经参与了[夏季活动](https://github.com/cncf/mentoring/tree/main/lfx-mentorship/2022/02-Summer)，提交了 CNCF 沙箱项目 OpenELB 和 OpenFunction 的相关开发项目，[中选情况也已公布](https://x.com/KubeSphere/status/1536704693866405889)！
 
 秋季活动 KubeSphere 社区也将关注和提交相关的项目，如果各位同学有兴趣，欢迎到时候关注和报名！
 

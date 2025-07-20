@@ -40,8 +40,8 @@ section2:
           link: 'https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ'
         - content: 'Join the Mailing List'
           link: 'https://groups.google.com/forum/#!forum/kubesphere'
-        - content: 'Follow us on Twitter'
-          link: 'https://twitter.com/KubeSphere'
+        - content: 'Follow us on X'
+          link: 'https://x.com/KubeSphere'
 
   organization:
     topic: 'Community Governance'
