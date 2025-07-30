@@ -156,23 +156,23 @@ hasChildren = true
 weight = 4
 name = "Documentation"
 hasChildren = true
-    [[languages.en.menu.main]]
-    parent = "Documentation"
-    name = "v4.1 <img src='/images/header/star.svg' alt='star'>"
-    URL = "/docs/v4.1"
-    weight = 42
+    # [[languages.en.menu.main]]
+    # parent = "Documentation"
+    # name = "v4.1 <img src='/images/header/star.svg' alt='star'>"
+    # URL = "/docs/v4.1"
+    # weight = 42
 
-    [[languages.en.menu.main]]
-    parent = "Documentation"
-    name = "v3.4"
-    URL = "/docs/v3.4"
-    weight = 43
+    # [[languages.en.menu.main]]
+    # parent = "Documentation"
+    # name = "v3.4"
+    # URL = "/docs/v3.4"
+    # weight = 43
 
-    [[languages.en.menu.main]]
-    parent = "Documentation"
-    name = "v3.3"
-    URL = "/docs/v3.3"
-    weight = 44
+    # [[languages.en.menu.main]]
+    # parent = "Documentation"
+    # name = "v3.3"
+    # URL = "/docs/v3.3"
+    # weight = 44
    
     [[languages.en.menu.main]]
     parent = "Documentation"
@@ -305,23 +305,23 @@ hasChildren = true
 weight = 4
 hasChildren = true
 name = "文档中心"
-    [[languages.zh.menu.main]]
-    parent = "文档中心"
-    name = "v4.1 <img src='/images/header/star.svg' alt='star'>"
-    URL = "/docs/v4.1"
-    weight = 42
+    # [[languages.zh.menu.main]]
+    # parent = "文档中心"
+    # name = "v4.1 <img src='/images/header/star.svg' alt='star'>"
+    # URL = "/docs/v4.1"
+    # weight = 42
 
-    [[languages.zh.menu.main]]
-    parent = "文档中心"
-    name = "v3.4"
-    URL = "/docs/v3.4"
-    weight = 43
+    # [[languages.zh.menu.main]]
+    # parent = "文档中心"
+    # name = "v3.4"
+    # URL = "/docs/v3.4"
+    # weight = 43
 
-    [[languages.zh.menu.main]]
-    parent = "文档中心"
-    name = "v3.3"
-    URL = "/docs/v3.3"
-    weight = 44
+    # [[languages.zh.menu.main]]
+    # parent = "文档中心"
+    # name = "v3.3"
+    # URL = "/docs/v3.3"
+    # weight = 44
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
