@@ -8,7 +8,7 @@ section1:
   title: KubeSphere 助您轻松实现可视化
   content: KubeSphere 提供了丰富的可视化功能，支持从基础设施到应用的多维度指标监控。此外，KubeSphere 还集成了许多常用的工具，包括多租户日志查询和收集、告警和通知等功能。
   image: /images/observability/banner.jpg
-  showDownload: true
+  showDownload: false
 
 image: /images/observability/observability.jpg
 
@@ -44,7 +44,7 @@ section2:
 section3:
   title: 观看 KubeSphere 云原生可观测性演示
   videoLink: https://www.youtube.com/embed/uf0TTowc56I
-  showDownload: true
+  showDownload: false
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

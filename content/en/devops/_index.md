@@ -11,7 +11,7 @@ section1:
   content: KubeSphere DevOps integrates popular CI/CD tools, provides CI/CD pipelines based on Jenkins, offers automation toolkits including Binary-to-Image (B2I) and Source-to-Image (S2I), and boosts continuous delivery across Kubernetes clusters.
   content2: With the container orchestration capability of Kubernetes, KubeSphere DevOps scales Jenkins Agents dynamically, improves CI/CD workflow efficiency, and helps organizations accelerate the time to market for products.
   image: /images/devops/banner.png
-  showDownload: true
+  showDownload: false
   inCenter: true
 
 
@@ -49,7 +49,7 @@ section3:
   title: See KubeSphere One-stop DevOps Workflow In Action
   videoLink: https://www.youtube.com/embed/c3V-2RX9yGY
   image: /images/service-mesh/15.jpg
-  showDownload: true
+  showDownload: false
   content: Want to get started in action by following the hands-on lab?
   btnContent: Start Hands-on Lab
   link: docs/pluggable-components/devops/

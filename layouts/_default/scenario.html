@@ -77,7 +77,9 @@
     </div>
     {{ else }}
     <p class="common-p">{{ .content }}</p>
-    <a href="{{ .link | relLangURL }}"><button class="common-btn lab">{{ .btnContent }}</button></a>
+      {{ if .btnContent }}
+      <a href="{{ .link | relLangURL }}"><button class="common-btn lab">{{ .btnContent }}</button></a>
+      {{ end }}
     {{ end }}
   </div>
   {{ end }}
