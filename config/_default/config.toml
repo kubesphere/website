@@ -214,11 +214,11 @@ name = "Community"
     URL = "news/"
     weight = 4
 
-    [[languages.en.menu.main]]
-    parent = "Community"
-    name = "RoadMap"
-    URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
-    weight = 5
+    # [[languages.en.menu.main]]
+    # parent = "Community"
+    # name = "RoadMap"
+    # URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
+    # weight = 5
 
     [[languages.en.menu.main]]
     parent = "Community"
@@ -375,11 +375,11 @@ name = "开源社区"
     URL = "news/"
     weight = 6
 
-    [[languages.zh.menu.main]]
-    parent = "开源社区"
-    name = "版本计划"
-    URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
-    weight = 7
+    # [[languages.zh.menu.main]]
+    # parent = "开源社区"
+    # name = "版本计划"
+    # URL = "https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md"
+    # weight = 7
 
     [[languages.zh.menu.main]]
     parent = "开源社区"

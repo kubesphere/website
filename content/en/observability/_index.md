@@ -8,7 +8,7 @@ section1:
   title: Kubernetes Observability in KubeSphere Allows You to Build Visualizations Simply and Intuitively.
   content: KubeSphere provides rich observability from infrastructure to applications. It integrates your favorite tools for multi-dimensional monitoring metrics, multi-tenant log query and collection, alerting and notification. Try Kubernetes Observability in KubeSphere to realize visualization in a simple way.
   image: /images/observability/banner.jpg
-  showDownload: true
+  showDownload: false
 
 
 image: /images/observability/observability.jpg
@@ -45,7 +45,7 @@ section2:
 section3:
   title: See Kubernetes and Microservices Observability on KubeSphere
   videoLink: https://www.youtube.com/embed/uf0TTowc56I
-  showDownload: true
+  showDownload: false
   bgLeft: /images/service-mesh/3-2.svg
   bgRight: /images/service-mesh/3.svg
 ---

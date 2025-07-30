@@ -10,7 +10,7 @@ section1:
   title: "Build Kubernetes multi-cluster and Multi-cloud Strategy to Scale Your Business With Ease"
   content: Enterprises are increasingly deploying applications to multiple Kubernetes clusters to ensure high availability, isolation and scalability. KubeSphere is a central control plane for Kubernetes multi-cluster management and operation.
   image: /images/devops/banner.png
-  showDownload: true
+  showDownload: false
   inCenter: true
 
 
@@ -49,7 +49,7 @@ section3:
   title: See KubeSphere One-stop DevOps Workflow In Action
   videoLink: https://www.youtube.com/embed/dQ3sm40Hr18
   image: /images/service-mesh/15.jpg
-  showDownload: true
+  showDownload: false
   content: Want to get started in action by following the hands-on lab?
   btnContent: Start Hands-on Lab
   link: docs/pluggable-components/devops/

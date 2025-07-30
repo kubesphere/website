@@ -9,7 +9,7 @@ section1:
   content: KubeSphere DevOps 提供基于 Jenkins 的 CI/CD 流水线，支持自动化工作流，包括 Binary-to-Image (B2I) 和 Source-to-Image (S2I) 等，帮助不同的组织加快产品上市时间。
   content2:
   image: /images/devops/banner.png
-  showDownload: true
+  showDownload: false
   inCenter: true
 
 image: /images/devops/dev-ops.png
@@ -47,7 +47,7 @@ section3:
   title: 观看 KubeSphere 一站式 DevOps 工作流操作演示
   videoLink: https://www.youtube.com/embed/c3V-2RX9yGY
   image: /images/service-mesh/15.jpg
-  showDownload: true
+  showDownload: false
   content: 想自己动手体验实际操作？
   btnContent: 开始动手实验
   link: docs/pluggable-components/devops/

@@ -36,16 +36,16 @@ footer:
         - content: 云原生实战
           link: learn/
 
-    - title: 文档中心
-      list:
-        - content: 产品介绍
-          link: '../../../zh/docs/v4.1/01-intro/01-introduction/'
-        - content: 如何安装
-          link: '../../../zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/'
-        - content: 快速入门
-          link: '../../../zh/docs/v4.1/02-quickstart/'
-        - content: API 文档
-          link: '../../../zh/docs/v3.4/reference/api-docs/'
+    # - title: 文档中心
+    #   list:
+    #     - content: 产品介绍
+    #       link: '../../../zh/docs/v4.1/01-intro/01-introduction/'
+    #     - content: 如何安装
+    #       link: '../../../zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/'
+    #     - content: 快速入门
+    #       link: '../../../zh/docs/v4.1/02-quickstart/'
+    #     - content: API 文档
+    #       link: '../../../zh/docs/v3.4/reference/api-docs/'
 
     - title: 开源社区
       list:
@@ -59,8 +59,8 @@ footer:
           link: partner/
         - content: 用户委员会
           link: user-group/
-        - content: 版本计划
-          link: https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md
+        # - content: 版本计划
+        #   link: https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md
         - content: 中国站
           link: https://kubesphere.com.cn/
         - content: 中文论坛
