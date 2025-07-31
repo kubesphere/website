@@ -6,7 +6,7 @@
                   (hasPrefix .RelPermalink "/docs/v4.1") }}
 
 {{ if $disabled }}
-  {{ partial "404" . }}
+  {{ .Render "404" }}
   {{ .Scratch.Set "renderEnabled" false }}
 {{ end }}
 
