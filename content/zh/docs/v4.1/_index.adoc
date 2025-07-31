@@ -3,10 +3,6 @@ title: 文档中心
 css: scss/docs.scss
 isDocsRoot: true
 LinkTitle: 文档
-_build:
-  render: never
-  list: never
-  publishResources: false
 
 section1:
   title: KubeSphere
