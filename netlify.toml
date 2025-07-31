@@ -38,4 +38,4 @@
   for = "^(/zh)?/docs/(v3\\.3|v3\\.4|v4\\.1)(/.*)?$" 
   [headers.values]
     Cache-Control = "no-store, max-age=0"
-    X-Robots-Tag = "noindex, nofollow" 
+    X-Robots-Tag = "noindex, nofollow"
