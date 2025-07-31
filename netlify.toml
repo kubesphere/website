@@ -33,9 +33,10 @@
   to = "/404.html"
   status = 404
   force = true
+  conditions = { Role = "all" } 
 
-[[headers]]  
-  for = "^(/zh)?/docs/(v3\\.3|v3\\.4|v4\\.1)(/.*)?$" 
-  [headers.values]
-    Cache-Control = "no-store, max-age=0"
-    X-Robots-Tag = "noindex, nofollow"
+# [[headers]]  
+#   for = "^(/zh)?/docs/(v3\\.3|v3\\.4|v4\\.1)(/.*)?$" 
+#   [headers.values]
+#     Cache-Control = "no-store, max-age=0"
+#     X-Robots-Tag = "noindex, nofollow"
