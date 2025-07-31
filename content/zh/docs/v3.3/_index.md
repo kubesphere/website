@@ -2,10 +2,6 @@
 title: "Documentation"
 css: "scss/docs.scss"
 isDocsRoot: true
-_build:
-  render: never
-  list: never
-  publishResources: false
 
 LinkTitle: "文档"
 
