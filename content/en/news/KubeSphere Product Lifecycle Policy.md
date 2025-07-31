@@ -19,7 +19,6 @@ In a rapidly evolving market, KubeSphere, the product from QingCloud Technologie
 ## Scope
 
 This policy applies to the following KubeSphere cloud-native products:
-- **KubeSphere Community Edition** (Versions: v1, v2, v3, v4)
 - **KubeSphere Enterprise Edition** (Including legacy QKCP; Versions: v1, v2, v3, v4)
 
 
@@ -107,17 +106,6 @@ In KubeSphere’s cloud-native products and services, **Preview** products and e
 
 - **Extensions post KSE v4.2**: May release independently but share the same lifecycle as KSE.
 - **Preview Releases**: Non-commercial, lab/testing-only versions with a 6-month lifecycle (no SLA).
-
-### KubeSphere Community Edition
-
-|**Version**|**Type**|**GA**|**EoL**|
-| :-: | :-: | :-: | :-: |
-|KubeSphere v4.2|Standard|---|---|
-|KubeSphere v4.1|Standard|Sep 12, 2024|Sep 12, 2027|
-|KubeSphere v3.4|Standard|---|Dec 25, 2025|
-|KubeSphere v3.3 & earlier|Standard|---|Oct 31, 2025|
-
-<center><span style="color: #00A971;">KubeSphere Community Edition Product Lifecycle Timeline</span></center>
 
 ## Supplementary Notes
 - **Third-Party Extensions**: KubeSphere v4 may include third-party ecosystem extensions. For lifecycle policies, refer to the respective provider’s documentation.
