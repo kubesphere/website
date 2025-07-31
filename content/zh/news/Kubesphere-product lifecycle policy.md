@@ -3,14 +3,14 @@ title: 'KubeSphere 产品生命周期管理政策公告'
 tag: '产品动态'
 keywords: 'KubeSphere, Product Lifecycle Management, Lifecycle Policy'
 description: 'KubeSphere社区发布了产品生命周期管理政策公告，全面阐述了KubeSphere云原生产品的生命周期管理，包括产品版本定义、支持等级及其各个生命周期阶段（如GA、EoFS、EoES和EoL）。'
-createTime: '2025-07-15'
+createTime: '2025-07-31'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere%20Product%20Lifecycle%20Policy%20zh.png'
 ---
 
 
 > **文件版本**: v1.0 
-> **更新时间**: 2025.07.15
+> **更新时间**: 2025.07.31
 
 ## 概述
 
@@ -19,7 +19,6 @@ image: 'https://pek3b.qingstor.com/kubesphere-community/images/KubeSphere%20Prod
 ## 适用范围
 
 本文中描述的 KubeSphere 产品生命周期终止政策适用于以下 KubeSphere 云原生产品与服务：
-- KubeSphere 开源版。涉及 v1、v2、v3 及 v4 版本。
 - KubeSphere 企业版（包含更名前的青云 QKCP）。涉及 v1、v2、v3 及 v4 版本。
 - 青云容器平台（可信版）。涉及所有产品版本。
 
@@ -118,21 +117,11 @@ KubeSphere 云原生产品与服务中，Preview 类型产品版本及扩展组�
 - KubeSphere 企业版 v4.2 之后，各扩展组件可能出现独立发版、迭代的情况，但其产品生命周期不单独设立，仍与 KubeSphere 企业版产品生命周期一致。
 
 
-### 2. KubeSphere 开源版
-
-| 版本号   | 版本类型   | GA           | EoL         |
-|--------|------------|--------------|-------------|
-| KubeSphere v4.2 | Standard  | ——           | ——          |
-| KubeSphere v4.1 | Standard  | 2024年09月12日 | 2027年09月12日 |
-| KubeSphere v3.4 | Standard  |—— | 2025年12月25日 |
-| KubeSphere v3.3 及之前版本 | Standard  | —— | 2025年10月31日 |
-
-<center><span style="color: #00A971;">KubeSphere 开源版产品生命周期时间表</span></center>
 
 ## 补充说明
 
 
-- 在 KubeSphere 企业版/开源版 v4 版本中，可能存在一些来自第三方合作伙伴的生态扩展组件。针对这些扩展组件，其产品生命周期管理策略请查看产品的相关说明文档或联系对应产品提供商。
+- 在 KubeSphere 企业版 v4 版本中，可能存在一些来自第三方合作伙伴的生态扩展组件。针对这些扩展组件，其产品生命周期管理策略请查看产品的相关说明文档或联系对应产品提供商。
 - 因产品软著与软件采购退税等政策性原因，青云科技销售目录与合同中所列举的产品版本可能与实际交付部署的产品版本不一致。若出现该情况，一切都以客户首次采购、实际交付部署并颁发许可证授权的产品版本为准。
 - 在 KubeSphere 云原生产品与服务的销售中，当出现采购产品永久授权与多年 FS/ES 的场景时，其适用的版本可能不是采购当时的产品版本。此时以当前实际交付部署并颁发许可证授权的产品版本为准。
 - 上方“KubeSphere 产品生命周期时间表”中展示的时间，为各里程碑阶段承诺服务与支持的最短时间。我们可能会基于产品版本质量、安装部署人数、新产品（版本）研发情况等进行动态调整 EoFS/EoES/EoL 的时间。若有调整，我们将另行公告，欢迎关注。
