@@ -1,3 +1,15 @@
+{{ $disabled := or (hasPrefix .RelPermalink "/zh/docs/v3.3") 
+                  (hasPrefix .RelPermalink "/zh/docs/v3.4")
+                  (hasPrefix .RelPermalink "/zh/docs/v4.1")
+                  (hasPrefix .RelPermalink "/docs/v3.3")
+                  (hasPrefix .RelPermalink "/docs/v3.4")
+                  (hasPrefix .RelPermalink "/docs/v4.1") }}
+
+{{ if $disabled }}
+  {{ partial "404" . }}
+  {{ .Scratch.Set "renderEnabled" false }}
+{{ end }}
+
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 
