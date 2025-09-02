@@ -114,26 +114,26 @@ section4:
     - name: 云原生应用商店
       icon: /images/home/store.svg
       content: 提供基于 Helm 的应用商店与应用仓库，内置多个应用模板，支持应用生命周期管理
-      link: "/docs/v3.3/pluggable-components/app-store/"
+      link: "https://docs.kubesphere.com.cn/v4.2.0/11-use-extensions/05-app-store/"
       color: grape
 
     - name: Kubernetes 多集群管理
       icon: /images/home/management.svg
       content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
-      link: "/docs/v3.3/multicluster-management/introduction/overview/"
+      link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
       color: orange
 
     - name: Kubernetes 边缘节点管理
       icon: /images/home/network.svg
       content: 基于 KubeEdge 实现应用与工作负载在云端与边缘节点的统一分发与管理，解决在海量边、端设备上完成应用交付、运维、管控的需求
-      link: "/docs/v3.3/pluggable-components/kubeedge/"
+      link: "https://edgewize-docs.kubesphere.com.cn/"
       color: green
 
-    - name: 多维度计量与计费
-      icon: /images/home/multiple.svg
-      content: 提供基于集群与租户的多维度资源计量与计费的监控报表，让 Kubernetes 运营成本更透明
-      link: "/docs/v3.3/toolbox/metering-and-billing/view-resource-consumption/"
-      color: grape
+    # - name: 多维度计量与计费
+    #   icon: /images/home/multiple.svg
+    #   content: 提供基于集群与租户的多维度资源计量与计费的监控报表，让 Kubernetes 运营成本更透明
+    #   link: "/docs/v3.3/toolbox/metering-and-billing/view-resource-consumption/"
+    #   color: grape
 
 section5:
   title: 面向云原生的架构，前后端分离
