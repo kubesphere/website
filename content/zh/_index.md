@@ -2,21 +2,34 @@
 title: 面向云原生应用的容器混合云，支持 Kubernetes 多集群管理的 PaaS 容器云平台解决方案 | KubeSphere
 description: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，完全开源，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
 
-
 css: scss/index.scss
 
 section1:
-  title: KubeSphere 容器平台
-  topic: 面向云原生应用的<br>容器混合云
+  title: KubeSphere 容器平台-面向云原生应用的容器混合云
+  topic: kubesphere 社区版
   content: KubeSphere 愿景是打造一个以 Kubernetes 为内核的云原生分布式操作系统，它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理。
+  btns:
+    - content: 即刻体验
+      # TODO: Community page
+      link: /case
+      class: experiense-btn
+    - content: 申请免费授权
+      # TODO: free feature list
+      link: /
+      class: apply-btn
+
+tabs:
+  children:
+    - title: 免费产品
+    - title: 开源项目
 
 section2:
   title: 全栈的 Kubernetes 容器云 PaaS 解决方案
   content: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。
   children:
-    - name: 完全开源
-      icon: /images/home/open-source.svg
-      content: 通过 CNCF 一致性认证的 Kubernetes 平台，100% 开源，由社区驱动与开发
+    - name: 永久免费
+      icon: /images/home/free.svg
+      content: 零成本无忧使用，享受持续迭代的企业级功能，助您轻松构建云原生基石
 
     - name: 简易安装
       icon: /images/home/easy-to-run.svg
@@ -24,13 +37,11 @@ section2:
 
     - name: 功能丰富
       icon: /images/home/feature-rich.svg
-      content: 在一个平台统一纳管 DevOps、云原生可观测性、服务网格、应用生命周期、多租户、多集群、存储与网络
+      content: 提供多租户、多集群、云原生可观测性、应用生命周期、存储与网络、DevOps
 
-    - name: 模块化 & 可插拔
+    - name: 灵活扩展
       icon: /images/home/modular-pluggable.svg
-      content: 平台中的所有功能都是可插拔与松耦合，您可以根据业务场景可选安装所需功能组件
-
-
+      content: 基于可插拔架构，可无缝集成任何主流开源工具，像搭积木一样按需扩展平台能力
 
 section3:
   title: 不同团队的受益
@@ -73,67 +84,26 @@ section3:
         - content: 应用商店将支持运营，提供针对应用的计量与计费（v3.x）
 
 section4:
-  title: 主要功能
-  content: 如果您在寻找一个可以媲美商业产品的开源项目，KubeSphere 会是您的选择。<br> <br>我们在 <a class='inner-a' target='_blank' href='https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md'>RoadMap</a> 列出了下一个版本的规划，欢迎所有人为社区提供您的需求、建议与反馈。
-  children:
-    - name: 安装 Kubernetes 集群
-      icon: /images/home/provisioning-kubernetes.svg
-      content: 支持在任何基础设施上部署 Kubernetes，提供在线与离线安装，支持添加 GPU 节点
-
-    - name: Kubernetes 资源管理
-      icon: /images/home/k-8-s-resource-management.svg
-      content: 提供 Web 控制台对接 Kubernetes 原生 API 快速创建与管理 Kubernetes 资源，内置多维度的可观测性
-
-    - name: 多租户管理
-      icon: /images/home/multi-tenant-management.svg
-      content: 提供统一的认证鉴权与细粒度的基于角色的授权系统，支持对接 AD/LDAP
-
-    - name: 支持多种存储与网络方案
-      icon: /images/home/multi-tenant-management.svg
-      content: 支持 GlusterFS、Ceph、NFS、LocalPV，提供多个 CSI 插件对接公有云与企业级存储；提供面向物理机 Kubernetes 环境的负载均衡器 <a class='inner-a' target='_blank' href='https://openelb.github.io/'>OpenELB</a>，支持网络策略可视化，支持 Calico、Flannel、Cilium、Kube-OVN 等网络插件
+  title: 产品应用场景
 
   features:
-    - name: Kubernetes DevOps 系统
-      icon: /images/home/dev-ops.svg
-      content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
-      link: "devops/"
-      color: orange
-
-    - name: 基于 Istio 的微服务治理
-      icon: /images/home/service.svg
-      content: 提供细粒度的流量管理、流量监控、灰度发布、分布式追踪，支持可视化的流量拓扑
-      link: "service-mesh/"
-      color: red
+    - name: Kubernetes 多集群管理
+      icon: /images/home/management.svg
+      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
+      link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
+      color: grape
 
     - name: 丰富的云原生可观测性
       icon: /images/home/rich.svg
       content: 提供多维度与多租户的监控、日志、事件、审计搜索，支持多种告警策略与通知渠道，支持日志转发
       link: "observability/"
+      color: red
+
+    - name: Kubernetes DevOps 系统
+      icon: /images/home/devops1.svg
+      content: 基于 Jenkins 为引擎打造的 CI/CD，内置 Source-to-Image 和 Binary-to-Image 自动化打包部署工具
+      link: "devops/"
       color: green
-
-    - name: 云原生应用商店
-      icon: /images/home/store.svg
-      content: 提供基于 Helm 的应用商店与应用仓库，内置多个应用模板，支持应用生命周期管理
-      link: "https://docs.kubesphere.com.cn/v4.2.0/11-use-extensions/05-app-store/"
-      color: grape
-
-    - name: Kubernetes 多集群管理
-      icon: /images/home/management.svg
-      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
-      link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
-      color: orange
-
-    - name: Kubernetes 边缘节点管理
-      icon: /images/home/network.svg
-      content: 基于 KubeEdge 实现应用与工作负载在云端与边缘节点的统一分发与管理，解决在海量边、端设备上完成应用交付、运维、管控的需求
-      link: "https://edgewize-docs.kubesphere.com.cn/"
-      color: green
-
-    # - name: 多维度计量与计费
-    #   icon: /images/home/multiple.svg
-    #   content: 提供基于集群与租户的多维度资源计量与计费的监控报表，让 Kubernetes 运营成本更透明
-    #   link: "/docs/v3.3/toolbox/metering-and-billing/view-resource-consumption/"
-    #   color: grape
 
 section5:
   title: 面向云原生的架构，前后端分离
@@ -154,43 +124,105 @@ section5:
       - name: Controller Manager
       - name: Account Service
 
-
 section6:
-  title: 用户社区
-  content: 已有来自全球的大量知名企业与组织将 KubeSphere 容器平台广泛应用在科研、生产环境以及他们的商业产品中，</br> 点击<a class='inner-a' target='_blank' href='case/'>案例学习</a>查看更详细的典型用户的实践案例文章。
+  title: 用户案例
+  content: 已有来自全球的大量知名企业与组织将 KubeSphere 容器平台广泛应用在科研、生产环境以及他们的商业产品中。
   children:
     - icon: /images/home/section6-anchnet.jpg
-    - icon: /images/home/section6-aviation-industry-corporation-of-china.jpg
+      link: /case/anchnet
     - icon: /images/case/logo-alphaflow.png
-    - icon: /images/home/section6-aqara.jpg
-    - icon: /images/home/section6-bank-of-beijing.jpg
-    - icon: /images/home/section6-benlai.jpg
-    - icon: /images/home/section6-china-taiping.jpg
-    - icon: /images/home/section6-changqing-youtian.jpg
-    - icon: /images/home/section6-cmft.jpg
-    - icon: /images/home/section6-extreme-vision.jpg
-    - icon: /images/home/section6-guizhou-water-investment.jpg
+      link: /case/alphaflow
+    - icon: /images/case/section6-aqara.jpg
+      link: /case/aqara
     - icon: /images/home/section6-huaxia-bank.jpg
-    - icon: /images/home/section6-inaccel.jpg
-    - icon: /images/home/section6-maxnerva.jpg
-    - icon: /images/home/section6-picc.jpg
-    - icon: /images/case/logo-xdf.png
-    - icon: /images/home/section6-sina.jpg
-    - icon: /images/home/section6-sichuan-airlines.jpg
-    - icon: /images/home/section6-sinopharm.jpg
-    - icon: /images/home/section6-softtek.jpg
-    - icon: /images/home/section6-spd-silicon-valley-bank.jpg
+      link: /case/huaxia-bank
+    - icon: /images/home/section6-benlai.jpg
+      link: /case/benlai
+    - icon: /images/case/uisee.png
+      link: /case/uisee
+    - icon: /images/case/section6-zto.png
+      link: /case/zto
+    - icon: /images/case/section6-hongya.png
+      link: /case/hongyaa
+    - icon: /images/case/chinamobile-iot.png
+      link: /case/chinamobile-iot
+    - icon: /images/case/logo-qunar.png
+      link: /case/qunar
+    - icon: /images/case/logo-turing.png
+      link: /case/turing
+    - icon: /images/case/segmentfault-logo.png
+      link: /case/segmentfault
+    - icon: /images/case/logo-msxf.png
+      link: /case/msxf
+    - icon: /images/case/section6-sinodata.png
+      link: /case/sinodata
     - icon: /images/home/section6-vng.jpg
-    - icon: /images/home/section6-webank.jpg
-    - icon: /images/home/section6-wisdom-world.jpg
-    - icon: /images/home/section6-yiliu.jpg
+      link: /case/vng
+    - icon: /images/case/logo-xdf.png
+      link: /case/xdf
+    - icon: /images/home/section6-extreme-vision.jpg
+      link: /case/extreme-vision
+    - icon: /images/case/section6-vesoft-4.png
+      link: /case/vesoft
+    - icon: /images/case/logo-keyenlinx.png
+      link: /case/keyenlinx
+    - icon: /images/case/logo-yiheda.png
+      link: /case/yiheda
+    - icon: /images/case/logo-eastcom.png
+      link: /case/eastcom
+    - icon: /images/case/logo-gxjtkyy.png
+      link: /case/gxjtkyy
+    - icon: /images/case/section6-maxnerva.jpg
+      link: /case/maxnerva
+    - icon: /images/case/logo-hshc.png
+      link: /case/hshc
+    - icon: /images/case/logo-vsleem.png
+      link: /case/vsleem
 
-  btnContent: 案例学习
-  btnLink: case/
   link: mailto:info@kubesphere.io
   linkContent: 希望加入用户社区并在 KubeSphere 官网展示您的 Logo？请邮件至 info@kubesphere.io
   joinTitle: 加入 KubeSphere 社区合作伙伴计划
   joinContent: 我们非常期待您加入 KubeSphere 社区合作伙伴计划，共同完善各自的生态，加速您的业务增长。
   joinLink: partner/
   image: /images/home/certification.png
+
+section7:
+  title: 产品功能架构
+  image: /images/home/arch-cn.png
+
+section8:
+  title: KubeSphere 自诞生以来始终坚持开源初心<br/>在全球云原生社区中持续贡献力量
+  content: 作为企业级 Kubernetes 平台的先行者，KubeSphere 在多集群治理、可视化运维、统一可观测性和企业级 DevOps 集成等方面不断创新，推动了 Kubernetes 在企业场景的普及与落地。同时，KubeSphere 社区孵化了 KubeKey、OpenELB、 Fluent Operator 等开源项目，并深度协同 Grafana、Loki、Higress 等生态，形成了广泛的技术影响力。
+  children:
+    - name: KubeKey
+      icon: /images/home/kube-key.svg
+      content: 极速安装与运维工具，加速 Kubernetes 部署，适配多环境，自动化全生命周期管理
+
+    - name: OpenELB
+      icon: /images/home/open-elb.svg
+      content: 原生负载均衡解决方案，填补裸金属 LB 空白，支持多网络模式，消除外部依赖
+
+    - name: KubeEye
+      icon: /images/home/kube-eye.svg
+      content: Kubernetes 集群检测与诊断工具，发现配置风险与合规问题，诊断集群异常，提升 Kubernetes 稳定性与安全性
+
+    - name: Fluent Operator
+      icon: /images/home/fluent-operator.svg
+      content: 云原生日志与数据采集引擎，统一日志采集与处理，扩展 Fluentd / Fluent Bit，提升运维可观测性，项目已捐献
+
+    - name: OpenFunction
+      icon: /images/home/open-function.svg
+      content: 云原生、开源的 FaaS（函数即服务）框架，聚焦业务逻辑开发，抽象底层运行环境，加速云原生函数即服务落地
+
+    - name: Notification-Manager
+      icon: /images/home/notification-manager.svg
+      content: 管理多租户 Kubernetes 环境中的消息通知，统一多租户通知渠道，支持邮件、钉钉、飞书、企业微信，提升消息管理效率
+
+    - name: Devops
+      icon: /images/home/devops.svg
+      content: 提供端到端的工作流，集成主流 CI/CD 工具，整合 CI/CD 工具，简化交付流程，提升迭代效率
+
+    - name: Gatekeeper
+      icon: /images/home/gatekeeper.svg
+      content: 基于 OPA 的安全策略管理工具，强化 Kubernetes 安全合规，基于 OPA 定义策略，防止违规资源配置
 ---

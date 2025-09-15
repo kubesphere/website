@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $language := .Site.Language.Lang }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
 <div class="shadow"></div>
 <section class='section-1'>
@@ -8,7 +9,12 @@
       <p class='p1'>{{ .title | safeHTML }}</p>
       <h1>{{ .topic | safeHTML }}</h1>
       <p class='p2'>{{ .content | safeHTML }}</p>
-      <!-- {{ partial "downloadButton" . }} -->
+
+      {{range .btns}}
+      <a href="{{ .link }}" class="{{.class}}" target="_blank" rel="noopener noreferrer">
+        <button class='download-btn download-btn2 common-btn'>{{ .content | safeHTML }}</button>
+      </a>
+      {{end}}
     </div>
     <div class="img1-div">
       <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
@@ -23,18 +29,131 @@
   <img class='img3' src="/images/home/2.svg" alt="{{ i18n " background image"}}">
   {{ end }}
 </section>
-
-<section class="section-2">
-  {{ with .Params.section2 }}
-  <div class="common-layout">
-    <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
-    <p class="title-p">{{ .content | safeHTML }}</p>
+<div class="tabs">
+  <div class="tab-div">
+    {{ with .Params.tabs }}
     <ul>
-      {{ range .children }}
-      <li class="common-top-inline">
-        <img src="{{ .icon }}" alt="{{ .name }}">
-        <h3 class="title-black-h3 ">{{ .name | safeHTML }}</h3>
-        <p class="common-center-p">{{ .content | safeHTML }}</p>
+      {{range .children}}
+      <li>{{ .title | safeHTML }}</li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  <div class="content-section active ">
+    <section class="section-2">
+      {{ with .Params.section2 }}
+      <div class="common-layout">
+        <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
+        <p class="title-p">{{ .content | safeHTML }}</p>
+        <ul>
+          {{ range .children }}
+          <li class="common-top-inline">
+            <img src="{{ .icon }}" alt="{{ .name }}">
+            <h3 class="title-black-h3 ">{{ .name | safeHTML }}</h3>
+            <p class="common-center-p">{{ .content | safeHTML }}</p>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+      <div class="section-7">
+        {{ with .Params.section7 }}
+        <div class="common-layout">
+          <h2 class="title-black-h2">{{ .title }}</h2>
+          <img src="{{ .image }}" alt="{{ .title }}">
+        </div>
+        {{end}}
+      </div>
+      <div class='section-5'>
+        {{ with .Params.section5 }}
+        <div class="common-layout">
+          <h2 class="title-black-h2">{{ .title }}</h2>
+          <div>
+            {{ with .frontEnd }}
+            <div class='front-div common-top-inline'>
+              <h3 class="title-black-h3">{{ .title }}</h3>
+              <p>{{ .project }}</p>
+              {{ $alt := .project }}
+              <ul>
+                {{ range .children }}
+                <li>
+                  <img src="{{ .icon }}" alt="{{ $alt }}">
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
+            {{ with .backEnd }}
+            <div class='back-div common-top-inline'>
+              <h3 class="title-black-h3">{{ .title}}</h3>
+              <div class='group'>
+                <p>{{ .project }}</p>
+                <ul>
+                  {{ range .group }}
+                  <li>{{ .name }}</li>
+                  {{ end }}
+                </ul>
+              </div>
+              <div class='image'>
+                <img src="/images/home/applications.png" alt="{{ .project }}">
+                <img src="/images/home/applications.png" alt="{{ .project }}">
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+  <div class="content-section ">
+    <section class="section-2 section-8">
+      {{ with .Params.section8 }}
+      <div class="common-layout">
+        <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
+        <p class="title-p">{{ .content | safeHTML }}</p>
+        <ul>
+          {{ range .children }}
+          <li class="common-top-inline">
+            <img src="{{ .icon }}" alt="{{ .name }}">
+            <h3 class="title-black-h3 ">{{ .name | safeHTML }}</h3>
+            <p class="common-center-p">{{ .content | safeHTML }}</p>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+    </section>
+  </div>
+
+</div>
+
+
+<section class='section-4'>
+  {{ with .Params.section4 }}
+  <img class='bg-1' src="/images/home/section4-left.png" alt="{{ i18n " background image"}}">
+  <img class='bg-2' src="/images/home/section4-right.svg" alt="{{ i18n " background image"}}">
+  <div class="common-layout">
+
+    <h2 class="title-white-h2">{{ .title }}</h2>
+
+
+    <ul>
+      {{ range .features}}
+      <li>
+        <div>
+          <div class='top-line {{ .color }}'></div>
+          <img class="common-middle-inline" src="{{ .icon }}" alt="{{ .name }}">
+          <p class="common-content ">{{ .name }}</p>
+          <p class="common-p content-p">{{ .content | safeHTML }}</p>
+        </div>
+
+
+        <a class="common-p green-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ i18n "Read More"
+          }}
+          →</a>
+
       </li>
       {{ end }}
     </ul>
@@ -73,93 +192,6 @@
   {{ end }}
 </section>
 
-<section class='section-4'>
-  {{ with .Params.section4 }}
-  <img class='bg-1' src="/images/home/section4-left.png" alt="{{ i18n " background image"}}">
-  <img class='bg-2' src="/images/home/section4-right.svg" alt="{{ i18n " background image"}}">
-  <div class="common-layout">
-    <div>
-      <h2>{{ .title }}</h2>
-      <p class="common-p">{{ .content | safeHTML }}</p>
-      <ul>
-        {{ range .children }}
-        <li>
-          <img src="{{ .icon }}" alt="{{ .name }}">
-          <div>
-            <h3 class="title-white-h3">{{ .name }}</h3>
-            <p class="common-p">{{ .content | safeHTML }}</p>
-          </div>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-
-    <ul>
-      {{ range .features}}
-      <li>
-        <div>
-          <div class='top-line {{ .color }}'></div>
-          <div class='img-span-div'>
-            <img class="common-middle-inline" src="{{ .icon }}" alt="{{ .name }}">
-            <span class="common-middle-inline">{{ .name }}</span>
-          </div>
-          <p class="common-p">{{ .content | safeHTML }}</p>
-        </div>
-        <div class='middle-line'></div>
-        {{ if .check }}
-        <span class="common-green-a">{{ i18n "Coming Soon" }} →</span>
-        {{ else }}
-        <a class="common-green-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ i18n "Read More" }}
-          →</a>
-        {{ end }}
-      </li>
-      {{ end }}
-    </ul>
-  </div>
-  {{ end }}
-</section>
-
-<section class='section-5'>
-  {{ with .Params.section5 }}
-  <div class="common-layout">
-    <h2 class="title-black-h2">{{ .title }}</h2>
-    <div>
-      {{ with .frontEnd }}
-      <div class='front-div common-top-inline'>
-        <h3 class="title-black-h3">{{ .title }}</h3>
-        <p>{{ .project }}</p>
-        {{ $alt := .project }}
-        <ul>
-          {{ range .children }}
-          <li>
-            <img src="{{ .icon }}" alt="{{ $alt }}">
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-      {{ end }}
-      {{ with .backEnd }}
-      <div class='back-div common-top-inline'>
-        <h3 class="title-black-h3">{{ .title}}</h3>
-        <div class='group'>
-          <p>{{ .project }}</p>
-          <ul>
-            {{ range .group }}
-            <li>{{ .name }}</li>
-            {{ end }}
-          </ul>
-        </div>
-        <div class='image'>
-          <img src="/images/home/applications.png" alt="{{ .project }}">
-          <img src="/images/home/applications.png" alt="{{ .project }}">
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-  {{ end }}
-</section>
-
 <section class='section-6'>
   {{ with .Params.section6 }}
   <div class="common-layout">
@@ -169,13 +201,12 @@
       {{ $alt := .title }}
       {{ range .children }}
       <li>
-        <img src="{{ .icon }}" alt="{{ $alt }}">
+        <a href="{{ .link}}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ .icon }}" alt="{{ $alt }}">
+        </a>
       </li>
       {{ end }}
     </ul>
-    <div>
-      <a href="{{ .btnLink }}"><button>{{ .btnContent }}</button></a>
-    </div>
     <div class='link-div'>
       <a class="common-black-a" href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .linkContent }}</a>
     </div>
@@ -336,6 +367,112 @@
       window.open('https://ask.kubesphere.io/forum/d/2712-meetup-topic')
     })
   }
+
+
+  var tabCarousel = function () {
+    var tabs = $('.tab-div li');
+    var sections = $('.content-section');
+
+    var toggleBtn = $('#toggleBtn');
+    var countdownEl = $('#countdown');
+
+    var currentTab = 0;
+    var autoPlayInterval;
+    var countdownInterval;
+    var countdown = 10;
+    var isAutoPlay = true;
+
+
+    var showTab = function (index) {
+
+      sections.hide().removeClass('active');
+
+      tabs.removeClass('active');
+
+      sections.eq(index).show().addClass('active');
+
+      tabs.eq(index).addClass('active');
+
+      currentTab = index;
+
+      resetCountdown();
+    };
+
+    var switchTab = function () {
+      var nextIndex = currentTab === 0 ? 1 : 0;
+      showTab(nextIndex);
+    };
+
+    var startAutoPlay = function () {
+      autoPlayInterval = setInterval(function () {
+        switchTab();
+      }, 10000);
+
+      countdownInterval = setInterval(function () {
+        countdown--;
+        countdownEl.text(countdown);
+
+        if (countdown <= 0) {
+          countdown = 10;
+        }
+      }, 1000);
+
+      toggleBtn.text('暂停自动切换');
+      isAutoPlay = true;
+    };
+
+    var stopAutoPlay = function () {
+      clearInterval(autoPlayInterval);
+      clearInterval(countdownInterval);
+      toggleBtn.text('开始自动切换');
+      isAutoPlay = false;
+      countdownEl.text('--');
+    };
+
+    var resetCountdown = function () {
+      countdown = 10;
+      countdownEl.text(countdown);
+    };
+
+    var toggleAutoPlay = function () {
+      if (isAutoPlay) {
+        stopAutoPlay();
+      } else {
+        startAutoPlay();
+      }
+    };
+
+    tabs.click(function () {
+      var index = $(this).index();
+      showTab(index);
+
+      if (isAutoPlay) {
+        stopAutoPlay();
+        startAutoPlay();
+      }
+    });
+
+    toggleBtn.click(function () {
+      toggleAutoPlay();
+    });
+
+    startAutoPlay();
+
+
+  };
+
+  $(document).ready(function () {
+    if ($('.tab-div li.active').length === 0) {
+      $('.tab-div li:first').addClass('active');
+    }
+
+    if ($('.content-section.active').length === 0) {
+      $('.content-section:first').addClass('active').show();
+    }
+    tabCarousel();
+  });
+
+
 
   controlVideo()
   bindMouseLeftLi()
