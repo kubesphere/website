@@ -67,18 +67,10 @@ footer:
 
     - title: 产品与服务
       list:
-        - content: KubeSphere on AWS
-          link: 'https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/'
-        - content: KubeSphere on Azure
-          link: 'https://market.azure.cn/marketplace/apps/qingcloud.kubesphere'
-        - content: KubeSphere on DigitalOcean
-          link: 'https://marketplace.digitalocean.com/apps/kubesphere'
         - content: KubeSphere on QingCloud(QKE)
           link: 'https://www.qingcloud.com/products/kubesphereqke'
         - content: KubeSphere 企业版
           link: 'https://kubesphere.com.cn/kse/'
-        - content: KubeSphere 虚拟化平台
-          link: 'https://kubesphere.cloud/ksv/'
         - content: 云原生扩展组件市场
           link: 'https://kubesphere.com.cn/marketplace/'
         - content: 云原生应用服务平台
