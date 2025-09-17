@@ -61,36 +61,31 @@
     }
 
     .p1 {
-      height: 24px;
+      width: 588px;
+      color: #fff;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      font-size: 16px;
-      line-height: 1.5;
-      letter-spacing: -0.04px;
-      color: #ffffff;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+      margin-top: 12px;
     }
 
     h1 {
-      width: 660px;
-      margin-top: 12px;
+      color: #fff;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      font-size: 50px;
-      font-weight: bold;
-      line-height: 1.2;
-      letter-spacing: -0.14px;
-      color: #ffffff;
+      font-size: 56px;
+      font-weight: 700;
     }
 
     .p2 {
-      width: 660px;
-      height: 72px;
-      margin-top: 12px;
-      margin-bottom: 30px;
+      width: 560px;
+      color: #fff;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       font-size: 16px;
-
-      line-height: 1.5;
-      letter-spacing: -0.04px;
-      color: #ffffff;
+      margin-top: 8px;
+      font-weight: 380;
+      line-height: 28px;
+      letter-spacing: -0.044px;
     }
 
     img {

@@ -226,10 +226,10 @@ name = "Community"
     URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025"
     weight = 6
 
-[[languages.en.menu.main]]
-weight = 6
-name = "Apply for a Free License"
-URL = "https://kubesphere.cloud/certification/" 
+# [[languages.en.menu.main]]
+# weight = 6
+# name = "Apply for a Free License"
+# URL = "/" 
 
 
 [languages.zh]
@@ -408,11 +408,11 @@ weight = 7
 name = "认证"
 URL = "https://kubesphere.cloud/certification/"
 
-[[languages.zh.menu.main]]
-weight = 8
-name = "申请免费授权"
-URL = "/" 
-# TODO: LINK 
+# [[languages.zh.menu.main]]
+# weight = 8
+# name = "申请免费授权"
+# URL = "/" 
+# # TODO: LINK 
 
 
 # [languages.tr]
