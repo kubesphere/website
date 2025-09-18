@@ -223,7 +223,7 @@ section8:
       icon: /images/home/notification-manager.svg
       content: Manages notifications in multi-tenant Kubernetes environments, unifies multi-tenant notification channels (email, DingTalk, Feishu, WeCom), and improves notification management efficiency.
 
-    - name: Devops
+    - name: DevOps
       icon: /images/home/devops.svg
       content: Provides end-to-end workflows, integrates mainstream CI/CD tools, simplifies delivery processes, and enhances iteration efficiency.
 
