@@ -46,7 +46,7 @@ section2:
 
     - name: Flexible Scalability
       icon: /images/home/modular-pluggable.svg
-      content: Based on a pluggable architecture, seamlessly integrates with any mainstream open-source tools, allowing you to expand platform capabilities on demand like building with blocks.
+      content: Built on a pluggable architecture, it seamlessly integrates with any mainstream open-source tools, allowing you to expand platform capabilities on demand, like building with blocks.
 
 section3:
   title: Benefits of Kubernetes Platform to Different Teams
