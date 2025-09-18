@@ -14,7 +14,7 @@ section1:
       link: /
       # TODO: Community page
       class: experiense-btn
-    - content: Apply for a Free License
+    - content: Try Free
       # TODO: free feature list
       link: /
       class: apply-btn
