@@ -225,7 +225,7 @@ section8:
 
     - name: Devops
       icon: /images/home/devops.svg
-      content: Provide end-to-end workflows, integrate mainstream CI/CD tools, consolidate CI/CD tools, simplify delivery processes, and enhance iteration efficiency.
+      content: Provides end-to-end workflows, integrates mainstream CI/CD tools, simplifies delivery processes, and enhances iteration efficiency.
 
     - name: Gatekeeper
       icon: /images/home/gatekeeper.svg
