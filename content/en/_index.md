@@ -42,7 +42,7 @@ section2:
 
     - name: Rich Features
       icon: /images/home/feature-rich.svg
-      content: Provides multi-tenancy, multi-cluster, cloud-native observability, application lifecycle management, storage and networking, and DevOps.
+      content: Provides multi-tenancy, multi-cluster support, cloud-native observability, application lifecycle management, storage and networking solutions, and DevOps capabilities.
 
     - name: Flexible Scalability
       icon: /images/home/modular-pluggable.svg
