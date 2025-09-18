@@ -213,7 +213,7 @@ section8:
 
     - name: Fluent Operator
       icon: /images/home/fluent-operator.svg
-      content: Cloud-native log and data collection engine that unifies log collection and processing, extends Fluentd / Fluent Bit, enhances operational observability, and has been donated.
+      content: Cloud-native log and data collection engine that unifies log collection and processing, extends Fluentd/Fluent Bit capabilities, enhances operational observability, and has been donated to the CNCF.
 
     - name: OpenFunction
       icon: /images/home/open-function.svg
