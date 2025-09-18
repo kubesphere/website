@@ -34,7 +34,7 @@ section2:
   children:
     - name: Free Forever
       icon: /images/home/free.svg
-      content: Use without cost and worry, enjoy continuously iterated enterprise-level features, helping you easily build the foundation for cloud-native applications.
+      content: Zero-cost, worry-free access to continuously evolved enterprise-grade features, empowering you to build cloud-native foundations effortlessly.
 
     - name: Easy to Run
       icon: /images/home/easy-to-run.svg
