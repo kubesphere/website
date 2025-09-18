@@ -6,7 +6,7 @@ description: KubeSphere is a distributed operating system for cloud-native appli
 css: scss/index.scss
 
 section1:
-  title: KubeSphere Community Edition
+  title: KubeSphere <br/>Community Edition
   topic: KubeSphere Container Platform-The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
   btns:
