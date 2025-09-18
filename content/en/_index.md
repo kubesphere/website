@@ -10,7 +10,7 @@ section1:
   topic: KubeSphere Container Platform-The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
   btns:
-    - content: Experience Now
+    - content: Get Started
       link: /
       # TODO: Community page
       class: experiense-btn
