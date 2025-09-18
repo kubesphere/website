@@ -217,7 +217,7 @@ section8:
 
     - name: OpenFunction
       icon: /images/home/open-function.svg
-      content: Cloud-native, open-source FaaS (Function as a Service) framework focusing on business logic development, abstracting the underlying runtime environment, and accelerating the implementation of cloud-native functions.
+      content: Cloud-native, open-source FaaS (Function as a Service) framework that focuses on business logic development, abstracts underlying runtime environments to accelerate cloud-native FaaS adoption.
 
     - name: Notification-Manager
       icon: /images/home/notification-manager.svg
