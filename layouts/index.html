@@ -6,20 +6,32 @@
   {{ with .Params.section1 }}
   <div class="common-layout">
     <div>
-      <p class='p1'>{{ .title | safeHTML }}</p>
-      <h1>{{ .topic | safeHTML }}</h1>
+      <h1>{{ .title | safeHTML }}</h1>
+      <p class='p1'> {{ .topic | safeHTML }}</p>
+
       <p class='p2'>{{ .content | safeHTML }}</p>
 
-      {{range .btns}}
+      <!-- {{range .btns}}
       <a href="{{ .link }}" class="{{.class}}" target="_blank" rel="noopener noreferrer">
         <button class='download-btn download-btn2 common-btn'>{{ .content | safeHTML }}</button>
       </a>
-      {{end}}
+      {{end}} -->
     </div>
-    <div class="img1-div">
-      <img class='img1' src="/images/home/53.png" id='video' alt="{{ i18n " kubesphere console screenshot"}}">
-      <img class='play' src="/images/videos/play-b.svg" alt="play">
+
+    <div class="custom-vertical-carousel">
+      <div class="carousel-inner">
+        {{ range $index, $item := .carouselItems }}
+        <div class="carousel-slide">
+          <div class="slide-content">
+            {{ if .image }}
+            <img src="{{ .image }}" alt="{{ .title }}">
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
     </div>
+
 
     <img class='img2' src="/images/home/left.svg" alt="{{ i18n " background image"}}">
     <img class='img4' src="/images/home/46.svg" alt="{{ i18n " background image"}}">
@@ -473,6 +485,83 @@
   });
 
 
+  $(document).ready(function () {
+    var $carousel = $('.custom-vertical-carousel');
+    var $slides = $carousel.find('.carousel-slide');
+    var currentIndex = 0;
+    var totalSlides = $slides.length;
+    var autoPlayInterval;
+
+    function updateSlides() {
+      $slides.removeClass('active prev next hidden');
+
+      $slides.eq(currentIndex).addClass('active');
+
+      var prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      $slides.eq(prevIndex).addClass('prev');
+
+
+      var nextIndex = (currentIndex + 1) % totalSlides;
+      $slides.eq(nextIndex).addClass('next');
+
+      $slides.not('.active, .prev, .next').addClass('hidden');
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlides();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlides();
+    }
+
+    // auto play
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+    }
+
+    // go to slide
+    function goToSlide(index) {
+      if (index >= 0 && index < totalSlides) {
+        currentIndex = index;
+        updateSlides();
+      }
+    }
+
+    // init
+    updateSlides();
+    startAutoPlay();
+
+    // hover
+    $carousel.hover(
+      function () { stopAutoPlay(); },
+      function () { startAutoPlay(); }
+    );
+
+    // keyboard control
+    $(document).on('keydown', function (e) {
+      if (e.key === 'ArrowDown') {
+        nextSlide();
+        stopAutoPlay();
+        startAutoPlay();
+      } else if (e.key === 'ArrowUp') {
+        prevSlide();
+        stopAutoPlay();
+        startAutoPlay();
+      }
+    });
+
+  });
 
   controlVideo()
   bindMouseLeftLi()

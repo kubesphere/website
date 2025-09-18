@@ -18,6 +18,10 @@ section1:
       # TODO: free feature list
       link: /
       class: apply-btn
+  carouselItems:
+    - image: /images/home/top-right-1.jpg
+    - image: /images/home/top-right-2.jpg
+    - image: /images/home/top-right-3.jpg
 
 tabs:
   children:

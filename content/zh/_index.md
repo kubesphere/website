@@ -17,6 +17,10 @@ section1:
       # TODO: free feature list
       link: /
       class: apply-btn
+  carouselItems:
+    - image: /images/home/top-right-1.jpg
+    - image: /images/home/top-right-2.jpg
+    - image: /images/home/top-right-3.jpg
 
 tabs:
   children:
@@ -188,7 +192,7 @@ section6:
 
 section7:
   title: 产品功能架构
-  image: /images/home/arch-cn.png
+  image: /images/home/arch-cn.svg
 
 section8:
   title: KubeSphere 自诞生以来始终坚持开源初心<br/>在全球云原生社区中持续贡献力量
