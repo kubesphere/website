@@ -221,7 +221,7 @@ section8:
 
     - name: Notification-Manager
       icon: /images/home/notification-manager.svg
-      content: Manage message notifications in multi-tenant Kubernetes environments, unify multi-tenant notification channels, support email, DingTalk, Feishu, and WeChat Work, and improve message management efficiency.
+      content: Manages notifications in multi-tenant Kubernetes environments, unifies multi-tenant notification channels (email, DingTalk, Feishu, WeCom), and improves notification management efficiency.
 
     - name: Devops
       icon: /images/home/devops.svg
