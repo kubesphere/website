@@ -87,9 +87,8 @@ section3:
       icon: /images/home/80.svg
       children:
         - content: Deploy and upgrade Apps with one click to transparent underlying infrastructure
-        - content: Provide on-demand container resources and HPA, hardening the reliability and flexibility of your applications
+        - content: Provide on-demand container resources, hardening the reliability and flexibility of your applications
         - content: Import any Helm repository in seconds to visually deploy and upgrade applications
-        - content: Support operation in application store, including metering and billing for applications (coming soon)
 
 section4:
   title: Application Scenarios
