@@ -25,7 +25,7 @@ section1:
 
 tabs:
   children:
-    - title: Free Product
+    - title: Free Products
     - title: Open Source Project
 
 section2:
