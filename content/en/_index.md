@@ -192,7 +192,7 @@ section6:
   image: /images/home/certification.png
 
 section7:
-  title: Product Function Architecture
+  title: Capability Architecture​​
   image: /images/home/arch-en.png
 
 section8:
