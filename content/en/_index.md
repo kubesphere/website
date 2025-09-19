@@ -89,7 +89,7 @@ section3:
         - content: Support operation in application store, including metering and billing for applications (coming soon)
 
 section4:
-  title: Product Application Scenarios
+  title: Application Scenarios
 
   features:
     - name: Kubernetes Multi-cluster Mgmt
