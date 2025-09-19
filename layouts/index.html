@@ -427,6 +427,18 @@
 
   };
 
+  function preloadImages() {
+    const imageUrls = [
+      '/images/home/4.png',
+      '/images/home/8.png'
+    ];
+
+    imageUrls.forEach(url => {
+      const img = new Image();
+      img.src = url;
+    });
+  }
+
   $(document).ready(function () {
     if ($('.tab-div li.active').length === 0) {
       $('.tab-div li:first').addClass('active');
@@ -435,6 +447,8 @@
     if ($('.content-section.active').length === 0) {
       $('.content-section:first').addClass('active').show();
     }
+
+    preloadImages();
     tabCarousel();
   });
 

@@ -194,7 +194,7 @@ section6:
 
 section7:
   title: Capability Architecture​​
-  image: /images/home/arch-en.png
+  image: /images/home/arch-en.svg
 
 section8:
   title: ​​Stay True to Open Source, Keep Contributing to Cloud Native
