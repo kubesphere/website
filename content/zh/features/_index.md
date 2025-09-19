@@ -50,7 +50,7 @@ section2:
       content: 在 Kubernetes 上创建、配置和管理 GPU
       label: extension
     - icon: /images/features/deepseek.svg
-      name: Deepseek
+      name: DeepSeek
       content: 基于 ollama 运行 deepseek-r1 模型，对外提供 API 服务
       label: extension
     - icon: /images/features/grafana.svg

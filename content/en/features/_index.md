@@ -50,7 +50,7 @@ section2:
       content: Create, configure, and manage GPUs on Kubernetes
       label: Extension
     - icon: /images/features/deepseek.svg
-      name: Deepseek
+      name: DeepSeek
       content: Run the DeepSeek-R1 model based on Ollama, providing API services externally
       label: Extension
     - icon: /images/features/grafana.svg

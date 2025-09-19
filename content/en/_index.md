@@ -226,7 +226,7 @@ section8:
 
     - name: DevOps
       icon: /images/home/devops.svg
-      content: Provides end-to-end workflows, integrates mainstream CI/CD tools, simplifies delivery processes, and enhances iteration efficiency.
+      content: Provide end-to-end workflows, integrate mainstream CI/CD tools, consolidate CI/CD tools, simplify delivery processes, and enhance iteration efficiency.
 
     - name: Kube Design
       icon: /images/home/kube-design.svg
