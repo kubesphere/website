@@ -26,7 +26,7 @@ section1:
 tabs:
   children:
     - title: Free Products
-    - title: Open Source Project
+    - title: Open Source Projects
 
 section2:
   title: One Kubernetes Platform for Full Stack Solutions
