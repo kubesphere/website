@@ -197,7 +197,8 @@ section7:
 
 section8:
   title: ​​Stay True to Open Source, Keep Contributing to Cloud Native
-  content: As a pioneer in enterprise-level Kubernetes platforms, KubeSphere continuously innovates in areas such as multi-cluster <br/> governance, visual operations, unified observability, and enterprise-level DevOps integration, driving the adoption and<br/>implementation of Kubernetes in enterprise scenarios. At the same time, the KubeSphere community has incubated open-<br/>source projects like KubeKey, OpenELB, and Fluent Operator, and has deeply collaborated with ecosystems such as Grafana,<br/> Loki, and Higress, forming a broad technological influence.
+  content: As a pioneer in enterprise-grade Kubernetes platforms, KubeSphere has driven innovation in multi-cluster management, visualized O&M, unified observability, and enterprise-grade DevOps integration, promoting the widespread adoption and implementation of Kubernetes in corporate environments. Meanwhile, the KubeSphere community has incubated open-source projects, such as KubeKey, OpenELB, and Fluent Operator, and has collaborated deeply with ecosystems like Grafana, Loki, and Higress.
+  注意加 <br/>
   children:
     - name: KubeKey
       icon: /images/home/kube-key.svg
