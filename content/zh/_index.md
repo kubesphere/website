@@ -225,7 +225,7 @@ section8:
       icon: /images/home/devops.svg
       content: 提供端到端的工作流，集成主流 CI/CD 工具，整合 CI/CD 工具，简化交付流程，提升迭代效率
 
-    - name: Gatekeeper
-      icon: /images/home/gatekeeper.svg
-      content: 基于 OPA 的安全策略管理工具，强化 Kubernetes 安全合规，基于 OPA 定义策略，防止违规资源配置
+    - name: Kube Design
+      icon: /images/home/kube-design.svg
+      content: 为 KubeSphere 控制台开发的一套包含组件、Hooks、Icon 的 React 库，覆盖场景丰富可用于开发各种 React 应用
 ---

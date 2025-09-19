@@ -19,9 +19,9 @@ section2:
       content: 跨集群、跨项目的资源逻辑隔离、网络隔离和细粒度的访问控制能力
     - icon: /images/features/app-management.svg
       name: 应用管理
-      content: 统一的应用生命周期管理能力，对 Helm、Oporator 等类型应用提供统一的抽象层
+      content: 统一的应用生命周期管理能力，对 Helm、Operator 等类型应用提供统一的抽象层
     - icon: /images/features/k8s-resource-management.svg
-      name: K8S资源管理
+      name: K8s资源管理
       content: 提供 Web 控制台对接 Kubernetes 原生 API 快速创建与管理 Kubernetes 资源
     - icon: /images/features/extension-management.svg
       name: 扩展组件管理
@@ -63,14 +63,14 @@ section2:
       label: extension
     - icon: /images/features/higress.svg
       name: Higress
-      content: 基于 Istio 和 Envoy 的API 网关
+      content: 基于 Istio 和 Envoy 的 API 网关
       label: extension
     - icon: /images/features/ob-operator.svg
       name: OB-Operator
       content: 管理 Kubernetes 集群中的 OceanBase 相关资源
       label: extension
     - icon: /images/features/ob-operator.svg
-      name: Oceanbas Dashboard
+      name: OceanBase Dashboard
       content: OceanBase 交互式管理应用
       label: extension
 ---

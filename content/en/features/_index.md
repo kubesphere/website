@@ -1,76 +1,76 @@
 ---
-title: "社区版功能介绍"
+title: "Capability List of Community Edition"
 
 layout: "features"
 
 css: "scss/features.scss"
 
 section1:
-  title: "社区版功能介绍"
+  title: "Capability List of Community Edition"
   image: /images/features/banner.jpg
 
 section2:
   children:
     - icon: /images/features/cluster-management.svg
-      name: 集群管理
-      content: 跨云、跨基础设施的多个 Kubernetes 集群的集中式可视化管理与运维
+      name: Cluster Management
+      content: Centralized visualization management and operation for multiple Kubernetes clusters across clouds and infrastructures
     - icon: /images/features/multi-tenant-anagement.svg
-      name: 多租户管理
-      content: 跨集群、跨项目的资源逻辑隔离、网络隔离和细粒度的访问控制能力
+      name: Multi-Tenant Management
+      content: Logical resource isolation, network isolation, and fine-grained access control capabilities across clusters and projects
     - icon: /images/features/app-management.svg
-      name: 应用管理
-      content: 统一的应用生命周期管理能力，对 Helm、Oporator 等类型应用提供统一的抽象层
+      name: Application Management
+      content: Unified app lifecycle management capabilities, providing a unified abstraction layer for applications such as Helm and Operator
     - icon: /images/features/k8s-resource-management.svg
-      name: K8S资源管理
-      content: 提供 Web 控制台对接 Kubernetes 原生 API 快速创建与管理 Kubernetes 资源
-    - icon: /images/features/extension-management.svg
-      name: 扩展组件管理
-      content: 采用微内核+扩展组件的架构，按需定制、扩展平台能力
+      name: K8s Resource Management
+      content: Intuitive web console integrated with native Kubernetes API for effortless resource creation and management
+    - icon: /images/features/Extension-management.svg
+      name: Extensions Management
+      content: A microkernel + extensions architecture to customize and extend platform capabilities as needed
     - icon: /images/features/wiz-telemetry.svg
-      name: WizTelemetry 可观测
-      content: 对应用与基础设施性能及健康状态的全面洞察
-      label: extension
+      name: WizTelemetry Observability
+      content: Comprehensive insights into performance and health status of applications and infrastructures
+      label: Extension
     - icon: /images/features/devops.svg
       name: DevOps
-      content: 提供端到端的工作流，集成主流 CI/CD 工具
-      label: extension
+      content: End-to-end workflows integrating mainstream CI/CD tools
+      label: Extension
     - icon: /images/features/gateway.svg
-      name: KubeSphere 网关
-      content: 基于流量的统一入口管理、七层负载均衡与多种路由策略
-      label: extension
+      name: KubeSphere Gateway
+      content: Unified ingress management based on traffic, layer 7 load balancing, and various routing strategies
+      label: Extension
     - icon: /images/features/gatekeeper.svg
       name: GateKeeper
-      content: 可灵活配置安全策略的准入控制器
+      content: Admission controller with flexible security policy configuration
     - icon: /images/features/metrics-server.svg
       name: Metrics Server
-      content: 可扩展、高效的容器资源度量源，为 Kubernetes 内置的自动扩展管道提供服务
-      label: extension
+      content: Scalable and efficient container resource metrics source, serving Kubernetes' built-in auto-scaling pipeline
+      label: Extension
     - icon: /images/features/nvidia.svg
       name: NVIDIA GPU Operator
-      content: 在 Kubernetes 上创建、配置和管理 GPU
-      label: extension
+      content: Create, configure, and manage GPUs on Kubernetes
+      label: Extension
     - icon: /images/features/deepseek.svg
       name: Deepseek
-      content: 基于 ollama 运行 deepseek-r1 模型，对外提供 API 服务
-      label: extension
+      content: Run the DeepSeek-R1 model based on Ollama, providing API services externally
+      label: Extension
     - icon: /images/features/grafana.svg
       name: Grafana
-      content: 开放且可组合的观测和数据可视化平台
-      label: extension
+      content: Open and composable observability and data visualization platform
+      label: Extension
     - icon: /images/features/loki.svg
       name: Loki
-      content: 可扩展、高可用、多租户日志聚合系统
-      label: extension
+      content: Scalable, highly available, multi-tenant log aggregation system
+      label: Extension
     - icon: /images/features/higress.svg
       name: Higress
-      content: 基于 Istio 和 Envoy 的API 网关
-      label: extension
+      content: API Gateway based on Istio and Envoy​
+      label: Extension
     - icon: /images/features/ob-operator.svg
       name: OB-Operator
-      content: 管理 Kubernetes 集群中的 OceanBase 相关资源
-      label: extension
+      content: Manage OceanBase-related resources in Kubernetes clusters 
+      label: Extension
     - icon: /images/features/ob-operator.svg
-      name: Oceanbas Dashboard
-      content: OceanBase 交互式管理应用
-      label: extension
+      name: OceanBase Dashboard
+      content: OceanBase interactive management application
+      label: Extension
 ---
