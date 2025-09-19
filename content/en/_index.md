@@ -106,7 +106,7 @@ section4:
 
     - name: Kubernetes DevOps System
       icon: /images/home/devops1.svg
-      content: Out-of-the-box CI/CD based on Jenkins, and automated DevOps workflow tools including Source-to-Image & Binary-to-Image
+      content: Out-of-the-box CI/CD based on Jenkins, and automated DevOps workflow tools including Source-to-Image & Binary-to-Image.
       link: "devops/"
       color: green
 
