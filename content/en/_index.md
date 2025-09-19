@@ -201,7 +201,7 @@ section8:
   children:
     - name: KubeKey
       icon: /images/home/kube-key.svg
-      content: Rapid installation and operation tools to accelerate Kubernetes deployment, adapt to multiple environments, and automate full lifecycle management.
+      content: Rapid installation and maintenance tool that accelerates Kubernetes deployment, adapts to multiple environments, and automates full lifecycle management.
 
     - name: OpenELB
       icon: /images/home/open-elb.svg
