@@ -196,7 +196,7 @@ section7:
   image: /images/home/arch-en.png
 
 section8:
-  title: Since its inception, KubeSphere has always adhered to its <br/> open-source principles, continuously contributing to the <br/>  global cloud-native community.
+  title: ​​Stay True to Open Source, Keep Contributing to Cloud Native
   content: As a pioneer in enterprise-level Kubernetes platforms, KubeSphere continuously innovates in areas such as multi-cluster <br/> governance, visual operations, unified observability, and enterprise-level DevOps integration, driving the adoption and<br/>implementation of Kubernetes in enterprise scenarios. At the same time, the KubeSphere community has incubated open-<br/>source projects like KubeKey, OpenELB, and Fluent Operator, and has deeply collaborated with ecosystems such as Grafana,<br/> Loki, and Higress, forming a broad technological influence.
   children:
     - name: KubeKey
