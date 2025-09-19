@@ -94,7 +94,7 @@ section4:
   features:
     - name: Kubernetes Multi-cluster Mgmt
       icon: /images/home/management.svg
-      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability
+      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability.
       link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
       color: grape
 
