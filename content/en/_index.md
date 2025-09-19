@@ -44,7 +44,7 @@ section2:
       icon: /images/home/feature-rich.svg
       content: Provides multi-tenancy, multi-cluster support, cloud-native observability, application lifecycle management, storage and networking solutions, and DevOps capabilities.
 
-    - name: Flexible Scalability
+    - name: Flexible Extensibility
       icon: /images/home/modular-pluggable.svg
       content: Built on a pluggable architecture, it seamlessly integrates with any mainstream open-source tools, allowing you to expand platform capabilities on demand, like building with blocks.
 
