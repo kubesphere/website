@@ -93,7 +93,7 @@ section4:
   features:
     - name: Kubernetes 多集群管理
       icon: /images/home/management.svg
-      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
+      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨集群的可观测性
       link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
       color: grape
 
