@@ -209,7 +209,7 @@ section8:
 
     - name: KubeEye
       icon: /images/home/kube-eye.svg
-      content: Kubernetes cluster detection and diagnostic tools to identify configuration risks and compliance issues, diagnose cluster anomalies, and enhance Kubernetes stability and security.
+      content: Kubernetes cluster inspection and diagnostic tool that identifies configuration risks and compliance issues, diagnoses cluster anomalies, and enhances Kubernetes stability and security.
 
     - name: Fluent Operator
       icon: /images/home/fluent-operator.svg
