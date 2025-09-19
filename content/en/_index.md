@@ -10,23 +10,26 @@ section1:
   topic: KubeSphere Container Platform-The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
   btns:
-    - content: Experience Now
+    - content: Get Started
       link: /
       # TODO: Community page
       class: experiense-btn
-    - content: Apply for a Free License
+    - content: Try Free
       # TODO: free feature list
       link: /
       class: apply-btn
   carouselItems:
-    - image: /images/home/top-right-1.jpg
-    - image: /images/home/top-right-2.jpg
-    - image: /images/home/top-right-3.jpg
+  carouselItems:
+    - image: /images/home/top-right-en-1.png
+    - image: /images/home/top-right-en-2.png
+    - image: /images/home/top-right-en-3.png
+    - image: /images/home/top-right-en-4.png
+    - image: /images/home/top-right-en-5.png
 
 tabs:
   children:
-    - title: Free Product
-    - title: Open Source Project
+    - title: Free Products
+    - title: Open Source Projects
 
 section2:
   title: One Kubernetes Platform for Full Stack Solutions
@@ -34,19 +37,19 @@ section2:
   children:
     - name: Free Forever
       icon: /images/home/free.svg
-      content: Use without cost and worry, enjoy continuously iterated enterprise-level features, helping you easily build the foundation for cloud-native applications.
+      content: Zero-cost, worry-free access to continuously evolved enterprise-grade features, empowering you to build cloud-native foundations effortlessly.
 
     - name: Easy to Run
       icon: /images/home/easy-to-run.svg
-      content: Supports deployment in any infrastructure environment, offers online and offline installation, and supports one-click upgrades and cluster expansion.
+      content: Supports deployment on any infrastructure environment, offers online and offline installation, and supports one-click upgrades and cluster scaling.
 
     - name: Rich Features
       icon: /images/home/feature-rich.svg
-      content: Provides multi-tenancy, multi-cluster, cloud-native observability, application lifecycle management, storage and networking, and DevOps.
+      content: Provides multi-tenancy, multi-cluster support, cloud-native observability, application lifecycle management, storage and networking solutions, and DevOps capabilities.
 
-    - name: Flexible Scalability
+    - name: Flexible Extensibility
       icon: /images/home/modular-pluggable.svg
-      content: Based on a pluggable architecture, seamlessly integrates with any mainstream open-source tools, allowing you to expand platform capabilities on demand like building with blocks.
+      content: Built on a pluggable architecture, it seamlessly integrates with any mainstream open-source tools, allowing you to expand platform capabilities on demand, like building with blocks.
 
 section3:
   title: Benefits of Kubernetes Platform to Different Teams
@@ -89,24 +92,24 @@ section3:
         - content: Support operation in application store, including metering and billing for applications (coming soon)
 
 section4:
-  title: Product Application Scenarios
+  title: Application Scenarios
 
   features:
     - name: Kubernetes Multi-cluster Mgmt
       icon: /images/home/management.svg
-      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability
+      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability.
       link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
       color: grape
 
     - name: Cloud Native Observability
       icon: /images/home/rich.svg
-      content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in
+      content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in.
       link: "observability/"
       color: red
 
     - name: Kubernetes DevOps System
       icon: /images/home/devops1.svg
-      content: Out-of-the-box CI/CD based on Jenkins, and automated DevOps workflow tools including Source-to-Image & Binary-to-Image
+      content: Out-of-the-box CI/CD based on Jenkins, and automated DevOps workflow tools including Source-to-Image & Binary-to-Image.
       link: "devops/"
       color: green
 
@@ -116,7 +119,7 @@ section5:
     title: Front End
     project: KubeSphere Console
     children:
-      - icon: /images/home/mobx.jpg
+      - icon: /images/home/kube-design.jpg
       - icon: /images/home/koa.jpg
       - icon: /images/home/react.png
 
@@ -125,9 +128,7 @@ section5:
     project: KubeSphere System
     group:
       - name: API Server
-      - name: API Gateway
       - name: Controller Manager
-      - name: Account Service
 
 section6:
   title: End User Community
@@ -192,16 +193,16 @@ section6:
   image: /images/home/certification.png
 
 section7:
-  title: Product Function Architecture
+  title: Capability Architecture​​
   image: /images/home/arch-en.png
 
 section8:
-  title: Since its inception, KubeSphere has always adhered to its <br/> open-source principles, continuously contributing to the <br/>  global cloud-native community.
-  content: As a pioneer in enterprise-level Kubernetes platforms, KubeSphere continuously innovates in areas such as multi-cluster <br/> governance, visual operations, unified observability, and enterprise-level DevOps integration, driving the adoption and<br/>implementation of Kubernetes in enterprise scenarios. At the same time, the KubeSphere community has incubated open-<br/>source projects like KubeKey, OpenELB, and Fluent Operator, and has deeply collaborated with ecosystems such as Grafana,<br/> Loki, and Higress, forming a broad technological influence.
+  title: ​​Stay True to Open Source, Keep Contributing to Cloud Native
+  content: As a pioneer in enterprise-grade Kubernetes platforms, KubeSphere has driven innovation in multi-cluster management, visualized O&M, unified observability, and enterprise-grade DevOps integration, promoting the widespread adoption and implementation of Kubernetes in corporate environments. Meanwhile, the KubeSphere community has incubated open-source projects, such as KubeKey, OpenELB, and Fluent Operator, and has collaborated deeply with ecosystems like Grafana, Loki, and Higress.
   children:
     - name: KubeKey
       icon: /images/home/kube-key.svg
-      content: Rapid installation and operation tools to accelerate Kubernetes deployment, adapt to multiple environments, and automate full lifecycle management.
+      content: Rapid installation and maintenance tool that accelerates Kubernetes deployment, adapts to multiple environments, and automates full lifecycle management.
 
     - name: OpenELB
       icon: /images/home/open-elb.svg
@@ -209,21 +210,21 @@ section8:
 
     - name: KubeEye
       icon: /images/home/kube-eye.svg
-      content: Kubernetes cluster detection and diagnostic tools to identify configuration risks and compliance issues, diagnose cluster anomalies, and enhance Kubernetes stability and security.
+      content: Kubernetes cluster inspection and diagnostic tool that identifies configuration risks and compliance issues, diagnoses cluster anomalies, and enhances Kubernetes stability and security.
 
     - name: Fluent Operator
       icon: /images/home/fluent-operator.svg
-      content: Cloud-native log and data collection engine that unifies log collection and processing, extends Fluentd / Fluent Bit, enhances operational observability, and has been donated.
+      content: Cloud-native log and data collection engine that unifies log collection and processing, extends Fluentd/Fluent Bit capabilities, enhances operational observability, and has been donated to the CNCF.
 
     - name: OpenFunction
       icon: /images/home/open-function.svg
-      content: Cloud-native, open-source FaaS (Function as a Service) framework focusing on business logic development, abstracting the underlying runtime environment, and accelerating the implementation of cloud-native functions.
+      content: Cloud-native, open-source FaaS (Function as a Service) framework that focuses on business logic development, abstracts underlying runtime environments to accelerate cloud-native FaaS adoption.
 
     - name: Notification-Manager
       icon: /images/home/notification-manager.svg
-      content: Manage message notifications in multi-tenant Kubernetes environments, unify multi-tenant notification channels, support email, DingTalk, Feishu, and WeChat Work, and improve message management efficiency.
+      content: Manages notifications in multi-tenant Kubernetes environments, unifies multi-tenant notification channels (email, DingTalk, Feishu, WeCom), and improves notification management efficiency.
 
-    - name: Devops
+    - name: DevOps
       icon: /images/home/devops.svg
       content: Provide end-to-end workflows, integrate mainstream CI/CD tools, consolidate CI/CD tools, simplify delivery processes, and enhance iteration efficiency.
 

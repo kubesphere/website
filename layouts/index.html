@@ -415,61 +415,15 @@
       showTab(nextIndex);
     };
 
-    var startAutoPlay = function () {
-      autoPlayInterval = setInterval(function () {
-        switchTab();
-      }, 10000);
-
-      countdownInterval = setInterval(function () {
-        countdown--;
-        countdownEl.text(countdown);
-
-        if (countdown <= 0) {
-          countdown = 10;
-        }
-      }, 1000);
-
-      toggleBtn.text('暂停自动切换');
-      isAutoPlay = true;
-    };
-
-    var stopAutoPlay = function () {
-      clearInterval(autoPlayInterval);
-      clearInterval(countdownInterval);
-      toggleBtn.text('开始自动切换');
-      isAutoPlay = false;
-      countdownEl.text('--');
-    };
-
     var resetCountdown = function () {
       countdown = 10;
       countdownEl.text(countdown);
     };
 
-    var toggleAutoPlay = function () {
-      if (isAutoPlay) {
-        stopAutoPlay();
-      } else {
-        startAutoPlay();
-      }
-    };
-
     tabs.click(function () {
       var index = $(this).index();
       showTab(index);
-
-      if (isAutoPlay) {
-        stopAutoPlay();
-        startAutoPlay();
-      }
     });
-
-    toggleBtn.click(function () {
-      toggleAutoPlay();
-    });
-
-    startAutoPlay();
-
 
   };
 

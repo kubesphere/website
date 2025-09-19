@@ -243,7 +243,7 @@
   }
 
   .carousel-slide.hidden {
-    opacity: 0.3;
+    opacity: 0;
     transform: translateY(50px) scale(0.9);
     z-index: 1;
   }
@@ -313,8 +313,9 @@
 }
 
 .section-8 {
-  height: 1723px;
+  height: 1778px;
   background-image: url("/images/home/8.png");
+  margin-top: -308px;
 }
 .tabs {
   position: relative;
@@ -322,7 +323,7 @@
 
 .content-section {
   position: relative;
-  margin-top: -300px;
+  margin-top: -307px;
   margin-bottom: -300px;
   padding-top: 300px;
   background-size: 100% 100%;

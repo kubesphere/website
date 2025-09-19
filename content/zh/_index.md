@@ -5,7 +5,7 @@ description: KubeSphere 是在 Kubernetes 之上构建的以应用为中心的�
 css: scss/index.scss
 
 section1:
-  title: kubesphere 社区版
+  title: KubeSphere 社区版
   topic: 面向云原生应用的容器混合云
   content: KubeSphere 愿景是打造一个以 Kubernetes 为内核的云原生分布式操作系统，<br/>它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-<br/>and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理。
   btns:
@@ -18,9 +18,11 @@ section1:
       link: /
       class: apply-btn
   carouselItems:
-    - image: /images/home/top-right-1.jpg
-    - image: /images/home/top-right-2.jpg
-    - image: /images/home/top-right-3.jpg
+    - image: /images/home/top-right-cn-1.png
+    - image: /images/home/top-right-cn-2.png
+    - image: /images/home/top-right-cn-3.png
+    - image: /images/home/top-right-cn-4.png
+    - image: /images/home/top-right-cn-5.png
 
 tabs:
   children:
@@ -57,7 +59,7 @@ section3:
       children:
         - content: 提高资源利用率，减少内部基础设施的成本支出
         - content: 提供安全增强，支持多种存储与网络方案
-        - content: 为企业交付一个通过 CNCF 认证和可信赖的 Kubernetes 发行版
+        - content: 为企业交付可信赖的 Kubernetes 发行版
         - content: 支持 Kubernetes 的多云与多集群管理，提供多云与多可用区的高可用
 
     - name: 开发者
@@ -65,7 +67,7 @@ section3:
       icon: /images/home/74.png
       children:
         - content: 为开发者提供向导式的用户体验，降低上手云原生技术栈的学习曲线
-        - content: 内置常用的自动化部署环境，为应用（Java/NodeJs/Python/Go）部署提供定制化的容器运行环境
+        - content: 内置常用的自动化部署环境，为应用（Java/Node.js/Python/Go）部署提供定制化的容器运行环境
         - content: 提供开箱即用的工具集，帮助开发者将代码快速构建为可运行的容器镜像，提高开发效率
         - content: 提供应用商店和应用生命周期管理，缩短应用上线周期
 
@@ -83,9 +85,8 @@ section3:
       icon: /images/home/80.svg
       children:
         - content: 通过应用商店一键部署与升级应用至 Kubernetes
-        - content: 提供按需容器资源申请，支持设置容器的弹性伸缩（HPA），提升应用的可靠性与灵活性
+        - content: 提供按需容器资源申请，提升应用的可靠性与灵活性
         - content: 支持导入 Helm 应用仓库可视化编辑与部署应用
-        - content: 应用商店将支持运营，提供针对应用的计量与计费（v3.x）
 
 section4:
   title: 产品应用场景
@@ -93,7 +94,7 @@ section4:
   features:
     - name: Kubernetes 多集群管理
       icon: /images/home/management.svg
-      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨级群的可观测性
+      content: 跨多云与多集群统一分发应用，提供集群高可用与灾备的最佳实践，支持跨集群的可观测性
       link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
       color: grape
 
@@ -115,7 +116,7 @@ section5:
     title: Front End
     project: KubeSphere Console
     children:
-      - icon: /images/home/mobx.jpg
+      - icon: /images/home/kube-design.jpg
       - icon: /images/home/koa.jpg
       - icon: /images/home/react.png
 
@@ -124,9 +125,7 @@ section5:
     project: KubeSphere System
     group:
       - name: API Server
-      - name: API Gateway
       - name: Controller Manager
-      - name: Account Service
 
 section6:
   title: 用户案例
@@ -222,7 +221,7 @@ section8:
       icon: /images/home/notification-manager.svg
       content: 管理多租户 Kubernetes 环境中的消息通知，统一多租户通知渠道，支持邮件、钉钉、飞书、企业微信，提升消息管理效率
 
-    - name: Devops
+    - name: DevOps
       icon: /images/home/devops.svg
       content: 提供端到端的工作流，集成主流 CI/CD 工具，整合 CI/CD 工具，简化交付流程，提升迭代效率
 

@@ -1,16 +1,15 @@
 ---
-title: "社区版详细功能清单"
+title: "社区版功能介绍"
 
 layout: "features"
 
 css: "scss/features.scss"
 
 section1:
-  title: "社区版详细功能清单"
+  title: "社区版功能介绍"
   image: /images/features/banner.jpg
 
 section2:
-  title: "功能介绍"
   children:
     - icon: /images/features/cluster-management.svg
       name: 集群管理
@@ -45,33 +44,33 @@ section2:
     - icon: /images/features/metrics-server.svg
       name: Metrics Server
       content: 可扩展、高效的容器资源度量源，为 Kubernetes 内置的自动扩展管道提供服务
-      label: opensource
+      label: extension
     - icon: /images/features/nvidia.svg
       name: NVIDIA GPU Operator
       content: 在 Kubernetes 上创建、配置和管理 GPU
-      label: opensource
+      label: extension
     - icon: /images/features/deepseek.svg
       name: Deepseek
       content: 基于 ollama 运行 deepseek-r1 模型，对外提供 API 服务
-      label: opensource
+      label: extension
     - icon: /images/features/grafana.svg
       name: Grafana
       content: 开放且可组合的观测和数据可视化平台
-      label: opensource
+      label: extension
     - icon: /images/features/loki.svg
       name: Loki
       content: 可扩展、高可用、多租户日志聚合系统
-      label: opensource
+      label: extension
     - icon: /images/features/higress.svg
       name: Higress
       content: 基于 Istio 和 Envoy 的API 网关
-      label: opensource
+      label: extension
     - icon: /images/features/ob-operator.svg
       name: OB-Operator
       content: 管理 Kubernetes 集群中的 OceanBase 相关资源
-      label: opensource
+      label: extension
     - icon: /images/features/ob-operator.svg
       name: Oceanbas Dashboard
       content: OceanBase 交互式管理应用
-      label: opensource
+      label: extension
 ---
