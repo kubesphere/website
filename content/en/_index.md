@@ -38,7 +38,7 @@ section2:
 
     - name: Easy to Run
       icon: /images/home/easy-to-run.svg
-      content: Supports deployment in any infrastructure environment, offers online and offline installation, and supports one-click upgrades and cluster expansion.
+      content: Supports deployment on any infrastructure environment, offers online and offline installation, and supports one-click upgrades and cluster scaling.
 
     - name: Rich Features
       icon: /images/home/feature-rich.svg
