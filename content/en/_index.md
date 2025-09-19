@@ -100,7 +100,7 @@ section4:
 
     - name: Cloud Native Observability
       icon: /images/home/rich.svg
-      content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in
+      content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in.
       link: "observability/"
       color: red
 
