@@ -52,7 +52,7 @@
     {{ end }}
   </div>
   <div class="content-section active ">
-    <section class="section-2">
+    <section class="section-2 {{ $language }}">
       {{ with .Params.section2 }}
       <div class="common-layout">
         <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>
@@ -119,7 +119,7 @@
     </section>
   </div>
   <div class="content-section ">
-    <section class="section-2 section-8">
+    <section class="section-2 section-8 {{ $language }}">
       {{ with .Params.section8 }}
       <div class="common-layout">
         <h2 class="title-black-h2">{{ .title | safeHTML }}</h2>

@@ -260,6 +260,10 @@
   background-repeat: no-repeat;
   background-image: url("/images/home/4.png");
   z-index: 2;
+  &.en {
+    height: 3619px;
+    background-image: url("/images/home/4-en.png");
+  }
 
   .title-black-h2 {
     margin-top: 107px;
@@ -316,6 +320,10 @@
   height: 1778px;
   background-image: url("/images/home/8.png");
   margin-top: -308px;
+  &.en {
+    height: 1706px;
+    background-image: url("/images/home/8.png");
+  }
 }
 .tabs {
   position: relative;

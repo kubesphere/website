@@ -13,7 +13,7 @@
       {{range .children}}
       <li>
         <img src="{{ .icon }}" alt="{{ .name }}">
-        <h3 class="title-black-h3 ">{{ .name | safeHTML }}</h3>
+        <h3 class="title">{{ .name | safeHTML }}</h3>
         <p class="conetnt">{{ .content | safeHTML }}</p>
         {{if eq .label "extension"}}
         <p class="label label-green">{{ i18n "Extension" }}</p>
