@@ -41,6 +41,7 @@ section2:
     - icon: /images/features/gatekeeper.svg
       name: GateKeeper
       content: Admission controller with flexible security policy configuration
+      label: extension
     - icon: /images/features/metrics-server.svg
       name: Metrics Server
       content: Scalable and efficient container resource metrics source, serving Kubernetes' built-in auto-scaling pipeline
@@ -67,7 +68,7 @@ section2:
       label: Extension
     - icon: /images/features/ob-operator.svg
       name: OB-Operator
-      content: Manage OceanBase-related resources in Kubernetes clusters 
+      content: Manage OceanBase-related resources in Kubernetes clusters
       label: Extension
     - icon: /images/features/ob-operator.svg
       name: OceanBase Dashboard

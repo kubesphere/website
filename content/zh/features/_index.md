@@ -41,6 +41,7 @@ section2:
     - icon: /images/features/gatekeeper.svg
       name: GateKeeper
       content: 可灵活配置安全策略的准入控制器
+      label: extension
     - icon: /images/features/metrics-server.svg
       name: Metrics Server
       content: 可扩展、高效的容器资源度量源，为 Kubernetes 内置的自动扩展管道提供服务
