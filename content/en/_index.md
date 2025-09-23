@@ -1,36 +1,55 @@
 ---
-title: Open Source Enterprise Kubernetes Platform | KubeSphere
-description: An open source Kubernetes Platform to manage enterprise-grade Kubernetes across hybrid cloud, multi-cloud and edge. Get started for free!
-
+title: KubeSphere Container Platform-The Kubernetes platform tailored for hybrid multicloud
+topic: KubeSphere <br/>Community Edition
+description: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
 
 css: scss/index.scss
 
 section1:
-  title: KubeSphere Container Platform
-  topic: The Kubernetes platform tailored for hybrid multicloud
+  title: KubeSphere <br/>Community Edition
+  topic: KubeSphere Container Platform-The Kubernetes platform tailored for hybrid multicloud
   content: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
+  btns:
+    - content: Get Started
+      link: /
+      # TODO: Community page
+      class: experiense-btn
+    - content: Try Free
+      # TODO: free feature list
+      link: /
+      class: apply-btn
+  carouselItems:
+  carouselItems:
+    - image: /images/home/top-right-en-1.png
+    - image: /images/home/top-right-en-2.png
+    - image: /images/home/top-right-en-3.png
+    - image: /images/home/top-right-en-4.png
+    - image: /images/home/top-right-en-5.png
+
+tabs:
+  children:
+    - title: Free Products
+    - title: Open Source Projects
 
 section2:
   title: One Kubernetes Platform for Full Stack Solutions
-  content: KubeSphere is also a multi-tenant enterprise-grade open-source Kubernetes container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich Kubernetes platform, which includes the most common functionalities needed for enterprise Kubernetes strategies.
+  content: KubeSphere is also a multi-tenant enterprise-grade open-source Kubernetes container platform with full-stack automated IT<br/> operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a<br/> more robust and feature-rich Kubernetes platform, which includes the most common functionalities needed for enterprise<br/> Kubernetes strategies.
   children:
-    - name: Open Source
-      icon: /images/home/open-source.svg
-      content: A CNCF-certified Kubernetes platform, 100% open source, built and improved by the community.
+    - name: Free Forever
+      icon: /images/home/free.svg
+      content: Zero-cost, worry-free access to continuously evolved enterprise-grade features, empowering you to build cloud-native foundations effortlessly.
 
     - name: Easy to Run
       icon: /images/home/easy-to-run.svg
-      content: Can be deployed on an existing Kubernetes cluster or Linux machines, supports online and air-gapped installation.
+      content: Supports deployment on any infrastructure environment, offers online and offline installation, and supports one-click upgrades and cluster scaling.
 
     - name: Rich Features
       icon: /images/home/feature-rich.svg
-      content: Deliver DevOps, service mesh, <a class='inner-a' target='_blank' href='observability/'>observability</a>, application management, multi-tenancy, storage and networking management in a unified platform.
+      content: Provides multi-tenancy, multi-cluster support, cloud-native observability, application lifecycle management, storage and networking solutions, and DevOps capabilities.
 
-    - name: Modular & Pluggable
+    - name: Flexible Extensibility
       icon: /images/home/modular-pluggable.svg
-      content: The functionalities are modularized and loosely coupled with the platform. Choose the modules according to your business needs.
-
-
+      content: Built on a pluggable architecture, it seamlessly integrates with any mainstream open-source tools, allowing you to expand platform capabilities on demand, like building with blocks.
 
 section3:
   title: Benefits of Kubernetes Platform to Different Teams
@@ -68,73 +87,30 @@ section3:
       icon: /images/home/80.svg
       children:
         - content: Deploy and upgrade Apps with one click to transparent underlying infrastructure
-        - content: Provide on-demand container resources and HPA, hardening the reliability and flexibility of your applications
+        - content: Provide on-demand container resources, hardening the reliability and flexibility of your applications
         - content: Import any Helm repository in seconds to visually deploy and upgrade applications
-        - content: Support operation in application store, including metering and billing for applications (coming soon)
 
 section4:
-  title: Key Features of Kubernetes Platform
-  content: If you are seeking an open source project that rivals a commercial product, KubeSphere is your choice. <br> <br>The <a class='inner-a' target='_blank' href='https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md'>RoadMap</a> lists the planned features and everyone is welcome to raise a proposal and contribute your ideas.
-  children:
-    - name: Provisioning Kubernetes
-      icon: /images/home/provisioning-kubernetes.svg
-      content: Deploy Kubernetes on any infrastructure out of box, including online and air-gapped installation, and support adding GPU nodes
-
-    - name: K8s Resource Management
-      icon: /images/home/k-8-s-resource-management.svg
-      content: Provide a web console for creating and managing Kubernetes resources with powerful observability
-
-    - name: Multi-tenant Management
-      icon: /images/home/multi-tenant-management.svg
-      content: Provide unified authentication with fine-grained roles and three-tier authorization system, and support AD/LDAP authentication
-
-    - name: Multiple Storage and Networking Solutions 
-      icon: /images/home/multi-tenant-management.svg
-      content: Support GlusterFS, CephRBD, NFS, LocalPV solutions, and provide CSI plugins to consume storage from multiple cloud providers. Provide a <a class='inner-a' target='_blank' href='https://openelb.github.io/'>load balancer OpenELB</a> for bare metal Kubernetes, and offers network policy management, support Calico and Flannel CNI
+  title: Application Scenarios
 
   features:
-
-    - name: Kubernetes DevOps System
-      icon: /images/home/dev-ops.svg
-      content: Out-of-the-box CI/CD based on Jenkins, and automated <a class='inner-a' target='_blank' href='devops/'>DevOps workflow</a> tools including Source-to-Image & Binary-to-Image
-      link: "devops/"
-      color: orange
-
-    - name: Service Mesh (Istio-based)
-      icon: /images/home/service.svg
-      content: Provide fine-grained traffic management, observability and tracing, and offer visualization for traffic topology
-      link: "service-mesh/"
-      color: red
+    - name: Kubernetes Multi-cluster Mgmt
+      icon: /images/home/management.svg
+      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability.
+      link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
+      color: grape
 
     - name: Cloud Native Observability
       icon: /images/home/rich.svg
-      content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in
+      content: Multi-dimensional monitoring, events and audit logs query are supported; multi-tenant log query and collection, alerting and notification are built-in.
       link: "observability/"
+      color: red
+
+    - name: Kubernetes DevOps System
+      icon: /images/home/devops1.svg
+      content: Out-of-the-box CI/CD based on Jenkins, and automated DevOps workflow tools including Source-to-Image & Binary-to-Image.
+      link: "devops/"
       color: green
-    
-    - name: App Store
-      icon: /images/home/store.svg
-      content: Provide an application store for Helm-based applications, and offer application lifecycle management on Kubernetes platform
-      link: "https://docs.kubesphere.com.cn/v4.2.0/11-use-extensions/05-app-store/"
-      color: grape
-
-    - name: Kubernetes Multi-cluster Mgmt
-      icon: /images/home/management.svg
-      content: Distribute applications across multiple clusters and cloud providers, and provide disaster recovery solutions and cross-cluster observability
-      link: "https://docs.kubesphere.com.cn/v4.2.0/07-cluster-management/10-multi-cluster-management/"
-      color: orange
-
-    - name: Edge Computing Platform
-      icon: /images/home/multiple.svg
-      content: KubeSphere integrates <a class='inner-a' target='_blank' href='https://kubeedge.io/en/'>KubeEdge</a> to enable users to deploy applications on the edge devices and view logging and monitoring data of them on the console.
-      link: "https://edgewize-docs.kubesphere.com.cn/"
-      color: grape
-
-    # - name: Metering and Billing
-    #   icon: /images/home/network.svg
-    #   content: Track resource consumption at different levels on a unified dashboard, which helps you make better-informed decisions on planning and reduce the cost.
-    #   link: "/docs/v3.3/toolbox/metering-and-billing/view-resource-consumption/"
-    #   color: green
 
 section5:
   title: KubeSphere Container Platform with its Cloud Native Architecture
@@ -142,7 +118,7 @@ section5:
     title: Front End
     project: KubeSphere Console
     children:
-      - icon: /images/home/mobx.jpg
+      - icon: /images/home/kube-design.jpg
       - icon: /images/home/koa.jpg
       - icon: /images/home/react.png
 
@@ -151,49 +127,107 @@ section5:
     project: KubeSphere System
     group:
       - name: API Server
-      - name: API Gateway
       - name: Controller Manager
-      - name: Account Service
-
 
 section6:
   title: End User Community
-  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.</br> The <a class='inner-a' target='_blank' href='case/'>Case Studies</a> list more detailed user cases and their cloud native transformation stories.
+  content: Tons of enterprises and organizations are using KubeSphere Container Platform for research, production and their commercial products.
   children:
     - icon: /images/home/section6-anchnet.jpg
-    - icon: /images/home/section6-aviation-industry-corporation-of-china.jpg
+      link: /case/anchnet
     - icon: /images/case/logo-alphaflow.png
-    - icon: /images/home/section6-aqara.jpg   
-    - icon: /images/home/section6-bank-of-beijing.jpg
-    - icon: /images/home/section6-benlai.jpg
-    - icon: /images/home/section6-china-taiping.jpg
-    - icon: /images/home/section6-changqing-youtian.jpg
-    - icon: /images/home/section6-cmft.jpg
-    - icon: /images/home/section6-extreme-vision.jpg
-    - icon: /images/home/section6-guizhou-water-investment.jpg
+      link: /case/alphaflow
+    - icon: /images/case/section6-aqara.jpg
+      link: /case/aqara
     - icon: /images/home/section6-huaxia-bank.jpg
-    - icon: /images/home/section6-inaccel.jpg
-    - icon: /images/home/section6-maxnerva.jpg
-    - icon: /images/home/section6-picc.jpg
-    - icon: /images/case/logo-xdf.png
-    - icon: /images/home/section6-sina.jpg
-    - icon: /images/home/section6-sichuan-airlines.jpg
-    - icon: /images/home/section6-sinopharm.jpg
-    - icon: /images/home/section6-softtek.jpg
-    - icon: /images/home/section6-spd-silicon-valley-bank.jpg
+      link: /case/huaxia-bank
+    - icon: /images/home/section6-benlai.jpg
+      link: /case/benlai
+    - icon: /images/case/uisee.png
+      link: /case/uisee
+    - icon: /images/case/section6-zto.png
+      link: /case/zto
+    - icon: /images/case/section6-hongya.png
+      link: /case/hongyaa
+    - icon: /images/case/chinamobile-iot.png
+      link: /case/chinamobile-iot
+    - icon: /images/case/logo-qunar.png
+      link: /case/qunar
+    - icon: /images/case/logo-turing.png
+      link: /case/turing
+    - icon: /images/case/segmentfault-logo.png
+      link: /case/segmentfault
+    - icon: /images/case/logo-msxf.png
+      link: /case/msxf
+    - icon: /images/case/section6-sinodata.png
+      link: /case/sinodata
     - icon: /images/home/section6-vng.jpg
-    - icon: /images/home/section6-webank.jpg
-    - icon: /images/home/section6-wisdom-world.jpg
-    - icon: /images/home/section6-yiliu.jpg
+      link: /case/vng
+    - icon: /images/case/logo-xdf.png
+      link: /case/xdf
+    - icon: /images/home/section6-extreme-vision.jpg
+      link: /case/extreme-vision
+    - icon: /images/case/section6-vesoft-4.png
+      link: /case/vesoft
+    - icon: /images/case/logo-keyenlinx.png
+      link: /case/keyenlinx
+    - icon: /images/case/logo-yiheda.png
+      link: /case/yiheda
+    - icon: /images/case/logo-eastcom.png
+      link: /case/eastcom
+    - icon: /images/case/logo-gxjtkyy.png
+      link: /case/gxjtkyy
+    - icon: /images/case/section6-maxnerva.jpg
+      link: /case/maxnerva
+    - icon: /images/case/logo-hshc.png
+      link: /case/hshc
+    - icon: /images/case/logo-vsleem.png
+      link: /case/vsleem
 
-
-
-  btnContent: Case Studies
-  btnLink: case/
   link: mailto:info@kubesphere.io
   linkContent: Want to join our user community and showcase your logo? Just send an email to info@kubesphere.io
   joinTitle: Join the Revolution, Partner with KubeSphere Container Platform
   joinContent: We look forward to your joining KubeSphere partner program to improve both ecosystems and grow your business.
   joinLink: partner/
   image: /images/home/certification.png
+
+section7:
+  title: Capability Architecture​​
+  image: /images/home/arch-en.svg
+
+section8:
+  title: ​​Stay True to Open Source, Keep Contributing to Cloud Native
+  content: As a pioneer in enterprise-grade Kubernetes platforms, KubeSphere has driven innovation in multi-cluster management, visualized O&M, unified observability, and enterprise-grade DevOps integration, promoting the widespread adoption and implementation of Kubernetes in corporate environments. Meanwhile, the KubeSphere community has incubated open-source projects, such as KubeKey, OpenELB, and Fluent Operator, and has collaborated deeply with ecosystems like Grafana, Loki, and Higress.
+  children:
+    - name: KubeKey
+      icon: /images/home/kube-key.svg
+      content: Rapid installation and maintenance tool that accelerates Kubernetes deployment, adapts to multiple environments, and automates full lifecycle management.
+
+    - name: OpenELB
+      icon: /images/home/open-elb.svg
+      content: Native load balancing solution that fills the gap for bare-metal LB, supports multiple network modes, and eliminates external dependencies.
+
+    - name: KubeEye
+      icon: /images/home/kube-eye.svg
+      content: Kubernetes cluster inspection and diagnostic tool that identifies configuration risks and compliance issues, diagnoses cluster anomalies, and enhances Kubernetes stability and security.
+
+    - name: Fluent Operator
+      icon: /images/home/fluent-operator.svg
+      content: Cloud-native log and data collection engine that unifies log collection and processing, extends Fluentd/Fluent Bit capabilities, enhances operational observability, and has been donated to the CNCF.
+
+    - name: OpenFunction
+      icon: /images/home/open-function.svg
+      content: Cloud-native, open-source FaaS (Function as a Service) framework that focuses on business logic development, abstracts underlying runtime environments to accelerate cloud-native FaaS adoption.
+
+    - name: Notification-Manager
+      icon: /images/home/notification-manager.svg
+      content: Manages notifications in multi-tenant Kubernetes environments, unifies multi-tenant notification channels (email, DingTalk, Feishu, WeCom), and improves notification management efficiency.
+
+    - name: DevOps
+      icon: /images/home/devops.svg
+      content: Provide end-to-end workflows, integrate mainstream CI/CD tools, consolidate CI/CD tools, simplify delivery processes, and enhance iteration efficiency.
+
+    - name: Kube Design
+      icon: /images/home/kube-design.svg
+      content: A suite of components, hooks, and icons. Originally built for KubeSphere Console but it can also be used for developing any other React web apps.
 ---

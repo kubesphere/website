@@ -2,7 +2,6 @@
 title: KubeSphere | Açık Kaynak Container Platformu
 description: KubeSphere, kurumsal/bireysel uygulama geliştirme ve dağıtımı için Kubernetes tabanlı açık kaynaklı bir konteyner platformudur.
 
-
 css: scss/index-tr.scss
 
 section1:
@@ -31,7 +30,6 @@ section2:
     - name: Modüler & Tak-Çıkar
       icon: /images/home/modular-pluggable.svg
       content: Tüm modüller tak-çıkar yapıya uygun olarak geliştirilmiştir, kolayca yönetilebilir
-
 
 section3:
   title: Farklı Ekiplere Faydaları
@@ -122,7 +120,7 @@ section5:
     title: Front-End
     project: KubeSphere Web Konsol
     children:
-      - icon: /images/home/mobx.jpg
+      - icon: /images/home/kube-design.jpg
       - icon: /images/home/koa.jpg
       - icon: /images/home/react.png
 
@@ -134,7 +132,6 @@ section5:
       - name: API Geçiş Kapısı
       - name: Kontroller Yönetimi
       - name: Hesap Yönetimi
-
 
 section6:
   title: KubeSphere'i Tercih Edenler

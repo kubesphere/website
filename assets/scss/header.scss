@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 .navigation {
   position: fixed;
   z-index: 10;
@@ -6,42 +6,25 @@
   left: 0;
   right: 0;
   color: #ffffff;
-  border-bottom:  1px solid rgba($color: #e3e9ef, $alpha: 0.4);
-  background-image: linear-gradient(to top, rgba(23, 188, 133, 0.18), rgba(0, 169, 113, 0.18));
- 
+  border-bottom: 1px solid rgba($color: #e3e9ef, $alpha: 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(23, 188, 133, 0.18),
+    rgba(0, 169, 113, 0.18)
+  );
+
   .join-div {
-    padding: 10px 0;
-    background-image: linear-gradient(to left, #e7d44e, #ecaf24);
-    .content {
-      position: relative;
-      width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      line-height: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #3d3e49;
-      @media only screen and (max-width: $mobile-max-width) {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 0 40px;
-      }
+    height: 60px;
+    background: url("/images/home/banner-cn.png") no-repeat center;
+    background-size: cover;
 
-      a {
-        color: #3d3e49;
-
-        &:hover {
-          color: #55bc8a;
-        }
-      }
-
-      img {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        cursor: pointer;
-      }
+    &.en {
+      background-image: url("/images/home/banner-en.png");
+    }
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
   }
 
@@ -65,9 +48,9 @@
   }
 
   .nav {
-    height:100%;
-    margin-left: 250px;
-    margin-right: 360px;
+    height: 100%;
+    margin-left: 230px;
+    margin-right: 270px;
     line-height: 93px;
 
     @media only screen and (max-width: $mobile-max-width) {
@@ -120,9 +103,9 @@
   .menu-span::after {
     display: inline-block;
     vertical-align: middle;
-    content: '';
+    content: "";
     margin-left: 5px;
-    border:  4px solid transparent;
+    border: 4px solid transparent;
     border-top-color: #fff;
   }
 
@@ -140,7 +123,8 @@
     white-space: nowrap;
     font-size: 0;
     border-radius: 6px;
-    box-shadow: 0 4px 8px 0 rgba(36,46,66,.06),0 8px 16px 0 rgba(36,46,66,.05);
+    box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06),
+      0 8px 16px 0 rgba(36, 46, 66, 0.05);
 
     li {
       padding: 0 20px;
@@ -155,7 +139,6 @@
           color: #55bc8a;
         }
       }
-
     }
 
     .active {
@@ -191,7 +174,7 @@
     & > ul {
       @media only screen and (max-width: $mobile-max-width) {
         display: flex;
-        flex-wrap: wrap ;
+        flex-wrap: wrap;
         justify-content: space-between;
       }
 
@@ -206,8 +189,9 @@
       &:hover {
         padding-bottom: 40px;
       }
-      & > div  {
-        img, span {
+      & > div {
+        img,
+        span {
           display: inline-block;
           vertical-align: middle;
         }
@@ -221,7 +205,7 @@
         span::after {
           display: inline-block;
           vertical-align: middle;
-          content: '';
+          content: "";
           margin-left: 5px;
           border: 4px solid transparent;
           border-top-color: #fff;
@@ -234,7 +218,7 @@
           padding: 0;
           margin: 0;
           color: #36435c;
-    
+
           &:hover {
             color: #55bc8a;
           }
@@ -269,7 +253,6 @@
     }
 
     .link-li {
-
       @media only screen and (max-width: $mobile-max-width) {
         display: none;
       }
@@ -284,29 +267,28 @@
       }
 
       .link-slack {
-        background-image: url('/images/header/slack.svg');
+        background-image: url("/images/header/slack.svg");
 
         &:hover {
-          background-image: url('/images/header/slack-hover.svg');
+          background-image: url("/images/header/slack-hover.svg");
         }
       }
 
       .link-twitter {
-        background-image: url('/images/header/twitter.svg');
+        background-image: url("/images/header/twitter.svg");
 
         &:hover {
-          background-image: url('/images/header/twitter-hover.svg');
+          background-image: url("/images/header/twitter-hover.svg");
         }
       }
 
       .link-github {
-        background-image: url('/images/header/github.svg');
+        background-image: url("/images/header/github.svg");
 
         &:hover {
-          background-image: url('/images/header/github-hover.svg');
+          background-image: url("/images/header/github-hover.svg");
         }
       }
-
     }
 
     .github-li {
@@ -314,24 +296,30 @@
       top: 3px;
     }
 
-    .github-star {      
+    .github-star {
       display: flex;
       align-items: center;
       margin-left: 10px;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.1) 96.81%), #FFFFFF;
-      border: 1px solid #CCD3DB;
-      box-shadow: 0px 8px 16px rgba(76, 169, 134, 0.1), 0px 10px 50px rgba(76, 169, 134, 0.05);
+      background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.0001) 0%,
+          rgba(0, 0, 0, 0.1) 96.81%
+        ),
+        #ffffff;
+      border: 1px solid #ccd3db;
+      box-shadow: 0px 8px 16px rgba(76, 169, 134, 0.1),
+        0px 10px 50px rgba(76, 169, 134, 0.05);
       border-radius: 4px;
       overflow: hidden;
       @media only screen and (max-width: $mobile-max-width) {
         display: none;
       }
       a {
-        color: #3E464C;
+        color: #3e464c;
         font-size: 16px;
         line-height: 16px;
         &:hover {
-          color: #4CA986;
+          color: #4ca986;
         }
       }
 
@@ -346,11 +334,11 @@
           height: 16px;
           background-repeat: no-repeat;
           background-size: contain;
-          background-image: url('/images/header/github-star.svg');
+          background-image: url("/images/header/github-star.svg");
         }
         &:hover {
           .star-img {
-            background-image: url('/images/header/github-star-hover.svg');
+            background-image: url("/images/header/github-star-hover.svg");
           }
         }
       }
@@ -380,16 +368,27 @@
   font-size: 14px;
   color: #ffffff;
   cursor: pointer;
-  box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1), 0 8px 16px 0 rgba(33, 43, 61, 0.2);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1) 97%), linear-gradient(to bottom, #242e42, #242e42);
+  box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1),
+    0 8px 16px 0 rgba(33, 43, 61, 0.2);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.1) 97%
+    ),
+    linear-gradient(to bottom, #242e42, #242e42);
   &:hover {
     box-shadow: none;
   }
 }
 
 .navigationScroll {
-  box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06), 0 8px 16px 0 rgba(36, 46, 66, 0.05);
-  background-image: linear-gradient(to bottom, rgba(134, 219, 162, 0.9), rgba(0, 170, 114, 0.9));
+  box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06),
+    0 8px 16px 0 rgba(36, 46, 66, 0.05);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(134, 219, 162, 0.9),
+    rgba(0, 170, 114, 0.9)
+  );
 }
 
 .navigationHeight {
@@ -456,7 +455,6 @@
       &:hover {
         color: #00a971;
       }
-      
     }
 
     .menu-span::after {
@@ -464,7 +462,7 @@
       top: 50%;
       right: 10px;
       display: block;
-      content: '';
+      content: "";
       width: 10px;
       height: 10px;
       border-right: 2px solid #dee0e6;
@@ -493,5 +491,3 @@
     }
   }
 }
-
-
