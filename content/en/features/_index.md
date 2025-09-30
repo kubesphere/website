@@ -74,4 +74,8 @@ section2:
       name: OceanBase Dashboard
       content: OceanBase interactive management application
       label: Extension
+    - icon: /images/features/fluid.svg
+      name: Fluid
+      content: Fluid is an open-source, Kubernetes-native distributed dataset orchestrator and accelerator
+      label: extension
 ---
