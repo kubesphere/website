@@ -74,4 +74,8 @@ section2:
       name: OceanBase Dashboard
       content: OceanBase 交互式管理应用
       label: extension
+    - icon: /images/features/fluid.svg
+      name: Fluid
+      content: Fluid是一个开源的、原生Kubernetes的分布式数据集编排器和加速器。
+      label: extension
 ---
