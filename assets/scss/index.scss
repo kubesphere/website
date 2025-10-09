@@ -31,6 +31,10 @@
     }
   }
 
+  .download-btn {
+    margin-top: 30px;
+  }
+
   & > .img1 {
     position: absolute;
     top: 0;
@@ -57,7 +61,7 @@
 
     & > div {
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
 
     .p1 {
