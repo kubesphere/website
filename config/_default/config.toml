@@ -173,6 +173,11 @@ hasChildren = true
     # name = "v3.3"
     # URL = "/docs/v3.3"
     # weight = 44
+    [[languages.zh.menu.main]]
+    parent = "Documentation"
+    name = "Community Edition"
+    URL = "https://docs.kubesphere.co/v4.2.0/01-intro/04-editions/01-community/"
+    weight = 44
    
     [[languages.en.menu.main]]
     parent = "Documentation"
@@ -225,6 +230,10 @@ name = "Community"
     name = "OSPP 2025"
     URL = "https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025"
     weight = 6
+[[languages.en.menu.main]]
+weight = 6
+name = "Try Free"
+URL = "https://kubesphere.com.cn/apply-license/" 
 
 # [[languages.en.menu.main]]
 # weight = 6
@@ -327,6 +336,11 @@ name = "文档中心"
     # name = "v3.3"
     # URL = "/docs/v3.3"
     # weight = 44
+    [[languages.zh.menu.main]]
+    parent = "文档中心"
+    name = "社区版"
+    URL = "https://docs.kubesphere.com.cn/v4.2.0/01-intro/04-editions/01-community/"
+    weight = 44
 
     [[languages.zh.menu.main]]
     parent = "文档中心"
@@ -408,11 +422,10 @@ weight = 7
 name = "认证"
 URL = "https://kubesphere.cloud/certification/"
 
-# [[languages.zh.menu.main]]
-# weight = 8
-# name = "申请免费授权"
-# URL = "/" 
-# # TODO: LINK 
+[[languages.zh.menu.main]]
+weight = 8
+name = "申请免费授权"
+URL = "https://kubesphere.com.cn/apply-license/" 
 
 
 # [languages.tr]

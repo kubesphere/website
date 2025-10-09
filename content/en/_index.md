@@ -11,12 +11,10 @@ section1:
   content: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
   btns:
     - content: Get Started
-      link: /
-      # TODO: Community page
+      link: /news/kubesphere-community-edition-ga-announcement/#快速上手
       class: experiense-btn
     - content: Try Free
-      # TODO: free feature list
-      link: /
+      link: https://kubesphere.co/apply-license/
       class: apply-btn
   carouselItems:
   carouselItems:
