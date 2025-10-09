@@ -108,9 +108,8 @@ KubeSphere 社区版精心筛选并集成了 **18 个扩展组件**，覆盖可�
 
 完成 KubeSphere 安装后，打开 KubeSphere 容器管理平台，进入**组件坞 → 平台管理 → 许可证页面**，获取当前集群的集群 ID。
 
-
 <p align="center">
-  <img src="http://pek3b.qingstor.com/kubesphere-community/images/image2025-9-24_14-30-25.png" alt="image2025-9-24_14-30-25.png">
+  <img src="http://pek3b.qingstor.com/kubesphere-community/images/Community%20Edition%20GA1b2v1.png" alt="Community%20Edition%20GA1b2v1.png">
 </p>
 
 **步骤 2：申请免费许可证**
