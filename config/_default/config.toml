@@ -228,7 +228,7 @@ name = "Community"
 [[languages.en.menu.main]]
 weight = 6
 name = "Try Free"
-URL = "https://kubesphere.com.cn/apply-license/" 
+URL = "https://kubesphere.co/apply-license/" 
 
 # [[languages.en.menu.main]]
 # weight = 6
