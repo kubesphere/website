@@ -173,11 +173,6 @@ hasChildren = true
     # name = "v3.3"
     # URL = "/docs/v3.3"
     # weight = 44
-    [[languages.zh.menu.main]]
-    parent = "Documentation"
-    name = "Community Edition"
-    URL = "https://docs.kubesphere.co/v4.2.0/01-intro/04-editions/01-community/"
-    weight = 44
    
     [[languages.en.menu.main]]
     parent = "Documentation"
