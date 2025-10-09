@@ -10,7 +10,7 @@ section1:
   content: KubeSphere 愿景是打造一个以 Kubernetes 为内核的云原生分布式操作系统，<br/>它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-<br/>and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理。
   btns:
     - content: 即刻体验
-      link: /news/kubesphere-community-edition-ga-announcement/#快速上手
+      link: /zh/news/kubesphere-community-edition-ga-announcement/#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B
       class: experiense-btn
     - content: 申请免费授权
       link: https://kubesphere.com.cn/apply-license/
