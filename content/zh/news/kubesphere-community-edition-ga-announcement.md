@@ -52,8 +52,6 @@ KubeSphere 社区版精心筛选并集成了 **18 个扩展组件**，覆盖可�
 - WizTelemetry 告警
 - WizTelemetry 通知
 - WizTelemetry 数据流水线
-- Grafana for WizTelemetry
-- Grafana Loki for WizTelemetry
 - Metrics Server
 
 **网关与流量管理**
