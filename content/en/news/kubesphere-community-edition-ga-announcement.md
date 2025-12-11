@@ -43,7 +43,7 @@ KubeSphere Community Edition includes the **core capabilities** for building and
 
 ## Extensions: Covering Key Scenarios
 
-KubeSphere Community Edition includes 18 carefully curated extensions, covering observability, DevOps, security, AI inference, service gateway, and database management:
+KubeSphere Community Edition includes 16 carefully curated extensions, covering observability, DevOps, security, AI inference, service gateway, and database management:
 
 **Observability Stack**
 - WizTelemetry Platform Service
