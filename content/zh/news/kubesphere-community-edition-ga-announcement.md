@@ -44,7 +44,7 @@ KubeSphere 社区版包含了**构建和管理云原生容器平台的核心能�
 
 ## 扩展组件：覆盖关键场景
 
-KubeSphere 社区版精心筛选并集成了 **18 个扩展组件**，覆盖可观测性、DevOps、安全治理、AI 推理、服务网关、数据库运维等关键领域：
+KubeSphere 社区版精心筛选并集成了 **16 个扩展组件**，覆盖可观测性、DevOps、安全治理、AI 推理、服务网关、数据库运维等关键领域：
 
 **可观测性体系**
 - WizTelemetry 平台服务
@@ -52,8 +52,6 @@ KubeSphere 社区版精心筛选并集成了 **18 个扩展组件**，覆盖可�
 - WizTelemetry 告警
 - WizTelemetry 通知
 - WizTelemetry 数据流水线
-- Grafana for WizTelemetry
-- Grafana Loki for WizTelemetry
 - Metrics Server
 
 **网关与流量管理**
