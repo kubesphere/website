@@ -54,14 +54,6 @@ section2:
       name: DeepSeek
       content: 基于 ollama 运行 deepseek-r1 模型，对外提供 API 服务
       label: extension
-    - icon: /images/features/grafana.svg
-      name: Grafana
-      content: 开放且可组合的观测和数据可视化平台
-      label: extension
-    - icon: /images/features/loki.svg
-      name: Loki
-      content: 可扩展、高可用、多租户日志聚合系统
-      label: extension
     - icon: /images/features/higress.svg
       name: Higress
       content: 基于 Istio 和 Envoy 的 API 网关
