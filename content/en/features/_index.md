@@ -54,14 +54,6 @@ section2:
       name: DeepSeek
       content: Run the DeepSeek-R1 model based on Ollama, providing API services externally
       label: Extension
-    - icon: /images/features/grafana.svg
-      name: Grafana
-      content: Open and composable observability and data visualization platform
-      label: Extension
-    - icon: /images/features/loki.svg
-      name: Loki
-      content: Scalable, highly available, multi-tenant log aggregation system
-      label: Extension
     - icon: /images/features/higress.svg
       name: Higress
       content: API Gateway based on Istio and Envoy​
