@@ -95,8 +95,7 @@ KubeSphere v4.2.1 integrates VPA, HPA, and KEDA into a unified system, achieving
 ## 3. Unified Management of Heterogeneous Infrastructure: Building a Standardized Computing Foundation
 
 In v4.2.1, KubeSphere focuses on the unified management of heterogeneous infrastructure and data access efficiency. For diversified business workloads such as engineering simulations, industrial digital twins, and high-concurrency data processing, three core capabilities are introduced to provide a stable, standardized computing foundation for upper-layer scheduling platforms.
-
-- **Unified Management and Adaptation of GPU/vGPU Heterogeneous Computing Resources** 
+- **Unified Management and Adaptation of GPU/vGPU Heterogeneous Computing Resources**
   Supports unified recognition, registration, and basic allocation of physical and virtual GPU resources, adapting to hardware requirements for general graphics rendering, industrial computing, and other scenarios, enabling standardized management of heterogeneous computing resources and improving resource visibility and manageability.
 
 - **Deep Integration with Volcano Batch Scheduling Engine** 
