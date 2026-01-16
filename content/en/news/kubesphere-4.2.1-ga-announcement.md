@@ -24,13 +24,13 @@ In large-scale production environments, cluster governance capabilities determin
 
 As the first line of defense for production traffic, the stability, observability, and operational efficiency of the gateway directly affect the continuity of core business. In v4.2.1, KubeSphere overhauls the entire gateway lifecycle management capabilities, making significant improvements in operational efficiency and permission governance.
 
-- **Seamless Smooth Upgrade** 
+- **Seamless Smooth Upgrade**
   Administrators can initiate a one-click gateway upgrade from the console. The system will automatically replace gateway instances gradually following a rolling update strategy, with no downtime or disruption to business traffic. This significantly improves the success rate and execution efficiency of gateway upgrades, reducing the risk of business disruptions due to version iterations, security patches, or configuration changes, truly realizing **"silent upgrades, invisible operations"**, ensuring high-availability service gateways in production environments.
 
-- **Instant Fault Diagnosis** 
+- **Instant Fault Diagnosis**
   Abandoning the traditional model of relying on extended log components, operators can directly view the gateway workload status and logs. Fault detection time is reduced from "minutes" to "seconds", significantly lowering troubleshooting costs.
 
-- **Hierarchical Traffic Control** 
+- **Hierarchical Traffic Control**
   Platform administrators can configure gateway access at both the enterprise space level and project level, enabling hierarchical deployment and permission control, meeting the differentiated demands for traffic isolation, ingress management, and permission control for different businesses, supporting fine-grained operational standards.
 
 
@@ -38,10 +38,10 @@ As the first line of defense for production traffic, the stability, observabilit
 
 As enterprise business scales, the number of K8s clusters increases, and multi-cluster becomes the norm. Version 4.2.1 continues to optimize platform capabilities in the multi-cluster scenario, focusing on **upgrade management and state synchronization**.
 
-- **Online Upgrade for Member Clusters** 
+- **Online Upgrade for Member Clusters**
   A visual interface for member cluster version upgrades reduces the complexity and risk of human error in the multi-cluster upgrade process; it also supports viewing upgrade logs and monitoring progress in real time.
 
-- **Accurate Multi-Cluster State Synchronization** 
+- **Accurate Multi-Cluster State Synchronization**
   Optimized multi-cluster state synchronization mechanism adds proactive detection capabilities for member cluster states and improves the logic for assessing cluster states to ensure data accuracy and consistency.
 
 
@@ -123,4 +123,4 @@ We aim for more than just functional iteration. Our goal is to ensure that every
 
 #### Related Links
 
-- Complete Release Notes: [KubeSphere v4.2.1 Release Notes](https://clouddev.kubesphere.io/en/docs/kse/release-notes/v4.2.1)
+- Complete Release Notes: [KubeSphere v4.2.1 Release Notes](https://kubesphere.cloud/en/docs/kse/release-notes/v4.2.1)
