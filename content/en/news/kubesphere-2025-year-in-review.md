@@ -47,7 +47,7 @@ The newly introduced Node Group capability enables logical grouping of physical 
 On the operations side, the platform provides visualized online upgrades for member clusters and precise status synchronization, significantly simplifying multi-cluster lifecycle management.
 
 ## Global Practices: Deep Engagement in Mission-Critical Scenarios
-## 
+
 The ultimate value of a product is proven when users face real-world core business challenges. In 2025, KubeSphere’s reliability, flexibility, and openness earned deep trust across key global industries.
 
 ### Domestic Implementations
@@ -66,7 +66,7 @@ AMPLUS S.A., a European IT solutions provider, built a standardized cloud-native
 
 In 2025, KubeSphere’s technical influence and ecosystem recognition continued to grow, with GitHub stars surpassing 16,000—reflecting strong global developer engagement. We remain committed to collaboration and win-win partnerships, building a vibrant technical ecosystem with partners and users.
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2026-02-09_141857_717.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202512githubstar.png)
 
 **Cultivating Cloud-Native Talent**
 
@@ -120,6 +120,5 @@ To simplify the cloud-native deployment and management of critical middleware, w
 
 Every breakthrough in 2025 was built on the trust and collaboration of customers, partners, and community members.
 
-Looking ahead to 2026, KubeSphere stands ready with a more resilient foundation and a more agile ecosystem. We invite you to master your digital core and embrace an intelligent and resilient digital future together.
-
+Looking ahead to 2026, KubeSphere stands ready with a more resilient foundation and a more agile ecosystem. We invite you to master your digital core and embrace an intelligent and resilient digital future together.<br>
 KubeSphere invites you to navigate the digital future together.

@@ -1,7 +1,7 @@
 ---
 title: '骐骥一跃，稳驭核心：KubeSphere 2025 年度回顾'
 tag: '社区动态'
-keywords: 'KubeSphere, Kubernetes, Community, 云原生, '
+keywords: 'KubeSphere, Kubernetes, Community, 云原生'
 description: '2025结束了，一起回顾 KubeSphere 2025 年的产品进展、行业实践与生态发展，并展望 2026 年的平台演进方向。'
 createTime: '2026-02-10'
 author: 'KubeSphere 社区'
@@ -53,7 +53,7 @@ KubeSphere 作为企业级多租户容器平台，正致力于成为这一转型
 
 2025年，KubeSphere 的技术影响力与生态认可度持续提升，**GitHub 全球星标数突破 16,000，** 这标志着产品价值获得了全球开发者的广泛关注。我们始终秉持协作共赢的理念，致力于与业界伙伴及用户共同构建一个充满活力的技术生态。
 
-![](https://pek3b.qingstor.com/kubesphere-community/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2026-02-09_141857_717.png)
+![](https://pek3b.qingstor.com/kubesphere-community/images/202512githubstar.png)
 
 - **培育云原生新生力量**：我们通过技术合作、联合创新及人才培养等多种形式，与众多行业伙伴及高校建立了深度链接，例如通过“开源之夏”等活动，成功孵化了智能运维助手等创新工具原型，推动了前沿技术的实用化探索。
 
