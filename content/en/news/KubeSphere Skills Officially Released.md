@@ -2,7 +2,7 @@
 title: 'KubeSphere Skills Officially Released: Making OpenClaw Truly Understand KubeSphere'
 tag: 'Product News'
 keyword: 'Kubernetes, KubeSphere, K8s, release, news, AI'
-description: 'KubeSphere Skills Officially Released.'
+description: 'KubeSphere Skills includes 16 skill packages covering the core platform, DevOps workflows, and the observability stack.'
 createTime: '2026-04-03'
 author: 'KubeSphere'
 image: 'https://pek3b.qingstor.com/kubesphere-community/images/kubesphere%20skill%20Now%20Available.png'
@@ -12,7 +12,7 @@ OpenClaw has already become a daily AI assistant for many users, but it does not
 
 Ask it about multi-cluster management, and it gives you generic `kubectl` commands. Ask about DevOps pipelines, and it explains how to use upstream Jenkins. Ask about extension installation, and it falls back to the usual Helm Chart approach. None of these reflects how KubeSphere users actually get work done.
 
-Now, **the official KubeSphere Skills are officially available**, filling in the long-missing KubeSphere-specific capabilities in OpenClaw.
+Now, **KubeSphere Skills are officially available**, filling in the long-missing KubeSphere-specific capabilities in OpenClaw.
 
 ![](https://pek3b.qingstor.com/kubesphere-community/images/kubesphere%20skill%20Now%20Available.png)
 

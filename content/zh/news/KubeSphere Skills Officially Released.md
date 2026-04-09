@@ -1,7 +1,7 @@
 ---
 title: 'KubeSphere Skills 正式发布：让 OpenClaw 更懂 KubeSphere'
 tag: '产品动态'
-keyword: '社区, Kubernetes，贡献, KubeSphere, release'
+keyword: '社区, Kubernetes, 贡献, KubeSphere, release'
 description: '本次发布的 KubeSphere Skills,共发布 16 个技能包，覆盖核心平台、DevOps 全流程、可观测性套件三大领域。'
 createTime: '2026-04-03'
 author: 'KubeSphere'
